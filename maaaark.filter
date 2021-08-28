@@ -25,7 +25,10 @@
 /////
 
 ItemDisplay[key CLVL>79]: %CONTINUE%
-ItemDisplay[key]: %GRAY%%NAME%{ver 4.1.8%NL%*Maaaark Filter}
+ItemDisplay[key]: %GRAY%%NAME%{ver 4.1.9%NL%*Maaaark Filter}
+
+// Turn off player ears ewww
+ItemDisplay[ear]:
 
 // ------------------------------------------------------------------------------
 // Gold
@@ -60,7 +63,7 @@ ItemDisplay[(MAG OR RARE) (ILVL>91 AND ILVL<99)]: %NAME% %ORANGE%[%ILVL%]%CONTIN
 ItemDisplay[(MAG OR RARE) ILVL>98]: %NAME% %PURPLE%[%ILVL%]%CONTINUE%
 
 
-ItemDisplay[(MAG OR RARE OR CRAFTED) ID]: %NAME% [R-%LVLREQ%]%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID]: %NAME% [R-%LVLREQ%]%CONTINUE%
 
 
 //Show me price of every MAG or RARE weapon/armor after ID
@@ -1603,6 +1606,7 @@ ItemDisplay[SET amu (STAT360=0 AND STAT34>2 AND STAT35>1)]: %NAME% [LLD]%CONTINU
 ItemDisplay[MAG jew LVLREQ<31 MAXDMG>19]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
 ItemDisplay[MAG jew LVLREQ<31 ED>19]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
 ItemDisplay[MAG jew LVLREQ<31 ED>14 MAXDMG>12]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
+ItemDisplay[MAG jew LVLREQ<31 ED>12 (STR>4 OR DEX>5)]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
 ItemDisplay[MAG jew LVLREQ<31 MINDMG>4 MAXDMG>13]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
 ItemDisplay[MAG jew LVLREQ<31 RES>9 (STR>4 OR DEX>5)]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
 ItemDisplay[MAG jew LVLREQ<31 STAT91=-15 (RES>10 OR ED>14 OR MAXDMG>7 OR MINDMG>6)]: %NAME% %PURPLE%[LLD]{%GRAY%MAX DMG(9+) ED (15%+)%NL%STR(4-6) DEX(7-9)%NL%All res >9 -Reqs%NL%For GG LLD Combo of 2 or high roll:}
@@ -2764,7 +2768,7 @@ ItemDisplay[SWORD SOCK=3 NMAG !RW]: %NAME%{%GRAY%Lawbringer, Malice, Plague, Ven
 ItemDisplay[SCEPTER SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Fury, King's Grace, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[(clb OR spc OR mac OR mst OR fla OR 9cl OR 9sp OR 9ma OR 9mt OR 9fl OR 7cl OR 7sp OR 7ma OR 7mt OR 7fl) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Fury, Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Black,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Black, Fury, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG eth !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Black, Fury, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
+ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG ETH !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Black, Fury, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 //Weapons 4soc
 ItemDisplay[WEAPON SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Voice of Reason, Wrath%NL%Hand of Justice, Harmony, Passion,%NL%%TAN%RWs: %GRAY%Brand, Faith, Fortitude, Ice,}%CONTINUE%
@@ -2837,6 +2841,7 @@ ItemDisplay[crs ILVL>25 NMAG !INF !RW (SOCK=0 OR SOCK>4)]: %NAME%{%NAME%}
 ItemDisplay[7cr NMAG !RW !INF SOCK=0]: %NAME%{%NAME%}
 ItemDisplay[7cr NMAG !RW !INF SOCK>2]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(72h OR 7fb OR 7gd OR 7gs OR 7ls) ETH NMAG !RW !INF (SOCK=0 OR SOCK>2)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7fb) ETH NMAG !RW (SOCK=0 OR SOCK=2)]: %DOT-D6%%NAME%{%NAME%}
 //Maces
 ItemDisplay[fla NMAG !RW !INF (SOCK=0 OR SOCK>2)]: %NAME%{%NAME%}
 //Wands
@@ -2845,6 +2850,7 @@ ItemDisplay[WAND !(wnd OR ywn OR 9wn) (SK67>2 OR SK74>2 OR SK94>2 OR SK75>2 OR S
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK49>2  OR SK38>2 OR SK53>2 OR SK57>2 OR SK63>2) NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(6ls OR 6ws) ETH NMAG !RW (SOCK=0 OR SOCK=2)]: %DOT-D6%%NAME%{%NAME%}
 //Polearms/Spears/Amazon Spears
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7 OR 7o7) ETH NMAG !INF !RW (SOCK=0 OR SOCK=3 OR SOCK=4 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7p7 OR 7h7) ETH NMAG !INF !RW SOCK=6]: %DOT-D6%%NAME%{%NAME%}
