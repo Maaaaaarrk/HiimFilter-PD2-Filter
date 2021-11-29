@@ -83,7 +83,7 @@ ItemDisplay[RARE CLVL>64 PRICE>34999]: %NAME% %DARK_GREEN%[35k]$%CONTINUE%
 ItemDisplay[wss]: %PURPLE%WORLDSTAR%CONTINUE%
 
 //Show me quantitiy of all stackables when over 1
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR aqv OR cqv) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 
 
 
@@ -3611,7 +3611,7 @@ ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5
 ItemDisplay[AXE SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Grief, Honor%NL%Call to Arms, Death, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[SWORD SOCK=5 NMAG !RW]: %NAME%{%GRAY%Destruction, Doom, Grief, Honor%NL%Call to Arms, Eternity, Death,%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Honor, Obedience%NL%Call to Arms, Destruction, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
-ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Zenith%NL%%TAN%RWs: %GRAY%Brand, Faith, Fortitude, Ice,}%CONTINUE%
+ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Zenith}%CONTINUE%
 //Weapons 6soc
 ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%Breath of the Dying, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{%GRAY%of the Dying, Last Wish, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Breath}%CONTINUE%
@@ -3723,3 +3723,26 @@ ItemDisplay[(cm1 OR cm3) ID]: %NAME%
 // ------------------------------------------------------------------------------
 
 ItemDisplay[(ARMOR OR WEAPON) INF]: 
+
+//Hide 1 socket trash
+ItemDisplay[(ARMOR OR WEAPON) (NMAG OR SUP) SOCK=1 CLVL>80]:
+
+//Hide 0 socket non elite clvl 70+
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT CLVL>70]: 
+
+//Hide non eth weapons unid mag in hell clvl > 85
+ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 CLVL>85 DIFF=2]:
+
+//Hide non eth weapons unid rare in hell clvl > 85
+ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 CLVL>85 DIFF=2]:
+
+//UN COMMENT these progressively to convert to force more endgame stuff only, lowers LLD chances
+
+// Hide all bases not called out above
+//ItemDisplay[(ARMOR OR WEAPON) NMAG !SUP !leg CLVL>80]:
+
+// Hide all magic <88 Ilvl
+//ItemDisplay[MAG !ID ILVL<88]:
+
+// Hide all items that arent called out in filter
+//ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: 
