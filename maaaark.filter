@@ -1,5 +1,6 @@
 //
 // PD2 Filter
+// Season 4
 // by Maaaark
 //
 /////
@@ -25,7 +26,7 @@
 /////
 
 ItemDisplay[key CLVL>79]: %CONTINUE%
-ItemDisplay[key]: %GRAY%%NAME%{ver 4.1.9%NL%*Maaaark Filter}
+ItemDisplay[key]: %GRAY%%NAME%{Strict%NL%ver 5.0.0%NL%*Maaaark Filter}
 
 // Turn off player ears ewww
 ItemDisplay[ear]:
@@ -102,6 +103,11 @@ ItemDisplay[(RARE OR CRAFT) (ED>499)]: %NAME% %PURPLE%ED >500%CONTINUE%
 ItemDisplay[rvl]: %PURPLE%R 65%
 ItemDisplay[rvs DIFF=2]: %PURPLE%R
 ItemDisplay[rvs]: %PURPLE%R %WHITE%35%
+
+
+ItemDisplay[hp5 CLVL>80 DIFF=2]:
+ItemDisplay[mp5 CLVL>80 DIFF=2]:
+
 ItemDisplay[hp5]: %RED%&HP
 ItemDisplay[mp5]: %BLUE%&MP
 ItemDisplay[hp1 DIFF=0]: %RED%!minor hp
@@ -134,9 +140,15 @@ ItemDisplay[(WEAPON OR ARMOR) NMAG !ID]: %NAME%
 
 //Arrows & Bolts
 ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
+ItemDisplay[(aqv OR cqv) MAG]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%*                 // Magic Arrows
+ItemDisplay[(aqv OR cqv) RARE]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*              // Rare Arrows
+ItemDisplay[(aqv OR cqv) CRAFT]: %DOT-9B%%ORANGE%*     %NAME%     *                             // Crafted Arrows (not possible but in case of bugs)
 
 //Choking, Exploding, Fulminating, Oil, Rancid, Strangling
 ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
+
+// Jewel Shards
+ItemDisplay[jewf]: %ORANGE%*    %GRAY%%NAME%   %ORANGE%*%WHITE%%MAP-68%
 
 // ------------------------------------------------------------------------------
 // Quests Act 1
@@ -516,6 +528,14 @@ ItemDisplay[jew MAG !ID]: %DOT-9A%* *   %BLUE%%NAME%   * *
 // Override all Unid names to show Id name
 // ==============================================================================
 
+// TODO: Once we know if these codes or the existing base item codes (or both) hit, possibly combine these into those...
+// ------------------------------------------------------------------------------
+//      [UIRA] Rathma Drops
+// ------------------------------------------------------------------------------
+ItemDisplay[UNI !ID ram]: %CONTINUE% UNID The Third Eye Amulet
+ItemDisplay[UNI !ID rar]: %CONTINUE% UNID Cage of the Unsullied Boneweave
+ItemDisplay[UNI !ID rbe]: %CONTINUE% UNID Band of Skulls Troll Belt
+
 // ------------------------------------------------------------------------------
 //      [UMCI] Circlets
 // ------------------------------------------------------------------------------
@@ -764,7 +784,7 @@ ItemDisplay[UNI !ID utu]: %CONTINUE% UNID The Gladiators Bane Wire Fleece
 ItemDisplay[UNI !ID ung]: %CONTINUE% UNID Diamond Mail (No Unique for this base)
 ItemDisplay[UNI !ID ucl]: %CONTINUE% UNID Loricated Mail (No Unique for this base)
 ItemDisplay[UNI !ID urs]: %CONTINUE% UNID Great Hauberk (No Unique for this base)
-ItemDisplay[UNI !ID uhn]: %CONTINUE% UNID Boneweave (No Unique for this base)
+ItemDisplay[UNI !ID uhn]: %CONTINUE% UNID Cage of the Unsullied Boneweave
 ItemDisplay[UNI !ID upl]: %CONTINUE% UNID Arkaines Valor Balrog Skin
 ItemDisplay[UNI !ID utp]: %CONTINUE% UNID Archon Plate (No Unique for this base)
 ItemDisplay[UNI !ID uld]: %CONTINUE% UNID Leviathan Kraken Shell
@@ -794,7 +814,7 @@ ItemDisplay[UNI !ID zhb]: %CONTINUE% UNID Thundergods Vigor War Belt
 ItemDisplay[UNI !ID ulc]: %CONTINUE% UNID Arachnid Mesh Spiderweb Sash
 ItemDisplay[UNI !ID uvc]: %CONTINUE% UNID Nosferatus Coil Vampirefang Belt
 ItemDisplay[UNI !ID umc]: %CONTINUE% UNID Verdungos Hearty Cord Mithril Coil
-ItemDisplay[UNI !ID utc]: %CONTINUE% UNID Troll Belt (No Unique for this base)
+ItemDisplay[UNI !ID utc]: %CONTINUE% UNID Band of Skulls Troll Belt
 ItemDisplay[UNI !ID uhc]: %CONTINUE% UNID Colossus Girdle (No Unique for this base)
 
 // ------------------------------------------------------------------------------
@@ -1737,10 +1757,11 @@ ItemDisplay[uar UNI ID]: %MAP%%NAME%
 ItemDisplay[(7qr OR uhl OR uth OR utb OR 7bs) UNI !ID]: %BORDER-68%%ORANGE%>>>>>       %NAME%       <<<<<
 ItemDisplay[(7qr OR uhl OR uth OR utb OR 7bs) UNI ID]: %MAP%%NAME%
 
+// Rathma Only ones
+ItemDisplay[(ram OR rar OR rbe OR uhn OR utc) UNI !ID]: %BORDER-68%%ORANGE%>>>>>       %NAME%       <<<<<
+ItemDisplay[(ram OR rar OR rbe OR uhn OR utc) UNI ID]: %MAP%%NAME%
 
-// new s3 items
-ItemDisplay[(am5 OR ba6 OR dr2 OR ne6 OR pa3 OR 9ar OR ob6) UNI !ID]: %BORDER-68%%ORANGE%>>>>>       %NAME%       <<<<<
-ItemDisplay[(am5 OR ba6 OR dr2 OR ne6 OR pa3 OR 9ar OR ob6) UNI ID]: %MAP%%NAME%
+
 
 // ------------------------------------------------------------------------------
 //OK UNIQUES
@@ -1752,7 +1773,7 @@ ItemDisplay[(ulm OR uui OR xth OR xhn OR xtp OR xlt OR upl OR uld OR utu) UNI !I
 //gloves
 ItemDisplay[(uhg OR uvg OR umg) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 //helmets
-ItemDisplay[(xh9 OR usk OR ci2 OR baa OR bac OR dre OR xhm OR drd OR bae) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
+ItemDisplay[(xh9 OR usk OR ci2 OR baa OR bac OR dre OR xhm OR drd OR bae OR ba6) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 //boots
 ItemDisplay[(xvb OR uvb) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 //shields
@@ -1779,6 +1800,9 @@ ItemDisplay[(xsk OR xml OR xlb OR xpl OR xap OR xld OR xrs OR gth OR aar OR BELT
 ItemDisplay[((7wa OR 7gi OR 7pa OR 8ls OR 72a OR 7o7 OR 9yw OR 9fc OR 7bw OR 9kr OR amb OR 7sc OR 7mp OR 6sw OR 6l7 OR 8hx OR 8rx OR dgr OR 7dg OR 7bl OR 9ma OR 9wh OR 9gm OR 7s8 OR 7wc OR 9ws OR 6cs OR 7b7 OR 7gs OR 9sb) OR (ELT (WP5 OR WP6)) OR 9bw OR ywn OR 7wb OR 7sp) UNI !ID]: %PX-68% >  %NAME%  < 
 //Sets
 ItemDisplay[((ARMOR OR WEAPON) (EXC OR ELT OR ci0 OR ba5) !(9vo OR xcl OR xrn)) SET !ID]: %PX-84%%NAME%
+
+// s3 items
+ItemDisplay[(am5 OR dr2 OR ne6 OR pa3 OR 9ar OR ob6) UNI !ID]: %DOT-68%%ORANGE%*  %NAME%  *
 
 // ------------------------------------------------------------------------------
 //Highlight all Sets and Uniques for low lvl characters
@@ -1839,6 +1863,7 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 //Craftables
 // ------------------------------------------------------------------------------
 ItemDisplay[(7wa OR 7gm OR 7gd OR 7b8 OR 7gl OR 6lw) MAG ETH ELT !ID]: %NAME% [C]
+ItemDisplay[WEAPON MAG ETH !ID]: %NAME% [C]
 
 ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH !ID]: %GRAY%* %BLUE%%NAME% %GRAY%*
 
@@ -2701,6 +2726,12 @@ ItemDisplay[upma]: %MAP-4A%%NAME%{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Th
 ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>
 ItemDisplay[dcma]: %MAP-0A%%GRAY%*%RED%* %NAME% %RED%*%GRAY%*{%RED%DO IT AT YOUR OWN RISK!%NL%%TAN%Note%WHITE%: %GRAY%You better not go in there...}
 
+//-----------------------------Rathma-----------------------------
+ItemDisplay[rtmo]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%          // Rathma Ingredient
+ItemDisplay[rtma]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%          // Rathma Map
+ItemDisplay[rtbk OR rtp]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Town Portal
+ItemDisplay[ribk OR rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Identify
+
 //Essences
 ItemDisplay[tes]: %MAP-4A%> > %NAME% < <{%TAN%Essence %WHITE%from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
 ItemDisplay[ceh]: %MAP-4A%> > %NAME% < <{%TAN%Essence %WHITE%from: %TAN%Mephisto}
@@ -2830,6 +2861,7 @@ ItemDisplay[(7wa OR 72a) ETH !INF NMAG !RW (SOCK=0 OR SOCK>3)]: %DOT-D6%%NAME%{%
 ItemDisplay[(7bt OR 7ba OR 7ga OR 7gi OR 7la) !INF ETH NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
 //Hammers
 ItemDisplay[(7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7wh OR 7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=2)]: %DOT-D6%%NAME%{%NAME%} // WIND RW
 //Scepters
 ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
@@ -2898,21 +2930,3 @@ ItemDisplay[(cm1 OR cm3) ID]: %NAME%
 // ------------------------------------------------------------------------------
 
 ItemDisplay[(ARMOR OR WEAPON) INF]: 
-
-ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg CLVL>80]:
-
-ItemDisplay[(ARMOR OR WEAPON) NMAG !SUP !leg CLVL>80]:
-ItemDisplay[(ARMOR OR WEAPON) (NMAG OR SUP) SOCK=1 CLVL>80]:
-
-//Hide bad bases
-ItemDisplay[(ARMOR OR WEAPON) !leg !RARE !Magic CLVL>80]: 
-
-//Hide non eth weapons unid mag in hell
-//ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 CLVL>80 DIFF=2]:
-
-//Hide non eth weapons unid rare in hell
-//ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 CLVL>80 DIFF=2]:
-
-//UN COMMENT THIS to convert to force endgame stuff only no LLD chances
-//ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: 
-//ItemDisplay[MAG !ID ILVL<88]:
