@@ -141,9 +141,11 @@ ItemDisplay[(WEAPON OR ARMOR) NMAG !ID]: %NAME%
 
 //Arrows & Bolts
 ItemDisplay[(aqv OR cqv) NMAG CLVL>6]:
-ItemDisplay[(aqv OR cqv) MAG]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%*                 // Magic Arrows
-ItemDisplay[(aqv OR cqv) RARE]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*              // Rare Arrows
 ItemDisplay[(aqv OR cqv) CRAFT]: %DOT-9B%%ORANGE%*     %NAME%     *                             // Crafted Arrows (not possible but in case of bugs)
+ItemDisplay[(aqv OR cqv) MAG]: %BLUE%* %NAME% *%CONTINUE%
+ItemDisplay[(aqv OR cqv) RARE]: %YELLOW%* %NAME% *%CONTINUE%
+
+
 
 //Choking, Exploding, Fulminating, Oil, Rancid, Strangling
 ItemDisplay[(gpm OR opm OR opl OR ops OR gps OR gpl) CLVL>23]:
@@ -3736,10 +3738,22 @@ ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 CLVL>85 DIFF=2]:
 //Hide non eth weapons unid rare in hell clvl > 85
 ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 CLVL>85 DIFF=2]:
 
+// Hide all blue bolts clvl > 85
+ItemDisplay[(cqv) MAG CLVL>85]: // Magic bolts clvl >85
+
 //UN COMMENT these progressively to convert to force more endgame stuff only, lowers LLD chances
 
+// Hide all blue Arrows
+//ItemDisplay[(aqv) MAG]: // Magic Arrows
+
+// Hide all bases normal quality not called out above
+//ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg CLVL>80]:
+
+// Hide all bases Exceptional quality not called out above
+//ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg CLVL>80]:
+
 // Hide all bases not called out above
-//ItemDisplay[(ARMOR OR WEAPON) NMAG !SUP !leg CLVL>80]:
+//ItemDisplay[(ARMOR OR WEAPON) NMAG !leg CLVL>80]:
 
 // Hide all magic <88 Ilvl
 //ItemDisplay[MAG !ID ILVL<88]:
