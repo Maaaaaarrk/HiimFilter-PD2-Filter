@@ -26,7 +26,7 @@
 /////
 
 ItemDisplay[key CLVL>79]: %CONTINUE%
-ItemDisplay[key]: %GRAY%%NAME%{ver 5.0.0%NL%*Maaaark Filter}
+ItemDisplay[key]: %GRAY%%NAME%{ver 5.0.1%NL%*Maaaark Filter}
 
 // Turn off player ears ewww
 ItemDisplay[ear]:
@@ -2539,6 +2539,9 @@ ItemDisplay[((EQ2 ELT !SOCK=1) OR ((uit OR (CL3 ELT RES>29)) (SOCK=0 OR SOCK=4))
 //Weapons
 ItemDisplay[(((6cb OR 7wa OR 7cr) SOCK=0) OR (((amd OR ame) TABSK2>2) OR ((amc OR amb) TABSK0>2) OR (8rx OR 6rx) SOCK=4) OR (7wa SOCK>3) OR (7cr SOCK>2)) !ETH !INF SUP NMAG]: %NAME% %RED%*%CONTINUE%
 ItemDisplay[((((7vo OR 7tr OR 7bt OR 7ba OR 7fb OR 7wa OR 7gd OR 7p7 OR 7h7 OR 72h OR 7gs) OR ((7ar OR 7tw OR 7qr OR 9tw) SK275>0)) SOCK=0) OR ((7bt OR 7ba OR 7ga OR 7gi OR 7m7 OR 7gm OR 7fb OR 7gd OR 7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) SOCK=5) OR ((7gm OR 7gd OR 7p7 OR 7h7) SOCK=6) OR ((7fb OR 7gd OR 7gs OR 7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) SOCK=4) OR (((7ar OR 7tw OR 7qr OR 9tw) SK275>0) OR (72h OR 7fb OR 7gd OR 7gs) SOCK=3) OR (7wa SOCK>3)) ETH !INF SUP NMAG]: %NAME% %RED%*%CONTINUE%
+
+//Baba helms
+ItemDisplay[cl2 (SOCK=0 OR SOCK=3) !INF NMAG SK149=3]: %DOT-E1%%NAME% < < < <{%NAME%}%CONTINUE%
 
 // ------------------------------------------------------------------------------
 // Runeword bases part I
