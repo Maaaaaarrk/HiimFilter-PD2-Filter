@@ -26,7 +26,7 @@
 /////
 
 
-ItemDisplay[(box OR key)]: %NAME%{ver 5.2.0%NL%*Maaaark Filter%NL%}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 5.2.0%NL%*Maaaark Filter STRICT%NL%}%CONTINUE%
 ItemDisplay[(box OR key) CLVL=99]: %NAME%{%PURPLE%Congratulations on the 99%NL%%NAME%}%CONTINUE%// Horadric Cube
 
 ItemDisplay[key CLVL>79]: {%NAME%}
@@ -3045,8 +3045,8 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7gi]: %NAME%{%TAN%Larzuk quest for 6 so
 
 // Bows
 ItemDisplay[NMAG !INF !RW SOCK=0 sbw]: %NAME%{%TAN%Larzuk quest for 3 sockets}%CONTINUE% // All Short Bow, 0os
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 hbw]: %NAME%{%TAN%Larzuk quest for 3 sockets}%CONTINUE% // All Hunter’s Bow, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 hbw]: %NAME%{%TAN%Larzuk quest for 4 sockets}%CONTINUE% // All Hunter’s Bow, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 hbw]: %NAME%{%TAN%Larzuk quest for 3 sockets}%CONTINUE% // All Hunters Bow, 0os, ilvl 1-25
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 hbw]: %NAME%{%TAN%Larzuk quest for 4 sockets}%CONTINUE% // All Hunters Bow, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 lbw]: %NAME%{%TAN%Larzuk quest for 3 sockets}%CONTINUE% // All Long Bow, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 lbw]: %NAME%{%TAN%Larzuk quest for 4 sockets}%CONTINUE% // All Long Bow, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 lbw]: %NAME%{%TAN%Larzuk quest for 5 sockets}%CONTINUE% // All Long Bow, 0os, ilvl 41+
@@ -3823,16 +3823,16 @@ ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 CLVL>85 DIFF=2]:
 //UN COMMENT these progressively to convert to force more endgame stuff only, lowers LLD chances
 
 // Hide all bases normal quality not called out above
-//ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg CLVL>80]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg CLVL>80]:
 
 // Hide all bases Exceptional quality not called out above
-//ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg CLVL>80]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg CLVL>80]:
 
 // Hide all bases not called out above
-//ItemDisplay[(ARMOR OR WEAPON) NMAG !leg CLVL>80]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG !leg CLVL>80]:
 
 // Hide all magic <88 Ilvl
-//ItemDisplay[MAG !ID ILVL<88]:
+ItemDisplay[MAG !ID ILVL<88]:
 
 // Hide all items that arent called out in filter
-//ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: 
+ItemDisplay[(ARMOR OR WEAPON) !leg CLVL>30]: 
