@@ -1,16 +1,18 @@
 //
 // PD2 Filter
 // Season 5
+//
 // by Maaaark
+// by Hiimdave
 //
 /////
 //
-// To confirm installation check tool tip on Keys
+// To confirm installation check tool tip on Keys or Cube
 //
 // Disclaimer and Credits
 //
-// Use at your own risk! - I don't promise there will not be bugs, or that you may miss drops you personally may have wanted if I hid or made it less obvious.
-// There are no maliciously hidden items or drops.
+// Use at your own risk! - We don't promise there will not be bugs, or that you may miss drops you personally may have wanted if we hid or made it less obvious.
+// There are no maliciously hidden items or drops!
 //
 // Based off parts of Kryszard's PD2 Loot Filter - twitch.tv/kryszard
 // Based off parts of Wolfie's PD2 Loot Fitlers - github.com/WolfieeifloW/pd2filter
@@ -21,7 +23,7 @@
 //
 /////
 //
-// For testing: https://betweenwalls.github.io/filterbird/?v=PD2
+// For testing use: https://betweenwalls.github.io/filterbird/?v=PD2
 //
 /////
 
@@ -29,24 +31,28 @@
 // FILTER CONFIG
 //-----------------------------------------------------------------------------------
 // Filter Levels (0 = Base / No Filter)
-ItemDisplayFilterName[]: Limited
+ItemDisplayFilterName[]: Base
 ItemDisplayFilterName[]: Strict
+ItemDisplayFilterName[]: End Game & Crafting
 ItemDisplayFilterName[]: End Game
-ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Placeholder 1
-ItemDisplayFilterName[]: Placeholder 2
+ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.1.0%NL%*Maaaark Filter}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% Base}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.2.0%NL%*PD2* Filter}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% End Game}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Potions Only}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% End Game & Crafting}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% End Game}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% Placeholder 1}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% Potions Only}%CONTINUE%
 ItemDisplay[(box OR key)]: %NAME%{%NAME%%NL%}%CONTINUE%
 ItemDisplay[(box OR key) CLVL=99]: %NAME%{%PURPLE%Congratulations on the 99%NL%%NAME%}%CONTINUE%// Horadric Cube
 
 ItemDisplay[box]: %NAME%{%NAME%}%MAP-58%
+
+ItemDisplay[FILTLVL=0]: %NAME%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -68,13 +74,30 @@ ItemDisplay[NMAG (ARMOR OR WEAPON) !RW MAPID=39 FILTLVL=5]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
+// Quantity ITEMS
+//-----------------------------------------------------------------------------------
+// ITEM TAGS - Quantity has to be above all for PD2 specific items
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR aqv OR key OR cqv OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
 // PD2 ITEMS
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS - General
-ItemDisplay[wss]: %MAP-62%%ORANGE%* %PURPLE%WORLDSTAR!!! x%QTY% %ORANGE%*%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt}
-ItemDisplay[cwss]: %MAP-0A%%RED%*** Tainted %PURPLE% WORLDSTAR!!! x%QTY% %RED%***%WHITE%{%RED%Corrupts %TAN%your Annihilus}
-ItemDisplay[jewf OR rkey]: %ORANGE%*    %GRAY%%NAME%   %ORANGE%*%WHITE%%MAP-68%
+ItemDisplay[wss QTY=1]: %PURPLE%WORLDSTAR!!! %CONTINUE%
+ItemDisplay[wss QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
+ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt%NL%50 Wss Stack - Vex}
+
+ItemDisplay[cwss]: %MAP-0A%%RED%*** Tainted %PURPLE% WORLDSTAR!!! %RED%***%WHITE%{%RED%Corrupts %TAN%your Annihilus}
+ItemDisplay[jewf]: %ORANGE%*    %GRAY%%NAME%  %ORANGE%*%WHITE%%MAP-68%{50 jewelfrags - Um/Mal%NL%50 pgems - Um/Mal%NL%50 Map Runes - Mal/Ist}
+ItemDisplay[rkey]: %ORANGE%*    %GRAY%%NAME%   %ORANGE%*%WHITE%%MAP-68%
 ItemDisplay[lbox]: %MAP-4A%%ORANGE%* * * %PURPLE%> %NAME% <%ORANGE% * * *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lpp]: %MAP-4A%%ORANGE%* * * %PURPLE%> %NAME% <%ORANGE% * * *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+
+
+ItemDisplay[llmr]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
+ItemDisplay[lsvl]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
+
 
 // Essences
 ItemDisplay[tes]: %MAP-4A%> > %NAME% < <{%TAN%Essence %WHITE%from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
@@ -105,12 +128,13 @@ ItemDisplay[dcma]: %MAP-0A%%GRAY%*%RED%* %NAME% %RED%*%GRAY%*{%RED%DO IT AT YOUR
 // PD2 Items - Rathma
 ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%
 ItemDisplay[rtma]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%
-ItemDisplay[rtbk OR rtp]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Town Portal
-ItemDisplay[ribk OR rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Identify
+ItemDisplay[rtp]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Town Portal
+ItemDisplay[rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Identify
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Uber Ancients Tokens
-// TODO
+ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>
+ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Map Rolling
@@ -126,8 +150,8 @@ ItemDisplay[std]: %PX-9D%%NAME%{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%N
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T1]
-ItemDisplay[t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19 FILTLVL=4]:
-ItemDisplay[t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19]: %GREEN%* [T1] %CONTINUE%
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) FILTLVL=6]:
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19)]: %GREEN%* [T1] %CONTINUE%
 ItemDisplay[NMAG t11]: %NAME%%WHITE%Ruins of Vizjun Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t12]: %NAME%%WHITE%Horazons Memory Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t13]: %NAME%%WHITE%Bastion Keep Map%WHITE%%CONTINUE%
@@ -155,12 +179,12 @@ ItemDisplay[RARE t16]: %NAME%%YELLOW%T1-6 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t17]: %NAME%%YELLOW%T1-7 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t18]: %NAME%%YELLOW%T1-8 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t19]: %NAME%%YELLOW%T1-9 Map%WHITE%%CONTINUE%
-ItemDisplay[t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19]: %MAP-62%%NAME% %GREEN%*
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19)]: %MAP-62%%NAME% %GREEN%*
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T2]
-ItemDisplay[t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29 FILTLVL=4]:
-ItemDisplay[t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29]: %YELLOW%* [T2] %CONTINUE%	
+ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29) FILTLVL=6]:
+ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29)]: %YELLOW%* [T2] %CONTINUE%	
 ItemDisplay[NMAG t21]: %NAME%%WHITE%Phlegathon Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t22]: %NAME%%WHITE%Torajan Jungle Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t23]: %NAME%%WHITE%Arreat Battlefield Map%WHITE%%CONTINUE%
@@ -192,8 +216,8 @@ ItemDisplay[t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29]: %MAP-6
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T3]
-ItemDisplay[t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 FILTLVL=4]:
-ItemDisplay[t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39]: %ORANGE%* [T3] %CONTINUE%
+ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39) FILTLVL=6]:
+ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39)]: %ORANGE%* [T3] %CONTINUE%
 ItemDisplay[NMAG t31]: %NAME%%WHITE%River of Blood Map Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t32]: %NAME%%WHITE%Throne of Insanity Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t33]: %NAME%%WHITE%Reziarfg's Lair Map%WHITE%%CONTINUE%
@@ -221,12 +245,12 @@ ItemDisplay[RARE t36]: %NAME%%YELLOW%Fall of Caldeum Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t37]: %NAME%%YELLOW%Pandemonium Citadel Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t38]: %NAME%%YELLOW%Canyon of Sescheron Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t39]: %NAME%%YELLOW%Kehjistan Marketplace Map%WHITE%%CONTINUE%
-ItemDisplay[t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39]: %MAP-62%%NAME% %ORANGE%*
+ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39)]: %MAP-62%%NAME% %ORANGE%*
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T4]
-ItemDisplay[t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49 FILTLVL=4]:
-ItemDisplay[t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49]: %RED%* [T4] %CONTINUE%
+ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49) FILTLVL=6]:
+ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49)]: %RED%* [T4] %CONTINUE%
 ItemDisplay[NMAG t41]: %NAME%%WHITE%Cathedral of Light Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t42]: %NAME%%WHITE%Plains of Torment Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t43]: %NAME%%WHITE%Sanctuary of Sin Map%WHITE%%CONTINUE%
@@ -254,12 +278,12 @@ ItemDisplay[RARE t46]: %NAME%%YELLOW%T4-6 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t47]: %NAME%%YELLOW%T4-7 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t48]: %NAME%%YELLOW%T4-8 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t49]: %NAME%%YELLOW%T4-9 Map%WHITE%%CONTINUE%
-ItemDisplay[t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49]: %MAP-62%%NAME% %RED%*
+ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49)]: %MAP-62%%NAME% %RED%*
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T5]
-ItemDisplay[t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59 FILTLVL=4]:
-ItemDisplay[t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59]: %GOLD%* [NYI] %CONTINUE%
+ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59) FILTLVL=6]:
+ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59)]: %GOLD%* [NYI] %CONTINUE%
 ItemDisplay[NMAG t51]: %NAME%%WHITE%T5-1 Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t52]: %NAME%%WHITE%T5-2 Map%WHITE%%CONTINUE%
 ItemDisplay[NMAG t53]: %NAME%%WHITE%T5-3 Map%WHITE%%CONTINUE%
@@ -287,12 +311,12 @@ ItemDisplay[RARE t56]: %NAME%%YELLOW%T5-6 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t57]: %NAME%%YELLOW%T5-7 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t58]: %NAME%%YELLOW%T5-8 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t59]: %NAME%%YELLOW%T5-9 Map%WHITE%%CONTINUE%
-ItemDisplay[t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59]: %MAP-62%%NAME% %GOLD%*
+ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59)]: %MAP-62%%NAME% %GOLD%*
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T6]
-ItemDisplay[t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69 FILTLVL=4]:
-ItemDisplay[t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69]: %PURPLE%* [PvP] %CONTINUE%
+ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69) FILTLVL=6]:
+ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %PURPLE%* [PvP] %CONTINUE%
 ItemDisplay[NMAG t61]: %NAME%%WHITE%PvP Map 1 (Desert)%WHITE%%CONTINUE%
 ItemDisplay[NMAG t62]: %NAME%%WHITE%PvP Map 2 (Moor)%WHITE%%CONTINUE%
 ItemDisplay[NMAG t63]: %NAME%%WHITE%t6-3 Map%WHITE%%CONTINUE%
@@ -320,14 +344,14 @@ ItemDisplay[RARE t66]: %NAME%%YELLOW%t6-6 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t67]: %NAME%%YELLOW%t6-7 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t68]: %NAME%%YELLOW%t6-8 Map%WHITE%%CONTINUE%
 ItemDisplay[RARE t69]: %NAME%%YELLOW%t6-9 Map%WHITE%%CONTINUE%
-ItemDisplay[t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69]: %MAP-62%%NAME% %PURPLE%*
+ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %MAP-62%%NAME% %PURPLE%*
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
 // Gems
 //-----------------------------------------------------------------------------------
 ItemDisplay[GEM=1 OR GEM=2 OR GEM=3]:
-ItemDisplay[GEM=4 FILTLVL=4]:
+ItemDisplay[GEM=4 FILTLVL=6]:
 
 ItemDisplay[gzv OR gzvs]: %PURPLE%* %TAN%F. %WHITE% Amethyst %PURPLE%*%CONTINUE%
 ItemDisplay[gpv OR gpvs]: %PURPLE%* %TAN%P. %WHITE% Amethyst %PURPLE%*%CONTINUE%
@@ -339,35 +363,28 @@ ItemDisplay[glr OR glrs]: %RED%* %TAN%F. %WHITE% Ruby %RED%*%CONTINUE%
 ItemDisplay[gpr OR gprs]: %RED%* %TAN%P. %WHITE% Ruby %RED%*%CONTINUE%
 ItemDisplay[glb OR glbs]: %BLUE%* %TAN%F. %WHITE% Sapphire %BLUE%*%CONTINUE%
 ItemDisplay[gpb OR gpbs]: %BLUE%* %TAN%P. %WHITE% Sapphire %BLUE%*%CONTINUE%
-ItemDisplay[skl OR skls]: %GRAY%* %TAN%F. %WHITE% Skull %GRAY%*%CONTINUE%
-ItemDisplay[skz OR skzs]: %GRAY%* %TAN%P. %WHITE% Skull %GRAY%*%CONTINUE%
 ItemDisplay[gly OR glys]: %YELLOW%* %TAN%F. %WHITE% Topaz %YELLOW%*%CONTINUE%
 ItemDisplay[gpy OR gpys]: %YELLOW%* %TAN%P. %WHITE% Topaz %YELLOW%*%CONTINUE%
+ItemDisplay[skl OR skls]: %GRAY%* %TAN%F. %WHITE% Skull %GRAY%*%CONTINUE%
+ItemDisplay[skz OR skzs]: %GRAY%* %TAN%P. %WHITE% Skull %GRAY%*%CONTINUE%
 
-ItemDisplay[gzv OR gpv]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
-ItemDisplay[glw OR gpw]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
-ItemDisplay[glg OR gpg]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
-ItemDisplay[glr OR gpr]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
-ItemDisplay[glb OR gpb]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
-ItemDisplay[gly OR gpy]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
-ItemDisplay[skl OR skz]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEM>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED% UNSTACKED {%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
 
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack them%NL%}
-
-ItemDisplay[GEMTYPE=1 GEM<4]: %NAME% %ORANGE%[%PURPLE%*%ORANGE%]
-ItemDisplay[GEMTYPE=1 GEM>3]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=2 GEM<4]: %NAME% %ORANGE%[%WHITE%*%ORANGE%]
-ItemDisplay[GEMTYPE=2 GEM>3]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=3 GEM<4]: %NAME% %ORANGE%[%GREEN%*%ORANGE%]
-ItemDisplay[GEMTYPE=3 GEM>3]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=4 GEM<4]: %NAME% %ORANGE%[%RED%*%ORANGE%]
-ItemDisplay[GEMTYPE=4 GEM>3]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=5 GEM<4]: %NAME% %ORANGE%[%BLUE%*%ORANGE%]
-ItemDisplay[GEMTYPE=5 GEM>3]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=6 GEM<4]: %NAME% %ORANGE%[%YELLOW%*%ORANGE%]
-ItemDisplay[GEMTYPE=6 GEM>3]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=7 GEM<4]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]
-ItemDisplay[GEMTYPE=7 GEM>3]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=1 !(gpv OR gpvs)]: %NAME% %ORANGE%[%PURPLE%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=1 (gpv OR gpvs)]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=2 !(gpw OR gpws)]: %NAME% %ORANGE%[%WHITE%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=2 (gpw OR gpws)]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=3 !(gpg OR gpgs)]: %NAME% %ORANGE%[%GREEN%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=3 (gpg OR gpgs)]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=4 !(gpr OR gprs)]: %NAME% %ORANGE%[%RED%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=4 (gpr OR gprs)]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=5 !(gpb OR gpbs)]: %NAME% %ORANGE%[%BLUE%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=5 (gpb OR gpbs)]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=6 !(gly OR glys)]: %NAME% %ORANGE%[%YELLOW%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=6 (gly OR glys)]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=7 !(skz OR skzs)]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]%CONTINUE%
+ItemDisplay[GEMTYPE=7 (skz OR skzs)]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
 
 ItemDisplay[gzvs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: +24 Def%NL%Armor/Helm: +8 to Strength%NL%Weapon: +100 to Attack Rating%NL%}
 ItemDisplay[glys]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Light Res%NL%Armor/Helm: 20% Magic Find%NL%Weapon: 1-30 Light Damage%NL%}
@@ -388,16 +405,25 @@ ItemDisplay[skzs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHIT
 //-----------------------------------------------------------------------------------
 // Runes
 //-----------------------------------------------------------------------------------
-ItemDisplay[r32 OR r32s]: %ORANGE%Poo Rune%CONTINUE%
 
-ItemDisplay[RUNE<10 (FILTLVL>1 AND FILTLVL != 5)]:
-ItemDisplay[RUNE<21 FILTLVL=4]:
+ItemDisplay[RUNE<10 FILTLVL>3 !(FILTLVL=5)]:
+ItemDisplay[RUNE<21 FILTLVL=6]:
+
 
 ItemDisplay[RUNE<10]: %GREEN%%RUNENAME% %GREEN%(%RUNENUM%)%CONTINUE%
-ItemDisplay[RUNE>9 AND RUNE<21]: %ORANGE%*    %NAME%%GRAY%[%GREEN%%RUNENUM%%GRAY%]%ORANGE%    *%WHITE%%CONTINUE%
-ItemDisplay[RUNE>20]: %BORDER-62%%RED%*****    %NAME%%GRAY%[%GREEN%%RUNENUM%%GRAY%]%RED%    *****%WHITE%%CONTINUE%
+ItemDisplay[RUNE>9 AND RUNE<21]: %NAME%%GRAY%[%GREEN%%RUNENUM%%GRAY%]%WHITE%%CONTINUE%
+ItemDisplay[RUNE>20]: %BORDER-62%%NAME%%GRAY%[%GREEN%%RUNENUM%%GRAY%]%WHITE%%CONTINUE%
+
+ItemDisplay[RUNE>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+
+
+ItemDisplay[RUNE<10 QTY=1]: %NAME%%CONTINUE%
+ItemDisplay[RUNE>9 AND RUNE<21 QTY=1]: %ORANGE%O O    %NAME%%ORANGE%    O O%CONTINUE%
+ItemDisplay[RUNE>20 QTY=1]: %RED%O O O O    %NAME%%RED%    O O O O%CONTINUE%
 
 //Runes Notes Un-Stacked
+ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %NAME%%CONTINUE%
+
 ItemDisplay[RUNE=23]: %NAME%{%TAN%HR Value%WHITE%: .1%NL%}%CONTINUE%
 ItemDisplay[RUNE=24]: %NAME%{%TAN%HR Value%WHITE%: .175%NL%}%CONTINUE%
 ItemDisplay[RUNE=25]: %NAME%{%TAN%HR Value%WHITE%: .25%NL%}%CONTINUE%
@@ -450,25 +476,25 @@ ItemDisplay[RUNE>0]: %NAME%{%TAN%Note%WHITE%: Cube %ORANGE%Runes %WHITE%to %GRAY
 //-----------------------------------------------------------------------------------
 // CONSUMABLES
 //-----------------------------------------------------------------------------------
-ItemDisplay[key FILTLVL>3]:
+ItemDisplay[key FILTLVL>1]: {%NAME%}
 ItemDisplay[key]: %GOLD%+%WHITE%%NAME%{%NAME%}
 
 ItemDisplay[(isc OR tsc) FILTLVL>1]:
 ItemDisplay[isc]: %RED%+%WHITE%ID
 ItemDisplay[tsc]: %BLUE%+%WHITE%TP
-ItemDisplay[(tbk OR ibk) QTY<5]: %RED%LOW QTY %NAME%%CONTINUE%
+ItemDisplay[(tbk OR ibk) QTY<6]: %RED%LOW QTY %NAME%%CONTINUE%
 ItemDisplay[ibk]: %RED%+%WHITE%ID Tome%CONTINUE%									// Always show ID Tomes
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome%CONTINUE%									// Always show TP Tomes
 
-ItemDisplay[rvl DIFF=2 FILTLVL=4]]: %PURPLE%R R R R R R
-ItemDisplay[rvs DIFF=2 FILTLVL=4]]: %PURPLE%R R R R R R
+ItemDisplay[rvl DIFF=2 FILTLVL=6]]: %PURPLE%R R R R R R
+ItemDisplay[rvs DIFF=2 FILTLVL=6]]: %PURPLE%R R
 ItemDisplay[rvl]: %PURPLE%*        %TAN%Rejuv %WHITE%65%        %PURPLE%*%WHITE%
 ItemDisplay[rvs]: %PURPLE%* %TAN%Rejuv %WHITE%35% %PURPLE%*%WHITE%
 
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>1]:
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) FILTLVL>1]:
-ItemDisplay[mp5 CLVL>80 DIFF=2 FILTLVL=4]]: %BLUE%M M
-ItemDisplay[hp5 CLVL>80 DIFF=2] FILTLVL=4]: %RED%H H
+ItemDisplay[mp5 CLVL>80 DIFF=2 FILTLVL=6]]: %BLUE%M M
+ItemDisplay[hp5 CLVL>80 DIFF=2] FILTLVL=6]: %RED%H H
 
 ItemDisplay[(hp1 OR hp2) (DIFF>0 OR CLVL>79)]: 										// Hide Rank 1 & 2 post Normal or when 80+
 ItemDisplay[(hp3 OR hp4) (DIFF>1 OR CLVL>79)]: 										// Hide Rank 3 & 4 post NM or when 80+
@@ -486,20 +512,17 @@ ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+%WHITE%MP3 									// Rank 3
 ItemDisplay[mp4 DIFF<2 CLVL<80]: %BLUE%+%WHITE%MP4 									// Rank 4
 ItemDisplay[mp5]: %BLUE%+%WHITE%MP5 												// Rank 5
 
-ItemDisplay[vps DIFF>0]: 															// Hide Stam pots past Normal or when high enough level
-ItemDisplay[vps DIFF=0]: %WHITE%+Stam 												// Show Stam Pots in Normal and under 20
+ItemDisplay[vps FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta{Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
+ItemDisplay[vps]: {Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
 
-ItemDisplay[yps FILTLVL>1]:                                                         // Hide when in strict filter settings
-ItemDisplay[yps CLVL>89 DIFF<2]:													// Hide Antidotes when not in Hell and 90+
-ItemDisplay[yps (DIFF=2 OR (DIFF<2 AND CLVL<90))]: %GREEN%+%WHITE%Antidote			// Show Antidotes when in Hell or not in Hell but under 90
+ItemDisplay[yps (FILTLVL<2 OR CLVL<24)]: %GREEN%!Anti{Harmony  Tir Ith Sol Ko%NL%Obedience Hel Ko Thul Eth Fal}
+ItemDisplay[yps]: {Harmony  Tir Ith Sol Ko%NL%Obedience Hel Ko Thul Eth Fal}// Hide otherwise
+
+ItemDisplay[wms FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
+ItemDisplay[wms]: {Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
 
 ItemDisplay[wms OR gpl OR gpm OR gps OR opl OR opm OR ops]:  						// Hide all other types of pots
 
-//ItemDisplay[vps CLVL<21]: %GREEN%!%WHITE%sta{Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
-//ItemDisplay[vps CLVL>20]: {Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
-//ItemDisplay[wms CLVL<81]: %GREEN%!%WHITE%thaw{Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
-//ItemDisplay[wms CLVL>80]: {Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
-//ItemDisplay[yps]: %GREEN%!A{Harmony  Tir Ith Sol Ko%NL%Obedience Hel Ko Thul Eth Fal}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -543,12 +566,11 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 // ARROWS AND QUIVERS
 //-----------------------------------------------------------------------------------
 // ARROWS - UNID
-ItemDisplay[aqv MAG !ID FILTLVL>1]:
-ItemDisplay[aqv AMAZON MAG !ID FILTLVL>0]:
-ItemDisplay[aqv RARE !ID FILTLVL>2]:
-ItemDisplay[aqv AMAZON RARE !ID FILTLVL>3]:
-ItemDisplay[aqv MAG !ID FILTLVL != 4]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[aqv RARE !ID FILTLVL != 4]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%* 
+ItemDisplay[aqv !(AMAZON) MAG !ID FILTLVL>1]:
+ItemDisplay[aqv AMAZON MAG !ID FILTLVL>2]:
+ItemDisplay[aqv !(AMAZON) RARE !ID FILTLVL>1]:
+ItemDisplay[aqv MAG !ID !(FILTLVL=4)]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
+ItemDisplay[aqv RARE !ID !(FILTLVL=4)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%* 
 //-----------------------------------------------------------------------------------
 // BOLTS - UNID
 ItemDisplay[cqv MAG !ID FILTLVL>1]:
@@ -628,35 +650,35 @@ ItemDisplay[(rin OR amu) !UNI !SET TABSK48=2]: %PURPLE%+2 Traps %TAN%Skills %NAM
 ItemDisplay[(rin OR amu) !UNI !SET TABSK49=2]: %PURPLE%+2 Shadow Disciplines %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK50=2]: %PURPLE%+2 Martial Arts %TAN%Skills %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET TABSK0=1]: %PURPLE%+1 Bow and Crossbow %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK2=1]: %PURPLE%+1 Javelin and Spear %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK1=1]: %PURPLE%+1 Passive and Magic %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK8=1]: %PURPLE%+1 Fire Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK9=1]: %PURPLE%+1 Lightning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK10=1]: %PURPLE%+1 Cold Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK16=1]: %PURPLE%+1 Curses %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK17=1]: %PURPLE%+1 Poison & Bone Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK18=1]: %PURPLE%+1 Nec Summoning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK24=1]: %PURPLE%+1 Pal Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK25=1]: %PURPLE%+1 Offensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK26=1]: %PURPLE%+1 Defensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK32=1]: %PURPLE%+1 Barb Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK33=1]: %PURPLE%+1 Barb Masteries %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK34=1]: %PURPLE%+1 Warcries %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK40=1]: %PURPLE%+1 Dru Summoning %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK41=1]: %PURPLE%+1 Shape Shifting %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK42=1]: %PURPLE%+1 Elemental %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK48=1]: %PURPLE%+1 Traps %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK49=1]: %PURPLE%+1 Shadow Disciplines %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK50=1]: %PURPLE%+1 Martial Arts %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK0=1]: %GRAY%+1 Bow and Crossbow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK2=1]: %GRAY%+1 Javelin and Spear %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK1=1]: %GRAY%+1 Passive and Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK8=1]: %GRAY%+1 Fire Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK9=1]: %GRAY%+1 Lightning Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK10=1]: %GRAY%+1 Cold Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK16=1]: %GRAY%+1 Curses %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK17=1]: %GRAY%+1 Poison & Bone Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK18=1]: %GRAY%+1 Nec Summoning Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK24=1]: %GRAY%+1 Pal Combat %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK25=1]: %GRAY%+1 Offensive Auras %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK26=1]: %GRAY%+1 Defensive Auras %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK32=1]: %GRAY%+1 Barb Combat %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK33=1]: %GRAY%+1 Barb Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK34=1]: %GRAY%+1 Warcries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK40=1]: %GRAY%+1 Dru Summoning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK41=1]: %GRAY%+1 Shape Shifting %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK42=1]: %GRAY%+1 Elemental %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK48=1]: %GRAY%+1 Traps %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK49=1]: %GRAY%+1 Shadow Disciplines %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK50=1]: %GRAY%+1 Martial Arts %TAN%Skills %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET CLSK0=1]: %PURPLE%+1 Amazon %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK1=1]: %PURPLE%+1 Sorceress %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK2=1]: %PURPLE%+1 Necromancer %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK3=1]: %PURPLE%+1 Paladin %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK4=1]: %PURPLE%+1 Barbarian %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK5=1]: %PURPLE%+1 Druid %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK6=1]: %PURPLE%+1 Assassin %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK0=1]: %GRAY%+1 Amazon %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK1=1]: %GRAY%+1 Sorceress %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK2=1]: %GRAY%+1 Necromancer %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK3=1]: %GRAY%+1 Paladin %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK4=1]: %GRAY%+1 Barbarian %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK5=1]: %GRAY%+1 Druid %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK6=1]: %GRAY%+1 Assassin %TAN%Skills %NAME%%CONTINUE%
 
 ItemDisplay[(rin OR amu) !UNI !SET CLSK0=2]: %PURPLE%+2 Amazon %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET CLSK1=2]: %PURPLE%+2 Sorceress %TAN%Skills %NAME%%CONTINUE%
@@ -863,14 +885,14 @@ ItemDisplay[cm3 !UNI TABSK9>0]: %PURPLE%Lightning Spells %TAN%Skiller %NAME%%CON
 ItemDisplay[cm3 !UNI TABSK10>0]: %PURPLE%Cold Spells %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK16>0]: %PURPLE%Curses %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK17>0]: %PURPLE%Poison & Bone Spells %TAN%Skiller %NAME%%CONTINUE%
-ItemDisplay[cm3 !UNI TABSK18>0]: %GRAY%Nec %PURPLE%Summoning Spells %TAN%Skiller %NAME%%CONTINUE%
-ItemDisplay[cm3 !UNI TABSK24>0]: %GRAY%Pal %PURPLE%Combat %TAN%Skiller %NAME%%CONTINUE%
+ItemDisplay[cm3 !UNI TABSK18>0]: %PURPLE%Nec Summoning Spells %TAN%Skiller %NAME%%CONTINUE%
+ItemDisplay[cm3 !UNI TABSK24>0]: %PURPLE%Pal Combat %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK25>0]: %PURPLE%Offensive Auras %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK26>0]: %PURPLE%Defensive Auras %TAN%Skiller %NAME%%CONTINUE%
-ItemDisplay[cm3 !UNI TABSK32>0]: %GRAY%Barb %PURPLE%Combat %TAN%Skiller %NAME%%CONTINUE%
-ItemDisplay[cm3 !UNI TABSK33>0]: %GRAY%Barb %PURPLE%Masteries %TAN%Skiller %NAME%%CONTINUE%
+ItemDisplay[cm3 !UNI TABSK32>0]: %PURPLE%Barb Combat %TAN%Skiller %NAME%%CONTINUE%
+ItemDisplay[cm3 !UNI TABSK33>0]: %PURPLE%Barb Masteries %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK34>0]: %PURPLE%Warcries %TAN%Skiller %NAME%%CONTINUE%
-ItemDisplay[cm3 !UNI TABSK40>0]: %GRAY%Dru %PURPLE%Summoning %TAN%Skiller %NAME%%CONTINUE%
+ItemDisplay[cm3 !UNI TABSK40>0]: %PURPLE%Dru Summoning %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK41>0]: %PURPLE%Shape Shifting %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK42>0]: %PURPLE%Elemental %TAN%Skiller %NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI TABSK48>0]: %PURPLE%Traps %TAN%Skiller %NAME%%CONTINUE%
@@ -879,6 +901,33 @@ ItemDisplay[cm3 !UNI TABSK50>0]: %PURPLE%Martial Arts %TAN%Skiller %NAME%%CONTIN
 //-----------------------------------------------------------------------------------
 
 // Charm Stat Tags - Unique Charms Values
+//Vit
+ItemDisplay[(cm1 OR cm2) UNI STAT3>0]: %NAME%%RED%%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=85]: %NAME% 85%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=84]: %NAME% 84%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=83]: %NAME% 83%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=82]: %NAME% 82%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=81]: %NAME% 81%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=80]: %NAME% 80%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=79]: %NAME% 79%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=78]: %NAME% 78%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=77]: %NAME% 77%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=76]: %NAME% 76%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=75]: %NAME% 75%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=74]: %NAME% 74%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=73]: %NAME% 73%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=72]: %NAME% 72%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=71]: %NAME% 71%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=70]: %NAME% 70%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=69]: %NAME% 69%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=68]: %NAME% 68%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=67]: %NAME% 67%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=66]: %NAME% 66%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=65]: %NAME% 65%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=64]: %NAME% 64%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=63]: %NAME% 63%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=62]: %NAME% 62%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3=61]: %NAME% 61%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT3=60]: %NAME% 60%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT3=59]: %NAME% 59%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT3=58]: %NAME% 58%CONTINUE%
@@ -910,7 +959,18 @@ ItemDisplay[(cm1 OR cm2) UNI STAT3=33]: %NAME% 33%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT3=32]: %NAME% 32%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT3=31]: %NAME% 31%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT3=30]: %NAME% 30%CONTINUE%
-
+//All res
+ItemDisplay[(cm1 OR cm2) UNI RES>0]: %NAME%%PURPLE%%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=30]: %NAME% 30%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=29]: %NAME% 29%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=28]: %NAME% 28%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=27]: %NAME% 27%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=26]: %NAME% 26%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=25]: %NAME% 25%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=24]: %NAME% 24%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=23]: %NAME% 23%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=22]: %NAME% 22%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI RES=21]: %NAME% 21%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI RES=20]: %NAME% 20%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI RES=19]: %NAME% 19%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI RES=18]: %NAME% 18%CONTINUE%
@@ -922,21 +982,28 @@ ItemDisplay[(cm1 OR cm2) UNI RES=13]: %NAME% 13%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI RES=12]: %NAME% 12%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI RES=11]: %NAME% 11%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI RES=10]: %NAME% 10%CONTINUE%
-
+//EXP %
+ItemDisplay[(cm1 OR cm2) UNI STAT85>0]: %NAME%%GREEN%%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT85=15]: %NAME% 15%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT85=14]: %NAME% 14%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT85=13]: %NAME% 13%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT85=12]: %NAME% 12%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT85=11]: %NAME% 11%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT85=10]: %NAME% 10%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT85=9]: %NAME% 9%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT85=8]: %NAME% 8%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT85=7]: %NAME% 7%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT85=6]: %NAME% 6%CONTINUE%
 ItemDisplay[(cm1 OR cm2) UNI STAT85=5]: %NAME% 5%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT85>0]: %NAME%%%CONTINUE%
 
-ItemDisplay[cm2 UNI CLSK0>0]: Amazon %NAME%%CONTINUE%
-ItemDisplay[cm2 UNI CLSK1>0]: Sorceress %NAME%%CONTINUE%
-ItemDisplay[cm2 UNI CLSK2>0]: Necromancer %NAME%%CONTINUE%
-ItemDisplay[cm2 UNI CLSK3>0]: Paladin %NAME%%CONTINUE%
-ItemDisplay[cm2 UNI CLSK4>0]: Barbarian %NAME%%CONTINUE%
-ItemDisplay[cm2 UNI CLSK5>0]: Druid %NAME%%CONTINUE%
-ItemDisplay[cm2 UNI CLSK6>0]: Assassin %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK0>0]: %GOLD%Amazon %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK1>0]: %GOLD%Sorceress %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK2>0]: %GOLD%Necromancer %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK3>0]: %GOLD%Paladin %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK4>0]: %GOLD%Barbarian %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK5>0]: %GOLD%Druid %NAME%%CONTINUE%
+ItemDisplay[cm2 UNI CLSK6>0]: %GOLD%Assassin %NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // Display Unique Charms on Map
@@ -967,20 +1034,16 @@ ItemDisplay[STAT360>0]: %NAME% %RED%[C]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // ITEM TAGS - ILVL
-ItemDisplay[(MAG OR RARE) ILVL<92]: %NAME% [%ILVL%]%CONTINUE%
-ItemDisplay[(MAG OR RARE) (ILVL>91 AND ILVL<99)]: %NAME% %ORANGE%[%ILVL%]%CONTINUE%
-ItemDisplay[(MAG OR RARE) ILVL>98]: %NAME% %PURPLE%[%ILVL%]%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) ID]: %NAME% [R-%LVLREQ%]%CONTINUE%
+ItemDisplay[(MAG OR RARE) ILVL<92 STAT360=0]: %NAME% [%ILVL%]%CONTINUE%
+ItemDisplay[(MAG OR RARE) (ILVL>91 AND ILVL<99) STAT360=0]: %NAME% %ORANGE%[%ILVL%]%CONTINUE%
+ItemDisplay[(MAG OR RARE) ILVL>98 STAT360=0]: %NAME% %PURPLE%[%ILVL%]%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID FILTLVL<2 STAT360=0]: %NAME% [R-%LVLREQ%]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// ITEM TAGS - Price
-ItemDisplay[((NMAG !RW) OR MAG OR RARE) CLVL<24 PRICE>9999]: %NAME% %DARK_GREEN%[10k+]$%CONTINUE%
-ItemDisplay[((NMAG !RW) OR MAG OR RARE) CLVL>23 CLVL<65 PRICE>19999]: %NAME% %DARK_GREEN%[20k+]$%CONTINUE%
-ItemDisplay[((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999]: %NAME% %DARK_GREEN%[35k]$%CONTINUE%
-//-----------------------------------------------------------------------------------
-
-// ITEM TAGS - Quantity
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR aqv OR cqv) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+// ITEM TAGS - Price 4 Charsi
+ItemDisplay[(ARMOR OR WEAPON) ((NMAG !RW) OR MAG OR RARE) CLVL<24 PRICE>9999 STAT360=0]: %NAME% %DARK_GREEN%$10k+%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ((NMAG !RW) OR MAG OR RARE) CLVL>23 CLVL<65 PRICE>19999 STAT360=0]: %NAME% %DARK_GREEN%$20k+%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) ((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999 STAT360=0]: %NAME% %DARK_GREEN%$35k%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // ITEM TAGS - Specific Mods
@@ -1003,7 +1066,7 @@ ItemDisplay[SET amu (STAT360=0 AND STAT34>2 AND STAT35>1)]: %NAME% [LLD]%CONTINU
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS - Potions Only - Hide everything else
 //-----------------------------------------------------------------------------------
-ItemDisplay[FILTLVL=4 (!ID OR NMAG) !RW]:
+ItemDisplay[FILTLVL=6 (!ID OR NMAG) !RW]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -1867,6 +1930,9 @@ ItemDisplay[uar UNI !ID]: %BORDER-68%%ORANGE%>>>>>       %GOLD%%NAME%%ORANGE%   
 ItemDisplay[(7qr OR uhl OR uth OR utb OR 7bs) UNI !ID]: %BORDER-68%%ORANGE%>>>>>       %NAME%       <<<<<
 ItemDisplay[(ram OR rar OR rbe OR uhn OR utc) UNI !ID]: %BORDER-68%%ORANGE%>>>>>       %NAME%       <<<<<
 
+//New uniques S5
+ItemDisplay[(utg OR 7fb OR ame OR ulb OR ned OR 6bs OR 7qs OR 7tw OR baf OR utp OR drf) UNI !ID]: %BORDER-68%%GOLD%>>>>>       %NAME%       <<<<<
+
 // NOTEWORTH DROPS - GOOD
 ItemDisplay[(zlb OR zvb OR zhb OR umc) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(ulm OR uui OR xth OR xhn OR xtp OR xlt OR upl OR uld OR utu) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
@@ -1899,7 +1965,6 @@ ItemDisplay[(UNI OR SET OR RW OR CRAFT)]: %NAME%
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS - Placeholder 1 Name Here - Hide items
 //-----------------------------------------------------------------------------------
-ItemDisplay[(aqv OR cqv)]:
 ItemDisplay[FILTLVL=5 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !SUP !ETH]:
 ItemDisplay[FILTLVL=5 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
 ItemDisplay[FILTLVL=5 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
@@ -2206,428 +2271,449 @@ ItemDisplay[NMAG !RW SOCK>1 (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) (SK3
 ItemDisplay[NMAG !RW SOCK>1 (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) (SK370>0 OR SK250>0 OR SK249>0 OR SK248>0 OR SK247>0 OR SK245>0 OR SK244>0 OR SK243>0 OR SK240>0 OR SK239>0 OR SK238>0 OR SK237>0 OR SK235>0 OR SK234>0 OR SK230>0 OR SK229>0 OR SK228>0 OR SK227>0 OR SK226>0 OR SK225>0 OR SK224>0 OR SK223>0 OR SK221>0)]: %NAME% %ORANGE%* %WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// Amazon
-ItemDisplay[NMAG !RW TABSK0=1]: +1 Bow %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW TABSK0=2]: +2 Bow %NAME%%CONTINUE%
+//Amazon
+ItemDisplay[NMAG !RW TABSK0=1 FILTLVL>1]: +1 Bow %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW TABSK0=2 FILTLVL>1]: +2 Bow %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW TABSK0=3]: +3 Bow %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW TABSK2=1]: +1 Java %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW TABSK2=2]: +2 Java %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW TABSK2=1 FILTLVL>1]: +1 Java %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW TABSK2=2 FILTLVL>1]: +2 Java %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW TABSK2=3]: +3 Java %NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// Assasin
-ItemDisplay[NMAG !RW SK252=1]: +1 Claw Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK252=2]: +2 Claw Mastery %NAME%%CONTINUE%
+//Assasin
+ItemDisplay[NMAG !RW SK252=1 FILTLVL<2]: +1 Claw Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK252=2 FILTLVL<2]: +2 Claw Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK252=3]: +3 Claw Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK261=1]: +1 Charged Bolt Sentry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK261=2]: +2 Charged Bolt Sentry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK261=1 FILTLVL<2]: +1 Charged Bolt Sentry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK261=2 FILTLVL<2]: +2 Charged Bolt Sentry %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK261=3]: +3 Charged Bolt Sentry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK262=1]: +1 Wake of Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK262=2]: +2 Wake of Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK262=1 FILTLVL<2]: +1 Wake of Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK262=2 FILTLVL<2]: +2 Wake of Fire %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK262=3]: +3 Wake of Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK263=1]: +1 Weapon Block %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK263=2]: +2 Weapon Block %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK263=1 FILTLVL<2]: +1 Weapon Block %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK263=2 FILTLVL<2]: +2 Weapon Block %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK263=3]: +3 Weapon Block %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK264=1]: +1 Cloak of Shadows %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK264=2]: +2 Cloak of Shadows %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK264=1 FILTLVL<2]: +1 Cloak of Shadows %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK264=2 FILTLVL<2]: +2 Cloak of Shadows %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK264=3]: +3 Cloak of Shadows %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK265=1]: +1 Cobra Strike %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK265=2]: +2 Cobra Strike %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK265=1 FILTLVL<2]: +1 Cobra Strike %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK265=2 FILTLVL<2]: +2 Cobra Strike %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK265=3]: +3 Cobra Strike %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK266=1]: +1 Blade Fury %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK266=2]: +2 Blade Fury %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK266=1 FILTLVL<2]: +1 Blade Fury %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK266=2 FILTLVL<2]: +2 Blade Fury %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK266=3]: +3 Blade Fury %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK267=1]: +1 Fade %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK267=2]: +2 Fade %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK267=1 FILTLVL<2]: +1 Fade %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK267=2 FILTLVL<2]: +2 Fade %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK267=3]: +3 Fade %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK268=1]: +1 Shadow Warrior %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK268=2]: +2 Shadow Warrior %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK268=1 FILTLVL<2]: +1 Shadow Warrior %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK268=2 FILTLVL<2]: +2 Shadow Warrior %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK268=3]: +3 Shadow Warrior %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK269=1]: +1 Claws of Thunder %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK269=2]: +2 Claws of Thunder %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK269=1 FILTLVL<2]: +1 Claws of Thunder %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK269=2 FILTLVL<2]: +2 Claws of Thunder %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK269=3]: +3 Claws of Thunder %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK270=1]: +1 Dragon Tail %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK270=2]: +2 Dragon Tail %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK270=1 FILTLVL<2]: +1 Dragon Tail %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK270=2 FILTLVL<2]: +2 Dragon Tail %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK270=3]: +3 Dragon Tail %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK271=1]: +1 Chain Lightning Sentry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK271=2]: +2 Chain Lightning Sentry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK271=1 FILTLVL<2]: +1 Chain Lightning Sentry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK271=2 FILTLVL<2]: +2 Chain Lightning Sentry %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK271=3]: +3 Chain Lightning Sentry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK272=1]: +1 Wake of Inferno %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK272=2]: +2 Wake of Inferno %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK272=1 FILTLVL<2]: +1 Wake of Inferno %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK272=2 FILTLVL<2]: +2 Wake of Inferno %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK272=3]: +3 Wake of Inferno %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK273=1]: +1 Mind Blast %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK273=2]: +2 Mind Blast %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK273=1 FILTLVL<2]: +1 Mind Blast %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK273=2 FILTLVL<2]: +2 Mind Blast %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK273=3]: +3 Mind Blast %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK274=1]: +1 Blades of Ice %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK274=2]: +2 Blades of Ice %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK274=1 FILTLVL<2]: +1 Blades of Ice %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK274=2 FILTLVL<2]: +2 Blades of Ice %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK274=3]: +3 Blades of Ice %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK275=1]: +1 Dragon Flight %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK275=2]: +2 Dragon Flight %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK275=1 FILTLVL<2]: +1 Dragon Flight %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK275=2 FILTLVL<2]: +2 Dragon Flight %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK275=3]: +3 Dragon Flight %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK276=1]: +1 Death Sentry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK276=2]: +2 Death Sentry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK276=1 FILTLVL<2]: +1 Death Sentry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK276=2 FILTLVL<2]: +2 Death Sentry %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK276=3]: +3 Death Sentry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK277=1]: +1 Blade Shield %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK277=2]: +2 Blade Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK277=1 FILTLVL<2]: +1 Blade Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK277=2 FILTLVL<2]: +2 Blade Shield %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK277=3]: +3 Blade Shield %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK278=1]: +1 Venom %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK278=2]: +2 Venom %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK278=1 FILTLVL<2]: +1 Venom %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK278=2 FILTLVL<2]: +2 Venom %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK278=3]: +3 Venom %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK279=1]: +1 Shadow Master %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK279=2]: +2 Shadow Master %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK279=1 FILTLVL<2]: +1 Shadow Master %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK279=2 FILTLVL<2]: +2 Shadow Master %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK279=3]: +3 Shadow Master %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK280=1]: +1 Phoenix Strike %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK280=2]: +2 Phoenix Strike %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK280=1 FILTLVL<2]: +1 Phoenix Strike %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK280=2 FILTLVL<2]: +2 Phoenix Strike %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK280=3]: +3 Phoenix Strike %NAME%%CONTINUE%
 
 ItemDisplay[NMAG !RW (SK251>0 OR SK252>0 OR SK253>0 OR SK254>0 OR SK255>0 OR SK256>0 OR SK257>0 OR SK258>0 OR SK259>0 OR SK260>0 OR SK261>0 OR SK262>0 OR SK263>0 OR SK264>0 OR SK265>0 OR SK266>0 OR SK267>0 OR SK268>0 OR SK269>0 OR SK270>0 OR SK271>0 OR SK272>0 OR SK273>0 OR SK274>0 OR SK275>0 OR SK276>0 OR SK277>0 OR SK278>0 OR SK279>0 OR SK280>0 OR SK366>0)]: %DARK_GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// Barbarian
-ItemDisplay[NMAG !RW SK126=1]: +1 Bash %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK126=2]: +2 Bash %NAME%%CONTINUE%
+//Barbarian
+ItemDisplay[NMAG !RW SK126=1 FILTLVL<2]: +1 Bash %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK126=2 FILTLVL<2]: +2 Bash %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK126=3]: +3 Bash %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK128=1]: +1 General Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK128=2]: +2 General Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK128=1 FILTLVL<2]: +1 General Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK128=2 FILTLVL<2]: +2 General Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK128=3]: +3 General Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK130=1]: +1 Howl %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK130=2]: +2 Howl %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK130=1 FILTLVL<2]: +1 Howl %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK130=2 FILTLVL<2]: +2 Howl %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK130=3]: +3 Howl %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK131=1]: +1 Find Potion %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK131=2]: +2 Find Potion %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK131=1 FILTLVL<2]: +1 Find Potion %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK131=2 FILTLVL<2]: +2 Find Potion %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK131=3]: +3 Find Potion %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK132=1]: +1 Leap %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK132=2]: +2 Leap %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK132=1 FILTLVL<2]: +1 Leap %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK132=2 FILTLVL<2]: +2 Leap %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK132=3]: +3 Leap %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK133=1]: +1 Double Swing %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK133=2]: +2 Double Swing %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK133=1 FILTLVL<2]: +1 Double Swing %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK133=2 FILTLVL<2]: +2 Double Swing %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK133=3]: +3 Double Swing %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK135=1]: +1 Throwing Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK135=2]: +2 Throwing Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK135=1 FILTLVL<2]: +1 Throwing Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK135=2 FILTLVL<2]: +2 Throwing Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK135=3]: +3 Throwing Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK136=1]: +1 Polearm-Spear Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK136=2]: +2 Polearm-Spear Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK136=1 FILTLVL<2]: +1 Polearm-Spear Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK136=2 FILTLVL<2]: +2 Polearm-Spear Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK136=3]: +3 Polearm-Spear Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK137=1]: +1 Taunt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK137=2]: +2 Taunt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK137=1 FILTLVL<2]: +1 Taunt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK137=2 FILTLVL<2]: +2 Taunt %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK137=3]: +3 Taunt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK138=1]: +1 Shout %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK138=2]: +2 Shout %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK138=1 FILTLVL<2]: +1 Shout %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK138=2 FILTLVL<2]: +2 Shout %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK138=3]: +3 Shout %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK139=1]: +1 Stun %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK139=2]: +2 Stun %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK139=1 FILTLVL<2]: +1 Stun %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK139=2 FILTLVL<2]: +2 Stun %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK139=3]: +3 Stun %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK140=1]: +1 Double Throw %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK140=2]: +2 Double Throw %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK140=1 FILTLVL<2]: +1 Double Throw %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK140=2 FILTLVL<2]: +2 Double Throw %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK140=3]: +3 Double Throw %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK141=1]: +1 Combat Reflexes %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK141=2]: +2 Combat Reflexes %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK141=1 FILTLVL<2]: +1 Combat Reflexes %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK141=2 FILTLVL<2]: +2 Combat Reflexes %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK141=3]: +3 Combat Reflexes %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK142=1]: +1 Find Item %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK142=2]: +2 Find Item %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK142=1 FILTLVL<2]: +1 Find Item %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK142=2 FILTLVL<2]: +2 Find Item %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK142=3]: +3 Find Item %NAME%%CONTINUE%
-//ItemDisplay[NMAG !RW SK143=1]: +1 Leap Attack %NAME%%CONTINUE%
-//ItemDisplay[NMAG !RW SK143=2]: +2 Leap Attack %NAME%%CONTINUE%
-//ItemDisplay[NMAG !RW SK143=3]: +3 Leap Attack %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK144=1]: +1 Concentrate %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK144=2]: +2 Concentrate %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK143=1 FILTLVL<2]: +1 Leap Attack %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK143=2 FILTLVL<2]: +2 Leap Attack %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK143=3]: +3 Leap Attack %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK144=1 FILTLVL<2]: +1 Concentrate %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK144=2 FILTLVL<2]: +2 Concentrate %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK144=3]: +3 Concentrate %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK145=1]: +1 Iron Skin %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK145=2]: +2 Iron Skin %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK145=1 FILTLVL<2]: +1 Iron Skin %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK145=2 FILTLVL<2]: +2 Iron Skin %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK145=3]: +3 Iron Skin %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK146=1]: +1 Battle Cry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK146=2]: +2 Battle Cry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK146=1 FILTLVL<2]: +1 Battle Cry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK146=2 FILTLVL<2]: +2 Battle Cry %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK146=3]: +3 Battle Cry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK147=1]: +1 Frenzy %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK147=2]: +2 Frenzy %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK147=1 FILTLVL<2]: +1 Frenzy %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK147=2 FILTLVL<2]: +2 Frenzy %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK147=3]: +3 Frenzy %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK148=1]: +1 Increased Speed %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK148=2]: +2 Increased Speed %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK148=1 FILTLVL<2]: +1 Increased Speed %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK148=2 FILTLVL<2]: +2 Increased Speed %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK148=3]: +3 Increased Speed %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK149=1]: +1 Battle Orders %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK149=2]: +2 Battle Orders %NAME%%CONTINUE%
-//ItemDisplay[NMAG !RW SK149=3]: +3 Battle Orders %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK150=1]: +1 Grim Ward %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK150=2]: +2 Grim Ward %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK149=1 FILTLVL<2]: +1 Battle Orders %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK149=2 FILTLVL<2]: +2 Battle Orders %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK149=3]: +3 Battle Orders %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK150=1 FILTLVL<2]: +1 Grim Ward %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK150=2 FILTLVL<2]: +2 Grim Ward %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK150=3]: +3 Grim Ward %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK151=1]: +1 Whirlwind %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK151=2]: +2 Whirlwind %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK151=1 FILTLVL<2]: +1 Whirlwind %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK151=2 FILTLVL<2]: +2 Whirlwind %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK151=3]: +3 Whirlwind %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK152=1]: +1 Berserk %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK152=2]: +2 Berserk %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK152=1 FILTLVL<2]: +1 Berserk %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK152=2 FILTLVL<2]: +2 Berserk %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK152=3]: +3 Berserk %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK153=1]: +1 Natural Resistance %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK153=2]: +2 Natural Resistance %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK153=1 FILTLVL<2]: +1 Natural Resistance %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK153=2 FILTLVL<2]: +2 Natural Resistance %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK153=3]: +3 Natural Resistance %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK154=1]: +1 War Cry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK154=2]: +2 War Cry %NAME%%CONTINUE%
-//ItemDisplay[NMAG !RW SK154=3]: +3 War Cry %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK155=1]: +1 Battle Command %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK155=2]: +2 Battle Command %NAME%%CONTINUE%
-//ItemDisplay[NMAG !RW SK155=3]: +3 Battle Command %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK154=1 FILTLVL<2]: +1 War Cry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK154=2 FILTLVL<2]: +2 War Cry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK154=3]: +3 War Cry %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK155=1 FILTLVL<2]: +1 Battle Command %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK155=2 FILTLVL<2]: +2 Battle Command %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK155=3]: +3 Battle Command %NAME%%CONTINUE%
 
 ItemDisplay[NMAG !RW (SK126>0 OR SK128>0 OR SK130>0 OR SK131>0 OR SK132>0 OR SK133>0 OR SK135>0 OR SK136>0 OR SK137>0 OR SK138>0 OR SK139>0 OR SK140>0 OR SK141>0 OR SK142>0 OR SK143>0 OR SK144>0 OR SK145>0 OR SK146>0 OR SK147>0 OR SK148>0 OR SK149>0 OR SK150>0 OR SK151>0 OR SK152>0 OR SK153>0 OR SK154>0 OR SK155>0)]: %DARK_GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// Necromancer
-ItemDisplay[NMAG !RW SK66=1]: +1 Amplify Damage %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK66=2]: +2 Amplify Damage %NAME%%CONTINUE%
+//Necromancer
+ItemDisplay[NMAG !RW SK66=1 FILTLVL<2]: +1 Amplify Damage %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK66=2 FILTLVL<2]: +2 Amplify Damage %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK66=3]: +3 Amplify Damage %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK67=1]: +1 Teeth %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK67=2]: +2 Teeth %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK67=1 FILTLVL<2]: +1 Teeth %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK67=2 FILTLVL<2]: +2 Teeth %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK67=3]: +3 Teeth %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK68=1]: +1 Bone Armor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK68=2]: +2 Bone Armor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK68=1 FILTLVL<2]: +1 Bone Armor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK68=2 FILTLVL<2]: +2 Bone Armor %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK68=3]: +3 Bone Armor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK69=1]: +1 Skeleton Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK69=2]: +2 Skeleton Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK69=1 FILTLVL<2]: +1 Skeleton Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK69=2 FILTLVL<2]: +2 Skeleton Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK69=3]: +3 Skeleton Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK70=1]: +1 Skeleton Warrior %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK70=2]: +2 Skeleton Warrior %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK70=1 FILTLVL<2]: +1 Skeleton Warrior %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK70=2 FILTLVL<2]: +2 Skeleton Warrior %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK70=3]: +3 Skeleton Warrior %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK70=1]: +1 Skeleton Archer %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK89=2]: +2 Skeleton Archer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK70=1 FILTLVL<2]: +1 Skeleton Archer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK89=2 FILTLVL<2]: +2 Skeleton Archer %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK89=3]: +3 Skeleton Archer %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK71=1]: +1 Dim Vision %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK71=2]: +2 Dim Vision %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK71=1 FILTLVL<2]: +1 Dim Vision %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK71=2 FILTLVL<2]: +2 Dim Vision %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK71=3]: +3 Dim Vision %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK72=1]: +1 Weaken %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK72=2]: +2 Weaken %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK72=1 FILTLVL<2]: +1 Weaken %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK72=2 FILTLVL<2]: +2 Weaken %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK72=3]: +3 Weaken %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK73=1]: +1 Poison Dagger %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK73=2]: +2 Poison Dagger %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK73=1 FILTLVL<2]: +1 Poison Dagger %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK73=2 FILTLVL<2]: +2 Poison Dagger %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK73=3]: +3 Poison Dagger %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK74=1]: +1 Corpse Explosion %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK74=2]: +2 Corpse Explosion %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK74=1 FILTLVL<2]: +1 Corpse Explosion %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK74=2 FILTLVL<2]: +2 Corpse Explosion %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK74=3]: +3 Corpse Explosion %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK75=1]: +1 Clay Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK75=2]: +2 Clay Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK75=1 FILTLVL<2]: +1 Clay Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK75=2 FILTLVL<2]: +2 Clay Golem %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK75=3]: +3 Clay Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK76=1]: +1 Iron Maiden %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK76=2]: +2 Iron Maiden %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK76=1 FILTLVL<2]: +1 Iron Maiden %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK76=2 FILTLVL<2]: +2 Iron Maiden %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK76=3]: +3 Iron Maiden %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK77=1]: +1 Terror %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK77=2]: +2 Terror %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK77=1 FILTLVL<2]: +1 Terror %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK77=2 FILTLVL<2]: +2 Terror %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK77=3]: +3 Terror %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK78=1]: +1 Bone Wall %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK78=2]: +2 Bone Wall %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK78=1 FILTLVL<2]: +1 Bone Wall %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK78=2 FILTLVL<2]: +2 Bone Wall %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK78=3]: +3 Bone Wall %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK79=1]: +1 Golem Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK79=2]: +2 Golem Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK79=1 FILTLVL<2]: +1 Golem Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK79=2 FILTLVL<2]: +2 Golem Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK79=3]: +3 Golem Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK80=1]: +1 Raise Skeletal Mage %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK80=2]: +2 Raise Skeletal Mage %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK80=1 FILTLVL<2]: +1 Raise Skeletal Mage %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK80=2 FILTLVL<2]: +2 Raise Skeletal Mage %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK80=3]: +3 Raise Skeletal Mage %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK81=1]: +1 Confuse %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK81=2]: +2 Confuse %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK81=1 FILTLVL<2]: +1 Confuse %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK81=2 FILTLVL<2]: +2 Confuse %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK81=3]: +3 Confuse %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK82=1]: +1 Life Tap %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK82=2]: +2 Life Tap %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK82=1 FILTLVL<2]: +1 Life Tap %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK82=2 FILTLVL<2]: +2 Life Tap %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK82=3]: +3 Life Tap %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK83=1]: +1 Desecrate %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK83=2]: +2 Desecrate %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK83=1 FILTLVL<2]: +1 Desecrate %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK83=2 FILTLVL<2]: +2 Desecrate %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK83=3]: +3 Desecrate %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK84=1]: +1 Bone Spear %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK84=2]: +2 Bone Spear %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK84=1 FILTLVL<2]: +1 Bone Spear %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK84=2 FILTLVL<2]: +2 Bone Spear %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK84=3]: +3 Bone Spear %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK85=1]: +1 Blood Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK85=2]: +2 Blood Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK85=1 FILTLVL<2]: +1 Blood Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK85=2 FILTLVL<2]: +2 Blood Golem %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK85=3]: +3 Blood Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK86=1]: +1 Attract %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK86=2]: +2 Attract %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK86=1 FILTLVL<2]: +1 Attract %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK86=2 FILTLVL<2]: +2 Attract %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK86=3]: +3 Attract %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK87=1]: +1 Decrepify %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK87=2]: +2 Decrepify %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK87=1 FILTLVL<2]: +1 Decrepify %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK87=2 FILTLVL<2]: +2 Decrepify %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK87=3]: +3 Decrepify %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK88=1]: +1 Bone Prison %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK88=2]: +2 Bone Prison %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK88=1 FILTLVL<2]: +1 Bone Prison %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK88=2 FILTLVL<2]: +2 Bone Prison %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK88=3]: +3 Bone Prison %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK90=1]: +1 Iron Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK90=2]: +2 Iron Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK90=1 FILTLVL<2]: +1 Iron Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK90=2 FILTLVL<2]: +2 Iron Golem %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK90=3]: +3 Iron Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK91=1]: +1 Lower Resist %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK91=2]: +2 Lower Resist %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK91=1 FILTLVL<2]: +1 Lower Resist %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK91=2 FILTLVL<2]: +2 Lower Resist %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK91=3]: +3 Lower Resist %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK92=1]: +1 Poison Nova %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK92=2]: +2 Poison Nova %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK92=1 FILTLVL<2]: +1 Poison Nova %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK92=2 FILTLVL<2]: +2 Poison Nova %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK92=3]: +3 Poison Nova %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK93=1]: +1 Bone Spirit %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK93=2]: +2 Bone Spirit %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK93=1 FILTLVL<2]: +1 Bone Spirit %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK93=2 FILTLVL<2]: +2 Bone Spirit %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK93=3]: +3 Bone Spirit %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK94=1]: +1 Fire Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK94=2]: +2 Fire Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK94=1 FILTLVL<2]: +1 Fire Golem %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK94=2 FILTLVL<2]: +2 Fire Golem %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK94=3]: +3 Fire Golem %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK95=1]: +1 Revive %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK95=2]: +2 Revive %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK95=1 FILTLVL<2]: +1 Revive %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK95=2 FILTLVL<2]: +2 Revive %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK95=3]: +3 Revive %NAME%%CONTINUE%
 
 ItemDisplay[NMAG !RW (SK66>0 OR SK67>0 OR SK68>0 OR SK69>0 OR SK70>0 OR SK71>0 OR SK72>0 OR SK73>0 OR SK74>0 OR SK75>0 OR SK76>0 OR SK77>0 OR SK78>0 OR SK79>0 OR SK80>0 OR SK81>0 OR SK82>0 OR SK83>0 OR SK84>0 OR SK85>0 OR SK86>0 OR SK87>0 OR SK88>0 OR SK89>0 OR SK90>0 OR SK91>0 OR SK92>0 OR SK93>0 OR SK94>0 OR SK95>0 OR SK367>0 OR SK381>0 OR SK374>0)]: %DARK_GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// Paladin
-ItemDisplay[NMAG !RW SK96=1]: +1 Sacrifice %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK96=2]: +2 Sacrifice %NAME%%CONTINUE%
+//Paladin
+ItemDisplay[NMAG !RW SK96=1 FILTLVL<2]: +1 Sacrifice %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK96=2 FILTLVL<2]: +2 Sacrifice %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK96=3]: +3 Sacrifice %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK97=1]: +1 Smite %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK97=2]: +2 Smite %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK97=1 FILTLVL<2]: +1 Smite %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK97=2 FILTLVL<2]: +2 Smite %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK97=3]: +3 Smite %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK98=1]: +1 Might %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK98=2]: +2 Might %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK98=1 FILTLVL<2]: +1 Might %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK98=2 FILTLVL<2]: +2 Might %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK98=3]: +3 Might %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK99=1]: +1 Prayer %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK99=2]: +2 Prayer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK99=1 FILTLVL<2]: +1 Prayer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK99=2 FILTLVL<2]: +2 Prayer %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK99=3]: +3 Prayer %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK100=1]: +1 Resist Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK100=2]: +2 Resist Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK100=1 FILTLVL<2]: +1 Resist Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK100=2 FILTLVL<2]: +2 Resist Fire %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK100=3]: +3 Resist Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK102=1]: +1 Holy Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK102=2]: +2 Holy Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK101=1 FILTLVL<2]: +1 Holy Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK101=2 FILTLVL<2]: +2 Holy Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK101=3]: +3 Holy Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK102=1 FILTLVL<2]: +1 Holy Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK102=2 FILTLVL<2]: +2 Holy Fire %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK102=3]: +3 Holy Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK103=1]: +1 Thorns %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK103=2]: +2 Thorns %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK103=1 FILTLVL<2]: +1 Thorns %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK103=2 FILTLVL<2]: +2 Thorns %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK103=3]: +3 Thorns %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK104=1]: +1 Defiance %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK104=2]: +2 Defiance %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK104=1 FILTLVL<2]: +1 Defiance %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK104=2 FILTLVL<2]: +2 Defiance %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK104=3]: +3 Defiance %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK105=1]: +1 Resist Cold %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK105=2]: +2 Resist Cold %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK105=1 FILTLVL<2]: +1 Resist Cold %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK105=2 FILTLVL<2]: +2 Resist Cold %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK105=3]: +3 Resist Cold %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK106=1]: +1 Zeal %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK106=2]: +2 Zeal %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK106=1 FILTLVL<2]: +1 Zeal %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK106=2 FILTLVL<2]: +2 Zeal %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK106=3]: +3 Zeal %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK107=1]: +1 Charge %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK107=2]: +2 Charge %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK107=1 FILTLVL<2]: +1 Charge %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK107=2 FILTLVL<2]: +2 Charge %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK107=3]: +3 Charge %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK108=1]: +1 Blessed Aim %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK108=2]: +2 Blessed Aim %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK108=1 FILTLVL<2]: +1 Blessed Aim %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK108=2 FILTLVL<2]: +2 Blessed Aim %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK108=3]: +3 Blessed Aim %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK110=1]: +1 Resist Lightning %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK110=2]: +2 Resist Lightning %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK109=1 FILTLVL<2]: +1 Cleansing %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK109=2 FILTLVL<2]: +2 Cleansing %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK109=3]: +3 Cleansing %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK110=1 FILTLVL<2]: +1 Resist Lightning %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK110=2 FILTLVL<2]: +2 Resist Lightning %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK110=3]: +3 Resist Lightning %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK111=1]: +1 Vengeance %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK111=2]: +2 Vengeance %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK111=1 FILTLVL<2]: +1 Vengeance %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK111=2 FILTLVL<2]: +2 Vengeance %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK111=3]: +3 Vengeance %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK114=1]: +1 Holy Freeze %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK114=2]: +2 Holy Freeze %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK112=1 FILTLVL<2]: +1 Blessed Hammer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK112=2 FILTLVL<2]: +2 Blessed Hammer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK112=3]: +3 Blessed Hammer %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK113=1 FILTLVL<2]: +1 Concentration %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK113=2 FILTLVL<2]: +2 Concentration %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK113=3]: +3 Concentration %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK114=1 FILTLVL<2]: +1 Holy Freeze %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK114=2 FILTLVL<2]: +2 Holy Freeze %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK114=3]: +3 Holy Freeze %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK115=1]: +1 Vigor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK115=2]: +2 Vigor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK115=1 FILTLVL<2]: +1 Vigor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK115=2 FILTLVL<2]: +2 Vigor %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK115=3]: +3 Vigor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK116=1]: +1 Conversion %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK116=2]: +2 Conversion %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK116=1 FILTLVL<2]: +1 Conversion %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK116=2 FILTLVL<2]: +2 Conversion %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK116=3]: +3 Conversion %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK118=1]: +1 Holy Shock %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK118=2]: +2 Holy Shock %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK117=1 FILTLVL<2]: +1 Holy Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK117=2 FILTLVL<2]: +2 Holy Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK117=3]: +3 Holy Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK118=1 FILTLVL<2]: +1 Holy Shock %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK118=2 FILTLVL<2]: +2 Holy Shock %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK118=3]: +3 Holy Shock %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK119=1]: +1 Sanctuary %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK119=2]: +2 Sanctuary %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK119=1 FILTLVL<2]: +1 Sanctuary %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK119=2 FILTLVL<2]: +2 Sanctuary %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK119=3]: +3 Sanctuary %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK120=1]: +1 Meditation %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK120=2]: +2 Meditation %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK120=1 FILTLVL<2]: +1 Meditation %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK120=2 FILTLVL<2]: +2 Meditation %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK120=3]: +3 Meditation %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK122=1]: +1 Fanaticism %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK122=2]: +2 Fanaticism %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK121=1 FILTLVL<2]: +1 Fist of the Heavens %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK121=2 FILTLVL<2]: +2 Fist of the Heavens %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK121=3]: +3 Fist of the Heavens %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK122=1 FILTLVL<2]: +1 Fanaticism %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK122=2 FILTLVL<2]: +2 Fanaticism %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK122=3]: +3 Fanaticism %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK124=1]: +1 Redemption %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK124=2]: +2 Redemption %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK123=1 FILTLVL<2]: +1 Conviction %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK123=2 FILTLVL<2]: +2 Conviction %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK123=3]: +3 Conviction %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK124=1 FILTLVL<2]: +1 Redemption %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK124=2 FILTLVL<2]: +2 Redemption %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK124=3]: +3 Redemption %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK125=1]: +1 Salvation %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK125=2]: +2 Salvation %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK125=1 FILTLVL<2]: +1 Salvation %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK125=2 FILTLVL<2]: +2 Salvation %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK125=3]: +3 Salvation %NAME%%CONTINUE%
 
 ItemDisplay[NMAG !RW (SK96>0 OR SK97>0 OR SK98>0 OR SK99>0 OR SK100>0 OR SK101>0 OR SK102>0 OR SK103>0 OR SK104>0 OR SK105>0 OR SK106>0 OR SK107>0 OR SK108>0 OR SK109>0 OR SK110>0 OR SK111>0 OR SK112>0 OR SK113>0 OR SK114>0 OR SK115>0 OR SK116>0 OR SK117>0 OR SK118>0 OR SK119>0 OR SK120>0 OR SK121>0 OR SK122>0 OR SK123>0 OR SK124>0 OR SK125>0 OR SK364>0 OR SK371>0 OR SK378>0)]: %DARK_GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-// Sorceress
-ItemDisplay[NMAG !RW SK36=1]: +1 Fire Bolt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK36=2]: +2 Fire Bolt %NAME%%CONTINUE%
+//Sorceress
+ItemDisplay[NMAG !RW SK36=1 FILTLVL<2]: +1 Fire Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK36=2 FILTLVL<2]: +2 Fire Bolt %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK36=3]: +3 Fire Bolt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK37=1]: +1 Warmth %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK37=2]: +2 Warmth %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK37=1 FILTLVL<2]: +1 Warmth %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK37=2 FILTLVL<2]: +2 Warmth %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK37=3]: +3 Warmth %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK38=1]: +1 Charged Bolt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK38=2]: +2 Charged Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK38=1 FILTLVL<2]: +1 Charged Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK38=2 FILTLVL<2]: +2 Charged Bolt %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK38=3]: +3 Charged Bolt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK39=1]: +1 Ice Bolt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK39=2]: +2 Ice Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK39=1 FILTLVL<2]: +1 Ice Bolt %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK39=2 FILTLVL<2]: +2 Ice Bolt %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK39=3]: +3 Ice Bolt %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK40=1]: +1 Cold Enchant %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK40=2]: +2 Cold Enchant %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK40=1 FILTLVL<2]: +1 Cold Enchant %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK40=2 FILTLVL<2]: +2 Cold Enchant %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK40=3]: +3 Cold Enchant %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK41=1]: +1 Inferno %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK41=2]: +2 Inferno %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK41=1 FILTLVL<2]: +1 Inferno %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK41=2 FILTLVL<2]: +2 Inferno %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK41=3]: +3 Inferno %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK42=1]: +1 Static Field %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK42=2]: +2 Static Field %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK42=1 FILTLVL<2]: +1 Static Field %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK42=2 FILTLVL<2]: +2 Static Field %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK42=3]: +3 Static Field %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK43=1]: +1 Telekinesis %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK43=2]: +2 Telekinesis %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK43=1 FILTLVL<2]: +1 Telekinesis %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK43=2 FILTLVL<2]: +2 Telekinesis %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK43=3]: +3 Telekinesis %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK44=1]: +1 Frost Nova %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK44=2]: +2 Frost Nova %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK44=1 FILTLVL<2]: +1 Frost Nova %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK44=2 FILTLVL<2]: +2 Frost Nova %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK44=3]: +3 Frost Nova %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK45=1]: +1 Ice Blast %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK45=2]: +2 Ice Blast %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK45=1 FILTLVL<2]: +1 Ice Blast %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK45=2 FILTLVL<2]: +2 Ice Blast %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK45=3]: +3 Ice Blast %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK46=1]: +1 Blaze %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK46=2]: +2 Blaze %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK46=1 FILTLVL<2]: +1 Blaze %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK46=2 FILTLVL<2]: +2 Blaze %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK46=3]: +3 Blaze %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK47=1]: +1 Fire Ball %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK47=2]: +2 Fire Ball %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK47=1 FILTLVL<2]: +1 Fire Ball %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK47=2 FILTLVL<2]: +2 Fire Ball %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK47=3]: +3 Fire Ball %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK48=1]: +1 Nova %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK48=2]: +2 Nova %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK48=1 FILTLVL<2]: +1 Nova %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK48=2 FILTLVL<2]: +2 Nova %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK48=3]: +3 Nova %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK49=1]: +1 Lightning %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK49=2]: +2 Lightning %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK49=1 FILTLVL<2]: +1 Lightning %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK49=2 FILTLVL<2]: +2 Lightning %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK49=3]: +3 Lightning %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK50=1]: +1 Shiver Armor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK50=2]: +2 Shiver Armor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK50=1 FILTLVL<2]: +1 Shiver Armor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK50=2 FILTLVL<2]: +2 Shiver Armor %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK50=3]: +3 Shiver Armor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK51=1]: +1 Fire Wall %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK51=2]: +2 Fire Wall %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK51=1 FILTLVL<2]: +1 Fire Wall %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK51=2 FILTLVL<2]: +2 Fire Wall %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK51=3]: +3 Fire Wall %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK52=1]: +1 Enchant Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK52=2]: +2 Enchant Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK52=1 FILTLVL<2]: +1 Enchant Fire %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK52=2 FILTLVL<2]: +2 Enchant Fire %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK52=3]: +3 Enchant Fire %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK53=1]: +1 Chain Lightning %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK53=2]: +2 Chain Lightning %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK53=1 FILTLVL<2]: +1 Chain Lightning %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK53=2 FILTLVL<2]: +2 Chain Lightning %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK53=3]: +3 Chain Lightning %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK54=1]: +1 Teleport %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK54=2]: +2 Teleport %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK54=1 FILTLVL<2]: +1 Teleport %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK54=2 FILTLVL<2]: +2 Teleport %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK54=3]: +3 Teleport %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK55=1]: +1 Glacial Spike %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK55=2]: +2 Glacial Spike %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK55=1 FILTLVL<2]: +1 Glacial Spike %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK55=2 FILTLVL<2]: +2 Glacial Spike %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK55=3]: +3 Glacial Spike %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK56=1]: +1 Meteor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK56=2]: +2 Meteor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK56=1 FILTLVL<2]: +1 Meteor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK56=2 FILTLVL<2]: +2 Meteor %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK56=3]: +3 Meteor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK57=1]: +1 Thunder Storm %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK57=2]: +2 Thunder Storm %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK57=1 FILTLVL<2]: +1 Thunder Storm %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK57=2 FILTLVL<2]: +2 Thunder Storm %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK57=3]: +3 Thunder Storm %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK58=1]: +1 Energy Shield %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK58=2]: +2 Energy Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK58=1 FILTLVL<2]: +1 Energy Shield %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK58=2 FILTLVL<2]: +2 Energy Shield %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK58=3]: +3 Energy Shield %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK59=1]: +1 Blizzard %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK59=2]: +2 Blizzard %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK59=1 FILTLVL<2]: +1 Blizzard %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK59=2 FILTLVL<2]: +2 Blizzard %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK59=3]: +3 Blizzard %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK60=1]: +1 Chilling Armor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK60=2]: +2 Chilling Armor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK60=1 FILTLVL<2]: +1 Chilling Armor %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK60=2 FILTLVL<2]: +2 Chilling Armor %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK60=3]: +3 Chilling Armor %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK61=1]: +1 Fire Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK61=2]: +2 Fire Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK61=1 FILTLVL<2]: +1 Fire Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK61=2 FILTLVL<2]: +2 Fire Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK61=3]: +3 Fire Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK62=1]: +1 Hydra %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK62=2]: +2 Hydra %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK62=1 FILTLVL<2]: +1 Hydra %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK62=2 FILTLVL<2]: +2 Hydra %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK62=3]: +3 Hydra %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK63=1]: +1 Lightning Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK63=2]: +2 Lightning Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK63=1 FILTLVL<2]: +1 Lightning Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK63=2 FILTLVL<2]: +2 Lightning Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK63=3]: +3 Lightning Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK64=1]: +1 Frozen Orb %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK64=2]: +2 Frozen Orb %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK64=1 FILTLVL<2]: +1 Frozen Orb %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK64=2 FILTLVL<2]: +2 Frozen Orb %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK64=3]: +3 Frozen Orb %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK65=1]: +1 Cold Mastery %NAME%%CONTINUE%
-ItemDisplay[NMAG !RW SK65=2]: +2 Cold Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK65=1 FILTLVL<2]: +1 Cold Mastery %NAME%%CONTINUE%
+ItemDisplay[NMAG !RW SK65=2 FILTLVL<2]: +2 Cold Mastery %NAME%%CONTINUE%
 ItemDisplay[NMAG !RW SK65=3]: +3 Cold Mastery %NAME%%CONTINUE%
 
 ItemDisplay[NMAG !RW (SK36>0 OR SK37>0 OR SK38>0 OR SK39>0 OR SK40>0 OR SK41>0 OR SK42>0 OR SK43>0 OR SK44>0 OR SK45>0 OR SK46>0 OR SK47>0 OR SK48>0 OR SK49>0 OR SK50>0 OR SK51>0 OR SK52>0 OR SK53>0 OR SK54>0 OR SK55>0 OR SK56>0 OR SK57>0 OR SK58>0 OR SK59>0 OR SK60>0 OR SK61>0 OR SK62>0 OR SK63>0 OR SK64>0 OR SK65>0 OR SK369>0 OR SK383>0 OR SK376>0)]: %DARK_GREEN%%NAME%%CONTINUE%
@@ -3534,115 +3620,6 @@ ItemDisplay[WEAPON !THROWING !INF !SUP SOCK=0 NMAG]: %NAME%{%WHITE%This Item + %
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// RW BASES - PART 1
-//-----------------------------------------------------------------------------------
-// High HR worth bases
-ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6)]: %DOT-E1%%PURPLE%> > > >  %NAME%  %PURPLE%< < < <{%NAME%}%CONTINUE%
-
-// Hand of Justice/CTA Scepters
-ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) NMAG !INF !SUP SOCK=0]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF !SUP SOCK=0]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-
-// Spirit Swords
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<80]: %NAME% %TAN%[%DARK_GREEN%Larzuk 4soc%TAN%]{%NAME%}
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 CLVL<80]: %NAME% %TAN%[%DARK_GREEN%Cube for 4soc%TAN%]{%NAME%}
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40]: %NAME%{%NAME%}
-ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80]: %NAME% %TAN%[%DARK_GREEN%Larzuk 4soc%TAN%]{%NAME%}
-
-// Infi/Insi/Pride and Obedience/Doom
-ItemDisplay[(7vo OR 7tr) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7vo OR 7tr) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-
-// Grief/Beast/Passion
-ItemDisplay[7wa !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7m7 OR 7gm OR 7ga OR 7gi OR 7bt OR 7ba) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7bt OR 7ba) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-
-// Death/Oath
-ItemDisplay[7fb ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7wa OR 7gd) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[7fb ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-
-// Breath of the Dying/Last Wish
-ItemDisplay[7cr !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[(7wa OR 7gd OR 7p7) ETH !INF SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7wa OR 7cr) SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-
-// Chaos
-ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-
-// Plague
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) SOCK=0 (INF OR SUP) NMAG]: %NAME%{%NAME%}
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%NAME%{%NAME%}
-
-// Amazon Spears
-ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-
-// Armors
-ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[EQ2 ELT ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) SOCK=0 SUP NMAG]: %NAME%{%NAME%}
-ItemDisplay[EQ2 ELT ETH SOCK=0 SUP NMAG]: %NAME%{%NAME%}
-
-// Helmets
-ItemDisplay[CL2 (SK149>2 OR SK154>2) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[CL1 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[CL1 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CL2 (SK149>2 OR SK154>2) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[CL1 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
-ItemDisplay[CL1 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-
-// Shields
-ItemDisplay[CL3 ELT AR>100 ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%[%RED%ed%GRAY%] %NAME%{%NAME%}
-ItemDisplay[CL3 ELT RES>19 ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%%NAME%{%NAME%}
-ItemDisplay[CL3 (EXC OR ELT) RES>19 !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%%NAME%{%NAME%}
-ItemDisplay[CL3 RES>19 !ETH !INF !SUP SOCK=0 NMAG CLVL<80]: %NAME%{%NAME%}
-ItemDisplay[(ush OR xsh) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[uit !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[CL3 ELT AR>100 SOCK=0 ETH SUP NMAG]: %DOT-D6%%GRAY%[%RED%ed%GRAY%] %NAME%{%NAME%}
-ItemDisplay[CL3 ELT RES>19 SOCK=0 ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CL3 (EXC OR ELT) RES>19 SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CL3 (RES>19 AND CLVL<80) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
-ItemDisplay[(ush OR xsh) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
-ItemDisplay[uit SOCK=0 SUP NMAG]: %NAME%{%NAME%}
-//-----------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------
-// TOOLTIPS - UPGRADING
-//-----------------------------------------------------------------------------------
-ItemDisplay[ARMOR NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[ARMOR EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
-//-----------------------------------------------------------------------------------
-
-// todo do we need this???
-ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) CLVL<41 FILTLVL<3)]: %NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) (CLVL>40 AND CLVL<80) FILTLVL<4]: %NAME%%CONTINUE%
-ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH SUP SOCK=0 CLVL<80 FILTLVL<4]: %NAME%
-ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH !INF SOCK=0 CLVL<80 FILTLVL<4]: %NAME%%CONTINUE%
-ItemDisplay[((POLEARM OR SPEAR) AND !THROWING) NMAG ETH !INF SOCK=0 CLVL<80]: %NAME%%CONTINUE%
-
-//-----------------------------------------------------------------------------------
 // TOOLTIPS - RUNEWORD OPTIONS
 //-----------------------------------------------------------------------------------
 // TOOLTIPS - Possible RW's - Chest, Head, Shield
@@ -3705,6 +3682,90 @@ ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Zenith}%CONTINUE%
 // TOOLTIPS - Possible RW's - Weapons 6soc
 ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%Breath of the Dying, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{%GRAY%of the Dying, Last Wish, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Breath}%CONTINUE%
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// RW BASES - PART 1
+//-----------------------------------------------------------------------------------
+// High HR worth bases
+ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6)]: %DOT-E1%%PURPLE%> > > >  %NAME%  %PURPLE%< < < <{%NAME%}%CONTINUE%
+
+// Hand of Justice/CTA Scepters
+ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) NMAG !INF !SUP SOCK=0]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF !SUP SOCK=0]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+
+// Spirit Swords
+ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Larzuk 4soc%TAN%]{%NAME%}
+ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Cube for 4soc%TAN%]{%NAME%}
+ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 FILTLVL<3]: %NAME%{%NAME%}
+ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Larzuk 4soc%TAN%]{%NAME%}
+
+// Infi/Insi/Pride and Obedience/Doom
+ItemDisplay[(7vo OR 7tr) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7vo OR 7tr) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Grief/Beast/Passion
+ItemDisplay[7wa !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7m7 OR 7gm OR 7ga OR 7gi OR 7bt OR 7ba) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7bt OR 7ba) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Death/Oath
+ItemDisplay[7fb ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7wa OR 7gd) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[7fb ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Breath of the Dying/Last Wish
+ItemDisplay[7cr !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[(7wa OR 7gd OR 7p7) ETH !INF SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7wa OR 7cr) SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Chaos
+ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK276>0) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Plague
+ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) SOCK=0 (INF OR SUP) NMAG]: %NAME%{%NAME%}
+ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Enchant Sorceress Orbs
+ItemDisplay[(ob5 OR oba OR obf) (SK40>2 OR SK52>2) !INF (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+// Amazon Spears
+ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+
+// Armors
+ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[EQ2 ELT ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) SOCK=0 SUP NMAG]: %NAME%{%NAME%}
+ItemDisplay[EQ2 ELT ETH SOCK=0 SUP NMAG]: %NAME%{%NAME%}
+
+// Helmets
+ItemDisplay[CL2 (SK149>2 OR SK154>2) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[CL1 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[CL1 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CL2 (SK149>2 OR SK154>2) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[CL1 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
+ItemDisplay[CL1 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+
+// Shields
+ItemDisplay[CL3 ELT AR>100 ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%[%RED%ed%GRAY%] %NAME%{%NAME%}
+ItemDisplay[CL3 ELT RES>19 ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%%NAME%{%NAME%}
+ItemDisplay[CL3 (EXC OR ELT) RES>19 !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%%NAME%{%NAME%}
+ItemDisplay[CL3 RES>19 !ETH !INF !SUP SOCK=0 NMAG CLVL<80]: %NAME%{%NAME%}
+ItemDisplay[(ush OR xsh) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[uit !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
+ItemDisplay[CL3 ELT AR>100 SOCK=0 ETH SUP NMAG]: %DOT-D6%%GRAY%[%RED%ed%GRAY%] %NAME%{%NAME%}
+ItemDisplay[CL3 ELT RES>19 SOCK=0 ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CL3 (EXC OR ELT) RES>19 SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CL3 (RES>19 AND CLVL<80) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
+ItemDisplay[(ush OR xsh) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
+ItemDisplay[uit SOCK=0 SUP NMAG]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -3784,6 +3845,37 @@ ItemDisplay[((SIN ELT) OR 9tw OR 9lw) !INF ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %NA
 ItemDisplay[((SIN ELT) OR 9tw OR 9lw) (SK275>0 OR SK276>0 OR SK278>0) !INF ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) (SK254>2 OR SK255>2 OR SK259>2 OR SK260>2 OR SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK265>2 OR (SK278>1 AND SK265>1) OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
 
+//-----------------------------------------------------------------------------------
+// TOOLTIPS - UPGRADING
+//-----------------------------------------------------------------------------------
+ItemDisplay[ARMOR NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[ARMOR EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:}
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// LEVELING GEAR - Shows for filtered
+//-----------------------------------------------------------------------------------
+ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) CLVL<41 FILTLVL<3)]: %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) (CLVL>40 AND CLVL<80) FILTLVL<4]: %NAME%%CONTINUE%
+ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH SUP SOCK=0 CLVL<80 FILTLVL<4]: %NAME%
+ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH !INF SOCK=0 CLVL<80 FILTLVL<4]: %NAME%%CONTINUE%
+ItemDisplay[((POLEARM OR SPEAR) AND !THROWING) NMAG ETH !INF SOCK=0 CLVL<80]: %NAME%%CONTINUE%
+//-----------------------------------------------------------------------------------
+
 // ------------------------------------------------------------------------------
 // TOOLTIPS - FINAL
 // ------------------------------------------------------------------------------
@@ -3810,4 +3902,37 @@ ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME%
 ItemDisplay[(rin OR amu) (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI MAG (MAXDMG>0 OR LIFE>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %DOT-93%%NAME%
 ItemDisplay[(cm1 OR cm3 OR jew) (MAG OR RARE) ID]: %NAME%
+//-----------------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------------
+// Filter level Setting limiters
+// ------------------------------------------------------------------------------
+
+//Hide 0 socket non elite clvl 70+
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT (CLVL>70 OR FILTLVL>1)]: 
+
+//Hide non eth weapons unid mag in hell FILTLVL>1
+ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 FILTLVL>1 DIFF=2]:
+
+//Hide non eth weapons unid rare in hell clvl > 85
+ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 FILTLVL>2 DIFF=2]:
+
+// Hide all remaining magic <85 Ilvl
+ItemDisplay[MAG !ID ILVL<85 FILTLVL>1]:
+
+// Hide all bases normal quality not called out above
+ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg DIFF=2 FILTLVL>1]:
+
+// Hide all bases Exceptional quality not called out above
+ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg DIFF=2 FILTLVL>1]:
+
+// Hide all bases not called out above
+ItemDisplay[(ARMOR OR WEAPON) NMAG !leg DIFF=2 FILTLVL>2]:
+
+// Hide all magic <88 Ilvl
+ItemDisplay[MAG !ID ILVL<88 FILTLVL>2]:
+
+// Hide all items that arent called out in filter on endgame
+ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>2]: 
 //-----------------------------------------------------------------------------------
