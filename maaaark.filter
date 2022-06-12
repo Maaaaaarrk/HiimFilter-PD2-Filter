@@ -566,11 +566,11 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 // ARROWS AND QUIVERS
 //-----------------------------------------------------------------------------------
 // ARROWS - UNID
-ItemDisplay[aqv !AMAZON MAG !ID FILTLVL>1]:
+ItemDisplay[aqv !(AMAZON) MAG !ID FILTLVL>1]:
 ItemDisplay[aqv AMAZON MAG !ID FILTLVL>2]:
-ItemDisplay[aqv !AMAZON RARE !ID FILTLVL>1]:
-ItemDisplay[aqv MAG !ID FILTLVL != 4]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[aqv RARE !ID FILTLVL != 4]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%* 
+ItemDisplay[aqv !(AMAZON) RARE !ID FILTLVL>1]:
+ItemDisplay[aqv MAG !ID !(FILTLVL=4)]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
+ItemDisplay[aqv RARE !ID !(FILTLVL=4)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%* 
 //-----------------------------------------------------------------------------------
 // BOLTS - UNID
 ItemDisplay[cqv MAG !ID FILTLVL>1]:
@@ -1965,7 +1965,6 @@ ItemDisplay[(UNI OR SET OR RW OR CRAFT)]: %NAME%
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS - Placeholder 1 Name Here - Hide items
 //-----------------------------------------------------------------------------------
-ItemDisplay[(aqv OR cqv)]:
 ItemDisplay[FILTLVL=5 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !SUP !ETH]:
 ItemDisplay[FILTLVL=5 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
 ItemDisplay[FILTLVL=5 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
