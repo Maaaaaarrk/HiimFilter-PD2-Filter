@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Placeholder 1
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.2.0%NL%*PD2* Filter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.2.1%NL%*PD2* Filter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -486,15 +486,15 @@ ItemDisplay[(tbk OR ibk) QTY<6]: %RED%LOW QTY %NAME%%CONTINUE%
 ItemDisplay[ibk]: %RED%+%WHITE%ID Tome%CONTINUE%									// Always show ID Tomes
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome%CONTINUE%									// Always show TP Tomes
 
-ItemDisplay[rvl DIFF=2 FILTLVL=6]]: %PURPLE%R R R R R R
-ItemDisplay[rvs DIFF=2 FILTLVL=6]]: %PURPLE%R R
+ItemDisplay[rvl DIFF=2 FILTLVL=6]: %PURPLE%R R R R R R
+ItemDisplay[rvs DIFF=2 FILTLVL=6]: %PURPLE%R R
 ItemDisplay[rvl]: %PURPLE%*        %TAN%Rejuv %WHITE%65%        %PURPLE%*%WHITE%
 ItemDisplay[rvs]: %PURPLE%* %TAN%Rejuv %WHITE%35% %PURPLE%*%WHITE%
 
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>1]:
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) FILTLVL>1]:
-ItemDisplay[mp5 CLVL>80 DIFF=2 FILTLVL=6]]: %BLUE%M M
-ItemDisplay[hp5 CLVL>80 DIFF=2] FILTLVL=6]: %RED%H H
+ItemDisplay[mp5 CLVL>80 DIFF=2 FILTLVL=6]: %BLUE%M M
+ItemDisplay[hp5 CLVL>80 DIFF=2 FILTLVL=6]: %RED%H H
 
 ItemDisplay[(hp1 OR hp2) (DIFF>0 OR CLVL>79)]: 										// Hide Rank 1 & 2 post Normal or when 80+
 ItemDisplay[(hp3 OR hp4) (DIFF>1 OR CLVL>79)]: 										// Hide Rank 3 & 4 post NM or when 80+
@@ -534,7 +534,7 @@ ItemDisplay[leg]: %GOLD%%NAME%%MAP-58%{%TAN%Cube w/ Tome of Town Portal in Act 1
 ItemDisplay[hdm]: %NAME%%MAP-58%{%TAN%Give to Charsi in Act 1}
 ItemDisplay[ass]: %GOLD%Book of Skill%MAP-58%{%TAN%+1 Skill Point%NL%Right click for %NL%}
 ItemDisplay[tr1]:
-ItemDisplay[box]: %NAME%%MAP-58% 
+//Is above ItemDisplay[box]: %NAME%%MAP-58% 
 ItemDisplay[hst]: %NAME%%MAP-58%{%TAN%Act 2: Tal Rashas Tomb%NL%Place in Tomb Orifice in}
 ItemDisplay[vip]: %NAME%%MAP-58%{%TAN%Cube w/ Staff of Kings}
 ItemDisplay[msf]: %NAME%%MAP-58%{%TAN%Cube w/ Amulet of the Viper}
@@ -577,8 +577,8 @@ ItemDisplay[cqv MAG !ID FILTLVL>1]:
 ItemDisplay[cqv AMAZON MAG !ID FILTLVL>0]:
 ItemDisplay[cqv RARE !ID FILTLVL>2]:
 ItemDisplay[cqv AMAZON RARE !ID FILTLVL>3]:
-ItemDisplay[cqv MAG !ID FILTLVL != 4]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[cqv RARE !ID FILTLVL != 4]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
+ItemDisplay[cqv MAG !ID !(FILTLVL=4)]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
+ItemDisplay[cqv RARE !ID !(FILTLVL=4)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -591,6 +591,9 @@ ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%**%YELLOW%     %NAME%
 //-----------------------------------------------------------------------------------
 
 // Rings & Amulet Stat Tags
+
+ItemDisplay[rin UNI ALLSK>0]: %PURPLE%+1 Skill %GOLD%%NAME%%CONTINUE%
+
 ItemDisplay[rin MAG (STAT60>0 OR STAT62>0 OR RES>0 OR FCR>0 OR FRES+CRES+LRES+PRES>39 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %BLUE%Ring%CONTINUE%
 ItemDisplay[rin RARE (STAT60>0 OR STAT62>0 OR RES>0 OR FCR>0 OR FRES+CRES+LRES+PRES>39 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %YELLOW%Ring%CONTINUE%
 ItemDisplay[rin CRAFT (STAT60>0 OR STAT62>0 OR RES>0 OR FCR>0 OR FRES+CRES+LRES+PRES>39 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %ORANGE%Ring%CONTINUE% 
@@ -1030,6 +1033,18 @@ ItemDisplay[SOCK>0]: %NAME% %GRAY%[%SOCKETS%]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // ITEM TAGS - Corrupted [C]
+// NOTE indexes are off by 1 from wiki
+ItemDisplay[STAT360=45]: %NAME% %RED%CBF%CONTINUE% 
+
+ItemDisplay[STAT360=16]: %NAME% %RED%FCR%CONTINUE% 
+ItemDisplay[STAT360=42]: %NAME% %RED%FCR%CONTINUE% 
+ItemDisplay[STAT360=28]: %NAME% %RED%FCR Fire%CONTINUE% 
+ItemDisplay[STAT360=29]: %NAME% %RED%FCR Cold%CONTINUE% 
+ItemDisplay[STAT360=30]: %NAME% %RED%FCR Light%CONTINUE% 
+ItemDisplay[STAT360=31]: %NAME% %RED%FCR Poison%CONTINUE% 
+
+ItemDisplay[STAT360=27]: %NAME% %RED%+1 Skill%CONTINUE% 
+ItemDisplay[STAT360=50]: %NAME% %RED%+1 Skill%CONTINUE% 
 ItemDisplay[STAT360>0]: %NAME% %RED%[C]%CONTINUE% 
 //-----------------------------------------------------------------------------------
 
@@ -2047,7 +2062,6 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 ItemDisplay[(7wa OR 7gm OR 7gd OR 7b8 OR 7gl OR 6lw) MAG ETH ELT !ID]: %NAME% [C]
 ItemDisplay[WEAPON MAG ETH !ID]: %NAME% [C]
 ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH !ID]: %GRAY%* %BLUE%%NAME% %GRAY%*
-ItemDisplay[WEAPON MAG ETH !ID]: %NAME% [C]
 ItemDisplay[(am2 OR am7 OR amc) MAG !ID]: %NAME% [C] //Zon bow
 ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID]: %NAME% [C] //skull helm
 ItemDisplay[(bsh OR xsh OR ush) MAG !ID]: %NAME% [C] //bone shield
@@ -3869,7 +3883,7 @@ ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WH
 //-----------------------------------------------------------------------------------
 // LEVELING GEAR - Shows for filtered
 //-----------------------------------------------------------------------------------
-ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) CLVL<41 FILTLVL<3)]: %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) CLVL<41 FILTLVL<3]: %NAME%%CONTINUE%
 ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) (CLVL>40 AND CLVL<80) FILTLVL<4]: %NAME%%CONTINUE%
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH SUP SOCK=0 CLVL<80 FILTLVL<4]: %NAME%
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH !INF SOCK=0 CLVL<80 FILTLVL<4]: %NAME%%CONTINUE%
