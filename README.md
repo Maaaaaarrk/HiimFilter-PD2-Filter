@@ -9,13 +9,13 @@ See install.png for picture install directions
 
 ## Filter Levels
 
-0]: OFF
-1]: Base
-2]: Strict
-3]: End Game & Crafting
-4]: End Game
-5]: Placeholder 1
-6]: Potions Only
+* 0]: OFF
+* 1]: Base
+* 2]: Strict
+* 3]: End Game & Crafting
+* 4]: End Game
+* 5]: Placeholder 1
+* 6]: Potions Only
 
 ## Disclaimer and Credits
 
