@@ -29,3 +29,7 @@ Based off parts of Wolfie's PD2 Loot Fitlers - github.com/WolfieeifloW/pd2filter
 See install.png for picture manual install directions
 
 For testing: https://betweenwalls.github.io/filterbird/?v=PD2
+
+## Manual Install
+
+![img1](https://github.com/Maaaaaarrk/Maaaark-PD2-Filter/blob/main/install.png?raw=true)
