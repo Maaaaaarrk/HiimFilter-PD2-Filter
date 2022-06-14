@@ -1,6 +1,6 @@
 # PD2 Loot Filter
-* by Maaaark
-* by Hiimdave
+* by *Maaaark
+* by *Hiimdave
 
 ## To confirm installation check tool tip on Keys item
 
