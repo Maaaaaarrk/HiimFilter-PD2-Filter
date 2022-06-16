@@ -18,6 +18,19 @@
 * 5]: Placeholder 1
 * 6]: Potions Only
 
+## Charm Stats on Ground
+
+Charms on ground will show important stats
+
+## Magic / Rare / Crafted items
+
+These items also show important stats on the ground. Example is of amulets however this applies to many gear slots.
+
+
+## LLD
+
+Set/Unique items that are valuable to LLD community carry the [LLD] tag Jewels have a rating system so you can judge if something is nice or GG.
+
 ## Disclaimer and Credits
 
 Use at your own risk! - I don't promise there will not be bugs, or that you may miss drops you personally may have wanted if I hid or made it less obvious.
