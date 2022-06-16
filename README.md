@@ -5,7 +5,7 @@
 ## To confirm installation check tool tip on Keys item
 
 
-![img1](https://github.com/Maaaaaarrk/Maaaark-PD2-Filter/blob/main/Cube.png?raw=true)
+![img1](Cube.png?raw=true)
 
 
 ## Filter Levels
