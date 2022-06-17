@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Placeholder 1
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.3.1%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.4.0%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -2141,6 +2141,68 @@ ItemDisplay[WEAPON !BOW !XBOW !WAND !SOR]: %NAME%{%NL%%TAN%Base Speed%WHITE%: %W
 ItemDisplay[WEAPON (BOW OR XBOW)]: %NAME%{%NL%%TAN%Base Speed%WHITE%: %WPNSPD%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------
+// Slam formatting
+//-----------------------------------------------------------------------------------
+
+//Always slam grouping
+ItemDisplay[FILTLVL<3 UNI STAT360=0 (7tw OR 7sr OR uar OR 7fl OR xrn OR xlm OR usk OR ulc OR upl OR 9bw OR baa OR 7ws OR 9s8 OR xth OR 7cr OR 7mt OR 9tw OR 9gw OR 9fc OR nee OR 7o7 OR 6bs OR 8hx OR drb OR mgl OR xar OR urn OR ba6 OR nef OR rng OR 7wa OR obf OR 7gw OR 8rx OR 7s7 OR bad OR uvg OR xrs OR 6l7 OR 9wh OR 7gm OR obc OR 7gi OR 7lw OR 7kr OR hgl OR 7ts OR xow OR 7bl OR xmg OR uh9 OR 7ta OR tbt OR 8lw OR tbl OR vbt OR xhb OR xvg OR ci3 OR xlt OR dgr OR 6rx OR bae OR uap OR ush OR 9di OR 7sc OR xhg OR 7bt OR pa9 OR 9sb OR nea OR lbt OR xlb OR 7wb OR dra OR ci2 OR 8lb OR 7b8 OR xtg OR uld OR xsh OR 7cr OR tgl OR 6ws OR umb OR uow OR ulb OR 7ga OR uhm OR uvc OR utg OR xap OR utp OR 8mx OR xtp OR dr2 OR dre OR zvb OR 8ls OR xkp OR uvb OR 7wh OR uhb OR 7cs OR xhn OR xmb OR xea OR 8ws OR xpl OR ztb OR umg OR drd OR uts OR 7p7 OR uhg OR ulm OR 7wh OR uit OR 7wc OR zlb OR 9wn OR skp OR ob6 OR uar OR 7gm OR 9gm OR utu OR 7gd OR oba OR 7s8 OR xui OR zhb OR amf OR xit OR ama OR 7pa OR xld OR mbt OR am5 OR sml OR gwn OR drf OR xhm OR xh9 OR uhm OR xlg OR brs OR umc OR xtb OR xvb OR 6lw OR 7m7 OR 7dg OR bac OR bhm OR ame OR 9m9 OR 9ga)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+ItemDisplay[FILTLVL<3 SET STAT360=0 (7ls OR upl OR xhl OR uui OR uhm OR xtb OR uul OR 9mt OR dr8 OR vbt OR xap OR bsd OR xar OR paf OR 7ws OR urn OR xhm OR zhb OR xhg OR xhb OR 7m7 OR crn)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+
+//Always slam individuals
+//SET rin
+//Angelic Halo
+ItemDisplay[FILTLVL<3 SET rin STAT360=0 REPLIFE>5 LIFE>19]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+//Bul-Kathos' Death Band
+ItemDisplay[FILTLVL<3 SET rin STAT360=0 STAT25>14 STAT224>99]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+
+// uni rin
+//Bul-Kathos'  Wedding Band
+//Dwarf Star
+//Nagelring
+//Nature's Peace
+//Raven Frost
+//The Stone of Jordan
+//Wisp Projector
+//AKA no Manald no Carrion
+ItemDisplay[FILTLVL<3 UNI rin STAT360=0 !(STAT62>2) !(PRES>19)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+ 
+//SET amu 
+//Angelic Wings
+ItemDisplay[FILTLVL<3 SET amu STAT360=0 STAT89=3 DTM=20]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+//Iratha's Collar
+ItemDisplay[FILTLVL<3 SET amu STAT360=0 PRES=30 STAT110=75]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+//Tal Rasha's Adjudication
+ItemDisplay[FILTLVL<3 SET amu STAT360=0 CLSK1>0]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+
+// UNI amu
+//Atma's Scarab
+//Crescent Moon
+//Highlord's Wrath
+//Mara's Kaleidoscope
+///Metalgrid
+//Nokozan Relic
+///Saracen's Chance
+///Seraph's Hymn
+///The Cat's Eye
+//The Eye of Etlich
+//The Rising Sun
+//AKA not slamming Mahim-Oak
+ItemDisplay[FILTLVL<3 UNI amu STAT360=0 !(FCR>0 AND ARPER>0)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+
+//Only slam these when eth
+ItemDisplay[FILTLVL<3 UNI ETH STAT360=0 (9tk OR 7b7 OR 9bs OR 72a OR 7bk OR 7gl OR 9pa)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+
+//Only slam these on item stat condition
+ItemDisplay[FILTLVL<3 UNI STAT360=0 (xts) STAT365>1]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+ItemDisplay[FILTLVL<3 UNI STAT360=0 (uul) ALLSK>1]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+ItemDisplay[FILTLVL<3 UNI STAT360=0 (9kr) STAT365>3]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+ItemDisplay[FILTLVL<3 UNI STAT360=0 (9ls) SK238>5]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+
+
+
 
 //-----------------------------------------------------------------------------------
 // IMPORTANT DROPS
@@ -2315,6 +2377,7 @@ ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) STAFF]: %NAME% {%ORANGE%Teleport Charg
 ItemDisplay[ID CHSK357>0 STAFF]: %NAME% {%ORANGE%(Blink)} // Blink charges
 
 // Wands with charges
+//ItemDisplay[ID (CHSK447) WAND]: %NAME% {%ORANGE%Confuse Charges Wand} // Confuse charges
 ItemDisplay[ID (SUFFIX=578 OR SUFFIX=579) WAND]: %NAME% {%ORANGE%Life Tap Charges Wand} // Life tap charges
 ItemDisplay[ID (SUFFIX=594 OR SUFFIX=595) WAND]: %NAME% {%ORANGE%Lower Res Charges Wand} // Lower Resist charges
 //-----------------------------------------------------------------------------------
@@ -2329,10 +2392,10 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %GRAY%[imbue]{%TAN%Note%WHITE%: You ca
 //-----------------------------------------------------------------------------------
 
 // Weapons
-ItemDisplay[WEAPON RARE ETH (ILVL>90) !ID]: %DOT-ED%%PURPLE%* * * * * * * * %NAME%%PURPLE% * * * * * * * *
-ItemDisplay[RARE (ILVL>91) !ID]: %PURPLE% * * * %NAME%%PURPLE% * * *
+ItemDisplay[WEAPON RARE ETH (ILVL>90) !ID]: %DOT-ED%%PURPLE%* * * * * * %NAME%%PURPLE% * * * * * * *
+ItemDisplay[WEAPON RARE ETH (ILVL>84) !ID]: %DOT-ED%%PURPLE%* * * %YELLOW%%NAME% %PURPLE%* * *
+ItemDisplay[RARE (ILVL>91) !ID]: %YELLOW% * * * %NAME% * * *
 ItemDisplay[WEAPON RARE (ILVL>91) !ID]: * %NAME% *
-ItemDisplay[WEAPON RARE ETH (ILVL>84) !ID]: %DOT-ED%* * * %NAME% * * *
 ItemDisplay[(BOW OR XBOW) RARE  (ILVL>84) !ID]: %DOT-ED%* %NAME% *
 //-----------------------------------------------------------------------------------
 
@@ -2346,29 +2409,31 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 //-----------------------------------------------------------------------------------
 // CRAFTING
 //-----------------------------------------------------------------------------------
-ItemDisplay[(7wa OR 7gm OR 7gd OR 7b8 OR 7gl OR 6lw) MAG ETH ELT !ID]: %NAME% [C]
-ItemDisplay[WEAPON MAG ETH !ID]: %NAME% [C]
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH !ID]: %GRAY%* %BLUE%%NAME% %GRAY%*
-ItemDisplay[(am2 OR am7 OR amc) MAG !ID]: %NAME% [C] //Zon bow
-ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID]: %NAME% [C] //skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG !ID]: %NAME% [C] //bone shield
-ItemDisplay[(lwb OR 8lw OR 6lw) MAG !ID]: %NAME% [C] //long bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG !ID]: %NAME% [C] //pala shield
-ItemDisplay[(ob5 OR oba OR obf) MAG !ID]: %NAME% [C] //sorc orb
-ItemDisplay[(lbt OR xlb OR ulb) MAG !ID]: %NAME% [C] //boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG !ID]: %NAME% [C] //boots
+ItemDisplay[(7wa OR 7gm OR 7gd OR 7b8 OR 7gl OR 6lw) MAG ETH ELT !ID FILTLVL<4]: %NAME% [C]
+ItemDisplay[WEAPON MAG ETH !ID FILTLVL<4]: %NAME% [C]
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH !ID FILTLVL<4]: %GRAY%* %BLUE%%NAME% %GRAY%*
+ItemDisplay[(am2 OR am7 OR amc) MAG !ID FILTLVL<4]: %NAME% [C] //Zon bow
+ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<4]: %NAME% [C] //skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<4]: %NAME% [C] //bone shield
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG !ID FILTLVL<4]: %NAME% [C] //long bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<4]: %NAME% [C] //pala shield
+ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<4]: %NAME% [C] //sorc orb
+ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<4]: %NAME% [C] //boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<4]: %NAME% [C] //boots
 ItemDisplay[WEAPON MAG ID !WAND !SOR]:%NAME%{%NAME% || %TAN%CraftedAlvl%WHITE%: %CRAFTALVL%}%CONTINUE%
 ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID]:%NAME%{%NL%%TAN%CraftedAlvl%WHITE%: %CRAFTALVL%%NAME%}%CONTINUE%
-ItemDisplay[HELM MAG ID]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%Cast: O, Nef, Jewel%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%Vamp: SK, Lum, Jewel%NAME%}
-ItemDisplay[BOOTS MAG ID]: %NAME%{%GREEN%Safety: O, Ort, Jewel%NL%%BLUE%HitPwr: O, Ral, Jewel%NL%%RED%Blood: O, Eth, Jewel%NL%%PURPLE%Caster: O, Thul, Jewel%NL%%YELLOW%MF: O, Io, Jewel%NL%%GRAY%Vamp: SK, El, Jewel%NAME%}
-ItemDisplay[GLOVES MAG ID]: %NAME%{%GREEN%Safety: O, Ral, Jewel%NL%%BLUE%HitPwr: O, Ort, Jewel%NL%%RED%Blood: O, Nef, Jewel%NL%%PURPLE%Caster: O, Ort, Jewel%NL%%YELLOW%MF: O, Hel, Jewel%NL%%GRAY%Vamp: SK, Io, Jewel%NAME%}
-ItemDisplay[BELT MAG ID]: %NAME%{%GREEN%Safety: O, Tal, Jewel%NL%%BLUE%HitPwr: O, Tal, Jewel%NL%%RED%Blood: O, Tal, Jewel%NL%%PURPLE%Caster: O, Ith, Jewel%NL%%YELLOW%MF: O, El, Jewel%NL%%GRAY%Vamp: SK, Eld, Jewel%NAME%}
-ItemDisplay[SHIELD MAG ID]: %NAME%{%GREEN%Safety: O, Nef, Jewel%NL%%BLUE%HitPwr: O, Eth, Jewel%NL%%RED%Blood: O, Ith, Jewel%NL%%PURPLE%Caster: O, Eth, Jewel%NL%%YELLOW%MF: O, Dol, Jewel%NL%%GRAY%Vamp: SK, Sol, Jewel%NAME%}
-ItemDisplay[CHEST MAG ID]: %NAME%{%GREEN%Safety: O, Eth, Jewel%NL%%BLUE%HitPwr: O, Nef, Jewel%NL%%RED%Blood: O, Thul, Jewel%NL%%PURPLE%Caster: O, Tal, Jewel%NL%%YELLOW%MF: O, Eld, Jewel%NL%%GRAY%Vamp: SK, Tir, Jewel%NAME%}
-ItemDisplay[amu MAG ID]: %NAME%{%GREEN%Safety: O, Thul, Jewel%NL%%BLUE%HitPwr: O,Thul , Jewel%NL%%RED%Blood: O, Amn, Jewel%NL%%PURPLE%Caster: O, Ral, Jewel%NL%%YELLOW%MF: O, Ko, Jewel%NL%%GRAY%Vamp: SK, Dol, Jewel%NAME%}
-ItemDisplay[rin MAG ID]: %NAME%{%GREEN%Safety: O, Amn, Jewel%NL%%BLUE%HitPwr: O, Amn, Jewel%NL%%RED%Blood: O, Sol, Jewel%NL%%PURPLE%Caster: O, Amn, Jewel%NL%%YELLOW%MF: O, Lum, Jewel%NL%%GRAY%Vamp: SK, Hel, Jewel%NAME%}
-ItemDisplay[WEAPON MAG ETH ID]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
-ItemDisplay[(BOW OR XBOW) MAG ID]: %NAME%{%GREEN%Safety: O, Sol, Jewel%NL%%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
+ItemDisplay[HELM MAG ID]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%* Caster: O, Nef, Jewel%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%* Vamp: SK, Lum, Jewel%NAME%}
+ItemDisplay[BOOTS MAG ID]: %NAME%{%GREEN%* Safety: O, Ort, Jewel%NL%%BLUE%HitPwr: O, Ral, Jewel%NL%%RED%Blood: O, Eth, Jewel%NL%%PURPLE%Caster: O, Thul, Jewel%NL%%YELLOW%* MF: O, Io, Jewel%NL%%GRAY%Vamp: SK, El, Jewel%NAME%}
+ItemDisplay[GLOVES MAG ID]: %NAME%{%GREEN%Safety: O, Ral, Jewel%NL%%BLUE%* HitPwr: O, Ort, Jewel%NL%%RED%* Blood: O, Nef, Jewel%NL%%PURPLE%* Caster: O, Ort, Jewel%NL%%YELLOW%MF: O, Hel, Jewel%NL%%GRAY%* Vamp: SK, Io, Jewel%NAME%}
+ItemDisplay[BELT MAG ID]: %NAME%{%GREEN%Safety: O, Tal, Jewel%NL%%BLUE%* HitPwr: O, Tal, Jewel%NL%%RED%Blood: O, Tal, Jewel%NL%%PURPLE%* Caster: O, Ith, Jewel%NL%%YELLOW%MF: O, El, Jewel%NL%%GRAY%Vamp: SK, Eld, Jewel%NAME%}
+ItemDisplay[SHIELD MAG ID]: %NAME%{%GREEN%* Safety: O, Nef, Jewel%NL%%BLUE%* HitPwr: O, Eth, Jewel%NL%%RED%Blood: O, Ith, Jewel%NL%%PURPLE%* Caster: O, Eth, Jewel%NL%%YELLOW%MF: O, Dol, Jewel%NL%%GRAY%Vamp: SK, Sol, Jewel%NAME%}
+ItemDisplay[CHEST MAG ID]: %NAME%{%GREEN%* Safety: O, Eth, Jewel%NL%%BLUE%HitPwr: O, Nef, Jewel%NL%%RED%Blood: O, Thul, Jewel%NL%%PURPLE%Caster: O, Tal, Jewel%NL%%YELLOW%MF: O, Eld, Jewel%NL%%GRAY%Vamp: SK, Tir, Jewel%NAME%}
+ItemDisplay[amu MAG ID]: %NAME%{%GREEN%Safety: O, Thul, Jewel%NL%%BLUE%HitPwr: O,Thul , Jewel%NL%%RED%Blood: O, Amn, Jewel%NL%%PURPLE%* Caster: O, Ral, Jewel%NL%%YELLOW%* MF: O, Ko, Jewel%NL%%GRAY%Vamp: SK, Dol, Jewel%NAME%}
+ItemDisplay[rin MAG ID]: %NAME%{%GREEN%Safety: O, Amn, Jewel%NL%%BLUE%HitPwr: O, Amn, Jewel%NL%%RED%* Blood: O, Sol, Jewel%NL%%PURPLE%Caster: O, Amn, Jewel%NL%%YELLOW%* MF: O, Lum, Jewel%NL%%GRAY%* Vamp: SK, Hel, Jewel%NAME%}
+ItemDisplay[(WAND OR SOR) MAG ID]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
+ItemDisplay[WEAPON MAG ETH ID]: %NAME%{%BLUE%* HitPwr: O, Tir, Jewel%NL%%RED%* Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
+ItemDisplay[(SIN) MAG ID]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
+ItemDisplay[(BOW OR XBOW) MAG ID]: %NAME%{%GREEN%* Safety: O, Sol, Jewel%NL%%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
 ItemDisplay[WEAPON MAG ID]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}
 //-----------------------------------------------------------------------------------
 
