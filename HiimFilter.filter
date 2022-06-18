@@ -2329,10 +2329,16 @@ ItemDisplay[ID CHSK357>0 STAFF]: %NAME% {%ORANGE%(Blink)} // Blink charges
 ItemDisplay[ID (SUFFIX=578 OR SUFFIX=579) WAND]: %NAME% {%ORANGE%Life Tap Charges Wand} // Life tap charges
 ItemDisplay[ID (SUFFIX=594 OR SUFFIX=595) WAND]: %NAME% {%ORANGE%Lower Res Charges Wand} // Lower Resist charges
 
-//5 sk wands / offhand
-ItemDisplay[TABSK18>2 SK381>2]: %PURPLE%+6 Dark Pact %NAME% {%NAME%}
-ItemDisplay[TABSK18>1 SK381>2]: %PURPLE%+5 Dark Pact %NAME% {%NAME%}
-ItemDisplay[CLSK2>1 SK381>2]: %PURPLE%+5 Dark Pact %NAME% {%NAME%}
+//Dark Pact sk wands / offhand //ALLSK
+ItemDisplay[TABSK18=3 SK381=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Dark Pact %NAME% {%NAME%}
+ItemDisplay[TABSK18=3 SK381=3]: %BORDER-ED%%PURPLE%+6 Dark Pact %NAME% {%NAME%}
+ItemDisplay[TABSK18=3 SK381=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Dark Pact %NAME% {%NAME%}
+ItemDisplay[TABSK18=2 SK381=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Dark Pact %NAME% {%NAME%}
+ItemDisplay[CLSK2=2 SK381=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Dark Pact %NAME% {%NAME%}
+ItemDisplay[TABSK18=2 SK381=3]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
+ItemDisplay[TABSK18=3 SK381=2]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
+ItemDisplay[CLSK2=2 SK381=3]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
+ItemDisplay[(CLSK2>0 OR TABSK18>0) SK381>0]: %BORDER-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%} //catches rest
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4258,6 +4264,11 @@ ItemDisplay[((POLEARM OR SPEAR) AND !THROWING) NMAG ETH !INF SOCK=0 CLVL<80]: %N
 ItemDisplay[WEAPON BARBARIAN ETH THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN RARE THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN MAG THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
+ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Wake of fire
+ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Wake of fire
+ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Dark Pact
+ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Dark Pact
+ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
 ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 
 
