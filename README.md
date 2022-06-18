@@ -47,6 +47,7 @@ Utility items have useful notes tool tips.
 Also Filter level 1/2 have a note recommending useful items to "slam"
 
 
+![img1](examples/maps1.png?raw=true)
 ![img1](examples/hints1.PNG?raw=true)
 ![img1](examples/slamme1.PNG?raw=true)
 
