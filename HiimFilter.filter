@@ -290,7 +290,7 @@ ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %MAP
 //-----------------------------------------------------------------------------------
 // Gems
 //-----------------------------------------------------------------------------------
-ItemDisplay[GEM=1 OR GEM=2 OR GEM=3 (FILTLVL>2 OR DIFF>1)]:
+ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) (FILTLVL>2 OR DIFF>1)]:
 ItemDisplay[GEM=4 FILTLVL=6]:
 
 ItemDisplay[gzv OR gzvs]: %PURPLE%* %TAN%F. %WHITE% Amethyst %PURPLE%*%CONTINUE%
@@ -2095,7 +2095,7 @@ ItemDisplay[WEAPON (BOW OR XBOW)]: %NAME%{%NL%%TAN%Base Speed%WHITE%: %WPNSPD%}%
 
 //Always slam grouping
 ItemDisplay[FILTLVL<3 UNI STAT360=0 (7tw OR 7sr OR uar OR 7fl OR xrn OR xlm OR usk OR ulc OR upl OR 9bw OR baa OR 7ws OR 9s8 OR xth OR 7cr OR 7mt OR 9tw OR 9gw OR 9fc OR nee OR 7o7 OR 6bs OR 8hx OR drb OR mgl OR xar OR urn OR ba6 OR nef OR rng OR 7wa OR obf OR 7gw OR 8rx OR 7s7 OR bad OR uvg OR xrs OR 6l7 OR 9wh OR 7gm OR obc OR 7gi OR 7lw OR 7kr OR hgl OR 7ts OR xow OR 7bl OR xmg OR uh9 OR 7ta OR tbt OR 8lw OR tbl OR vbt OR xhb OR xvg OR ci3 OR xlt OR dgr OR 6rx OR bae OR uap OR ush OR 9di OR 7sc OR xhg OR 7bt OR pa9 OR 9sb OR nea OR lbt OR xlb OR 7wb OR dra OR ci2 OR 8lb OR 7b8 OR xtg OR uld OR xsh OR 7cr OR tgl OR 6ws OR umb OR uow OR ulb OR 7ga OR uhm OR uvc OR utg OR xap OR utp OR 8mx OR xtp OR dr2 OR dre OR zvb OR 8ls OR xkp OR uvb OR 7wh OR uhb OR 7cs OR xhn OR xmb OR xea OR 8ws OR xpl OR ztb OR umg OR drd OR uts OR 7p7 OR uhg OR ulm OR 7wh OR uit OR 7wc OR zlb OR 9wn OR skp OR ob6 OR uar OR 7gm OR 9gm OR utu OR 7gd OR oba OR 7s8 OR xui OR zhb OR amf OR xit OR ama OR 7pa OR xld OR mbt OR am5 OR sml OR gwn OR drf OR xhm OR xh9 OR uhm OR xlg OR brs OR umc OR xtb OR xvb OR 6lw OR 7m7 OR 7dg OR bac OR bhm OR ame OR 9m9 OR 9ga)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
-ItemDisplay[FILTLVL<3 SET STAT360=0 (7ls OR upl OR xhl OR uui OR uhm OR xtb OR uul OR 9mt OR dr8 OR vbt OR xap OR bsd OR xar OR paf OR 7ws OR urn OR xhm OR zhb OR xhg OR xhb OR 7m7 OR crn)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
+ItemDisplay[FILTLVL<3 SET STAT360=0 (xmg OR utc OR ne9 OR xul OR uh9 OR 7ls OR upl OR xhl OR uui OR uhm OR xtb OR uul OR 9mt OR dr8 OR vbt OR xap OR bsd OR xar OR paf OR 7ws OR urn OR xhm OR zhb OR xhg OR xhb OR 7m7 OR crn)]: %NAME%{%NL%%RED%Slam Me%NAME%}%CONTINUE%
 
 //Always slam individuals
 //SET rin
@@ -2338,7 +2338,19 @@ ItemDisplay[CLSK2=2 SK381=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Dark Pact %NAME% {%NAME
 ItemDisplay[TABSK16=2 SK381=3]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
 ItemDisplay[TABSK16=3 SK381=2]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
 ItemDisplay[CLSK2=2 SK381=3]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
-ItemDisplay[(CLSK2>0 OR TABSK16>0) SK381>0]: %BORDER-ED%%ORANGE% Dark Pact %NAME% {%NAME%} //catches rest
+ItemDisplay[(CLSK2>0 OR TABSK16>0 OR SK381=3) SK381>0]: %ORANGE% Dark Pact %NAME% {%NAME%} //catches rest
+ItemDisplay[(CLSK2>0 OR TABSK16>0) SK381>0]: %ORANGE% Dark Pact %NAME% {%NAME%} //catches rest
+
+//Desecrate sk wands / offhand //ALLSK 
+ItemDisplay[TABSK16=3 SK83=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Desecrate %NAME% {%NAME%}
+ItemDisplay[TABSK16=3 SK83=3]: %BORDER-ED%%PURPLE%+6 Desecrate %NAME% {%NAME%}
+ItemDisplay[TABSK16=3 SK83=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Desecrate %NAME% {%NAME%}
+ItemDisplay[TABSK16=2 SK83=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Desecrate %NAME% {%NAME%}
+ItemDisplay[CLSK2=2 SK83=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Desecrate %NAME% {%NAME%}
+ItemDisplay[TABSK16=2 SK83=3]: %DOT-ED%%PURPLE%+5 Desecrate %NAME% {%NAME%}
+ItemDisplay[TABSK16=3 SK83=2]: %DOT-ED%%PURPLE%+5 Desecrate %NAME% {%NAME%}
+ItemDisplay[CLSK2=2 SK83=3]: %DOT-ED%%PURPLE%+5 Desecrate %NAME% {%NAME%}
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4218,6 +4230,20 @@ ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
 ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
 ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 
+// fcr orb / staff /wand / scepter
+ItemDisplay[(WEAPON) FCR>0 FILTLVL<3 DIFF<1]: %ORANGE%[FCR] %NAME%{%NAME%}
+// FCR belt gloves chest shop
+ItemDisplay[(ARMOR) (MAG OR RARE) FCR>0 (FILTLVL<2 OR DIFF<2)]: %ORANGE%[FCR] %NAME%{%NAME%}
+// 25+ mf boots
+ItemDisplay[(BOOTS) (MAG OR RARE) MFIND>24 (FILTLVL<2 OR DIFF<2)]: %DARK_GREEN%[MF] %NAME%{%NAME%}
+// 20+ mf gloves
+ItemDisplay[(GLOVES) (MAG OR RARE) MFIND>19 (FILTLVL<2 OR DIFF<2)]: %DARK_GREEN%[MF] %NAME%{%NAME%}
+// res boots
+ItemDisplay[(BOOTS) (MAG OR RARE) (FRES+CRES+LRES+PRES>29) (FILTLVL<2 OR DIFF<2)]: %PURPLE%[Res] %NAME%{%NAME%}
+// 40 FRW boots
+ItemDisplay[(BOOTS) (MAG OR RARE) FRW=40 (FILTLVL<2 OR DIFF<2)]: %TAN%[FRW] %NAME%{%NAME%}
+// 50 life when res
+ItemDisplay[(ARMOR) (MAG OR RARE) LIFE>50 (FILTLVL<2 OR DIFF<2)]: %RED%[Life] %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 
