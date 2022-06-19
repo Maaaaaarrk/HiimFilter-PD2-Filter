@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Placeholder 1
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.4.3%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.4.4%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -2600,12 +2600,12 @@ ItemDisplay[NMAG !RW SOCK>1 (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) (SK3
 //-----------------------------------------------------------------------------------
 
 //Amazon
-ItemDisplay[NMAG !RW TABSK0=1 FILTLVL>1]: +1 Bow %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW TABSK0=2 FILTLVL>1]: +2 Bow %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW TABSK0=3]: +3 Bow %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW TABSK2=1 FILTLVL>1]: +1 Java %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW TABSK2=2 FILTLVL>1]: +2 Java %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW TABSK2=3]: +3 Java %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW TABSK0=1 FILTLVL<2]: %GREEN%+1 Bow %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW TABSK0=2 FILTLVL<2]: %GREEN%+2 Bow %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW TABSK0=3]: %GREEN%+3 Bow %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW TABSK2=1 FILTLVL<2]: %GREEN%+1 Java %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW TABSK2=2 FILTLVL<2]: %GREEN%+2 Java %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW TABSK2=3]: %GREEN%+3 Java %NAME%{%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //Assasin
@@ -3749,48 +3749,48 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7fl]: %NAME%{%TAN%Larzuk quest for 5 so
 // Polearms
 ItemDisplay[NMAG !INF !RW SOCK=0 bar]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Bardiche, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 vou]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Voulge, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 vou]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Voulge, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 vou]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Voulge, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 scy]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 scy]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 scy]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 scy]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 pax]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pax]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pax]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 pax]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 hal]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 hal]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 hal]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 hal]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 wsc]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 wsc]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 wsc]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 wsc]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 41+
-ItemDisplay[NMAG !INF !RW SOCK=0 9b7]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lochaber Axe, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 9b7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lochaber Axe, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9vo]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Bill, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9vo]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bill, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9vo]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bill, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9s8]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9s8]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9s8]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9s8]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9pa]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9pa]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9pa]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9pa]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9h9]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9h9]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9h9]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9h9]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9wc]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9wc]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9wc]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9wc]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 41+
-ItemDisplay[NMAG !INF !RW SOCK=0 7o7]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ogre Axe, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 7o7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ogre Axe, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7vo]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Colossus Voulge, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7vo]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Colossus Voulge, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7vo]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Colossus Voulge, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7s8]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7s8]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7s8]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7s8]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7pa]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7pa]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7pa]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7pa]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7h7]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7h7]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7h7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7h7]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7wc]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7wc]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7wc]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7wc]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 41+
 
 // Scepters
@@ -3810,39 +3810,39 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7ws]: %NAME%{%TAN%Larzuk quest for 5 so
 // Spears
 ItemDisplay[NMAG !INF !RW SOCK=0 spr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 tri]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Trident, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 tri]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Trident, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 tri]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Trident, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 brn]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 brn]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 brn]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 brn]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 spt]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 spt]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 spt]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 spt]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 pik]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 pik]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 9sr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9tr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9br]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9br]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9br]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9br]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9st]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9st]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9st]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9st]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9p9]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9p9]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 7sr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Hyperion Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7tr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7br]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7br]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7br]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7br]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7st]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7st]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7st]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7st]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7p7]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7p7]: %NAME%{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7p7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7p7]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 41+
 
 // Staves
@@ -4078,15 +4078,18 @@ ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF !SUP SOCK=0]: %DOT-D6%%ORANGE%
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 SOCK=0 (INF OR SUP) NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
 
 // Spirit Swords
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Larzuk 4soc%TAN%]{%NAME%}
+ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4soc]{%NAME%}
 ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Cube for 4soc%TAN%]{%NAME%}
 ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Larzuk 4soc%TAN%]{%NAME%}
+ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4soc]{%NAME%}
 
 // Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(7vo OR 7tr) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7vo OR 7tr) ETH SOCK=0 SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
+
+//Insight for A3
+ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws)]: %DOT-D6%* %NAME% *{%NAME%}%CONTINUE% // All Scepter, 0os
 
 // Grief/Beast/Passion
 ItemDisplay[7wa !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
@@ -4251,6 +4254,12 @@ ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WH
 //-----------------------------------------------------------------------------------
 // LEVELING GEAR - Shows for filtered
 //-----------------------------------------------------------------------------------
+ItemDisplay[(MAG OR RARE) !RW TABSK0=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Bow %NAME%{%NAME%}
+ItemDisplay[(MAG OR RARE) !RW TABSK0=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Bow %NAME%{%NAME%}
+ItemDisplay[(MAG OR RARE) !RW TABSK0=3 DIFF<2]: %GREEN%+3 Bow %NAME%{%NAME%}
+ItemDisplay[(MAG OR RARE) !RW TABSK2=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Java %NAME%{%NAME%}
+ItemDisplay[(MAG OR RARE) !RW TABSK2=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Java %NAME%{%NAME%}
+ItemDisplay[(MAG OR RARE) !RW TABSK2=3 DIFF<2]: %GREEN%+3 Java %NAME%{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[SHIELD NMAG DIFF<2 FILTLVL<3 SOCK=3]: %ORANGE%** %GRAY%%NAME% %ORANGE%**{%NAME%}
@@ -4325,8 +4334,8 @@ ItemDisplay[(cm1 OR cm3 OR jew) (MAG OR RARE) ID]: %NAME%{%NAME%}
 // Filter level Setting limiters
 // ------------------------------------------------------------------------------
 
-//Hide 0 socket non elite clvl 70+
-ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT (CLVL>70 OR FILTLVL>1)]: 
+//Hide 0 socket non elite filter lvl>1
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT FILTLVL>1]: 
 
 //Hide non eth weapons unid mag in hell FILTLVL>1
 ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 FILTLVL>1 DIFF=2]:
