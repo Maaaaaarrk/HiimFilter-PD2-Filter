@@ -4201,6 +4201,23 @@ ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WH
 ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
 ItemDisplay[RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %DOT-90%%ORANGE%*           %NAME%          %ORANGE%*
 
+// Leveling gear formating
+// fcr orb / staff /wand / scepter
+ItemDisplay[(WEAPON) FCR>0 FILTLVL<3 DIFF<1]: %ORANGE%[FCR] %NAME%{%NAME%}%CONTINUE% 
+// FCR belt gloves chest shop
+ItemDisplay[(ARMOR) (MAG OR RARE) FCR>0 (FILTLVL<2 OR DIFF<2)]: %ORANGE%[FCR] %NAME%{%NAME%}%CONTINUE% 
+// 25+ mf boots
+ItemDisplay[(BOOTS) (MAG OR RARE) MFIND>24 (FILTLVL<2 OR DIFF<2)]: %DARK_GREEN%[MF] %NAME%{%NAME%}%CONTINUE% 
+// 20+ mf gloves
+ItemDisplay[(GLOVES) (MAG OR RARE) MFIND>19 (FILTLVL<2 OR DIFF<2)]: %DARK_GREEN%[MF] %NAME%{%NAME%}%CONTINUE% 
+// res boots
+ItemDisplay[(BOOTS) (MAG OR RARE) (FRES+CRES+LRES+PRES>29) (FILTLVL<2 OR DIFF<2)]: %PURPLE%[Res] %NAME%{%NAME%}%CONTINUE% 
+// 40 FRW boots
+ItemDisplay[(BOOTS) (MAG OR RARE) FRW=40 (FILTLVL<2 OR DIFF<2)]: %TAN%[FRW] %NAME%{%NAME%}%CONTINUE% 
+// 50 life when res
+ItemDisplay[(ARMOR) (MAG OR RARE) LIFE>50 (FILTLVL<2 OR DIFF<2)]: %RED%[Life] %NAME%{%NAME%}%CONTINUE% 
+
+
 ItemDisplay[(MAG OR RARE) !RW TABSK0=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Bow %NAME%{%NAME%}
 ItemDisplay[(MAG OR RARE) !RW TABSK0=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Bow %NAME%{%NAME%}
 ItemDisplay[(MAG OR RARE) !RW TABSK0=3 DIFF<2]: %GREEN%+3 Bow %NAME%{%NAME%}
@@ -4228,21 +4245,6 @@ ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
 ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
 ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
 ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
-
-// fcr orb / staff /wand / scepter
-ItemDisplay[(WEAPON) FCR>0 FILTLVL<3 DIFF<1]: %ORANGE%[FCR] %NAME%{%NAME%}
-// FCR belt gloves chest shop
-ItemDisplay[(ARMOR) (MAG OR RARE) FCR>0 (FILTLVL<2 OR DIFF<2)]: %ORANGE%[FCR] %NAME%{%NAME%}
-// 25+ mf boots
-ItemDisplay[(BOOTS) (MAG OR RARE) MFIND>24 (FILTLVL<2 OR DIFF<2)]: %DARK_GREEN%[MF] %NAME%{%NAME%}
-// 20+ mf gloves
-ItemDisplay[(GLOVES) (MAG OR RARE) MFIND>19 (FILTLVL<2 OR DIFF<2)]: %DARK_GREEN%[MF] %NAME%{%NAME%}
-// res boots
-ItemDisplay[(BOOTS) (MAG OR RARE) (FRES+CRES+LRES+PRES>29) (FILTLVL<2 OR DIFF<2)]: %PURPLE%[Res] %NAME%{%NAME%}
-// 40 FRW boots
-ItemDisplay[(BOOTS) (MAG OR RARE) FRW=40 (FILTLVL<2 OR DIFF<2)]: %TAN%[FRW] %NAME%{%NAME%}
-// 50 life when res
-ItemDisplay[(ARMOR) (MAG OR RARE) LIFE>50 (FILTLVL<2 OR DIFF<2)]: %RED%[Life] %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 
