@@ -15,7 +15,7 @@
 * 2]: Strict
 * 3]: End Game & Crafting
 * 4]: End Game
-* 5]: Placeholder 1
+* 5]: Mystery Mode
 * 6]: Potions Only
 
 ## Charm Stats on Ground
