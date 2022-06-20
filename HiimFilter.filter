@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Mystery Mode
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.5.0%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.5.1%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -275,7 +275,7 @@ ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR STAT438>0)]: %NAME%%CONTINUE%{%P
 
 // PD2 Items - Maps Tags
 ItemDisplay[STAT458>0]: %NAME%%GREEN% [H]%CONTINUE%{%NAME%}
-ItemDisplay[STAT360>0]: %NAME%%RED% [C]%CONTINUE%{%NAME%}
+//ItemDisplay[STAT360>0]: %NAME%%RED% [C]%CONTINUE%{%NAME%}
 ItemDisplay[STAT437>0]: %NAME%%BLUE% [DOLLS]%CONTINUE%{%NAME%}
 
 ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19)]: %MAP-62%%NAME% %GREEN%*{%NAME%}
@@ -2091,7 +2091,7 @@ ItemDisplay[SET !ID xmg]: %CONTINUE%Trang-Ouls Claws// Heavy Bracers
 
 // FORMATTING
 // TODO ItemDisplay[(UNI OR SET) !ID FILTLVL=5]: Unidentified%CONTINUE%
-ItemDisplay[(UNI OR SET) !ID]: ¿ %NAME% ?%CONTINUE%
+ItemDisplay[(UNI OR SET) !ID]: %NAME% ?%CONTINUE%
 ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
