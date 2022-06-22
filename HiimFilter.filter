@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Mystery Mode
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.5.4%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.5.5%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -2092,8 +2092,8 @@ ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 // Weapon formatting
 //-----------------------------------------------------------------------------------
-ItemDisplay[WEAPON !BOW !XBOW !WAND !SOR]: %NAME%{%NL%%TAN%Base Speed%WHITE%: %WPNSPD% || %TAN%Range%WHITE%: +%RANGE%}%CONTINUE%
-ItemDisplay[WEAPON (BOW OR XBOW)]: %NAME%{%NL%%TAN%Base Speed%WHITE%: %WPNSPD%}%CONTINUE%
+ItemDisplay[WEAPON !BOW !XBOW !WAND !SOR]: %NAME%{%NL%%WHITE%Base Speed: %WPNSPD% || Range: +%RANGE%}%CONTINUE%
+ItemDisplay[WEAPON (BOW OR XBOW)]: %NAME%{%NL%%WHITE%Base Speed: %WPNSPD%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2391,8 +2391,8 @@ ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<4]: %NAME% %PURPLE%[C] //pala sh
 ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<4]: %NAME% %PURPLE%[C] //sorc orb
 ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<4]: %NAME% %PURPLE%[C] //boots
 ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<4]: %NAME% %PURPLE%[C] //boots
-ItemDisplay[WEAPON MAG ID !WAND !SOR FILTLVL<4]:%NAME%{%NAME% || %TAN%CraftedAlvl%WHITE%: %CRAFTALVL%}%CONTINUE%
-ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<4]:%NAME%{%NL%%TAN%CraftedAlvl%WHITE%: %CRAFTALVL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON MAG ID !WAND !SOR FILTLVL<4]:%NAME%{%NAME% || %WHITE%CraftedAlvl: %CRAFTALVL%}%CONTINUE%
+ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<4]:%NAME%{%NL%%WHITE%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
 ItemDisplay[HELM MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%* Caster: O, Nef, Jewel *%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%* Vamp: SK, Lum, Jewel *%NAME%}%CONTINUE%
 ItemDisplay[BOOTS MAG ID !SHOP]: %NAME%{%GREEN%* Safety: O, Ort, Jewel *%NL%%BLUE%HitPwr: O, Ral, Jewel%NL%%RED%Blood: O, Eth, Jewel%NL%%PURPLE%Caster: O, Thul, Jewel%NL%%YELLOW%* MF: O, Io, Jewel *%NL%%GRAY%Vamp: SK, El, Jewel%NAME%}%CONTINUE%
 ItemDisplay[GLOVES MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Ral, Jewel%NL%%BLUE%* HitPwr: O, Ort, Jewel *%NL%%RED%* Blood: O, Nef, Jewel *%NL%%PURPLE%* Caster: O, Ort, Jewel *%NL%%YELLOW%MF: O, Hel, Jewel%NL%%GRAY%* Vamp: SK, Io, Jewel *%NAME%}%CONTINUE%
