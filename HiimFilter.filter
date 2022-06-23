@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Mystery Mode
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.5.5%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.5.6%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -654,8 +654,6 @@ ItemDisplay[aqv NMAG CLVL>10]:
 ItemDisplay[aqv !(AMAZON) MAG !ID FILTLVL>1]:
 ItemDisplay[aqv AMAZON MAG !ID FILTLVL>2]:
 ItemDisplay[aqv !(AMAZON) RARE !ID FILTLVL>1]:
-ItemDisplay[aqv MAG !ID !(FILTLVL=4)]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[aqv RARE !ID !(FILTLVL=4)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%* 
 //-----------------------------------------------------------------------------------
 // BOLTS - UNID
 ItemDisplay[cqv NMAG !(AMAZON)]:
@@ -664,8 +662,6 @@ ItemDisplay[cqv MAG !ID FILTLVL>1]:
 ItemDisplay[cqv AMAZON MAG !ID FILTLVL>0]:
 ItemDisplay[cqv RARE !ID FILTLVL>2]:
 ItemDisplay[cqv AMAZON RARE !ID FILTLVL>3]:
-ItemDisplay[cqv MAG !ID !(FILTLVL=4)]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[cqv RARE !ID !(FILTLVL=4)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -676,6 +672,11 @@ ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR w
 
 ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
 ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %DOT-90%%ORANGE%*           %YELLOW%%NAME%          %ORANGE%*
+
+ItemDisplay[aqv MAG !ID !(FILTLVL=4) AMAZON FILTLVL<2]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
+ItemDisplay[aqv RARE !ID !(FILTLVL=4) AMAZON]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%* 
+ItemDisplay[cqv MAG !ID !(FILTLVL=4) AMAZON FILTLVL<2]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
+ItemDisplay[cqv RARE !ID !(FILTLVL=4) AMAZON]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
 
 //-----------------------------------------------------------------------------------
 // JEWELRY
@@ -2402,10 +2403,10 @@ ItemDisplay[CHEST MAG ID !SHOP]: %NAME%{%GREEN%* Safety: O, Eth, Jewel *%NL%%BLU
 ItemDisplay[amu MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Thul, Jewel%NL%%BLUE%HitPwr: O,Thul , Jewel%NL%%RED%Blood: O, Amn, Jewel%NL%%PURPLE%* Caster: O, Ral, Jewel *%NL%%YELLOW%* MF: O, Ko, Jewel *%NL%%GRAY%Vamp: SK, Dol, Jewel%NAME%}%CONTINUE%
 ItemDisplay[rin MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Amn, Jewel%NL%%BLUE%HitPwr: O, Amn, Jewel%NL%%RED%* Blood: O, Sol, Jewel *%NL%%PURPLE%Caster: O, Amn, Jewel%NL%%YELLOW%* MF: O, Lum, Jewel *%NL%%GRAY%* Vamp: SK, Hel, Jewel *%NAME%}%CONTINUE%
 ItemDisplay[(WAND OR SOR) MAG ID !SHOP]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel *%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
-ItemDisplay[WEAPON MAG ETH ID !SHOP]: %NAME%{%BLUE%* HitPwr: O, Tir, Jewel *%NL%%RED%* Blood: O, Ort, Jewel *%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
-ItemDisplay[(SIN) MAG ID !SHOP]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel *%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
+ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP]: %NAME%{%BLUE%* HitPwr: O, Tir, Jewel *%NL%%RED%* Blood: O, Ort, Jewel *%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
+ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel *%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) MAG ID !SHOP]: %NAME%{%GREEN%* Safety: O, Sol, Jewel *%NL%%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel *%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
-ItemDisplay[WEAPON MAG ID !SHOP]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
+ItemDisplay[WEAPON MAG !ETH !SIN ID !WAND !SOR !SHOP]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2974,9 +2975,9 @@ ItemDisplay[NMAG !RW SK49=3]: +3 Lightning %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW SK50=1 FILTLVL<2]: +1 Shiver Arm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW SK50=2 FILTLVL<2]: +2 Shiver Arm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW SK50=3]: +3 Shiver Arm %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW SK51=1 FILTLVL<2]: +1 Fire Wall %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW SK51=2 FILTLVL<2]: +2 Fire Wall %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW SK51=3]: +3 Fire Wall %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW SK51=1 FILTLVL<2]: +1 FireWall %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW SK51=2 FILTLVL<2]: +2 FireWall %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW SK51=3]: +3 FireWall %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW SK52=1 FILTLVL<2]: +1 Encht Fire %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW SK52=2 FILTLVL<2]: +2 Encht Fire %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW SK52=3]: +3 Encht Fire %NAME%{%NAME%}%CONTINUE%
@@ -4210,6 +4211,16 @@ ItemDisplay[(BOOTS) (MAG OR RARE) FRW=40 (FILTLVL<3 OR DIFF<2)]: %TAN%[FRW]%BLUE
 // 50 life when res
 ItemDisplay[(ARMOR) (MAG OR RARE) LIFE>50 (FILTLVL<3 OR DIFF<2)]: %RED%[Life]%BLUE% %NAME%{%NAME%}%CONTINUE% 
 
+//fissure for low level 
+ItemDisplay[SK234>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} 
+ItemDisplay[SK234>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
+// firewall for low level
+ItemDisplay[SK51>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} 
+//blaze for low level
+ItemDisplay[SK46>0 DIFF<1 FILTLVL<3 CLVL<18]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} 
+//fissure lore
+ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
+
 
 ItemDisplay[(MAG OR RARE) !RW TABSK0=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Bow %NAME%{%NAME%}
 ItemDisplay[(MAG OR RARE) !RW TABSK0=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Bow %NAME%{%NAME%}
@@ -4230,12 +4241,12 @@ ItemDisplay[((POLEARM OR SPEAR) AND !THROWING) NMAG ETH !INF SOCK=0 CLVL<80]: %N
 ItemDisplay[WEAPON BARBARIAN ETH THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN RARE THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN MAG THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
-ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Wake of fire
-ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Wake of fire
-ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Dark Pact
-ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Dark Pact
-ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
-ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
+ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Wake of fire
+ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Wake of fire
+ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dark Pact
+ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dark Pact
+ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
+ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
 ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
 ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 
