@@ -4212,12 +4212,14 @@ ItemDisplay[(BOOTS) (MAG OR RARE) FRW=40 (FILTLVL<3 OR DIFF<2)]: %TAN%[FRW]%BLUE
 ItemDisplay[(ARMOR) (MAG OR RARE) LIFE>50 (FILTLVL<3 OR DIFF<2)]: %RED%[Life]%BLUE% %NAME%{%NAME%}%CONTINUE% 
 
 //fissure for low level 
-ItemDisplay[SK234>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} 
-ItemDisplay[SK234>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%}
+ItemDisplay[SK234>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} 
+ItemDisplay[SK234>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
 // firewall for low level
-ItemDisplay[SK51>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} 
+ItemDisplay[SK51>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} 
 //blaze for low level
-ItemDisplay[SK46>0 DIFF<1 FILTLVL<3 CLVL<18]: * %NAME% *{%NAME%} 
+ItemDisplay[SK46>0 DIFF<1 FILTLVL<3 CLVL<18]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} 
+//fissure lore
+ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
 
 
 ItemDisplay[(MAG OR RARE) !RW TABSK0=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Bow %NAME%{%NAME%}
@@ -4239,12 +4241,12 @@ ItemDisplay[((POLEARM OR SPEAR) AND !THROWING) NMAG ETH !INF SOCK=0 CLVL<80]: %N
 ItemDisplay[WEAPON BARBARIAN ETH THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN RARE THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN MAG THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
-ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Wake of fire
-ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Wake of fire
-ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Dark Pact
-ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Dark Pact
-ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
-ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: * %NAME% *{%NAME%} // Curse tree
+ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Wake of fire
+ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Wake of fire
+ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dark Pact
+ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dark Pact
+ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
+ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
 ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
 ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 
