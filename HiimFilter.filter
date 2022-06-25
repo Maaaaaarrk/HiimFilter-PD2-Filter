@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Mystery Mode
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.5.8%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.5.9%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -157,8 +157,8 @@ ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) RARE]:
 ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%WHITE%%CONTINUE%{%RED%Fire 145% %YELLOW%Light 120% %BLUE% Cold 160%%NL%%GRAY%Phys 80% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
 ItemDisplay[t12]: %NAME%Horazons Memory Map%WHITE%%CONTINUE%{%RED%Fire 135% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 90% %GREEN%Psn 120%%NAME%}
 ItemDisplay[t13]: %NAME%Bastion Keep Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 95% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
-ItemDisplay[t14]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%
-ItemDisplay[t15]: %NAME%Sanatorium Map%WHITE%%CONTINUE%
+ItemDisplay[t14]: %NAME%Sanatorium Map%WHITE%%CONTINUE%
+ItemDisplay[t15]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%
 ItemDisplay[t16]: %NAME%T1-6 Map%WHITE%%CONTINUE%
 ItemDisplay[t17]: %NAME%T1-7 Map%WHITE%%CONTINUE%
 ItemDisplay[t18]: %NAME%T1-8 Map%WHITE%%CONTINUE%
@@ -2339,7 +2339,7 @@ ItemDisplay[CLSK2=2 SK381=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Dark Pact %NAME% {%NAME
 ItemDisplay[TABSK16=2 SK381=3]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
 ItemDisplay[TABSK16=3 SK381=2]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
 ItemDisplay[CLSK2=2 SK381=3]: %DOT-ED%%PURPLE%+5 Dark Pact %NAME% {%NAME%}
-ItemDisplay[(CLSK2>0 OR TABSK16>0 OR SK381=3) SK381>0]: %ORANGE% Dark Pact %NAME% {%NAME%} //catches rest
+ItemDisplay[(CLSK2>0 OR TABSK16>0 OR SK381=3) SK381>0 DIFF<2]: %ORANGE% Dark Pact %NAME% {%NAME%} //catches rest
 
 //Desecrate sk wands / offhand //ALLSK 
 ItemDisplay[TABSK16=3 SK83=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Desecrate %NAME% {%NAME%}
