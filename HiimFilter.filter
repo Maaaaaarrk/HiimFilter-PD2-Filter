@@ -39,7 +39,7 @@ ItemDisplayFilterName[]: Mystery Mode
 ItemDisplayFilterName[]: Potions Only
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.6.0%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.6.1%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -428,10 +428,10 @@ ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome%CONTINUE%
 
 ItemDisplay[rvl DIFF=2 FILTLVL=6]: %PURPLE%R R R R R R
 ItemDisplay[rvs DIFF=2 FILTLVL=6]: %PURPLE%R R
-ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  Rejuv 65%  *
-ItemDisplay[rvs FILTLVL<3]: %PURPLE%Rejuv 35%
-ItemDisplay[rvl]: %PURPLE%*       Rejuv 65%       *
-ItemDisplay[rvs]: %PURPLE%* Rejuv 35% *
+ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %TAN%65%  %PURPLE%*
+ItemDisplay[rvs FILTLVL<3]: %PURPLE%*%WHITE%Rejuv %TAN%35%%WHITE%
+ItemDisplay[rvl]: %PURPLE%*       %WHITE%Rejuv %TAN%65%%PURPLE%       *
+ItemDisplay[rvs]: %PURPLE%* %WHITE%Rejuv %TAN%35% %PURPLE%*
 
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>1]:
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) FILTLVL>1]:
@@ -440,19 +440,19 @@ ItemDisplay[hp5 CLVL>80 DIFF=2 FILTLVL>4]: %RED%H H
 
 ItemDisplay[(hp1 OR hp2) (DIFF>0 OR CLVL>79)]:
 ItemDisplay[(hp3 OR hp4) (DIFF>1 OR CLVL>79)]:
-ItemDisplay[hp1 DIFF<1 CLVL<80]: %RED%+HP1
-ItemDisplay[hp2 DIFF<1 CLVL<80]: %RED%+HP2
-ItemDisplay[hp3 DIFF<2 CLVL<80]: %RED%+HP3
-ItemDisplay[hp4 DIFF<2 CLVL<80]: %RED%+HP4
-ItemDisplay[hp5]: %RED%+HP5
+ItemDisplay[hp1 DIFF<1 CLVL<80]: %RED%+%WHITE%HP1
+ItemDisplay[hp2 DIFF<1 CLVL<80]: %RED%+%WHITE%HP2
+ItemDisplay[hp3 DIFF<2 CLVL<80]: %RED%+%WHITE%HP3
+ItemDisplay[hp4 DIFF<2 CLVL<80]: %RED%+%WHITE%HP4
+ItemDisplay[hp5]: %RED%+%WHITE%HP5
 
 ItemDisplay[(mp1 OR mp2) (DIFF>0 OR CLVL>79)]:
 ItemDisplay[(mp3 OR mp4) (DIFF>1 OR CLVL>79)]:
-ItemDisplay[mp1 DIFF<1 CLVL<80]: %BLUE%+MP1
-ItemDisplay[mp2 DIFF<1 CLVL<80]: %BLUE%+MP2
-ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+MP3
-ItemDisplay[mp4 DIFF<2 CLVL<80]: %BLUE%+MP4
-ItemDisplay[mp5]: %BLUE%+MP5
+ItemDisplay[mp1 DIFF<1 CLVL<80]: %BLUE%+%WHITE%MP1
+ItemDisplay[mp2 DIFF<1 CLVL<80]: %BLUE%+%WHITE%MP2
+ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+%WHITE%MP3
+ItemDisplay[mp4 DIFF<2 CLVL<80]: %BLUE%+%WHITE%MP4
+ItemDisplay[mp5]: %BLUE%+%WHITE%MP5
 
 ItemDisplay[vps FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta{Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
 ItemDisplay[vps]: {Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
