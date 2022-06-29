@@ -2177,6 +2177,7 @@ ItemDisplay[FILTLVL>3 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
 ItemDisplay[FILTLVL>3 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
 ItemDisplay[FILTLVL>3 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 ItemDisplay[FILTLVL>3 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
+ItemDisplay[ID FILTLVL>3]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4234,36 +4235,45 @@ ItemDisplay[RARE SK46>1 CLVL<18 FILTLVL<3]: %ORANGE%* %YELLOW%%NAME% %ORANGE%*{%
 // fissure lore
 ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
 
-
 ItemDisplay[WEAPON !RW TABSK0=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Bow %NAME%{%NAME%}
 ItemDisplay[WEAPON !RW TABSK0=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Bow %NAME%{%NAME%}
 ItemDisplay[WEAPON !RW TABSK0=3 DIFF<2]: %GREEN%+3 Bow %NAME%{%NAME%}
 ItemDisplay[WEAPON !RW TABSK2=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Java %NAME%{%NAME%}
 ItemDisplay[WEAPON !RW TABSK2=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Java %NAME%{%NAME%}
 ItemDisplay[WEAPON !RW TABSK2=3 DIFF<2]: %GREEN%+3 Java %NAME%{%NAME%}
-// todo from here
+
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
+
 ItemDisplay[SHIELD NMAG DIFF<2 FILTLVL<3 SOCK=3]: %ORANGE%** %GRAY%%NAME% %ORANGE%**{%NAME%}
+
 ItemDisplay[(ARMOR OR WEAPON) RARE FILTLVL<3 DIFF<2]: %NAME%{%NAME%}
 ItemDisplay[(ARMOR OR WEAPON) MAG FILTLVL<2 DIFF<2]: %NAME%{%NAME%}
 ItemDisplay[(ARMOR OR WEAPON) MAG FILTLVL<3 DIFF<1]: %NAME%{%NAME%}
+
 ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) (CLVL>40 AND CLVL<80) FILTLVL<4]: %NAME%{%NAME%}
+
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH SUP SOCK=0 CLVL<80 FILTLVL<4]: %NAME%{%NAME%}
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG ETH SOCK=0 CLVL<80 FILTLVL<4]: %NAME%{%NAME%}
+
 ItemDisplay[((POLEARM OR SPEAR) AND !THROWING) NMAG ETH !INF SOCK=0 CLVL<80]: %NAME%{%NAME%}]
+
 ItemDisplay[WEAPON BARBARIAN ETH THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN RARE THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 ItemDisplay[WEAPON BARBARIAN MAG THROWING CLVL<80 FILTLVL<4]: %NAME%{%NAME%}//BARBARIAN throws for leveling
+
 ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Wake of fire
 ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Wake of fire
+
 ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dark Pact
 ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dark Pact
+
 ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
 ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
-ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
-ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 
+ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
+
+ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
