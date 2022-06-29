@@ -29,7 +29,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.6.5%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.7.0%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -137,7 +137,6 @@ ItemDisplay[std]: %PX-9D%%NAME%{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%N
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T1]
-ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) FILTLVL=6]:
 ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19)]: %GREEN%* [T1] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
 ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -156,7 +155,6 @@ ItemDisplay[t19]: %NAME%T1-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T2]
-ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29) FILTLVL=6]:
 ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29)]: %YELLOW%* [T2] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
 ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -175,7 +173,6 @@ ItemDisplay[t29]: %NAME%T2-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T3]
-ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39) FILTLVL=6]:
 ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39)]: %ORANGE%* [T3] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
 ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -194,7 +191,6 @@ ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%WHITE%%CONTINUE%{%RED%Fire 170
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T4]
-ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49) FILTLVL=6]:
 ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49)]: %RED%* [T4] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
 ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -213,7 +209,6 @@ ItemDisplay[t49]: %NAME%T4-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T5]
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59) FILTLVL=6]:
 ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59)]: %GOLD%* [NYI] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
 ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -232,7 +227,6 @@ ItemDisplay[t59]: %NAME%T5-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T6]
-ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69) FILTLVL=6]:
 ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %PURPLE%* [PvP] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
 ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -264,6 +258,7 @@ ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39)]: %MAP
 ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49)]: %MAP-62%%NAME% %RED%*{%NAME%}
 ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59)]: %MAP-62%%NAME% %GOLD%*{%NAME%}
 ItemDisplay[(t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2173,11 +2168,11 @@ ItemDisplay[jew UNI !ID]: %BORDER-68%%PURPLE%. . %RED%*%ORANGE%*%YELLOW%*%GREEN%
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS
 //-----------------------------------------------------------------------------------
-ItemDisplay[FILTLVL>3 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
-ItemDisplay[FILTLVL>3 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
-ItemDisplay[FILTLVL>3 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
-ItemDisplay[FILTLVL>3 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
-ItemDisplay[ID FILTLVL>3]: %NAME%{%NAME%}
+ItemDisplay[FILTLVL>5 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
+ItemDisplay[FILTLVL>5 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
+ItemDisplay[FILTLVL>5 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
+ItemDisplay[FILTLVL>5 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
+ItemDisplay[(NMAG OR !ID) (ARMOR OR WEAPON) !RW FILTLVL>5]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
