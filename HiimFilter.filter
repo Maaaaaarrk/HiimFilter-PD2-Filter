@@ -31,7 +31,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.8.3%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.8.4%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -4278,9 +4278,9 @@ ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Dar
 ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
 ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%} // Curse tree
 
-ItemDisplay[SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
+ItemDisplay[SK95=3 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE% //revive +3
 
-ItemDisplay[NMAG !RW SK95=3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW SK95=3 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
