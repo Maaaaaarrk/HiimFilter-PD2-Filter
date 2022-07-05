@@ -31,7 +31,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{ver 6.8.5%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{ver 6.8.6%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -2414,6 +2414,7 @@ ItemDisplay[WEAPON MAG !ETH !SIN ID !WAND !SOR !SHOP]: %NAME%{%BLUE%HitPwr: O, T
 ItemDisplay[NMAG !RW TABSK0=1 FILTLVL<2]: %GREEN%+1 Bow %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW TABSK0=2 FILTLVL<2]: %GREEN%+2 Bow %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW TABSK0=3]: %GREEN%+3 Bow %NAME%{%NAME%}%CONTINUE%
+
 ItemDisplay[NMAG !RW TABSK2=1 FILTLVL<2]: %GREEN%+1 Java %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW TABSK2=2 FILTLVL<2]: %GREEN%+2 Java %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW TABSK2=3]: %GREEN%+3 Java %NAME%{%NAME%}%CONTINUE%
@@ -3950,7 +3951,7 @@ ItemDisplay[(SWORD OR AXE OR SIN OR mac OR mst OR fla) !leg SOCK=2 NMAG !RW]: %N
 //-----------------------------------------------------------------------------------
 
 // TOOLTIPS - Possible RW's - Weapons 3soc
-ItemDisplay[WEAPON !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW) !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fury,}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Edge, Melody, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SIN SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Pattern, Plague, Venom%NL%Fury, King's grace, Lawbringer,%NL%%TAN%RWs: %GRAY%Black, Chaos, Crescent moon,}%CONTINUE%
@@ -3963,7 +3964,7 @@ ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3
 //-----------------------------------------------------------------------------------
 
 // TOOLTIPS - Possible RW's - Weapons 4soc
-ItemDisplay[WEAPON SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Voice of Reason, Wrath%NL%Hand of Justice, Harmony, Passion,%NL%%TAN%RWs: %GRAY%Brand, Faith, Fortitude, Ice,}%CONTINUE%
 ItemDisplay[(fla OR 9fl OR 7fl) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Oath, Passion, Phoenix, Voice of Reason%NL%Hand of Justice, Heart of the Oak,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
 ItemDisplay[SWORD SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Spirit, Voice of Reason%NL%Justice, Kingslayer, Oath, Passion,%NL%%TAN%RWs: %GRAY%Famine, Fortitude, Hand of}%CONTINUE%
@@ -4244,12 +4245,6 @@ ItemDisplay[RARE SK46>1 CLVL<18 FILTLVL<3]: %ORANGE%* %YELLOW%%NAME% %ORANGE%*{%
 // fissure lore
 ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
 
-ItemDisplay[WEAPON !RW TABSK0=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Bow %NAME%{%NAME%}
-ItemDisplay[WEAPON !RW TABSK0=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Bow %NAME%{%NAME%}
-ItemDisplay[WEAPON !RW TABSK0=3 DIFF<2]: %GREEN%+3 Bow %NAME%{%NAME%}
-ItemDisplay[WEAPON !RW TABSK2=1 FILTLVL<2 DIFF<2]: %GREEN%+1 Java %NAME%{%NAME%}
-ItemDisplay[WEAPON !RW TABSK2=2 FILTLVL<2 DIFF<2]: %GREEN%+2 Java %NAME%{%NAME%}
-ItemDisplay[WEAPON !RW TABSK2=3 DIFF<2]: %GREEN%+3 Java %NAME%{%NAME%}
 
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
