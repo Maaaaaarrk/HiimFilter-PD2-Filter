@@ -31,7 +31,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.0%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.1%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -142,8 +142,8 @@ ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) RARE]:
 ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%WHITE%%CONTINUE%{%RED%Fire 145% %YELLOW%Light 120% %BLUE% Cold 160%%NL%%GRAY%Phys 80% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
 ItemDisplay[t12]: %NAME%Horazons Memory Map%WHITE%%CONTINUE%{%RED%Fire 135% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 90% %GREEN%Psn 120%%NAME%}
 ItemDisplay[t13]: %NAME%Bastion Keep Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 95% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
-ItemDisplay[t14]: %NAME%Sanatorium Map%WHITE%%CONTINUE%
-ItemDisplay[t15]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%
+ItemDisplay[t14]: %NAME%Sanatorium Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 75% %BLUE% Cold 130%%NL%%GRAY%Phys 60% %ORANGE%Magic 35% %GREEN%Psn 140%%NAME%}
+ItemDisplay[t15]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%{%RED%Fire 75% %YELLOW%Light 100% %BLUE% Cold 65%%NL%%GRAY%Phys 115% %ORANGE%Magic 150% %GREEN%Psn 105%%NAME%}
 ItemDisplay[t16]: %NAME%T1-6 Map%WHITE%%CONTINUE%
 ItemDisplay[t17]: %NAME%T1-7 Map%WHITE%%CONTINUE%
 ItemDisplay[t18]: %NAME%T1-8 Map%WHITE%%CONTINUE%
@@ -162,7 +162,7 @@ ItemDisplay[t22]: %NAME%Torajan Jungle Map%WHITE%%CONTINUE%{%RED%Fire 80% %YELLO
 ItemDisplay[t23]: %NAME%Arreat Battlefield Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 115%%NAME%}
 ItemDisplay[t24]: %NAME%Tomb of Zultan Kulle Map%WHITE%%CONTINUE%{%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 150%%NL%%GRAY%Phys 105% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
 ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%WHITE%%CONTINUE%{%RED%Fire 125% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 66% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
-ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%WHITE%%CONTINUE%
+ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%WHITE%%CONTINUE%{%RED%Fire 110% %YELLOW%Light 65% %BLUE% Cold 150%%NL%%GRAY%Phys 110% %ORANGE%Magic 120% %GREEN%Psn 85%%NAME%}
 ItemDisplay[t27]: %NAME%T2-7 Map%WHITE%%CONTINUE%
 ItemDisplay[t28]: %NAME%T2-8 Map%WHITE%%CONTINUE%
 ItemDisplay[t29]: %NAME%T2-9 Map%WHITE%%CONTINUE%
@@ -195,7 +195,7 @@ ItemDisplay[(t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49) RARE]:
 
 ItemDisplay[t41]: %NAME%Cathedral of Light Map%WHITE%%CONTINUE%{%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NAME%}
 ItemDisplay[t42]: %NAME%Plains of Torment Map%WHITE%%CONTINUE%{%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NAME%}
-ItemDisplay[t43]: %NAME%Sanctuary of Sin Map%WHITE%%CONTINUE%
+ItemDisplay[t43]: %NAME%Sanctuary of Sin Map%WHITE%%CONTINUE%{%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NAME%}
 ItemDisplay[t44]: %NAME%T4-4 Map%WHITE%%CONTINUE%
 ItemDisplay[t45]: %NAME%T4-5 Map%WHITE%%CONTINUE%
 ItemDisplay[t46]: %NAME%T4-6 Map%WHITE%%CONTINUE%
@@ -241,7 +241,7 @@ ItemDisplay[t69]: %NAME%t6-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // Map contains Cursing mobs warning
-ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %NL%%NAME%}
+ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR t43 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %NL%%NAME%}
 
 // PD2 Items - Maps Tags
 ItemDisplay[STAT458>0]: %NAME%%GREEN% [H]%CONTINUE%{%NAME%}
@@ -652,11 +652,11 @@ ItemDisplay[(aqv OR cqv) !(AMAZON) RARE !ID FILTLVL>4]:
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC RESIZING
 //-----------------------------------------------------------------------------------
-ItemDisplay[PALADIN MAG !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) !(FILTLVL=6)]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
-ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) !(FILTLVL=6)]: %DOT-90%%ORANGE%*           %YELLOW%%NAME%          %ORANGE%*
+ItemDisplay[PALADIN MAG !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) !(FILTLVL=6) FILTLVL<3]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
+ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) !(FILTLVL=6) FILTLVL<3]: %DOT-90%%ORANGE%*           %YELLOW%%NAME%          %ORANGE%*
 
-ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) !(FILTLVL=6)]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
-ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) !(FILTLVL=6)]: %DOT-90%%ORANGE%*           %YELLOW%%NAME%          %ORANGE%*
+ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) !(FILTLVL=6) FILTLVL<3]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
+ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) !(FILTLVL=6) FILTLVL<3]: %DOT-90%%ORANGE%*           %YELLOW%%NAME%          %ORANGE%*
 
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
 ItemDisplay[(aqv OR cqv) RARE !ID AMAZON (FILTLVL<6 OR FILTLVL=9)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
@@ -2177,7 +2177,6 @@ ItemDisplay[((ARMOR OR WEAPON) (EXC OR ELT OR ci0 OR ba5) !(9vo OR xcl OR xrn)) 
 // Rainbow Facet
 ItemDisplay[jew UNI !ID]: %BORDER-68%%PURPLE%. . %RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%*     %GOLD%%NAME%%PURPLE%     *%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*%PURPLE% . .
 
-ItemDisplay[(UNI OR SET)]: %MAP-68%%NAME%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2388,21 +2387,89 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 //-----------------------------------------------------------------------------------
 // CRAFTING
 //-----------------------------------------------------------------------------------
-ItemDisplay[(7wa OR 7gm OR 7gd OR 7b8 OR 7gl OR 6lw) MAG ETH ELT !ID]: %NAME% %GREEN%[C]
-ItemDisplay[WEAPON MAG ETH !ID FILTLVL<5]: %NAME% %GREEN%[C]
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH !ID FILTLVL<5]: %GRAY%* %BLUE%%NAME% %GRAY%*
-ItemDisplay[(am2 OR am7 OR amc) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //Zon bow mat
-ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //skull helm
-ItemDisplay[BAR MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //barb helm
-ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //bone shield
-ItemDisplay[(lwb OR 8lw OR 6lw) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //long bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //pala shield
-ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //sorc orb
-ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[C] //boots
+
+// Weapons
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* * * %BLUE%%NAME% %GREEN%[Craft] * * *//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Thunder Maul
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Legendary Mallet
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//War Pike
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
+
+//Armor
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //boots
+
+//Class specific
+ItemDisplay[BARBARIAN BAR MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //sorc orb
+ItemDisplay[AMAZON (lwb OR 8lw OR 6lw) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //long bow
+ItemDisplay[AMAZON (am5 OR ama OR amf) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //pala shield
+ItemDisplay[PALADIN MAG !ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5]: %NAME% %GREEN%[Craft] //scepters
+ItemDisplay[DRUID MAG !ID (DRU) FILTLVL<5]: %NAME% %GREEN%[Craft] //dudu helms
+ItemDisplay[DRUID MAG !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5]: %NAME% %GREEN%[Craft] //clubs
+ItemDisplay[ASSASSIN SIN MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //all sin claws
+ItemDisplay[ETH SIN MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //eth sin claws
+
+//Generic
+ItemDisplay[THROWING MAG ETH !ID FILTLVL<5]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
+ItemDisplay[WEAPON MAG ETH !ID FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
+
+
+//Crafting notes
 ItemDisplay[WEAPON MAG ID !WAND !SOR FILTLVL<5]:%NAME%{%NAME% || %WHITE%CraftedAlvl: %CRAFTALVL%}%CONTINUE%
 ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<5]:%NAME%{%NL%%WHITE%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
+
+//Crafting tag when identified
+// Weapons
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Ghost Glaive
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Berserker Axe
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Thunder Maul
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Legendary Mallet
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//War Pike
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
+
+//Armor
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+
+//Class specific
+ItemDisplay[BAR MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
+ItemDisplay[(am5 OR ama OR amf) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
+ItemDisplay[MAG ID !SHOP (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
+ItemDisplay[MAG ID !SHOP (DRU) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
+ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
+ItemDisplay[SIN MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
+
+//Crafting Reciepe
 ItemDisplay[HELM MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%* Caster: O, Nef, Jewel *%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%* Vamp: SK, Lum, Jewel *%NAME%}%CONTINUE%
 ItemDisplay[BOOTS MAG ID !SHOP]: %NAME%{%GREEN%* Safety: O, Ort, Jewel *%NL%%BLUE%HitPwr: O, Ral, Jewel%NL%%RED%Blood: O, Eth, Jewel%NL%%PURPLE%Caster: O, Thul, Jewel%NL%%YELLOW%* MF: O, Io, Jewel *%NL%%GRAY%Vamp: SK, El, Jewel%NAME%}%CONTINUE%
 ItemDisplay[GLOVES MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Ral, Jewel%NL%%BLUE%* HitPwr: O, Ort, Jewel *%NL%%RED%* Blood: O, Nef, Jewel *%NL%%PURPLE%* Caster: O, Ort, Jewel *%NL%%YELLOW%MF: O, Hel, Jewel%NL%%GRAY%* Vamp: SK, Io, Jewel *%NAME%}%CONTINUE%
@@ -3686,48 +3753,48 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7fl]: %NAME%{%TAN%Larzuk quest for 5 so
 // Polearms
 ItemDisplay[NMAG !INF !RW SOCK=0 bar]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Bardiche, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 vou]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Voulge, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 vou]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Voulge, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 vou]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Voulge, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 scy]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 scy]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 scy]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 scy]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Scythe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 pax]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pax]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pax]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 pax]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Poleaxe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 hal]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 hal]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 hal]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 hal]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Halberd, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 wsc]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 wsc]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 wsc]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 wsc]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All War Scythe, 0os, ilvl 41+
-ItemDisplay[NMAG !INF !RW SOCK=0 9b7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lochaber Axe, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 9b7]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lochaber Axe, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9vo]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Bill, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9vo]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bill, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9vo]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bill, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9s8]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9s8]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9s8]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9s8]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Battle Scythe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9pa]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9pa]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9pa]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9pa]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Partizan, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9h9]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9h9]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9h9]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9h9]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Bec-de-Corbin, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9wc]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9wc]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9wc]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9wc]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Grim Scythe, 0os, ilvl 41+
-ItemDisplay[NMAG !INF !RW SOCK=0 7o7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ogre Axe, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 7o7]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ogre Axe, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7vo]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Colossus Voulge, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7vo]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Colossus Voulge, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7vo]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Colossus Voulge, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7s8]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7s8]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7s8]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7s8]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Thresher, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7pa]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7pa]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7pa]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7pa]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Cryptic Axe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7h7]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7h7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7h7]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7h7]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Great Poleaxe, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7wc]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7wc]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7wc]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7wc]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Giant Thresher, 0os, ilvl 41+
 
 // Scepters
@@ -3747,39 +3814,39 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7ws]: %NAME%{%TAN%Larzuk quest for 5 so
 // Spears
 ItemDisplay[NMAG !INF !RW SOCK=0 spr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 tri]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Trident, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 tri]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Trident, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 tri]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Trident, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 brn]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 brn]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 brn]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 brn]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Brandistock, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 spt]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 spt]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 spt]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 spt]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Spetum, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 pik]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 pik]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Pike, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 9sr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9tr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9br]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9br]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9br]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9br]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All War Fork, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9st]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9st]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9st]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9st]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Yari, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9p9]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9p9]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Lance, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 7sr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Hyperion Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7tr]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7br]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7br]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7br]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7br]: %NAME%{%TAN%Larzuk quest for 5 sockets%NAME%}%CONTINUE% // All Mancatcher, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7st]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7st]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7st]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7st]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All Ghost Spear, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7p7]: %NAME%{%TAN%Larzuk quest for 3 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7p7]: %NAME% %DARK_GREEN%[Larzuk 4soc]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7p7]: %NAME% %DARK_GREEN%[Larzuk 4os]{%TAN%Larzuk quest for 4 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7p7]: %NAME%{%TAN%Larzuk quest for 6 sockets%NAME%}%CONTINUE% // All War Pike, 0os, ilvl 41+
 
 // Staves
@@ -4015,10 +4082,10 @@ ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF SOCK=0]: %DOT-D6%%ORANGE%* %NA
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 SOCK=0 !INF NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
 
 // Spirit Swords
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4soc]{%NAME%}
+ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4os]{%NAME%}
 ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 CLVL<80 FILTLVL<3]: %NAME% %TAN%[%DARK_GREEN%Cube for 4soc%TAN%]{%NAME%}
 ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4soc]{%NAME%}
+ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4os]{%NAME%}
 
 // Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(7vo OR 7tr) ETH !INF SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
@@ -4297,7 +4364,10 @@ ItemDisplay[NMAG !RW SK95=3 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%
 ItemDisplay[(cm1 OR cm2 OR cm3) ID]: %NAME%{%NAME%}
 ItemDisplay[UNI ELT]: %MAP%%NAME%{%NAME%}
 ItemDisplay[RW]: %MAP%%NAME%{%NAME%}
-ItemDisplay[(UNI OR SET OR RW OR CRAFT)]: %NAME%{%NAME%}
+ItemDisplay[UNI]: %MAP-68%%NAME%{%NAME%}
+ItemDisplay[SET]: %MAP-68%%NAME%{%NAME%}
+ItemDisplay[RW]: %MAP-68%%NAME%{%NAME%}
+ItemDisplay[CRAFT]: %NAME%{%NAME%}
 ItemDisplay[SHOP]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 
