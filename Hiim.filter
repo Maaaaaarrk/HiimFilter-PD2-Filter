@@ -31,7 +31,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.1%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.2%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -2428,7 +2428,6 @@ ItemDisplay[ETH SIN MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //eth sin claws
 ItemDisplay[THROWING MAG ETH !ID FILTLVL<5]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
 ItemDisplay[WEAPON MAG ETH !ID FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
 
-
 //Crafting notes
 ItemDisplay[WEAPON MAG ID !WAND !SOR FILTLVL<5]:%NAME%{%NAME% || %WHITE%CraftedAlvl: %CRAFTALVL%}%CONTINUE%
 ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<5]:%NAME%{%NL%%WHITE%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
@@ -4054,8 +4053,8 @@ ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4
 //-----------------------------------------------------------------------------------
 
 // TOOLTIPS - Possible RW's - Weapons 5soc
-ItemDisplay[WEAPON SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(SWORD) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%Beast, Call to Arms,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
@@ -4066,7 +4065,7 @@ ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Zenith}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // TOOLTIPS - Possible RW's - Weapons 6soc
-ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%Breath of the Dying, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{%GRAY%Breath of the Dying, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{%GRAY%of the Dying, Last Wish, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Breath}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
