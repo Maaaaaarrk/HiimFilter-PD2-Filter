@@ -31,7 +31,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.6%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.7%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -664,8 +664,8 @@ ItemDisplay[(aqv OR cqv) AMAZON MAG !ID FILTLVL>4]:
 ItemDisplay[(aqv OR cqv) !(AMAZON) RARE !ID FILTLVL>7]:
 
 // Arrows and Bolts - Amazon View
-ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[(aqv OR cqv) RARE !ID AMAZON (FILTLVL<3 OR FILTLVL=9)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
+ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<5]: %DOT-9B%%YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
+ItemDisplay[(aqv OR cqv) RARE !ID AMAZON (FILTLVL<5 OR FILTLVL=9)]: %DOT-9B%%ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2181,16 +2181,6 @@ ItemDisplay[jew UNI !ID]: %BORDER-68%%PURPLE%. . %RED%*%ORANGE%*%YELLOW%*%GREEN%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// FILTER STRICTNESS
-//-----------------------------------------------------------------------------------
-ItemDisplay[FILTLVL>4 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
-ItemDisplay[FILTLVL>4 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
-ItemDisplay[FILTLVL>4 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
-ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
-ItemDisplay[FILTLVL>4 (NMAG OR !ID) (ARMOR OR WEAPON) !RW ]:
-//-----------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------
 // Shopping
 //-----------------------------------------------------------------------------------
 // LLD - Wands
@@ -2382,6 +2372,15 @@ ItemDisplay[RARE (ILVL>88) !ID]: * %NAME% *
 ItemDisplay[RARE (ILVL>84) !ID]: %NAME%
 ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) (CLVL<92) !ID]: %NAME%
 ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// FILTER STRICTNESS
+//-----------------------------------------------------------------------------------
+ItemDisplay[FILTLVL>4 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
+ItemDisplay[FILTLVL>4 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
+ItemDisplay[FILTLVL>4 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
+ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
