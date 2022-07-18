@@ -31,7 +31,7 @@ ItemDisplayFilterName[]: Potions Only
 ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.7%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 6.9.9%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -117,7 +117,9 @@ ItemDisplay[rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome o
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Uber Ancients Tokens
-ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%* %RED%%NAME%%YELLOW% *
+ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
+ItemDisplay[ubab]: %NAME%{Found in T2 Maps}%CONTINUE%
+ItemDisplay[ubac]: %NAME%{Found in T3 Maps}%CONTINUE%
 ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 //-----------------------------------------------------------------------------------
 
@@ -700,71 +702,71 @@ ItemDisplay[(rin OR amu) !UNI !SET FCR>0]: %ORANGE%FCR %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET STAT60>0]: %RED%LL %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET STAT62>0]: %BLUE%ML %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET TABSK0=3]: %PURPLE%+3 Bow and Crossbow %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK2=3]: %PURPLE%+3 Javelin and Spear %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK1=3]: %PURPLE%+3 Passive and Magic %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK8=3]: %PURPLE%+3 Fire Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK9=3]: %PURPLE%+3 Lightning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK10=3]: %PURPLE%+3 Cold Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK0=3]: %PURPLE%+3 Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK2=3]: %PURPLE%+3 Jav %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK1=3]: %PURPLE%+3 Pass & Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK8=3]: %PURPLE%+3 Fire %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK9=3]: %PURPLE%+3 Lightning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK10=3]: %PURPLE%+3 Cold %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK16=3]: %PURPLE%+3 Curses %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK17=3]: %PURPLE%+3 Poison & Bone Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK18=3]: %PURPLE%+3 Nec Summoning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK24=3]: %PURPLE%+3 Pal Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK25=3]: %PURPLE%+3 Offensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK26=3]: %PURPLE%+3 Defensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK32=3]: %PURPLE%+3 Barb Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK33=3]: %PURPLE%+3 Barb Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK17=3]: %PURPLE%+3 P&B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK18=3]: %PURPLE%+3 Nec Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK24=3]: %PURPLE%+3 P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK25=3]: %PURPLE%+3 Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK26=3]: %PURPLE%+3 Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK32=3]: %PURPLE%+3 B.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK33=3]: %PURPLE%+3 Masteries %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK34=3]: %PURPLE%+3 Warcries %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK40=3]: %PURPLE%+3 Dru Summoning %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK41=3]: %PURPLE%+3 Shape Shifting %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK42=3]: %PURPLE%+3 Elemental %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK40=3]: %PURPLE%+3 Dru Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK41=3]: %PURPLE%+3 ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK42=3]: %PURPLE%+3 Ele %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK48=3]: %PURPLE%+3 Traps %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK49=3]: %PURPLE%+3 Shadow Disciplines %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK50=3]: %PURPLE%+3 Martial Arts %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK49=3]: %PURPLE%+3 Shadow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK50=3]: %PURPLE%+3 M.A. %TAN%Skills %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET TABSK0=2]: %PURPLE%+2 Bow and Crossbow %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK2=2]: %PURPLE%+2 Javelin and Spear %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK1=2]: %PURPLE%+2 Passive and Magic %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK8=2]: %PURPLE%+2 Fire Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK9=2]: %PURPLE%+2 Lightning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK10=2]: %PURPLE%+2 Cold Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK0=2]: %PURPLE%+2 Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK2=2]: %PURPLE%+2 Jav %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK1=2]: %PURPLE%+2 Pass & Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK8=2]: %PURPLE%+2 Fire %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK9=2]: %PURPLE%+2 Lightning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK10=2]: %PURPLE%+2 Cold %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK16=2]: %PURPLE%+2 Curses %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK17=2]: %PURPLE%+2 Poison & Bone Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK18=2]: %PURPLE%+2 Nec Summoning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK24=2]: %PURPLE%+2 Pal Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK25=2]: %PURPLE%+2 Offensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK26=2]: %PURPLE%+2 Defensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK32=2]: %PURPLE%+2 Barb Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK33=2]: %PURPLE%+2 Barb Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK17=2]: %PURPLE%+2 P&B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK18=2]: %PURPLE%+2 Nec Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK24=2]: %PURPLE%+2 P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK25=2]: %PURPLE%+2 Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK26=2]: %PURPLE%+2 Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK32=2]: %PURPLE%+2 B.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK33=2]: %PURPLE%+2 Masteries %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK34=2]: %PURPLE%+2 Warcries %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK40=2]: %PURPLE%+2 DruSummoning %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK41=2]: %PURPLE%+2 Shape Shifting %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK42=2]: %PURPLE%+2 Elemental %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK40=2]: %PURPLE%+2 Dru Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK41=2]: %PURPLE%+2 ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK42=2]: %PURPLE%+2 Ele %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK48=2]: %PURPLE%+2 Traps %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK49=2]: %PURPLE%+2 Shadow Disciplines %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK50=2]: %PURPLE%+2 Martial Arts %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK49=2]: %PURPLE%+2 Shadow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK50=2]: %PURPLE%+2 M.A. %TAN%Skills %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET TABSK0=1]: %GRAY%+1 Bow and Crossbow %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK2=1]: %GRAY%+1 Javelin and Spear %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK1=1]: %GRAY%+1 Passive and Magic %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK8=1]: %GRAY%+1 Fire Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK9=1]: %GRAY%+1 Lightning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK10=1]: %GRAY%+1 Cold Spells %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK0=1]: %GRAY%+1 Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK2=1]: %GRAY%+1 Jav %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK1=1]: %GRAY%+1 Pass & Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK8=1]: %GRAY%+1 Fire %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK9=1]: %GRAY%+1 Lightning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK10=1]: %GRAY%+1 Cold %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK16=1]: %GRAY%+1 Curses %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK17=1]: %GRAY%+1 Poison & Bone Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK18=1]: %GRAY%+1 Nec Summoning Spells %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK24=1]: %GRAY%+1 Pal Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK25=1]: %GRAY%+1 Offensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK26=1]: %GRAY%+1 Defensive Auras %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK32=1]: %GRAY%+1 Barb Combat %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK33=1]: %GRAY%+1 Barb Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK17=1]: %GRAY%+1 P&B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK18=1]: %GRAY%+1 Nec Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK24=1]: %GRAY%+1 P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK25=1]: %GRAY%+1 Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK26=1]: %GRAY%+1 Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK32=1]: %GRAY%+1 B.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK33=1]: %GRAY%+1 Masteries %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK34=1]: %GRAY%+1 Warcries %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK40=1]: %GRAY%+1 Dru Summoning %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK41=1]: %GRAY%+1 Shape Shifting %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK42=1]: %GRAY%+1 Elemental %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK40=1]: %GRAY%+1 Dru Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK41=1]: %GRAY%+1 ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK42=1]: %GRAY%+1 Ele %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK48=1]: %GRAY%+1 Traps %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK49=1]: %GRAY%+1 Shadow Disciplines %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET TABSK50=1]: %GRAY%+1 Martial Arts %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK49=1]: %GRAY%+1 Shadow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET TABSK50=1]: %GRAY%+1 M.A. %TAN%Skills %NAME%%CONTINUE%
 
 ItemDisplay[(rin OR amu) !UNI !SET CLSK0=1]: %GRAY%+1 Amazon %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET CLSK1=1]: %GRAY%+1 Sorceress %TAN%Skills %NAME%%CONTINUE%
@@ -2377,7 +2379,7 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS
 //-----------------------------------------------------------------------------------
-ItemDisplay[FILTLVL>4 NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
+ItemDisplay[(FILTLVL>4 OR (FILTLVL>2 AND CLVL>88)) NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
 ItemDisplay[FILTLVL>4 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
 ItemDisplay[FILTLVL>4 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
