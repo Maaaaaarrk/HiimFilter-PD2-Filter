@@ -32,7 +32,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
 
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 7.0.1%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 7.0.2%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -128,8 +128,8 @@ ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 // PD2 Items - Map Rolling
 ItemDisplay[imma]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Jewel %WHITE%to make a %BLUE%Magic Map}
 ItemDisplay[imra]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Jewel %WHITE%+ %ORANGE%Thul [10]+ %WHITE%to make a %YELLOW%Rare Map}
-ItemDisplay[rera]: %MAP-4A%%NAME%{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to make a %YELLOW%Rare Map}
-ItemDisplay[scou]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map + %ORANGE%Hel %WHITE%to make a %WHITE%White Map}
+ItemDisplay[rera]: %MAP-4A%%NAME%{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
+ItemDisplay[scou]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a White Map}
 ItemDisplay[upma]: %MAP-4A%%NAME%{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Skull to make a %YELLOW%Rare Map}
 ItemDisplay[upmp]: %NAME% %ORANGE%*{%WHITE%3 x Map + %GOLD%Orb%NL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
 ItemDisplay[scrb QTY=1]: %MAP-4A%%ORANGE%* * * %NAME% %ORANGE%* * *{%WHITE%This Item + T3 Map%NL%Note: Enter Group Dungeon:}%CONTINUE%
@@ -1226,7 +1226,7 @@ ItemDisplay[(RARE OR CRAFT) (ED>499)]: %NAME% %PURPLE%[ED >500]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // ITEM TAGS - LLD - Uniqes and sets to look out for
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu) STAT360=0]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET (bwn OR vbt OR lbt) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% [LLD]%CONTINUE%
@@ -2149,9 +2149,9 @@ ItemDisplay[FILTLVL<3 UNI STAT360=0 (9ls) SK238>5]: %NAME%{%NL%%RED%Slam Me%NAME
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// LLD UNI Tag
+// LLD UNI !ID Tag
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2173,7 +2173,7 @@ ItemDisplay[(uhg OR uvg OR umg OR utg) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  *
 ItemDisplay[(baf OR xh9 OR usk OR ci2 OR baa OR bac OR dre OR xhm OR drd OR bae OR ba6) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(xvb OR uvb OR utp) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(nee OR nea OR uts OR uow OR xsh OR xow OR nef) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
-ItemDisplay[(7qs OR 7cr OR 9tw OR obc) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
+ItemDisplay[(7qs OR 7cr OR 9tw OR obc OR 9wc) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(7fb OR 72a OR 7fl OR 7kr OR 7gm OR oba OR ama OR 6ws OR 7lw OR amf OR 7wh OR 7cs) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 
 // NOTEWORTHY DROPS - OK
@@ -2212,6 +2212,11 @@ ItemDisplay[SCEPTER TABSK25>0 (SK97>0 OR SK98>2 OR SK107>0 OR SK112>0 OR SK113>2
 ItemDisplay[SCEPTER CLSK3>0 (STAT93>0 OR STAT105>0) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD SCEPTER}%CONTINUE%
 ItemDisplay[SCEPTER TABSK24>0 (STAT93>0 OR STAT105>0) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD SCEPTER}%CONTINUE%
 ItemDisplay[SCEPTER TABSK25>0 (STAT93>0 OR STAT105>0) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD SCEPTER}%CONTINUE%
+
+// LLD Staff
+ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) FCR>29 STAFF LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD FCR Teleport Charges Staff%RED%   ***} // GG Teleport charges FCR
+ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) FCR>0 STAFF LVLREQ<31]: %NAME% [LLD]{%ORANGE%LLD FCR Teleport Charges Staff} // Teleport charges FCR
+ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) STAFF LVLREQ<31]: %NAME% [LLD]{%GREEN%LLD Teleport Charges Staff} // Teleport charges
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2425,7 +2430,7 @@ ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%
 ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
 
 //Armor
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //gloves
+ItemDisplay[GLOVES (EXC OR ELT) !(utg OR uhg) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //gloves
 ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //skull helm
 ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //bone shield
 ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //boots
