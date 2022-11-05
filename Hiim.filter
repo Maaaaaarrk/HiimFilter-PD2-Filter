@@ -32,7 +32,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
 
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 7.0.2%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%ver 7.0.3%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -1149,8 +1149,11 @@ ItemDisplay[MAG cm1 ID LVLREQ<31 (LIFE>10 OR (LIFE>8 AND (MAXDMG>0 OR MANA>0 OR 
 //-----------------------------------------------------------------------------------
 
 // LLD - Large Charms
-ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (MAXDMG>5 OR RES>7 OR STAT357>1 OR STAT329>1 OR STAT330>1 OR STAT331>1 OR STAT332>1)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
-ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (MAXDMG>3 OR RES>5 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (MAXDMG>5 OR RES>7 OR STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 (STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%Decent LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (STAT357>1 OR STAT329>1 OR STAT330>1 OR STAT331>1 OR STAT332>1)]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%Decent LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0)]: %DOT-50%%NAME% %BLUE%[LLD]{%GRAY%LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 (STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0)]: %DOT-50%%NAME% %GRAY%[LLD]{%GRAY%Bad LLD}
 ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (MAXDMG>2 OR RES>4)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 //-----------------------------------------------------------------------------------
 
@@ -1161,11 +1164,6 @@ ItemDisplay[MAG (cm1 OR cm2 OR cm3) ID LVLREQ<31 STAT330=2 (FHR>0 OR FRW>0 OR MA
 ItemDisplay[MAG (cm1 OR cm2 OR cm3) ID LVLREQ<31 STAT331=2 (FHR>0 OR FRW>0 OR MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT31>15)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG (cm1 OR cm2 OR cm3) ID LVLREQ<31 STAT332=2 (FHR>0 OR FRW>0 OR MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT31>15)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 
-ItemDisplay[MAG ID (cm1 OR cm2 OR cm3) LVLREQ<31 STAT357=2]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY% LLD}
-ItemDisplay[MAG ID (cm1 OR cm2 OR cm3) LVLREQ<31 STAT329=2]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY% LLD}
-ItemDisplay[MAG ID (cm1 OR cm2 OR cm3) LVLREQ<31 STAT330=2]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY% LLD}
-ItemDisplay[MAG ID (cm1 OR cm2 OR cm3) LVLREQ<31 STAT331=2]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY% LLD}
-ItemDisplay[MAG ID (cm1 OR cm2 OR cm3) LVLREQ<31 STAT332=2]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY% LLD}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
