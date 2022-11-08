@@ -1296,6 +1296,10 @@ ItemDisplay[cm2 UNI]: %MAP% %NAME%
 ItemDisplay[cm3 UNI]: %MAP% %NAME%
 //-----------------------------------------------------------------------------------
 
+
+// VLLD - Small Charms
+ItemDisplay[MAG cm1 ID LVLREQ<10 LIFE>12 (MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 OR STAT31>0 OR STAT19>0)]: %DOT-50%%NAME% %PURPLE%[VLLD]{%GRAY%GG VLLD}
+
 // LLD - Small Charms
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>14 (MAXDMG>1 OR MANA>9 OR STR>0 OR DEX>0 OR RES>2 OR STAT31>10)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>13 (MANA>9 OR RES>3 OR FRES>8 OR LRES>8 OR CRES>8 OR PRES>8)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
@@ -1309,12 +1313,13 @@ ItemDisplay[MAG cm1 ID LVLREQ<31 (LIFE>10 OR (LIFE>8 AND (MAXDMG>0 OR MANA>0 OR 
 //-----------------------------------------------------------------------------------
 
 // LLD - Large Charms
-ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (MAXDMG>5 OR RES>7 OR STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>11 (MAXDMG>5 OR RES>7 OR STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm2 ID LVLREQ<31 (STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%Decent LLD}
-ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (STAT357>1 OR STAT329>1 OR STAT330>1 OR STAT331>1 OR STAT332>1)]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%Decent LLD}
-ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0)]: %DOT-50%%NAME% %BLUE%[LLD]{%GRAY%LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>11 (STAT357>1 OR STAT329>1 OR STAT330>1 OR STAT331>1 OR STAT332>1)]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%Decent LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>11 (STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0)]: %DOT-50%%NAME% %BLUE%[LLD]{%GRAY%LLD}
 ItemDisplay[MAG cm2 ID LVLREQ<31 (STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0)]: %DOT-50%%NAME% %GRAY%[LLD]{%GRAY%Bad LLD}
-ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>19 (MAXDMG>2 OR RES>4)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>11 (MAXDMG>2 OR RES>4)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>5 (MAXDMG>2 OR RES>3)]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%LLD}
 //-----------------------------------------------------------------------------------
 
 // LLD - GG Charms
@@ -4198,8 +4203,8 @@ ItemDisplay[(HELM OR CIRC) SOCK=2 NMAG !RW]: %NAME%{%GRAY%Lore, Nadir%NL%%TAN%No
 ItemDisplay[(HELM OR CIRC) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Dream, Delirium, Radiance, Ferocity%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SHIELD SOCK=2 NMAG !RW]: %NAME%{%GRAY%Rhyme, Splendor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SHIELD SOCK=3 NMAG !RW]: %NAME%{%GRAY%Pledge, Dragon, Dream, Sanctuary%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Ancient's}%CONTINUE%
-ItemDisplay[SHIELD !(DIN) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Spirit%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[DIN SOCK=4 NMAG !RW]: %NAME%{%GRAY%Exile, Phoenix, Spirit%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[SHIELD !(DIN) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Spirit, Shattered Wall%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[DIN SOCK=4 NMAG !RW]: %NAME%{%GRAY%Exile, Phoenix, Spirit, Shattered Wall%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // TOOLTIPS - Possible RW's - Weapons 2soc
@@ -4244,12 +4249,15 @@ ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5
 ItemDisplay[AXE SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Grief, Honor%NL%Call to Arms, Death, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[SWORD SOCK=5 NMAG !RW]: %NAME%{%GRAY%Destruction, Doom, Grief, Honor%NL%Call to Arms, Eternity, Death,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Honor, Obedience%NL%Call to Arms, Destruction, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Zenith}%CONTINUE%
+ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Zenith%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // TOOLTIPS - Possible RW's - Weapons 6soc
-ItemDisplay[WEAPON !(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{%GRAY%Breath of the Dying, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{%GRAY%of the Dying, Last Wish, Silence%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Breath}%CONTINUE%
+ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Silence%NAME%}%CONTINUE%
+ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Last Wish, Silence%NAME%}%CONTINUE%
+ItemDisplay[(BOW OR STAFF OR AXE OR MACE OR POLEARM OR SPEAR) SOCK=6 NMAG !RW]: %NAME%{Asylum, %NAME%}%CONTINUE%
+ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
