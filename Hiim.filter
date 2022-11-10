@@ -32,7 +32,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
 
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.1%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.2%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -126,6 +126,7 @@ ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Map Rolling
+ItemDisplay[fort]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a %GOLD%Fortified %WHITE%Map}
 ItemDisplay[imma]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Jewel %WHITE%to make a %BLUE%Magic Map}
 ItemDisplay[imra]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Jewel %WHITE%+ %ORANGE%Thul [10]+ %WHITE%to make a %YELLOW%Rare Map}
 ItemDisplay[rera]: %MAP-4A%%NAME%{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
@@ -139,35 +140,35 @@ ItemDisplay[std]: %PX-9D%%NAME%{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%N
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T1]
-ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19)]: %GREEN%* [T1] %CONTINUE%{%NL%%TAN%Max Immunities:}
+ItemDisplay[(t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33 OR t18 OR t19)]: %GREEN%* [T1] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
-ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
-ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
+ItemDisplay[(t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33 OR t18 OR t19) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[(t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33 OR t18 OR t19) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
+ItemDisplay[(t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33 OR t18 OR t19) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
 
-ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%WHITE%%CONTINUE%{%RED%Fire 145% %YELLOW%Light 120% %BLUE% Cold 160%%NL%%GRAY%Phys 80% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
+ItemDisplay[t22]: %NAME%Torajan Jungle Map%WHITE%%CONTINUE%{%RED%Fire 80% %YELLOW%Light 105% %BLUE% Cold 140%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 100%%NAME%}
 ItemDisplay[t12]: %NAME%Horazons Memory Map%WHITE%%CONTINUE%{%RED%Fire 135% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 90% %GREEN%Psn 120%%NAME%}
 ItemDisplay[t13]: %NAME%Bastion Keep Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 95% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
-ItemDisplay[t14]: %NAME%Sanatorium Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 75% %BLUE% Cold 130%%NL%%GRAY%Phys 60% %ORANGE%Magic 35% %GREEN%Psn 140%%NAME%}
-ItemDisplay[t15]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%{%RED%Fire 75% %YELLOW%Light 100% %BLUE% Cold 65%%NL%%GRAY%Phys 105% %ORANGE%Magic 150% %GREEN%Psn 105%%NAME%}
-ItemDisplay[t16]: %NAME%T1-6 Map%WHITE%%CONTINUE%
-ItemDisplay[t17]: %NAME%T1-7 Map%WHITE%%CONTINUE%
+ItemDisplay[t23]: %NAME%Arreat Battlefield Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 115%%NAME%}
+ItemDisplay[t21]: %NAME%Phlegathon Map%WHITE%%CONTINUE%{%RED%Fire 140% %YELLOW%Light 120% %BLUE% Cold 80%%NL%%GRAY%Phys 75% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
+ItemDisplay[t16]: %NAME%Ruined Cistern Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 115% %BLUE% Cold 110%%NL%%GRAY%Phys 55% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
+ItemDisplay[t33]: %NAME%Lost Temple Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 115% %BLUE% Cold 110%%NL%%GRAY%Phys 55% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
 ItemDisplay[t18]: %NAME%T1-8 Map%WHITE%%CONTINUE%
 ItemDisplay[t19]: %NAME%T1-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T2]
-ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29)]: %YELLOW%* [T2] %CONTINUE%{%NL%%TAN%Max Immunities:}
+ItemDisplay[(t15 OR t11 OR t14 OR t34 OR t36 OR t26 OR t27 OR t28 OR t29)]: %YELLOW%* [T2] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
-ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
-ItemDisplay[(t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
+ItemDisplay[(t15 OR t11 OR t14 OR t34 OR t36 OR t26 OR t27 OR t28 OR t29) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[(t15 OR t11 OR t14 OR t34 OR t36 OR t26 OR t27 OR t28 OR t29) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
+ItemDisplay[(t15 OR t11 OR t14 OR t34 OR t36 OR t26 OR t27 OR t28 OR t29) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
 
-ItemDisplay[t21]: %NAME%Phlegathon Map%WHITE%%CONTINUE%{%RED%Fire 140% %YELLOW%Light 120% %BLUE% Cold 80%%NL%%GRAY%Phys 75% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
-ItemDisplay[t22]: %NAME%Torajan Jungle Map%WHITE%%CONTINUE%{%RED%Fire 80% %YELLOW%Light 105% %BLUE% Cold 140%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 100%%NAME%}
-ItemDisplay[t23]: %NAME%Arreat Battlefield Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 115%%NAME%}
-ItemDisplay[t24]: %NAME%Tomb of Zultan Kulle Map%WHITE%%CONTINUE%{%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 150%%NL%%GRAY%Phys 105% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
-ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%WHITE%%CONTINUE%{%RED%Fire 125% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 66% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
+ItemDisplay[t15]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%{%RED%Fire 75% %YELLOW%Light 100% %BLUE% Cold 65%%NL%%GRAY%Phys 105% %ORANGE%Magic 150% %GREEN%Psn 105%%NAME%}
+ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%WHITE%%CONTINUE%{%RED%Fire 145% %YELLOW%Light 120% %BLUE% Cold 160%%NL%%GRAY%Phys 80% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
+ItemDisplay[t14]: %NAME%Sanatorium Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 75% %BLUE% Cold 130%%NL%%GRAY%Phys 60% %ORANGE%Magic 35% %GREEN%Psn 140%%NAME%}
+ItemDisplay[t34]: %NAME%Ancestral Trial Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 110% %BLUE% Cold 65%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
+ItemDisplay[t36]: %NAME%Fall of Caldeum Map%WHITE%%CONTINUE%{%RED%Fire 95% %YELLOW%Light 100% %BLUE% Cold 140%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
 ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%WHITE%%CONTINUE%{%RED%Fire 110% %YELLOW%Light 65% %BLUE% Cold 150%%NL%%GRAY%Phys 100% %ORANGE%Magic 120% %GREEN%Psn 85%%NAME%}
 ItemDisplay[t27]: %NAME%T2-7 Map%WHITE%%CONTINUE%
 ItemDisplay[t28]: %NAME%T2-8 Map%WHITE%%CONTINUE%
@@ -175,21 +176,21 @@ ItemDisplay[t29]: %NAME%T2-9 Map%WHITE%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T3]
-ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39)]: %ORANGE%* [T3] %CONTINUE%{%NL%%TAN%Max Immunities:}
+ItemDisplay[(t31 OR t32 OR t25 OR t24 OR t35 OR t37 OR t38 OR t39 OR t3a)]: %ORANGE%* [T3] %CONTINUE%{%NL%%TAN%Max Immunities:}
 
-ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
-ItemDisplay[(t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
+ItemDisplay[(t31 OR t32 OR t25 OR t24 OR t35 OR t37 OR t38 OR t39 OR t3a) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[(t31 OR t32 OR t25 OR t24 OR t35 OR t37 OR t38 OR t39 OR t3a) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
+ItemDisplay[(t31 OR t32 OR t25 OR t24 OR t35 OR t37 OR t38 OR t39 OR t3a) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
 
 ItemDisplay[t31]: %NAME%River of Blood Map%WHITE%%CONTINUE%{%RED%Fire 125% %YELLOW%Light 120% %BLUE% Cold 180%%NL%%GRAY%Phys 66% %ORANGE%Magic 100% %GREEN%Psn 80%%NAME%}
 ItemDisplay[t32]: %NAME%Throne of Insanity Map%WHITE%%CONTINUE%{%RED%Fire 130% %YELLOW%Light 120% %BLUE% Cold 125%%NL%%GRAY%Phys 50% %ORANGE%Magic 75% %GREEN%Psn 115%%NAME%}
-ItemDisplay[t33]: %NAME%Lost Temple Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 115% %BLUE% Cold 110%%NL%%GRAY%Phys 55% %ORANGE%Magic 100% %GREEN%Psn 120%%NAME%}
-ItemDisplay[t34]: %NAME%Ancestral Trial Map%WHITE%%CONTINUE%{%RED%Fire 120% %YELLOW%Light 110% %BLUE% Cold 65%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 120%%NAME%}
+ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%WHITE%%CONTINUE%{%RED%Fire 125% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 66% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
+ItemDisplay[t24]: %NAME%Tomb of Zultan Kulle Map%WHITE%%CONTINUE%{%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 150%%NL%%GRAY%Phys 105% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
 ItemDisplay[t35]: %NAME%Blood Moon Map%WHITE%%CONTINUE%{%RED%Fire 65% %YELLOW%Light 65% %BLUE% Cold 65%%NL%%GRAY%Phys 50% %ORANGE%Magic 33% %GREEN%Psn 65%%NAME%}
-ItemDisplay[t36]: %NAME%Fall of Caldeum Map%WHITE%%CONTINUE%{%RED%Fire 95% %YELLOW%Light 100% %BLUE% Cold 140%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 110%%NAME%}
 ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%WHITE%%CONTINUE%{%RED%Fire 140% %YELLOW%Light 140% %BLUE% Cold 130%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 135%%NAME%}
 ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%WHITE%%CONTINUE%{%RED%Fire 110% %YELLOW%Light 160% %BLUE% Cold 180%%NL%%GRAY%Phys 50% %ORANGE%Magic 70% %GREEN%Psn 110%%NAME%}
 ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%WHITE%%CONTINUE%{%RED%Fire 170% %YELLOW%Light 120% %BLUE% Cold 90%%NL%%GRAY%Phys 50% %ORANGE%Magic 100% %GREEN%Psn 110%%NAME%}
+ItemDisplay[t3a]: %NAME%Ashen Plains Map%WHITE%%CONTINUE%{%RED%Fire 65% %YELLOW%Light 65% %BLUE% Cold 65%%NL%%GRAY%Phys 50% %ORANGE%Magic 33% %GREEN%Psn 65%%NAME%}
 //-----------------------------------------------------------------------------------
 
 // PD2 Items - Maps [T4]
@@ -517,7 +518,6 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 // JEWELS - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
-
 // Start formatting
 ItemDisplay[jew MAG ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED>0 OR MINDMG>0 OR MAXDMG>0)]: %BLUE%%CONTINUE%
 ItemDisplay[jew RARE ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED>0 OR MINDMG>0 OR MAXDMG>0)]: %YELLOW%%CONTINUE%
@@ -631,8 +631,6 @@ ItemDisplay[jew MAG ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED>0
 ItemDisplay[jew RARE ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED>0 OR MINDMG>0 OR MAXDMG>0)]: %DOT-50%%NAME%%YELLOW%jewel%CONTINUE%
 ItemDisplay[jew CRAFT ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED>0 OR MINDMG>0 OR MAXDMG>0)]: %DOT-50%%NAME%%ORANGE%jewel%CONTINUE%
 
-
-
 //Rainbow facets
 ItemDisplay[jew UNI STAT333>0]: Fire%GOLD% %NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT333=5]: 5 %NAME%%CONTINUE%
@@ -669,7 +667,6 @@ ItemDisplay[jew UNI STAT332=5]: 5/%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT332=4]: 4/%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT332=3]: 3/%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT332>0]: %GREEN%%NAME%%CONTINUE%
-
 
 //-----------------------------------------------------------------------------------
 // CIRCLETS - ITEM TAGS (Extends on some of the Shopping and tags)
@@ -782,6 +779,15 @@ ItemDisplay[GLOVES !UNI !SET STAT62>0]: %BLUE%ML %NAME%%CONTINUE%
 // FCR
 ItemDisplay[GLOVES !UNI !SET FCR>0]: %ORANGE%FCR %NAME%%CONTINUE%
 ItemDisplay[GLOVES !UNI !SET FCR=10]: %ORANGE%10 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=11]: %ORANGE%11 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=12]: %ORANGE%12 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=13]: %ORANGE%13 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=14]: %ORANGE%14 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=15]: %ORANGE%15 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=16]: %ORANGE%16 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=17]: %ORANGE%17 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=18]: %ORANGE%18 %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET FCR=19]: %ORANGE%19 %NAME%%CONTINUE%
 ItemDisplay[GLOVES !UNI !SET FCR=20]: %ORANGE%20 %NAME%%CONTINUE%
 
 // IAS
@@ -830,6 +836,213 @@ ItemDisplay[(cqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YEL
 ItemDisplay[(cqv) RARE !ID AMAZON (FILTLVL<3)]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
 ItemDisplay[(aqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
 ItemDisplay[(aqv) RARE !ID AMAZON (FILTLVL<5)]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
+
+// Arrows and Bolts - Stat Tags
+ItemDisplay[cqv ID MAG (FCR>0 OR IAS>0 OR TABSK0>0)]: %BLUE%Bolts%CONTINUE% 
+ItemDisplay[cqv ID RARE (FCR>0 OR IAS>0 OR TABSK0>0)]: %YELLOW%Bolts%CONTINUE% 
+ItemDisplay[cqv ID CRAFT (FCR>0 OR IAS>0 OR TABSK0>0)]: %ORANGE%Bolts%CONTINUE% 
+
+ItemDisplay[aqv ID MAG (FCR>0 OR IAS>0 OR TABSK0>0)]: %BLUE%Arrows%CONTINUE% 
+ItemDisplay[aqv ID RARE (FCR>0 OR IAS>0 OR TABSK0>0)]: %YELLOW%Arrows%CONTINUE% 
+ItemDisplay[aqv ID CRAFT (FCR>0 OR IAS>0 OR TABSK0>0)]: %ORANGE%Arrows%CONTINUE% 
+
+ItemDisplay[(cqv OR aqv) ID FCR>0]: %GOLD%FCR %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID FCR=10]: %GOLD%+10 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID FCR=20]: %GOLD%+20 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID FCR=30]: %GOLD%+30 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID FCR=40]: %GOLD%+40 %NAME%%CONTINUE%
+
+ItemDisplay[(cqv OR aqv) ID IAS>0]: %ORANGE%IAS %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID IAS=10]: %ORANGE%+10 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID IAS=20]: %ORANGE%+20 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID IAS=30]: %ORANGE%+30 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID IAS=40]: %ORANGE%+40 %NAME%%CONTINUE%
+
+ItemDisplay[(cqv OR aqv) ID TABSK0>0]: %PURPLE%Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID TABSK0=1]: %PURPLE%+1 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID TABSK0=2]: %PURPLE%+2 %NAME%%CONTINUE%
+ItemDisplay[(cqv OR aqv) ID TABSK0=3]: %PURPLE%+3 %NAME%%CONTINUE%
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// CLASS SPECIFIC STAT TAGS
+//-----------------------------------------------------------------------------------
+ItemDisplay[MAG ID DRU (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0)]: %BLUE%Druid Pelt%CONTINUE%
+ItemDisplay[RARE ID DRU (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0)]: %YELLOW%Druid Pelt%CONTINUE%
+ItemDisplay[CRAFT ID DRU (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0)]: %ORANGE%Druid Pelt%CONTINUE%
+
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR>0 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%FCR %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=5 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+5 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=6 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+6 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=7 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+7 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=8 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+8 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=9 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+9 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=10 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+10 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=11 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+11 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=12 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+12 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=13 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+13 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=14 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+14 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=15 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+15 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=16 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+16 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=17 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+17 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=18 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+18 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=19 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+19 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU (FCR=20 AND (CLSK5>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR SK230>0))]: %TAN%+20 %NAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU SK230>0]: %ORANGE%Arc Blast %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU SK230=1]: %ORANGE%+1 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU SK230=2]: %ORANGE%+2 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU SK230=3]: %ORANGE%+3 %NAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU CLSK5>0]: %PURPLE%Druid %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU CLSK5=1]: %PURPLE%+1 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU CLSK5=2]: %PURPLE%+2 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU CLSK5=3]: %PURPLE%+3 %NAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK40>0]: %PURPLE%D. Summ %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK40=1]: %PURPLE%+1 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK40=2]: %PURPLE%+2 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK40=3]: %PURPLE%+3 %NAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK41>0]: %PURPLE%ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK41=1]: %PURPLE%+1 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK41=2]: %PURPLE%+2 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK41=3]: %PURPLE%+3 %NAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK42>0]: %PURPLE%Ele %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK42=1]: %PURPLE%+1 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK42=2]: %PURPLE%+2 %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) ID DRU TABSK42=3]: %PURPLE%+3 %NAME%%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+// RARE & CRAFTED STAT TAGS
+//-----------------------------------------------------------------------------------
+// Belts
+ItemDisplay[BELT ID RARE (FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %YELLOW%Belt%CONTINUE% 
+ItemDisplay[BELT ID CRAFT (FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %ORANGE%Belt%CONTINUE% 
+
+ItemDisplay[BELT ID (RARE OR CRAFT) IAS>0]: %ORANGE%IAS %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) IAS=10]: %ORANGE%+10 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) IAS=20]: %ORANGE%+20 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) IAS=30]: %ORANGE%+30 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) IAS=40]: %ORANGE%+40 %NAME%%CONTINUE%
+
+ItemDisplay[BELT ID (RARE OR CRAFT) FCR>0]: %TAN%FCR %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FCR=10]: %TAN%+10 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FCR=20]: %TAN%+20 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FCR=30]: %TAN%+30 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FCR=40]: %TAN%+40 %NAME%%CONTINUE%
+
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR>9]: %GOLD%FHR %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=10]: %GOLD%+10 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=11]: %GOLD%+11 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=12]: %GOLD%+12 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=13]: %GOLD%+13 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=14]: %GOLD%+14 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=15]: %GOLD%+15 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=16]: %GOLD%+16 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=17]: %GOLD%+17 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=18]: %GOLD%+18 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=19]: %GOLD%+19 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=20]: %GOLD%+20 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=21]: %GOLD%+21 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=22]: %GOLD%+22 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=23]: %GOLD%+23 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=24]: %GOLD%+24 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=25]: %GOLD%+25 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=26]: %GOLD%+26 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=27]: %GOLD%+27 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=28]: %GOLD%+28 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=29]: %GOLD%+29 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=30]: %GOLD%+30 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=31]: %GOLD%+31 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=32]: %GOLD%+32 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=33]: %GOLD%+33 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=34]: %GOLD%+34 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=35]: %GOLD%+35 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=36]: %GOLD%+36 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=37]: %GOLD%+37 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=38]: %GOLD%+38 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=39]: %GOLD%+39 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=40]: %GOLD%+40 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=41]: %GOLD%+41 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=42]: %GOLD%+42 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=43]: %GOLD%+43 %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FHR=44]: %GOLD%+44 %NAME%%CONTINUE%
+
+ItemDisplay[BELT ID (RARE OR CRAFT) CRES>0]: %BLUE%CRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FRES>0]: %RED%FRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) LRES>0]: %YELLOW%LRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
+//-----------------------------------------------------------------------------------
+
+// Chests
+ItemDisplay[CHEST ID RARE (STAT17>0 OR CLSK0>0 ORC CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %YELLOW%Chest%CONTINUE% 
+ItemDisplay[CHEST ID CRAFT (STAT17>0 OR CLSK0>0 ORC CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %ORANGE%Chest%CONTINUE% 
+
+ItemDisplay[CHEST ID (RARE OR CRAFT) IAS>0]: %ORANGE%IAS %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) IAS=10]: %ORANGE%+10 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) IAS=20]: %ORANGE%+20 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) IAS=30]: %ORANGE%+30 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) IAS=40]: %ORANGE%+40 %NAME%%CONTINUE%
+
+ItemDisplay[CHEST ID (RARE OR CRAFT) FCR>0]: %TAN%FCR %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FCR=10]: %TAN%+10 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FCR=20]: %TAN%+20 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FCR=30]: %TAN%+30 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FCR=40]: %TAN%+40 %NAME%%CONTINUE%
+
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR>9]: %GOLD%FHR %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=10]: %GOLD%+10 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=11]: %GOLD%+11 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=12]: %GOLD%+12 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=13]: %GOLD%+13 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=14]: %GOLD%+14 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=15]: %GOLD%+15 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=16]: %GOLD%+16 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=17]: %GOLD%+17 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=18]: %GOLD%+18 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=19]: %GOLD%+19 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=20]: %GOLD%+20 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=21]: %GOLD%+21 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=22]: %GOLD%+22 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=23]: %GOLD%+23 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=24]: %GOLD%+24 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=25]: %GOLD%+25 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=26]: %GOLD%+26 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=27]: %GOLD%+27 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=28]: %GOLD%+28 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=29]: %GOLD%+29 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=30]: %GOLD%+30 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=31]: %GOLD%+31 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=32]: %GOLD%+32 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=33]: %GOLD%+33 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=34]: %GOLD%+34 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=35]: %GOLD%+35 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=36]: %GOLD%+36 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=37]: %GOLD%+37 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=38]: %GOLD%+38 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=39]: %GOLD%+39 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=40]: %GOLD%+40 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=41]: %GOLD%+41 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=42]: %GOLD%+42 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=43]: %GOLD%+43 %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=44]: %GOLD%+44 %NAME%%CONTINUE%
+
+ItemDisplay[CHEST ID (RARE OR CRAFT) CRES>0]: %BLUE%CRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FRES>0]: %RED%FRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) LRES>0]: %YELLOW%LRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
+
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: %RED%EDMG %NAME%%CONTINUE%
+
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK0>0]: %PURPLE%Zon %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK1>0]: %PURPLE%Sorc %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK2>0]: %PURPLE%Necro %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK3>0]: %PURPLE%Pala %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK4>0]: %PURPLE%Barb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK5>0]: %PURPLE%Druid %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK6>0]: %PURPLE%Sin %TAN%Skills %NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -844,7 +1057,7 @@ ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%**%YELLOW%     %NAME%
 
 // Rings & Amulet Stat Tags
 //-----------------------------------------------------------------------------------
-ItemDisplay[rin UNI ALLSK>0]: %PURPLE%+1 Skill %GOLD%%NAME%%CONTINUE%
+ItemDisplay[rin UNI ALLSK>0]: %NAME% %PURPLE%+1 Skill %GOLD%%CONTINUE%
 
 ItemDisplay[rin MAG (STAT86>0 OR STAT138>0 OR STAT60>0 OR STAT62>0 OR RES>0 OR FCR>0 OR FRES+CRES+LRES+PRES>19 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %BLUE%Ring%CONTINUE%
 ItemDisplay[rin RARE (STAT86>0 OR STAT138>0 OR STAT60>0 OR STAT62>0 OR RES>0 OR FCR>0 OR FRES+CRES+LRES+PRES>19 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %YELLOW%Ring%CONTINUE%
@@ -859,7 +1072,18 @@ ItemDisplay[(rin OR amu) !UNI !SET RES>0]: ALL %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET (FRES+CRES+LRES>39)]: Fat %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET ((FRES+CRES+LRES+PRES>19) OR RES>0)]: %PURPLE%%NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET FCR>0]: %ORANGE%FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET (FCR>0 AND FCR<10)]: %ORANGE%FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=10]: %ORANGE%10 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=11]: %ORANGE%11 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=12]: %ORANGE%12 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=13]: %ORANGE%13 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=14]: %ORANGE%14 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=15]: %ORANGE%15 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=16]: %ORANGE%16 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=17]: %ORANGE%17 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=18]: %ORANGE%18 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=19]: %ORANGE%19 FCR %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET FCR=20]: %ORANGE%20 FCR %NAME%%CONTINUE%
 
 ItemDisplay[(rin OR amu) !UNI !SET STAT60>0]: %RED%LL %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET STAT62>0]: %BLUE%ML %NAME%%CONTINUE%
@@ -933,21 +1157,21 @@ ItemDisplay[(rin OR amu) !UNI !SET TABSK48=1]: %GRAY%+1 Traps %TAN%Skills %NAME%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK49=1]: %GRAY%+1 Shadow %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET TABSK50=1]: %GRAY%+1 M.A. %TAN%Skills %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET CLSK0=1]: %GRAY%+1 Amazon %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK1=1]: %GRAY%+1 Sorceress %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK2=1]: %GRAY%+1 Necromancer %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK3=1]: %GRAY%+1 Paladin %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK4=1]: %GRAY%+1 Barbarian %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK0=1]: %GRAY%+1 Zon %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK1=1]: %GRAY%+1 Sorc %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK2=1]: %GRAY%+1 Necro %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK3=1]: %GRAY%+1 Pala %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK4=1]: %GRAY%+1 Barb %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET CLSK5=1]: %GRAY%+1 Druid %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK6=1]: %GRAY%+1 Assassin %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK6=1]: %GRAY%+1 Sin %TAN%Skills %NAME%%CONTINUE%
 
-ItemDisplay[(rin OR amu) !UNI !SET CLSK0=2]: %PURPLE%+2 Amazon %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK1=2]: %PURPLE%+2 Sorceress %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK2=2]: %PURPLE%+2 Necromancer %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK3=2]: %PURPLE%+2 Paladin %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK4=2]: %PURPLE%+2 Barbarian %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK0=2]: %PURPLE%+2 Zon %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK1=2]: %PURPLE%+2 Sorc %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK2=2]: %PURPLE%+2 Necro %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK3=2]: %PURPLE%+2 Pala %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK4=2]: %PURPLE%+2 Barb %TAN%Skills %NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET CLSK5=2]: %PURPLE%+2 Druid %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET CLSK6=2]: %PURPLE%+2 Assassin %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET CLSK6=2]: %PURPLE%+2 Sin %TAN%Skills %NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 // LLD - Magic Jewels
@@ -1296,7 +1520,6 @@ ItemDisplay[cm1 UNI]: %MAP% %NAME%
 ItemDisplay[cm2 UNI]: %MAP% %NAME%
 ItemDisplay[cm3 UNI]: %MAP% %NAME%
 //-----------------------------------------------------------------------------------
-
 
 // VLLD - Small Charms
 ItemDisplay[MAG cm1 ID LVLREQ<10 LIFE>12 (MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 OR STAT31>0 OR STAT19>0)]: %DOT-50%%NAME% %PURPLE%[VLLD]{%GRAY%GG VLLD}
@@ -2624,39 +2847,39 @@ ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<5]:%NAME%{%NL%%W
 
 //Crafting tag when identified
 // Weapons
-ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
-ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Ghost Glaive
-ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Berserker Axe
-ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Thunder Maul
-ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Ogre Maul
-ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Blade
-ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Sword
-ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Glorious Axe
-ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Legendary Mallet
-ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//War Pike
-ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Stygian Pilum
-ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Balrog Spear
-ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Ghost Glaive
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Berserker Axe
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Thunder Maul
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Legendary Mallet
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//War Pike
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Winged Harpoon
 
 //Armor
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//boots
 
 //Class specific
-ItemDisplay[BAR MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
-ItemDisplay[(ob5 OR oba OR obf) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
-ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
-ItemDisplay[(am5 OR ama OR amf) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
-ItemDisplay[(am2 OR am7 OR amc) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
-ItemDisplay[MAG ID !SHOP (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
-ItemDisplay[MAG ID !SHOP (DRU) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
-ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
-ItemDisplay[SIN MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
+ItemDisplay[BAR MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//sorc orb
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//long bow
+ItemDisplay[(am5 OR ama OR amf) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//pala shield
+ItemDisplay[MAG ID !SHOP (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//scepters
+ItemDisplay[MAG ID !SHOP (DRU) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//dudu helms
+ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//clubs
+ItemDisplay[SIN MAG ID !SHOP FILTLVL<5]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//all sin claws
 
 //Crafting Reciepe
 ItemDisplay[HELM MAG ID !SHOP]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%* Caster: O, Nef, Jewel *%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%* Vamp: SK, Lum, Jewel *%NAME%}%CONTINUE%
