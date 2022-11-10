@@ -32,7 +32,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 
 // Version Id
 
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.0%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.1%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -566,9 +566,9 @@ ItemDisplay[jew MAXDMG=13]: 13 %NAME%%CONTINUE%
 ItemDisplay[jew MAXDMG=12]: 12 %NAME%%CONTINUE%
 ItemDisplay[jew MAXDMG=11]: 11 %NAME%%CONTINUE%
 ItemDisplay[jew MAXDMG=10]: 10 %NAME%%CONTINUE%
-//ItemDisplay[jew MAXDMG<10 MAXDMG>0]: <10 %NAME%%CONTINUE%
 ItemDisplay[jew MAXDMG<10 MAXDMG>0]: <10 %NAME%%CONTINUE%
-ItemDisplay[jew MAXDMG>0]: %RED%+%NAME%%CONTINUE%
+ItemDisplay[jew MAXDMG>9]: +%NAME%%CONTINUE%
+ItemDisplay[jew MAXDMG>0]: %RED%%NAME%%CONTINUE%
 
 // Min Dmg
 ItemDisplay[jew MINDMG>0]: MinDMG %NAME%%CONTINUE%
@@ -587,8 +587,9 @@ ItemDisplay[jew MINDMG=8]: 8 %NAME%%CONTINUE%
 ItemDisplay[jew MINDMG=7]: 7 %NAME%%CONTINUE%
 ItemDisplay[jew MINDMG=6]: 6 %NAME%%CONTINUE%
 ItemDisplay[jew MINDMG=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew MAXDMG<5 MAXDMG>0]: <5 %NAME%%CONTINUE%
-ItemDisplay[jew MINDMG>0]: %BLUE%+%NAME%%CONTINUE%
+ItemDisplay[jew MINDMG<5 MINDMG>0]: <5 %NAME%%CONTINUE%
+ItemDisplay[jew MINDMG>4]: +%NAME%%CONTINUE%
+ItemDisplay[jew MINDMG>0]: %BLUE%%NAME%%CONTINUE%
 
 // FHR
 ItemDisplay[jew FHR>0]: %GOLD%FHR %NAME%%CONTINUE%
