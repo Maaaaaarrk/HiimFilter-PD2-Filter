@@ -18,11 +18,6 @@
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// Fallback for no filter level
-//-----------------------------------------------------------------------------------
-ItemDisplay[FILTLVL=0]: %NAME%
-
-//-----------------------------------------------------------------------------------
 // FILTER CONFIG
 //-----------------------------------------------------------------------------------
 // Filter Levels (0 = Base / No Filter)
@@ -55,6 +50,11 @@ ItemDisplay[(box OR key)]: %NAME%{%NAME%%NL%}%CONTINUE%
 ItemDisplay[(box OR key) CLVL=99]: %NAME%{%PURPLE%Congratulations on the 99%NL%%NAME%}%CONTINUE%// Horadric Cube
 ItemDisplay[box]: %NAME%{%NAME%}%MAP-58%
 //-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// Fallback for no filter level
+//-----------------------------------------------------------------------------------
+ItemDisplay[FILTLVL=0]: %NAME%
 
 //-----------------------------------------------------------------------------------
 // GLOBAL FILTERING RULES
@@ -1250,8 +1250,8 @@ ItemDisplay[BELT ID (RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 // CHESTS - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
-ItemDisplay[CHEST ID RARE (STAT17>0 OR CLSK0>0 ORC CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %YELLOW%%CONTINUE% 
-ItemDisplay[CHEST ID CRAFT (STAT17>0 OR CLSK0>0 ORC CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %ORANGE%%CONTINUE% 
+ItemDisplay[CHEST ID RARE (STAT17>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %YELLOW%%CONTINUE% 
+ItemDisplay[CHEST ID CRAFT (STAT17>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %ORANGE%%CONTINUE% 
 
 // Fix Names
 ItemDisplay[CHEST ID (RARE OR CRAFT) (STAT17>0 OR CLSK0>0 ORC CLSK1>0 OR CLSK2>0 OR CLSK3> 0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0) qui]: %CONTINUE%%NAME%Quilted Armor
