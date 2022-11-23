@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.2%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.3%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -3182,25 +3182,25 @@ ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%
 ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
 
 // Armor
-ItemDisplay[GLOVES (EXC OR ELT) !(utg OR uhg) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[GLOVES (EXC OR ELT) !(utg OR uhg) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //boots
 
 // Class specific
-ItemDisplay[BARBARIAN BAR MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //barb helm
-ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //sorc orb
-ItemDisplay[AMAZON (lwb OR 8lw OR 6lw) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //long bow
-ItemDisplay[AMAZON (am5 OR ama OR amf) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //zon javs
-ItemDisplay[(am2 OR am7 OR amc) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //Zon bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //pala shield
-ItemDisplay[PALADIN MAG !ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5]: %NAME% %GREEN%[Craft] //scepters
-ItemDisplay[DRUID MAG !ID (DRU) FILTLVL<5]: %NAME% %GREEN%[Craft] //dudu helms
-ItemDisplay[DRUID MAG !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5]: %NAME% %GREEN%[Craft] //clubs
-ItemDisplay[ASSASSIN SIN MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //all sin claws
-ItemDisplay[ETH SIN MAG !ID FILTLVL<5]: %NAME% %GREEN%[Craft] //eth sin claws
+ItemDisplay[BARBARIAN BAR MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //sorc orb
+ItemDisplay[AMAZON (lwb OR 8lw OR 6lw) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //long bow
+ItemDisplay[AMAZON (am5 OR ama OR amf) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //pala shield
+ItemDisplay[PALADIN MAG !ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //scepters
+ItemDisplay[DRUID MAG !ID (DRU) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //dudu helms
+ItemDisplay[DRUID MAG !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //clubs
+ItemDisplay[ASSASSIN SIN MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //all sin claws
+ItemDisplay[ETH SIN MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth sin claws
 
 // Generic
 ItemDisplay[THROWING MAG ETH !ID FILTLVL<5]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
