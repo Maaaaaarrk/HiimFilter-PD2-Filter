@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.3%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.4%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -1403,7 +1403,13 @@ ItemDisplay[CHEST ID (RARE OR CRAFT) LRES>0]: %YELLOW%LRES %NAME%%CONTINUE%
 ItemDisplay[CHEST ID (RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
 
 // Enh Dmg
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: %RED%EDMG %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: EDMG %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>299]: >300% %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<299 STAT17>249]: >250% %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<249 STAT17>199]: >200% %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<199 STAT17>149]: >150% %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<149 STAT17>99]: >100% %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: %RED%%NAME%%CONTINUE%
 
 // Class Skills
 ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK0>0]: %PURPLE%Zon %TAN%Skills %NAME%%CONTINUE%
@@ -1435,7 +1441,8 @@ ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PR
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) tbt]: %CONTINUE%%NAME%Light Plated Boots	
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) xtb]: %CONTINUE%%NAME%Battle Boots	
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) utb]: %CONTINUE%%NAME%Mirrored Boots
-ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) hbt]: %CONTINUE%%NAME%Greaves	xhb	War Boots	
+ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) hbt]: %CONTINUE%%NAME%Greaves
+ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) xhb]: %CONTINUE%%NAME%War Boots	
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) uhb]: %CONTINUE%%NAME%Myrmidon Greaves
 
 // Resists
