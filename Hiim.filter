@@ -724,42 +724,42 @@ ItemDisplay[jew CRAFT ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED
 // Rainbow Facet Type and Value Tags
 // Fire
 ItemDisplay[jew UNI STAT333>0]: Fire%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT333=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT333=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT333=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT329=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT329=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT329=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT329=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT329=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT329=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT329>0]: %RED%%NAME%%CONTINUE%
 
 // Lightning
 ItemDisplay[jew UNI STAT334>0]: Light%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT334=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT334=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT334=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT330=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT330=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT330=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT330=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT330=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT330=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT330>0]: %YELLOW%%NAME%%CONTINUE%
 
 // Cold
 ItemDisplay[jew UNI STAT335>0]: Cold%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT335=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT335=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT335=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT331=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT331=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT331=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT331=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT331=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT331=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT331>0]: %BLUE%%NAME%%CONTINUE%
 
 // Poison
 ItemDisplay[jew UNI STAT336>0]: Psn%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT336=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT336=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT336=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT332=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT332=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT332=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT332=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT332=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT332=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT332>0]: %GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
@@ -2032,7 +2032,7 @@ ItemDisplay[(RARE OR CRAFT) (ED>399 AND ED<500)]: %NAME% %PURPLE%[ED >400]%CONTI
 ItemDisplay[(RARE OR CRAFT) (ED>499)]: %NAME% %PURPLE%[ED >500]%CONTINUE%
 
 // ITEM TAGS - LLD - Uniqes and sets to look out for
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth) STAT360=0]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET (bwn OR vbt OR lbt) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% [LLD]%CONTINUE%
@@ -2916,7 +2916,7 @@ ItemDisplay[FILTLVL<3 UNI STAT360=0 (9ls) SK238>5]: %NAME%{%NL%%RED%Slam Me%NAME
 //-----------------------------------------------------------------------------------
 // LLD UNI !ID Tag
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4785,8 +4785,8 @@ ItemDisplay[STAFF SOCK=2 NMAG !RW]: %NAME%{%GRAY%Leaf, Strength, Wind%NL%%TAN%No
 ItemDisplay[(SWORD OR AXE OR SIN OR mac OR mst OR fla) !leg SOCK=2 NMAG !RW]: %NAME%{%GRAY%Steel, Strength, Wind%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 3soc
-ItemDisplay[WEAPON !(BOW OR XBOW OR SWORD OR AXE OR POLEARM) !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg OR SWORD OR AXE OR POLEARM) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fury,}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SWORD OR AXE OR POLEARM OR SCEPTER) !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg OR SWORD OR AXE OR POLEARM OR SCEPTER) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fury,}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Edge, Melody, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SIN SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Pattern, Plague, Venom%NL%Fury, King's grace, Lawbringer,%NL%%TAN%RWs: %GRAY%Black, Chaos, Crescent moon,}%CONTINUE%
 ItemDisplay[(AXE OR POLEARM) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Crescent Moon, Fury,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
@@ -4808,8 +4808,8 @@ ItemDisplay[STAFF SOCK=4 NMAG !RW]: %NAME%{%GRAY%Memory, Passion, Phoenix, Spiri
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Justice, Passion, Phoenix%NL%Famine, Fortitude, Hand of%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 5soc
-ItemDisplay[WEAPON !(SWORD) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%Beast, Call to Arms,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
