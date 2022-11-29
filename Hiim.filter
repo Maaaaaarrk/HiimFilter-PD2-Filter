@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.5%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.6%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -62,7 +62,7 @@ ItemDisplay[FILTLVL=0]: %NAME%
 ItemDisplay[(ARMOR OR WEAPON) INF]:                         // Hide inferior items
 ItemDisplay[ear]:                                           // Hide player ears, ewwww!?!?!
 ItemDisplay[(WEAPON OR ARMOR) NMAG !ID]: %NAME%             // Show items when gambling
-ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>35]: // Hide junk 1s stuff after 35
+ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>35 !GEMMED]: // Hide junk 1s stuff after 35
 
 // Show Quantity on Items - Quantity has to be above all for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR aqv OR key OR cqv OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
@@ -160,37 +160,37 @@ ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19 OR t21 
 ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49 OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59)]: %NAME%%CONTINUE%{%TAN%Immunities:%NL%%NAME%}
 
 // Tier 1 Immunes
-ItemDisplay[t22]: %NAME%{%NL%%RED%Fire 80% %YELLOW%Light 105% %BLUE% Cold 140%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Torajan Jungle S6 res updated
-ItemDisplay[t12]: %NAME%{%NL%%RED%Fire 135% %YELLOW%Light 80% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Horazon's Memory S6 res updated
-ItemDisplay[t13]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 110% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Bastion Keep Memory S6 res updated
-ItemDisplay[t23]: %NAME%{%NL%%RED%Fire 130% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Arreat Battlefield S6 res updated
-ItemDisplay[t21]: %NAME%{%NL%%RED%Fire 140% %YELLOW%Light 90% %BLUE% Cold 80%%NL%%GRAY%Phys 75% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Phlegethon S6 res updated
-ItemDisplay[t16]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 75% %BLUE% Cold 115%%NL%%GRAY%Phys 60% %ORANGE%Magic 125% %GREEN%Psn 140%%NL%%NAME%}%CONTINUE% // Ruined Cistern S6 res updated
-ItemDisplay[t33]: %NAME%{%NL%%RED%Fire 120% %YELLOW%Light 115% %BLUE% Cold 110%%NL%%GRAY%Phys 55% %ORANGE%Magic 50% %GREEN%Psn 80%%NL%%NAME%}%CONTINUE% // Lost Temple S6 res updated
+ItemDisplay[t22]: %NAME%{%NL%%RED%Fire 80% %YELLOW%Light 105% %BLUE% Cold 140%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Torajan Jungle S6 res updated patch1
+ItemDisplay[t12]: %NAME%{%NL%%RED%Fire 135% %YELLOW%Light 80% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Horazon's Memory S6 res updated patch1
+ItemDisplay[t13]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 110% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Bastion Keep Memory S6 res updated patch1
+ItemDisplay[t23]: %NAME%{%NL%%RED%Fire 130% %YELLOW%Light 100% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Arreat Battlefield S6 res updated patch1
+ItemDisplay[t21]: %NAME%{%NL%%RED%Fire 140% %YELLOW%Light 90% %BLUE% Cold 80%%NL%%GRAY%Phys 75% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Phlegethon S6 res updated patch1
+ItemDisplay[t16]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 75% %BLUE% Cold 115%%NL%%GRAY%Phys 60% %ORANGE%Magic 125% %GREEN%Psn 140%%NL%%NAME%}%CONTINUE% // Ruined Cistern S6 res updated patch1
+ItemDisplay[t33]: %NAME%{%NL%%RED%Fire 120% %YELLOW%Light 115% %BLUE% Cold 110%%NL%%GRAY%Phys 55% %ORANGE%Magic 50% %GREEN%Psn 80%%NL%%NAME%}%CONTINUE% // Lost Temple S6 res updated patch1
 
 // Tier 2 Immunes
-ItemDisplay[t15]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 100% %BLUE% Cold 65%%NL%%GRAY%Phys 80% %ORANGE%Magic 150% %GREEN%Psn 105%%NL%%NAME%}%CONTINUE% // Royal Crypts S6 res updated
-ItemDisplay[t11]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 75%%NL%%GRAY%Phys 80% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Ruins of Viz-jun S6 res updated
-ItemDisplay[t14]: %NAME%{%NL%%RED%Fire 130% %YELLOW%Light 75% %BLUE% Cold 130%%NL%%GRAY%Phys 60% %ORANGE%Magic 35% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Sanatorium S6 res updated
-ItemDisplay[t34]: %NAME%{%NL%%RED%Fire 120% %YELLOW%Light 90% %BLUE% Cold 75%%NL%%GRAY%Phys 110% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Ancestral Trial S6 res updated
-ItemDisplay[t36]: %NAME%{%NL%%RED%Fire 95% %YELLOW%Light 100% %BLUE% Cold 95%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 80%%NL%%NAME%}%CONTINUE% // Fall of Caldeum S6 res updated
-ItemDisplay[t26]: %NAME%{%NL%%RED%Fire 110% %YELLOW%Light 65% %BLUE% Cold 150%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Shadows of Westmarch S6 res updated
+ItemDisplay[t15]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 100% %BLUE% Cold 65%%NL%%GRAY%Phys 80% %ORANGE%Magic 150% %GREEN%Psn 105%%NL%%NAME%}%CONTINUE% // Royal Crypts S6 res updated patch1
+ItemDisplay[t11]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 75%%NL%%GRAY%Phys 80% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Ruins of Viz-jun S6 res updated patch1
+ItemDisplay[t14]: %NAME%{%NL%%RED%Fire 130% %YELLOW%Light 75% %BLUE% Cold 130%%NL%%GRAY%Phys 60% %ORANGE%Magic 35% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Sanatorium S6 res updated patch1
+ItemDisplay[t34]: %NAME%{%NL%%RED%Fire 120% %YELLOW%Light 90% %BLUE% Cold 75%%NL%%GRAY%Phys 110% %ORANGE%Magic 50% %GREEN%Psn 120%%NL%%NAME%}%CONTINUE% // Ancestral Trial S6 res updated patch1
+ItemDisplay[t36]: %NAME%{%NL%%RED%Fire 95% %YELLOW%Light 100% %BLUE% Cold 95%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 80%%NL%%NAME%}%CONTINUE% // Fall of Caldeum S6 res updated patch1
+ItemDisplay[t26]: %NAME%{%NL%%RED%Fire 110% %YELLOW%Light 65% %BLUE% Cold 150%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 85%%NL%%NAME%}%CONTINUE% // Shadows of Westmarch S6 res updated patch1
 
 // Tier 3 Immunes
-ItemDisplay[t31]: %NAME%{%NL%%RED%Fire 125% %YELLOW%Light 85% %BLUE% Cold 180%%NL%%GRAY%Phys 66% %ORANGE%Magic 100% %GREEN%Psn 95%%NL%%NAME%}%CONTINUE% // River of Blood S6 res updated
-ItemDisplay[t32]: %NAME%{%NL%%RED%Fire 130% %YELLOW%Light 85% %BLUE% Cold 90%%NL%%GRAY%Phys 50% %ORANGE%Magic 75% %GREEN%Psn 115%%NL%%NAME%}%CONTINUE% // Throne of Insanity S6 res updated
-ItemDisplay[t25]: %NAME%{%NL%%RED%Fire 125% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 66% %ORANGE%Magic 50% %GREEN%Psn 90%%NL%%NAME%}%CONTINUE% // Sewers of Harrogath S6 res updated
-ItemDisplay[t24]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 150%%NL%%GRAY%Phys 105% %ORANGE%Magic 50% %GREEN%Psn 110%%NL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle S6 res updated
-ItemDisplay[t35]: %NAME%{%NL%%RED%Fire 65% %YELLOW%Light 65% %BLUE% Cold 65%%NL%%GRAY%Phys 50% %ORANGE%Magic 33% %GREEN%Psn 65%%NL%%NAME%}%CONTINUE% // Blood Moon S6 res updated S6 res updated
-ItemDisplay[t37]: %NAME%{%NL%%RED%Fire 140% %YELLOW%Light 85% %BLUE% Cold 130%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 90%%NL%%NAME%}%CONTINUE% // Pandemonium Citadel S6 res updated
-ItemDisplay[t38]: %NAME%{%NL%%RED%Fire 80% %YELLOW%Light 160% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 70% %GREEN%Psn 110%%NL%%NAME%}%CONTINUE% // Canyon of Sescheron S6 res updated
-ItemDisplay[t39]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 90% %BLUE% Cold 130%%NL%%GRAY%Phys 40% %ORANGE%Magic 50% %GREEN%Psn 1000%%NL%%NAME%}%CONTINUE% // Kehjistan Marketplace S6 res updated
-ItemDisplay[t3a]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 145% %BLUE% Cold 75%%NL%%GRAY%Phys 50% %ORANGE%Magic 120% %GREEN%Psn 130%%NL%%NAME%}%CONTINUE% // Ashen Plains S6 res updated
+ItemDisplay[t31]: %NAME%{%NL%%RED%Fire 125% %YELLOW%Light 85% %BLUE% Cold 180%%NL%%GRAY%Phys 66% %ORANGE%Magic 100% %GREEN%Psn 95%%NL%%NAME%}%CONTINUE% // River of Blood S6 res updated patch1
+ItemDisplay[t32]: %NAME%{%NL%%RED%Fire 130% %YELLOW%Light 85% %BLUE% Cold 90%%NL%%GRAY%Phys 50% %ORANGE%Magic 75% %GREEN%Psn 115%%NL%%NAME%}%CONTINUE% // Throne of Insanity S6 res updated patch1
+ItemDisplay[t25]: %NAME%{%NL%%RED%Fire 125% %YELLOW%Light 135% %BLUE% Cold 85%%NL%%GRAY%Phys 66% %ORANGE%Magic 50% %GREEN%Psn 90%%NL%%NAME%}%CONTINUE% // Sewers of Harrogath S6 res updated patch1
+ItemDisplay[t24]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 120% %BLUE% Cold 150%%NL%%GRAY%Phys 105% %ORANGE%Magic 50% %GREEN%Psn 110%%NL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle S6 res updated patch1
+ItemDisplay[t35]: %NAME%{%NL%%RED%Fire 65% %YELLOW%Light 65% %BLUE% Cold 65%%NL%%GRAY%Phys 50% %ORANGE%Magic 33% %GREEN%Psn 65%%NL%%NAME%}%CONTINUE% // Blood Moon S6 res updated S6 res updated patch1
+ItemDisplay[t37]: %NAME%{%NL%%RED%Fire 140% %YELLOW%Light 85% %BLUE% Cold 130%%NL%%GRAY%Phys 100% %ORANGE%Magic 50% %GREEN%Psn 90%%NL%%NAME%}%CONTINUE% // Pandemonium Citadel S6 res updated patch1
+ItemDisplay[t38]: %NAME%{%NL%%RED%Fire 80% %YELLOW%Light 160% %BLUE% Cold 80%%NL%%GRAY%Phys 50% %ORANGE%Magic 70% %GREEN%Psn 110%%NL%%NAME%}%CONTINUE% // Canyon of Sescheron S6 res updated patch1
+ItemDisplay[t39]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 90% %BLUE% Cold 130%%NL%%GRAY%Phys 40% %ORANGE%Magic 50% %GREEN%Psn 1000%%NL%%NAME%}%CONTINUE% // Kehjistan Marketplace S6 res updated patch1
+ItemDisplay[t3a]: %NAME%{%NL%%RED%Fire 75% %YELLOW%Light 145% %BLUE% Cold 75%%NL%%GRAY%Phys 50% %ORANGE%Magic 120% %GREEN%Psn 130%%NL%%NAME%}%CONTINUE% // Ashen Plains S6 res updated patch1
 
 // Tier 4 Immunes
-ItemDisplay[t41]: %NAME%{%NL%%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NL%%NAME%}%CONTINUE% // Cathedral of Light
-ItemDisplay[t42]: %NAME%{%NL%%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NL%%NAME%}%CONTINUE% // Plains of Torment
-ItemDisplay[t43]: %NAME%{%NL%%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NL%%NAME%}%CONTINUE% // Sanctuary of Sin
+ItemDisplay[t41]: %NAME%{%NL%%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NL%%NAME%}%CONTINUE% // Cathedral of Light S6 res updated patch1
+ItemDisplay[t42]: %NAME%{%NL%%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NL%%NAME%}%CONTINUE% // Plains of Torment S6 res updated patch1
+ItemDisplay[t43]: %NAME%{%NL%%RED%Fire 180% %YELLOW%Light 180% %BLUE% Cold 180%%NL%%GRAY%Phys 180% %ORANGE%Magic 180% %GREEN%Psn 180%%NL%%NAME%}%CONTINUE% // Sanctuary of Sin S6 res updated patch1
 
 // Maps [T1]
 ItemDisplay[t22]: %NAME%Torajan Jungle Map%WHITE%%CONTINUE%{%NAME%}
@@ -724,42 +724,42 @@ ItemDisplay[jew CRAFT ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR ED
 // Rainbow Facet Type and Value Tags
 // Fire
 ItemDisplay[jew UNI STAT333>0]: Fire%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT333=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT333=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT333=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT329=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT329=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT329=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT329=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT329=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT329=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT329>0]: %RED%%NAME%%CONTINUE%
 
 // Lightning
 ItemDisplay[jew UNI STAT334>0]: Light%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT334=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT334=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT334=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT330=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT330=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT330=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT330=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT330=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT330=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT330>0]: %YELLOW%%NAME%%CONTINUE%
 
 // Cold
 ItemDisplay[jew UNI STAT335>0]: Cold%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT335=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT335=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT335=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT331=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT331=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT331=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT331=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT331=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT331=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT331>0]: %BLUE%%NAME%%CONTINUE%
 
 // Poison
 ItemDisplay[jew UNI STAT336>0]: Psn%GOLD% %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT336=5]: 5 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT336=4]: 4 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT336=3]: 3 %NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT332=5]: 5/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT332=4]: 4/%NAME%%CONTINUE%
-ItemDisplay[jew UNI STAT332=3]: 3/%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT332=5]: /5 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT332=4]: /4 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT332=3]: /3 %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336=5]: 5%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336=4]: 4%NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336=3]: 3%NAME%%CONTINUE%
 ItemDisplay[jew UNI STAT332>0]: %GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
@@ -2032,7 +2032,7 @@ ItemDisplay[(RARE OR CRAFT) (ED>399 AND ED<500)]: %NAME% %PURPLE%[ED >400]%CONTI
 ItemDisplay[(RARE OR CRAFT) (ED>499)]: %NAME% %PURPLE%[ED >500]%CONTINUE%
 
 // ITEM TAGS - LLD - Uniqes and sets to look out for
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth) STAT360=0]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET (bwn OR vbt OR lbt) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% [LLD]%CONTINUE%
@@ -2916,7 +2916,7 @@ ItemDisplay[FILTLVL<3 UNI STAT360=0 (9ls) SK238>5]: %NAME%{%NL%%RED%Slam Me%NAME
 //-----------------------------------------------------------------------------------
 // LLD UNI !ID Tag
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4785,8 +4785,8 @@ ItemDisplay[STAFF SOCK=2 NMAG !RW]: %NAME%{%GRAY%Leaf, Strength, Wind%NL%%TAN%No
 ItemDisplay[(SWORD OR AXE OR SIN OR mac OR mst OR fla) !leg SOCK=2 NMAG !RW]: %NAME%{%GRAY%Steel, Strength, Wind%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 3soc
-ItemDisplay[WEAPON !(BOW OR XBOW OR SWORD OR AXE OR POLEARM) !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg OR SWORD OR AXE OR POLEARM) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fury,}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SWORD OR AXE OR POLEARM OR SCEPTER) !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg OR SWORD OR AXE OR POLEARM OR SCEPTER) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fury,}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Edge, Melody, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SIN SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Pattern, Plague, Venom%NL%Fury, King's grace, Lawbringer,%NL%%TAN%RWs: %GRAY%Black, Chaos, Crescent moon,}%CONTINUE%
 ItemDisplay[(AXE OR POLEARM) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Crescent Moon, Fury,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
@@ -4808,8 +4808,8 @@ ItemDisplay[STAFF SOCK=4 NMAG !RW]: %NAME%{%GRAY%Memory, Passion, Phoenix, Spiri
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Justice, Passion, Phoenix%NL%Famine, Fortitude, Hand of%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 5soc
-ItemDisplay[WEAPON !(SWORD) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%Beast, Call to Arms,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
@@ -5266,29 +5266,29 @@ ItemDisplay[(cm1 OR cm3 OR jew) (MAG OR RARE) ID]: %NAME%{%NAME%}
 // Filter level Setting limiters
 // ------------------------------------------------------------------------------
 //Hide 0 socket non elite filter lvl>1
-ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT FILTLVL>1]: 
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT FILTLVL>1 !GEMMED]: 
 
 //Hide non eth weapons unid mag in hell FILTLVL>1
-ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 FILTLVL>1 DIFF=2]:
+ItemDisplay[WEAPON MAG !ETH !ID ILVL<85 FILTLVL>1 DIFF=2 !GEMMED]:
 
 //Hide non eth weapons unid rare in hell clvl > 85
-ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 FILTLVL>2 DIFF=2]:
+ItemDisplay[WEAPON RARE !ETH !ID ILVL<85 FILTLVL>2 DIFF=2 !GEMMED]:
 
 // Hide all remaining magic <85 Ilvl
-ItemDisplay[MAG !ID ILVL<85 FILTLVL>1]:
+ItemDisplay[MAG !ID ILVL<85 FILTLVL>1 !GEMMED]:
 
 // Hide all bases normal quality not called out above
-ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg DIFF=2 FILTLVL>1]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg DIFF=2 FILTLVL>1 !GEMMED]:
 
 // Hide all bases Exceptional quality not called out above
-ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg DIFF=2 FILTLVL>1]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg DIFF=2 FILTLVL>1 !GEMMED]:
 
 // Hide all bases not called out above
-ItemDisplay[(ARMOR OR WEAPON) NMAG !leg DIFF=2 FILTLVL>2]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG !leg DIFF=2 FILTLVL>2 !GEMMED]:
 
 // Hide all magic <88 Ilvl
-ItemDisplay[MAG !ID ILVL<88 FILTLVL>2]:
+ItemDisplay[MAG !ID ILVL<88 FILTLVL>2 !GEMMED]:
 
 // Hide all items that arent called out in filter on endgame
-ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>2]: 
+ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>2 !GEMMED]: 
 //-----------------------------------------------------------------------------------
