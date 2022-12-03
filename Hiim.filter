@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: Hardcore Mapping (Work in Prog)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.6%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.7%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Strict}%CONTINUE%
@@ -4823,6 +4823,7 @@ ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%NL%%TAN%Note%WHITE%: Possible RuneW
 ItemDisplay[WEAPON !(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Silence%NAME%}%CONTINUE%
 ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Last Wish, Silence%NAME%}%CONTINUE%
 ItemDisplay[(BOW OR STAFF OR AXE OR MACE OR POLEARM OR SPEAR) SOCK=6 NMAG !RW]: %NAME%{Asylum, %NAME%}%CONTINUE%
+ItemDisplay[STAFF SOCK=6 NMAG !RW]: %NAME%{Obsession, %NAME%}%CONTINUE%
 ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
@@ -5284,11 +5285,11 @@ ItemDisplay[(ARMOR OR WEAPON) NMAG NORM !leg DIFF=2 FILTLVL>1 !GEMMED]:
 ItemDisplay[(ARMOR OR WEAPON) NMAG EXC !leg DIFF=2 FILTLVL>1 !GEMMED]:
 
 // Hide all bases not called out above
-ItemDisplay[(ARMOR OR WEAPON) NMAG !leg DIFF=2 FILTLVL>2 !GEMMED]:
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK<2 !leg DIFF=2 FILTLVL>2 !GEMMED]:
 
 // Hide all magic <88 Ilvl
 ItemDisplay[MAG !ID ILVL<88 FILTLVL>2 !GEMMED]:
 
 // Hide all items that arent called out in filter on endgame
-ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>2 !GEMMED]: 
+//ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>2 !GEMMED]: 
 //-----------------------------------------------------------------------------------
