@@ -12,14 +12,12 @@
 
 * 0]: OFF
 * 1]: Base
-* 2]: Strict
-* 3]: End Game & Crafting
-* 4]: End Game & Crafting NO HP/MP
+* 2]: Semi-Strict
+* 3]: Strict
+* 4]: Strict NO HP/MP
 * 5]: End Game
 * 6]: End Game NO HP/MP
-* 7]: Mystery Mode
-* 8]: Potions Only
-* 9]: Hardcore Mapping
+* 7]: Potions Only
 
 ## Charm Stats on Ground
 
