@@ -33,7 +33,7 @@ ItemDisplayFilterName[]: Potions Only
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.10%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.11%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -278,6 +278,16 @@ ItemDisplay[STAT498>0]: %NAME%%BLUE% [2xBoss]%CONTINUE%{%NAME%}
 // +Area Level
 ItemDisplay[STAT374>0 STAT374<2]: %NAME%%PURPLE% [+1]%CONTINUE%{%NAME%}
 ItemDisplay[STAT374>1 STAT374<3]: %NAME%%PURPLE% [+2]%CONTINUE%{%NAME%}
+
+// Good Maps >100 density +1/2 OR >100 density 70+ rare OR >180 density 40+ rare OR >190 density 30+ rare OR >200 density 20+ rare OR >200 density 20+ exp OR >210 density 10+ rare OR >225 density
+ItemDisplay[((STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>225)) STAT360>0]: %NAME% %GOLD%[G]%CONTINUE%{%NAME%%GOLD%> > > Good Map Rolls < < <}
+// Good Maps Pre SLAM 
+ItemDisplay[((STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>225)) STAT360=0]: %NAME% %GOLD%[GOOD ROLLS]%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NAME%%GOLD%> > > Good Map Rolls < < <}
+
+// Tell the User to convert map to rare
+ItemDisplay[MAG (t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49 OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59 OR t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %NAME%%CONTINUE%{%NL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%NL%%PURPLE%Convert to Plain Map%NL%%NAME%}
+ItemDisplay[NMAG (t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t19 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t41 OR t42 OR t43 OR t44 OR t45 OR t44 OR t47 OR t48 OR t49 OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t59 OR t61 OR t62 OR t63 OR t64 OR t65 OR t66 OR t67 OR t68 OR t69)]: %NAME%%CONTINUE%{%NL%%WHITE%This Map + %GOLD%Zakarum Orb + %BLUE%Jewel %WHITE%+ %ORANGE%Thul [10]+%NL%%PURPLE%Convert to Rare Map%NL%%NAME%}
+
 
 // Map End Wrapper by Tier
 ItemDisplay[(t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33 OR t18 OR t19)]: %MAP-62%%NAME% %GREEN%*{%NAME%}
@@ -536,6 +546,7 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
+ItemDisplay[STAT360>0 FILTLVL=7]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[FILTLVL=7 (RARE OR MAG OR NMAG OR CRAFT)]:
 //-----------------------------------------------------------------------------------
 
@@ -3161,8 +3172,8 @@ ItemDisplay[MAG MAPID=83 (am1 OR am5 OR am6 OR ama OR amb OR amf)]:%RED%%NAME% [
 ItemDisplay[MAG MAPID=83 (ne5 OR ne4)]: %RED%%NAME% [LLD Craft]
 
 // Weapons
-ItemDisplay[(7cr OR 9cr OR crs) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* * * %BLUE%%NAME% %GREEN%[Craft] * * *//Phase Blade
-ItemDisplay[(7gl OR 9gl OR glv) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * * %BLUE%%NAME% %GREEN%[Craft] * * *//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
 ItemDisplay[(7wa OR 9wa OR wax) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
 ItemDisplay[(7gm OR 9gm OR gma) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Thunder Maul
 ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Ogre Maul
@@ -3195,6 +3206,7 @@ ItemDisplay[DRUID MAG !ID (DRU) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //dudu
 ItemDisplay[DRUID MAG !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //clubs
 ItemDisplay[ASSASSIN SIN MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //all sin claws
 ItemDisplay[ETH SIN MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth sin claws
+ItemDisplay[WAND !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //Wand for Caster craft
 
 // Generic
 ItemDisplay[THROWING MAG ETH !ID FILTLVL<5]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
