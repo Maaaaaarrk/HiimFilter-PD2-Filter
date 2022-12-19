@@ -33,7 +33,7 @@ ItemDisplayFilterName[]: Potions Only
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.11%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.12%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -75,7 +75,7 @@ ItemDisplay[wss QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
 ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt%NL%50 Wss Stack - Vex}
 ItemDisplay[cwss]: %MAP-0A%%RED%*** Tainted %PURPLE% WORLDSTAR!!! %RED%***%WHITE%{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %ORANGE%*    %GRAY%%NAME%  %ORANGE%*%WHITE%%MAP-68%{50 jewelfrags - Um/Mal%NL%50 pgems - Um/Mal%NL%50 Map Runes - Mal/Ist}
-ItemDisplay[rkey]: %ORANGE%*    %GRAY%%NAME%   %ORANGE%*%WHITE%%MAP-68%
+ItemDisplay[rkey]: %ORANGE%* *    %GRAY%%NAME%   %ORANGE%* *%WHITE%%MAP-68%
 ItemDisplay[lbox]: %MAP-4A%%ORANGE%* * %PURPLE%> > %NAME% %PURPLE%< <%ORANGE% * *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp]: %MAP-4A%%ORANGE%* %PURPLE%> %NAME% %PURPLE%<%ORANGE% *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
@@ -115,9 +115,9 @@ ItemDisplay[fed]: %NAME%{%TAN%Essence %WHITE%from: %DARK_GREEN%Baal}
 // UBERS - KEYS, ORGANS, ETC
 //-----------------------------------------------------------------------------------
 // Uber Keys
-ItemDisplay[pk1]: %PX-9D%%NAME%{%TAN%Key %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven}%CONTINUE%
-ItemDisplay[pk2]: %PX-9D%%NAME%{%TAN%Key %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch}%CONTINUE%
-ItemDisplay[pk3]: %PX-9D%%NAME%{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
+ItemDisplay[pk1]: %PX-9D%*  %NAME%  *{%TAN%Key %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven}%CONTINUE%
+ItemDisplay[pk2]: %PX-9D%*  %NAME%  *{%TAN%Key %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch}%CONTINUE%
+ItemDisplay[pk3]: %PX-9D%*  %NAME%  *{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
 
 // Organs
 ItemDisplay[mbr]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%NL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}%CONTINUE%
@@ -2921,13 +2921,14 @@ ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR 
 // IMPORTANT DROPS - TODO: REVIEW IN DETAIL AFTER 99 PUSH
 //-----------------------------------------------------------------------------------
 // NOTEWORTHY DROPS - GG
-ItemDisplay[(7gl OR 7b8 OR xh9 OR usk OR utp) UNI ETH !ID]: %BORDER-68%%PURPLE%>>>>>>>>     %GOLD%%NAME%%PURPLE%     <<<<<<<<
-ItemDisplay[(rin OR amu) UNI !ID]: %BORDER-68%%PURPLE%>>>>>>>>     %GOLD%%NAME%%PURPLE%     <<<<<<<<
-ItemDisplay[(ulc OR uvc OR xea OR uap OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uhm OR pa9 OR lbt OR xhb OR 7cr OR ulb OR 6bs OR urn) UNI !ID]: %BORDER-68%%PURPLE%>>>>>>>>     %GOLD%%NAME%%PURPLE%     <<<<<<<<
+ItemDisplay[(7gl OR 7b8 OR xh9 OR usk OR utp) UNI ETH !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
+ItemDisplay[(rin OR amu) UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
+ItemDisplay[(ulc OR uvc OR xea OR uap OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uhm OR pa9 OR lbt OR xhb OR 7cr OR ulb OR 6bs OR urn) UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
 ItemDisplay[uar UNI ETH !ID]: %BORDER-68%%PURPLE%>>>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<<<
 ItemDisplay[uar UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
-ItemDisplay[(7qr OR uhl OR uth OR utb OR 7bs) UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %NAME%       <<<<<
-ItemDisplay[(ram OR rar OR rbe OR uhn OR utc) UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %NAME%       <<<<<
+ItemDisplay[(7qr OR uhl OR uth OR utb OR 7bs OR 6ws) UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
+ItemDisplay[(ram OR rar OR rbe OR uhn OR utc) UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
+ItemDisplay[(7p7 OR 7wh OR 7gm OR 9gm OR ama OR amf) ETH UNI !ID]: %BORDER-68%%PURPLE%>>>>>       %GOLD%%NAME%%PURPLE%       <<<<<
 
 // NOTEWORTH DROPS - GOOD
 ItemDisplay[(zlb OR zvb OR zhb OR umc) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
