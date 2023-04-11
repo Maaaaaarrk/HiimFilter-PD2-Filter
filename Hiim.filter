@@ -33,7 +33,7 @@ ItemDisplayFilterName[]: Potions Only
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.0.14%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 6 ver 8.1.0%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -449,6 +449,7 @@ ItemDisplay[r33s]: %NAME%{%NAME%%TAN%Note%WHITE%: Zod + Perf %GRAY%O %WHITE%= Re
 //-----------------------------------------------------------------------------------
 // Keys
 ItemDisplay[key FILTLVL>1]: {%NAME%}
+ItemDisplay[key ASSASSIN]: {%NAME%}
 ItemDisplay[key]: %GOLD%+%WHITE%%NAME%{%NAME%}
 
 // TP / ID books and scrolls
@@ -867,10 +868,11 @@ ItemDisplay[GLOVES CRAFT ((FRES+CRES+LRES+PRES>19 OR RES>5) OR IAS>0 OR ALLSK>0 
 ItemDisplay[GLOVES ALLSK>0]: %PURPLE%+1 Skill %GOLD%%NAME%%CONTINUE%
 
 // Resists
-ItemDisplay[GLOVES !UNI !SET ((FRES+CRES+LRES+PRES>19) OR RES>0)]: Res %NAME%%CONTINUE%
-ItemDisplay[GLOVES !UNI !SET RES>0]: ALL %NAME%%CONTINUE%
-ItemDisplay[GLOVES !UNI !SET (FRES+CRES+LRES>39)]: Fat %NAME%%CONTINUE%
-ItemDisplay[GLOVES !UNI !SET ((FRES+CRES+LRES+PRES>19) OR RES>0)]: %PURPLE%%NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET (RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) CRES>0 !(RES>0)]: %BLUE%%STAT-43%% CRES %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET (RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) FRES>0 !(RES>0)]: %RED%%STAT-39%% FRES %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET (RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) LRES>0 !(RES>0)]: %YELLOW%%STAT-41%% LRES %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET (RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) PRES>0 !(RES>0)]: %GREEN%%STAT-45%% PRES %NAME%%CONTINUE%
+ItemDisplay[GLOVES !UNI !SET (RARE OR CRAFT) RES>0]: %PURPLE%All RES %NAME%%CONTINUE%
 
 // Leech
 ItemDisplay[GLOVES !UNI !SET STAT60>0]: %RED%LL %NAME%%CONTINUE%
@@ -1272,10 +1274,12 @@ ItemDisplay[BELT ID (RARE OR CRAFT) FHR=43]: %GOLD%+43 %NAME%%CONTINUE%
 ItemDisplay[BELT ID (RARE OR CRAFT) FHR=44]: %GOLD%+44 %NAME%%CONTINUE%
 
 // Resists
-ItemDisplay[BELT ID (RARE OR CRAFT) CRES>0]: %BLUE%CRES %NAME%%CONTINUE%
-ItemDisplay[BELT ID (RARE OR CRAFT) FRES>0]: %RED%FRES %NAME%%CONTINUE%
-ItemDisplay[BELT ID (RARE OR CRAFT) LRES>0]: %YELLOW%LRES %NAME%%CONTINUE%
-ItemDisplay[BELT ID (RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) CRES>0 !(RES>0)]: %BLUE%%STAT-43%% CRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) FRES>0 !(RES>0)]: %RED%%STAT-39%% FRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) LRES>0 !(RES>0)]: %YELLOW%%STAT-41%% LRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) PRES>0 !(RES>0)]: %GREEN%%STAT-45%% PRES %NAME%%CONTINUE%
+ItemDisplay[BELT ID (RARE OR CRAFT) RES>0]: %PURPLE%All RES %NAME%%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -1394,19 +1398,14 @@ ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=43]: %GOLD%+43 %NAME%%CONTINUE%
 ItemDisplay[CHEST ID (RARE OR CRAFT) FHR=44]: %GOLD%+44 %NAME%%CONTINUE%
 
 // Resists
-ItemDisplay[CHEST ID (RARE OR CRAFT) CRES>0]: %BLUE%CRES %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) FRES>0]: %RED%FRES %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) LRES>0]: %YELLOW%LRES %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) CRES>0 !(RES>0)]: %BLUE%%STAT-43%% CRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) FRES>0 !(RES>0)]: %RED%%STAT-39%% FRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) LRES>0 !(RES>0)]: %YELLOW%%STAT-41%% LRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) PRES>0 !(RES>0)]: %GREEN%%STAT-45%% PRES %NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) RES>0]: %PURPLE%All RES %NAME%%CONTINUE%
 
 // Enh Dmg
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: EDMG %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>299]: >300% %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<299 STAT17>249]: >250% %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<249 STAT17>199]: >200% %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<199 STAT17>149]: >150% %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17<149 STAT17>99]: >100% %NAME%%CONTINUE%
-ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: %RED%%NAME%%CONTINUE%
+ItemDisplay[CHEST ID (RARE OR CRAFT) STAT17>0]: %RED%%STAT-17%% EDMG %NAME%%CONTINUE%
 
 // Class Skills
 ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK0>0]: %PURPLE%Zon %TAN%Skills %NAME%%CONTINUE%
@@ -1421,9 +1420,9 @@ ItemDisplay[CHEST ID (RARE OR CRAFT) CLSK6>0]: %PURPLE%Sin %TAN%Skills %NAME%%CO
 //-----------------------------------------------------------------------------------
 // BOOTS - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
-ItemDisplay[BOOTS ID MAG (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0)]: %BLUE%%CONTINUE%
-ItemDisplay[BOOTS ID RARE (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0)]: %YELLOW%%CONTINUE%
-ItemDisplay[BOOTS ID CRAFT (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0)]: %ORANGE%%CONTINUE%
+ItemDisplay[BOOTS ID MAG (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0 OR RES>0 OR STAT80>0)]: %BLUE%%CONTINUE%
+ItemDisplay[BOOTS ID RARE (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0 OR RES>0 OR STAT80>0)]: %YELLOW%%CONTINUE%
+ItemDisplay[BOOTS ID CRAFT (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0 OR RES>0 OR STAT80>0)]: %ORANGE%%CONTINUE%
 
 // Fix Names
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) lbt]: %CONTINUE%%NAME%Boots	
@@ -1443,10 +1442,15 @@ ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PR
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0) uhb]: %CONTINUE%%NAME%Myrmidon Greaves
 
 // Resists
-ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) CRES>0]: %BLUE%CRES %NAME%%CONTINUE%
-ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) FRES>0]: %RED%FRES %NAME%%CONTINUE%
-ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) LRES>0]: %YELLOW%LRES %NAME%%CONTINUE%
-ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) PRES>0]: %GREEN%PRES %NAME%%CONTINUE%
+ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) CRES>0 !(RES>0)]: %BLUE%%STAT-43%% CRES %NAME%%CONTINUE%
+ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) FRES>0 !(RES>0)]: %RED%%STAT-39%% FRES %NAME%%CONTINUE%
+ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) LRES>0 !(RES>0)]: %YELLOW%%STAT-41%% LRES %NAME%%CONTINUE%
+ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) PRES>0 !(RES>0)]: %GREEN%%STAT-45%% PRES %NAME%%CONTINUE%
+ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) RES>0]: %PURPLE%All RES %NAME%%CONTINUE%
+
+
+// MF
+ItemDisplay[BOOTS ID (MAG OR RARE OR CRAFT) STAT80>0]: %BLUE%%STAT-80%% MF %NAME%%CONTINUE%
 
 // FRW
 ItemDisplay[BOOTS (MAG OR RARE OR CRAFT) ID FRW>0]: %TAN%FRW %NAME%%CONTINUE%
@@ -1751,6 +1755,13 @@ ItemDisplay[(cm1 OR cm2 OR cm3) !UNI MAXDMG=1]: +1 %NAME%%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI MAXDMG>0]: %TAN%Max Dmg %NAME%%CONTINUE%
 
 // All Res
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=12]: 12% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=11]: 11% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=10]: 10% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=9]: 9% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=8]: 8% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=7]: 7% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=6]: 6% %NAME%%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=5]: 5% %NAME%%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=4]: 4% %NAME%%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES=3]: 3% %NAME%%CONTINUE%
@@ -1777,36 +1788,16 @@ ItemDisplay[(cm1 OR cm2 OR cm3) !UNI PRES=9 LRES=0 CRES=0 FRES=0]: 9% %NAME%%CON
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI PRES>0 FRES=0 LRES=0 CRES=0]: %GREEN%Psn Res %NAME%%CONTINUE%
 
 // Damage Types - Flat
-ItemDisplay[(cm1 OR cm2 OR cm3) !UNI (STAT48>0 OR STAT49>0)]: %RED%Fire Dmg %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) !UNI (STAT50>0 OR STAT51>0)]: %YELLOW%Light Dmg %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) !UNI (STAT54>0 OR STAT55>0 OR STAT56>0)]: %BLUE%Cold Dmg %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI (STAT48>0 OR STAT49>0)]: %RED%%STAT-48%-%STAT-49% Fire Dmg %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI (STAT50>0 OR STAT51>0)]: %YELLOW%%STAT-50%-%STAT-51% Light Dmg %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI (STAT54>0 OR STAT55>0 OR STAT56>0)]: %BLUE%%STAT-54%-%STAT-55% Cold Dmg %NAME%%CONTINUE%
 
 // Damage Types - % of School
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT357=4]: 4% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT357=3]: 3% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT357=2]: 2% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT357=1]: 1% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT357>0]: %ORANGE%Magic Damage %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT329=4]: 4% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT329=3]: 3% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT329=2]: 2% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT329=1]: 1% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT329>0]: %RED%Fire Damage %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT330=4]: 4% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT330=3]: 3% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT330=2]: 2% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT330=1]: 1% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT330>0]: %YELLOW%Light Damage %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT331=4]: 4% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT331=3]: 3% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT331=2]: 2% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT331=1]: 1% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT331>0]: %BLUE%Cold Damage %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT332=4]: 4% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT332=3]: 3% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT332=2]: 2% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT332=1]: 1% %NAME%%CONTINUE%
-ItemDisplay[(cm1 OR cm2 OR cm3) STAT332>0]: %GREEN%Psn Damage %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) STAT357>0]: %ORANGE%Magic Damage %STAT-357%% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) STAT329>0]: %RED%Fire Damage %STAT-329%% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) STAT330>0]: %YELLOW%Light Damage %STAT-330%% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) STAT331>0]: %BLUE%Cold Damage %STAT-331%% %NAME%%CONTINUE%
+ItemDisplay[(cm1 OR cm2 OR cm3) STAT332>0]: %GREEN%Psn Damage %STAT-332%% %NAME%%CONTINUE%
 
 // Skills
 ItemDisplay[cm3 !UNI TABSK0>0]: %PURPLE%Bow and Crossbow %TAN%Skiller %NAME%%CONTINUE%
@@ -1833,63 +1824,7 @@ ItemDisplay[cm3 !UNI TABSK50>0]: %PURPLE%Martial Arts %TAN%Skiller %NAME%%CONTIN
 
 // Charm Stat Tags - Unique Charms Values
 // Vit
-ItemDisplay[(cm1 OR cm2) UNI STAT3>0]: %NAME%%RED%%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=85]: %NAME% 85%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=84]: %NAME% 84%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=83]: %NAME% 83%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=82]: %NAME% 82%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=81]: %NAME% 81%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=80]: %NAME% 80%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=79]: %NAME% 79%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=78]: %NAME% 78%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=77]: %NAME% 77%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=76]: %NAME% 76%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=75]: %NAME% 75%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=74]: %NAME% 74%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=73]: %NAME% 73%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=72]: %NAME% 72%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=71]: %NAME% 71%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=70]: %NAME% 70%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=69]: %NAME% 69%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=68]: %NAME% 68%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=67]: %NAME% 67%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=66]: %NAME% 66%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=65]: %NAME% 65%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=64]: %NAME% 64%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=63]: %NAME% 63%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=62]: %NAME% 62%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=61]: %NAME% 61%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=60]: %NAME% 60%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=59]: %NAME% 59%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=58]: %NAME% 58%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=57]: %NAME% 57%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=56]: %NAME% 56%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=55]: %NAME% 55%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=54]: %NAME% 54%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=53]: %NAME% 53%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=52]: %NAME% 52%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=51]: %NAME% 51%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=50]: %NAME% 50%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=49]: %NAME% 49%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=48]: %NAME% 48%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=47]: %NAME% 47%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=46]: %NAME% 46%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=45]: %NAME% 45%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=44]: %NAME% 44%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=43]: %NAME% 43%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=42]: %NAME% 42%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=41]: %NAME% 41%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=40]: %NAME% 40%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=39]: %NAME% 39%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=38]: %NAME% 38%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=37]: %NAME% 37%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=36]: %NAME% 36%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=35]: %NAME% 35%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=34]: %NAME% 34%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=33]: %NAME% 33%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=32]: %NAME% 32%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=31]: %NAME% 31%CONTINUE%
-ItemDisplay[(cm1 OR cm2) UNI STAT3=30]: %NAME% 30%CONTINUE%
+ItemDisplay[(cm1 OR cm2) UNI STAT3>0]: %NAME%%RED% %STAT-3%%CONTINUE%
 
 // All res
 ItemDisplay[(cm1 OR cm2) UNI RES>0]: %NAME%%PURPLE%%CONTINUE%
@@ -3134,7 +3069,8 @@ ItemDisplay[CLSK2=2 SK92=3]: %DOT-ED%%PURPLE%+5 Psn Nova %NAME% {%NAME%}
 //-----------------------------------------------------------------------------------
 // Circlets
 ItemDisplay[EQ7 RARE !ID]: %DOT-A8%* * * * * %NAME% * * * * *
-ItemDisplay[EQ7 MAG !ID]: * * * %NAME% * * *
+ItemDisplay[EQ7 MAG !ETH !ID]: * * * %NAME% * * *
+ItemDisplay[EQ7 MAG !ID]: %NAME%
 ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %GRAY%[imbue]{%TAN%Note%WHITE%: You can %YELLOW%imbue %WHITE%it using Charsi quest}
 
 // Weapons
@@ -3905,7 +3841,7 @@ ItemDisplay[!INF !RW NMAG RES=26]: %GREEN%[26r] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG RES=27]: %GREEN%[27r] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG RES=28]: %GREEN%[28r] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG RES=29]: %GREEN%[29r] %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!INF !RW NMAG RES=30]: %GREEN%* * [30r] * * %NAME% %GREEN%* *{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG RES=30]: %DOT-D6%%GREEN%* * [30r] * * %NAME% %GREEN%* *{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG RES>30]: %GREEN%[R] %NAME%{%NAME%}%CONTINUE%
 
 // ITEM TAGS - DEF on Chest
@@ -3919,7 +3855,7 @@ ItemDisplay[CHEST !INF !RW NMAG (DEF>799 AND DEF<850)]: %TAN%[>800 Def] %NAME%{%
 ItemDisplay[CHEST !INF !RW NMAG (DEF>849 AND DEF<900)]: %TAN%[>850 Def] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[CHEST !INF !RW NMAG (DEF>899 AND DEF<950)]: %TAN%[>900 Def] * * %NAME% %TAN%* *{%NAME%}%CONTINUE%
 ItemDisplay[CHEST !INF !RW NMAG (DEF>949 AND DEF<1000)]: %TAN%[>950 Def] * * %NAME% %TAN%* *{%NAME%}%CONTINUE%
-ItemDisplay[CHEST !INF !RW NMAG (DEF>999)]: %TAN%[>1000 Def] * * %NAME% %TAN%* *{%NAME%}%CONTINUE%
+ItemDisplay[CHEST !INF !RW NMAG (DEF>999)]: %DOT-D6%%TAN%[>1000 Def] * * %NAME% %TAN%* *{%NAME%}%CONTINUE%
 
 // ITEM TAGS - ED
 ItemDisplay[!INF !RW NMAG ED=1]: %BLUE%[1%] %NAME%{%NAME%}%CONTINUE%
@@ -3936,7 +3872,7 @@ ItemDisplay[!INF !RW NMAG ED=11]: %BLUE%[11%] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG ED=12]: %BLUE%[12%] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG ED=13]: %BLUE%[13%] %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG ED=14]: %BLUE%[14%] %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!INF !RW NMAG ED=15]: %BLUE%[15%] * * %NAME% %BLUE%* *{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG ED=15]: %DOT-D6%%BLUE%[15%] * * %NAME% %BLUE%* *{%NAME%}%CONTINUE%
 
 // ITEM TAGS - LARZUK FOR SOCKETS
 // Circlets
