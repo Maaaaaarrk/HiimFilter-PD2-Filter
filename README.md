@@ -26,13 +26,24 @@ Charms on ground will show important stats
 
 ## Magic / Rare / Crafted items
 
-These items also show important stats on the ground. Example is of amulets however this applies to many gear slots.
+These items also show important stats on the ground. This applies to many gear slots not just the ones in the example.
+Rings & Amulets also have points implemented:
+* Range: 1Pt, 2pt, 3Pt, 4Pt, GG, OMG
+* Evaluation includes crafts & a few slams
+* 1Pt of Value = high roll of a valuable stat
+* Evaluation takes into account partial rolls
+* Evaluation includes crafts & a few slams
 
 ![img1](examples/magicrares1.PNG?raw=true)
+![img1](examples/magicrares2.PNG?raw=true)
 
 ## LLD
 
 Set/Unique items that are valuable to LLD community carry the [LLD] tag Jewels have a rating system so you can judge if something is nice or GG.
+LLD Jewels have points implemented:
+* Range: 2pt, 2.5 Pt, 3Pt, 3.3 Pt, 3.6 Pt, 4Pt
+* 1Pt of Value = high roll of a valuable stat
+* Evaluation takes into account partial rolls
 
 ![img1](examples/lld1.PNG?raw=true)
 ![img1](examples/lld2.png?raw=true)
@@ -46,9 +57,11 @@ All UNID Set/Unique items show their identified name options
 ## Early / New to PD2 hints
 Utility items have useful notes tool tips.
 Also Filter level 1/2 have a note recommending useful items to "slam"
+T3 Maps will tell you when the rolls are good.
 
 
 ![img1](examples/maps1.png?raw=true)
+![img1](examples/maps2.png?raw=true)
 ![img1](examples/hints1.PNG?raw=true)
 ![img1](examples/slamme1.PNG?raw=true)
 
