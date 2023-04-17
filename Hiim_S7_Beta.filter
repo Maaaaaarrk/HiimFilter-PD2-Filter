@@ -33,7 +33,7 @@ ItemDisplayFilterName[]: Potions Only
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.0%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.1%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -145,7 +145,7 @@ ItemDisplay[scrb QTY=1]: %MAP-4A%%ORANGE%* * * %NAME% %ORANGE%* * *{%WHITE%This 
 ItemDisplay[scrb QTY>1]: %MAP-4A%%ORANGE%%NAME%{%WHITE%This Item + T3 Map%NL%Note: Enter Group Dungeon:}%CONTINUE%
 ItemDisplay[std]: %PX-9D%%NAME%{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%NL%+20% Monster Density%NL%%TAN%Note%WHITE%: Cube it with Map to gain:}
 
-// Map Prefix Tags
+// Map Tier Tags
 ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
 ItemDisplay[MAPTIER=2]: %YELLOW%* [T2] %CONTINUE%
 ItemDisplay[MAPTIER=3]: %ORANGE%* [T3] %CONTINUE%
@@ -264,12 +264,15 @@ ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%WHITE%%CONTINUE%{%NAME%}
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
 
 // Map End Wrapper by Tier
-ItemDisplay[MAPTIER=1]: %MAP-62% %NL%%NAME% %GREEN%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=2]: %MAP-62% %NL%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=3]: %MAP-62% %NL%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=4]: %MAP-62% %NL%%NAME% %RED%*{%NAME%}%CONTINUE%
-ItemDisplay[(t51 OR t52)]: %MAP-62% %NL%%NAME% %GOLD%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1]: %MAP-62%%NAME% %GREEN%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2]: %MAP-62%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3]: %MAP-62%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=4]: %MAP-62%%NAME% %RED%*{%NAME%}%CONTINUE%
+ItemDisplay[(t51 OR t52)]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
 ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
+
+
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52) (STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>225))]:  %NL%%NAME%{%NAME%}%CONTINUE%
 
 // Map has Standard of Heroes applied
 ItemDisplay[STAT458>0]: %GREEN% [H]%NAME%%CONTINUE%{%NAME%}
@@ -438,7 +441,7 @@ ItemDisplay[r18s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xKo + %GRAY%key %WHITE%= Fal%
 ItemDisplay[r19s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xFal + %GRAY%key %WHITE%= Lem%NL%%NL%Shield: +10 to Strength%NL%Armor/Helm: +10 to Strength%NL%Weapon: +10 to Strength%NL%}
 ItemDisplay[r20s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xLem + %GRAY%key %WHITE%= Pul%NL%%NL%Shield: 50% Extra Gold%NL%Armor/Helm: 50% Extra Gold%NL%Weapon: 75% Extra Gold%NL%}
 ItemDisplay[r21s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xPul + %GRAY%key %WHITE%= Um%NL%%NL%Shield: 30% Enhanced Def%NL%Armor/Helm: 30% Enhanced Def%NL%Weapon: +75% Dmg, +100 AR vs Demon%NL%}
-ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%NL%%NL%Shield: All Res +22%NL%Armor/Helm: All Res +15%NL%Weapon: 25% Chance of Open Wounds%NL%}
+ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%NL%%NL%Shield: All Res +22%NL%Armor/Helm: All Res +15%NL%Weapon: 20% Chance of Open Wounds%NL%}
 ItemDisplay[r23s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xMal + %GRAY%key %WHITE%= Ist%NL%%NL%Shield: Magic Dmg Red by 7%NL%Armor/Helm: Magic Dmg Red by 7%NL%Weapon: Prevent Monster Heal%NL%}
 ItemDisplay[r24s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xIst + %GRAY%key %WHITE%= Gul%NL%%NL%Shield: 30% Magic Find%NL%Armor/Helm: 30% Magic Find%NL%Weapon: 30% Magic Find%NL%}
 ItemDisplay[r25s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xGul + %GRAY%key %WHITE%= Vex%NL%%NL%Shield: +4% to Max Psn Res%NL%Armor/Helm: +4% to Max Psn Res%NL%Weapon: +20% to Attack Rating%NL%}
@@ -1870,6 +1873,7 @@ ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%[FOOLS]%CONTINUE%
 
 // Amplify Damage on Striking
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=662]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON MULTI198,28311>0]: %NAME% %ORANGE%[AMP]%CONTINUE% // mid amp
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON MULTI198,28319>0]: %NAME% %ORANGE%[AMP]%CONTINUE% // High amp
 
 //ED
@@ -4611,13 +4615,13 @@ ItemDisplay[SWORD SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Rift, Spirit, Voice of
 ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Passion, Phoenix, Pride, Rift%NL%Hand of Justice, Infinity, Insight,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=4 NMAG !RW]: %NAME%{%GRAY%Insight, Passion, Phoenix, Rift%NL%Holy Thunder, Hand of Justice,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
 ItemDisplay[AXE SOCK=4 NMAG !RW]: %NAME%{%GRAY%Oath, Passion, Phoenix%NL%Fortitude, Hand of Justice, Kingslayer,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Famine,}%CONTINUE%
-ItemDisplay[STAFF SOCK=4 NMAG !RW]: %NAME%{%GRAY%Memory, Passion, Phoenix, Spirit%NL%Heart of the Oak, Infinity, Insight,%NL%%TAN%RWs: %GRAY%Fortitude, Hand of Justice,}%CONTINUE%
+ItemDisplay[STAFF SOCK=4 NMAG !RW]: %NAME%{%GRAY%Memory, Passion, Phoenix, Pride, Spirit%NL%Heart of the Oak, Infinity, Insight,%NL%%TAN%RWs: %GRAY%Fortitude, Hand of Justice,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Justice, Passion, Phoenix%NL%Famine, Fortitude, Hand of%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 5soc
-ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV OR CL7) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV OR CL7 OR STAFF) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms, Eternity, Honor%NL%%NAME%}%CONTINUE%
+ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Beast, Destruction, Doom, Zenith%NL%%NAME%}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%Beast, Call to Arms,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[AXE SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Grief, Honor%NL%Call to Arms, Death, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
@@ -4630,7 +4634,7 @@ ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%NL%%TAN%Note%WHITE%: Possible RuneW
 ItemDisplay[WEAPON !(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Silence%NAME%}%CONTINUE%
 ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Last Wish, Silence%NAME%}%CONTINUE%
 ItemDisplay[(BOW OR STAFF OR AXE OR MACE OR POLEARM OR SPEAR) SOCK=6 NMAG !RW]: %NAME%{Asylum, %NAME%}%CONTINUE%
-ItemDisplay[STAFF SOCK=6 NMAG !RW]: %NAME%{Obsession, %NAME%}%CONTINUE%
+ItemDisplay[STAFF SOCK=6 NMAG !RW]: %NAME%{Obsession, Last Wish%NL%%NAME%}%CONTINUE%
 ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
