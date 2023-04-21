@@ -33,7 +33,7 @@ ItemDisplayFilterName[]: Potions Only
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.3%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.4%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -55,7 +55,7 @@ ItemDisplay[FILTLVL=0]: %NAME%                      // Fallback for when filter 
 ItemDisplay[(WEAPON OR ARMOR) NMAG !ID]: %NAME%     // Show items when gambling
 
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR aqv OR key OR cqv OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -572,8 +572,8 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
-ItemDisplay[STAT360>0 FILTLVL=7]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[FILTLVL=7 (RARE OR MAG OR NMAG OR CRAFT)]:
+ItemDisplay[STAT360>0 FILTLVL=7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[FILTLVL=7 (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -587,14 +587,16 @@ ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR w
 ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %DOT-90%%ORANGE%*          %BLUE%%NAME%          %ORANGE%*
 ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %DOT-90%%ORANGE%*           %YELLOW%%NAME%          %ORANGE%*
 
-// Arrows and Bolts - Hide Rules
-ItemDisplay[(aqv OR cqv) NMAG !(AMAZON)]:
-ItemDisplay[(aqv OR cqv) NMAG CLVL>10]:
-ItemDisplay[(aqv OR cqv) MAG !ID FILTLVL>2]:
 
 // Arrows and Bolts - Amazon View
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
 ItemDisplay[(aqv OR cqv) RARE !ID AMAZON]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
+ItemDisplay[(aqv OR cqv) NMAG CLVL>10]:
+
+// Arrows and Bolts - Hide Rules
+ItemDisplay[(aqv OR cqv) NMAG !(AMAZON)]:
+ItemDisplay[(aqv OR cqv) MAG !ID FILTLVL>1]:
+ItemDisplay[(aqv OR cqv) RARE !ID FILTLVL>2]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -1897,7 +1899,7 @@ ItemDisplay[WEAPON (EDAM>399)]: %NAME%%PURPLE%%CONTINUE%
 ItemDisplay[WEAPON (EDAM>199)]: %NAME% [%EDAM%% ED] %CONTINUE%
 
 // ITEM TAGS - LLD - Uniqes and sets to look out for
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar) STAT360=0]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar OR gsd) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET (bwn OR vbt OR lbt) STAT360=0]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% [LLD]%CONTINUE%
 ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% [LLD]%CONTINUE%
@@ -2781,7 +2783,7 @@ ItemDisplay[FILTLVL<3 UNI ID STAT360=0 (9ls) SK238>5]: %NAME%{%NL%%RED%slam Me%N
 //-----------------------------------------------------------------------------------
 // LLD UNI !ID Tag
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
+ItemDisplay[UNI (gwn OR xap OR xui OR kit OR zlb OR tgl OR vgl OR wax OR gma OR cbw OR dr2 OR stu OR gth OR aar OR gsd) STAT360=0 !ID]: %NAME% [LLD]%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4620,9 +4622,8 @@ ItemDisplay[SIN SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Pattern, Plague, Venom%NL
 ItemDisplay[(AXE OR POLEARM) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Crescent Moon, Fury,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SWORD SOCK=3 NMAG !RW]: %NAME%{%GRAY%Lawbringer, Malice, Plague, Venom%NL%Crescent Moon, Fury, King's Grace,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Fury, King's Grace, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(clb OR spc OR mac OR mst OR fla OR 9cl OR 9sp OR 9ma OR 9mt OR 9fl OR 7cl OR 7sp OR 7ma OR 7mt OR 7fl) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Fury, Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Black,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Black, Fury, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG ETH !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Black, Fury, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[(clb OR spc OR mac OR mst OR fla OR 9cl OR 9sp OR 9ma OR 9mt OR 9fl OR 7cl OR 7sp OR 7ma OR 7mt OR 7fl) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Fury, Malice, Plague%NL%%TAN%RWs: %GRAY%Venom, Black,}%CONTINUE%
+ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%RWs: %GRAY%Black, Fury, Lawbringer}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 4soc
 ItemDisplay[WEAPON !(BOW OR XBOW) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
@@ -4633,14 +4634,14 @@ ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Passion, Ph
 ItemDisplay[SCEPTER SOCK=4 NMAG !RW]: %NAME%{%GRAY%Insight, Passion, Phoenix, Rift%NL%Holy Thunder, Hand of Justice,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
 ItemDisplay[AXE SOCK=4 NMAG !RW]: %NAME%{%GRAY%Oath, Passion, Phoenix%NL%Fortitude, Hand of Justice, Kingslayer,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Famine,}%CONTINUE%
 ItemDisplay[STAFF SOCK=4 NMAG !RW]: %NAME%{%GRAY%Memory, Passion, Phoenix, Pride, Spirit%NL%Heart of the Oak, Infinity, Insight,%NL%%TAN%RWs: %GRAY%Fortitude, Hand of Justice,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Justice, Passion, Phoenix%NL%Famine, Fortitude, Hand of%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%RWs: %GRAY% Famine, Fortitude}%CONTINUE%
 
 // TOOLTIPS - Possible RW's - Weapons 5soc
-ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV OR CL7 OR STAFF) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV OR CL7 OR STAFF) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms%NAME%}%CONTINUE%
 ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms, Eternity, Honor%NL%%NAME%}%CONTINUE%
 ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Beast, Destruction, Doom, Zenith%NL%%NAME%}%CONTINUE%
 ItemDisplay[SCEPTER SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%Beast, Call to Arms,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
+ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%%TAN%RWs: %GRAY%Beast, Call to Arms}%CONTINUE%
 ItemDisplay[AXE SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Grief, Honor%NL%Call to Arms, Death, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
 ItemDisplay[SWORD SOCK=5 NMAG !RW]: %NAME%{%GRAY%Destruction, Doom, Grief, Honor%NL%Call to Arms, Eternity, Death,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Honor, Obedience%NL%Call to Arms, Destruction, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
