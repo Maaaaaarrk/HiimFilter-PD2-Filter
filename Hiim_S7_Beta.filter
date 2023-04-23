@@ -2676,40 +2676,32 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// FILTER STRICTNESS ENFORCEMENT 
-//-----------------------------------------------------------------------------------
-ItemDisplay[(FILTLVL>4 OR (FILTLVL>2 AND CLVL>88)) NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
-ItemDisplay[FILTLVL>4 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
-ItemDisplay[FILTLVL>4 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
-ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
-//-----------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------
 // CRAFTING
 //-----------------------------------------------------------------------------------
 // LLD from trav
-ItemDisplay[(MAG OR RARE) MAPID=83 pa1]: %NAME%%MAP-97%%RED% [LLD Craft] // Targe
-ItemDisplay[(MAG OR RARE) MAPID=83 pa2]: %NAME%%MAP-97%%RED% [LLD Craft] // Rondache
-ItemDisplay[(MAG OR RARE) MAPID=83 pa5]: %NAME%%MAP-97%%RED% [LLD Craft] // Crown Shield
-ItemDisplay[(MAG OR RARE) MAPID=83 pa6]: %NAME%%MAP-97%%RED% [LLD Craft]// Akaran Targe
-ItemDisplay[(MAG OR RARE) MAPID=83 pa7]: %NAME%%MAP-97%%RED% [LLD Craft]// Akaran Rondache
-ItemDisplay[MAG !ETH btl MAPID=83]: %NAME%%MAP-97%%RED% [LLD Craft]
-ItemDisplay[RARE aqv MAPID=83]: %NAME%%MAP-97%%RED% [LLD Craft]
-ItemDisplay[MAG MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%MAP-97%%RED% [LLD Craft]
-ItemDisplay[MAG MAPID=83 (am1 OR am5 OR am6 OR ama)]: %NAME%%MAP-97%%RED% [LLD Craft]
-ItemDisplay[MAG MAPID=83 (ne5 OR ne4)]: %NAME%%MAP-97%%RED% [LLD Craft]
+ItemDisplay[(MAG OR RARE) MAPID=83 pa1]: %NAME%%MAP-97%%GREEN% [LLD Craft] // Targe
+ItemDisplay[(MAG OR RARE) MAPID=83 pa2]: %NAME%%MAP-97%%GREEN% [LLD Craft] // Rondache
+ItemDisplay[(MAG OR RARE) MAPID=83 pa5]: %NAME%%MAP-97%%GREEN% [LLD Craft] // Crown Shield
+ItemDisplay[(MAG OR RARE) MAPID=83 pa6]: %NAME%%MAP-97%%RGREEND% [LLD Craft]// Akaran Targe
+ItemDisplay[(MAG OR RARE) MAPID=83 pa7]: %NAME%%MAP-97%%GREEN% [LLD Craft]// Akaran Rondache
+ItemDisplay[MAG !ETH btl MAPID=83]: %NAME%%MAP-97%%GREEN% [LLD Craft]
+ItemDisplay[RARE aqv MAPID=83]: %NAME%%MAP-97%%GREEN% [LLD Craft]
+ItemDisplay[MAG MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%MAP-97%%GREEN% [LLD Craft]
+ItemDisplay[MAG MAPID=83 (am1 OR am5 OR am6 OR ama)]: %NAME%%MAP-97%%GREEN% [LLD Craft]
+ItemDisplay[MAG MAPID=83 (ne5 OR ne4)]: %NAME%%MAP-97%%GREEN% [LLD Craft]
 
 // Weapons
 ItemDisplay[(7cr OR 9cr OR crs) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * * %BLUE%%NAME% %GREEN%[Craft] * * *//Phase Blade
 ItemDisplay[(7gl OR 9gl OR glv) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Pike
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
+ItemDisplay[(wst OR 8ws OR 6ws) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Archon Staff
 ItemDisplay[(7wa OR 9wa OR wax) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
-ItemDisplay[(7gm OR 9gm OR gma) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Thunder Maul
 ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Ogre Maul
 ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
 ItemDisplay[(7fb OR 9fb OR flb) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
 ItemDisplay[(7gi OR 9gi OR gix) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
 ItemDisplay[(7wh OR 9wh OR whm) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Legendary Mallet
-ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//War Pike
 ItemDisplay[(7pi OR 9pi OR pil) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Stygian Pilum
 ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Balrog Spear
 ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
@@ -2794,6 +2786,15 @@ ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%* Hit
 ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel *%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Sol, Jewel *%NL%%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%* Caster: O, Tir, Jewel *%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
 ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%NL%%RED%Blood: O, Ort, Jewel%NL%%PURPLE%Caster: O, Tir, Jewel%NL%%YELLOW%MF: O, Shael, Jewel%NL%%GRAY%Vamp: SK, Shael, Jewel%NAME%}%CONTINUE%
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// FILTER STRICTNESS ENFORCEMENT 
+//-----------------------------------------------------------------------------------
+ItemDisplay[(FILTLVL>4 OR (FILTLVL>2 AND CLVL>88)) NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
+ItemDisplay[FILTLVL>4 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
+ItemDisplay[FILTLVL>4 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
+ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4471,9 +4472,17 @@ ItemDisplay[fla NMAG !RW !INF (SOCK=0 OR SOCK>2)]: %NAME%{%NAME%}
 // Wands
 ItemDisplay[WAND !(wnd OR ywn OR 9wn) (SK67>2 OR SK74>2 OR SK94>2 OR SK75>2 OR SK70>2 OR SK84>2 OR SK83>2 OR SK92>2 OR SK93>2 OR SK79>2 OR SK80>2 OR SK85>2 OR SK95>2) !SOCK=1 NMAG !RW]: %NAME%{%NAME%}
 
-// Staves (LEAP BARB)
-ItemDisplay[(6ls OR 6ws) ETH NMAG !RW !(SOCK=1)]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%}
-ItemDisplay[(6cs OR 6bs) ETH NMAG !RW !(SOCK=1)]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%}
+// Endgame LEAP BARB RW bases (any filter level)
+ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6) EDAM>0]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%} // %ED Eth Thundermaul or war pike
+ItemDisplay[(6ls OR 6ws) ETH NMAG !RW !(SOCK=1) EDAM>0]]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%} // %ED Eth Archon staff
+ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6)]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%} //Thundermaul or war pike
+ItemDisplay[(6ls OR 6ws) ETH NMAG !RW !(SOCK=1)]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%} // Archon staff
+
+// Starter LEAP BARB RW bases (Semi-strict or less)
+ItemDisplay[(6cs OR 6bs) ETH NMAG !RW !(SOCK=1) FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Lesser staff rw base
+ItemDisplay[(7p7 OR 7gm) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<3]]: %DOT-D6%%NAME%{%NAME%} // non eth thundermaul or war pike 0/5 socket
+ItemDisplay[ELT (POLEARM OR SPEAR OR 7m7) ETH NMAG !RW SOCK=5 FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Eth pole arm or spear or ogre maul 5 soc
+ItemDisplay[ELT (7s8 OR 7pa OR 7m7) ETH NMAG !RW SOCK=0 FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Eth laz for 5 socket or 90+ avrg damage base 0 soc
 
 // Staves
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK49>2  OR SK38>2 OR SK53>2 OR SK57>2 OR SK63>2) NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
