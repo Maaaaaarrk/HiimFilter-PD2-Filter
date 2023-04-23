@@ -31,7 +31,7 @@ Charms on ground will show important stats
 These items also show important stats on the ground. This applies to many gear slots not just the ones in the example.
 
 Rings & Amulets also have points implemented:
-* Range: 1Pt, 2pt, 3Pt, 4Pt, GG, OMG
+* Range: 2pt, 3Pt, 4Pt, GG, OMG
 * Evaluation includes crafts & a few slams
 * 1Pt of Value = high roll of a valuable stat
 * Evaluation takes into account partial rolls
@@ -62,7 +62,7 @@ All UNID Set/Unique items show their identified name options
 ## Early / New to PD2 hints
 * Utility items have useful notes tool tips.
 * Also Filter level 1/2 have a note recommending useful items to "slam"
-* T3 Maps will tell you when the rolls are good
+* T1,T2,T3 Maps will tell you when the rolls are good
 
 
 ![img1](examples/maps1.png?raw=true)
