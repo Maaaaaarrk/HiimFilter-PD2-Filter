@@ -20,6 +20,7 @@ Cube will state filter version & choosen filter level
 * 5]: End Game (GG Mapping Grade Character, Shows very few Crafts)
 * 6]: End Game NO HP/MP
 * 7]: Potions Only (This is for front line Characters in group play where you only pick-up pots)
+* 8]: Rejuvs Only (This is for front line Characters in group play where you only pick-up Purple Gatorade)
 
 ## Charm Stats on Ground
 
