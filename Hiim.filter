@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.13%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.14%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2800,8 +2800,8 @@ ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS ENFORCEMENT 
 //-----------------------------------------------------------------------------------
-ItemDisplay[(FILTLVL>4 OR (FILTLVL>2 AND CLVL>88)) NMAG SOCK<2 !RW (ARMOR OR WEAPON) !ETH]:
-ItemDisplay[FILTLVL>4 NMAG SOCK=0 !RW WEAPON SUP !ETH !ELT]:
+ItemDisplay[(FILTLVL>4 OR (FILTLVL>1 AND CLVL>79)) NMAG SOCK=1 !RW (ARMOR OR WEAPON) !ETH]:
+ItemDisplay[FILTLVL>1 NMAG SOCK=1 !RW WEAPON !ETH !ELT]:
 ItemDisplay[FILTLVL>4 MAG !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 //-----------------------------------------------------------------------------------
@@ -4771,6 +4771,9 @@ ItemDisplay[(rin OR amu) (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME%{%NAME%
 // ------------------------------------------------------------------------------
 // Filter level Setting limiters
 // ------------------------------------------------------------------------------
+
+ItemDisplay[FILTLVL>2 NMAG !RW WEAPON !ETH !ELT]:
+
 //Hide 0 socket non elite filter lvl>1
 ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0 !leg !ELT FILTLVL>1]:
 
