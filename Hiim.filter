@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.15%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.16%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -436,8 +436,8 @@ ItemDisplay[RUNE=28]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.25%NL%}%CONTINUE%
 ItemDisplay[RUNE=29]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.5%NL%}%CONTINUE%
 ItemDisplay[RUNE=30]: %NAME%{%TAN%HR Estimated Value%WHITE%: 3%NL%}%CONTINUE%
 ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.25%NL%}%CONTINUE%
-ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.25%NL%}%CONTINUE%
-ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2%NL%}%CONTINUE%
+ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.25+%NL%}%CONTINUE%
+ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2+%NL%}%CONTINUE%
 
 // Tooltip notes
 ItemDisplay[r01s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld%NL%%NL%Shield: +15 Defense%NL%Armor/Helm: +15 Defense%NL%Weapon: +50 Attack Rating%NL%}
@@ -587,6 +587,15 @@ ItemDisplay[(FILTLVL=7 OR FILTLVL=8) (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
+// UNID Formatting
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[aqv]: Arrows%CONTINUE%
+ItemDisplay[cqv]: Bolts%CONTINUE%
+ItemDisplay[(RARE OR MAG) !ID]: ¿ %NAME% ?%CONTINUE%
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
 // CLASS SPECIFIC RESIZING UNID
 //-----------------------------------------------------------------------------------
 // Pally Shields and Scepters
@@ -599,8 +608,6 @@ ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTL
 
 
 // Arrows and Bolts - Amazon View
-ItemDisplay[aqv]: Arrows%CONTINUE%
-ItemDisplay[cqv]: Bolts%CONTINUE%
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
 ItemDisplay[(aqv OR cqv) RARE !ID AMAZON]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
 ItemDisplay[(aqv OR cqv) NMAG CLVL>10]:
@@ -1556,6 +1563,7 @@ ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999 STAT360=0 
 
 // ITEM TAGS - Specific Mods
 ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%[FOOLS]%CONTINUE%
+ItemDisplay[ETH (REPAIR>0)]: %NAME% %TEAL%[REPAIR]%CONTINUE%
 
 // Amplify Damage on Striking
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=662]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low
@@ -2421,7 +2429,7 @@ ItemDisplay[SET !ID utc]: %CONTINUE%Trang-Ouls Girth - Troll Belt
 ItemDisplay[SET !ID xmg]: %CONTINUE%Trang-Ouls Claws - Heavy Bracers
 
 // FORMATTING
-ItemDisplay[(UNI OR SET) !ID]: %NAME% ?%CONTINUE%
+ItemDisplay[(UNI OR SET) !ID]: ¿ %NAME% ?%CONTINUE%
 ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
@@ -2719,11 +2727,12 @@ ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%
 ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
 
 // Armor
-ItemDisplay[GLOVES (EXC OR ELT) !(utg OR uhg) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) ETH MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
+ItemDisplay[GLOVES !(utg OR uhg) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
 
 // Class specific
 ItemDisplay[BARBARIAN BAR MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
@@ -2749,6 +2758,9 @@ ItemDisplay[WEAPON MAG ID !WAND !SOR FILTLVL<5]:%NAME%{%NAME% || %WHITE%CraftedA
 ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<5]:%NAME%{%NL%%WHITE%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
 
 // Crafting tag when identified
+//purgatory builds
+ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) ETH MAG ID FILTLVL<5 ILVL>84]: %NAME%{%NAME%%NL%%RED% ETH Crafting Bases for Purgatory}%CONTINUE%
+
 // Weapons
 ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Phase Blade
 ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Ghost Glaive
