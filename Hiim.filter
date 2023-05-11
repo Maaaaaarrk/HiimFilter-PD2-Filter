@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.16%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.17%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1522,11 +1522,19 @@ ItemDisplay[MAG (cm1 OR cm2 OR cm3) ID LVLREQ<31 STAT332=2 (FHR>0 OR FRW>0 OR MA
 // ITEM TAGS - PART 1
 //-----------------------------------------------------------------------------------
 // ITEM TAGS - ETH
-ItemDisplay[ETH UNI]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[ETH RARE]: %GRAY%[eth] %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[ETH MAG]: %GRAY%[eth] %BLUE%%NAME%%CONTINUE%
-ItemDisplay[ETH NMAG]: %GRAY%[eth] %GRAY%%NAME%%CONTINUE%
-ItemDisplay[ETH CRAFT]: %GRAY%[eth] %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[ETH UNI !(REPAIR>0)]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH RARE !(REPAIR>0)]: %GRAY%[eth] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[ETH MAG !(REPAIR>0)]: %GRAY%[eth] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[ETH NMAG !(REPAIR>0)]: %GRAY%[eth] %GRAY%%NAME%%CONTINUE%
+ItemDisplay[ETH CRAFT !(REPAIR>0)]: %GRAY%[eth] %ORANGE%%NAME%%CONTINUE%
+
+ItemDisplay[ETH UNI (REPAIR>0)]: %GRAY%[eth-rep] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%[eth-rep] %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%[eth-rep] %BLUE%%NAME%%CONTINUE%
+ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%[eth-rep] %GRAY%%NAME%%CONTINUE%
+ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%[eth-rep] %ORANGE%%NAME%%CONTINUE%
+
+
 
 // ITEM TAGS- SOCKETS
 ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0]: %WHITE%%NAME%%CONTINUE%
@@ -1563,7 +1571,6 @@ ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999 STAT360=0 
 
 // ITEM TAGS - Specific Mods
 ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%[FOOLS]%CONTINUE%
-ItemDisplay[ETH (REPAIR>0)]: %NAME% %TEAL%[REPAIR]%CONTINUE%
 
 // Amplify Damage on Striking
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=662]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low
@@ -2703,7 +2710,7 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 ItemDisplay[(MAG OR RARE) MAPID=83 pa1]: %NAME%%MAP-97%%GREEN% [LLD Craft] // Targe
 ItemDisplay[(MAG OR RARE) MAPID=83 pa2]: %NAME%%MAP-97%%GREEN% [LLD Craft] // Rondache
 ItemDisplay[(MAG OR RARE) MAPID=83 pa5]: %NAME%%MAP-97%%GREEN% [LLD Craft] // Crown Shield
-ItemDisplay[(MAG OR RARE) MAPID=83 pa6]: %NAME%%MAP-97%%RGREEND% [LLD Craft]// Akaran Targe
+ItemDisplay[(MAG OR RARE) MAPID=83 pa6]: %NAME%%MAP-97%%GREEN% [LLD Craft]// Akaran Targe
 ItemDisplay[(MAG OR RARE) MAPID=83 pa7]: %NAME%%MAP-97%%GREEN% [LLD Craft]// Akaran Rondache
 ItemDisplay[MAG !ETH btl MAPID=83]: %NAME%%MAP-97%%GREEN% [LLD Craft]
 ItemDisplay[RARE aqv MAPID=83]: %NAME%%MAP-97%%GREEN% [LLD Craft]
@@ -2727,7 +2734,7 @@ ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%
 ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
 
 // Armor
-ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) ETH MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
+ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) ETH MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
 ItemDisplay[GLOVES !(utg OR uhg) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
 ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
 ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
