@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.20%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.21%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -623,6 +623,7 @@ ItemDisplay[(aqv OR cqv) RARE !ID FILTLVL>2]:
 //-----------------------------------------------------------------------------------
 //Add re-roll tag for all rare jewels that do not hit a stat below
 ItemDisplay[jew ID RARE]: %NAME%{%LIGHT_GRAY%6 P.Skulls %SAGE%+ This %YELLOW%Jewel %SAGE%to re-roll}%CONTINUE%
+ItemDisplay[jew ID MAG ALVL>65]: %NAME%{%SAGE%1:863 to get Enhanced Damage & IAS%NL%%TEAL%3 P.Gems + This %BLUE%Jewel %TEAL%to re-roll}%CONTINUE%
 
 // Start formatting
 ItemDisplay[jew MAG ID (RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0)]: %BLUE%%CONTINUE%
