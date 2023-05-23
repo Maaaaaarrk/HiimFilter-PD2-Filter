@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.33%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.34%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -77,11 +77,13 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>35]:// Hide junk 1s stuff
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS - General
 ItemDisplay[wss]: %PURPLE%WORLDSTAR!!! %CONTINUE%
-ItemDisplay[(wss OR iwss OR cm2f OR cwss) QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
+ItemDisplay[(wss OR iwss OR cm2f) QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
 ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt%NL%50 Wss Stack - Vex}
-ItemDisplay[cwss]: %MAP-0A%%RED%*** Tainted %PURPLE% WORLDSTAR!!! %RED%***%WHITE%{%RED%Corrupts %TAN%your Annihilus}
+
+ItemDisplay[cwss QTY=1]: %MAP-0A%%DARK_GREEN%§ § § %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %DARK_GREEN%§ § §{%RED%Corrupts %TAN%your Annihilus}
+ItemDisplay[cwss QTY>1]: %MAP-0A%%DARK_GREEN%§ § § %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %ORANGE%QTY %QTY% %DARK_GREEN%§ § §{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %ORANGE%*    %GRAY%%NAME%  %ORANGE%*%WHITE%%MAP-68%{50 jewelfrags - Um/Mal%NL%50 pgems - Um/Mal%NL%50 Map Runes - Mal/Ist}
-ItemDisplay[rkey]: %ORANGE%* *    %GRAY%%NAME%   %ORANGE%* *%WHITE%%MAP-68%
+ItemDisplay[rkey]: %DARK_GREEN%» ¥ «    %ORANGE%Skeleton Key   %DARK_GREEN%» ¥ «%MAP-68%
 ItemDisplay[lbox]: %MAP-4A%%ORANGE%* * %PURPLE%> > %NAME% %PURPLE%< <%ORANGE% * *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp]: %MAP-4A%%ORANGE%* %PURPLE%> %NAME% %PURPLE%<%ORANGE% *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
