@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.34%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.35%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -77,20 +77,20 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>35]:// Hide junk 1s stuff
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS - General
 ItemDisplay[wss]: %PURPLE%WORLDSTAR!!! %CONTINUE%
-ItemDisplay[(wss OR iwss OR cm2f) QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
+ItemDisplay[(wss) QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
 ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt%NL%50 Wss Stack - Vex}
 
 ItemDisplay[cwss QTY=1]: %MAP-0A%%DARK_GREEN%§ § § %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %DARK_GREEN%§ § §{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[cwss QTY>1]: %MAP-0A%%DARK_GREEN%§ § § %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %ORANGE%QTY %QTY% %DARK_GREEN%§ § §{%RED%Corrupts %TAN%your Annihilus}
-ItemDisplay[jewf]: %ORANGE%*    %GRAY%%NAME%  %ORANGE%*%WHITE%%MAP-68%{50 jewelfrags - Um/Mal%NL%50 pgems - Um/Mal%NL%50 Map Runes - Mal/Ist}
+ItemDisplay[jewf]: %ORANGE%×    %GRAY%%NAME%  %ORANGE%×%WHITE%%MAP-68%{50 jewelfrags - Um/Mal%NL%50 pgems - Um/Mal%NL%50 Map Runes - Mal/Ist}
 ItemDisplay[rkey]: %DARK_GREEN%» ¥ «    %ORANGE%Skeleton Key   %DARK_GREEN%» ¥ «%MAP-68%
 ItemDisplay[lbox]: %MAP-4A%%ORANGE%* * %PURPLE%> > %NAME% %PURPLE%< <%ORANGE% * *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp]: %MAP-4A%%ORANGE%* %PURPLE%> %NAME% %PURPLE%<%ORANGE% *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
 ItemDisplay[llmr]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
 ItemDisplay[lsvl]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
-ItemDisplay[iwss]: %PURPLE%O %NAME% %PURPLE%O
-ItemDisplay[cm2f]: %ORANGE%O %NAME% %ORANGE%O
+ItemDisplay[iwss]: %PURPLE%O O %NAME% %PURPLE%O O
+ItemDisplay[cm2f]: %ORANGE%O O %NAME% %ORANGE%O O
 
 
 // PD2 Items - DClone
@@ -98,7 +98,7 @@ ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%
 ItemDisplay[dcma]: %MAP-0A%%GRAY%*%RED%* %NAME% %RED%*%GRAY%*{%RED%DO IT AT YOUR OWN RISK!%NL%%TAN%Note%WHITE%: %GRAY%You better not go in there...}
 
 // PD2 Items - Rathma
-ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%
+ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%× × %ORANGE%%NAME% %RED%× ×%WHITE%
 ItemDisplay[rtma]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%
 ItemDisplay[rtp]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Town Portal
 ItemDisplay[rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Identify
@@ -107,7 +107,7 @@ ItemDisplay[rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome o
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
 ItemDisplay[ubab]: %NAME%{Found in T2 Maps}%CONTINUE%
 ItemDisplay[ubac]: %NAME%{Found in T3 Maps}%CONTINUE%
-ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%* %RED%%NAME%%YELLOW% *{%NAME%}
+ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%× × %RED%%NAME%%YELLOW% × ×{%NAME%}
 ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 //-----------------------------------------------------------------------------------
 
@@ -151,7 +151,7 @@ ItemDisplay[upma]: %MAP-4A%%NAME%{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Th
 ItemDisplay[upmp]: %NAME% %ORANGE%*{%WHITE%3 x Map + %GOLD%Orb%NL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
 ItemDisplay[scrb QTY=1]: %MAP-4A%%ORANGE%* * * %NAME% %ORANGE%* * *{%WHITE%This Item + T3 Map%NL%Note: Enter Group Dungeon:}%CONTINUE%
 ItemDisplay[scrb QTY>1]: %MAP-4A%%ORANGE%%NAME%{%WHITE%This Item + T3 Map%NL%Note: Enter Group Dungeon:}%CONTINUE%
-ItemDisplay[std]: %PX-9D%%NAME%{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%NL%+20% Monster Density%NL%%TAN%Note%WHITE%: Cube it with Map to gain:}
+ItemDisplay[std]: %DOT-9D%%CORAL%« » %NAME% %CORAL%« »{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%NL%+20% Monster Density%NL%%TAN%Note%WHITE%: Cube it with Map to gain:}
 
 // Map Tier Tags
 ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
@@ -463,7 +463,7 @@ ItemDisplay[r18s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xKo + %GRAY%key %WHITE%= Fal%
 ItemDisplay[r19s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xFal + %GRAY%key %WHITE%= Lem%NL%%NL%Shield: +10 to Strength%NL%Armor/Helm: +10 to Strength%NL%Weapon: +10 to Strength%NL%}
 ItemDisplay[r20s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xLem + %GRAY%key %WHITE%= Pul%NL%%NL%Shield: 50% Extra Gold%NL%Armor/Helm: 50% Extra Gold%NL%Weapon: 75% Extra Gold%NL%}
 ItemDisplay[r21s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xPul + %GRAY%key %WHITE%= Um%NL%%NL%Shield: 30% Enhanced Def%NL%Armor/Helm: 30% Enhanced Def%NL%Weapon: +75% Dmg, +100 AR vs Demon%NL%}
-ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%NL%%NL%Shield: All Res +22%NL%Armor/Helm: All Res +15%NL%Weapon: 20% Chance of Open Wounds%NL%}
+ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%NL%%NL%Shield: All Res +22%NL%Armor/Helm: All Res +15%NL%Weapon: 10% Chance of Open Wounds%NL%}
 ItemDisplay[r23s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xMal + %GRAY%key %WHITE%= Ist%NL%%NL%Shield: Magic Dmg Red by 7%NL%Armor/Helm: Magic Dmg Red by 7%NL%Weapon: Prevent Monster Heal%NL%}
 ItemDisplay[r24s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xIst + %GRAY%key %WHITE%= Gul%NL%%NL%Shield: 30% Magic Find%NL%Armor/Helm: 30% Magic Find%NL%Weapon: 30% Magic Find%NL%}
 ItemDisplay[r25s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xGul + %GRAY%key %WHITE%= Vex%NL%%NL%Shield: +4% to Max Psn Res%NL%Armor/Helm: +4% to Max Psn Res%NL%Weapon: +20% to Attack Rating%NL%}
