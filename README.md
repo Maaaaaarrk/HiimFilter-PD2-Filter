@@ -80,6 +80,8 @@ Based off parts of Kryszard's PD2 Loot Filter - twitch.tv/kryszard
 
 Based off parts of Wolfie's PD2 Loot Fitlers - github.com/WolfieeifloW/pd2filter
 
+Runeword Section from EQN - github.com/eqNj/eqN-PD2-Filter
+
 See install.png for picture manual install directions
 
 For testing: https://betweenwalls.github.io/filterbird/?v=PD2

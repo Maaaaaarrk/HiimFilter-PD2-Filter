@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.0.35%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.1.0%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -98,10 +98,10 @@ ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%
 ItemDisplay[dcma]: %MAP-0A%%GRAY%*%RED%* %NAME% %RED%*%GRAY%*{%RED%DO IT AT YOUR OWN RISK!%NL%%TAN%Note%WHITE%: %GRAY%You better not go in there...}
 
 // PD2 Items - Rathma
-ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%× × %ORANGE%%NAME% %RED%× ×%WHITE%
+ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%× × %ORANGE%%NAME% %RED%× ×
 ItemDisplay[rtma]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%
-ItemDisplay[rtp]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Town Portal
-ItemDisplay[rid]: %MAP-0A%%RED%* %ORANGE%%NAME% %RED%*%WHITE%   // Rathma Tome of Identify
+ItemDisplay[rtp]: %MAP-0A%%RED%× × %ORANGE%%NAME% %RED%× ×   // Rathma Tome of Town Portal
+ItemDisplay[rid]: %MAP-0A%%RED%× × %ORANGE%%NAME% %RED%× ×   // Rathma Tome of Identify
 
 // PD2 Items - Uber Ancients Tokens
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
@@ -126,16 +126,16 @@ ItemDisplay[fed]: %NAME%{%TAN%Essence %WHITE%from: %DARK_GREEN%Baal}
 // UBERS - KEYS, ORGANS, ETC
 //-----------------------------------------------------------------------------------
 // Uber Keys
-ItemDisplay[pk1]: %PX-9D%*  %NAME%  *{%TAN%Key %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven}%CONTINUE%
-ItemDisplay[pk2]: %PX-9D%*  %NAME%  *{%TAN%Key %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch}%CONTINUE%
-ItemDisplay[pk3]: %PX-9D%*  %NAME%  *{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
+ItemDisplay[pk1]: %MAP-62%%RED%>  »  %NAME%  %RED%«  <{%TAN%Key %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven}%CONTINUE%
+ItemDisplay[pk2]: %MAP-62%%RED%>  »  %NAME%  %RED%«  <{%TAN%Key %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch}%CONTINUE%
+ItemDisplay[pk3]: %MAP-62%%RED%>  »  %NAME%  %RED%«  <{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
 
 // Organs
 ItemDisplay[mbr]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%NL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}%CONTINUE%
 ItemDisplay[bey]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%NL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}%CONTINUE%
 ItemDisplay[dhn]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%NL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}%CONTINUE%
-ItemDisplay[(dhn OR bey OR mbr)]: %MAP-4A%. > %NAME% < .
-ItemDisplay[ubtm]: %MAP-A9%. > %NAME%  < .
+ItemDisplay[(dhn OR bey OR mbr)]: %MAP-4A%> » %NAME% « <
+ItemDisplay[ubtm]: %MAP-A9%> » %NAME%  « <
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -158,7 +158,8 @@ ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
 ItemDisplay[MAPTIER=2]: %YELLOW%* [T2] %CONTINUE%
 ItemDisplay[MAPTIER=3]: %ORANGE%* [T3] %CONTINUE%
 ItemDisplay[MAPTIER=4]: %RED%* [T4] %CONTINUE%
-ItemDisplay[(t51 OR t52)]: %GOLD%* %CONTINUE%
+ItemDisplay[(t51 OR t52) !ID]: %GOLD%* * * * [U] %CONTINUE%
+ItemDisplay[(t51 OR t52) ID]: %GOLD%* [U] %CONTINUE%
 ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%
 
 // Map Color Fixing
@@ -280,7 +281,8 @@ ItemDisplay[MAPTIER=1]: %MAP-62%%NAME% %GREEN%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=2]: %MAP-62%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=3]: %MAP-62%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=4]: %MAP-62%%NAME% %RED%*{%NAME%}%CONTINUE%
-ItemDisplay[(t51 OR t52)]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
+ItemDisplay[(t51 OR t52) !ID]: %MAP-62%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
+ItemDisplay[(t51 OR t52) ID]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
 ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
 
 
@@ -1120,26 +1122,26 @@ ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) RES>0]: %PURPLE%All RES %NAME%%CONT
 ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) STAT17>0]: %RED%%STAT17%%EDMG %NAME%%CONTINUE%
 
 // Class Skills
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK0>0]: %PURPLE%Zon %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK1>0]: %PURPLE%Sorc %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK2>0]: %PURPLE%+%CLSK2% Necro %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK3>0]: %PURPLE%+%CLSK3% Pala %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK4>0]: %PURPLE%Barb %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK5>0]: %PURPLE%Druid %TAN%Skills %NAME%%CONTINUE%
-ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK6>0]: %PURPLE%Sin %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK0>0]: %PURPLE%Zon %TAN%Sk %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK1>0]: %PURPLE%Sorc %TAN%Sk %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK2>0]: %PURPLE%+%CLSK2% Necro%TAN%Sk %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK3>0]: %PURPLE%+%CLSK3% Pala%TAN%Sk %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK4>0]: %PURPLE%Barb%TAN%Sk %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK5>0]: %PURPLE%Druid%TAN%Sk %NAME%%CONTINUE%
+ItemDisplay[SHIELD ID (MAG OR RARE OR CRAFT) CLSK6>0]: %PURPLE%Sin%TAN%Sk %NAME%%CONTINUE%
 // Combat Skills
-ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK24>0]: %PURPLE%+%TABSK24% P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK24>0]: %PURPLE%+%TABSK24% P.Comb%TAN%Sk %NAME%%CONTINUE%
 // Off Aura Skills
-ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK25>0]: %PURPLE%+%TABSK25% Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK25>0]: %PURPLE%+%TABSK25% OffAura%TAN%Sk %NAME%%CONTINUE%
 // Def Aura Skills
-ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK26>0]: %PURPLE%+%TABSK26% Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK26>0]: %PURPLE%+%TABSK26% DefAura%TAN%Sk %NAME%%CONTINUE%
 
 // Curses Skills
-ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK16>0]: %PURPLE%+%TABSK16% Curse %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK16>0]: %PURPLE%+%TABSK16% Curse%TAN%Sk %NAME%%CONTINUE%
 // Poison & Bone Spells Skills
-ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK17>0]: %PURPLE%+%TABSK17% P & B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK17>0]: %PURPLE%+%TABSK17% P&B%TAN%Sk %NAME%%CONTINUE%
 // Summoning Spells Skills
-ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK18>0]: %PURPLE%+%TABSK18% N. Summ %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) DIN ID TABSK18>0]: %PURPLE%+%TABSK18% N.Summ %TAN%Sk %NAME%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 
@@ -1465,10 +1467,6 @@ ItemDisplay[cm3 !UNI ID (ILVL>90)]: %MAP%%PURPLE%[REROLL]%BLUE% %NAME%%CONTINUE%
 ItemDisplay[(cm1) !UNI MAG (STAT79>0 OR STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0 OR MAXDMG>0 OR LIFE>0 OR AR>0 OR MANA>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %NL%%BLUE%Small Charm%DOT-93%%CONTINUE%
 ItemDisplay[(cm2) !UNI MAG (STAT79>0 OR STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0 OR MAXDMG>0 OR LIFE>0 OR AR>0 OR MANA>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %NL%%BLUE%Large Charm%DOT-93%%CONTINUE%
 ItemDisplay[(cm3) !UNI MAG (STAT79>0 OR STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0 OR MAXDMG>0 OR LIFE>0 OR AR>0 OR MANA>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %NL%%BLUE%Grand Charm%DOT-93%%CONTINUE%
-
-//ItemDisplay[(cm1) !UNI MAG (STAT79>0 OR STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0 OR MAXDMG>0 OR LIFE>0 OR AR>0 OR MANA>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %WHITE%SC%CONTINUE%
-//ItemDisplay[(cm2) !UNI MAG (STAT79>0 OR STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0 OR MAXDMG>0 OR LIFE>0 OR AR>0 OR MANA>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %WHITE%LC%CONTINUE%
-//ItemDisplay[(cm3) !UNI MAG (STAT79>0 OR STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0 OR MAXDMG>0 OR LIFE>0 OR AR>0 OR MANA>0 OR MFIND>0 OR DEX>0 OR STR>0 OR MFIND>0 OR FRW>0 OR FHR>0 OR LIFE>0 OR MAXDMG>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT357>0 OR STAT329>0 OR STAT330>0 OR STAT331>0 OR STAT332>0 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %WHITE%GC%CONTINUE%
 
 // Charm Stat Tags
 // Magic Find
@@ -2585,7 +2583,7 @@ ItemDisplay[(7qs OR 7cr OR 9tw OR obc OR 9wc) UNI !ID]: %DOT-68%%GOLD% * * *  %N
 ItemDisplay[(7fb OR 72a OR 7fl OR 7kr OR 7gm OR oba OR ama OR 6ws OR 7lw OR amf OR 7wh OR 7cs) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 
 // NOTEWORTHY DROPS - OK
-ItemDisplay[(amu OR rin OR uar OR ci3 OR 7qr OR uth OR paf) SET !ID]: %MAP-84%%GREEN%****   %NAME%   ****
+ItemDisplay[(amu OR rin OR uar OR ci3 OR 7qr OR uth OR paf OR lbt) SET !ID]: %MAP-84%%GREEN%****   %NAME%   ****
 ItemDisplay[(xsk OR xml OR xlb OR xpl OR xap OR xld OR xrs OR gth OR aar OR BELT OR skp OR xhl OR xrn OR vbt OR xmb OR uvb OR umb OR lgl OR mgl OR tgl OR hgl OR xlg OR xvg OR xtg OR xhg OR ush OR upk OR uml OR xts OR xrg OR xuc OR tow OR kit OR gts) UNI !ID]: %PX-68% >  %NAME%  < 
 ItemDisplay[((7wa OR 7gi OR 7pa OR 8ls OR 72a OR 7o7 OR 9yw OR 9fc OR 7bw OR 9kr OR amb OR 7sc OR 7mp OR 6sw OR 6l7 OR 8hx OR 8rx OR dgr OR 7dg OR 7bl OR 9ma OR 9wh OR 9gm OR 7s8 OR 7wc OR 9ws OR 6cs OR 7b7 OR 7gs OR 9sb) OR (ELT (WP5 OR WP6)) OR 9bw OR ywn OR 7wb OR 7sp) UNI !ID]: %PX-68% >  %NAME%  < 
 ItemDisplay[((ARMOR OR WEAPON) (EXC OR ELT OR ci0 OR ba5) !(9vo OR xcl OR xrn)) SET !ID]: %PX-84%%NAME%
@@ -2809,101 +2807,100 @@ ItemDisplay[MAG MAPID=83 (am1 OR am5 OR am6 OR ama)]: %NAME%%MAP-97%%GREEN% [LLD
 ItemDisplay[MAG MAPID=83 (ne5 OR ne4)]: %NAME%%MAP-97%%GREEN% [LLD Craft]
 
 // Weapons
-ItemDisplay[(7cr OR 9cr OR crs) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * * %BLUE%%NAME% %GREEN%[Craft] * * *//Phase Blade
-ItemDisplay[(7gl OR 9gl OR glv) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
-ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Pike
-ItemDisplay[(7gm OR 9gm OR gma) ETH MAG !ID FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
-ItemDisplay[(7wa OR 9wa OR wax) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
-ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Ogre Maul
-ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
-ItemDisplay[(7fb OR 9fb OR flb) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
-ItemDisplay[(7gi OR 9gi OR gix) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
-ItemDisplay[(7wh OR 9wh OR whm) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Legendary Mallet
-ItemDisplay[(7pi OR 9pi OR pil) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Stygian Pilum
-ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Balrog Spear
-ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG !ID FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG FILTLVL<7]: %DOT-ED%%GREEN%* * * %BLUE%%NAME% %GREEN%[Craft] * * *//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Pike
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG FILTLVL<7]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Legendary Mallet
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
 
 // Armor
-ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) ETH MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
-ItemDisplay[GLOVES !(utg OR uhg) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) ETH MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
+ItemDisplay[GLOVES !(utg OR uhg) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
 
 // Class specific show for all
-ItemDisplay[(ob5 OR oba OR obf) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //sorc orb
-ItemDisplay[AMAZON (lwb OR 8lw OR 6lw) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //long bow
-ItemDisplay[AMAZON (am5 OR ama OR amf) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //zon javs
-ItemDisplay[(am2 OR am7 OR amc) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //Zon bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //pala shield
-ItemDisplay[MAG !ID (wsp OR 9ws OR 7ws) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //4os able scepters
-ItemDisplay[MAG !ID DRU FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //dudu helms
-ItemDisplay[MAG !ID NEC FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //nec heads
-ItemDisplay[ETH SIN MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth sin claws
-ItemDisplay[ETH BAR MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
-ItemDisplay[ETH CHEST MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth chest
+ItemDisplay[(ob5 OR oba OR obf) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //sorc orb
+ItemDisplay[AMAZON (lwb OR 8lw OR 6lw) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //long bow
+ItemDisplay[AMAZON (am5 OR ama OR amf) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //pala shield
+ItemDisplay[MAG (wsp OR 9ws OR 7ws) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //4os able scepters
+ItemDisplay[MAG DRU FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //dudu helms
+ItemDisplay[MAG NEC FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //nec heads
+ItemDisplay[ETH SIN MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth sin claws
+ItemDisplay[ETH BAR MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
+ItemDisplay[ETH CHEST MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth chest
 
-ItemDisplay[BAR MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
-ItemDisplay[WAND !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //Wand for Caster craft
-ItemDisplay[MAG !ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //all scepters
-ItemDisplay[MAG !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //clubs
+ItemDisplay[BAR MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
+ItemDisplay[WAND FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //Wand for Caster craft
+ItemDisplay[MAG (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //all scepters
+ItemDisplay[MAG (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //clubs
 
 
 // Class specific show for class
-ItemDisplay[BARBARIAN BAR MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
-ItemDisplay[PALADIN CL3 MAG !ID FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //pala shield
-ItemDisplay[PALADIN MAG !ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //all scepters
-ItemDisplay[DRUID MAG !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //clubs
-ItemDisplay[ASSASSIN SIN MAG !ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //all sin claws
+ItemDisplay[BARBARIAN BAR MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
+ItemDisplay[PALADIN CL3 MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //pala shield
+ItemDisplay[PALADIN MAG (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //all scepters
+ItemDisplay[DRUID MAG (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //clubs
+ItemDisplay[ASSASSIN SIN MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //all sin claws
 
 // Generic
-ItemDisplay[THROWING MAG ETH !ID FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
-ItemDisplay[WEAPON MAG ETH !ID FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
+ItemDisplay[THROWING MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
+ItemDisplay[WEAPON MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
 
 // Crafting notes
-ItemDisplay[WEAPON MAG ID !WAND !SOR FILTLVL<5]:%NAME%{%NAME% || %WHITE%CraftedAlvl: %CRAFTALVL%}%CONTINUE%
-ItemDisplay[(ARMOR OR rin OR amu OR WAND OR SOR) MAG ID FILTLVL<5]:%NAME%{%NL%%WHITE%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID FILTLVL<5 STAT360=0]: %NAME%{%NL%%CORAL%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
 
 // Crafting tag when identified
 //purgatory builds
 ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) ETH MAG ID FILTLVL<5 ILVL>84]: %NAME%{%NAME%%NL%%RED% ETH Crafting Bases for Purgatory}%CONTINUE%
 
 // Weapons
-ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Phase Blade
-ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Ghost Glaive
-ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Berserker Axe
-ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Thunder Maul
-ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Ogre Maul
-ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Colossus Blade
-ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Colossus Sword
-ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Glorious Axe
-ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Legendary Mallet
-ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//War Pike
-ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Stygian Pilum
-ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Balrog Spear
-ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Winged Harpoon
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Ghost Glaive
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Berserker Axe
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Thunder Maul
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Legendary Mallet
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//War Pike
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
 
 // Armor
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//boots
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
 
 // Class specific
-ItemDisplay[BAR MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//barb helm
-ItemDisplay[(ob5 OR oba OR obf) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//sorc orb
-ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//long bow
-ItemDisplay[(am5 OR ama OR amf) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//zon javs
-ItemDisplay[(am2 OR am7 OR amc) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//Zon bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//pala shield
-ItemDisplay[MAG ID !SHOP (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws)]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//scepters
-ItemDisplay[MAG ID !SHOP (DRU)]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//dudu helms
-ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//clubs
-ItemDisplay[SIN MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base%NL%}%CONTINUE%//all sin claws
+ItemDisplay[BAR MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
+ItemDisplay[(am5 OR ama OR amf) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
+ItemDisplay[MAG ID !SHOP (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws)]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
+ItemDisplay[MAG ID !SHOP (DRU)]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
+ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
+ItemDisplay[SIN MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
 
 // Crafting Reciepe
 ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%* Caster: O, Nef, Jewel *%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%* Vamp: SK, Lum, Jewel *%NAME%}%CONTINUE%
@@ -4387,64 +4384,66 @@ ItemDisplay[WEAPON !THROWING !INF !SUP SOCK=0 NMAG]: %NAME%{%WHITE%This Item + %
 //-----------------------------------------------------------------------------------
 // TOOLTIPS - RUNEWORD OPTIONS
 //-----------------------------------------------------------------------------------
-// TOOLTIPS - Possible RW's - Chest, Head, Shield
-ItemDisplay[CHEST SOCK=2 NMAG !RW]: %NAME%{%GRAY%Prudence, Smoke, Stealth%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[CHEST SOCK=3 NMAG !RW]: %NAME%{%GRAY%Peace, Principle, Rain, Treachery, Wealth%NL%Enlightenment, Gloom, Lionheart, Myth,%NL%%TAN%RWs: %GRAY%Bone, Dragon, Duress, Enigma,}%CONTINUE%
-ItemDisplay[CHEST SOCK=4 NMAG !RW]: %NAME%{%GRAY%Chains of Honor, Fortitude, Stone%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Bramble,}%CONTINUE%
-ItemDisplay[(HELM OR CIRC) SOCK=2 NMAG !RW]: %NAME%{%GRAY%Lore, Nadir%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(HELM OR CIRC) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Dream, Delirium, Radiance, Ferocity%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[SHIELD SOCK=2 NMAG !RW]: %NAME%{%GRAY%Rhyme, Splendor%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[SHIELD SOCK=3 NMAG !RW]: %NAME%{%GRAY%Pledge, Dragon, Dream, Sanctuary%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Ancient's}%CONTINUE%
-ItemDisplay[SHIELD !(DIN) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Spirit, Shattered Wall%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[DIN SOCK=4 NMAG !RW]: %NAME%{%GRAY%Exile, Phoenix, Spirit, Shattered Wall%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
-// TOOLTIPS - Possible RW's - Weapons 2soc
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg) !(SWORD OR AXE OR SIN OR mac OR mst OR fla) SOCK=2 NMAG !RW]: %NAME%{%GRAY%Strength, Wind%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(BOW OR XBOW) SOCK=2 NMAG !RW]: %NAME%{%GRAY%Zephyr%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WAND SOCK=2 NMAG !RW]: %NAME%{%GRAY%Strength, White, Wind, Unending Will%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[STAFF SOCK=2 NMAG !RW]: %NAME%{%GRAY%Leaf, Strength, Wind%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(SWORD OR AXE OR SIN OR mac OR mst OR fla) !leg SOCK=2 NMAG !RW]: %NAME%{%GRAY%Steel, Strength, Wind%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
 
-// TOOLTIPS - Possible RW's - Weapons 3soc
-ItemDisplay[WEAPON !(BOW OR XBOW OR SWORD OR AXE OR POLEARM OR SCEPTER) !leg SOCK=3 NMAG !RW]: %NAME%{%GRAY%Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR leg OR SWORD OR AXE OR POLEARM OR SCEPTER) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fury,}%CONTINUE%
-ItemDisplay[(BOW OR XBOW) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Edge, Melody, Plague, Venom%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[SIN SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Pattern, Plague, Venom%NL%Fury, King's grace, Lawbringer,%NL%%TAN%RWs: %GRAY%Black, Chaos, Crescent moon,}%CONTINUE%
-ItemDisplay[(AXE OR POLEARM) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Crescent Moon, Fury,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[SWORD SOCK=3 NMAG !RW]: %NAME%{%GRAY%Lawbringer, Malice, Plague, Venom%NL%Crescent Moon, Fury, King's Grace,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[SCEPTER SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%Fury, King's Grace, Lawbringer,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(clb OR spc OR mac OR mst OR fla OR 9cl OR 9sp OR 9ma OR 9mt OR 9fl OR 7cl OR 7sp OR 7ma OR 7mt OR 7fl) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Fury, Malice, Plague%NL%%TAN%RWs: %GRAY%Venom, Black,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG !RW]: %NAME%{%GRAY%Malice, Plague, Venom%NL%%TAN%RWs: %GRAY%Black, Fury, Lawbringer}%CONTINUE%
+//Recipe Filter Level Runewords From EQN
+ItemDisplay[NMAG !RW !SHOP (HELM OR CIRC) SOCK=2]: %NAME%{%GOLD%Nadir %LIGHT_GRAY%Nef + Tir%NL%%GOLD%Lore %LIGHT_GRAY%Ort + Sol%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																																	// Helm 2s
+ItemDisplay[NMAG !RW !SHOP (HELM OR CIRC) SOCK=3]: %NAME%{%GOLD%Wisdom %LIGHT_GRAY%Pul + Ith + Eld%NL%%GOLD%Radiance %LIGHT_GRAY%Nef + Sol + Ith%NL%%GOLD%Flickering Flame %LIGHT_GRAY%Nef + Pul + Vex%NL%%GOLD%Ferocity %LIGHT_GRAY%Zod + Cham + Shael%NL%%GOLD%Dream %LIGHT_GRAY%Io + Jah + Pul%NL%%GOLD%Delirium %LIGHT_GRAY%Lem + Ist + Io%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																													// Helm 3s
+ItemDisplay[NMAG !RW !SHOP CHEST SOCK=2]: %NAME%{%GOLD%Stealth %LIGHT_GRAY%Tal + Eth%NL%%GOLD%Smoke %LIGHT_GRAY%Nef + Lum%NL%%GOLD%Prudence %LIGHT_GRAY%Mal + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																														// Armor 2s
+ItemDisplay[NMAG !RW !SHOP CHEST SOCK=3]: %NAME%{%GOLD%Wealth %LIGHT_GRAY%Lem + Ko + Tir%NL%%GOLD%Treachery %LIGHT_GRAY%Shael + Thul + Lem%NL%%GOLD%Rain %LIGHT_GRAY%Ort + Mal + Ith%NL%%GOLD%Principle %LIGHT_GRAY%Ral + Gul + Eld%NL%%GOLD%Peace %LIGHT_GRAY%Shael + Thul + Amn%NL%%GOLD%Myth %LIGHT_GRAY%Hel + Amn + Nef%NL%%GOLD%Lionheart %LIGHT_GRAY%Hel + Lum + Fal%NL%%GOLD%Gloom %LIGHT_GRAY%Fal + Um + Pul%NL%%GOLD%Enlightenment %LIGHT_GRAY%Pul + Ral + Sol%NL%%GOLD%Enigma %LIGHT_GRAY%Jah + Ith + Ber%NL%%GOLD%Duress %LIGHT_GRAY%Shael + Um + Thul%NL%%GOLD%Dragon %LIGHT_GRAY%Sur + Lo + Sol%NL%%GOLD%Bone %LIGHT_GRAY%Sol + Um + Um%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%	// Armor 3s
+ItemDisplay[NMAG !RW !SHOP CHEST SOCK=4]: %NAME%{%GOLD%Stone %LIGHT_GRAY%Shael + Um + Pul + Lum%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%Chains of Honor %LIGHT_GRAY%Dol + Um + Ber + Ist%NL%%GOLD%Bramble %LIGHT_GRAY%Ral + Ohm + Sur + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																					// Armor 4s
+ItemDisplay[NMAG !RW !SHOP SHIELD SOCK=2]: %NAME%{%GOLD%Splendor %LIGHT_GRAY%Eth + Lum%NL%%GOLD%Rhyme %LIGHT_GRAY%Shael + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																																	// Shield 2s
+ItemDisplay[NMAG !RW !SHOP SHIELD SOCK=3]: %NAME%{%GOLD%Sanctuary %LIGHT_GRAY%Ko + Ko + Mal%NL%%GOLD%Dream %LIGHT_GRAY%Io + Jah + Pul%NL%%GOLD%Dragon %LIGHT_GRAY%Sur + Lo + Sol%NL%%GOLD%Ancient's Pledge %LIGHT_GRAY%Ral + Ort + Tal%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																							// Shield 3s
+ItemDisplay[NMAG !RW !SHOP SHIELD !DIN SOCK=4]: %NAME%{%GOLD%Spirit %LIGHT_GRAY%Tal + Thul + Ort + Amn%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Exile %LIGHT_GRAY%Vex + Ohm + Ist + Dol%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																											// Shield 4s
+ItemDisplay[NMAG !RW !SHOP DIN SOCK=4]: %NAME%{%GOLD%Spirit %LIGHT_GRAY%Tal + Thul + Ort + Amn%NL%%GOLD%Shattered Wall %LIGHT_GRAY%Zod + Jah + Ral + Cham%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Exile %LIGHT_GRAY%Vex + Ohm + Ist + Dol%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																											// Paladin Shield 4s
+ItemDisplay[NMAG !RW !SHOP WAND SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%White %LIGHT_GRAY%Dol + Io%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Dominion %LIGHT_GRAY%Cham + Ohm%NL%%GOLD%× Runewords ×}%CONTINUE%																																											// Wand
+ItemDisplay[NMAG !RW !SHOP SOR SOCK=2]: %NAME%{%GOLD%Neophyte %LIGHT_GRAY%Thul + Tir%NL%%GOLD%× Runewords ×}%CONTINUE%																																																						// Orb 2s
+ItemDisplay[NMAG !RW !SHOP SOR SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%× Runewords ×}%CONTINUE%																																																	// Orb 3s
+ItemDisplay[NMAG !RW !SHOP SIN SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Steel %LIGHT_GRAY%Tir + El%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																															// Claw 2s
+ItemDisplay[NMAG !RW !SHOP SIN SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Pattern %LIGHT_GRAY%Tal + Ort + Tir%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Lawbringer %LIGHT_GRAY%Amn + Lem + Ko%NL%%GOLD%King's Grace %LIGHT_GRAY%Amn + Ral + Thul%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%Crescent Moon %LIGHT_GRAY%Shael + Um + Tir%NL%%GOLD%Chaos %LIGHT_GRAY%Fal + Ohm + Um%NL%%GOLD%Black %LIGHT_GRAY%Thul + Io + Nef%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%														// Claw 3s
+ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Neophyte %LIGHT_GRAY%Thul + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																														// Scepter 2s
+ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Lawbringer %LIGHT_GRAY%Amn + Lem + Ko%NL%%GOLD%King's Grace %LIGHT_GRAY%Amn + Ral + Thul%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																															// Scepter 3s
+ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=4]: %NAME%{%GOLD%Rift %LIGHT_GRAY%Hel + Ko + Lem + Gul%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Insight %LIGHT_GRAY%Ral + Tir + Tal + Sol%NL%%GOLD%Holy Thunder %LIGHT_GRAY%Eth + Ral + Ort + Tal%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																						// Scepter 4s
+ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=5]: %NAME%{%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Doom %LIGHT_GRAY%Hel + Ohm + Um + Lo + Cham%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%Beast %LIGHT_GRAY%Ber + Tir + Um + Mal + Lum%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																				// Scepter 5s
+ItemDisplay[NMAG !RW !SHOP STAFF SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Neophyte %LIGHT_GRAY%Thul + Tir%NL%%GOLD%Leaf %LIGHT_GRAY%Tir + Ral%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																										// Staff 2s
+ItemDisplay[NMAG !RW !SHOP STAFF SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																									// Staff 3s
+ItemDisplay[NMAG !RW !SHOP STAFF SOCK=4]: %NAME%{%GOLD%Spirit %LIGHT_GRAY%Tal + Thul + Ort + Amn%NL%%GOLD%Rampage %LIGHT_GRAY%Shael + El + Ith + Eth%NL%%GOLD%Pride %LIGHT_GRAY%Cham + Sur + Io + Lo%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Memory %LIGHT_GRAY%Lum + Io + Sol + Eth%NL%%GOLD%Insight %LIGHT_GRAY%Ral + Tir + Tal + Sol%NL%%GOLD%Infinity %LIGHT_GRAY%Ber + Mal + Ber + Ist%NL%%GOLD%Heart of the Oak %LIGHT_GRAY%Ko + Vex + Pul + Thul%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%							// Staff 4s
+ItemDisplay[NMAG !RW !SHOP STAFF SOCK=5]: %NAME%{%GOLD%Zenith %LIGHT_GRAY%Jah + Zod + Ort + Thul + Ral%NL%%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Doom %LIGHT_GRAY%Hel + Ohm + Um + Lo + Cham%NL%%GOLD%Destruction %LIGHT_GRAY%Vex + Lo + Ber + Jah + Ko%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%Beast %LIGHT_GRAY%Ber + Tir + Um + Mal + Lum%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																				// Staff 5s
+ItemDisplay[NMAG !RW !SHOP STAFF SOCK=6]: %NAME%{%GOLD%Silence %LIGHT_GRAY%Dol + Eld + Hel + Ist + Tir + Vex%NL%%GOLD%Obsession %LIGHT_GRAY%Zod + Ist + Lem + Lum + Io + Nef%NL%%GOLD%Last Wish %LIGHT_GRAY%Jah + Mal + Jah + Sur + Jah + Ber%NL%%GOLD%Breath of the Dying %LIGHT_GRAY%Vex + Hel + El + Eld + Zod + Eth%NL%%GOLD%Asylum %LIGHT_GRAY%Gul + Cham + Hel + Jah + Dol + Um%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																						// Staff 6s
+ItemDisplay[NMAG !RW !SHOP DAGGER SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																																		// Dagger 2s
+ItemDisplay[NMAG !RW !SHOP DAGGER SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																									// Dagger 3s
+ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=2]: %NAME%{%GOLD%Zephyr %LIGHT_GRAY%Ort + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																																					// Bow & Crossbow 2s
+ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Melody %LIGHT_GRAY%Shael + Ko + Nef%NL%%GOLD%Edge %LIGHT_GRAY%Tir + Tal + Amn%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																								// Bow & Crossbow 3s
+ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=4]: %NAME%{%GOLD%Wrath %LIGHT_GRAY%Pul + Lum + Ber + Mal%NL%%GOLD%Voice of Reason %LIGHT_GRAY%Lem + Ko + El + Eld%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Ice %LIGHT_GRAY%Amn + Shael + Jah + Lo%NL%%GOLD%Harmony %LIGHT_GRAY%Tir + Ith + Sol + Ko%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%Faith %LIGHT_GRAY%Ohm + Jah + Lem + Eld%NL%%GOLD%Brand %LIGHT_GRAY%Jah + Lo + Mal + Gul%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%							// Bow & Crossbow 4s
+ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=5]: %NAME%{%GOLD%Zenith %LIGHT_GRAY%Jah + Zod + Ort + Thul + Ral%NL%%GOLD%Mist %LIGHT_GRAY%Cham + Shael + Gul + Thul + Ith%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																								// Bow & Crossbow 5s
+ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=6]: %NAME%{%GOLD%Silence %LIGHT_GRAY%Dol + Eld + Hel + Ist + Tir + Vex%NL%%GOLD%Breath of the Dying %LIGHT_GRAY%Vex + Hel + El + Eld + Zod + Eth%NL%%GOLD%Asylum %LIGHT_GRAY%Gul + Cham + Hel + Jah + Dol + Um%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																											// Bow & Crossbow 6s
+ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																																// Spear & Polearm 2s
+ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%Crescent Moon %LIGHT_GRAY%Shael + Um + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																		// Spear & Polearm 3s
+ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=4]: %NAME%{%GOLD%Rift %LIGHT_GRAY%Hel + Ko + Lem + Gul%NL%%GOLD%Rampage %LIGHT_GRAY%Shael + El + Ith + Eth%NL%%GOLD%Pride %LIGHT_GRAY%Cham + Sur + Io + Lo%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Insight %LIGHT_GRAY%Ral + Tir + Tal + Sol%NL%%GOLD%Infinity %LIGHT_GRAY%Ber + Mal + Ber + Ist%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%												// Spear & Polearm 4s
+ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=5]: %NAME%{%GOLD%Zenith %LIGHT_GRAY%Jah + Zod + Ort + Thul + Ral%NL%%GOLD%Obedience %LIGHT_GRAY%Hel + Ko + Thul + Eth + Fal%NL%%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Doom %LIGHT_GRAY%Hel + Ohm + Um + Lo + Cham%NL%%GOLD%Destruction %LIGHT_GRAY%Vex + Lo + Ber + Jah + Ko%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																		// Spear & Polearm 5s
+ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=6]: %NAME%{%GOLD%Silence %LIGHT_GRAY%Dol + Eld + Hel + Ist + Tir + Vex%NL%%GOLD%Breath of the Dying %LIGHT_GRAY%Vex + Hel + El + Eld + Zod + Eth%NL%%GOLD%Asylum %LIGHT_GRAY%Gul + Cham + Hel + Jah + Dol + Um%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																											// Spear & Polearm 6s
+ItemDisplay[NMAG !RW !SHOP SWORD SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Steel %LIGHT_GRAY%Tir + El%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																															// Sword 2s
+ItemDisplay[NMAG !RW !SHOP SWORD SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Lawbringer %LIGHT_GRAY%Amn + Lem + Ko%NL%%GOLD%King's Grace %LIGHT_GRAY%Amn + Ral + Thul%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%Crescent Moon %LIGHT_GRAY%Shael + Um + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																										// Sword 3s
+ItemDisplay[NMAG !RW !SHOP SWORD SOCK=4]: %NAME%{%GOLD%Voice of Reason %LIGHT_GRAY%Lem + Ko + El + Eld%NL%%GOLD%Spirit %LIGHT_GRAY%Tal + Thul + Ort + Amn%NL%%GOLD%Rift %LIGHT_GRAY%Hel + Ko + Lem + Gul%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Oath %LIGHT_GRAY%Shael + Pul + Mal + Lum%NL%%GOLD%Kingslayer %LIGHT_GRAY%Mal + Um + Gul + Fal%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%Famine %LIGHT_GRAY%Fal + Ohm + Ort + Jah%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%												// Sword 4s
+ItemDisplay[NMAG !RW !SHOP SWORD SOCK=5]: %NAME%{%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Grief %LIGHT_GRAY%Eth + Tir + Lo + Mal + Ral%NL%%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Doom %LIGHT_GRAY%Hel + Ohm + Um + Lo + Cham%NL%%GOLD%Destruction %LIGHT_GRAY%Vex + Lo + Ber + Jah + Ko%NL%%GOLD%Death %LIGHT_GRAY%Hel + El + Vex + Ort + Gul%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																				// Sword 5s
+ItemDisplay[NMAG !RW !SHOP SWORD SOCK=6]: %NAME%{%GOLD%Unbending Will %LIGHT_GRAY%Fal + Io + Ith + Eld + El + Hel%NL%%GOLD%Silence %LIGHT_GRAY%Dol + Eld + Hel + Ist + Tir + Vex%NL%%GOLD%Last Wish %LIGHT_GRAY%Jah + Mal + Jah + Sur + Jah + Ber%NL%%GOLD%Breath of the Dying %LIGHT_GRAY%Vex + Hel + El + Eld + Zod + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																// Sword 6s
+ItemDisplay[NMAG !RW !SHOP AXE SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Steel %LIGHT_GRAY%Tir + El%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																															// Axe 2s
+ItemDisplay[NMAG !RW !SHOP AXE SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%Crescent Moon %LIGHT_GRAY%Shael + Um + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																				// Axe 3s
+ItemDisplay[NMAG !RW !SHOP AXE SOCK=4]: %NAME%{%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Oath %LIGHT_GRAY%Shael + Pul + Mal + Lum%NL%%GOLD%Kingslayer %LIGHT_GRAY%Mal + Um + Gul + Fal%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%Famine %LIGHT_GRAY%Fal + Ohm + Ort + Jah%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																							// Axe 4s
+ItemDisplay[NMAG !RW !SHOP AXE SOCK=5]: %NAME%{%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Grief %LIGHT_GRAY%Eth + Tir + Lo + Mal + Ral%NL%%GOLD%Doom %LIGHT_GRAY%Hel + Ohm + Um + Lo + Cham%NL%%GOLD%Death %LIGHT_GRAY%Hel + El + Vex + Ort + Gul%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%Beast %LIGHT_GRAY%Ber + Tir + Um + Mal + Lum%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																					// Axe 5s
+ItemDisplay[NMAG !RW !SHOP AXE SOCK=6]: %NAME%{%GOLD%Silence %LIGHT_GRAY%Dol + Eld + Hel + Ist + Tir + Vex%NL%%GOLD%Last Wish %LIGHT_GRAY%Jah + Mal + Jah + Sur + Jah + Ber%NL%%GOLD%Breath of the Dying %LIGHT_GRAY%Vex + Hel + El + Eld + Zod + Eth%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																						// Axe 6s
+ItemDisplay[NMAG !RW !SHOP (mac OR 9ma OR 7ma OR mst OR 9mt OR 7mt OR fla OR 9fl OR 7fl) SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Steel %LIGHT_GRAY%Tir + El%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																								// Mace (Pointed Mace) 2s
+ItemDisplay[NMAG !RW !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp OR leg) SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%Neophyte %LIGHT_GRAY%Thul + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																									// Mace (Club) 2s
+ItemDisplay[NMAG !RW !SHOP (whm OR 9wh OR 7wh OR mau OR 9m9 OR 7m7 OR gma OR 9gm OR 7gm) SOCK=2]: %NAME%{%GOLD%Wind %LIGHT_GRAY%Sur + El%NL%%GOLD%Strength %LIGHT_GRAY%Amn + Tir%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																											// Mace (Hammer) 2s
+ItemDisplay[NMAG !RW !SHOP (whm OR 9wh OR 7wh OR mau OR 9m9 OR 7m7 OR gma OR 9gm OR 7gm) SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Lawbringer %LIGHT_GRAY%Amn + Lem + Ko%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%Black %LIGHT_GRAY%Thul + Io + Nef%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																									// Mace (Hammer) 3s
+ItemDisplay[NMAG !RW !SHOP MACE !(whm OR 9wh OR 7wh OR mau OR 9m9 OR 7m7 OR gma OR 9gm OR 7gm) SOCK=3]: %NAME%{%GOLD%Venom %LIGHT_GRAY%Tal + Dol + Mal%NL%%GOLD%Plague %LIGHT_GRAY%Cham + Fal + Um%NL%%GOLD%Malice %LIGHT_GRAY%Ith + El + Eth%NL%%GOLD%Fury %LIGHT_GRAY%Jah + Gul + Eth%NL%%GOLD%Black %LIGHT_GRAY%Thul + Io + Nef%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																													// Mace (Club/Pointed Mace) 3s
+ItemDisplay[NMAG !RW !SHOP (fla OR 9fl OR 7fl) SOCK=4]: %NAME%{%GOLD%Voice of Reason %LIGHT_GRAY%Lem + Ko + El + Eld%NL%%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Oath %LIGHT_GRAY%Shael + Pul + Mal + Lum%NL%%GOLD%Heart of the Oak %LIGHT_GRAY%Ko + Vex + Pul + Thul%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																			// Mace (Pointed Mace) 4s
+ItemDisplay[NMAG !RW !SHOP MACE !fla !9fl !7fl SOCK=4]: %NAME%{%GOLD%Phoenix %LIGHT_GRAY%Vex + Vex + Lo + Jah%NL%%GOLD%Passion %LIGHT_GRAY%Dol + Ort + Eld + Lem%NL%%GOLD%Hand of Justice %LIGHT_GRAY%Sur + Cham + Amn + Lo%NL%%GOLD%Fortitude %LIGHT_GRAY%El + Sol + Dol + Lo%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																															// Mace (Hammer) 4s
+ItemDisplay[NMAG !RW !SHOP (fla OR 9fl OR 7fl) SOCK=5]: %NAME%{%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																							// Mace (Pointed Mace) 5s
+ItemDisplay[NMAG !RW !SHOP MACE !fla !9fl !7fl SOCK=5]: %NAME%{%GOLD%Obedience %LIGHT_GRAY%Hel + Ko + Thul + Eth + Fal%NL%%GOLD%Honor %LIGHT_GRAY%Amn + El + Ith + Tir + Sol%NL%%GOLD%Eternity %LIGHT_GRAY%Amn + Ber + Ist + Sol + Sur%NL%%GOLD%Doom %LIGHT_GRAY%Hel + Ohm + Um + Lo + Cham%NL%%GOLD%Call to Arms %LIGHT_GRAY%Amn + Ral + Mal + Ist + Ohm%NL%%GOLD%Beast %LIGHT_GRAY%Ber + Tir + Um + Mal + Lum%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																								// Mace (Hammer) 5s
+ItemDisplay[NMAG !RW !SHOP MACE SOCK=6]: %NAME%{%GOLD%Last Wish %LIGHT_GRAY%Jah + Mal + Jah + Sur + Jah + Ber%NL%%GOLD%Silence %LIGHT_GRAY%Dol + Eld + Hel + Ist + Tir + Vex%NL%%GOLD%Breath of the Dying %LIGHT_GRAY%Vex + Hel + El + Eld + Zod + Eth%NL%%GOLD%Asylum %LIGHT_GRAY%Gul + Cham + Hel + Jah + Dol + Um%NL%%GOLD%× Runewords ×%NL%%NAME%}%CONTINUE%																																						// Mace (Hammer) 6s
 
-// TOOLTIPS - Possible RW's - Weapons 4soc
-ItemDisplay[WEAPON !(BOW OR XBOW) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[(BOW OR XBOW) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Voice of Reason, Wrath%NL%Hand of Justice, Harmony, Passion,%NL%%TAN%RWs: %GRAY%Brand, Faith, Fortitude, Ice,}%CONTINUE%
-ItemDisplay[(fla OR 9fl OR 7fl) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Oath, Passion, Phoenix, Voice of Reason%NL%Hand of Justice, Heart of the Oak,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[SWORD SOCK=4 NMAG !RW]: %NAME%{%GRAY%Phoenix, Rift, Spirit, Voice of Reason%NL%Justice, Kingslayer, Oath, Passion,%NL%%TAN%RWs: %GRAY%Famine, Fortitude, Hand of}%CONTINUE%
-ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Passion, Phoenix, Pride, Rift%NL%Hand of Justice, Infinity, Insight,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[SCEPTER SOCK=4 NMAG !RW]: %NAME%{%GRAY%Insight, Passion, Phoenix, Rift%NL%Holy Thunder, Hand of Justice,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[AXE SOCK=4 NMAG !RW]: %NAME%{%GRAY%Oath, Passion, Phoenix%NL%Fortitude, Hand of Justice, Kingslayer,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Famine,}%CONTINUE%
-ItemDisplay[STAFF SOCK=4 NMAG !RW]: %NAME%{%GRAY%Memory, Passion, Phoenix, Pride, Spirit%NL%Heart of the Oak, Infinity, Insight,%NL%%TAN%RWs: %GRAY%Fortitude, Hand of Justice,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%NL%%TAN%RWs: %GRAY% Famine, Fortitude}%CONTINUE%
 
-// TOOLTIPS - Possible RW's - Weapons 5soc
-ItemDisplay[WEAPON !(SWORD OR POLEARM OR SPEAR OR JAV OR CL7 OR STAFF) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW OR SOR OR SWORD OR POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Call to Arms, Eternity, Honor%NL%%NAME%}%CONTINUE%
-ItemDisplay[STAFF SOCK=5 NMAG !RW]: %NAME%{%GRAY%Beast, Destruction, Doom, Zenith%NL%%NAME%}%CONTINUE%
-ItemDisplay[SCEPTER SOCK=5 NMAG !RW]: %NAME%{%GRAY%Call to Arms, Doom, Eternity, Honor%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Doom, Eternity, Honor%NL%%TAN%RWs: %GRAY%Beast, Call to Arms}%CONTINUE%
-ItemDisplay[AXE SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Grief, Honor%NL%Call to Arms, Death, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Beast,}%CONTINUE%
-ItemDisplay[SWORD SOCK=5 NMAG !RW]: %NAME%{%GRAY%Destruction, Doom, Grief, Honor%NL%Call to Arms, Eternity, Death,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(POLEARM OR SPEAR OR JAV) SOCK=5 NMAG !RW]: %NAME%{%GRAY%Eternity, Honor, Obedience%NL%Call to Arms, Destruction, Doom,%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[(CL7) SOCK=5 NMAG !RW]: %NAME%{%TAN%RWs: %GRAY%Zenith, Call to Arms%NAME%}%CONTINUE%
-
-// TOOLTIPS - Possible RW's - Weapons 6soc
-ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%NL%%TAN%Note%WHITE%: Possible RuneWords:%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Silence%NAME%}%CONTINUE%
-ItemDisplay[(AXE OR SWORD OR (whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm)) SOCK=6 NMAG !RW]: %NAME%{Breath of the Dying, Last Wish, Silence%NAME%}%CONTINUE%
-ItemDisplay[(BOW OR STAFF OR AXE OR MACE OR POLEARM OR SPEAR) SOCK=6 NMAG !RW]: %NAME%{Asylum, %NAME%}%CONTINUE%
-ItemDisplay[STAFF SOCK=6 NMAG !RW]: %NAME%{Obsession, Last Wish%NL%%NAME%}%CONTINUE%
-ItemDisplay[WEAPON SOCK=6 NMAG !RW]: %NAME%{%GRAY%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4560,9 +4559,10 @@ ItemDisplay[BAR SK149>2 !INF ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %NAME%{%NAME%}
 ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
 
 // Shields
-ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) AR>100]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) (AR>100 OR EDAM>50)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) RES>19]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF NMAG !RW (SOCK=0 OR SOCK=4) EDAM>60]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80]: %NAME%{%NAME%}
 ItemDisplay[(uit OR uow OR uts) !INF NMAG !RW (SOCK=0 OR SOCK=4)]: %NAME%{%NAME%}
 
