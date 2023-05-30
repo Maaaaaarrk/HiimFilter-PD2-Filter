@@ -35,7 +35,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.1.10%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.1.11%NL%HiimFilter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -846,13 +846,13 @@ ItemDisplay[GLOVES !UNI !SET (TABSK0=1 OR TABSK1=1 OR TABSK2=1 OR TABSK50=1)]: %
 //-----------------------------------------------------------------------------------
 // ARROWS AND BOLTS - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
-ItemDisplay[cqv ID MAG (FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%BLUE%Bolts%CONTINUE% 
-ItemDisplay[cqv ID RARE (FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%YELLOW%Bolts%CONTINUE% 
-ItemDisplay[cqv ID CRAFT (FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%ORANGE%Bolts%CONTINUE% 
+ItemDisplay[cqv ID MAG (FRW>0 OR STAT17 OR FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%BLUE%Bolts%CONTINUE% 
+ItemDisplay[cqv ID RARE (FRW>0 OR STAT17 OR FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%YELLOW%Bolts%CONTINUE% 
+ItemDisplay[cqv ID CRAFT (FRW>0 OR STAT17 OR FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%ORANGE%Bolts%CONTINUE% 
 
-ItemDisplay[aqv ID MAG (FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%BLUE%Arrows%CONTINUE% 
-ItemDisplay[aqv ID RARE (FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%YELLOW%Arrows%CONTINUE% 
-ItemDisplay[aqv ID CRAFT (FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%ORANGE%Arrows%CONTINUE% 
+ItemDisplay[aqv ID MAG (FRW>0 OR STAT17 OR FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%BLUE%Arrows%CONTINUE% 
+ItemDisplay[aqv ID RARE (FRW>0 OR STAT17 OR FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%YELLOW%Arrows%CONTINUE% 
+ItemDisplay[aqv ID CRAFT (FRW>0 OR STAT17 OR FCR>0 OR IAS>0 OR TABSK0>0)]: %NL%%ORANGE%Arrows%CONTINUE% 
 
 // LLD
 ItemDisplay[(cqv OR aqv) ID (MAG OR RARE OR CRAFT) LVLREQ<31 (FCR>0 OR IAS>0 OR TABSK0>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
@@ -860,8 +860,14 @@ ItemDisplay[(cqv OR aqv) ID (MAG OR RARE OR CRAFT) LVLREQ<31 (FCR>0 OR IAS>0 OR 
 // IAS
 ItemDisplay[(cqv OR aqv) ID IAS>0]: %ORANGE%+%STAT93% IAS %NAME%%CONTINUE%
 
+// Enh Dmg
+ItemDisplay[(cqv OR aqv) ID (MAG OR RARE OR CRAFT) STAT17>0]: %RED%%STAT17%%EDMG %NAME%%CONTINUE%
+
 // FCR
 ItemDisplay[(cqv OR aqv) ID FCR>0]: %TAN%+%STAT105% FCR %NAME%%CONTINUE%
+
+// FRW
+ItemDisplay[(cqv OR aqv) ID FRW>0]: %GOLD%%FRW% FRW %NAME%%CONTINUE%
 
 // SKILLS
 ItemDisplay[(cqv OR aqv) ID TABSK0>0]: %PURPLE%Bow %TAN%Skills %NAME%%CONTINUE%
@@ -1655,6 +1661,8 @@ ItemDisplay[STAT360=27]: %NAME% %RED%+1 Skill%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=50]: %NAME% %RED%+1 Skill%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=72]: %NAME% %RED%MaxAllRes%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=52]: %NAME% %RED%%PDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=19]: %NAME% %RED%DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=25]: %NAME% %RED%ED-DS%CONTINUE%{%NAME%}
 ItemDisplay[STAT360>0]: %NAME% %RED%[C]%CONTINUE%{%NAME%}
 
 // ITEM TAGS - ILVL
@@ -2877,7 +2885,7 @@ ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all th
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
 
 // Crafting notes
-ItemDisplay[(MAG OR RARE) ID FILTLVL<5 STAT360=0]: %NAME%{%NL%%CORAL%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID FILTLVL<5 STAT360=0 !aqv !cqv]: %NAME%{%NL%%CORAL%CraftedAlvl: %CRAFTALVL%%NAME%}%CONTINUE%
 
 // Crafting tag when identified
 //purgatory builds
@@ -4758,22 +4766,28 @@ ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) !THROWING (RARE OR CRA
 //-----------------------------------------------------------------------------------
 // TOOLTIPS - UPGRADING
 //-----------------------------------------------------------------------------------
-ItemDisplay[(ARMOR OR CIRC) NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[(ARMOR OR CIRC) EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
-ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}
+ItemDisplay[(ARMOR OR CIRC) NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON NORM CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON EXC CRAFT ID]: %NAME%{%ORANGE%This Item %WHITE%+ %ORANGE%Fal %WHITE%+ %ORANGE%Um %WHITE%+ Perf %BLUE%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON NORM UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON EXC UNI ID]: %NAME%{%GOLD%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Tal %WHITE%+ %ORANGE%Shael %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[(ARMOR OR CIRC) EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Lem %WHITE%+ Perf O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%NL%%TAN%Note%WHITE%: Upgrading Recipe:%NAME%}%CONTINUE%
+
+//Upgrades That Give +1 Socket
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR spk OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR scp OR (ILVL>25 (ne2 OR ne1 OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces) OR (ILVL>40 bhm)))]: %NAME%{%GRAY%(Upgrade For +1 Max Socket)%NL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ>30 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR spk OR xpk OR bsh OR xsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GRAY%(Upgrade For +1 Max Socket)%NL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED 9wn]: %NAME%{%GRAY%(Upgrade For +1 Max Socket)%NL%%NAME%}%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4871,6 +4885,8 @@ ItemDisplay[NMAG !RW SK95=3 DIFF<2 FILTLVL<3]: %ORANGE%* %NAME% %ORANGE%*{%NAME%
 //-----------------------------------------------------------------------------------
 ItemDisplay[(cm1 OR cm2 OR cm3 OR jew) ID]: %NAME%{%NAME%}
 ItemDisplay[UNI ELT]: %BORDER-68%%NAME%{%NAME%}
+ItemDisplay[RARE ID]: %NAME%{%NAME%}
+ItemDisplay[CRAFT ID]: %NAME%{%NAME%}
 ItemDisplay[RW]: %MAP%%NAME%{%NAME%}
 ItemDisplay[UNI]: %MAP-68%%NAME%{%NAME%}
 ItemDisplay[SET]: %PX-84%%NAME%{%NAME%}
