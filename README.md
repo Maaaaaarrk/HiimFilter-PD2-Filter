@@ -15,12 +15,13 @@ Cube will state filter version & choosen filter level
 * 0]: OFF
 * 1]: Base (For New Character)
 * 2]: Semi-Strict (For NM / Hell New Character)
-* 3]: Strict (Mapping Grade Character, Shows good Crafts)
-* 4]: Strict NO HP/MP
-* 5]: End Game (GG Mapping Grade Character, Shows very few Crafts)
-* 6]: End Game NO HP/MP
-* 7]: Potions Only (This is for front line Characters in group play where you only pick-up pots)
+* 3]: Strict+Crafting (Mapping Grade Character, Shows good Crafts)
+* 4]: Strict+Crafting NO HP/MP
+* 5]: Strict (Mapping Grade Character, Shows no Crafts)
+* 6]: Strict NO HP/MP
+* 7]: Extremely Strict (This is VERY restrictive)
 * 8]: Rejuvs Only (This is for front line Characters in group play where you only pick-up Purple Gatorade)
+* 9]: No Items Out of Town (This is for front line Characters in group play where you pick-up NOTHING)
 
 ## Charm Stats on Ground
 
