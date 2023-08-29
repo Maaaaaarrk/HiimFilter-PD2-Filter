@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------------
-// HiimFilter - PD2 Filter - Season 6
+// HiimFilter - PD2 Filter
 // by Maaaark & Hiimdave
 //-----------------------------------------------------------------------------------
 // To confirm installation check tool tip on Keys or Cube
@@ -23,11 +23,11 @@
 // Filter Levels (0 = No Filter)
 ItemDisplayFilterName[]: Base
 ItemDisplayFilterName[]: Semi-Strict
+ItemDisplayFilterName[]: Strict+Crafting
+ItemDisplayFilterName[]: Strict+Crafting+No HP/MP
 ItemDisplayFilterName[]: Strict
-ItemDisplayFilterName[]: Strict NO HP/MP
-ItemDisplayFilterName[]: End Game
-ItemDisplayFilterName[]: End Game NO HP/MP
-ItemDisplayFilterName[]: Potions Only
+ItemDisplayFilterName[]: Strict+No HP/MP
+ItemDisplayFilterName[]: Extremely Strict
 ItemDisplayFilterName[]: Rejuvs Only
 ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
@@ -35,15 +35,15 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Hiimdave#2967 or Mark#5696%NL%Send Feedback via Discord:%NL%Season 7 ver 9.2.4%NL%HiimFilter}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Season 7 version 9.3.0%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% Strict}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Strict NO HP/MP}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% End Game}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% End Game NO HP/MP}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=7]: %NAME%{%NAME% Potions Only}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% Strict & Crafting}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Strict & Crafting & No HP/MP}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% Strict}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% Strict & No HP/MP}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=8]: %NAME%{%NAME% Rejuvs Only}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=9]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
 
@@ -386,6 +386,7 @@ ItemDisplay[GEMTYPE=7 !(skz OR skzs)]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]%CONTINUE
 ItemDisplay[GEMTYPE=7 (skz OR skzs)]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
 
 // Tooltips
+ItemDisplay[(gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) FILTLVL>6]:
 ItemDisplay[gzvs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: +24 Def%NL%Armor/Helm: +8 to Strength%NL%Weapon: +100 to Attack Rating%NL%}
 ItemDisplay[glys]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Light Res%NL%Armor/Helm: 20% Magic Find%NL%Weapon: 1-30 Light Damage%NL%}
 ItemDisplay[glbs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Cold Res%NL%Armor/Helm: +31 to Mana%NL%Weapon: 6-10 Cold Damage%NL%}
@@ -409,7 +410,7 @@ ItemDisplay[skzs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHIT
 // Undoing this hide based on S6 feedback TBD if we want it back ItemDisplay[RUNE<10 FILTLVL>4 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 
 // Hide anything lower than Pul based on filter level except in towns
-ItemDisplay[RUNE<21 (FILTLVL=7 OR FILTLVL=8) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
+ItemDisplay[RUNE<21 (FILTLVL=8) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 
 // Basic Formatting
 ItemDisplay[RUNE>0]:%DOT-62%%NAME%%CONTINUE%
@@ -423,7 +424,7 @@ ItemDisplay[RUNE>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 // Normal name decorations
 ItemDisplay[RUNE<10 !(FILTLVL=7 OR FILTLVL=8) QTY>0]: %ORANGE%O  %NAME%  %ORANGE%O%CONTINUE%
 ItemDisplay[(RUNE>9 AND RUNE<21) !(FILTLVL=7 OR FILTLVL=8) QTY>0]: %ORANGE%O O    %NAME%%ORANGE%    O O%CONTINUE%
-ItemDisplay[RUNE>20 !(FILTLVL=7 OR FILTLVL=8) QTY>0]: %PURPLE%O O O O O    %NAME%%PURPLE%    O O O O O%CONTINUE%
+ItemDisplay[RUNE>20 QTY>0]: %PURPLE%O O O O O    %NAME%%PURPLE%    O O O O O%CONTINUE%
 
 // Make sure HR's notify
 ItemDisplay[RUNE>20]: %BORDER-62%%NAME%%CONTINUE%
@@ -500,10 +501,8 @@ ItemDisplay[ibk]: %RED%+%WHITE%ID Tome%CONTINUE%
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome%CONTINUE%
 
 // Potions Only Mode name for pots
-ItemDisplay[rvl DIFF=2 (FILTLVL=7 OR FILTLVL=8 OR FILTLVL=9)]: %PURPLE%GATORADE
-ItemDisplay[rvs DIFF=2 (FILTLVL=7 OR FILTLVL=8 OR FILTLVL=9)]: %PURPLE%powerade
-ItemDisplay[mp5 DIFF=2 FILTLVL=7]: %BLUE%M M
-ItemDisplay[hp5 DIFF=2 FILTLVL=7]: %RED%H H
+ItemDisplay[rvl DIFF=2 (FILTLVL=8 OR FILTLVL=9)]: %PURPLE%GATORADE
+ItemDisplay[rvs DIFF=2 (FILTLVL=8 OR FILTLVL=9)]: %PURPLE%powerade
 
 // Juvs
 ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %TAN%65%  %PURPLE%*
@@ -514,8 +513,8 @@ ItemDisplay[rvs]: %PURPLE%* %WHITE%Rejuv %TAN%35% %PURPLE%*
 // Hide pots when appropriate based on filter level
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>2]:
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) FILTLVL>2]:
-ItemDisplay[hp5 (FILTLVL=4 OR FILTLVL=6 OR FILTLVL=8)]:
-ItemDisplay[mp5 (FILTLVL=4 OR FILTLVL=6 OR FILTLVL=8)]:
+ItemDisplay[hp5 (FILTLVL=4 OR FILTLVL=6 OR FILTLVL=7 OR FILTLVL=8)]:
+ItemDisplay[mp5 (FILTLVL=4 OR FILTLVL=6 OR FILTLVL=7 OR FILTLVL=8)]:
 
 // Hide pots when appropriate based on gameplay
 ItemDisplay[(hp1 OR hp2) (DIFF>0 OR CLVL>79)]:
@@ -590,8 +589,10 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
-ItemDisplay[STAT360>0 (FILTLVL=7 OR FILTLVL=8) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[(FILTLVL=7 OR FILTLVL=8) (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NOTIFY-DEAD%
+
+ItemDisplay[(NMAG OR SUP) !RW FILTLVL>6 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
+ItemDisplay[STAT360>0 (FILTLVL=8) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[(FILTLVL=8) (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2950,18 +2951,21 @@ ItemDisplay[EQ7 MAG !ETH !ID]: * * * %NAME% * * *
 ItemDisplay[EQ7 MAG !ID]: %NAME%
 ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %GRAY%[imbue]{%TAN%Note%WHITE%: You can %YELLOW%imbue %WHITE%it using Charsi quest}
 
-// Weapons
-ItemDisplay[WEAPON RARE ETH (ILVL>90) !ID]: %DOT-ED%%PURPLE%* * * * * * %NAME%%PURPLE% * * * * * * *
-ItemDisplay[WEAPON RARE ETH (ILVL>84) !ID]: %DOT-ED%%PURPLE%* * * %YELLOW%%NAME% %PURPLE%* * *
-ItemDisplay[RARE (ILVL>91) !ID]: %YELLOW% * * * %NAME% * * *
-ItemDisplay[WEAPON RARE (ILVL>91) !ID]: * %NAME% *
-ItemDisplay[(BOW OR XBOW) RARE  (ILVL>84) !ID]: %DOT-ED%* %NAME% *
+// Weapon Rares
+ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pi OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp) RARE ETH (ILVL>84) !ID]: %DOT-ED%%PURPLE%* * * * %NAME%%PURPLE% * * * *
+ItemDisplay[WEAPON RARE ETH (ILVL>84) !ID FILTLVL<5]: %DOT-ED%%PURPLE%* * %YELLOW%%NAME% %PURPLE%* *
+ItemDisplay[WEAPON RARE ETH !ID FILTLVL<3]: %DOT-ED%%PURPLE%* * %YELLOW%%NAME% %PURPLE%* *
+ItemDisplay[WEAPON RARE !ID FILTLVL<3]: * * %YELLOW%%NAME% * *
+ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<7]: %DOT-ED%* %NAME% *
 
 // High Ilvl Rares
-ItemDisplay[RARE (ILVL>88) !ID]: * %NAME% *
-ItemDisplay[RARE (ILVL>84) !ID]: %NAME%
+ItemDisplay[RARE !WEAPON (ILVL>91) !ID FILTLVL<7]: %YELLOW% * * * %NAME% * * *
+ItemDisplay[RARE !WEAPON (ILVL>84) !ID  FILTLVL<7]: * *%NAME% * *
 ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) (CLVL<92) !ID]: %NAME%
 ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
+
+// Silence rest
+ItemDisplay[RARE !ID FILTLVL>2]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -3034,7 +3038,7 @@ ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all th
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
 
 // Crafting notes
-ItemDisplay[(MAG OR RARE) ID FILTLVL<5 STAT360=0 !aqv !cqv !cm1 !cm2 !cm3]: %NAME%{%CORAL%CraftedAlvl: %CRAFTALVL%%NL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID FILTLVL<5 STAT360=0 !aqv !cqv !cm1 !cm2 !cm3 !jew]: %NAME%{%CORAL%CraftedAlvl: %CRAFTALVL%%NL%%NAME%}%CONTINUE%
 
 // Crafting tag when identified
 //purgatory builds
