@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.1%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.2%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -151,6 +151,7 @@ ItemDisplay[scou]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a Whi
 ItemDisplay[upma]: %MAP-4A%%NAME%{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Skull to make a %YELLOW%Rare Map}
 ItemDisplay[irma FILTLVL>2]://TBD
 ItemDisplay[irma]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %BLUE%Magic Map} //Infused Arcane Orb
+ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O
 ItemDisplay[irra]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Zakarum Orb
 ItemDisplay[urma]: %MAP-4A%%NAME%{%WHITE%Cube with: %BLUE%Magic Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Angelic Orb
 ItemDisplay[rrra]: %MAP-4A%%NAME%{%WHITE%Cube with: %YELLOW%Rare Map -> %WHITE%to make a new %YELLOW%Rare Map} //Infused Horadric Orb
