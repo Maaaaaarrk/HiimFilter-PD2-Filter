@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.2%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.3%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -5332,6 +5332,10 @@ ItemDisplay[NMAG !RW SK46>1 CLVL<18 FILTLVL<3 SOCK=0]: %ORANGE%* %WHITE%%NAME% %
 ItemDisplay[NMAG !RW SK46>1 CLVL<18 FILTLVL<3 SOCK>1]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[MAG SK46>1 CLVL<18 FILTLVL<3]: %ORANGE%* %BLUE%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[RARE SK46>1 CLVL<18 FILTLVL<3]: %ORANGE%* %YELLOW%%NAME% %ORANGE%*{%NAME%} 
+
+// holy bolt for low level
+ItemDisplay[NMAG !RW SK101=3 scp (SOCK=0 OR SOCK=2) FILTLVL<3]: %ORANGE%* * * %NAME% %ORANGE%* * *{%NAME%}
+ItemDisplay[NMAG !RW SK101=3 SCEPTER (SOCK=2 FILTLVL<3)]: %ORANGE%* * * %ORANGE% %NAME% %ORANGE%* * *{%NAME%}
 
 // fissure lore
 ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3 DIFF<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%}
