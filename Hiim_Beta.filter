@@ -149,7 +149,7 @@ ItemDisplay[imra]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Je
 ItemDisplay[rera]: %MAP-4A%%NAME%{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
 ItemDisplay[scou]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a White Map}
 ItemDisplay[upma]: %MAP-4A%%NAME%{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Skull to make a %YELLOW%Rare Map}
-ItemDisplay[irma FILTLVL>2]://TBD
+ItemDisplay[irma FILTLVL>2]://Angelic useless Normal -> Blue map
 ItemDisplay[irma]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %BLUE%Magic Map} //Infused Arcane Orb
 ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O
 ItemDisplay[irra]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Zakarum Orb
@@ -213,7 +213,7 @@ ItemDisplay[t43]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%P
 // Uniue map Immunes
 ItemDisplay[t51]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 85% %BLUE% Cold 85%%NL%%GRAY%Phys 65% %ORANGE%Magic 40% %GREEN%Psn 95%%NL%%NAME%}%CONTINUE% // zhar s7
 ItemDisplay[t52]: %NAME%{%NL%%RED%Fire 65% %YELLOW%Light 60% %BLUE% Cold 65%%NL%%GRAY%Phys 50% %ORANGE%Magic 50% %GREEN%Psn 75%%NL%%NAME%}%CONTINUE% // hellcaves S7
-ItemDisplay[t53]: %NAME%{%NL%%RED%Fire 70% %YELLOW%Light 75% %BLUE% Cold 65%%NL%%GRAY%Phys 60% %ORANGE%Magic 125% %GREEN%Psn 130%%NL%%NAME%}%CONTINUE% // Fallen Gardens S8
+ItemDisplay[t53]: %NAME%{%NL%%RED%Fire 70% %YELLOW%Light 75% %BLUE% Cold 65%%NL%%GRAY%Phys 60% %ORANGE%Magic 125% %GREEN%Psn 130%%NL%%GOLD%Res stats from beta%NL%%NAME%}%CONTINUE% // Fallen Gardens S8
 
 // Maps [T1]
 ItemDisplay[t22]: %NAME%Torajan Jungle Map%WHITE%%CONTINUE%{%NAME%}
@@ -554,12 +554,30 @@ ItemDisplay[yps]: {Harmony  Tir Ith Sol Ko%NL%Obedience Hel Ko Thul Eth Fal}
 ItemDisplay[wms FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
 ItemDisplay[wms]: {Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
 
-// New Throwing potions
-ItemDisplay[(tpfs OR tpgs OR tpcs OR tpls) FILTLVL<2]: %NAME% //Small
-ItemDisplay[(tpfm OR tpgm OR tpcm OR tplm) FILTLVL<2]: %NAME% //Medium
-ItemDisplay[(tpfl OR tpgl OR tpcl OR tpll) FILTLVL<3]: %NAME% //Large
-ItemDisplay[(tpfl OR tpgl OR tpcl OR tpll OR tpfm OR tpgm OR tpcm OR tplm OR tpfs OR tpgs OR tpcs OR tpls)]:
+// S8 New Throwing Potions
 
+//Hide conditions
+ItemDisplay[(tpfs OR tpgs OR tpcs OR tpls) (FILTLVL>1 OR CLVL>19) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Small
+ItemDisplay[(tpfm OR tpgm OR tpcm OR tplm) (FILTLVL>2 OR CLVL>49) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Medium
+ItemDisplay[(tpfl OR tpgl OR tpcl OR tpll) (FILTLVL>2 OR CLVL>79) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Large
+
+// Small Potions
+ItemDisplay[tpfs]: %ORANGE%Sml Fire Pot{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Small%NL%%GRAY%Fulminating Potion}
+ItemDisplay[tpgs]: %GREEN%Sml Psn Pot{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Small%NL%%GRAY%Strangling Gas Potion}
+ItemDisplay[tpcs]: %BLUE%Sml Cold Pot{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Small%NL%%GRAY%Chilling Potion}
+ItemDisplay[tpls]: %YELLOW%Sml Light Pot{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Small%NL%%GRAY%Charged Potion}
+
+// Medium Potions
+ItemDisplay[tpfm]: %ORANGE%Med Fire Pot{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Medium%NL%%GRAY%Exploding Potion}
+ItemDisplay[tpgm]: %GREEN%Med Psn Pot{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Medium%NL%%GRAY%Choking Gas Potion}
+ItemDisplay[tpcm]: %BLUE%Med Cold Pot{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Medium%NL%%GRAY%Frost Potion}
+ItemDisplay[tplm]: %YELLOW%Med Light Pot{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Medium%NL%%GRAY%Static Potion}
+
+// Large Potions
+ItemDisplay[tpfl]: %ORANGE%Lrg Fire Pot{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Large%NL%%GRAY%Oil Potion}
+ItemDisplay[tpgl]: %GREEN%Lrg Psn Pot{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Large%NL%%GRAY%Rancid Gas Potion}
+ItemDisplay[tpcl]: %BLUE%Lrg Cold Pot{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Large%NL%%GRAY%Freezing Potion}
+ItemDisplay[tpll]: %YELLOW%Lrg Light Pot{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Large%NL%%GRAY%Shock Potion}
 
 // Hide other consumes
 ItemDisplay[(wms OR gpl OR gpm OR gps OR opl OR opm OR ops) (FILTLVL>1 OR CLVL>23)]:
@@ -695,6 +713,7 @@ ItemDisplay[jew ID (STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT1
 ItemDisplay[jew FHR>0 (STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew STAT86>2 STAT138>2]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>29 (MINDMG+MAXDMG>19)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew (MINDMG+MAXDMG>29)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>34 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
 
 // Jewel name formatting
@@ -2420,7 +2439,7 @@ ItemDisplay[UNI !ID 9p9]: %CONTINUE%Spire of Honor - Lance
 ItemDisplay[UNI !ID 7sr]: %CONTINUE%Ariocs Needle - Hyperion Spear
 ItemDisplay[UNI !ID 7tr]: %CONTINUE%Stygian Pike (No Unique for this base)
 ItemDisplay[UNI !ID 7br]: %CONTINUE%Viperfork - Mancatcher
-ItemDisplay[UNI !ID 7st]: %CONTINUE%Ghost Spear - Uldyssians Awakening
+ItemDisplay[UNI !ID 7st]: %CONTINUE%Uldyssians Awakening - Ghost Spear
 ItemDisplay[UNI !ID 7p7]: %CONTINUE%Steel Pillar - War Pike
 
 // Normal tier Staves
@@ -2495,7 +2514,7 @@ ItemDisplay[UNI !ID 7wd]: %CONTINUE%Mythical Sword (No Unique for this base)
 
 //      2-Handed Swords
 ItemDisplay[UNI !ID 72h]: %CONTINUE%Legend Sword (No Unique for this base)
-ItemDisplay[UNI !ID 7cm]: %CONTINUE%Leroic's Mithril Bane - Highland Blade
+ItemDisplay[UNI !ID 7cm]: %CONTINUE%Leroics Mithril Bane - Highland Blade
 ItemDisplay[UNI !ID 7gs]: %CONTINUE%Flamebellow - Balrog Blade
 ItemDisplay[UNI !ID 7b7]: %CONTINUE%Doombringer - Champion Sword
 ItemDisplay[UNI !ID 7fb]: %CONTINUE%Odium - Colossus Sword
@@ -2792,8 +2811,8 @@ ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PUR
 // All other uniques
 ItemDisplay[UNI !ID ETH]: %DOT-68%%GOLD% *  %NAME%  *
 ItemDisplay[(EXC OR ELT OR ci0 OR ba5) UNI !ID]: %DOT-68%%NAME%
-ItemDisplay[UNI !ID FILTLVL>6]:// Extermelyu Strict +
-ItemDisplay[SET !ID FILTLVL>6]:// Extermelyu Strict +
+ItemDisplay[UNI !ID FILTLVL>6]:// Extermely Strict +
+ItemDisplay[SET !ID FILTLVL>6]:// Extermely Strict +
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
