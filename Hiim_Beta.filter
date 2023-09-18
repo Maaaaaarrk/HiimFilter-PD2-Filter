@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.6%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.7%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -636,7 +636,7 @@ ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTL
 // Arrows and Bolts - Amazon View
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
 ItemDisplay[(aqv OR cqv) RARE !ID AMAZON]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
-ItemDisplay[(aqv OR cqv) NMAG CLVL>10]:
+ItemDisplay[(aqv OR cqv) NMAG CLVL>5]:
 
 // Arrows and Bolts - Hide Rules
 ItemDisplay[(aqv OR cqv) NMAG !(AMAZON)]:
@@ -2495,7 +2495,7 @@ ItemDisplay[UNI !ID 7wd]: %CONTINUE%Mythical Sword (No Unique for this base)
 
 //      2-Handed Swords
 ItemDisplay[UNI !ID 72h]: %CONTINUE%Legend Sword (No Unique for this base)
-ItemDisplay[UNI !ID 7cm]: %CONTINUE%Highland Blade (No Unique for this base)
+ItemDisplay[UNI !ID 7cm]: %CONTINUE%Leroic's Mithril Bane - Highland Blade
 ItemDisplay[UNI !ID 7gs]: %CONTINUE%Flamebellow - Balrog Blade
 ItemDisplay[UNI !ID 7b7]: %CONTINUE%Doombringer - Champion Sword
 ItemDisplay[UNI !ID 7fb]: %CONTINUE%Odium - Colossus Sword
@@ -2776,7 +2776,7 @@ ItemDisplay[(uhg OR uvg OR umg OR utg) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  *
 ItemDisplay[(baf OR xh9 OR usk OR ci2 OR baa OR bac OR dre OR xhm OR drd OR bae OR ba6) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(xvb OR uvb OR utp OR 7m7 OR am5) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(nee OR nea OR uts OR uow OR xsh OR xow OR nef) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
-ItemDisplay[(7qs OR 7cr OR 9tw OR obc OR 9wc) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
+ItemDisplay[(7qs OR 7cr OR 9tw OR obc OR 9wc OR 7cm) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 ItemDisplay[(7fb OR 72a OR 7fl OR 7kr OR 7gm OR oba OR ama OR 6ws OR 7lw OR amf OR 7wh OR 7cs) UNI !ID]: %DOT-68%%GOLD% * * *  %NAME%  * * *
 
 // NOTEWORTHY DROPS - OK
