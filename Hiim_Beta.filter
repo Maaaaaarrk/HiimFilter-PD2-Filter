@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.7%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.8%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -562,22 +562,22 @@ ItemDisplay[(tpfm OR tpgm OR tpcm OR tplm) (FILTLVL>2 OR CLVL>49) !(MAPID=1 OR M
 ItemDisplay[(tpfl OR tpgl OR tpcl OR tpll) (FILTLVL>2 OR CLVL>79) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Large
 
 // Small Potions
-ItemDisplay[tpfs]: %ORANGE%Sml Fire Pot{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Small%NL%%GRAY%Fulminating Potion}
-ItemDisplay[tpgs]: %GREEN%Sml Psn Pot{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Small%NL%%GRAY%Strangling Gas Potion}
-ItemDisplay[tpcs]: %BLUE%Sml Cold Pot{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Small%NL%%GRAY%Chilling Potion}
-ItemDisplay[tpls]: %YELLOW%Sml Light Pot{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Small%NL%%GRAY%Charged Potion}
+ItemDisplay[tpfs]: %ORANGE%-%WHITE%Sml Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Small%NL%%GRAY%Fulminating Potion}
+ItemDisplay[tpgs]: %GREEN%-%WHITE%Sml Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Small%NL%%GRAY%Strangling Gas Potion}
+ItemDisplay[tpcs]: %BLUE%-%WHITE%Sml Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Small%NL%%GRAY%Chilling Potion}
+ItemDisplay[tpls]: %YELLOW%-%WHITE%Sml Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Small%NL%%GRAY%Charged Potion}
 
 // Medium Potions
-ItemDisplay[tpfm]: %ORANGE%Med Fire Pot{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Medium%NL%%GRAY%Exploding Potion}
-ItemDisplay[tpgm]: %GREEN%Med Psn Pot{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Medium%NL%%GRAY%Choking Gas Potion}
-ItemDisplay[tpcm]: %BLUE%Med Cold Pot{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Medium%NL%%GRAY%Frost Potion}
-ItemDisplay[tplm]: %YELLOW%Med Light Pot{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Medium%NL%%GRAY%Static Potion}
+ItemDisplay[tpfm]: %ORANGE%-%WHITE%Med Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Medium%NL%%GRAY%Exploding Potion}
+ItemDisplay[tpgm]: %GREEN%-%WHITE%Med Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Medium%NL%%GRAY%Choking Gas Potion}
+ItemDisplay[tpcm]: %BLUE%-%WHITE%Med Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Medium%NL%%GRAY%Frost Potion}
+ItemDisplay[tplm]: %YELLOW%-%WHITE%Med Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Medium%NL%%GRAY%Static Potion}
 
 // Large Potions
-ItemDisplay[tpfl]: %ORANGE%Lrg Fire Pot{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Large%NL%%GRAY%Oil Potion}
-ItemDisplay[tpgl]: %GREEN%Lrg Psn Pot{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Large%NL%%GRAY%Rancid Gas Potion}
-ItemDisplay[tpcl]: %BLUE%Lrg Cold Pot{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Large%NL%%GRAY%Freezing Potion}
-ItemDisplay[tpll]: %YELLOW%Lrg Light Pot{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Large%NL%%GRAY%Shock Potion}
+ItemDisplay[tpfl]: %ORANGE%-%WHITE%Lrg Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%NL%%TAN%Large%NL%%GRAY%Oil Potion}
+ItemDisplay[tpgl]: %GREEN%-%WHITE%Lrg Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%NL%%TAN%Large%NL%%GRAY%Rancid Gas Potion}
+ItemDisplay[tpcl]: %BLUE%-%WHITE%Lrg Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%NL%%TAN%Large%NL%%GRAY%Freezing Potion}
+ItemDisplay[tpll]: %YELLOW%-%WHITE%Lrg Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%NL%%TAN%Large%NL%%GRAY%Shock Potion}
 
 // Hide other consumes
 ItemDisplay[(wms OR gpl OR gpm OR gps OR opl OR opm OR ops) (FILTLVL>1 OR CLVL>23)]:
