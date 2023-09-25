@@ -618,7 +618,7 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[(NMAG OR SUP) !RW FILTLVL>6 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
+ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) !RW FILTLVL>6 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 ItemDisplay[STAT360>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[STAT360=0 FILTLVL=8 (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
