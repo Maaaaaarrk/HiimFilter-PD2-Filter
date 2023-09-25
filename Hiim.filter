@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.9%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.10%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -414,12 +414,6 @@ ItemDisplay[skzs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHIT
 //-----------------------------------------------------------------------------------
 // Runes
 //-----------------------------------------------------------------------------------
-// Hide El-Ort based on filter level, except in towns
-// Undoing this hide based on S6 feedback TBD if we want it back ItemDisplay[RUNE<10 FILTLVL>4 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
-
-// Hide anything lower than Pul based on filter level except in towns
-ItemDisplay[RUNE<21 (FILTLVL=8) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
-
 // Basic Formatting
 ItemDisplay[RUNE>0]:%DOT-62%%NAME%%CONTINUE%
 ItemDisplay[RUNE<10]: %GREEN%%NAME% %GREEN%(%RUNENUM%)%CONTINUE%
@@ -624,8 +618,8 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[(NMAG OR SUP) !RW FILTLVL>6 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
-ItemDisplay[STAT360>0 (FILTLVL>7) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[STAT360=0 (FILTLVL=8) (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:%NOTIFY-DEAD%
+ItemDisplay[STAT360>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[STAT360=0 FILTLVL=8 (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -5497,7 +5491,7 @@ ItemDisplay[MAG !ID !ETH FILTLVL>2]:
 ItemDisplay[MAG !ID FILTLVL>4]:
 
 // Hide all items that arent called out in filter on endgame
-ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>5]: 
+ItemDisplay[(ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>6]: 
 //-----------------------------------------------------------------------------------
 
 
