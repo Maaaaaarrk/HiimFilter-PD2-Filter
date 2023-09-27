@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.14%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.15%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -362,39 +362,23 @@ ItemDisplay[GEM=4 FILTLVL=8]:
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%* %TAN%F. %WHITE% Amethyst %PURPLE%*%CONTINUE%
-ItemDisplay[gpv OR gpvs]: %PURPLE%* %TAN%P. %WHITE% Amethyst %PURPLE%*%CONTINUE%
+ItemDisplay[gpv OR gpvs]: %PURPLE%*  %TAN%P. %WHITE% Amethyst  %PURPLE%*%CONTINUE%
 ItemDisplay[glw OR glws]: %WHITE%* %TAN%F. %WHITE% Diamond *%CONTINUE%
-ItemDisplay[gpw OR gpws]: %WHITE%* %TAN%P. %WHITE% Diamond *%CONTINUE%
+ItemDisplay[gpw OR gpws]: %WHITE%*  %TAN%P. %WHITE% Diamond  *%CONTINUE%
 ItemDisplay[glg OR glgs]: %GREEN%* %TAN%F. %WHITE% Emerald %GREEN%*%CONTINUE%
-ItemDisplay[gpg OR gpgs]: %GREEN%* %TAN%P. %WHITE% Emerald %GREEN%*%CONTINUE%
+ItemDisplay[gpg OR gpgs]: %GREEN%*  %TAN%P. %WHITE% Emerald  %GREEN%*%CONTINUE%
 ItemDisplay[glr OR glrs]: %RED%* %TAN%F. %WHITE% Ruby %RED%*%CONTINUE%
-ItemDisplay[gpr OR gprs]: %RED%* %TAN%P. %WHITE% Ruby %RED%*%CONTINUE%
+ItemDisplay[gpr OR gprs]: %RED%*  %TAN%P. %WHITE% Ruby  %RED%*%CONTINUE%
 ItemDisplay[glb OR glbs]: %BLUE%* %TAN%F. %WHITE% Sapphire %BLUE%*%CONTINUE%
-ItemDisplay[gpb OR gpbs]: %BLUE%* %TAN%P. %WHITE% Sapphire %BLUE%*%CONTINUE%
+ItemDisplay[gpb OR gpbs]: %BLUE%*  %TAN%P. %WHITE% Sapphire  %BLUE%*%CONTINUE%
 ItemDisplay[gly OR glys]: %YELLOW%* %TAN%F. %WHITE% Topaz %YELLOW%*%CONTINUE%
-ItemDisplay[gpy OR gpys]: %YELLOW%* %TAN%P. %WHITE% Topaz %YELLOW%*%CONTINUE%
+ItemDisplay[gpy OR gpys]: %YELLOW%*  %TAN%P. %WHITE% Topaz  %YELLOW%*%CONTINUE%
 ItemDisplay[skl OR skls]: %GRAY%* %TAN%F. %WHITE% Skull %GRAY%*%CONTINUE%
-ItemDisplay[skz OR skzs]: %GRAY%* %TAN%P. %WHITE% Skull %GRAY%*%CONTINUE%
+ItemDisplay[skz OR skzs]: %GRAY%*  %TAN%P. %WHITE% Skull  %GRAY%*%CONTINUE%
 
 // Formatting for stacked vs unstacked with warning
 ItemDisplay[GEM>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED% UNSTACKED {%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
-
-// Icon by gem type after name
-ItemDisplay[GEMTYPE=1 !(gpv OR gpvs)]: %NAME% %ORANGE%[%PURPLE%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=1 (gpv OR gpvs)]: %NAME% %ORANGE%[%PURPLE%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=2 !(gpw OR gpws)]: %NAME% %ORANGE%[%WHITE%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=2 (gpw OR gpws)]: %NAME% %ORANGE%[%WHITE%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=3 !(gpg OR gpgs)]: %NAME% %ORANGE%[%GREEN%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=3 (gpg OR gpgs)]: %NAME% %ORANGE%[%GREEN%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=4 !(gpr OR gprs)]: %NAME% %ORANGE%[%RED%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=4 (gpr OR gprs)]: %NAME% %ORANGE%[%RED%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=5 !(gpb OR gpbs)]: %NAME% %ORANGE%[%BLUE%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=5 (gpb OR gpbs)]: %NAME% %ORANGE%[%BLUE%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=6 !(gpy OR gpys)]: %NAME% %ORANGE%[%YELLOW%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=6 (gpy OR gpys)]: %NAME% %ORANGE%[%YELLOW%O%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=7 !(skz OR skzs)]: %NAME% %ORANGE%[%GRAY%*%ORANGE%]%CONTINUE%
-ItemDisplay[GEMTYPE=7 (skz OR skzs)]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]%CONTINUE%
 
 // Tooltips
 ItemDisplay[(gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) FILTLVL>6]:
