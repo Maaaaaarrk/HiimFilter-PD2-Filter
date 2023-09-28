@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.16%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.17%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2998,8 +2998,12 @@ ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<7]: %DOT-ED%* %NAME% *
 // High Ilvl Rares
 ItemDisplay[RARE !WEAPON (ILVL>91) !ID FILTLVL<7]: %YELLOW% * * * %NAME% * * *
 ItemDisplay[RARE !WEAPON (ILVL>84) !ID  FILTLVL<7]: * *%NAME% * *
-ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) (CLVL<92) !ID]: %NAME%
+ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) !ID]: %NAME%
 ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
+
+// Rare special cases
+ItemDisplay[RARE !ID CLASS FILTLVL<5]: %NAME%
+ItemDisplay[RARE !ID MAPID=83 FILTLVL<5]: %NAME%
 
 // Silence rest
 ItemDisplay[RARE !ID FILTLVL>2]:
@@ -5008,19 +5012,28 @@ ItemDisplay[NMAG !RW !SHOP MACE SOCK=6]: %NAME%{%GOLD%Last Wish %GRAY%Jah + Mal 
 ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6)]: %DOT-E1%%PURPLE%> >  %NAME%  %PURPLE%< <{%NAME%}%CONTINUE%
 
 // LLD make divine/war scepter bases with 2 of hammer/conc/joust for LLD
-ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+
+ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%NL%%NAME%}
+ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%NL%%NAME%}
+ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%NL%%NAME%}
 
 // LLD divine scepter 0 or 4 socket with charge/zeal staffmods (should be total +skills >= 4, or 3 fana):
 // fanaticism SK122 zeal SK106 charge SK107 vigor SK115 holyshield SK117
-ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+
+ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%NL%%NAME%}
+ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%NL%%NAME%}
 
 // LLD +3 holy bolt SK101 war/divine scepter
 // LLD +3 holy nova war/divine scepter
-ItemDisplay[9ws (SK101>2 OR SK364>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws (SK101>2 OR SK364>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws (SK101>2 OR SK364>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%NL%%NAME%}
 
 // Hand of Justice/CTA Scepters
 ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) NMAG !INF !SUP SOCK=0]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
