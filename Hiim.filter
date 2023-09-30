@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.23%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.24%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3085,8 +3085,8 @@ ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PUR
 // All other conditions
 ItemDisplay[UNI !ID ETH]: %DOT-68%%NAME%// Eth show all
 ItemDisplay[ELT UNI !ID]: %PX-68%%NAME%//  Show all elite
-ItemDisplay[UNI !ID FILTLVL>6]:// Extermely Strict +
-ItemDisplay[SET !ID FILTLVL>6]:// Extermely Strict +
+ItemDisplay[UNI !ID FILTLVL>2]:// Hide on Strict +
+ItemDisplay[SET !ID FILTLVL>2]:// Hide on Strict +
 ItemDisplay[UNI !ID]: %PX-68%%GOLD%%NAME%
 ItemDisplay[SET !ID]: %PX-84%%GREEN%%NAME%
 //-----------------------------------------------------------------------------------
