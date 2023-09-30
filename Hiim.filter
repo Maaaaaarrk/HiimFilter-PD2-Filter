@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.19%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.20%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -402,10 +402,7 @@ ItemDisplay[skzs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHIT
 // Runes
 //-----------------------------------------------------------------------------------
 // Basic Formatting
-ItemDisplay[RUNE>0]:%DOT-62%%NAME%%CONTINUE%
-ItemDisplay[RUNE<10]: %GREEN%%NAME% %GREEN%(%RUNENUM%)%CONTINUE%
-ItemDisplay[RUNE>9 RUNE<21]: %NAME%%GRAY%[%GREEN%%RUNENUM%%GRAY%]%WHITE%%CONTINUE%
-ItemDisplay[RUNE>20]: %NAME%%GRAY%[%GREEN%%RUNENUM%%GRAY%]%WHITE%%CONTINUE%
+ItemDisplay[RUNE>0]:%DOT-62%%NAME% %GREEN%(%RUNENUM%)%CONTINUE%
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
@@ -414,7 +411,8 @@ ItemDisplay[RUNE>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 ItemDisplay[RUNE<10 !(FILTLVL=7 OR FILTLVL=8)]: %ORANGE%*  %NAME%  %ORANGE%*%CONTINUE%
 ItemDisplay[(RUNE>9 AND RUNE<21) !(FILTLVL=7 OR FILTLVL=8)]: %ORANGE%**    %NAME%    %ORANGE%**%CONTINUE%
 ItemDisplay[RUNE>20 AND RUNE<24]: %PURPLE%>>    %NAME%%PURPLE%    <<%CONTINUE%
-ItemDisplay[RUNE>23 QTY>0]: %PURPLE%>>>>    %NAME%%PURPLE%    <<<<%CONTINUE%
+ItemDisplay[RUNE>23 AND RUNE<26]: %PURPLE%>>>>    %NAME%%PURPLE%    <<<<%CONTINUE%
+ItemDisplay[RUNE>25]: %PURPLE%<><><><>    %NAME%%PURPLE%    <><><><>%CONTINUE%
 
 // Make sure HR's notify
 ItemDisplay[RUNE>20]: %BORDER-62%%NAME%%CONTINUE%
@@ -1250,8 +1248,8 @@ ItemDisplay[BOOTS (MAG OR RARE OR CRAFT) ID FRW>0]: %TAN%+%FRW% FRW %NAME%%CONTI
 // Jewels, Rings, Amulets - UNID
 //-----------------------------------------------------------------------------------
 ItemDisplay[MAG (rin OR amu) !ID FILTLVL>2]:
-ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%PURPLE%XX%BLUE%     %NAME%     %PURPLE%XX
-ItemDisplay[MAG (jew) !ID]: %DOT-91%%PURPLE%XX%BLUE%     %NAME%     %PURPLE%XX
+ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%YELLOW%X%BLUE%     %NAME%     %YELLOW%X
+ItemDisplay[MAG (jew) !ID]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
 ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
 
 // Rings & Amulet Stat Tags
@@ -1507,11 +1505,11 @@ ItemDisplay[jew !UNI !SET ID LVLREQ<31 (STAT91=-15) (LIFE+LIFE+MANA+MANA+STR+STR
 // CHARMS
 //-----------------------------------------------------------------------------------
 // Charms - UNID
-ItemDisplay[MAG cm3 ILVL>90 !ID]: %DOT-9B%%YELLOW%**     %YELLOW%[REROLL]%BLUE%%NAME%     %YELLOW%**
-ItemDisplay[RARE cm3 ILVL>90 !ID]: %DOT-9B%%ORANGE%**    %PURPLE%[REROLL]%YELLOW%%NAME%     %ORANGE%**
-ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID]: %DOT-9B%%YELLOW%**     %YELLOW%[REROLL]%BLUE%%NAME%     %YELLOW%**
-ItemDisplay[MAG (cm1 OR cm2 OR cm3) !ID]: %DOT-9B%%YELLOW%**%BLUE%     %NAME%     %YELLOW%**
-ItemDisplay[RARE (cm1 OR cm2 OR cm3) !ID]: %DOT-9B%%ORANGE%**%YELLOW%     %NAME%     %ORANGE%**
+ItemDisplay[MAG cm3 ILVL>90 !ID]: %DOT-9B%%YELLOW%XX     %YELLOW%[REROLL]%BLUE%%NAME%     %YELLOW%XX
+ItemDisplay[RARE cm3 ILVL>90 !ID]: %DOT-9B%%ORANGE%XX    %PURPLE%[REROLL]%YELLOW%%NAME%     %ORANGE%XX
+ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID]: %DOT-9B%%YELLOW%XX     %YELLOW%[REROLL]%BLUE%%NAME%     %YELLOW%XX
+ItemDisplay[MAG (cm1 OR cm2 OR cm3) !ID]: %DOT-9B%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
+ItemDisplay[RARE (cm1 OR cm2 OR cm3) !ID]: %DOT-9B%%ORANGE%XX%YELLOW%     %NAME%     %ORANGE%XX
 
 // Unique Charms - UNID
 ItemDisplay[cm2 UNI !ID]: %BORDER-68%> >  UNID Hellfire Torch  < <
@@ -2984,8 +2982,9 @@ ItemDisplay[CLSK2=2 SK92=3 !(ALLSK=1)]: %DOT-ED%%PURPLE%+5 Psn Nova %NAME%%CONTI
 // FORMATTING - RARE ITEMS
 //-----------------------------------------------------------------------------------
 // Circlets
-ItemDisplay[EQ7 RARE !ID]: %DOT-A8%* * * * * %NAME% * * * * *
-ItemDisplay[EQ7 MAG !ETH !ID  FILTLVL<7]: * * * %NAME% * * *
+ItemDisplay[EQ7 RARE !ID]: %DOT-A8%X X X X X %NAME% X X X X X
+ItemDisplay[EQ7 MAG !ETH !ID  FILTLVL<7]: X X X %NAME% X X X
+ItemDisplay[EQ7 MAG !ETH !ID  FILTLVL=7]: X %NAME% X
 ItemDisplay[EQ7 MAG !ID FILTLVL<3]: %NAME%
 ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME% %GRAY%[imbue]{%TAN%Note%WHITE%: You can %YELLOW%imbue %WHITE%it using Charsi quest}
 
