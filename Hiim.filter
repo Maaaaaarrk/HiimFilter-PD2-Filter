@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.31%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.32%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3544,14 +3544,14 @@ ItemDisplay[(MAG OR RARE) ID FILTLVL<5 STAT360=0 !aqv !cqv !cm1 !cm2 !cm3 !jew !
 ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) !BAR ETH MAG ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%NAME%%NL%%RED% ETH Crafting Bases for Purgatory}%CONTINUE%
 
 // LLD
-ItemDisplay[MAG ILVL>50 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
-ItemDisplay[MAG ILVL>50 btl]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
-ItemDisplay[MAG ILVL>50 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
-ItemDisplay[MAG ILVL>50 (am1 OR am5 OR am6 OR ama)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
-ItemDisplay[MAG ILVL>50 (ne5 OR ne4)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
-ItemDisplay[MAG ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
-ItemDisplay[MAG ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
-ItemDisplay[MAG ILVL>50 (rin OR amu)]: %NAME%{%NAME%%NL%%RED% Target ALVL 51 for LLD Crafting}%CONTINUE%  // rin/amu
+ItemDisplay[MAG ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[MAG ILVL>50 STAT360=0 btl]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
+ItemDisplay[MAG ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
+ItemDisplay[MAG ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
+ItemDisplay[MAG ILVL>50 STAT360=0 (ne5 OR ne4)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
+ItemDisplay[MAG ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
+ItemDisplay[MAG ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %DOT-ED%%NAME%%GREEN% [LLD Craft]{%NAME%%NL%%RED% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
+ItemDisplay[MAG ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%NAME%%NL%%RED% Target ALVL 51 for LLD Crafting}%CONTINUE%  // rin/amu
 
 // Weapons
 ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
@@ -5653,9 +5653,12 @@ ItemDisplay[(SCEPTER !scp) !INF !ETH NMAG !RW (SK101>2 OR SK112>2 OR SK118>2 OR 
 // Swords
 ItemDisplay[(crs OR bsd OR lsd) NMAG !INF !RW SOCK=4 FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[crs ILVL>25 NMAG !INF !RW (SOCK=0 OR SOCK>4) FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[7cr NMAG !RW !INF (SOCK=0 OR SOCK>2)]: %NAME%{%NAME%}
-ItemDisplay[(72h OR 7fb OR 7gd OR 7gs OR 7ls) ETH NMAG !RW !INF (SOCK=0 OR SOCK>2)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7fb) ETH NMAG !RW (SOCK=0 OR SOCK=2)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[7cr NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[(72h OR 7fb OR 7gd OR 7gs OR 7ls) ETH NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[7fb ETH NMAG !RW (SOCK=0 OR SOCK>1) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[7gd ETH NMAG !RW (SOCK=0 OR SOCK>1) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[7fb ILVL>40 SUP !INF !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[7gd ILVL>40 SUP !INF !RW (SOCK=0 OR SOCK=6) FILTLVL<7]: %NAME%{%NAME%}
 
 // Maces
 ItemDisplay[fla NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<3]: %NAME%{%NAME%}
