@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.32%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.33%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -512,18 +512,20 @@ ItemDisplay[(mp1 OR mp2) (DIFF>0 OR CLVL>79)]:
 ItemDisplay[(mp3 OR mp4) (DIFF>1 OR CLVL>79)]:
 
 // Show HP Pots
-ItemDisplay[hp1 DIFF<1 CLVL<80]: %RED%+%WHITE%HP1
-ItemDisplay[hp2 DIFF<1 CLVL<80]: %RED%+%WHITE%HP2
-ItemDisplay[hp3 DIFF<2 CLVL<80]: %RED%+%WHITE%HP3
-ItemDisplay[hp4 DIFF<2 CLVL<80]: %RED%+%WHITE%HP4
+ItemDisplay[hp1 DIFF<1 CLVL<80]: %RED%+ %WHITE%HP1 %RED%+
+ItemDisplay[hp2 DIFF<1 CLVL<80]: %RED%+ %WHITE%HP2 %RED%+
+ItemDisplay[hp3 DIFF<2 CLVL<80]: %RED%+ %WHITE%HP3 %RED%+
+ItemDisplay[hp4 DIFF<2 CLVL<80]: %RED%+ %WHITE%HP4 %RED%+
+ItemDisplay[hp5 FILTLVL<3]: %RED%+ %WHITE%HP5 %RED%+
 ItemDisplay[hp5]: %RED%+%WHITE%HP5
 
 // Show MP Pots
 ItemDisplay[pvpp]: %BLUE%%NAME%
-ItemDisplay[mp1 DIFF<1 CLVL<80]: %BLUE%+%WHITE%MP1
-ItemDisplay[mp2 DIFF<1 CLVL<80]: %BLUE%+%WHITE%MP2
-ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+%WHITE%MP3
-ItemDisplay[mp4 DIFF<2 CLVL<80]: %BLUE%+%WHITE%MP4
+ItemDisplay[mp1 DIFF<1 CLVL<80]: %BLUE%+ %WHITE%MP1 %BLUE%+
+ItemDisplay[mp2 DIFF<1 CLVL<80]: %BLUE%+ %WHITE%MP2 %BLUE%+
+ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+ %WHITE%MP3 %BLUE%+
+ItemDisplay[mp4 DIFF<2 CLVL<80]: %BLUE%+ %WHITE%MP4 %BLUE%+
+ItemDisplay[mp5 FILTLVL<3]: %BLUE%+ %WHITE%MP5 %BLUE%+
 ItemDisplay[mp5]: %BLUE%+%WHITE%MP5
 
 // Other Potion Tooltips
@@ -5679,11 +5681,24 @@ ItemDisplay[ELT (POLEARM OR SPEAR OR 7m7) ETH NMAG !RW SOCK=5 FILTLVL<3]: %DOT-D
 ItemDisplay[ELT (7s8 OR 7pa OR 7m7) ETH NMAG !RW SOCK=0 FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Eth laz for 5 socket or 90+ avrg damage base 0 soc
 
 // Staves
-// SK48 nova SK49 lightning SK38 Charged Bolt SK53 Chain Lightning SK57 Thunder Storm SK63 Lightning Mastery
+// Infinity SK48 nova SK49 lightning SK38 Charged Bolt SK53 Chain Lightning SK57 Thunder Storm SK63 Lightning Mastery
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK49>2 OR SK38>2 OR SK53>2 OR SK57>2) SK63>2 NMAG !RW SOCK=4]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%NAME%%NL%%PURPLE%GG Infinity base}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK49>2 OR SK38>2 OR SK53>2 OR SK57>2) SK63>2 NMAG !RW SOCK=0]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%GREEN%Hit 4 sockets for GG Infinity base%NL%%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK49>2 OR SK38>2 OR SK53>2 OR SK57>2 OR SK63>2) NMAG !RW SOCK=4]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%GREEN%Good Infinity base}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK49>2 OR SK38>2 OR SK53>2 OR SK57>2 OR SK63>2) NMAG !RW SOCK=0]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%GREEN%Hit 4 sockets for Infinity base%NL%%NAME%}
+// Obsession SK59 blizzard SK39 ice bolt SK65 cold mastery SK46 1pt blaze
+ItemDisplay[6ws (SK59>2 OR SK39>2) (SK65>2 OR SK46>0) NMAG !RW SOCK=6]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%NAME%%NL%%PURPLE%GG Obsession base}
+ItemDisplay[6ws (SK59>2 OR SK39>2) (SK65>2 OR SK46>0) NMAG !RW SOCK=0]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%GREEN%Hit 6 sockets for GG Obsession base%NL%%NAME%}
+ItemDisplay[6ws SK59>2 SK39>2 NMAG !RW SOCK=6]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%NAME%%NL%%PURPLE%GG Obsession base}
+ItemDisplay[6ws SK59>2 SK39>2 NMAG !RW SOCK=0]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%GREEN%Hit 6 sockets for GG Obsession base%NL%%NAME%}
+ItemDisplay[6ws (SK59>2 OR SK39>2) NMAG !RW SOCK=6]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%GREEN%Good Obsession base}
+ItemDisplay[6ws (SK59>2 OR SK39>2) !RW SOCK=0]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%GREEN%Hit 6 sockets for Good Obsession base%NL%%NAME%}
+// Obsession SK56 meteor SK61 fire mastery SK60 1pt chilling
+ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=6]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%NAME%%NL%%PURPLE%GG Obsession base}
+ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=0]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%GREEN%Hit 6 sockets for GG Obsession base%NL%%NAME%}
+ItemDisplay[6ws SK56>2 NMAG !RW SOCK=6]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%GREEN%Good Obsession base}
+ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%GREEN%Hit 6 sockets for Good Obsession base%NL%%NAME%}
+//Misc staff
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5)]: %DOT-D6%* %NAME% *{%NAME%}
 
