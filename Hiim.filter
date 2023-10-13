@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.33%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.34%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -643,7 +643,9 @@ ItemDisplay[(aqv OR cqv) NMAG CLVL>5]:
 // Arrows and Bolts - Hide Rules
 ItemDisplay[(aqv OR cqv) NMAG !(AMAZON)]:
 ItemDisplay[(aqv OR cqv) MAG !ID FILTLVL>1]:
-ItemDisplay[(aqv OR cqv) RARE !ID FILTLVL>2]:
+ItemDisplay[cqv RARE !ID FILTLVL>2]:
+ItemDisplay[aqv RARE !ID FILTLVL>4]:
+ItemDisplay[aqv RARE !ID FILTLVL<5]:%NAME%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
