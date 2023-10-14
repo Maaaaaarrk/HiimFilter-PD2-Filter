@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.36%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.37%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3143,13 +3143,15 @@ ItemDisplay[!UNI ID (CLSK0>1 AND TABSK2>2) ZON]: %ORANGE%+5 Javelin %NAME%// +2 
 // Phoenix Strike
 ItemDisplay[TABSK50=3 SK280=3 ALLSK=2]: %BORDER-ED%%PURPLE%+8 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[TABSK50=3 SK280=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK280=3 ALLSK=2]: %DOT-ED%%PURPLE%+7 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=2 SK280=3 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[TABSK50=3 SK280=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[TABSK50=3 SK280=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[TABSK50=2 SK280=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[CLSK6=2 SK280=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=2 SK280=3 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=3 SK280=2 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK280=3 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 
 //  +2 Sin / +3 skill
 ItemDisplay[!UNI ID (CLSK6>1 AND SK254>2) SIN]: %ORANGE%+5 Tiger Strike %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Tiger Strike katar
