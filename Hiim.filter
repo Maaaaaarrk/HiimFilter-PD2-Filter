@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.37%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.38%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -175,7 +175,7 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR  MAPTIER=4 OR t51 OR t52 OR t53 OR t61 OR t62) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
 
 // Map Immunities 
-ItemDisplay[((t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33) OR (t15 OR t11 OR t14 OR t34 OR t36 OR t26) OR (t31 OR t32 OR t25 OR t24 OR t35 OR t37 OR t38 OR t39 OR t3a) OR MAPTIER=4)]: %NAME%%CONTINUE%{%TAN%Immunities:%NL%%NAME%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1)]: %NAME%%CONTINUE%{%TAN%Immunities:%NL%%NAME%}
 
 // Tier 1 Immunes
 ItemDisplay[t22]: %NAME%{%NL%%RED%F 80% %YELLOW%L 105% %BLUE% C 140%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Torajan Jungle S6 res updated patch1
@@ -205,10 +205,10 @@ ItemDisplay[t38]: %NAME%{%NL%%RED%F 80% %YELLOW%L 160% %BLUE% C 80%%NL%%GRAY%Ph 
 ItemDisplay[t39]: %NAME%{%NL%%RED%F 85% %YELLOW%L 90% %BLUE% C 130%%NL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%NL%%NAME%}%CONTINUE% // Kehjistan Marketplace S6 res updated patch1
 ItemDisplay[t3a]: %NAME%{%NL%%RED%F 75% %YELLOW%L 145% %BLUE% C 75%%NL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%NL%%NAME%}%CONTINUE% // Ashen Plains S6 res updated patch1
 
-// Tier 4 Immunes
-ItemDisplay[t41]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Cathedral of L S6 res updated patch1
-ItemDisplay[t42]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Plains of Torment S6 res updated patch1
-ItemDisplay[t43]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Sanctuary of Sin S6 res updated patch1
+// Tier 4 Immunes Do not show as it will overflow the top text
+//ItemDisplay[t41]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Cathedral of L S6 res updated patch1
+//ItemDisplay[t42]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Plains of Torment S6 res updated patch1
+//ItemDisplay[t43]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Sanctuary of Sin S6 res updated patch1
 
 // Uniue map Immunes
 ItemDisplay[t51]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 85% %BLUE% Cold 85%%NL%%GRAY%Phys 65% %ORANGE%Magic 40% %GREEN%Psn 95%%NL%%NAME%}%CONTINUE% // zhar s7
@@ -216,70 +216,70 @@ ItemDisplay[t52]: %NAME%{%NL%%RED%Fire 65% %YELLOW%Light 60% %BLUE% Cold 65%%NL%
 ItemDisplay[t53]: %NAME%{%NL%%RED%Fire 70% %YELLOW%Light 75% %BLUE% Cold 65%%NL%%GRAY%Phys 60% %ORANGE%Magic 80% %GREEN%Psn 80%%NL%%NAME%}%CONTINUE% // Fallen Gardens S8
 
 // Maps [T1]
-ItemDisplay[t22]: %NAME%Torajan Jungle Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t12]: %NAME%Horazons Memory Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t13]: %NAME%Bastion Keep Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t23]: %NAME%Arreat Battlefield Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t21]: %NAME%Phlegathon Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t16]: %NAME%Ruined Cistern Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t33]: %NAME%Lost Temple Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t18]: %NAME%T1-8 Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t19]: %NAME%T1-9 Map%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[t22]: %NAME%Torajan Jungle Map%CONTINUE%{%NAME%}
+ItemDisplay[t12]: %NAME%Horazons Memory Map%CONTINUE%{%NAME%}
+ItemDisplay[t13]: %NAME%Bastion Keep Map%CONTINUE%{%NAME%}
+ItemDisplay[t23]: %NAME%Arreat Battlefield Map%CONTINUE%{%NAME%}
+ItemDisplay[t21]: %NAME%Phlegathon Map%CONTINUE%{%NAME%}
+ItemDisplay[t16]: %NAME%Ruined Cistern Map%CONTINUE%{%NAME%}
+ItemDisplay[t33]: %NAME%Lost Temple Map%CONTINUE%{%NAME%}
+ItemDisplay[t18]: %NAME%T1-8 Map%CONTINUE%{%NAME%}
+ItemDisplay[t19]: %NAME%T1-9 Map%CONTINUE%{%NAME%}
 
 // Maps [T2]
-ItemDisplay[t15]: %NAME%Royal Crypts Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t14]: %NAME%Sanatorium Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t34]: %NAME%Ancestral Trial Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t36]: %NAME%Fall of Caldeum Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t27]: %NAME%T2-7 Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t28]: %NAME%T2-8 Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t29]: %NAME%T2-9 Map%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[t15]: %NAME%Royal Crypts Map%CONTINUE%{%NAME%}
+ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%CONTINUE%{%NAME%}
+ItemDisplay[t14]: %NAME%Sanatorium Map%CONTINUE%{%NAME%}
+ItemDisplay[t34]: %NAME%Ancestral Trial Map%CONTINUE%{%NAME%}
+ItemDisplay[t36]: %NAME%Fall of Caldeum Map%CONTINUE%{%NAME%}
+ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%CONTINUE%{%NAME%}
+ItemDisplay[t27]: %NAME%T2-7 Map%CONTINUE%{%NAME%}
+ItemDisplay[t28]: %NAME%T2-8 Map%CONTINUE%{%NAME%}
+ItemDisplay[t29]: %NAME%T2-9 Map%CONTINUE%{%NAME%}
 
 // Maps [T3]
-ItemDisplay[t31]: %NAME%River of Blood Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t32]: %NAME%Throne of Insanity Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t24]: %NAME%Tomb of Zultan Kulle Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t35]: %NAME%Blood Moon Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t3a]: %NAME%Ashen Plains Map%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[t31]: %NAME%River of Blood Map%CONTINUE%{%NAME%}
+ItemDisplay[t32]: %NAME%Throne of Insanity Map%CONTINUE%{%NAME%}
+ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%CONTINUE%{%NAME%}
+ItemDisplay[t24]: %NAME%Tomb of Zultan Kulle Map%CONTINUE%{%NAME%}
+ItemDisplay[t35]: %NAME%Blood Moon Map%CONTINUE%{%NAME%}
+ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%CONTINUE%{%NAME%}
+ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%CONTINUE%{%NAME%}
+ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%CONTINUE%{%NAME%}
+ItemDisplay[t3a]: %NAME%Ashen Plains Map%CONTINUE%{%NAME%}
 
 // Maps [T4]
-ItemDisplay[t41]: %NAME%Cathedral of Light Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t42]: %NAME%Plains of Torment Map%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t43]: %NAME%Sanctuary of Sin Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t44]: %NAME%T4-4 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t45]: %NAME%T4-5 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t46]: %NAME%T4-6 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t47]: %NAME%T4-7 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t48]: %NAME%T4-8 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t49]: %NAME%T4-9 Map%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[t41]: %NAME%Cathedral of Light%CONTINUE%{%NAME%}
+ItemDisplay[t42]: %NAME%Plains of Torment%CONTINUE%{%NAME%}
+ItemDisplay[t43]: %NAME%Sanctuary of Sin%CONTINUE%{%NAME%}
+//ItemDisplay[t44]: %NAME%T4-4 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t45]: %NAME%T4-5 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t46]: %NAME%T4-6 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t47]: %NAME%T4-7 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t48]: %NAME%T4-8 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t49]: %NAME%T4-9 Map%CONTINUE%{%NAME%}
 
 // Maps [T5] Unique
-ItemDisplay[t51]: %NAME%Zhar's Sanctum%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t52]: %NAME%Stygian Caverns%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t53]: %NAME%Fallen Gardens%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t54]: %NAME%T5-4 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t55]: %NAME%T5-5 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t56]: %NAME%T5-6 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t57]: %NAME%T5-7 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t58]: %NAME%T5-8 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t59]: %NAME%T5-9 Map%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[t51]: %NAME%Zhar's Sanctum%CONTINUE%{%NAME%}
+ItemDisplay[t52]: %NAME%Stygian Caverns%CONTINUE%{%NAME%}
+ItemDisplay[t53]: %NAME%Fallen Gardens%CONTINUE%{%NAME%}
+//ItemDisplay[t54]: %NAME%T5-4 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t55]: %NAME%T5-5 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t56]: %NAME%T5-6 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t57]: %NAME%T5-7 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t58]: %NAME%T5-8 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t59]: %NAME%T5-9 Map%CONTINUE%{%NAME%}
 
 // Maps [T6] PVP
-ItemDisplay[t61]: %NAME%PvP Map 1 (Desert)%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t63]: %NAME%t6-3 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t64]: %NAME%t6-4 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t65]: %NAME%t6-5 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t66]: %NAME%t6-6 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t67]: %NAME%t6-7 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t68]: %NAME%t6-8 Map%WHITE%%CONTINUE%{%NAME%}
-//ItemDisplay[t69]: %NAME%t6-9 Map%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[t61]: %NAME%PvP Map 1 (Desert)%CONTINUE%{%NAME%}
+ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
+//ItemDisplay[t63]: %NAME%t6-3 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t64]: %NAME%t6-4 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t65]: %NAME%t6-5 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t66]: %NAME%t6-6 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t67]: %NAME%t6-7 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t68]: %NAME%t6-8 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t69]: %NAME%t6-9 Map%CONTINUE%{%NAME%}
 
 
 ItemDisplay[(t22 OR t12 OR t13 OR t23 OR t21 OR t16 OR t33 OR (t15 OR t11 OR t14 OR t34 OR t36 OR t26) OR (t31 OR t32 OR t25 OR t24 OR t35 OR t37 OR t38 OR t39 OR t3a) OR MAPTIER=4 OR t51 OR t52 OR t53 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
