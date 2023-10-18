@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.38%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.39%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -294,8 +294,8 @@ ItemDisplay[(t51 OR t52 OR t53) ID]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
 ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
 
 
-ItemDisplay[(t51 OR t52 OR MAPTIER=3 OR MAPTIER=4) (STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT373>9) OR (STAT372>225))]:  %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>150 AND STAT374>0) OR (STAT372>70 AND STAT375>69) OR (STAT372>109 AND STAT375>39) OR (STAT372>119 AND STAT375>29) OR (STAT372>139 AND STAT375>19) OR (STAT372>159 AND STAT375>9) OR (STAT372>149 AND STAT373>19) OR (STAT372>174 AND STAT373>9) OR (STAT372>194))]:  %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(t51 OR t52 OR MAPTIER=3 OR MAPTIER=4) (STAT497>0 OR STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT373>9) OR (STAT372>225))]:  %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT497>0 OR STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>150 AND STAT374>0) OR (STAT372>70 AND STAT375>69) OR (STAT372>109 AND STAT375>39) OR (STAT372>119 AND STAT375>29) OR (STAT372>139 AND STAT375>19) OR (STAT372>159 AND STAT375>9) OR (STAT372>149 AND STAT373>19) OR (STAT372>174 AND STAT373>9) OR (STAT372>194))]:  %NL%%NAME%{%NAME%}%CONTINUE%
 
 //Warnings 
 
@@ -3581,24 +3581,25 @@ ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%
 ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
 
 // Armor
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG ID !SHOP]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(xvb OR zvb OR xsh OR zvb) MAG SHOP]: %GREEN%* %NAME%%GREEN% [LLD Craft] *%CONTINUE%//good craft when shopping
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG ID]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG ID]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG ID]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG ID]: %NAME%{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//boots
 
 // Class specific
-ItemDisplay[BAR MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
-ItemDisplay[(ob5 OR oba OR obf) MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
-ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
-ItemDisplay[(am5 OR ama OR amf) MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
-ItemDisplay[(am2 OR am7 OR amc) MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
-ItemDisplay[MAG ID !SHOP (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws)]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
-ItemDisplay[MAG ID !SHOP (DRU)]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
+ItemDisplay[BAR MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID] %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
+ItemDisplay[(am5 OR ama OR amf) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
+ItemDisplay[MAG ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws)]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
+ItemDisplay[MAG ID (DRU)]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
 ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
-ItemDisplay[SIN MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
+ItemDisplay[SIN MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%NL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
 
 // Crafting Reciepe
 ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ith, Jewel%NL%%BLUE%HitPwr: O, Ith, Jewel%NL%%RED%Blood: O, Ral, Jewel%NL%%PURPLE%* Caster: O, Nef, Jewel *%NL%%YELLOW%MF: O, Tir, Jewel%NL%%GRAY%* Vamp: SK, Lum, Jewel *%NL%%NAME%}%CONTINUE%
