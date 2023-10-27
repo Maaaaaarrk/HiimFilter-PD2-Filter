@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.41%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.42%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3098,10 +3098,9 @@ ItemDisplay[SET !ID (ltp OR lbl OR ghm OR gth OR hbt OR tow OR hbl OR hgl OR xlb
 
 // LLD  lld catch callouts
 //-----------------------------------------------------------------------------------
-vbt// Cow King or Sander - Heavy Boots
-bwn// Sanders Superstition - Bone Wand
-vgl// Sanders Taboo - Heavy Gloves
-
+// Cow King or Sander - Heavy Boots
+// Sanders Superstition - Bone Wand
+// Sanders Taboo - Heavy Gloves
 ItemDisplay[SET !ID (vbt OR bwn OR vgl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Rainbow Facet
@@ -5575,6 +5574,8 @@ ItemDisplay[7xf SK252>2 ETH !INF SOCK=3 NMAG]: %DOT-D6%%PURPLE%O O %NAME% %PURPL
 ItemDisplay[7xf SK252>2 ETH !INF SOCK=0 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%PURPLE%Roll for 3 sockets for GG Chaos base}
 ItemDisplay[7xf (SK275>0 OR SK252>0) ETH !INF SOCK=3 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%PURPLE%Chaos base}
 ItemDisplay[7xf (SK275>0 OR SK252>0) ETH !INF SOCK=0 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%PURPLE%Roll for 3 sockets for Chaos base}
+ItemDisplay[7xf ETH (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{{%NAME%%NL%%GREEN%Chaos base}
+
 
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH !INF (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH (SOCK=0 OR SOCK=3) SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
