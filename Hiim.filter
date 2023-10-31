@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.43%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.44%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -79,7 +79,7 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>35]:// Hide junk 1s stuff
 // PD2 ITEMS - General
 ItemDisplay[wss]: %PURPLE%WORLDSTAR!!! %CONTINUE%
 ItemDisplay[wss QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
-ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt%NL%50 Wss Stack ~.35}
+ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%NL%Sock Item: 75% Mod, 25% Brick%NL%Maps: 70% Mod, 30% CNC%NL%%ORANGE%Cube w/ item to corrupt%NL%50 Wss Stack ~.5}
 
 ItemDisplay[cwss QTY=1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %DARK_GREEN%<> <> <>{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[cwss QTY>1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %ORANGE%QTY %QTY% %DARK_GREEN%<> <> <>{%RED%Corrupts %TAN%your Annihilus}
@@ -6058,12 +6058,16 @@ ItemDisplay[NMAG !ID SHOP]: %NL%%ORANGE%Possible Items:%WHITE%%NL%%NAME%%CONTINU
 // Magic Rare in town
 ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NL%%YELLOW%Rare%NL%%BLUE%Magic%NAME%%CONTINUE%
 
+// rin/amu until big box is supported
+ItemDisplay[NMAG !ID SHOP (rin OR amu)]: %GOLD%Unique%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP (rin OR amu) (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GREEN%Set%NL%%NAME%%CONTINUE%
+
 // Uniques
-ItemDisplay[NMAG !ID SHOP amu]: %GOLD%Nokozan Relic%NL%The Eye of Etlich%NL%The Mahim-Oak Curio%NL%Saracen's Chance%NL%The Cat's Eye%NL%Crescent Moon%NL%Atma's Scarab%NL%The Rising Sun%NL%Highlord's Wrath%NL%Mara's Kaleidoscope%NL%Seraph's Hymn%NL%Metalgrid%NL%%NAME%%CONTINUE%
+// Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GOLD%Nokozan Relic%NL%The Eye of Etlich%NL%The Mahim-Oak Curio%NL%Saracen's Chance%NL%The Cat's Eye%NL%Crescent Moon%NL%Atma's Scarab%NL%The Rising Sun%NL%Highlord's Wrath%NL%Mara's Kaleidoscope%NL%Seraph's Hymn%NL%Metalgrid%NL%%NAME%%CONTINUE%
+// Cant do this yet ItemDisplay[NMAG !ID SHOP rin]: %GOLD%Wisp Projector%NL%Stone of Jordan%NL%Raven Frost%NL%Nature's Peace%NL%Nagelring%NL%Manald Heal%NL%Dwarf Star%NL%Carrion Wind%NL%Bul-Kathos' Wedding Band%NL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP jew]: %GOLD%Rainbow Facet%NL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ci0]: %GOLD%Kira's Guardian%NL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ci1]: %GOLD%Griffon's Eye%NL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP rin]: %GOLD%Wisp Projector%NL%Stone of Jordan%NL%Raven Frost%NL%Nature's Peace%NL%Nagelring%NL%Manald Heal%NL%Dwarf Star%NL%Carrion Wind%NL%Bul-Kathos' Wedding Band%NL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP am1]: %GOLD%Blood Raven's Charge%NL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP am2]: %GOLD%Lycander's Aim%NL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP am5]: %GOLD%Thunderstroke%NL%Titan's Revenge%NL%True Silver%NL%%NAME%%CONTINUE%
@@ -6223,80 +6227,82 @@ ItemDisplay[NMAG !ID SHOP gwn]: %GOLD%Death's Web%NL%Blackhand Key%NL%Ume's Lame
 ItemDisplay[NMAG !ID SHOP !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%
 
 // Sets
-ItemDisplay[NMAG !ID SHOP amu]: %GREEN%Angelic Wings%NL%Arcanna's Sign%NL%Cathan's Sigil%NL%Civerb's Icon%NL%Iratha's Collar%NL%Tancred's Weird%NL%Vidala's Snare%NL%Telling of Beads%NL%Tal Rasha's Adjudication%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ci0]: %GREEN%Naj's Circlet%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ci1]: %GREEN%M'avina's True Sight%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP rin]: %GREEN%Cathan's Seal%NL%Bul-Kathos' Death Band%NL%Angelic Halo%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP am2]: %GREEN%M'avina's Caster%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP skr]: %GREEN%Natalya's Mark%NL%%NL%%NAME%
+// Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GREEN%Angelic Wings%NL%Arcanna's Sign%NL%Cathan's Sigil%NL%Civerb's Icon%NL%Iratha's Collar%NL%Tancred's Weird%NL%Vidala's Snare%NL%Telling of Beads%NL%Tal Rasha's Adjudication%NL%%NL%%NAME%
+// Cant do this yet ItemDisplay[NMAG !ID SHOP rin]: %GREEN%Cathan's Seal%NL%Bul-Kathos' Death Band%NL%Angelic Halo%NL%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ci0]: %GREEN%Naj's Circlet%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ci1]: %GREEN%M'avina's True Sight%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP am2]: %GREEN%M'avina's Caster%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP skr]: %GREEN%Natalya's Mark%NL%%CONTINUE%%NL%%NAME%
 ItemDisplay[NMAG !ID SHOP ba5]: %GREEN%Immortal King's Will%NAME%
-ItemDisplay[NMAG !ID SHOP dr3]: %GREEN%Aldur's Stony Gaze%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ne4]: %GREEN%Trang-Oul's Wing%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP pa5]: %GREEN%Griswold's Honor%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ob5]: %GREEN%Tal Rasha's Lidless Eye%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP qui]: %GREEN%Dark Adherent%NL%Arctic Furs%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lea]: %GREEN%Vidala's Ambush%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP stu]: %GREEN%Cow King's Hide%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP rng]: %GREEN%Angelic Mantle%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP scl]: %GREEN%Natalya's Shadow%NL%Hwanin's Refuge%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP brs]: %GREEN%Haemosu's Adamant%NL%Isenhart's Case%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP chn]: %GREEN%Cathan's Mesh%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP spl]: %GREEN%Sazabi's Ghost Liberator%NL%Berserker's Hauberk%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ltp]: %GREEN%Arcanna's Flesh%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP fld]: %GREEN%M'avina's Embrace%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP plt]: %GREEN%Naj's Light Plate%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP gth]: %GREEN%Tal Rasha's Guardianship%NL%Sigon's Shelter%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ful]: %GREEN%Aldur's Deception%NL%Trang-Oul's Scales%NL%Tancred's Spine%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP aar]: %GREEN%Immortal King's Soul Cage%NL%Griswold's Heart%NL%Milabrega's Robe%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lbl]: %GREEN%Death's Guard%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP vbl]: %GREEN%M'avina's Tenet%NL%Arctic Binding%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mbl]: %GREEN%Credendum%NL%Tal Rasha's Fine-Spun Cloth%NL%Hwanin's Blessing%NL%Hsarus' Iron Stay%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP tbl]: %GREEN%Trang-Oul's Girth%NL%Wilhelm's Pride%NL%Iratha's Cord%NL%Infernal Sign%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP hbl]: %GREEN%Immortal King's Detail%NL%Sigon's Wrap%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lbt]: %GREEN%Rite of Passage%NL%Tancred's Hobnails%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP vbt]: %GREEN%Sander's Riprap%NL%Cow King's Hooves%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mbt]: %GREEN%Natalya's Soul%NL%Hsarus' Iron Heel%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP tbt]: %GREEN%Aldur's Advance%NL%Vidala's Fetlock%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP hbt]: %GREEN%Immortal King's Pillar%NL%Sigon's Sabot%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lgl]: %GREEN%Laying of Hands%NL%Death's Hand%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP vgl]: %GREEN%Magnus' Skin%NL%Sander's Taboo%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mgl]: %GREEN%Trang-Oul's Claws%NL%Cleglaw's Pincers%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP tgl]: %GREEN%M'avina's Icy Clutch%NL%Iratha's Cuff%NL%Arctic Mitts%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP hgl]: %GREEN%Immortal King's Forge%NL%Sigon's Gage%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP cap]: %GREEN%Cow King's Horns%NL%Sander's Paragon%NL%Infernal Cranium%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP skp]: %GREEN%Arcanna's Head%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP hlm]: %GREEN%Berserker's Headgear%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP fhl]: %GREEN%Sazabi's Mental Sheath%NL%Isenhart's Horns%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP ghm]: %GREEN%Ondal's Almighty%NL%Guillaume's Face%NL%Sigon's Visor%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP msk]: %GREEN%Tal Rasha's Horadric Crest%NL%Cathan's Visage%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP crn]: %GREEN%Griswold's Valor%NL%Hwanin's Splendor%NL%Milabrega's Diadem%NL%Iratha's Coil%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP bhm]: %GREEN%Trang-Oul's Guise%NL%Natalya's Totem%NL%Tancred's Skull%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP buc]: %GREEN%Hsarus' Iron Fist%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP sml]: %GREEN%Whitstan's Guard%NL%Cleglaw's Claw%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lrg]: %GREEN%Civerb's Ward%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP kit]: %GREEN%Milabrega's Orb%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP tow]: %GREEN%Sigon's Guard%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP gts]: %GREEN%Taebaek's Glory%NL%Isenhart's Parry%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP 2ax]: %GREEN%Berserker's Hatchet%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mpi]: %GREEN%Tancred's Crowbill%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lbb]: %GREEN%Vidala's Barb%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP swb]: %GREEN%Arctic Horn%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP dgr]: %GREEN%Infernal Spike%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mac]: %GREEN%Dangoon's Teaching%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mst]: %GREEN%Aldur's Rhythm%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP mau]: %GREEN%Immortal King's Stone Crusher%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP vou]: %GREEN%Hwanin's Justice%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP gsc]: %GREEN%Civerb's Cudgel%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP cst]: %GREEN%Naj's Puzzler%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP bst]: %GREEN%Cathan's Rule%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP wst]: %GREEN%Arcanna's Deathwand%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP sbr]: %GREEN%Angelic Sickle%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP bsd]: %GREEN%Isenhart's Lightbrand%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP lsd]: %GREEN%Sazabi's Cobalt Redeemer%NL%Cleglaw's Tooth%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP wsd]: %GREEN%Death's Touch%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP flb]: %GREEN%Bul-Kathos' Tribal Guardian%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP gsd]: %GREEN%Bul-Kathos' Sacred Charge%NL%%NL%%NAME%
-ItemDisplay[NMAG !ID SHOP bwn]: %GREEN%Sander's Superstition%NL%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP dr3]: %GREEN%Aldur's Stony Gaze%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ne4]: %GREEN%Trang-Oul's Wing%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP pa5]: %GREEN%Griswold's Honor%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ob5]: %GREEN%Tal Rasha's Lidless Eye%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP qui]: %GREEN%Dark Adherent%NL%Arctic Furs%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lea]: %GREEN%Vidala's Ambush%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP stu]: %GREEN%Cow King's Hide%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP rng]: %GREEN%Angelic Mantle%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP scl]: %GREEN%Natalya's Shadow%NL%Hwanin's Refuge%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP brs]: %GREEN%Haemosu's Adamant%NL%Isenhart's Case%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP chn]: %GREEN%Cathan's Mesh%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP spl]: %GREEN%Sazabi's Ghost Liberator%NL%Berserker's Hauberk%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ltp]: %GREEN%Arcanna's Flesh%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP fld]: %GREEN%M'avina's Embrace%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP plt]: %GREEN%Naj's Light Plate%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP gth]: %GREEN%Tal Rasha's Guardianship%NL%Sigon's Shelter%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ful]: %GREEN%Aldur's Deception%NL%Trang-Oul's Scales%NL%Tancred's Spine%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP aar]: %GREEN%Immortal King's Soul Cage%NL%Griswold's Heart%NL%Milabrega's Robe%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lbl]: %GREEN%Death's Guard%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP vbl]: %GREEN%M'avina's Tenet%NL%Arctic Binding%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mbl]: %GREEN%Credendum%NL%Tal Rasha's Fine-Spun Cloth%NL%Hwanin's Blessing%NL%Hsarus' Iron Stay%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP tbl]: %GREEN%Trang-Oul's Girth%NL%Wilhelm's Pride%NL%Iratha's Cord%NL%Infernal Sign%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP hbl]: %GREEN%Immortal King's Detail%NL%Sigon's Wrap%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lbt]: %GREEN%Rite of Passage%NL%Tancred's Hobnails%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP vbt]: %GREEN%Sander's Riprap%NL%Cow King's Hooves%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mbt]: %GREEN%Natalya's Soul%NL%Hsarus' Iron Heel%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP tbt]: %GREEN%Aldur's Advance%NL%Vidala's Fetlock%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP hbt]: %GREEN%Immortal King's Pillar%NL%Sigon's Sabot%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lgl]: %GREEN%Laying of Hands%NL%Death's Hand%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP vgl]: %GREEN%Magnus' Skin%NL%Sander's Taboo%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mgl]: %GREEN%Trang-Oul's Claws%NL%Cleglaw's Pincers%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP tgl]: %GREEN%M'avina's Icy Clutch%NL%Iratha's Cuff%NL%Arctic Mitts%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP hgl]: %GREEN%Immortal King's Forge%NL%Sigon's Gage%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP cap]: %GREEN%Cow King's Horns%NL%Sander's Paragon%NL%Infernal Cranium%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP skp]: %GREEN%Arcanna's Head%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP hlm]: %GREEN%Berserker's Headgear%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP fhl]: %GREEN%Sazabi's Mental Sheath%NL%Isenhart's Horns%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP ghm]: %GREEN%Ondal's Almighty%NL%Guillaume's Face%NL%Sigon's Visor%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP msk]: %GREEN%Tal Rasha's Horadric Crest%NL%Cathan's Visage%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP crn]: %GREEN%Griswold's Valor%NL%Hwanin's Splendor%NL%Milabrega's Diadem%NL%Iratha's Coil%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP bhm]: %GREEN%Trang-Oul's Guise%NL%Natalya's Totem%NL%Tancred's Skull%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP buc]: %GREEN%Hsarus' Iron Fist%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP sml]: %GREEN%Whitstan's Guard%NL%Cleglaw's Claw%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lrg]: %GREEN%Civerb's Ward%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP kit]: %GREEN%Milabrega's Orb%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP tow]: %GREEN%Sigon's Guard%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP gts]: %GREEN%Taebaek's Glory%NL%Isenhart's Parry%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP 2ax]: %GREEN%Berserker's Hatchet%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mpi]: %GREEN%Tancred's Crowbill%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lbb]: %GREEN%Vidala's Barb%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP swb]: %GREEN%Arctic Horn%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP dgr]: %GREEN%Infernal Spike%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mac]: %GREEN%Dangoon's Teaching%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mst]: %GREEN%Aldur's Rhythm%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP mau]: %GREEN%Immortal King's Stone Crusher%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP vou]: %GREEN%Hwanin's Justice%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP gsc]: %GREEN%Civerb's Cudgel%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP cst]: %GREEN%Naj's Puzzler%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP bst]: %GREEN%Cathan's Rule%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP wst]: %GREEN%Arcanna's Deathwand%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP sbr]: %GREEN%Angelic Sickle%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP bsd]: %GREEN%Isenhart's Lightbrand%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP lsd]: %GREEN%Sazabi's Cobalt Redeemer%NL%Cleglaw's Tooth%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP wsd]: %GREEN%Death's Touch%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP flb]: %GREEN%Bul-Kathos' Tribal Guardian%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP gsd]: %GREEN%Bul-Kathos' Sacred Charge%NL%%CONTINUE%%NL%%NAME%
+ItemDisplay[NMAG !ID SHOP bwn]: %GREEN%Sander's Superstition%NL%%CONTINUE%%NL%%NAME%
+
+ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NL%%NAME%
 
 
 //-----------------------------------------------------------------------------------
