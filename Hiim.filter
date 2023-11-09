@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.51%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.52%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1647,6 +1647,9 @@ ItemDisplay[(cm1 OR cm2) UNI RES>0]: %NAME%%PURPLE% %RES%%%CONTINUE%
 // EXP %
 ItemDisplay[(cm1 OR cm2) UNI STAT85>0]: %NAME%%GREEN% %STAT85%%%CONTINUE%
 
+// Skill slam
+ItemDisplay[(cm1 OR cm2) UNI ALLSK=2]: %PURPLE%2 Skill %GOLD%%NAME%%CONTINUE%
+
 // Class
 ItemDisplay[cm2 UNI CLSK0>0]: %TAN%Amazon %GOLD%%NAME%%CONTINUE%
 ItemDisplay[cm2 UNI CLSK1>0]: %TAN%Sorc %GOLD%%NAME%%CONTINUE%
@@ -1718,8 +1721,6 @@ ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%[eth-rep] %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%[eth-rep] %BLUE%%NAME%%CONTINUE%
 ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%[eth-rep] %GRAY%%NAME%%CONTINUE%
 ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%[eth-rep] %ORANGE%%NAME%%CONTINUE%
-
-
 
 // ITEM TAGS- SOCKETS
 ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0]: %WHITE%%NAME%%CONTINUE%
