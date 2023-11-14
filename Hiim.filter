@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.54%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%version 10.0.55%NL%For Season 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3504,6 +3504,9 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 ItemDisplay[RARE !ID CLASS FILTLVL<5]: %NAME%
 ItemDisplay[RARE !ID MAPID=83 FILTLVL<5]: %NAME%
 ItemDisplay[!ID AMAZON (am5 OR ama OR amf) RARE FILTLVL<7]: %NAME%//zon javs
+
+// Warrior Map
+ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)  FILTLVL<7]: %NAME%
 
 // Silence rest
 ItemDisplay[RARE !ID FILTLVL>2]:
