@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated November 15%NL%Season 8 - version 57%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated November 15%NL%Season 8 - version 58%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -529,7 +529,6 @@ ItemDisplay[hp5 FILTLVL<3]: %RED%+ %WHITE%HP5 %RED%+
 ItemDisplay[hp5]: %RED%+%WHITE%HP5
 
 // Show MP Pots
-ItemDisplay[pvpp]: %BLUE%%NAME%
 ItemDisplay[mp1 DIFF<1 CLVL<80]: %BLUE%+ %WHITE%MP1 %BLUE%+
 ItemDisplay[mp2 DIFF<1 CLVL<80]: %BLUE%+ %WHITE%MP2 %BLUE%+
 ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+ %WHITE%MP3 %BLUE%+
@@ -538,13 +537,26 @@ ItemDisplay[mp5 FILTLVL<3]: %BLUE%+ %WHITE%MP5 %BLUE%+
 ItemDisplay[mp5]: %BLUE%+%WHITE%MP5
 
 // Other Potion Tooltips
-ItemDisplay[vps FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta{Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
-ItemDisplay[vps]: {Stealth  Tal Eth%NL%Spirit  Tal Thul Ort Amn%NL%Lore  Ort Sol%NL%Leaf  Tir Ral%NL%Insight  Ral Tir Tal Sol%NL%AncientsPledge  Ral Ort Tal}
+ItemDisplay[vps FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta
+ItemDisplay[vps]:
 ItemDisplay[yps (MAPID=161 OR MAPID=162 OR MAPID=163)]: %GREEN%!Anti{Good Luck on Rathma}
-ItemDisplay[yps (FILTLVL<2 OR CLVL<24)]: %GREEN%!Anti{Harmony  Tir Ith Sol Ko%NL%Obedience Hel Ko Thul Eth Fal}
-ItemDisplay[yps]: {Harmony  Tir Ith Sol Ko%NL%Obedience Hel Ko Thul Eth Fal}
-ItemDisplay[wms FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
-ItemDisplay[wms]: {Treachery  Shael Thul Lem%NL%Stone  Shael Um Pul Lum%NL%Smoke  Nef Lum%NL%Splendor  Eth Lum%NL%HOTO  Ko Vex Pul Thul}
+ItemDisplay[yps (FILTLVL<2 OR CLVL<24)]: %GREEN%!Anti
+ItemDisplay[yps]:
+
+
+// PVP modifiers
+ItemDisplay[(wms OR pvpp) BARBARIAN]: %CONTINUE%{OPEN WOUNDS  N: 10%  Nm: 8%  H: 6%%NL%WHIRLWIND  N/Nm: 75%  H: 90%%NL%WARCRY  N/Nm: 135%  H: 125%%NL%STUN  N/Nm: 100%%NL%FRENZY  N/Nm: 200%%NL%DOUBLESWING  N/Nm: 200%%NL%DOUBLETHROW  N/Nm: 114%%NL%CONCENTRATE  N/Nm: 50% Magic%NL%CONCENTRATE  N/Nm: 100% Phys%NL%BERSERK  N/Nm: 125%%NL%BASH  N/Nm: 100%%NL%**BARBARIAN**}
+ItemDisplay[(wms OR pvpp) ASSASSIN]: %CONTINUE%{WAKE OF FIRE  N/Nm: 60%%NL%SENTRYCHAINLIGHTNING  N/Nm: 35%  H: 45%%NL%SENTRYLIGHTNING  N/Nm: 35%  H: 45%%NL%PSYCHICHAMMER  N/Nm: 20%  H: 10%%NL%MINDBLAST  N/Nm: 25%  H: 30%%NL%MINDBLAST  (No longer namelocks)%NL%BLADESENTINEL  N/Nm: 70%  H: 50%%NL%BLADE FURY  N/Nm: 80%  H: 60%%NL%BLADE DANCE  H: 85%%NL%**ASSASSIN**}
+ItemDisplay[(wms OR pvpp) PALADIN]: %CONTINUE%{ZEAL  All: 75%%NL%VENGEANCE  N/Nm: 200% (Ele)%NL%VENGEANCE  N/Nm: 100% (Phys)%NL%SMITE  N/Nm: 85%  H: 75%%NL%SACRIFICE  N/Nm: 150%%NL%JOUST  All: 20%%NL%HOLYNOVA  N/Nm: 70%%NL%HOLYFIRE  N/Nm: 125%  H: 50%%NL%HOLYBOLT  N/Nm: 65%  H: 75%%NL%FISTOFTHEHEAVENS  N/Nm: 55%  H: 65%%NL%CHARGE  All: 70%%NL%BLESSEDHAMMER  N/Nm: 70%  H: 50%%NL%**PALADIN**}
+ItemDisplay[(wms OR pvpp) DRUID]: %CONTINUE%{VOLCANO  All: 65%%NL%TORNADO  N/Nm: 75%  H: 65%%NL%SHOCKWAVE  N/Nm: 175%%NL%RAVEN  N/Nm: 60%%NL%RABIES  N/Nm: 150% (Psn)%NL%RABIES  N/Nm: 100% (Phys)%NL%MOLTENBOULDER  N/Nm: 90%  H: 80%%NL%MAUL  N/Nm: 150%%NL%FIRESTORM  N/Nm: 150%%NL%FIRECLAWS  N/Nm: 300% (Fire)%NL%FIRECLAWS  N/Nm: 100% (Phys)%NL%HURRICANE  N/Nm: 150%%NL%ARCTICBLAST  N/Nm: 200%%NL%ARMAGEDDON  N/Nm: 35%  H: 55%%NL%**DRUID**}
+ItemDisplay[(wms OR pvpp) NECROMANCER]: %CONTINUE%{TEETH  N/Nm: 40%  H: 35%%NL%POISONNOVA  N/Nm: 150%  H: 125%%NL%POISONSTRIKE  N/Nm: 150%  H: 125%%NL%DESECRATE  H: 60%%NL%DARK PACT  N/Nm: 65%  H: 55%%NL%CORPSEEXPLOSION  N/Nm: 65%%NL%BONESPEAR  N/Nm: 55%  H: 45%%NL%BONESPIRIT  N/Nm: 45%  H: 30%%NL%****NECROMANCER**}
+ItemDisplay[(wms OR pvpp) AMAZON]: %CONTINUE%{VALKYRIE  N/Nm: 70%%NL%STRAFE  N/Nm: 65%%NL%POWERSTRIKE  N/Nm: 17% (Phys)%NL%POISONJAVELIN  H: 85%%NL%PLAGUEJAVELIN  N/Nm: 110% H: 45(Psn)%NL%PLAGUEJAVELIN  All: 100% (Phys)%NL%MAGICARROW  N/Nm: 100%%NL%LIGHTNINGBOLT  N/Nm: 100%%NL%LIGHTNINGFURY  N/Nm: 100%%NL%JAB  N/Nm: 90%  H: 80%%NL%ICEARROW  N/Nm: 175%  H: 110%%NL%IMMOLATIONARROW  N/Nm: 200%%NL%GUIDED ARROW  N/Nm: 130%  H: 120%%NL%FREEZINGARROW  N/Nm: 175%%NL%DECOY  N/Nm: 55%%NL%CHARGEDSTRIKE  N/Nm: 130% (Light)%NL%**AMAZON**}
+ItemDisplay[(wms OR pvpp) SORCERESS]: %CONTINUE%{TELEK 10%%NL%TSTORM N/Nm 30% H 35%%NL%NOVA N/Nm 150% H 140%%NL%METEOR N/Nm 65% H 90%%NL%LILHYDRA N/Nm 50% H 90%%NL%LIGHTNING N/Nm 200% H 180%%NL%ICEBARRAGE N/Nm 175% H 140%%NL%ICEBLT N/Nm 135% H 114%%NL%ICEBLST N/Nm 150% H 114%%NL%INFERNO N/Nm 114%%NL%HYDRA N/Nm 60% H 90%%NL%GLASPKE N/Nm 150% H 114%%NL%FNOVA N/Nm 165% H 125%%NL%FORB N/Nm 150% H 114%%NL%FIREWALL N/Nm 90%%NL%FIREBLT N/Nm 95% H 114%%NL%FBALL N/Nm 95% H 114%%NL%CHRGBOLT N/Nm 185% H 75%%NL%CHNLIGHT N/Nm 120%%NL%COMBUST N/Nm 90% H 80%%NL%BLIZZ N/Nm 160% H 130%%NL%BLAZE N/Nm 130%%NL%***SORCERESS**}
+ItemDisplay[(wms OR pvpp)]: %CONTINUE%{%NAME%%NL%PVP Modifiers}
+
+ItemDisplay[wms FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{%NAME%}
+ItemDisplay[wms]: {%NAME%}
+ItemDisplay[pvpp]: %BLUE%PVP Mana Pot{%NAME%}
 
 // S8 New Throwing Potions
 
