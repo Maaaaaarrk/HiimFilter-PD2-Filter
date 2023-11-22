@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated November 21%NL%Season 8 - version 61%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated November 22%NL%Season 8 - version 62%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -5741,7 +5741,8 @@ ItemDisplay[(uit OR uow OR uts) !INF NMAG !RW (SOCK=0 OR SOCK=4)]: %NAME%{%NAME%
 ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 SOCK=3]: %NAME%{%NAME%}
 ItemDisplay[6cb NMAG !RW !INF SOCK=3]: %NAME%{%NAME%}
-//ItemDisplay[(6cb OR 8rx OR 6rx) NMAG !INF !RW (SOCK=0 OR SOCK=4)]: %NAME%{%NAME%}
+ItemDisplay[6mx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=4) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[(6cb OR 8rx OR 6rx OR 6mx) NMAG !INF !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
 
 // Clubs
 ItemDisplay[(7cl OR 7sp) NMAG !INF !RW !SOCK=1 (SK221>2 OR SK223>2 OR SK224>2 OR SK225>2 OR SK227>2 OR SK228>2 OR SK233>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK248>2 OR SK249>2 OR SK250>2)]: %NAME%{%NAME%}
@@ -5810,8 +5811,9 @@ ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25]: %DOT-9B%%PUR
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=6 ILVL>25]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%NAME%%NL%%GREEN%Good Obsession base}
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0 ILVL>25]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%GREEN%Hit 6 sockets for Good Obsession base%NL%%NAME%}
 //Misc staff
-ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5)]: %DOT-D6%* %NAME% *{%NAME%}
+ItemDisplay[(6cs OR 6bs OR 6ws) (SK47>2 OR SK376>2 OR SK61>2) NMAG !RW FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<7]: %DOT-D6%* %NAME% *{%NAME%}
 
 // Polearms/Spears/Amazon Spears
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7 OR 7o7) ETH NMAG !INF !RW (SOCK=0 OR SOCK=3 OR SOCK=4 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
