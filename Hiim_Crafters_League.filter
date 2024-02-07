@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 8%NL%Crafters League%NL%Season 8.5 - version 1%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 6%NL%Crafters League%NL%Season 8.5 - version 2%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2025,6 +2025,18 @@ ItemDisplay[CLSK6=2 SK280=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Phoenix Strike %NAME%%C
 ItemDisplay[TABSK50=2 SK280=3 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[TABSK50=3 SK280=2 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[CLSK6=2 SK280=3 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+
+// Blade Sentinel
+ItemDisplay[TABSK48=2 SK257=3 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK257=3 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=2 SK257=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Blade Sentinelt %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK257=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=2 SK257=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK257=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
 
 //  +2 Sin / +3 skill
 ItemDisplay[!UNI ID (CLSK6>1 AND SK254>2) SIN]: %ORANGE%+5 Tiger Strike %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Tiger Strike katar
