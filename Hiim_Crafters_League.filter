@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 12%NL%Crafters League%NL%Season 8.5 - version 9%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 12%NL%Crafters League%NL%Season 8.5 - version 10%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -85,8 +85,8 @@ ItemDisplay[cwss QTY=1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WO
 ItemDisplay[cwss QTY>1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %ORANGE%QTY %QTY% %DARK_GREEN%<> <> <>{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %ORANGE%X    %GRAY%%NAME%  %ORANGE%X%WHITE%%MAP-68%
 ItemDisplay[rkey]: %DARK_GREEN%>> Y <<    %ORANGE%Skeleton Key   %DARK_GREEN%>> Y <<%MAP-68%
-ItemDisplay[lbox]: %MAP-4A%%ORANGE%* * %PURPLE%> > %NAME% %PURPLE%< <%ORANGE% * *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[lpp]: %MAP-4A%%ORANGE%* %PURPLE%> %NAME% %PURPLE%<%ORANGE% *{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lbox]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lpp]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%NL%One-Handed Weapon = 2 max%NL%Helmet, Chest, Shield = 2 max%NL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
 ItemDisplay[llmr]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
 ItemDisplay[lsvl]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
@@ -412,7 +412,7 @@ ItemDisplay[gprs]: %DOT-70%%NAME%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%N
 
 ItemDisplay[gpws]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: All Res +19%%NL%Armor/Helm: +100 to AR%NL%Weapon: +68% Dmg vs Undead%NL%}
 // Skull
-ItemDisplay[skzs]:%DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon Shael, +[75-120]%ToDemon,ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft}
+ItemDisplay[skzs]:%DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon Shael, +[75-120]%ToDemon&ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft}
 
 
 // Crafting orb formatting
@@ -425,7 +425,7 @@ ItemDisplay[crfs]:%GREEN%Safety Craft Infusion%CONTINUE%{Amulet 10% Block [2-5] 
 // crfh (hitpower craft)
 ItemDisplay[crfh]:%BLUE%Hitpower Craft Infusion%CONTINUE%{Amulet +[150-250]AR +[10-20]% FHR 5%CTC FrstNva%NL%Ring +[5-10]Dex +[1-4] MaxDmg 5%CTC FrstNva%NL%Belt [5-10]%Dmg Gned as Mana +[10-20]% FHR 5%CTC FrstNva%NL%Gloves Knockback -[10-20]% Target Def 5%CTC FrstNva%NL%Boots +[25-50]DefvMelee +10% FHR 5%CTC FrstNva%NL%Helm +[100-200]AR +[10-20]% FHR 5%CTC FrstNva%NL%Chest +[25-50]%EDef +[20-40]% FHR 5%CTC FrstNva%NL%Shield [10-20]%Block +[20-30]% FBR 5%CTC FrstNva%NL%Weapon +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FrstNva%NL%%BLUE%Hitpower Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfv (vampiric craft)
-ItemDisplay[crfv]:%GRAY%Vampiric Craft Infusion%CONTINUE%{Amulet [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring [10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon +[75-120]%ToDemon,ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfv]:%GRAY%Vampiric Craft Infusion%CONTINUE%{Amulet [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring [10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon +[75-120]%ToDemon&ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfu (bountiful craft)
 ItemDisplay[crfu]:%YELLOW%Bountiful Craft Infusion%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radius%NL%Ring +[5-10] Vit [10-15]% MF +[1-3]L.Radius%NL%Belt +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Gloves +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%NL%Boots +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%NL%Helm +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Chest +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Shield [10-20]% Block [20-30]% MF +[1-3]L.Radius%NL%Weapon +[50-80]% EDmg [20-30]% MF +[1-3]L.Radius%NL%%YELLOW%Bountiful Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 
