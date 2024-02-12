@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 11%NL%Crafters League%NL%Season 8.5 - version 8%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 12%NL%Crafters League%NL%Season 8.5 - version 9%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -392,20 +392,27 @@ ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg O
 
 // Tooltips
 ItemDisplay[(gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) FILTLVL>6]:
-ItemDisplay[gzvs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: +24 Def%NL%Armor/Helm: +8 to Strength%NL%Weapon: +100 to Attack Rating%NL%}
-ItemDisplay[glys]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Light Res%NL%Armor/Helm: 20% Magic Find%NL%Weapon: 1-30 Light Damage%NL%}
-ItemDisplay[glbs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Cold Res%NL%Armor/Helm: +31 to Mana%NL%Weapon: 6-10 Cold Damage%NL%}
-ItemDisplay[glgs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Psn Res%NL%Armor/Helm: +8 Dexterity%NL%Weapon: +60 Psn Dmg over 6 Sec%NL%}
-ItemDisplay[glrs]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Fire Res%NL%Armor/Helm: +31 to Life%NL%Weapon: 10-16 Fire Dmg%NL%}
-ItemDisplay[glws]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: All Res +14%%NL%Armor/Helm: +80 to AR%NL%Weapon: +54% Dmg vs Undead%NL%}
-ItemDisplay[skls]: %NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: Atcker+16Dmg%NL%Armor/Helm: Rep Life 4, Reg Mana 12%%NL%Weapon: 3%Life 3%Mana %NL%}
-ItemDisplay[gpvs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: +30 Def%NL%Armor/Helm: +10 to Strength%NL%Weapon: +150 to Attack Rating%NL%}
-ItemDisplay[gpys]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: 40% Light Res%NL%Armor/Helm: 24% Magic Find%NL%Weapon: 1-40 Light Damage%NL%}
-ItemDisplay[gpbs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: 40% Cold Res%NL%Armor/Helm: +38 to Mana%NL%Weapon: 10-14 Cold Damage%NL%}
-ItemDisplay[gpgs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: 40% Psn Res%NL%Armor/Helm: +10 Dexterity%NL%Weapon: +100 Psn Dmg over 7 Sec%NL%}
-ItemDisplay[gprs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: 40% Fire Res%NL%Armor/Helm: +38 to Life%NL%Weapon: 15-20 Fire Dmg%NL%}
+ItemDisplay[gzvs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: +24 Def%NL%Armor/Helm: +8 to Strength%NL%Weapon: +100 to Attack Rating%NL%}
+ItemDisplay[glys]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Light Res%NL%Armor/Helm: 20% Magic Find%NL%Weapon: 1-30 Light Damage%NL%}
+ItemDisplay[glbs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Cold Res%NL%Armor/Helm: +31 to Mana%NL%Weapon: 6-10 Cold Damage%NL%}
+ItemDisplay[glgs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Psn Res%NL%Armor/Helm: +8 Dexterity%NL%Weapon: +60 Psn Dmg over 6 Sec%NL%}
+ItemDisplay[glrs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: 28% Fire Res%NL%Armor/Helm: +31 to Life%NL%Weapon: 10-16 Fire Dmg%NL%}
+ItemDisplay[glws]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: All Res +14%%NL%Armor/Helm: +80 to AR%NL%Weapon: +54% Dmg vs Undead%NL%}
+ItemDisplay[skls]: %DOT-70%%NAME%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%NL%%NL%%WHITE%Shield: Atcker+16Dmg%NL%Armor/Helm: Rep Life 4, Reg Mana 12%%NL%Weapon: 3%Life 3%Mana %NL%}
+// Ame
+ItemDisplay[gpvs]: %DOT-70%%NAME%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%NL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%NL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%NL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%NL%Boots Thul, Max Mana [5-10]% Regen Mana [4-10]% +[10-20] Mana%NL%Helm Nef, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%NL%Chest Nef, +[5-10]% FCR +[2-6] MPK +[10-20] to Mana%NL%Shield Eth, [10-20]% Block +[5-10]% FCR +[10-20] Mana%NL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%NL%%PURPLE%Caster Craft}
+// Topaz
+ItemDisplay[gpys]: %DOT-70%%NAME%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%NL%Ring Lum, +[5-10] Vit [10-15]% MF +[1-3]L.Radius%NL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%NL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%NL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Chest Eld, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Shield Dol, [10-20]% Block [20-30]% MF +[1-3]L.Radius%NL%Weapon Shael, +[50-80]% EDmg [20-30]% MF +[1-3]L.Radius%NL%%YELLOW%Bountiful Craft}
+// Saph
+ItemDisplay[gpbs]: %DOT-70%%NAME%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FrstNva%NL%Ring Amn, +[5-10]Dex +[1-4] MaxDmg 5%CTC FrstNva%NL%Belt Tal, [5-10]%Dmg Gned as Mana +[10-20]% FHR 5%CTC FrstNva%NL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FrstNva%NL%Boots Ral, +[25-50]DefvMelee +10% FHR 5%CTC FrstNva%NL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FrstNva%NL%Chest Nef, +[25-50]%EDef +[20-40]% FHR 5%CTC FrstNva%NL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FrstNva%NL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FrstNva%NL%%BLUE%Hitpower Craft}
+// Emerald
+ItemDisplay[gpgs]: %DOT-70%%NAME%{Amulet Thul, 10% Block [2-5]MDR [2-5]PDR%NL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%NL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%NL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%NL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%NL%Helm Ith, +[20-60]% EDef +[10-20]% Light Res [5-10]% PDR%NL%Chest Eth, +[20-60]% EDef Half Freeze Duration [5-10]% PDR%NL%Shield Nef, +[20-60]% EDef [5-10]% PDR%NL%Bow/XBow Sol, +[70-140]% EDmg +[10-20]% IAS [2-5]MDR [2-5]PDR%NL%%GREEN%Safety Craft}
+// Ruby
+ItemDisplay[gprs]: %DOT-70%%NAME%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%NL%Ring Sol, +[5-10] Str [1-3]% LL +[10-20] Life%NL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%NL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%NL%Boots Eth, Rep Life +[15-30] [2-4]%LL +[10-20] Life%NL%Helm Ral, [10-20]% Crushing Blow [2-4]% LL +[10-20] Life%NL%Chest Thul, +[3-6] LPK [3-6]% LL +[20-40] Life%NL%Shield Ith, [10-20]% Block [3-6]% LL +[10-20] Life%NL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%NL%%RED%Blood Craft}
+
 ItemDisplay[gpws]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: All Res +19%%NL%Armor/Helm: +100 to AR%NL%Weapon: +68% Dmg vs Undead%NL%}
-ItemDisplay[skzs]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: Atcker+20Dmg%NL%Armor/Helm: Rep Life 5, Reg Mana 19%%NL%Weapon: 4%Life 3%Mana %NL%}
+// Skull
+ItemDisplay[skzs]:%DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon Shael, +[75-120]%ToDemon,ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft}
 
 
 // Crafting orb formatting
@@ -709,7 +716,7 @@ ItemDisplay[(aqv OR cqv) NMAG !(AMAZON)]:
 ItemDisplay[(aqv OR cqv) MAG !ID FILTLVL>1]:
 ItemDisplay[cqv RARE !ID FILTLVL>2]:
 ItemDisplay[aqv RARE !ID FILTLVL>4]:
-ItemDisplay[aqv RARE !ID FILTLVL<5]:%NAME%
+ItemDisplay[(aqv OR cqv) RARE !ID FILTLVL<5]:%NAME%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -1343,8 +1350,11 @@ ItemDisplay[BOOTS (MAG OR RARE OR CRAFT) ID FRW>0]: %TAN%+%FRW% FRW %NAME%%CONTI
 //-----------------------------------------------------------------------------------
 // Jewels, Rings, Amulets - UNID
 //-----------------------------------------------------------------------------------
-ItemDisplay[MAG (rin OR amu) !ID FILTLVL>2]:
+ItemDisplay[MAG rin !ID FILTLVL>2]:
+ItemDisplay[MAG amu !ID FILTLVL>2]:
 ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%YELLOW%X%BLUE%     %NAME%     %YELLOW%X
+ItemDisplay[MAG (rin OR amu) !ID FILTLVL<5]: %NAME%
+ItemDisplay[MAG (rin OR amu) !ID FILTLVL>4]:
 ItemDisplay[MAG (jew) !ID]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
 ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
 
