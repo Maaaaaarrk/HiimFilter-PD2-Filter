@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 15%NL%Crafters League%NL%Season 8.5 - version 12%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 15%NL%Crafters League%NL%Season 8.5 - version 13%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2037,329 +2037,326 @@ ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) STAFF LVLREQ<31]: %NAME% [LLD]{%GREEN%
 // Circlets
 ItemDisplay[!UNI ID (CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1) FCR>19 CIRC]: %ORANGE%2/20 %NAME%// +2 class skills, +20 FCR circlet
 
-// Amazon Javelins
-ItemDisplay[!UNI ID TABSK2>5 ZON]: %ORANGE%+6 Javelin %NAME%// +6 Javelin Skills Javelin
-ItemDisplay[!UNI ID (CLSK0>1 AND TABSK2>2) ZON]: %ORANGE%+5 Javelin %NAME%// +2 Amazon, +3 Javelin Skills Javelin
 
 // Assassin Katars
 // Phoenix Strike
-ItemDisplay[TABSK50=3 SK280=3 ALLSK=2]: %BORDER-ED%%PURPLE%+8 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 ALLSK=2]: %DOT-ED%%PURPLE%+7 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=2 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 !(ALLSK>0)]: %DOT-ED%%ORANGE%+5 Phoenix Strike %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=3 SK280=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+8 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=3 SK280=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK280=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=2 SK280=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=3 SK280=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=3 SK280=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=2 SK280=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK280=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=2 SK280=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[TABSK50=3 SK280=2 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK280=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
 
 // Blade Sentinel
-ItemDisplay[TABSK48=2 SK257=3 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK257=3 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=2 SK257=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Blade Sentinelt %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK257=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=2 SK257=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK257=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blade Sentinel %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=2 SK257=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK257=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=2 SK257=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinelt%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK257=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=2 SK257=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[TABSK48=3 SK257=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[CLSK6=2 SK257=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
 
 //  +2 Sin / +3 skill
-ItemDisplay[!UNI ID (CLSK6>1 AND SK254>2) SIN]: %ORANGE%+5 Tiger Strike %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Tiger Strike katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK265>2) SIN]: %ORANGE%+5 Cobra Strike %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Cobra Strike katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK269>2) SIN]: %ORANGE%+5 Claws of Thunder %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK275>2) SIN]: %ORANGE%+5 Dragon Flight %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Dragon Flight katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK252>2) SIN]: %ORANGE%+5 Dagger & Claw Mastery %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK253>2) SIN]: %ORANGE%+5 Psychic Hammer %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Psychic Hammer katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK273>2) SIN]: %ORANGE%+5 Mind Blast %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Mind Blast katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK278>2) SIN]: %ORANGE%+5 Venom %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Venom katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK262>2) SIN]: %ORANGE%+5 Wake of Fire %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Wake of Fire katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK276>2) SIN]: %ORANGE%+5 Death Sentry %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Death Sentry katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK271>2) SIN]: %ORANGE%+5 Chain Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK366>2) SIN]: %ORANGE%+5 Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +2 Assassin, +3 Lightning Sentry katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK254>2) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Assassin, +3 Tiger Strike katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK265>2) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Assassin, +3 Cobra Strike katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK269>2) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Assassin, +3 Claws of Thunder katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK275>2) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Assassin, +3 Dragon Flight katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK252>2) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Assassin, +3 Dagger & Claw Mastery katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK253>2) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Assassin, +3 Psychic Hammer katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK273>2) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Assassin, +3 Mind Blast katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK278>2) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +2 Assassin, +3 Venom katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK262>2) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +2 Assassin, +3 Wake of Fire katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK276>2) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Death Sentry katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK271>2) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Chain Lightning Sentry katar
+ItemDisplay[!UNI ID (CLSK6>1 AND SK366>2) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Lightning Sentry katar
 
 //  +2 tab / +3 skill
-ItemDisplay[!UNI ID (TABSK50=2 AND SK254=3) SIN]: %ORANGE%+5 Tiger Strike %NAME%%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Tiger Strike katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK265=3) SIN]: %ORANGE%+5 Cobra Strike %NAME%%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Cobra Strike katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK269=3) SIN]: %ORANGE%+5 Claws of Thunder %NAME%%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK275=3) SIN]: %ORANGE%+5 Dragon Flight %NAME%%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Dragon Flight katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK252=3) SIN]: %ORANGE%+5 Dagger & Claw Mastery %NAME%%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK253=3) SIN]: %ORANGE%+5 Psychic Hammer %NAME%%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Psychic Hammer katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK273=3) SIN]: %ORANGE%+5 Mind Blast %NAME%%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Mind Blast katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK278=3) SIN]: %ORANGE%+5 Venom %NAME%%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Venom katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK262=3) SIN]: %ORANGE%+5 Wake of Fire %NAME%%CONTINUE%{%NAME%}// +2 Trap, +3 Wake of Fire katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK276=3) SIN]: %ORANGE%+5 Death Sentry %NAME%%CONTINUE%{%NAME%}// +2 Trap, +3 Death Sentry katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK271=3) SIN]: %ORANGE%+5 Chain Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +2 Trap, +3 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK366=3) SIN]: %ORANGE%+5 Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +2 Trap, +3 Lightning Sentry katar
+ItemDisplay[!UNI ID (TABSK50=2 AND SK254=3) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Tiger Strike katar
+ItemDisplay[!UNI ID (TABSK50=2 AND SK265=3) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Cobra Strike katar
+ItemDisplay[!UNI ID (TABSK50=2 AND SK269=3) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Claws of Thunder katar
+ItemDisplay[!UNI ID (TABSK50=2 AND SK275=3) SIN]: %NAME% %ORANG E%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Dragon Flight katar
+ItemDisplay[!UNI ID (TABSK49=2 AND SK252=3) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Dagger & Claw Mastery katar
+ItemDisplay[!UNI ID (TABSK49=2 AND SK253=3) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Psychic Hammer katar
+ItemDisplay[!UNI ID (TABSK49=2 AND SK273=3) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Mind Blast katar
+ItemDisplay[!UNI ID (TABSK49=2 AND SK278=3) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Venom katar
+ItemDisplay[!UNI ID (TABSK48=2 AND SK262=3) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +2 Trap, +3 Wake of Fire katar
+ItemDisplay[!UNI ID (TABSK48=2 AND SK276=3) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Death Sentry katar
+ItemDisplay[!UNI ID (TABSK48=2 AND SK271=3) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Chain Lightning Sentry katar
+ItemDisplay[!UNI ID (TABSK48=2 AND SK366=3) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Lightning Sentry katar
 
 //  +3 tab / +2 skill
-ItemDisplay[!UNI ID (TABSK50=3 AND SK254=2) SIN]: %ORANGE%+5 Tiger Strike %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Tiger Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK265=2) SIN]: %ORANGE%+5 Cobra Strike %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Cobra Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK269=2) SIN]: %ORANGE%+5 Claws of Thunder %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK275=2) SIN]: %ORANGE%+5 Dragon Flight %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Dragon Flight katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK252=2) SIN]: %ORANGE%+5 Dagger & Claw Mastery %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK253=2) SIN]: %ORANGE%+5 Psychic Hammer %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Psychic Hammer katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK273=2) SIN]: %ORANGE%+5 Mind Blast %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Mind Blast katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK278=2) SIN]: %ORANGE%+5 Venom %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Venom katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK262=2) SIN]: %ORANGE%+5 Wake of Fire %NAME%%CONTINUE%{%NAME%}// +3 Trap, +2 Wake of Fire katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK276=2) SIN]: %ORANGE%+5 Death Sentry %NAME%%CONTINUE%{%NAME%}// +3 Trap, +2 Death Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK271=2) SIN]: %ORANGE%+5 Chain Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +3 Trap, +2 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK366=2) SIN]: %ORANGE%+5 Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +3 Trap, +2 Lightning Sentry katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK254=2) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Tiger Strike katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK265=2) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Cobra Strike katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK269=2) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Claws of Thunder katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK275=2) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Dragon Flight katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK252=2) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Dagger & Claw Mastery katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK253=2) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Psychic Hammer katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK273=2) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Mind Blast katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK278=2) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Venom katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK262=2) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +3 Trap, +2 Wake of Fire katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK276=2) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Death Sentry katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK271=2) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Chain Lightning Sentry katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK366=2) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Lightning Sentry katar
 
 //  +3 tab / +3 skill
-ItemDisplay[!UNI ID (TABSK50=3 AND SK254=3) SIN]: %ORANGE%+6 Tiger Strike %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Tiger Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK265=3) SIN]: %ORANGE%+6 Cobra Strike %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Cobra Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK269=3) SIN]: %ORANGE%+6 Claws of Thunder %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK275=3) SIN]: %ORANGE%+6 Dragon Flight %NAME%%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Dragon Flight katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK252=3) SIN]: %ORANGE%+6 Dagger & Claw Mastery %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK253=3) SIN]: %ORANGE%+6 Psychic Hammer %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Psychic Hammer katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK273=3) SIN]: %ORANGE%+6 Mind Blast %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Mind Blast katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK278=3) SIN]: %ORANGE%+6 Venom %NAME%%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Venom katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK262=3) SIN]: %ORANGE%+6 Wake of Fire %NAME%%CONTINUE%{%NAME%}// +3 Trap, +3 Wake of Fire katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK276=3) SIN]: %ORANGE%+6 Death Sentry %NAME%%CONTINUE%{%NAME%}// +3 Trap, +3 Death Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK271=3) SIN]: %ORANGE%+6 Chain Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +3 Trap, +3 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK366=3) SIN]: %ORANGE%+6 Lightning Sentry %NAME%%CONTINUE%{%NAME%}// +3 Trap, +3 Lightning Sentry katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK254=3) SIN]: %NAME% %ORANGE%+6 Tiger Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Tiger Strike katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK265=3) SIN]: %NAME% %ORANGE%+6 Cobra Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Cobra Strike katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK269=3) SIN]: %NAME% %ORANGE%+6 Claws of Thunder%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Claws of Thunder katar
+ItemDisplay[!UNI ID (TABSK50=3 AND SK275=3) SIN]: %NAME% %ORANGE%+6 Dragon Flight%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Dragon Flight katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK252=3) SIN]: %NAME% %ORANGE%+6 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Dagger & Claw Mastery katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK253=3) SIN]: %NAME% %ORANGE%+6 Psychic Hammer%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Psychic Hammer katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK273=3) SIN]: %NAME% %ORANGE%+6 Mind Blast%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Mind Blast katar
+ItemDisplay[!UNI ID (TABSK49=3 AND SK278=3) SIN]: %NAME% %ORANGE%+6 Venom%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Venom katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK262=3) SIN]: %NAME% %ORANGE%+6 Wake of Fire%CONTINUE%{%NAME%}// +3 Trap, +3 Wake of Fire katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK276=3) SIN]: %NAME% %ORANGE%+6 Death Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Death Sentry katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK271=3) SIN]: %NAME% %ORANGE%+6 Chain Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Chain Lightning Sentry katar
+ItemDisplay[!UNI ID (TABSK48=3 AND SK366=3) SIN]: %NAME% %ORANGE%+6 Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Lightning Sentry katar
  
 //  +3 tab
-ItemDisplay[!UNI ID TABSK50>2 SIN]: %ORANGE%+3 Martial Arts %NAME% %CONTINUE%{%NAME%}
-ItemDisplay[!UNI ID TABSK49>2 SIN]: %ORANGE%+3 Shadow Disciplines %NAME% %CONTINUE%{%NAME%}
-ItemDisplay[!UNI ID TABSK48>2 SIN]: %ORANGE%+3 Traps %NAME% %CONTINUE%{%NAME%}
+ItemDisplay[!UNI ID TABSK50>2 SIN]: %NAME% %ORANGE%+3 Martial Arts %NAME% %CONTINUE%{%NAME%}
+ItemDisplay[!UNI ID TABSK49>2 SIN]: %NAME% %ORANGE%+3 Shadow Disciplines %NAME% %CONTINUE%{%NAME%}
+ItemDisplay[!UNI ID TABSK48>2 SIN]: %NAME% %ORANGE%+3 Traps %NAME% %CONTINUE%{%NAME%}
 
 // Barbarian helms
-ItemDisplay[!UNI ID (CLSK4>1 AND SK149>2) BAR]: %ORANGE%+2/3 Battle Orders Helm %NAME%%CONTINUE%{%NAME%}// +2 Barbarian, +3 Battle Orders Barb helm
-ItemDisplay[!UNI ID (CLSK4>1 AND SK154>2) BAR]: %ORANGE%+2/3 Warcry Helm %NAME%%CONTINUE%{%NAME%}// +2 Barbarian, +3 Warcry Barb helm
+ItemDisplay[!UNI ID (CLSK4>1 AND SK149>2) BAR]: %NAME% %ORANGE%+2/3 Battle Orders Helm%CONTINUE%{%NAME%}// +2 Barbarian, +3 Battle Orders Barb helm
+ItemDisplay[!UNI ID (CLSK4>1 AND SK154>2) BAR]: %NAME% %ORANGE%+2/3 Warcry Helm%CONTINUE%{%NAME%}// +2 Barbarian, +3 Warcry Barb helm
 
 // Druid Pelts
-ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK245>2) DRU]: %ORANGE%2/3 Tornado Pelt %NAME%%CONTINUE%{%NAME%}// +2 Druid/Tornado, +3 Tornado Druid Pelt
-ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK234>2) DRU]: %ORANGE%2/3 Fissure Pelt %NAME%%CONTINUE%{%NAME%}// +2 Druid/Fissure, +3 Fissure Druid Pelt
-ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK229>2) DRU]: %ORANGE%2/3 Molten Pelt %NAME%%CONTINUE%{%NAME%}// +2 Druid/Molten Boulder, +3 Molten Boulder Druid Pelt
-ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK237>2) DRU]: %ORANGE%2/3 Dire Wolf Pelt %NAME%%CONTINUE%{%NAME%}// +2 Druid/Dire Wolf, +3 Dire Wolf Druid Pelt
-ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK247>2) DRU]: %ORANGE%2/3 Grizzly Pelt %NAME%%CONTINUE%{%NAME%}// +2 Druid/Grizzly, +3 Grizzly Druid Pelt
+ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK245>2) DRU]: %NAME% %ORANGE%2/3 Tornado Pelt%CONTINUE%{%NAME%}// +2 Druid/Tornado, +3 Tornado Druid Pelt
+ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK234>2) DRU]: %NAME% %ORANGE%2/3 Fissure Pelt%CONTINUE%{%NAME%}// +2 Druid/Fissure, +3 Fissure Druid Pelt
+ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK229>2) DRU]: %NAME% %ORANGE%2/3 Molten Pelt%CONTINUE%{%NAME%}// +2 Druid/Molten Boulder, +3 Molten Boulder Druid Pelt
+ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK237>2) DRU]: %NAME% %ORANGE%2/3 Dire Wolf Pelt%CONTINUE%{%NAME%}// +2 Druid/Dire Wolf, +3 Dire Wolf Druid Pelt
+ItemDisplay[!UNI ID ((CLSK5>1 OR TABSK42>1) AND SK247>2) DRU]: %NAME% %ORANGE%2/3 Grizzly Pelt%CONTINUE%{%NAME%}// +2 Druid/Grizzly, +3 Grizzly Druid Pelt
 
 // Armors
-ItemDisplay[MAG ID (SOCK>3 AND LIFE>89) CHEST]: %ORANGE%Whale Armor %BLUE%%NAME%%CONTINUE%{%NAME%}// 4 sockets, 90+ Health Armor
-ItemDisplay[RARE ID (SOCK>3 AND LIFE>89) CHEST]: %ORANGE%Whale Armor %YELLOW%%NAME%%CONTINUE%{%NAME%}// 4 sockets, 90+ Health Armor
-ItemDisplay[CRAFT ID (SOCK>3 AND LIFE>89) CHEST]: %ORANGE%Whale Armor %NAME%%CONTINUE%{%NAME%}// 4 sockets, 90+ Health Armor
+ItemDisplay[MAG ID (SOCK>3 AND LIFE>89) CHEST]: %NAME% %ORANGE%Whale Armor %BLUE%%NAME%%CONTINUE%{%NAME%}// 4 sockets, 90+ Health Armor
+ItemDisplay[RARE ID (SOCK>3 AND LIFE>89) CHEST]: %NAME% %ORANGE%Whale Armor %YELLOW%%NAME%%CONTINUE%{%NAME%}// 4 sockets, 90+ Health Armor
+ItemDisplay[CRAFT ID (SOCK>3 AND LIFE>89) CHEST]: %NAME% %ORANGE%Whale Armor%CONTINUE%{%NAME%}// 4 sockets, 90+ Health Armor
 
 // Gloves
-//ItemDisplay[!UNI ID (TABSK2>2 AND IAS>19) GLOVES]: %ORANGE%3/20 Gloves %NAME%%CONTINUE%{%NAME%}// +3 Javelin Skills, 20 IAS Gloves
-ItemDisplay[!UNI ID (TABSK0=2 OR TABSK1=2 OR TABSK2=2 OR TABSK50=2) (IAS>19 AND IAS<30) GLOVES]: %ORANGE%2/20 %NAME%%CONTINUE%{%NAME%}// +2 tab skills, 20 IAS Gloves
-ItemDisplay[!UNI ID (TABSK0=2 OR TABSK1=2 OR TABSK2=2 OR TABSK50=2) IAS=30 GLOVES]: %ORANGE%2/30 %NAME%%CONTINUE%{%NAME%}// +2 tab skills, 30 IAS Gloves
-ItemDisplay[!UNI ID (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK50=3) (IAS>19 AND IAS<30) GLOVES]: %ORANGE%3/20 %NAME%%CONTINUE%{%NAME%}// +3 tab skills, 20 IAS Gloves
-ItemDisplay[!UNI ID (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK50=3) IAS=30 GLOVES]: %ORANGE%3/30 %NAME%%CONTINUE%{%NAME%}// +3 tab skills, 30 IAS Gloves
+//ItemDisplay[!UNI ID (TABSK2>2 AND IAS>19) GLOVES]: %NAME% %ORANGE%3/20 Gloves%CONTINUE%{%NAME%}// +3 Javelin Skills, 20 IAS Gloves
+ItemDisplay[!UNI ID (TABSK0=2 OR TABSK1=2 OR TABSK2=2 OR TABSK50=2) (IAS>19 AND IAS<30) GLOVES]: %NAME% %ORANGE%2/20%CONTINUE%{%NAME%}// +2 tab skills, 20 IAS Gloves
+ItemDisplay[!UNI ID (TABSK0=2 OR TABSK1=2 OR TABSK2=2 OR TABSK50=2) IAS=30 GLOVES]: %NAME% %ORANGE%2/30%CONTINUE%{%NAME%}// +2 tab skills, 30 IAS Gloves
+ItemDisplay[!UNI ID (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK50=3) (IAS>19 AND IAS<30) GLOVES]: %NAME% %ORANGE%3/20%CONTINUE%{%NAME%}// +3 tab skills, 20 IAS Gloves
+ItemDisplay[!UNI ID (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK50=3) IAS=30 GLOVES]: %NAME% %ORANGE%3/30%CONTINUE%{%NAME%}// +3 tab skills, 30 IAS Gloves
 
 // Shields
-ItemDisplay[MAG ID (SOCK>3 AND FBR>1) uit]: %PURPLE%JMoD %BLUE%%NAME% // JMoD Monarch
-ItemDisplay[RARE ID (SOCK>3 AND FBR>1) uit]: %PURPLE%JMoD %YELLOW%%NAME% // JMoD Monarch
-ItemDisplay[CRAFT ID (SOCK>3 AND FBR>1) uit]: %PURPLE%JMoD %NAME% // JMoD Monarch
+ItemDisplay[MAG ID (SOCK>3 AND FBR>1) uit]: %NAME% %PURPLE%JMoD %BLUE%%NAME% // JMoD Monarch
+ItemDisplay[RARE ID (SOCK>3 AND FBR>1) uit]: %NAME% %PURPLE%JMoD %YELLOW%%NAME% // JMoD Monarch
+ItemDisplay[CRAFT ID (SOCK>3 AND FBR>1) uit]: %NAME% %PURPLE%JMoD %NAME% // JMoD Monarch
 
 // Weapons
-ItemDisplay[!UNI ID TABSK34>2 WEAPON]: %ORANGE%+3 Warcries %NAME%%CONTINUE%{%NAME%}// +3 Warcries weapon
+ItemDisplay[!UNI ID TABSK34>2 WEAPON]: %NAME% %ORANGE%+3 Warcries%CONTINUE%{%NAME%}// +3 Warcries weapon
 
 // Staves with charges
-ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) STAFF]: %NAME% %SAGE%[TELE]{%ORANGE%Teleport Charges Staff}%CONTINUE% // Teleport charges
-ItemDisplay[ID CHSK357>0 STAFF]: %NAME% {%ORANGE%(Blink)} // Blink charges
+ItemDisplay[ID (SUFFIX=532 OR SUFFIX=533) STAFF]: %NAME% %NAME% %SAGE%[TELE]{%ORANGE%Teleport Charges Staff}%CONTINUE% // Teleport charges
+ItemDisplay[ID CHSK357>0 STAFF]: %NAME% %NAME% {%ORANGE%(Blink)} // Blink charges
 
 // Wands with charges
-ItemDisplay[ID (CHSK447) WAND]: %NAME%{%ORANGE%Confuse Charges Wand%NL%%NAME%}%CONTINUE% // Confuse charges
-ItemDisplay[ID (SUFFIX=578 OR SUFFIX=579) WAND]: %NAME%{%ORANGE%Life Tap Charges Wand%NL%%NAME%}%CONTINUE%// Life tap charges
-ItemDisplay[ID (SUFFIX=594 OR SUFFIX=595) WAND]: %NAME%{%ORANGE%Lower Res Charges Wand%NL%%NAME%}%CONTINUE% // Lower Resist charges
+ItemDisplay[ID (CHSK447) WAND]: %NAME% %NAME%{%ORANGE%Confuse Charges Wand%NL%%NAME%}%CONTINUE% // Confuse charges
+ItemDisplay[ID (SUFFIX=578 OR SUFFIX=579) WAND]: %NAME% %NAME%{%ORANGE%Life Tap Charges Wand%NL%%NAME%}%CONTINUE%// Life tap charges
+ItemDisplay[ID (SUFFIX=594 OR SUFFIX=595) WAND]: %NAME% %NAME%{%ORANGE%Lower Res Charges Wand%NL%%NAME%}%CONTINUE% // Lower Resist charges
 
 // Dark Pact sk wands / offhand //ALLSK
-ItemDisplay[TABSK16=3 CLSK2=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=3 SK381=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=3 SK381=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=3 SK381=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=3 SK381=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=2 SK381=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK381=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=2 SK381=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK16=3 SK381=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK381=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Dark Pact %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[(CLSK2<2 OR TABSK16<2 OR SK381=3) SK381>0 DIFF<2 FILTLVL<3]: %ORANGE% Dark Pact %NAME%%CONTINUE%{%NAME%} //catches rest
+ItemDisplay[TABSK16=3 CLSK2=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=3 SK381=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=3 SK381=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=3 SK381=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=3 SK381=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=2 SK381=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK381=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=2 SK381=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[TABSK16=3 SK381=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK381=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Dark Pact%CONTINUE%{%NAME%}
+ItemDisplay[(CLSK2<2 OR TABSK16<2 OR SK381=3) SK381>0 DIFF<2 FILTLVL<3]: %NAME% %ORANGE% Dark Pact%CONTINUE%{%NAME%} //catches rest
 
 // Desecrate sk wands / offhand //ALLSK 
-ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK83=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK83=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK83=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK83=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK83=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK83=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK83=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK83=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Desecrate %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK83=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Desecrate %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK83=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK83=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK83=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK83=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK83=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK83=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK83=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK83=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Desecrate%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK83=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Desecrate%CONTINUE%{%NAME%}
 
 // Psn Nova sk wands / offhand //ALLSK 
-ItemDisplay[TABSK17=3 SK92=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK92=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK92=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK92=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK92=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK92=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK92=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK92=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Psn Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK92=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Psn Nova %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK92=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK92=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK92=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK92=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK92=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK92=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK92=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK92=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Psn Nova%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK92=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Psn Nova%CONTINUE%{%NAME%}
 
 // Corpse Explosion sk wands / offhand //ALLSK 
-ItemDisplay[TABSK17=3 SK74=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK74=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK74=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK74=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK74=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK74=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK74=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK74=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 CrpsExpl %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK74=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 PCrpsExpl %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK74=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK74=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK74=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK74=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK74=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK74=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK74=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK74=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 CrpsExpl%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK74=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 PCrpsExpl%CONTINUE%{%NAME%}
 
 // Teeth sk wands / offhand //ALLSK 
-ItemDisplay[TABSK17=3 SK67=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK67=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK67=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK67=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK67=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK67=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=2 SK67=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK17=3 SK67=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Teeth %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK2=2 SK67=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Teeth %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK67=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 CLSK2=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK67=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK67=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK67=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK67=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK67=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=2 SK67=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[TABSK17=3 SK67=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Teeth%CONTINUE%{%NAME%}
+ItemDisplay[CLSK2=2 SK67=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Teeth%CONTINUE%{%NAME%}
 
 // SK245	Tornado
-ItemDisplay[TABSK42=3 SK245=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=3 CLSK5=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=3 SK245=2 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=3 SK245=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=3 SK245=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=2 SK245=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK5=2 SK245=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=2 SK245=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK42=3 SK245=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Tornado %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK5=2 SK245=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Tornado %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=3 SK245=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=3 CLSK5=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=3 SK245=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=3 SK245=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=3 SK245=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=2 SK245=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[CLSK5=2 SK245=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=2 SK245=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[TABSK42=3 SK245=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Tornado%CONTINUE%{%NAME%}
+ItemDisplay[CLSK5=2 SK245=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Tornado%CONTINUE%{%NAME%}
 
 //SK49	Lightning
-ItemDisplay[TABSK9=3 SK49=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK49=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK49=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK49=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=2 SK49=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK49=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=2 SK49=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK49=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Lightning %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK49=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Lightning %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK49=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK49=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK49=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK49=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=2 SK49=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK49=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=2 SK49=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK49=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Lightning%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK49=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Lightning%CONTINUE%{%NAME%}
 
 //SK48	Nova
-ItemDisplay[TABSK9=3 SK48=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK48=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK48=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK48=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=2 SK48=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK48=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=2 SK48=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK48=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Nova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK48=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Nova %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK48=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK48=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK48=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK48=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=2 SK48=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Nova%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK48=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=2 SK48=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Nova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK48=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Nova%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK48=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Nova%CONTINUE%{%NAME%}
 
 //SK53	Chain Lightning
-ItemDisplay[TABSK9=3 SK53=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK53=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK53=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK53=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=2 SK53=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK53=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=2 SK53=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK9=3 SK53=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 ChainLight %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK53=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 ChainLight %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK53=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK53=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK53=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK53=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=2 SK53=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK53=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=2 SK53=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[TABSK9=3 SK53=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 ChainLight%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK53=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 ChainLight%CONTINUE%{%NAME%}
 
 //SK44	Frost Nova
-ItemDisplay[TABSK10=3 SK44=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK44=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK44=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK44=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK44=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK44=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK44=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK44=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 FrstNova %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK44=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 FrstNova %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK44=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK44=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK44=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK44=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK44=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK44=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK44=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK44=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FrstNova%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK44=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FrstNova%CONTINUE%{%NAME%}
 
 //SK59	Blizzard
-ItemDisplay[TABSK10=3 SK59=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK59=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK59=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK59=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK59=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK59=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK59=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK59=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blizzard %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK59=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Blizzard %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK59=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK59=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK59=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK59=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK59=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK59=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK59=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK59=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blizzard%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK59=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blizzard%CONTINUE%{%NAME%}
 
 //SK64	Frozen Orb
-ItemDisplay[TABSK10=3 SK64=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK64=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK64=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK64=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK64=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK64=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK64=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK64=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 FOrb %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK64=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 FOrb %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK64=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK64=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK64=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK64=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK64=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK64=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK64=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK64=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FOrb%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK64=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FOrb%CONTINUE%{%NAME%}
 
 //SK369	Ice Barrage
-ItemDisplay[TABSK10=3 SK369=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK369=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK369=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK369=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK369=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK369=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=2 SK369=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK10=3 SK369=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 IceBarr %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK369=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 IceBarr %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK369=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK369=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK369=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK369=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK369=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK369=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=2 SK369=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[TABSK10=3 SK369=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 IceBarr%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK369=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 IceBarr%CONTINUE%{%NAME%}
 
 //SK376	Combustion
-ItemDisplay[TABSK8=3 SK376=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK376=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK376=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK376=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=2 SK376=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK376=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=2 SK376=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK376=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Combust %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK376=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Combust %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK376=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK376=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK376=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK376=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=2 SK376=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Combust%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK376=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=2 SK376=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Combust%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK376=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Combust%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK376=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Combust%CONTINUE%{%NAME%}
 
 //SK62	Hydra
-ItemDisplay[TABSK8=3 SK62=1 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK62=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK62=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK62=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=2 SK62=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK62=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=2 SK62=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK62=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Hydra %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK62=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Hydra %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK62=1 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK62=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK62=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK62=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=2 SK62=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK62=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=2 SK62=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK62=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Hydra%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK62=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Hydra%CONTINUE%{%NAME%}
 
 //SK56	Meteor
-ItemDisplay[TABSK8=3 SK56=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 CLSK1=2 ALLSK=2]: %BORDER-ED%%PURPLE%+7 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK56=3 ALLSK=1]: %BORDER-ED%%PURPLE%+7 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK56=3 !(ALLSK=1)]: %BORDER-ED%%PURPLE%+6 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK56=2 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=2 SK56=3 ALLSK=1]: %BORDER-ED%%PURPLE%+6 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK56=3 ALLSK=1]: %DOT-ED%%PURPLE%+6 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=2 SK56=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[TABSK8=3 SK56=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Meteor %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[CLSK1=2 SK56=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Meteor %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK56=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 CLSK1=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK56=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK56=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK56=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=2 SK56=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK56=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=2 SK56=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[TABSK8=3 SK56=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Meteor%CONTINUE%{%NAME%}
+ItemDisplay[CLSK1=2 SK56=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Meteor%CONTINUE%{%NAME%}
 
 
 // Bow SK weap
