@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 13%NL%Crafters League%NL%Season 8.5 - version 11%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated February 15%NL%Crafters League%NL%Season 8.5 - version 12%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2361,6 +2361,59 @@ ItemDisplay[TABSK8=2 SK56=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Meteor %NAME%%CONTIN
 ItemDisplay[TABSK8=3 SK56=2 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Meteor %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[CLSK1=2 SK56=3 !(ALLSK=1)]: %DOT-ED%%ORANGE%+5 Meteor %NAME%%CONTINUE%{%NAME%}
 
+
+// Bow SK weap
+ItemDisplay[CLSK0=0 TABSK0=5 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK0=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK0=5 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK0=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK0=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK0=3 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK0=2 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK0=5 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK0=3 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK0=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK0=3 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK0=2 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK0=4 ALLSK=0]: %NAME% %DOT-ED%+4 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK0=3 ALLSK=0]: %NAME% %DOT-ED%+4 BowSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK0=2 ALLSK=0]: %NAME% %DOT-ED%+4 BowSkills %CONTINUE%{%NAME%}
+
+
+// Jav SK weap
+ItemDisplay[CLSK0=0 TABSK2=5 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK2=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK2=5 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK2=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK2=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK2=3 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK2=2 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK2=5 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK2=3 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK2=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK2=3 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK2=2 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK2=4 ALLSK=0]: %NAME% %DOT-ED%+4 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK2=3 ALLSK=0]: %NAME% %DOT-ED%+4 JavSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK2=2 ALLSK=0]: %NAME% %DOT-ED%+4 JavSkills %CONTINUE%{%NAME%}
+
+// Passive & Magic
+ItemDisplay[CLSK0=0 TABSK1=5 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK1=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK1=5 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK1=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK1=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK1=3 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK1=2 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK1=5 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK1=3 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK1=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK1=3 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK1=2 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=0 TABSK1=4 ALLSK=0]: %NAME% %DOT-ED%+4 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=1 TABSK1=3 ALLSK=0]: %NAME% %DOT-ED%+4 PassiveSkills %CONTINUE%{%NAME%}
+ItemDisplay[CLSK0=2 TABSK1=2 ALLSK=0]: %NAME% %DOT-ED%+4 PassiveSkills %CONTINUE%{%NAME%}
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2399,7 +2452,7 @@ ItemDisplay[!ID AMAZON (am5 OR ama OR amf) RARE FILTLVL<7]: %NAME%//zon javs
 ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)  FILTLVL<7]: %NAME%
 
 // Silence rest on super strict+
-ItemDisplay[RARE !ID FILTLVL>4]:
+ItemDisplay[RARE !ID FILTLVL>7]:
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4637,7 +4690,7 @@ ItemDisplay[(BAR OR DRU) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 I
 
 // chest
 ItemDisplay[(qui OR lea OR hla OR stu OR xui OR xea OR xla OR xtu OR scl OR chn OR spl OR plt OR fld) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
-ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
+ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR gth) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 ItemDisplay[(uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR ful OR aar OR xth OR xul OR xar) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 
 // shields
@@ -4828,8 +4881,8 @@ ItemDisplay[NMAG !RW SK95=3 DIFF<2 FILTLVL<2]: %ORANGE%* %NAME% %ORANGE%*{%NAME%
 //-----------------------------------------------------------------------------------
 ItemDisplay[(cm1 OR cm2 OR cm3 OR jew) ID]: %NAME%{%NAME%}
 ItemDisplay[UNI ELT]: %BORDER-68%%NAME%{%NAME%}
-ItemDisplay[RARE ID]: %NAME%{%NAME%}
-ItemDisplay[CRAFT ID]: %NAME%{%NAME%}
+ItemDisplay[RARE ID]: %DOT-0B%%NAME%{%NAME%}
+ItemDisplay[CRAFT ID]: %DOT-0B%%NAME%{%NAME%}
 ItemDisplay[RW]: %MAP-68%%NAME%{%NAME%}
 ItemDisplay[UNI]: %MAP-68%%NAME%{%NAME%}
 ItemDisplay[SET]: %PX-84%%NAME%{%NAME%}
