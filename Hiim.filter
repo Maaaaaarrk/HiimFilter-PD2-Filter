@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated April 3%NL%Season 9 - version 7%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated April 3%NL%Season 9 - version 8%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -180,38 +180,37 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR  MAPTIER=4 OR t51 OR t52 OR 
 // Map Immunities 
 ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1)]: %NAME%%CONTINUE%{%TAN%Immunities:%NL%%NAME%}
 
-// Tier 1 Immunes
-ItemDisplay[t22]: %NAME%{%NL%%RED%F 80% %YELLOW%L 105% %BLUE% C 140%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Torajan Jungle S6 res updated patch1
-ItemDisplay[t12]: %NAME%{%NL%%RED%F 135% %YELLOW%L 80% %BLUE% C 80%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%NL%%NAME%}%CONTINUE% // Horazon's Memory S6 res updated patch1
-ItemDisplay[t13]: %NAME%{%NL%%RED%F 75% %YELLOW%L 135% %BLUE% C 85%%NL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Bastion Keep Memory S6 res updated patch1
-ItemDisplay[t23]: %NAME%{%NL%%RED%F 130% %YELLOW%L 100% %BLUE% C 80%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Arreat Battlefield S6 res updated patch1
-ItemDisplay[t21]: %NAME%{%NL%%RED%F 140% %YELLOW%L 90% %BLUE% C 80%%NL%%GRAY%Ph 75% %ORANGE%M 50% %GREEN%P 120%%NL%%NAME%}%CONTINUE% // Phlegethon S6 res updated patch1
-ItemDisplay[t16]: %NAME%{%NL%%RED%F 75% %YELLOW%L 75% %BLUE% C 115%%NL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 140%%NL%%NAME%}%CONTINUE% // Ruined Cistern S6 res updated patch1
-ItemDisplay[t33]: %NAME%{%NL%%RED%F 120% %YELLOW%L 115% %BLUE% C 110%%NL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 80%%NL%%NAME%}%CONTINUE% // Lost Temple S6 res updated patch1
 
-// Tier 2 Immunes
-ItemDisplay[t15]: %NAME%{%NL%%RED%F 75% %YELLOW%L 100% %BLUE% C 65%%NL%%GRAY%Ph 80% %ORANGE%M 150% %GREEN%P 105%%NL%%NAME%}%CONTINUE% // Royal Crypts S6 res updated patch1
-ItemDisplay[t11]: %NAME%{%NL%%RED%F 85% %YELLOW%L 120% %BLUE% C 75%%NL%%GRAY%Ph 80% %ORANGE%M 50% %GREEN%P 120%%NL%%NAME%}%CONTINUE% // Ruins of Viz-jun S6 res updated patch1
-ItemDisplay[t14]: %NAME%{%NL%%RED%F 130% %YELLOW%L 75% %BLUE% C 130%%NL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Sanatorium S6 res updated patch1
-ItemDisplay[t34]: %NAME%{%NL%%RED%F 120% %YELLOW%L 90% %BLUE% C 75%%NL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 120%%NL%%NAME%}%CONTINUE% // Ancestral Trial S6 res updated patch1
-ItemDisplay[t36]: %NAME%{%NL%%RED%F 95% %YELLOW%L 100% %BLUE% C 95%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 80%%NL%%NAME%}%CONTINUE% // Fall of Caldeum S6 res updated patch1
-ItemDisplay[t26]: %NAME%{%NL%%RED%F 110% %YELLOW%L 65% %BLUE% C 150%%NL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Shadows of Westmarch S6 res updated patch1
+ItemDisplay[t23]: %NAME%{%NL%%RED%F 130% %YELLOW%L 100% %BLUE% C 80%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Arreat Battlefield 139
+ItemDisplay[t25]: %NAME%{%NL%%RED%F 75% %YELLOW%L 135% %BLUE% C 85%%NL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 125%%NL%%NAME%}%CONTINUE% // Sewers of Harrogath 141
+ItemDisplay[t12]: %NAME%{%NL%%RED%F 135% %YELLOW%L 80% %BLUE% C 130%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%NL%%NAME%}%CONTINUE% // Horazon's Memory 142
+ItemDisplay[t11]: %NAME%{%NL%%RED%F 130% %YELLOW%L 120% %BLUE% C 75%%NL%%GRAY%Ph 80% %ORANGE%M 50% %GREEN%P 80%%NL%%NAME%}%CONTINUE% // Ruins of Viz-jun 143
+ItemDisplay[t31]: %NAME%{%NL%%RED%F 90% %YELLOW%L 85% %BLUE% C 180%%NL%%GRAY%Ph 66% %ORANGE%M 100% %GREEN%P 130%%NL%%NAME%}%CONTINUE% // River of Blood 144
+ItemDisplay[t21]: %NAME%{%NL%%RED%F 140% %YELLOW%L 125% %BLUE% C 80%%NL%%GRAY%Ph 75% %ORANGE%M 50% %GREEN%P 75%%NL%%NAME%}%CONTINUE% // Phlegethon 145
+ItemDisplay[t34]: %NAME%{%NL%%RED%F 75% %YELLOW%L 130% %BLUE% C 75%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%NL%%NAME%}%CONTINUE% // Ancestral Trial 146
+ItemDisplay[t39]: %NAME%{%NL%%RED%F 125% %YELLOW%L 90% %BLUE% C 130%%NL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%NL%%NAME%}%CONTINUE% // Kehjistan Marketplace 147
+ItemDisplay[t22]: %NAME%{%NL%%RED%F 125% %YELLOW%L 105% %BLUE% C 75%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Torajan Jungle 148
+ItemDisplay[t13]: %NAME%{%NL%%RED%F 125% %YELLOW%L 75% %BLUE% C 130%%NL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Bastion Keep 149
+ItemDisplay[t32]: %NAME%{%NL%%RED%F 75% %YELLOW%L 130% %BLUE% C 130%%NL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%NL%%NAME%}%CONTINUE% // Throne of Insanity 150
+ItemDisplay[t24]: %NAME%{%NL%%RED%F 85% %YELLOW%L 120% %BLUE% C 75%%NL%%GRAY%Ph 105% %ORANGE%M 50% %GREEN%P 110%%NL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
+ItemDisplay[t35]: %NAME%{%NL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%NL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%NL%%NAME%}%CONTINUE% // Blood Moon 154
+ItemDisplay[t36]: %NAME%{%NL%%RED%F 95% %YELLOW%L 100% %BLUE% C 130%%NL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 80%%NL%%NAME%}%CONTINUE% // Fall of Caldeum 155
+ItemDisplay[t37]: %NAME%{%NL%%RED%F 75% %YELLOW%L 135% %BLUE% C 75%%NL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 130%%NL%%NAME%}%CONTINUE% // Pandemonium Citadel 156
+ItemDisplay[t33]: %NAME%{%NL%%RED%F 120% %YELLOW%L 80% %BLUE% C 110%%NL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 80%%NL%%NAME%}%CONTINUE% // Lost Temple 158
+ItemDisplay[t38]: %NAME%{%NL%%RED%F 130% %YELLOW%L 75% %BLUE% C 80%%NL%%GRAY%Ph 120% %ORANGE%M 70% %GREEN%P 110%%NL%%NAME%}%CONTINUE% // Canyon of Sescheron 160
+ItemDisplay[t14]: %NAME%{%NL%%RED%F 75% %YELLOW%L 125% %BLUE% C 75%%NL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 130%%NL%%NAME%}%CONTINUE% // Sanatorium 167
+ItemDisplay[t26]: %NAME%{%NL%%RED%F 75% %YELLOW%L 75% %BLUE% C 85%%NL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 135%%NL%%NAME%}%CONTINUE% // Shadows of Westmarch 169
+ItemDisplay[t15]: %NAME%{%NL%%RED%F 75% %YELLOW%L 80% %BLUE% C 125%%NL%%GRAY%Ph 60% %ORANGE%M 150% %GREEN%P 105%%NL%%NAME%}%CONTINUE% // Royal Crypts 170
+ItemDisplay[t16]: %NAME%{%NL%%RED%F 75% %YELLOW%L 75% %BLUE% C 115%%NL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 140%%NL%%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t3a]: %NAME%{%NL%%RED%F 75% %YELLOW%L 80% %BLUE% C 130%%NL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%NL%%NAME%}%CONTINUE% // Ashen Plains 175
 
-// Tier 3 Immunes
-ItemDisplay[t31]: %NAME%{%NL%%RED%F 125% %YELLOW%L 85% %BLUE% C 180%%NL%%GRAY%Ph 66% %ORANGE%M 100% %GREEN%P 95%%NL%%NAME%}%CONTINUE% // River of Blood S6 res updated patch1
-ItemDisplay[t32]: %NAME%{%NL%%RED%F 130% %YELLOW%L 85% %BLUE% C 90%%NL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 115%%NL%%NAME%}%CONTINUE% // Throne of Insanity S6 res updated patch1
-ItemDisplay[t25]: %NAME%{%NL%%RED%F 125% %YELLOW%L 135% %BLUE% C 85%%NL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 90%%NL%%NAME%}%CONTINUE% // Sewers of Harrogath S6 res updated patch1
-ItemDisplay[t24]: %NAME%{%NL%%RED%F 85% %YELLOW%L 120% %BLUE% C 150%%NL%%GRAY%Ph 105% %ORANGE%M 50% %GREEN%P 110%%NL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle S6 res updated patch1
-ItemDisplay[t35]: %NAME%{%NL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%NL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%NL%%NAME%}%CONTINUE% // Blood Moon S6 res updated S6 res updated patch1
-ItemDisplay[t37]: %NAME%{%NL%%RED%F 140% %YELLOW%L 85% %BLUE% C 130%%NL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 90%%NL%%NAME%}%CONTINUE% // Pandemonium Citadel S6 res updated patch1
-ItemDisplay[t38]: %NAME%{%NL%%RED%F 80% %YELLOW%L 160% %BLUE% C 80%%NL%%GRAY%Ph 50% %ORANGE%M 70% %GREEN%P 110%%NL%%NAME%}%CONTINUE% // Canyon of Sescheron S6 res updated patch1
-ItemDisplay[t39]: %NAME%{%NL%%RED%F 85% %YELLOW%L 90% %BLUE% C 130%%NL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%NL%%NAME%}%CONTINUE% // Kehjistan Marketplace S6 res updated patch1
-ItemDisplay[t3a]: %NAME%{%NL%%RED%F 75% %YELLOW%L 145% %BLUE% C 75%%NL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%NL%%NAME%}%CONTINUE% // Ashen Plains S6 res updated patch1
 
-// Tier 4 Immunes Do not show as it will overflow the top text
-//ItemDisplay[t41]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Cathedral of L S6 res updated patch1
-//ItemDisplay[t42]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Plains of Torment S6 res updated patch1
-//ItemDisplay[t43]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Sanctuary of Sin S6 res updated patch1
+// Tier 4 / Dungeon
+//ItemDisplay[t41]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Cathedral of L 152 153
+//ItemDisplay[t42]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Plains of Torment 164 165
+//ItemDisplay[t43]: %NAME%{%NL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%NL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%NL%%NAME%}%CONTINUE% // Sanctuary of Sin 171 172
+
+
 
 // Uniue map Immunes
 ItemDisplay[t51]: %NAME%{%NL%%RED%Fire 85% %YELLOW%Light 85% %BLUE% Cold 85%%NL%%GRAY%Phys 65% %ORANGE%Magic 40% %GREEN%Psn 95%%NL%%NAME%}%CONTINUE% // zhar s7
