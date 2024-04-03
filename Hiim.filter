@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated April 3%NL%Season 9 - version 3%NL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%NL%Last updated April 3%NL%Season 9 - version 4%NL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -100,7 +100,9 @@ ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%
 // PD2 Items - Rathma mats
 ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%X X %ORANGE%%NAME% %RED%X X
 // Boss Item Entry
-ItemDisplay[(rtma OR dcma) STAT185=0]: %NAME%%CONTINUE%{%ORANGE%Ber %GRAY%- %ORANGE%Zod%GRAY% (Boss Item Chance): %RED%Tier 2%NL%%ORANGE%Vex %GRAY%- %ORANGE%Sur%GRAY% (Boss Item Chance): %TAN%Tier 1%NL%%ORANGE%No Rune%GRAY% (No Boss Item): %DARK_GREEN%Tier 0%NL%%GOLD%Cube%WHITE% with a %ORANGE%Rune %WHITE%to increase the difficulty:}
+ItemDisplay[(rtma OR dcma) STAT185=0]: %NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%NL%%TAN%Tier 1 (Boss Item Chance)%NL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%NL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
+ItemDisplay[(rtma OR dcma) STAT185=1]: %NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%NL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance)%ORANGE% < <%NL%%DARK_GREEN%Tier 0 (No Boss Item)%NL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[(rtma OR dcma) STAT185=2]: %NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Larger Boss Item Chance)%ORANGE% < <%NL%%TAN%Tier 1 (Boss Item Chance)%NL%%DARK_GREEN%Tier 0 (No Boss Item)%NL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
 ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%NL%%RED%Diablo Clone Entry}
 ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%NL%%BLUE%Rathma Entry}
 ItemDisplay[(rtma OR dcma)]: %MAP-0A%%RED%* * %NAME% %RED%* *{%NAME%}
@@ -296,8 +298,8 @@ ItemDisplay[(t51 OR t52 OR t53) ID]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
 ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
 
 
-ItemDisplay[(t51 OR t52 OR MAPTIER=3 OR MAPTIER=4) (STAT497>0 OR STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>180 AND STAT370>60) OR (STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT373>9) OR (STAT372>225))]:  %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT497>0 OR STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>150 AND STAT370>30) OR (STAT372>150 AND STAT374>0) OR (STAT372>70 AND STAT375>69) OR (STAT372>109 AND STAT375>39) OR (STAT372>119 AND STAT375>29) OR (STAT372>139 AND STAT375>19) OR (STAT372>159 AND STAT375>9) OR (STAT372>149 AND STAT373>19) OR (STAT372>174 AND STAT373>9) OR (STAT372>194))]:  %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(t51 OR t52 OR MAPTIER=3 OR MAPTIER=4) (STAT497>0 OR STAT500>0 OR STAT458>0 OR STAT493>0 OR STAT360>0 OR STAT437>0 OR STAT498>0 OR STAT374>0 OR (STAT372>124) OR (STAT372>94 STAT375>29) OR (STAT372>64 STAT375>59) OR (STAT372>34 STAT375>89) OR (STAT372>109 STAT373>9) OR (STAT372>79 STAT375>29 STAT373>9) OR (STAT372>49 STAT375>59 STAT373>9) OR (STAT372>102 STAT373>14) OR (STAT372>72 STAT375>29 STAT373>14) OR (STAT372>42 STAT375>59 STAT373>14) OR (STAT372>94 STAT373>19) OR (STAT372>64 STAT375>29 STAT373>19) OR (STAT372>34 STAT375>59 STAT373>19) OR (STAT372>87 STAT373>24) OR (STAT372>57 STAT375>29 STAT373>24) OR (STAT372>27 STAT375>59 STAT373>24) OR (STAT372>79 STAT373>29) OR (STAT372>49 STAT375>29 STAT373>29) OR (STAT372>19 STAT375>59 STAT373>29) OR (STAT372>74 STAT374>0) OR (STAT372>44 STAT375>29 STAT374>0) OR (STAT372>14 STAT375>59 STAT374>0) OR (STAT372>29 STAT375>29 STAT373>9 STAT374>0))]:  %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>99) OR (STAT372>69 STAT375>29) OR (STAT372>39 STAT375>59) OR (STAT372>9 STAT375>89) OR (STAT372>84 STAT373>9) OR (STAT372>54 STAT375>29 STAT373>9) OR (STAT372>24 STAT375>59 STAT373>9) OR (STAT372>77 STAT373>14) OR (STAT372>47 STAT375>29 STAT373>14) OR (STAT372>17 STAT375>59 STAT373>14) OR (STAT372>69 STAT373>19) OR (STAT372>39 STAT375>29 STAT373>19) OR (STAT372>9 STAT375>59 STAT373>19) OR (STAT372>62 STAT373>24) OR (STAT372>32 STAT375>29 STAT373>24) OR (STAT372>2 STAT375>59 STAT373>24) OR (STAT372>54 STAT373>29) OR (STAT372>24 STAT375>29 STAT373>29) OR (STAT372>-6 STAT375>59 STAT373>29) OR (STAT372>74 STAT374>0) OR (STAT372>44 STAT375>29 STAT374>0) OR (STAT372>14 STAT375>59 STAT374>0) OR (STAT372>29 STAT375>29 STAT373>9 STAT374>0))]:  %NL%%NAME%{%NAME%}%CONTINUE%
 
 //Warnings 
 
@@ -334,25 +336,25 @@ ItemDisplay[STAT498>0]: %BLUE% [2xBoss]%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[STAT374>0 STAT374<2]: %PURPLE% [+1]%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[STAT374>1 STAT374<3]: %PURPLE% [+2]%NAME%%CONTINUE%{%NAME%}
 
-// Tier 3 Good Maps >100 density +1/2 OR >100 density 70+ rare OR >180 density 40+ rare OR >190 density 30+ rare OR >200 density 20+ rare OR >200 density 20+ exp OR >210 density 10+ rare OR >225 density
-ItemDisplay[MAPTIER=3 ((STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT373>9) OR (STAT372>225)) STAT360=0]: %GOLD% [GOOD ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
+// Tier 3 Good Maps 
+ItemDisplay[MAPTIER=3 ((STAT372>124) OR (STAT372>94 STAT375>29) OR (STAT372>64 STAT375>59) OR (STAT372>34 STAT375>89) OR (STAT372>109 STAT373>9) OR (STAT372>79 STAT375>29 STAT373>9) OR (STAT372>49 STAT375>59 STAT373>9) OR (STAT372>102 STAT373>14) OR (STAT372>72 STAT375>29 STAT373>14) OR (STAT372>42 STAT375>59 STAT373>14) OR (STAT372>94 STAT373>19) OR (STAT372>64 STAT375>29 STAT373>19) OR (STAT372>34 STAT375>59 STAT373>19) OR (STAT372>87 STAT373>24) OR (STAT372>57 STAT375>29 STAT373>24) OR (STAT372>27 STAT375>59 STAT373>24) OR (STAT372>79 STAT373>29) OR (STAT372>49 STAT375>29 STAT373>29) OR (STAT372>19 STAT375>59 STAT373>29) OR (STAT372>74 STAT374>0) OR (STAT372>44 STAT375>29 STAT374>0) OR (STAT372>14 STAT375>59 STAT374>0) OR (STAT372>29 STAT375>29 STAT373>9 STAT374>0)) STAT360=0]: %GOLD% [GOOD ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
 // Slammed
-ItemDisplay[MAPTIER=3 ((STAT372>100 AND STAT374>0) OR (STAT372>100 AND STAT375>69) OR (STAT372>179 AND STAT375>39) OR (STAT372>189 AND STAT375>29) OR (STAT372>199 AND STAT375>19) OR (STAT372>209 AND STAT375>9) OR (STAT372>199 AND STAT373>19) OR (STAT372>209 AND STAT373>9) OR (STAT372>225)) STAT360>0]: %GOLD% [G]%NAME%%CONTINUE%{%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
+ItemDisplay[MAPTIER=3 ((STAT372>124) OR (STAT372>94 STAT375>29) OR (STAT372>64 STAT375>59) OR (STAT372>34 STAT375>89) OR (STAT372>109 STAT373>9) OR (STAT372>79 STAT375>29 STAT373>9) OR (STAT372>49 STAT375>59 STAT373>9) OR (STAT372>102 STAT373>14) OR (STAT372>72 STAT375>29 STAT373>14) OR (STAT372>42 STAT375>59 STAT373>14) OR (STAT372>94 STAT373>19) OR (STAT372>64 STAT375>29 STAT373>19) OR (STAT372>34 STAT375>59 STAT373>19) OR (STAT372>87 STAT373>24) OR (STAT372>57 STAT375>29 STAT373>24) OR (STAT372>27 STAT375>59 STAT373>24) OR (STAT372>79 STAT373>29) OR (STAT372>49 STAT375>29 STAT373>29) OR (STAT372>19 STAT375>59 STAT373>29) OR (STAT372>74 STAT374>0) OR (STAT372>44 STAT375>29 STAT374>0) OR (STAT372>14 STAT375>59 STAT374>0) OR (STAT372>29 STAT375>29 STAT373>9 STAT374>0)) STAT360>0]: %GOLD% [G]%NAME%%CONTINUE%{%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
 
 // Tier 1-2 Good Maps >150 density +1/2 OR >70 density 70+ rare OR >110 density 40+ rare OR >120 density 30+ rare OR >140 density 20+ rare OR >150 density 20+ exp OR >175 density 10+ rare OR >195 density
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>150 AND STAT374>0) OR (STAT372>70 AND STAT375>69) OR (STAT372>109 AND STAT375>39) OR (STAT372>119 AND STAT375>29) OR (STAT372>139 AND STAT375>19) OR (STAT372>159 AND STAT375>9) OR (STAT372>149 AND STAT373>19) OR (STAT372>174 AND STAT373>9) OR (STAT372>194)) STAT360=0]: %GOLD% [GOOD ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>99) OR (STAT372>69 STAT375>29) OR (STAT372>39 STAT375>59) OR (STAT372>9 STAT375>89) OR (STAT372>84 STAT373>9) OR (STAT372>54 STAT375>29 STAT373>9) OR (STAT372>24 STAT375>59 STAT373>9) OR (STAT372>77 STAT373>14) OR (STAT372>47 STAT375>29 STAT373>14) OR (STAT372>17 STAT375>59 STAT373>14) OR (STAT372>69 STAT373>19) OR (STAT372>39 STAT375>29 STAT373>19) OR (STAT372>9 STAT375>59 STAT373>19) OR (STAT372>62 STAT373>24) OR (STAT372>32 STAT375>29 STAT373>24) OR (STAT372>2 STAT375>59 STAT373>24) OR (STAT372>54 STAT373>29) OR (STAT372>24 STAT375>29 STAT373>29) OR (STAT372>-6 STAT375>59 STAT373>29) OR (STAT372>74 STAT374>0) OR (STAT372>44 STAT375>29 STAT374>0) OR (STAT372>14 STAT375>59 STAT374>0) OR (STAT372>29 STAT375>29 STAT373>9 STAT374>0)) STAT360=0]: %GOLD% [GOOD ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
 // Slammed
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>150 AND STAT374>0) OR (STAT372>70 AND STAT375>69) OR (STAT372>109 AND STAT375>39) OR (STAT372>119 AND STAT375>29) OR (STAT372>139 AND STAT375>19) OR (STAT372>159 AND STAT375>9) OR (STAT372>149 AND STAT373>19) OR (STAT372>174 AND STAT373>9) OR (STAT372>194)) STAT360>0]: %GOLD% [G]%NAME%%CONTINUE%{%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>99) OR (STAT372>69 STAT375>29) OR (STAT372>39 STAT375>59) OR (STAT372>9 STAT375>89) OR (STAT372>84 STAT373>9) OR (STAT372>54 STAT375>29 STAT373>9) OR (STAT372>24 STAT375>59 STAT373>9) OR (STAT372>77 STAT373>14) OR (STAT372>47 STAT375>29 STAT373>14) OR (STAT372>17 STAT375>59 STAT373>14) OR (STAT372>69 STAT373>19) OR (STAT372>39 STAT375>29 STAT373>19) OR (STAT372>9 STAT375>59 STAT373>19) OR (STAT372>62 STAT373>24) OR (STAT372>32 STAT375>29 STAT373>24) OR (STAT372>2 STAT375>59 STAT373>24) OR (STAT372>54 STAT373>29) OR (STAT372>24 STAT375>29 STAT373>29) OR (STAT372>-6 STAT375>59 STAT373>29) OR (STAT372>74 STAT374>0) OR (STAT372>44 STAT375>29 STAT374>0) OR (STAT372>14 STAT375>59 STAT374>0) OR (STAT372>29 STAT375>29 STAT373>9 STAT374>0)) STAT360>0]: %GOLD% [G]%NAME%%CONTINUE%{%NAME%%GOLD%> > > Good Map Rolls < < <%NL%}
 
-// Tier 3 MF Maps >180 den >60 mf
-ItemDisplay[MAPTIER=3 (STAT372>180 AND STAT370>60) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
+// Tier 3 MF Maps >90 den >60 mf
+ItemDisplay[MAPTIER=3 (STAT372>89 AND STAT370>60) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
 // Slammed
-ItemDisplay[MAPTIER=3 (STAT372>180 AND STAT370>60) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
+ItemDisplay[MAPTIER=3 (STAT372>89 AND STAT370>60) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
 
-// Tier 1-2 MF Maps >150 den >30 MF
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>150 AND STAT370>30) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
+// Tier 1-2 MF Maps >75 den >30 MF
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>74 AND STAT370>30) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
 // Slammed
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>150 AND STAT370>30) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>74 AND STAT370>30) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%NL%}
 
 // Tell the User to convert map to rare
 ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%NL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%NL%%PURPLE%Convert to Plain Map%NL%%NAME%}
@@ -411,8 +413,9 @@ ItemDisplay[gpbs]: %DOT-70%%NAME%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC 
 ItemDisplay[gpgs]: %DOT-70%%NAME%{Amulet Thul, 10% Block [2-5]MDR [2-5]PDR%NL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%NL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%NL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%NL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%NL%Helm Ith, +[20-60]% EDef +[10-20]% Light Res [5-10]% PDR%NL%Chest Eth, +[20-60]% EDef Half Freeze Duration [5-10]% PDR%NL%Shield Nef, +[20-60]% EDef [5-10]% PDR%NL%Bow/XBow Sol, +[70-140]% EDmg +[10-20]% IAS [2-5]MDR [2-5]PDR%NL%%GREEN%Safety Craft}
 // Ruby
 ItemDisplay[gprs]: %DOT-70%%NAME%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%NL%Ring Sol, +[5-10] Str [1-3]% LL +[10-20] Life%NL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%NL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%NL%Boots Eth, Rep Life +[15-30] [2-4]%LL +[10-20] Life%NL%Helm Ral, [10-20]% Crushing Blow [2-4]% LL +[10-20] Life%NL%Chest Thul, +[3-6] LPK [3-6]% LL +[20-40] Life%NL%Shield Ith, [10-20]% Block [3-6]% LL +[10-20] Life%NL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%NL%%RED%Blood Craft}
+//Diamond
+ItemDisplay[gpws]: %DOT-70%%NAME%{Amulet Tal, +[5-10]% AllRes [100-150]% DefVMissle +[4-8] All Stat%NL%Ring Hel, +[3-5] AllRes [50-100]% DefVMissle Half Freeze%NL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%NL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%NL%Boots Ko, 10% MS [100-150]% DefVMissle Half Freeze%NL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%NL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%NL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%NL%Weapon Lum, [20-40]% EDmg +20% IAS +[50-100] AR%NL%%WHITE%Brilliant Craft}
 
-ItemDisplay[gpws]: %DOT-70%%NAME%{%TAN%Note%WHITE%: Cube Gems to %GRAY%(un)%WHITE%stack%NL%%NL%%WHITE%Shield: All Res +19%%NL%Armor/Helm: +100 to AR%NL%Weapon: +68% Dmg vs Undead%NL%}
 // Skull
 ItemDisplay[skzs]:%DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon Shael, +[75-120]%ToDemon&ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft}
 
@@ -430,8 +433,8 @@ ItemDisplay[crfh]:%BLUE%Hitpower %GOLD%Craft Infusion%CONTINUE%{Amulet +[150-250
 ItemDisplay[crfv]:%GRAY%Vampiric %GOLD%Craft Infusion%CONTINUE%{Amulet [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%NL%Ring [10-20]% PLR [1-3]%ML +[5-10] RepLife%NL%Belt [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%NL%Gloves [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%NL%Boots [10-20]% PLR [2-4]%ML +[5-10] RepLife%NL%Helm [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%NL%Chest [3-6]%ML +[5-10] RepLife -[20-30]%Req%NL%Shield [10-20]% Block [3-6]%ML -[20-30]%Req%NL%Weapon +[75-120]%ToDemon&ToUndead [3-6]%ML +[10-15] RepLife%NL%%GRAY%Vampiric Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfu (bountiful craft)
 ItemDisplay[crfu]:%YELLOW%Bountiful %GOLD%Craft Infusion%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radius%NL%Ring +[5-10] Vit [10-15]% MF +[1-3]L.Radius%NL%Belt +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Gloves +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%NL%Boots +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%NL%Helm +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Chest +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%NL%Shield [10-20]% Block [20-30]% MF +[1-3]L.Radius%NL%Weapon +[50-80]% EDmg [20-30]% MF +[1-3]L.Radius%NL%%YELLOW%Bountiful Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
-// crfp (prismatic craft)
-ItemDisplay[crfp]:%WHITE%Prismatic %GOLD%Craft Infusion%CONTINUE%
+// crfp (Brilliant craft)
+ItemDisplay[crfp]:%WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%{Amulet +[5-10]% AllRes [100-150]% DefVMissle +[4-8] All Stat%NL%Ring +[3-5] AllRes [50-100]% DefVMissle Half Freeze%NL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%NL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%NL%Boots 10% MS [100-150]% DefVMissle Half Freeze%NL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%NL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%NL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%NL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%NL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %TAN%QTY %QTY% %CONTINUE%{%NAME%}
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%ORANGE%O O O %NAME% %ORANGE%O O O{%NAME%}
@@ -581,25 +584,25 @@ ItemDisplay[yps]:
 
 // PVP modifiers
 // LLD & MLD
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP BARBARIAN]: %CONTINUE%{Open Wounds: 10% (Normal)%NL%Whirlwind: 75%%NL%Warcry: 135%%NL%Stun: 100%%NL%Frenzy: 200%%NL%Double Swing: 200%%NL%Double Throw: 114%%NL%Concentrate: 50% (Magic)%NL%Berserk: 125%%NL%Bash: 100%%NL%%TAN%~Barbarian~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP ASSASSIN]: %CONTINUE%{Wake of Fire: 60%%NL%Chain Lightning: Sentry: 35%%NL%Lightning: Sentry: 35%%NL%Psychic Hammer: 20%%NL%Mind Blast: 25%%NL%Blade Sentinel: 70%%NL%Blade Fury: 80%%NL%%TAN%~Assassin~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP PALADIN]: %CONTINUE%{Zeal: All: 75%%NL%Vengeance: 200% (Ele)%NL%Smite: 85%%NL%Sacrifice: 150%%NL%Joust: 20%%NL%Holy Nova: 70%%NL%Holy Fire: 125%%NL%Holy Bolt: 65%%NL%Fist of the Heavens: 55%%NL%Charge: 70%%NL%Blessed Hammer: 70%%NL%%TAN%~Paladin~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP DRUID]: %CONTINUE%{Volcano: 65%%NL%Tornado: 75%%NL%Shockwave: 175%%NL%Raven: 60%%NL%Rabies: 150% (Psn)%NL%Molten Boulder: 90%%NL%Maul: 150%%NL%Firestorm: 150%%NL%Fire Claws: 300% (Fire)%NL%Hurricane: 150%%NL%Arctic Blast: 200%%NL%Armageddon: 35%%NL%%TAN%~Druid~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP NECROMANCER]: %CONTINUE%{Teeth: 40%%NL%Poison Nova: 150%%NL%Poison Strike: 150%%NL%Desecrate: 100%%NL%Dark Pact: 65%%NL%Corpse Explosion: 65%%NL%Bone Spear: 55%%NL%Bone Spirit: 45%%NL%%TAN%~Necromancer~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP AMAZON]: %CONTINUE%{Valkyrie: 70%%NL%Strafe: 65%%NL%Power Strike: 17% (Phys)%NL%Poison Javelin: 100%%NL%Plague Javelin: 110% (Psn)%NL%Magic Arrow: 100%%NL%Lightning: Bolt: 100%%NL%Lightning: Fury: 100%%NL%Jab: 90%%NL%Ice Arrow: 175%%NL%Immolation Arrow: 200%%NL%Guided Arrow: 130%%NL%Freezing Arrow: 175%%NL%Decoy: 55%%NL%Charged Strike: 130% (Light)%NL%%TAN%~Amazon~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP SORCERESS]: %CONTINUE%{Telekinesis: 10%%NL%Thunder Storm: 30%%NL%Nova: 150%%NL%Meteor: 65%%NL%Lesser Hydra: 50%%NL%Lightning: 200%%NL%Ice Barrage: 175%%NL%Ice Bolt: 135%%NL%Ice Blast: 150%%NL%Inferno: 114%%NL%Hydra: 60%%NL%Glacial Spike: 150%%NL%Frost Nova: 165%%NL%Frozen Orb: 150%%NL%Fire Wall: 90%%NL%Fire Bolt: 95%%NL%Fire Ball: 95%%NL%Charged Bolt: 185%%NL%Chain Lightning: 120%%NL%Combustion: 90%%NL%Blizzard: 160%%NL%Blaze: 130%%NL%%TAN%~Sorceress~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP BARBARIAN]: %CONTINUE%{Open Wounds: 10% (Normal)%NL%Deep wounds: 50%%NL%Whirlwind: 75%%NL%Warcry: 135%%NL%Stun: 100%%NL%Frenzy: 200%%NL%Double Swing: 200%%NL%Double Throw: 114%%NL%Concentrate: 50% (Magic)%NL%Berserk: 125%%NL%Bash: 100%%NL%%TAN%~Barbarian~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP ASSASSIN]: %CONTINUE%{Wake of Fire: 60%%NL%Chain Lightning: Sentry: 35%%NL%Lightning: Sentry: 35%%NL%Psychic Hammer: 20%%NL%Mind Blast: 30%%NL%Blade Sentinel: 80%%NL%Blade Fury: 80%%NL%%TAN%~Assassin~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP PALADIN]: %CONTINUE%{Zeal: All: 75%%NL%Vengeance: 200% (Ele)%NL%Smite: 85%%NL%Sacrifice: 150%%NL%Joust: 20%%NL%Holy Nova: 50%%NL%Holy Fire: 125%%NL%Holy Bolt: 65%%NL%Fist of the Heavens: 55%%NL%Charge: 70%%NL%Blessed Hammer: 60%%NL%%TAN%~Paladin~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP DRUID]: %CONTINUE%{Volcano: 45%%NL%Tornado: 60%%NL%Shockwave: 175%%NL%Raven: 60%%NL%Rabies: 150% (Psn)%NL%Molten Boulder: 90%%NL%Maul: 150%%NL%Firestorm: 150%%NL%Fire Claws: 300% (Fire)%NL%Hurricane: 150%%NL%Arctic Blast: 200%%NL%Armageddon: 30%%NL%%TAN%~Druid~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP NECROMANCER]: %CONTINUE%{Teeth: 40%%NL%Poison Nova: 150%%NL%Poison Strike: 150%%NL%Desecrate: 85%%NL%Dark Pact: 50%%NL%Corpse Explosion: 65%%NL%Bone Spear: 55%%NL%Bone Spirit: 30%%NL%%TAN%~Necromancer~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP AMAZON]: %CONTINUE%{Valkyrie: 70%%NL%Strafe: 65%%NL%Power Strike: 17% (Phys)%NL%Poison Javelin: 85%%NL%Plague Javelin: 85% (Psn)%NL%Magic Arrow: 100%%NL%Lightning: Bolt: 85%%NL%Lightning: Fury: 100%%NL%Jab: 80%%NL%Ice Arrow: 175%%NL%Immolation Arrow: 200%%NL%Guided Arrow: 115%%NL%Freezing Arrow: 175%%NL%Decoy: 50%%NL%Charged Strike: 130% (Light)%NL%%TAN%~Amazon~}
+ItemDisplay[DIFF<2 (wms OR pvpp) SHOP SORCERESS]: %CONTINUE%{Telekinesis: 10%%NL%Thunder Storm: 30%%NL%Nova: 150%%NL%Meteor: 65%%NL%Lesser Hydra: 40%%NL%Lightning: 200%%NL%Ice Barrage: 175%%NL%Ice Bolt: 135%%NL%Ice Blast: 150%%NL%Inferno: 114%%NL%Hydra: 30%%NL%Glacial Spike: 150%%NL%Frost Nova: 165%%NL%Frozen Orb: 150%%NL%Fire Wall: 90%%NL%Fire Bolt: 95%%NL%Fire Ball: 95%%NL%Charged Bolt: 185%%NL%Chain Lightning: 120%%NL%Combustion: 80%%NL%Blizzard: 145%%NL%Blaze: 130%%NL%%TAN%~Sorceress~}
 // HLD
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP BARBARIAN]: %CONTINUE%{Open Wounds: 6% (Hell)%NL%Whirlwind: 90%%NL%Warcry: 125%%NL%Stun: 100%%NL%Frenzy: 200%%NL%Double Swing: 200%%NL%Double Throw: 114%%NL%Concentrate: 100% (Magic)%NL%Berserk: 125%%NL%Bash: 100%%NL%%TAN%~Barbarian~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP ASSASSIN]: %CONTINUE%{Wake of Fire: 60%%NL%Chain Lightning: Sentry: 45%%NL%Lightning: Sentry: 45%%NL%Psychic Hammer: 10%%NL%Mind Blast: 30%%NL%Blade Sentinel: 50%%NL%Blade Fury: 60%%NL%Blade Dance: 85%%NL%%TAN%~Assassin~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP PALADIN]: %CONTINUE%{Zeal: All: 75%%NL%Vengeance: 100%%NL%Smite: 75%%NL%Sacrifice: 100%%NL%Joust: 20%%NL%Holy Nova: 100%%NL%Holy Fire: 50%%NL%Holy Bolt: 75%%NL%Fist of the Heavens: 65%%NL%Charge: 70%%NL%Blessed Hammer: 50%%NL%%TAN%~Paladin~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP DRUID]: %CONTINUE%{Volcano: 65%%NL%Tornado: 65%%NL%Shockwave: 175%%NL%Raven: 60%%NL%Rabies: 100% (Psn)%NL%Molten Boulder: 80%%NL%Maul: 150%%NL%Firestorm: 150%%NL%Fire Claws: 100%%NL%Hurricane: 150%%NL%Arctic Blast: 200%%NL%Armageddon: 55%%NL%%TAN%~Druid~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP NECROMANCER]: %CONTINUE%{Teeth: 35%%NL%Poison Nova: 125%%NL%Poison Strike: 125%%NL%Desecrate: 60%%NL%Dark Pact: 55%%NL%Corpse Explosion: 65%%NL%Bone Spear: 45%%NL%Bone Spirit: 30%%NL%%TAN%~Necromancer~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP AMAZON]: %CONTINUE%{Valkyrie: 70%%NL%Strafe: 65%%NL%Power Strike: 17% (Phys)%NL%Poison Javelin: 85%%NL%Plague Javelin: 45(Psn)%NL%Plague Javelin: All: 100% (Phys)%NL%Magic Arrow: 100%%NL%Lightning: Bolt: 100%%NL%Lightning: Fury: 100%%NL%Jab: 80%%NL%Ice Arrow: 110%%NL%Immolation Arrow: 100%%NL%Guided Arrow: 120%%NL%Freezing Arrow: 100%%NL%Decoy: 100%%NL%Charged Strike: 100%%NL%%TAN%~Amazon~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP SORCERESS]: %CONTINUE%{Telekinesis: 10%%NL%Thunder Storm: 35%%NL%Nova: 140%%NL%Meteor: 90%%NL%Lesser Hydra: 90%%NL%Lightning: 180%%NL%Ice Barrage: 140%%NL%Ice Bolt: 114%%NL%Ice Blast: 114%%NL%Inferno: 100%%NL%Hydra: 90%%NL%Glacial Spike: 114%%NL%Frost Nova: 125%%NL%Frozen Orb: 114%%NL%Fire Wall: 90%%NL%Fire Bolt: 114%%NL%Fire Ball: 114%%NL%Charged Bolt: 75%%NL%Chain Lightning: 120%%NL%Combustion: 80%%NL%Blizzard: 130%%NL%Blaze: 100%%NL%%TAN%~Sorceress~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP BARBARIAN]: %CONTINUE%{Open Wounds: 6% (Hell)%NL%Deep wounds: 50%%NL%Whirlwind: 110%%NL%Warcry: 125%%NL%Stun: 100%%NL%Frenzy: 125%%NL%Double Swing: 200%%NL%Double Throw: 114%%NL%Concentrate: 100% (Magic)%NL%Berserk: 125%%NL%Bash: 100%%NL%%TAN%~Barbarian~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP ASSASSIN]: %CONTINUE%{Wake of Fire: 60%%NL%Chain Lightning: Sentry: 40%%NL%Lightning: Sentry: 40%%NL%Psychic Hammer: 10%%NL%Mind Blast: 35%%NL%Blade Sentinel: 60%%NL%Blade Fury: 60%%NL%%TAN%~Assassin~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP PALADIN]: %CONTINUE%{Zeal: All: 75%%NL%Vengeance: 100%%NL%Smite: 75%%NL%Sacrifice: 100%%NL%Joust: 20%%NL%Holy Nova: 50%%NL%Holy Fire: 50%%NL%Holy Bolt: 65%%NL%Fist of the Heavens: 65%%NL%Charge: 70%%NL%Blessed Hammer: 40%%NL%%TAN%~Paladin~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP DRUID]: %CONTINUE%{Volcano: 45%%NL%Tornado: 50%%NL%Shockwave: 175%%NL%Raven: 60%%NL%Rabies: 125% (Psn)%NL%Molten Boulder: 80%%NL%Maul: 150%%NL%Firestorm: 120%%NL%Fire Claws: 100%%NL%Hurricane: 150%%NL%Arctic Blast: 200%%NL%Armageddon: 35%%NL%%TAN%~Druid~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP NECROMANCER]: %CONTINUE%{Teeth: 35%%NL%Poison Nova: 125%%NL%Poison Strike: 125%%NL%Desecrate: 60%%NL%Dark Pact: 50%%NL%Corpse Explosion: 65%%NL%Bone Spear: 45%%NL%Bone Spirit: 15%%NL%%TAN%~Necromancer~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP AMAZON]: %CONTINUE%{Valkyrie: 70%%NL%Strafe: 65%%NL%Power Strike: 17% (Phys)%NL%Poison Javelin: 80%%NL%Plague Javelin: 40(Psn)%NL%Plague Javelin: All: 100% (Phys)%NL%Magic Arrow: 100%%NL%Lightning: Bolt: 100%%NL%Lightning: Fury: 100%%NL%Jab: 80%%NL%Ice Arrow: 120%%NL%Immolation Arrow: 1350%%NL%Guided Arrow: 120%%NL%Freezing Arrow: 130%%NL%Decoy: 100%%NL%Charged Strike: 100%%NL%%TAN%~Amazon~}
+ItemDisplay[DIFF=2 (wms OR pvpp) SHOP SORCERESS]: %CONTINUE%{Telekinesis: 10%%NL%Thunder Storm: 35%%NL%Nova: 140%%NL%Meteor: 90%%NL%Lesser Hydra: 80%%NL%Lightning: 180%%NL%Ice Barrage: 140%%NL%Ice Bolt: 135%%NL%Ice Blast: 135%%NL%Inferno: 100%%NL%Hydra: 80%%NL%Glacial Spike: 135%%NL%Frost Nova: 125%%NL%Frozen Orb: 114%%NL%Fire Wall: 90%%NL%Fire Bolt: 114%%NL%Fire Bolt: 135%%NL%Fire Ball: 130%%NL%Charged Bolt: 75%%NL%Chain Lightning: 120%%NL%Combustion: 90%%NL%Blizzard: 130%%NL%Blaze: 100%%NL%%TAN%~Sorceress~}
 
-ItemDisplay[(wms OR pvpp) SHOP DIFF=0]: %CONTINUE%{%NAME%%NL%PvP Modifiers (Normal)%NL%Last updated November 18}
-ItemDisplay[(wms OR pvpp) SHOP DIFF=1]: %CONTINUE%{%NAME%%NL%PvP Modifiers (Nightmare)%NL%Last updated November 18}
-ItemDisplay[(wms OR pvpp) SHOP DIFF=2]: %CONTINUE%{%NAME%%NL%PvP Modifiers (Hell)%NL%Last updated November 18}
+ItemDisplay[(wms OR pvpp) SHOP DIFF=0]: %CONTINUE%{%NAME%%NL%PvP Modifiers (Normal)%NL%Last updated April 3(S9)}
+ItemDisplay[(wms OR pvpp) SHOP DIFF=1]: %CONTINUE%{%NAME%%NL%PvP Modifiers (Nightmare)%NL%Last updated April 3(S9)}
+ItemDisplay[(wms OR pvpp) SHOP DIFF=2]: %CONTINUE%{%NAME%%NL%PvP Modifiers (Hell)%NL%Last updated April 3(S9)}
 
 
 ItemDisplay[wms FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{%NAME%}
@@ -1856,6 +1859,11 @@ ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=901]: %NAME% %ORANGE%[AMP]%CONT
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=902]: %NAME% %ORANGE%[AMP]%CONTINUE% // mid amp
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=903]: %NAME% %ORANGE%[AMP]%CONTINUE% // High amp
 
+// Amplify Damage on Casting
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=904]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=905]: %NAME% %ORANGE%[AMP]%CONTINUE% // mid amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=906]: %NAME% %ORANGE%[AMP]%CONTINUE% // High amp
+
 // Lower Res on Striking
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=907]: %NAME% %PURPLE%[LR]%CONTINUE% // Low
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=908]: %NAME% %PURPLE%[LR]%CONTINUE% // mid lr
@@ -1882,6 +1890,12 @@ ItemDisplay[SET (bwn OR vbt OR lbt) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% %TEAL%[LLD]%CONTINUE%
 // Tancreds ItemDisplay[SET amu (STAT360=0 AND STAT34>2 AND STAT35>1)]: %NAME% %TEAL%[LLD]%CONTINUE%
+
+//Half freeze duration when no CBF
+ItemDisplay[STAT118>0 !EQUIPPED CHARSTAT118=1 CHARSTAT153=0]: %NAME% {%TAN%Equip to Gain: %BLUE%Cannot Be Frozen}%CONTINUE%
+ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118<2 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %GRAY%Cannot Be Frozen}%CONTINUE%
+ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118>1 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %BLUE%Cannot Be Frozen}%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 
 
@@ -3396,8 +3410,9 @@ ItemDisplay[!UNI ID TABSK34>2 WEAPON]: %NAME% %ORANGE%+3 Warcries%CONTINUE%{%NAM
 ItemDisplay[ID CHSK54>0 STAFF]: %NAME% %SAGE%[TELE]{%ORANGE%Teleport Charges Staff}%CONTINUE% // Teleport charges
 ItemDisplay[ID CHSK357>0 STAFF]: %NAME% {%ORANGE%(Blink)} // Blink charges
 
-// Wands with charges
-//ItemDisplay[ID (CHSK447>0) WAND]: %NAME%{%ORANGE%Confuse Charges Wand%NL%%NAME%}%CONTINUE% // Confuse charges
+// Wands with charges %SAGE%[TELE]
+ItemDisplay[ID (CHSK445>0) WAND FILTLVL<3]: %NAME% %SAGE%[LifeTap]{%NAME%}%CONTINUE% // Life tap charges
+ItemDisplay[ID (CHSK447>0) WAND FILTLVL<3]: %NAME% %SAGE%[LR]{%NAME%}%CONTINUE% // Lower Resist charges
 ItemDisplay[ID (CHSK445>0) WAND]: %NAME%{%ORANGE%Life Tap Charges Wand%NL%%NAME%}%CONTINUE% // Life tap charges
 ItemDisplay[ID (CHSK447>0) WAND]: %NAME%{%ORANGE%Lower Res Charges Wand%NL%%NAME%}%CONTINUE% // Lower Resist charges
 
@@ -3862,7 +3877,101 @@ ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 // CLASS SPECIFIC SKILLS MAG OR RARE OR CRAFT
 //-----------------------------------------------------------------------------------
 
-// TODO Skill trees?
+// Skill trees
+
+// Retain item color
+ItemDisplay[FILTLVL<5 WEAPON MAG ID (TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON RARE ID (TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON  CRAFT ID (TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %ORANGE%%NAME%%CONTINUE%
+
+
+// +3 Tree Skills
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK0=3]: %PURPLE%+3 Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK2=3]: %PURPLE%+3 Jav %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK1=3]: %PURPLE%+3 Pass & Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK8=3]: %PURPLE%+3 Fire %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK9=3]: %PURPLE%+3 Lightning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK10=3]: %PURPLE%+3 Cold %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK16=3]: %PURPLE%+3 Curses %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK17=3]: %PURPLE%+3 P&B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK18=3]: %PURPLE%+3 Nec Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK24=3]: %PURPLE%+3 P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK25=3]: %PURPLE%+3 Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK26=3]: %PURPLE%+3 Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK32=3]: %PURPLE%+3 B.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK33=3]: %PURPLE%+3 Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK34=3]: %PURPLE%+3 Warcries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK40=3]: %PURPLE%+3 Dru Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK41=3]: %PURPLE%+3 ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK42=3]: %PURPLE%+3 Ele %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK48=3]: %PURPLE%+3 Traps %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK49=3]: %PURPLE%+3 Shadow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK50=3]: %PURPLE%+3 M.A. %TAN%Skills %NAME%%CONTINUE%
+
+// +2 Tree Skills
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK0=2]: %PURPLE%+2 Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK2=2]: %PURPLE%+2 Jav %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK1=2]: %PURPLE%+2 Pass & Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK8=2]: %PURPLE%+2 Fire %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK9=2]: %PURPLE%+2 Lightning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK10=2]: %PURPLE%+2 Cold %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK16=2]: %PURPLE%+2 Curses %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK17=2]: %PURPLE%+2 P&B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK18=2]: %PURPLE%+2 Nec Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK24=2]: %PURPLE%+2 P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK25=2]: %PURPLE%+2 Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK26=2]: %PURPLE%+2 Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK32=2]: %PURPLE%+2 B.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK33=2]: %PURPLE%+2 Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK34=2]: %PURPLE%+2 Warcries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK40=2]: %PURPLE%+2 Dru Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK41=2]: %PURPLE%+2 ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK42=2]: %PURPLE%+2 Ele %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK48=2]: %PURPLE%+2 Traps %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK49=2]: %PURPLE%+2 Shadow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK50=2]: %PURPLE%+2 M.A. %TAN%Skills %NAME%%CONTINUE%
+
+// +1 Tree Skills
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK0=1]: %GRAY%+1 Bow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK2=1]: %GRAY%+1 Jav %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK1=1]: %GRAY%+1 Pass & Magic %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK8=1]: %GRAY%+1 Fire %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK9=1]: %GRAY%+1 Lightning %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK10=1]: %GRAY%+1 Cold %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK16=1]: %GRAY%+1 Curses %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK17=1]: %GRAY%+1 P&B %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK18=1]: %GRAY%+1 Nec Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK24=1]: %GRAY%+1 P.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK25=1]: %GRAY%+1 Off Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK26=1]: %GRAY%+1 Def Aura %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK32=1]: %GRAY%+1 B.Comb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK33=1]: %GRAY%+1 Masteries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK34=1]: %GRAY%+1 Warcries %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK40=1]: %GRAY%+1 Dru Smn %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK41=1]: %GRAY%+1 ShapeShift %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK42=1]: %GRAY%+1 Ele %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK48=1]: %GRAY%+1 Traps %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK49=1]: %GRAY%+1 Shadow %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW TABSK50=1]: %GRAY%+1 M.A. %TAN%Skills %NAME%%CONTINUE%
+
+// +2 Class Skills
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK0=2]: %PURPLE%+2 Zon %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK1=2]: %PURPLE%+2 Sorc %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK2=2]: %PURPLE%+2 Necro %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK3=2]: %PURPLE%+2 Pala %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK4=2]: %PURPLE%+2 Barb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK5=2]: %PURPLE%+2 Druid %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<5 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK6=2]: %PURPLE%+2 Sin %TAN%Skills %NAME%%CONTINUE%
+
+// +1 Class Skills
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK0=1]: %GRAY%+1 Zon %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK1=1]: %GRAY%+1 Sorc %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK2=1]: %GRAY%+1 Necro %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK3=1]: %GRAY%+1 Pala %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK4=1]: %GRAY%+1 Barb %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK5=1]: %GRAY%+1 Druid %TAN%Skills %NAME%%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (MAG OR RARE OR CRAFT) !RW CLSK6=1]: %GRAY%+1 Sin %TAN%Skills %NAME%%CONTINUE%
+
 
 // Amazon
 //ItemDisplay[(MAG OR RARE OR CRAFT) !RW TABSK0=1 FILTLVL<2]: %GREEN%+1 Bow %NL%%NAME%{%NAME%}%CONTINUE%
@@ -3874,31 +3983,31 @@ ItemDisplay[FILTLVL>4 RARE !ID !(rin OR amu OR cm1 OR cm2 OR cm3)]:
 //ItemDisplay[(MAG OR RARE OR CRAFT) !RW TABSK2=3 FILTLVL<3]: %GREEN%+3 Java %NL%%NAME%{%NAME%}%CONTINUE%
 
 // Assasin
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK258=3 FILTLVL<3]: +3 BurstSpd %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK258=3 FILTLVL<5]: +3 BurstSpd %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK260=3 FILTLVL<3]: +3 DrgClw %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK261=1 FILTLVL<2]: +1 ChrgBoltSent %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK261=2 FILTLVL<2]: +2 ChrgBoltSent %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK261=3 FILTLVL<3]: +3 ChrgBoltSent %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK262=1 FILTLVL<2]: +1 WkeOFire %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK262=2 FILTLVL<2]: +2 WkeOFire %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK262=3 FILTLVL<3]: +3 WkeOFire %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK262=3 FILTLVL<5]: +3 WkeOFire %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK267=3 FILTLVL<3]: +3 Fade %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK270=3 FILTLVL<3]: +3 DrgTail %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK271=1 FILTLVL<2]: +1 ChnLghtSent %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK271=2 FILTLVL<2]: +2 ChnLghtSent %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK271=3 FILTLVL<3]: +3 ChnLghtSent %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK271=3 FILTLVL<5]: +3 ChnLghtSent %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK272=1 FILTLVL<2]: +1 WakeOInf %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK272=2 FILTLVL<2]: +2 WakeOInf %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK272=3 FILTLVL<3]: +3 WakeOInf %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK272=3 FILTLVL<5]: +3 WakeOInf %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK273=1 FILTLVL<2]: +1 MindBlst %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK273=2 FILTLVL<2]: +2 MindBlst %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK273=3 FILTLVL<3]: +3 MindBlst %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK280=1 FILTLVL<2]: +1 PhnxStrk %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK280=2 FILTLVL<2]: +2 PhnxStrk %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK280=3 FILTLVL<3]: +3 PhnxStrk %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK280=3 FILTLVL<5]: +3 PhnxStrk %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK366=1 FILTLVL<2]: +1 LghtSent %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK366=2 FILTLVL<2]: +2 LghtSent %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK366=3 FILTLVL<3]: +3 LghtSent %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK366=3 FILTLVL<5]: +3 LghtSent %NL%%NAME%{%NAME%}%CONTINUE%
 //ItemDisplay[(MAG OR RARE OR CRAFT) !RW (SK251>0 OR SK252>0 OR SK253>0 OR SK254>0 OR SK255>0 OR SK256>0 OR SK257>0 OR SK258>0 OR SK259>0 OR SK260>0 OR SK261>0 OR SK262>0 OR SK263>0 OR SK264>0 OR SK265>0 OR SK266>0 OR SK267>0 OR SK268>0 OR SK269>0 OR SK270>0 OR SK271>0 OR SK272>0 OR SK273>0 OR SK274>0 OR SK275>0 OR SK276>0 OR SK277>0 OR SK278>0 OR SK279>0 OR SK280>0 OR SK366>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 
 // Barbarian 
@@ -3910,10 +4019,10 @@ ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK146=2 FILTLVL<2]: +2 B.Cry %NL%%NAME%{%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK146=3 FILTLVL<3]: +3 B.Cry %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK149=1 FILTLVL<2]: +1 B.Ords %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK149=2 FILTLVL<2]: +2 B.Ords %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK149=3 FILTLVL<3]: +3 B.Ords %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK149=3 FILTLVL<5]: +3 B.Ords %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK155=1 FILTLVL<2]: +1 B.Comm %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK155=2 FILTLVL<2]: +2 B.Comm %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK155=3 FILTLVL<3]: +3 B.Comm %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK155=3 FILTLVL<5]: +3 B.Comm %NL%%NAME%{%NAME%}%CONTINUE%
 //ItemDisplay[(MAG OR RARE OR CRAFT) !RW (SK126>0 OR SK128>0 OR SK130>0 OR SK131>0 OR SK132>0 OR SK133>0 OR SK135>0 OR SK136>0 OR SK137>0 OR SK138>0 OR SK139>0 OR SK140>0 OR SK141>0 OR SK142>0 OR SK143>0 OR SK144>0 OR SK145>0 OR SK146>0 OR SK147>0 OR SK148>0 OR SK149>0 OR SK150>0 OR SK151>0 OR SK152>0 OR SK153>0 OR SK154>0 OR SK155>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 
 // Druid 
@@ -3922,13 +4031,13 @@ ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK221=2 FILTLVL<2]: +2 Raven %NL%%NAME%%C
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK221=3 FILTLVL<3]: +3 Raven %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK222=1 FILTLVL<2]: +1 PsnCrpr %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK222=2 FILTLVL<2]: +2 PsnCrpr %NL%%NAME%%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK222=3 FILTLVL<3]: +3 PsnCrpr %NL%%NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK222=3 FILTLVL<5]: +3 PsnCrpr %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK225=1 FILTLVL<2]: +1 Fstorm %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK225=2 FILTLVL<2]: +2 Fstorm %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK225=3 FILTLVL<3]: +3 Fstorm %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK226=1 FILTLVL<2]: +1 Oak %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK226=2 FILTLVL<2]: +2 Oak %NL%%NAME%%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK226=3 FILTLVL<3]: +3 Oak %NL%%NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK226=3 FILTLVL<5]: +3 Oak %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK227=1 FILTLVL<2]: +1 SprWolf %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK227=2 FILTLVL<2]: +2 SprWolf %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK227=3 FILTLVL<3]: +3 SprWolf %NL%%NAME%%CONTINUE%
@@ -3943,7 +4052,7 @@ ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK234=2 FILTLVL<2]: +2 Fissure %NL%%NAME%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK234=3 FILTLVL<3]: +3 Fissure %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK236=1 FILTLVL<2]: +1 HOW %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK236=2 FILTLVL<2]: +2 HOW %NL%%NAME%%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK236=3 FILTLVL<3]: +3 HOW %NL%%NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK236=3 FILTLVL<5]: +3 HOW %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK237=1 FILTLVL<2]: +1 DireWolf %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK237=2 FILTLVL<2]: +2 DireWolf %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK237=3 FILTLVL<3]: +3 DireWolf %NL%%NAME%%CONTINUE%
@@ -3973,7 +4082,7 @@ ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK250=2 FILTLVL<2]: +2 Hurrcn %NL%%NAME%%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK250=3 FILTLVL<3]: +3 Hurrcn %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK370=1 FILTLVL<2]: +1 Gust %NL%%NAME%%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK370=2 FILTLVL<2]: +2 Gust %NL%%NAME%%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK370=3 FILTLVL<3]: +3 Gust %NL%%NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK370=3 FILTLVL<5]: +3 Gust %NL%%NAME%%CONTINUE%
 //ItemDisplay[(MAG OR RARE OR CRAFT) !RW (SK221>0 OR SK222>0 OR SK223>0 OR SK224>0 OR SK225>0 OR SK226>0 OR SK227>0 OR SK228>0 OR SK229>0 OR SK230>0 OR SK231>0 OR SK232>0 OR SK233>0 OR SK234>0 OR SK235>0 OR SK236>0 OR SK237>0 OR SK238>0 OR SK239>0 OR SK240>0 OR SK241>0 OR SK242>0 OR SK243>0 OR SK244>0 OR SK245>0 OR SK246>0 OR SK247>0 OR SK248>0 OR SK249>0 OR SK250>0 OR SK370>0 OR SK370>0)]: %GREEN%%NAME%%CONTINUE%
 
 // Necromancer 
@@ -4093,7 +4202,7 @@ ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK122=2 FILTLVL<2]: +2 Fanat %NL%%NAME%{%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK122=3 FILTLVL<3]: +3 Fanat %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK123=1 FILTLVL<2]: +1 Convic %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK123=2 FILTLVL<2]: +2 Convic %NL%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK123=3 FILTLVL<3]: +3 Convic %NL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK123=3 FILTLVL<5]: +3 Convic %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK125=1 FILTLVL<2]: +1 Salv %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK125=2 FILTLVL<2]: +2 Salv %NL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(MAG OR RARE OR CRAFT) !RW SK125=3 FILTLVL<3]: +3 Salv %NL%%NAME%{%NAME%}%CONTINUE%
