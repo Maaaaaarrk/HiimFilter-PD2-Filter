@@ -1,3 +1,11 @@
+Season 9 v9
+- Added projectile piece callout to maps
+- removed all mag/rare/craft LOD naming
+- removed some needless characters on superior bases
+- fixed a double name bug on some claws
+- removed description duplications
+Season 9 v8
+- updated season map res
 Season 9 v3
 - Added Class & Tree skills to weapons on lower filter levels
 - Added new Brillant tooltips
