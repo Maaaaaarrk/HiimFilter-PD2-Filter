@@ -1,3 +1,7 @@
+Season 9 v10
+- Show thawing longer on lower filter level
+- additions of some leveling items
+- adjusted callouts for leveling items
 Season 9 v9
 - Added projectile piece callout to maps
 - removed all mag/rare/craft LOD naming
