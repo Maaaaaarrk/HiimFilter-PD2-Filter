@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 3%CL%Season 9 - version 10%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 3%CL%Season 9 - version 11%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -58,7 +58,7 @@ ItemDisplay[FILTLVL=9 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=10
 //-----------------------------------------------------------------------------------
 // FORCE SHOW RULES
 //-----------------------------------------------------------------------------------
-ItemDisplay[FILTLVL=0]: %NAME%                      // Fallback for when filter is off
+ItemDisplay[FILTLVL=0]: %NAME%{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}// Fallback for when filter is off
 
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
@@ -69,7 +69,8 @@ ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp) QTY>1 
 //-----------------------------------------------------------------------------------
 ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:// Hide inferior items
 ItemDisplay[ear]:// Hide player ears
-ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>35]:// Hide junk 1s stuff after 35
+ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuff always after 80
+ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher fitler levels after 60
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -6327,65 +6328,97 @@ ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED 9wn]: %NAME%{%GRAY%(U
 //-----------------------------------------------------------------------------------
 // LEVELING GEAR - Shows for filtered 
 //-----------------------------------------------------------------------------------
+// Nightmare shopping
+//---------------------------------------
+
 // FCR orb / staff /wand / scepter
-ItemDisplay[(WEAPON) (MAG OR RARE) FCR>0 FILTLVL<3]: %NAME%{%ORANGE%> > > %FCR% FCR%CL%%NAME%}%CONTINUE%
+ItemDisplay[(WEAPON) (MAG OR RARE) FCR>0 FILTLVL<3]: %NAME%{%ORANGE%> > > %FCR% FCR < < <%CL%%NAME%}%CONTINUE%
 
 // 20+ mf gloves
-ItemDisplay[(GLOVES) MFIND>19 FILTLVL<3 DIFF<2]:  %NAME%{%DARK_GREEN%> > > %MFIND% MF%CL%%NAME%}%CONTINUE% 
+ItemDisplay[(GLOVES) MFIND>19 FILTLVL<3 DIFF<2]:  %NAME%{%DARK_GREEN%> > > %MFIND% MF < < <%CL%%NAME%}%CONTINUE% 
 
 // >30 life armors
-ItemDisplay[(ARMOR) LIFE>30 FILTLVL<3 DIFF<2]: %NAME%{%RED%> > > %LIFE% Life%CL%%NAME%}%CONTINUE% 
+ItemDisplay[(ARMOR) LIFE>30 FILTLVL<3 DIFF<2]: %NAME%{%RED%> > > %LIFE% Life < < <%CL%%NAME%}%CONTINUE% 
+
+// Skill callouts for Norm/Nightmare
+//---------------------------------------
 
 // fissure for low level 
-ItemDisplay[!RW SK234>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[!RW SK234>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // firewall for low level
-ItemDisplay[!RW SK51>1 DIFF<2 FILTLVL<3 SOCK=0]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[!RW SK51>1 DIFF<2 FILTLVL<3 SOCK=0]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // blaze for low level
-ItemDisplay[!RW SK46>1 CLVL<18 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[!RW SK46>1 CLVL<18 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // holy bolt base for low level
-ItemDisplay[NMAG !RW SK101=3 scp (SOCK=0 OR SOCK=2) FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[NMAG !RW SK101=3 SCEPTER SOCK=2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[NMAG !RW SK101=3 scp (SOCK=0 OR SOCK=2) FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[NMAG !RW SK101=3 SCEPTER SOCK=2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // fissure lore
-ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3 DIFF<2]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3 DIFF<2]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // Wake of fire
-ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK262>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK262>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // Dark Pact
-ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK381>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK381>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // Curse tree
-ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[TABSK16>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[TABSK16>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
-//revive +3
-ItemDisplay[!RW SK95=3 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+// nec summ tree
+ItemDisplay[TABSK18>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[TABSK18>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// nec sk
+ItemDisplay[CLSK2>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[CLSK2>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// warcries tree
+ItemDisplay[TABSK34>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[TABSK34>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// barb sk
+ItemDisplay[CLSK4>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[CLSK4>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// dudu summon tree
+ItemDisplay[TABSK40>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[TABSK40>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// dudu sk
+ItemDisplay[CLSK5>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[CLSK5>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// revive +3
+ItemDisplay[!RW SK95=3 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // blade sentinel 
-ItemDisplay[SK257>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[SK257>1 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK257>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK257>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // psn strike SK73
-ItemDisplay[SK73>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[SK73>1 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK73>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK73>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // psn creeper SK222
-ItemDisplay[SK222>0 DIFF<1 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[SK222>1 DIFF<2 FILTLVL<3]: %NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK222>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK222>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
+// General leveling items
+//---------------------------------------
 
-// general socketed bases
+// general socketed bases for norm
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[SHIELD NMAG DIFF<2 FILTLVL<3 SOCK=3]: %ORANGE%** %GRAY%%NAME% %ORANGE%**{%NAME%}
 
-// display all on lower filters
+// display all mag/rare on lower filters
 ItemDisplay[(ARMOR OR WEAPON) RARE FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[(ARMOR OR WEAPON) RARE ((FILTLVL<3 AND DIFF<2) OR CLVL<80)]: %NAME%{%NAME%}
 ItemDisplay[(ARMOR OR WEAPON) MAG ((FILTLVL<3 AND DIFF<2) OR CLVL<30)]: %NAME%{%NAME%}
@@ -6396,9 +6429,9 @@ ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) (MAG OR RARE) (CLVL>40 AND CLVL<80) F
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG !ETH SOCK=0 CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[((CHEST OR HELM OR SHIELD) OR (WEAPON AND !THROWING)) (EXC OR ELT) NMAG ETH SOCK=0 CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 
-ItemDisplay[WEAPON BARBARIAN ETH CLVL<80 FILTLVL<5]: %NAME%{%NAME%}//BARBARIAN for leveling
-ItemDisplay[WEAPON BARBARIAN RARE CLVL<80 FILTLVL<5]: %NAME%{%NAME%}//BARBARIAN throws for leveling
-ItemDisplay[WEAPON BARBARIAN MAG THROWING CLVL<80 FILTLVL<5]: %NAME%{%NAME%}//BARBARIAN throws for leveling
+ItemDisplay[WEAPON (BARBARIAN OR PALADIN) ETH CLVL<80 FILTLVL<5]: %NAME%{%NAME%}//BARBARIAN OR PALADIN melee for leveling
+ItemDisplay[WEAPON (BARBARIAN OR PALADIN) RARE CLVL<80 FILTLVL<5]: %NAME%{%NAME%}//BARBARIAN OR PALADIN melee for leveling
+ItemDisplay[WEAPON BARBARIAN !(NMAG) THROWING CLVL<80 FILTLVL<5]: %NAME%{%NAME%}//BARBARIAN throws for leveling
 
 //-----------------------------------------------------------------------------------
 

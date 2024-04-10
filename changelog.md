@@ -1,3 +1,6 @@
+Season 9 v11
+- Add minimap tiny ping for leveling gear
+- Added alot of skill gear for leveling
 Season 9 v10
 - Show thawing longer on lower filter level
 - additions of some leveling items
