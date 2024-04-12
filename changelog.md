@@ -1,3 +1,5 @@
+Season 9 v13
+- Correction to CTC on strike amp suffix code
 Season 9 v12
 - Added plague, delirum, and lore psn creeper items
 - Added harmony xbow bases

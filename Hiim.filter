@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 11%CL%Season 9 - version 12%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 12%CL%Season 9 - version 13%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -189,7 +189,7 @@ ItemDisplay[t11]: %NAME%{%CL%%RED%F 130% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph
 ItemDisplay[t31]: %NAME%{%CL%%RED%F 90% %YELLOW%L 85% %BLUE% C 180%%CL%%GRAY%Ph 66% %ORANGE%M 100% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // River of Blood 144
 ItemDisplay[t21]: %NAME%{%CL%%RED%F 140% %YELLOW%L 125% %BLUE% C 80%%CL%%GRAY%Ph 75% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Phlegethon 145
 ItemDisplay[t34]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Ancestral Trial 146
-ItemDisplay[t39]: %NAME%{%CL%%RED%F 125% %YELLOW%L 90% %BLUE% C 130%%CL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace 147
+ItemDisplay[t39]: %NAME%{%CL%%RED%F 125% %YELLOW%L 90% %BLUE% C 130%%CL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 105%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace 147
 ItemDisplay[t22]: %NAME%{%CL%%RED%F 125% %YELLOW%L 105% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Torajan Jungle 148
 ItemDisplay[t13]: %NAME%{%CL%%RED%F 125% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep 149
 ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Throne of Insanity 150
@@ -2297,22 +2297,22 @@ ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999 STAT360=0 
 ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%[FOOLS]%CONTINUE%
 
 // Amplify Damage on Striking
-ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=901]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low
-ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=902]: %NAME% %ORANGE%[AMP]%CONTINUE% // mid amp
-ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=903]: %NAME% %ORANGE%[AMP]%CONTINUE% // High amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=662]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=898]: %NAME% %ORANGE%[AMP]%CONTINUE% // mid amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=899]: %NAME% %ORANGE%[AMP]%CONTINUE% // High amp
 
 // Amplify Damage on Casting
-ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=904]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=904]: %NAME% %ORANGE%[AMP]%CONTINUE% // Low amp
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=905]: %NAME% %ORANGE%[AMP]%CONTINUE% // mid amp
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=906]: %NAME% %ORANGE%[AMP]%CONTINUE% // High amp
 
-// Lower Res on Striking
-ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=907]: %NAME% %PURPLE%[LR]%CONTINUE% // Low
+// Lower Res on Striking 
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=907]: %NAME% %PURPLE%[LR]%CONTINUE% // Low lr
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=908]: %NAME% %PURPLE%[LR]%CONTINUE% // mid lr
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=909]: %NAME% %PURPLE%[LR]%CONTINUE% // High lr
 
 // Lower Res on Casting
-ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=910]: %NAME% %PURPLE%[LR]%CONTINUE% // Low
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=910]: %NAME% %PURPLE%[LR]%CONTINUE% // Low lr
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=911]: %NAME% %PURPLE%[LR]%CONTINUE% // mid lr
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=912]: %NAME% %PURPLE%[LR]%CONTINUE% // High lr
 
@@ -2329,7 +2329,7 @@ ItemDisplay[WEAPON EDAM>49]: %NAME% [%EDAM%% ED]%CONTINUE%
 ItemDisplay[WEAPON (MAG OR RARE OR CRAFT) FCR>0]: %NAME% %ORANGE%[%FCR%% FCR]{%NAME%}%CONTINUE%
 
 // ITEM TAGS - LLD UNI - Uniqes and sets to look out for or weapon rares
-ItemDisplay[WEAPON !UNI (EDAM>149 OR SUFFIX=901 OR SUFFIX=902) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[WEAPON !UNI (EDAM>149 OR SUFFIX=662 OR SUFFIX=898) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[WEAPON !UNI (SUFFIX=907 OR SUFFIX=908 OR SUFFIX=910 OR SUFFIX=911) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR 9ar OR zlb OR dr2 OR tgl OR fld) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET (bwn OR vbt OR lbt) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
