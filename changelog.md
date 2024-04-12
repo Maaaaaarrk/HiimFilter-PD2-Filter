@@ -1,3 +1,13 @@
+Season 9 v12
+- Added plague, delirum, and lore psn creeper items
+- Added harmony xbow bases
+- Updated crafting notes for S9
+- Added larger callout for ETH set ik maul and bk sword
+- Added eth set weapon also display
+- Added Full Naj to higher filter levels
+- Removed more needless * on sup bases
+- Removed Atmas Wail from good Unique callouts
+- Changed !ID Ring/Amulet to have Unique written with it
 Season 9 v11
 - Add minimap tiny ping for leveling gear
 - Added alot of skill gear for leveling
