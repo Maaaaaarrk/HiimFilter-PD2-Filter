@@ -1,3 +1,5 @@
+Season 9 v14
+- Added souls map callout
 Season 9 v13
 - Correction to CTC on strike amp suffix code
 Season 9 v12
