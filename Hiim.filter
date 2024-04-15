@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 15%CL%Season 9 - version 18%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 15%CL%Season 9 - version 19%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1365,8 +1365,8 @@ ItemDisplay[!RW !UNI !SET 7gw]: %CONTINUE%Unearthed Wand
 
 
 ItemDisplay[!RW SUP]: Sup %NAME%%CONTINUE%
-ItemDisplay[MAG !ID]: %BLUE%Magic %NAME%%CONTINUE%
-ItemDisplay[RARE !ID]: %YELLOW%Rare %NAME%%CONTINUE%
+//ItemDisplay[MAG !ID !cm1 !cm2 !cm3 !EQ7]: %BLUE%%NAME% (Magic)%CONTINUE%
+//ItemDisplay[RARE !ID]: %YELLOW%%NAME% (Rare)%CONTINUE%
 ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
 ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
