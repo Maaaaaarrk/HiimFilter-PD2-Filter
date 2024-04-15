@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 14%CL%Season 9 - version 15%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 14%CL%Season 9 - version 16%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1835,6 +1835,10 @@ ItemDisplay[(rin OR amu) !UNI !SET (MFIND>19)]: MF %NAME%%CONTINUE%
 ItemDisplay[rin !UNI !SET (MFIND>24)]: Fat%NAME%%CONTINUE%
 ItemDisplay[amu !UNI !SET (MFIND>39)]: Fat%NAME%%CONTINUE%
 ItemDisplay[(rin OR amu) !UNI !SET (MFIND>19)]: %GREEN%%NAME%%CONTINUE%
+
+// half freeze STAT118
+ItemDisplay[(rin OR amu) !UNI !SET STAT118=1]: %BLUE%HFD %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) !UNI !SET STAT118=2]: %BLUE%CBF %NAME%%CONTINUE%
 
 // FCR
 ItemDisplay[(rin OR amu) !UNI !SET FCR>0]: %ORANGE%+%STAT105% FCR %NAME%%CONTINUE%
