@@ -1,3 +1,7 @@
+Season 9 v17
+- Added unqioue psn dagger callout
+Season 9 v16
+- Added callout 2x HFD on 1 item
 Season 9 v14
 - Added souls map callout
 Season 9 v13
