@@ -1,5 +1,7 @@
+Season 9 v18
+- Added lycan to psn creeper bases
 Season 9 v17
-- Added unqioue psn dagger callout
+- Added unique psn dagger callout
 Season 9 v16
 - Added callout 2x HFD on 1 item
 Season 9 v14
