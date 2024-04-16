@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 16%CL%Season 9 - version 24%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 16%CL%Season 9 - version 25%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1560,7 +1560,7 @@ ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) STAT62>0]: %BLUE%%STAT62%%M
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) STAT80>0]: %BLUE%%STAT80%%MF %NAME%%CONTINUE%
 
 // FRW
-ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) FRW>0]: %TAN%+%FRW% FRW %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) FRW>0]: %GOLD%%FRW% FRW %NAME%%CONTINUE%
 
 // FBR
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) FBR>0]: %ORANGE%+%STAT102% FBR %NAME%%CONTINUE%
@@ -1579,9 +1579,6 @@ ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) STAT136>0]: %YELLOW%%STAT13
 
 // FCR
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) FCR>0]: %TAN%%STAT105% FCR %NAME%%CONTINUE%
-
-// FRW
-ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) FRW>0]: %GOLD%%FRW% FRW %NAME%%CONTINUE%
 
 // Piercing
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR CRAFT) STAT156>0]: %BLUE%%STAT156%%Pirc %NAME%%CONTINUE%
