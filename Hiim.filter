@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 16%CL%Season 9 - version 25%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 16%CL%Season 9 - version 26%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -797,7 +797,7 @@ ItemDisplay[!RW !UNI !SET drf]: %CONTINUE%Dream Spirit
 ItemDisplay[!RW !UNI !SET ne1]: %CONTINUE%Preserved Head
 ItemDisplay[!RW !UNI !SET ne2]: %CONTINUE%Zombie Head
 ItemDisplay[!RW !UNI !SET ne3]: %CONTINUE%Unraveller Head
-ItemDisplay[!RW !UNI !SET ne4]: %CONTINUE%Gargoyle HEad
+ItemDisplay[!RW !UNI !SET ne4]: %CONTINUE%Gargoyle Head
 ItemDisplay[!RW !UNI !SET ne5]: %CONTINUE%Demon Head
 ItemDisplay[!RW !UNI !SET ne6]: %CONTINUE%Mummified Trophy
 ItemDisplay[!RW !UNI !SET ne7]: %CONTINUE%Fetish Trophy
@@ -1371,8 +1371,21 @@ ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
 ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[(RARE OR MAG) !ID]: %NAME% ?%CONTINUE%
-ItemDisplay[(MAG OR RARE OR CRAFT) ID]: %CL%%NAME%%CONTINUE%
 
+// ITEM TAGS - ETH
+ItemDisplay[ETH RARE !(REPAIR>0)]: %GRAY%[eth] %YELLOW%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH MAG !(REPAIR>0)]: %GRAY%[eth] %BLUE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH NMAG !(REPAIR>0)]: %GRAY%[eth] %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH CRAFT !(REPAIR>0)]: %GRAY%[eth] %ORANGE%%NAME%%CONTINUE%{%NAME%}
+
+// ETH Rep
+ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%[eth-rep] %YELLOW%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%[eth-rep] %BLUE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%[eth-rep] %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%[eth-rep] %ORANGE%%NAME%%CONTINUE%{%NAME%}
+
+// stats
+ItemDisplay[(MAG OR RARE OR CRAFT) ID]: %CL%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 
@@ -2105,18 +2118,10 @@ ItemDisplay[MAG LVLREQ<31 (cm1 OR cm2 OR cm3) (STAT501>0 OR STAT48>0 OR STAT49>0
 // ITEM TAGS - ETH
 ItemDisplay[ETH UNI !(REPAIR>0)]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[ETH SET !(REPAIR>0)]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH RARE !(REPAIR>0)]: %GRAY%[eth] %YELLOW%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH MAG !(REPAIR>0)]: %GRAY%[eth] %BLUE%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH NMAG !(REPAIR>0)]: %GRAY%[eth] %GRAY%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH CRAFT !(REPAIR>0)]: %GRAY%[eth] %ORANGE%%NAME%%CONTINUE%{%NAME%}
 
 // ETH Rep
 ItemDisplay[ETH UNI (REPAIR>0)]: %GRAY%[eth-rep] %GOLD%%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[ETH SET (REPAIR>0)]: %GRAY%[eth-rep] %GREEN%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%[eth-rep] %YELLOW%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%[eth-rep] %BLUE%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%[eth-rep] %GRAY%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%[eth-rep] %ORANGE%%NAME%%CONTINUE%{%NAME%}
 
 // Vial candidate
 ItemDisplay[!ETH !UNI (REPAIR>0)]: %NAME% %GRAY%[rep]%CONTINUE%{%NAME%}
@@ -2148,13 +2153,6 @@ ItemDisplay[STAT360>0]: %NAME% %RED%[C]%CONTINUE%{%NAME%}
 //ItemDisplay[(MAG OR RARE) ILVL>98 STAT360=0]: %NAME% %PURPLE%[%ILVL%]%CONTINUE%
 //ItemDisplay[(MAG OR RARE OR CRAFT) ID FILTLVL<2 STAT360=0 LVLREQ<31]: %NAME% [R-%LVLREQ%]%CONTINUE%
 
-// ITEM TAGS - Donations 4 Charsi
-ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL<24 PRICE>9999 STAT360=0 FILTLVL<3]: %NAME% %DARK_GREEN%$10k+%CONTINUE%
-ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>23 CLVL<65 PRICE>19999 STAT360=0 FILTLVL<3]: %NAME% %DARK_GREEN%$20k+%CONTINUE%
-ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999 STAT360=0 FILTLVL<3]: %NAME% %DARK_GREEN%$35k%CONTINUE%
-ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL<24 PRICE>9999 STAT360=0 FILTLVL>2]: %NAME% %DARK_GREEN%$%CONTINUE%
-ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>23 CLVL<65 PRICE>19999 STAT360=0 FILTLVL>2]: %NAME% %DARK_GREEN%$%CONTINUE%
-ItemDisplay[!SHOP !ID ((NMAG !RW) OR MAG OR RARE) CLVL>64 PRICE>34999 STAT360=0 FILTLVL>2]: %NAME% %DARK_GREEN%$%CONTINUE%
 
 // ITEM TAGS - Specific Mods
 ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%[FOOLS]%CONTINUE%
@@ -2179,6 +2177,8 @@ ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=910]: %NAME% %PURPLE%[LR]%CONTI
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=911]: %NAME% %PURPLE%[LR]%CONTINUE% // mid lr
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=912]: %NAME% %PURPLE%[LR]%CONTINUE% // High lr
 
+//DEF on Chest
+ItemDisplay[CHEST (MAG OR CRAFT OR RARE) DEF>400]: %NAME% %TAN%%DEF% Def{%NAME%}%CONTINUE%
 
 
 //ED
@@ -2444,7 +2444,7 @@ ItemDisplay[UNI !ID drf]: %CONTINUE%Ursa's Nightmare - Dream Spirit
 ItemDisplay[UNI !ID ne1]: %CONTINUE%Preserved Head (No Unique for this base)
 ItemDisplay[UNI !ID ne2]: %CONTINUE%Zombie Head (No Unique for this base)
 ItemDisplay[UNI !ID ne3]: %CONTINUE%Unraveller Head (No Unique for this base)
-ItemDisplay[UNI !ID ne4]: %CONTINUE%Gargoyle HEad (No Unique for this base)
+ItemDisplay[UNI !ID ne4]: %CONTINUE%Gargoyle Head (No Unique for this base)
 ItemDisplay[UNI !ID ne5]: %CONTINUE%Demon Head (No Unique for this base)
 ItemDisplay[UNI !ID ne6]: %CONTINUE%Kalans Legacy - Mummified Trophy
 ItemDisplay[UNI !ID ne7]: %CONTINUE%Fetish Trophy (No Unique for this base)
