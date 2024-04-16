@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 15%CL%Season 9 - version 20%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 15%CL%Season 9 - version 21%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1811,7 +1811,7 @@ ItemDisplay[BOOTS (MAG OR RARE OR CRAFT) ID FRW>0]: %TAN%+%FRW% FRW %NAME%%CONTI
 //-----------------------------------------------------------------------------------
 // Jewels, Rings, Amulets
 //-----------------------------------------------------------------------------------
-ItemDisplay[MAG (rin OR amu) !ID FILTLVL>5]:
+ItemDisplay[MAG (rin OR amu) !ID FILTLVL>2]:
 ItemDisplay[MAG (rin OR amu) !ID]: %DOT-91%%YELLOW%X%BLUE%     %NAME%     %YELLOW%X
 ItemDisplay[MAG (jew) !ID]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
 ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
