@@ -1,3 +1,5 @@
+Season 9 v22
+- Rare item rework
 Season 9 v20
 - Added set eth tag
 Season 9 v18
