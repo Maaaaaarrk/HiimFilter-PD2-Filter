@@ -61,6 +61,12 @@ ItemDisplay[FILTLVL=9 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=10
 //-----------------------------------------------------------------------------------
 ItemDisplay[FILTLVL=0]: %NAME%                      // Fallback for when filter is off
 
+//WARNING this is archived
+// Hide pots when appropriate based on filter level
+ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4 OR hp5)]: %RED%CRAFTER LEAGUE FILTER -> PLEASE CHANGE IN LAUNCHER
+ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4 OR mp5)]: %BLUE%CRAFTER LEAGUE FILTER -> PLEASE CHANGE IN LAUNCHER
+//WARNING this is archived
+
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 //-----------------------------------------------------------------------------------
