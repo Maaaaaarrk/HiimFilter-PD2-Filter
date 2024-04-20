@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 19%CL%Season 9 - version 32%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 19%CL%Season 9 - version 33%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -5652,10 +5652,10 @@ ItemDisplay[9ws (SK101>2 OR SK364>2 OR SK98>2 OR SK107>2) !INF !ETH NMAG !RW SOC
 // SK46	Blaze
 // SK60	Chilling Armor
 // SK50	Shiver Armor
-ItemDisplay[(wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%PURPLE%GG LLD Insight Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%ORANGE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[(wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%LLD Insight Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%ORANGE%>  %NAME% %ORANGE%[LLD]  <{%ORANGE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%PURPLE%GG LLD Insight Base%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%LLD Insight Base%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%ORANGE%>  %NAME% %ORANGE%[LLD]  <{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 
 // Hand of Justice/CTA Scepters
@@ -5704,7 +5704,7 @@ ItemDisplay[7xf !RW ETH (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{{%NAME%%CL%%GRE
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH !INF (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH (SOCK=0 OR SOCK=3) SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
 
-// Plague 	Lycanthropy
+// Plague
 ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK118>2 OR SK119>2 OR SK121>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG]: %NAME%{%NAME%}
 ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK118>2 OR SK119>2 OR SK121>2) (SOCK=0 OR SOCK=3) !RW !INF NMAG]: %NAME%{%NAME%}
