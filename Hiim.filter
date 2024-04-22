@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 19%CL%Season 9 - version 33%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22%CL%Season 9 - version 34%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -182,7 +182,7 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR  MAPTIER=4 OR t51 OR t52 OR 
 // Map Immunities 
 ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1)]: %NAME%%CONTINUE%{%TAN%Immunities:%CL%%NAME%}
 
-
+// April 22nd
 ItemDisplay[t23]: %NAME%{%CL%%RED%F 130% %YELLOW%L 100% %BLUE% C 80%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Arreat Battlefield 139
 ItemDisplay[t25]: %NAME%{%CL%%RED%F 75% %YELLOW%L 135% %BLUE% C 85%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 125%%CL%%NAME%}%CONTINUE% // Sewers of Harrogath 141
 ItemDisplay[t12]: %NAME%{%CL%%RED%F 135% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Horazon's Memory 142
@@ -203,14 +203,14 @@ ItemDisplay[t38]: %NAME%{%CL%%RED%F 130% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 
 ItemDisplay[t14]: %NAME%{%CL%%RED%F 75% %YELLOW%L 125% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Sanatorium 167
 ItemDisplay[t26]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 135%%CL%%NAME%}%CONTINUE% // Shadows of Westmarch 169
 ItemDisplay[t15]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 125%%CL%%GRAY%Ph 60% %ORANGE%M 150% %GREEN%P 105%%CL%%NAME%}%CONTINUE% // Royal Crypts 170
-ItemDisplay[t16]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 115%%CL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 140%%CL%%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t16]: %NAME%{%CL%%RED%F 135% %YELLOW%L 75% %BLUE% C 115%%CL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ruined Cistern 174
 ItemDisplay[t3a]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Ashen Plains 175
 
 
 // Tier 4 / Dungeon
-//ItemDisplay[t41]: %NAME%{%CL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%CL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%CL%%NAME%}%CONTINUE% // Cathedral of L 152 153
-//ItemDisplay[t42]: %NAME%{%CL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%CL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%CL%%NAME%}%CONTINUE% // Plains of Torment 164 165
-//ItemDisplay[t43]: %NAME%{%CL%%RED%F 180% %YELLOW%L 180% %BLUE% C 180%%CL%%GRAY%Ph 180% %ORANGE%M 180% %GREEN%P 180%%CL%%NAME%}%CONTINUE% // Sanctuary of Sin 171 172
+//ItemDisplay[t41]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Cathedral of L 152 153
+//ItemDisplay[t42]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Plains of Torment 164 165
+//ItemDisplay[t43]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Sanctuary of Sin 171 172
 
 
 
@@ -1576,9 +1576,9 @@ ItemDisplay[ARMOR (MAG OR RARE OR CRAFT) (RARE OR CRAFT) (FRES+CRES+LRES+PRES>19
 ItemDisplay[ARMOR (MAG OR RARE OR CRAFT) (RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) PRES>0 !(RES>0)]: %GREEN%%STAT45%%P %NAME%%CONTINUE%
 
 // rin OR amu Resists
-ItemDisplay[(rin OR amu) !UNI !SET (FRES+CRES+LRES+PRES>19) !RES>0]: Res %NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET (FRES+CRES+LRES>39) !RES>0]: Fat%NAME%%CONTINUE%
-ItemDisplay[(rin OR amu) !UNI !SET (FRES+CRES+LRES+PRES>19) !RES>0]: %PURPLE%%NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) !RES>0]: Res %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) (FRES+CRES+LRES>39) !RES>0]: Fat%NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) (FRES+CRES+LRES+PRES>19) !RES>0]: %PURPLE%%NAME%%CONTINUE%
 
 // PLR
 ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT) STAT110>0]: %DARK_GREEN%%STAT110%PLR %NAME%%CONTINUE%
@@ -1622,9 +1622,9 @@ ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT) FCR>0]: %TAN%
 ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT) STAT156>0]: %BLUE%%STAT156%%Pirc %NAME%%CONTINUE%
 
 // STATS
-ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) !UNI !SET (STR+DEX+STAT3>19)]: Stat %NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) !UNI !SET (STR+DEX+STAT3>29)]: Fat%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) !UNI !SET (STR+DEX+STAT3>19)]: %LIGHT_GRAY%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT) (STR+DEX+STAT3>19)]: Stat %NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT) (STR+DEX+STAT3>29)]: Fat%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT)(STR+DEX+STAT3>19)]: %LIGHT_GRAY%%NAME%%CONTINUE%
 
 // PDR
 ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) (MAG OR RARE OR CRAFT) STAT36>0]: %SAGE%%STAT36%%PDR %NAME%%CONTINUE%
@@ -1634,22 +1634,22 @@ ItemDisplay[ARMOR (MAG OR RARE OR CRAFT) STAT17>0]: %RED%%STAT17%%EDMG %NAME%%CO
 
 // Rin / amy only
 // Telekinesis Charges
-ItemDisplay[(rin OR amu) !UNI !SET CHSK43>0]: %WHITE%TK %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) CHSK43>0]: %WHITE%TK %NAME%%CONTINUE%
 
 // Max Dmg
-ItemDisplay[(rin OR amu) !UNI !SET STAT24>0 !(STAT23>0)]: %RED%%STAT24% MaxDMG %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) STAT24>0 !(STAT23>0)]: %RED%%STAT24% MaxDMG %NAME%%CONTINUE%
 
 // Min Dmg
-ItemDisplay[(rin OR amu) !UNI !SET STAT23>0 !(STAT24>0)]: %BLUE%%STAT23% MinDMG %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) STAT23>0 !(STAT24>0)]: %BLUE%%STAT23% MinDMG %NAME%%CONTINUE%
 
 // Dmg Range
-ItemDisplay[(rin OR amu) !UNI !SET STAT23>0 STAT24>0]: %RED%+(%STAT23%-%STAT24%)DMG %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) STAT23>0 STAT24>0]: %RED%+(%STAT23%-%STAT24%)DMG %NAME%%CONTINUE%
 
 // Life After Kill
-ItemDisplay[(rin OR amu) !UNI !SET STAT86>0]: %RED%%STAT86%LK %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) STAT86>0]: %RED%%STAT86%LK %NAME%%CONTINUE%
 
 // Mana After Kill
-ItemDisplay[(rin OR amu) !UNI !SET STAT138>0]: %BLUE%%STAT138%MK %NAME%%CONTINUE%
+ItemDisplay[(rin OR amu) (MAG OR RARE OR CRAFT) STAT138>0]: %BLUE%%STAT138%MK %NAME%%CONTINUE%
 
 
 
@@ -2139,7 +2139,7 @@ ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118>1 CHARSTAT153=0]: %NAME% {%TAN%%CHARS
 
 
 // Arrows
-ItemDisplay[aqv RARE STAT360=0 (ED>39 OR TABSK0>1) IAS>19 (STR+DEX>11 OR AR>99 OR FRW>0 OR STAT156>0 OR MAXDMG>7 OR MINDMG>7 OR RES>9 OR TABSK0>1 OR TABSK1>0 OR LIFE>19 OR STAT110>49 OR STAT135>7 OR STAT136>7 OR STAT141>7) LVLREQ<31]: %DOT-9B%%NAME%{%NAME%}{%RED%Slam for %TAN%Low Level Dueling %CL%%NAME%}%CONTINUE%
+ItemDisplay[aqv RARE STAT360=0 (ED>39 OR TABSK0>1) IAS>19 (STR+DEX>11 OR AR>99 OR FRW>0 OR STAT156>0 OR MAXDMG>7 OR MINDMG>7 OR RES>9 OR TABSK0>1 OR TABSK1>0 OR LIFE>19 OR STAT110>49 OR STAT135>7 OR STAT136>7 OR STAT141>7) LVLREQ<31]: %DOT-9B%%NAME%{%RED%Slam for %TAN%Low Level Dueling %CL%%NAME%}%CONTINUE%
 
 
 ItemDisplay[WAND (RARE OR CRAFT) ((TABSK16>1 SK381>1) OR ((TABSK16>0 OR ((CLSK2>0) OR (ALLSK>0))) SK381>2) OR (TABSK16>0 ALLSK>0 SK381>1) OR (CLSK2>0 ALLSK>0 SK381>1)) LVLREQ<31]: %DOT-9B%%NAME% %PURPLE%[LLD]{%PURPLE%>   %TAN%Dark Pact Wand LLD   %PURPLE%<%CL%%NAME%}
@@ -5652,10 +5652,10 @@ ItemDisplay[9ws (SK101>2 OR SK364>2 OR SK98>2 OR SK107>2) !INF !ETH NMAG !RW SOC
 // SK46	Blaze
 // SK60	Chilling Armor
 // SK50	Shiver Armor
-ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%PURPLE%GG LLD Insight Base%CL%%NAME%}
-ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%LLD Insight Base%CL%%NAME%}
-ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%ORANGE%>  %NAME% %ORANGE%[LLD]  <{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < < <{%PURPLE%GG LLD Insight Base%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %ORANGE%[LLD]  <{%GREEN%LLD Insight Base%CL%%NAME%}
+ItemDisplay[(8cs OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%[LLD]{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 
 // Hand of Justice/CTA Scepters
@@ -5708,7 +5708,7 @@ ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH (SOCK=0 OR SOCK=
 ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK118>2 OR SK119>2 OR SK121>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG]: %NAME%{%NAME%}
 ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK118>2 OR SK119>2 OR SK121>2) (SOCK=0 OR SOCK=3) !RW !INF NMAG]: %NAME%{%NAME%}
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2) (SOCK=0 OR SOCK=3) !RW !INF NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK266>2 OR SK267>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK257>2) (SOCK=0 OR SOCK=3) !RW !INF NMAG]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG]:%DOT-D6%%NAME% %PURPLE%<><><>{%NAME%%CL%%GREEN%3os for Plague Base}
 ItemDisplay[SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG]:%DOT-D6%%NAME% %PURPLE%<><><>{%NAME%}
 ItemDisplay[SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG]:%DOT-D6%%NAME% %GREEN%*****{%NAME%%CL%%GREEN%3os for Plague Base}
@@ -5874,6 +5874,9 @@ ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=6 ILVL>25]: %DOT-9B%%PUR
 ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25]: %DOT-9B%%PURPLE%O O O %NAME% %PURPLE%O O O{%GREEN%Hit 6 sockets for GG Obsession base%CL%%NAME%}
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=6 ILVL>25]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%NAME%%CL%%GREEN%Good Obsession base}
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0 ILVL>25]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
+// Staff CTA
+ItemDisplay[(wst OR 8ws OR 6ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%< < <{%NAME%}
 //Misc staff
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK47>2 OR SK376>2 OR SK61>2) NMAG !RW FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
@@ -6019,12 +6022,14 @@ ItemDisplay[(ARMOR OR CIRC) EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANG
 ItemDisplay[WEAPON NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Sol %WHITE%+ Perf %GREEN%O%CL%%TAN%Note%WHITE%: Upgrading Recipe:%CL%%NAME%}%CONTINUE%
 ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%CL%%TAN%Note%WHITE%: Upgrading Recipe:%CL%%NAME%}%CONTINUE%
 
-//Upgrades That Give +1 Socket
-ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR spk OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR scp OR (ILVL>25 (ne2 OR ne1 OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces) OR (ILVL>40 bhm)))]: %NAME%{%GRAY%(Upgrade For +1 Max Socket)%CL%%NAME%}%CONTINUE%
-ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ>30 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR spk OR xpk OR bsh OR xsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GRAY%(Upgrade For +1 Max Socket)%CL%%NAME%}%CONTINUE%
-ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED 9wn]: %NAME%{%GRAY%(Upgrade For +1 Max Socket)%CL%%NAME%}%CONTINUE%
+//Upgrades That Give +1 Socket on slam / box
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR spk OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR scp OR (ILVL>25 (ne2 OR ne1 OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces) OR (ILVL>40 bhm)))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR spk OR xpk OR bsh OR xsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%Warning: May increase level requirement over LLD%CL%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ>30 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR spk OR xpk OR bsh OR xsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED 9wn]: %NAME%{%GREEN%(Upgrade For +1 Max Socket chance on box)%CL%%NAME%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
+
 
 //-----------------------------------------------------------------------------------
 // LEVELING GEAR - Shows for filtered 
