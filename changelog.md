@@ -1,3 +1,9 @@
+Season 9 v34
+- Map res update (cistern was wrong pd2 bug was fixed)
+- adjusted lld insight staff calliuts
+- added CTA staff
+- added plague blade sentinal callout
+- made up before slam callouts for circ / vgaze  / vmagi more visable and added LLD warning when appropriate
 Season 9 v22
 - Rare item rework
 Season 9 v20
