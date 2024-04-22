@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22%CL%Season 9 - version 35%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22%CL%Season 9 - version 36%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6023,8 +6023,8 @@ ItemDisplay[WEAPON NORM SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Ral %W
 ItemDisplay[WEAPON EXC SET ID]: %NAME%{%GREEN%This Item %WHITE%+ %ORANGE%Lum %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %GREEN%O%CL%%TAN%Note%WHITE%: Upgrading Recipe:%CL%%NAME%}%CONTINUE%
 
 //Upgrades That Give +1 Socket on slam / box
-ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR spk OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR scp OR (ILVL>25 (ne2 OR ne1 OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces) OR (ILVL>40 bhm)))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
-ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR spk OR xpk OR bsh OR xsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%Warning: May increase level requirement over LLD%CL%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR spk OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR scp OR (ILVL>25 AND (ne2 OR ne1 OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 bhm))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (xui OR xea OR xla OR xtu OR xpk OR xsh OR 9wn OR (ILVL>25 AND (NEC NORM)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%Warning: May increase level requirement over LLD%CL%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
 ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ>30 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR spk OR xpk OR bsh OR xsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
 ItemDisplay[!NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED 9wn]: %NAME%{%GREEN%(Upgrade For +1 Max Socket chance on box)%CL%%NAME%}%CONTINUE%
 
