@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 23%CL%Season 9 - version 37%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 23%CL%Season 9 - version 38%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6250,8 +6250,7 @@ ItemDisplay[NMAG !ID SHOP (rin OR amu) (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID
 // Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GOLD%Nokozan Relic%CL%The Eye of Etlich%CL%The Mahim-Oak Curio%CL%Saracen's Chance%CL%The Cat's Eye%CL%Crescent Moon%CL%Atma's Scarab%CL%The Rising Sun%CL%Highlord's Wrath%CL%Mara's Kaleidoscope%CL%Seraph's Hymn%CL%Metalgrid%CL%%NAME%%CONTINUE%
 // Cant do this yet ItemDisplay[NMAG !ID SHOP rin]: %GOLD%Wisp Projector%CL%Stone of Jordan%CL%Raven Frost%CL%Nature's Peace%CL%Nagelring%CL%Manald Heal%CL%Dwarf Star%CL%Carrion Wind%CL%Bul-Kathos' Wedding Band%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP jew]: %GOLD%Rainbow Facet%CL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP ci0]: %GOLD%Kira's Guardian%CL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP ci1]: %GOLD%Griffon's Eye%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP (ci0 OR ci1)]: %GOLD%Kira's Guardian%CL%Griffon's Eye%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP am1]: %GOLD%Blood Raven's Charge%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP am2]: %GOLD%Lycander's Aim%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP am5]: %GOLD%Thunderstroke%CL%Titan's Revenge%CL%True Silver%CL%%NAME%%CONTINUE%
@@ -6413,8 +6412,7 @@ ItemDisplay[NMAG !ID SHOP !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPI
 // Sets
 // Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GREEN%Angelic Wings%CL%Arcanna's Sign%CL%Cathan's Sigil%CL%Civerb's Icon%CL%Iratha's Collar%CL%Tancred's Weird%CL%Vidala's Snare%CL%Telling of Beads%CL%Tal Rasha's Adjudication%CL%%CL%%NAME%
 // Cant do this yet ItemDisplay[NMAG !ID SHOP rin]: %GREEN%Cathan's Seal%CL%Bul-Kathos' Death Band%CL%Angelic Halo%CL%%CL%%NAME%
-ItemDisplay[NMAG !ID SHOP ci0]: %GREEN%Naj's Circlet%CL%%CONTINUE%%CL%%NAME%
-ItemDisplay[NMAG !ID SHOP ci1]: %GREEN%M'avina's True Sight%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP (ci0 OR ci1)]: %GREEN%Naj's Circlet%CL%M'avina's True Sight%CL%%CONTINUE%%CL%%NAME%
 ItemDisplay[NMAG !ID SHOP am2]: %GREEN%M'avina's Caster%CL%%CONTINUE%%CL%%NAME%
 ItemDisplay[NMAG !ID SHOP skr]: %GREEN%Natalya's Mark%CL%%CONTINUE%%CL%%NAME%
 ItemDisplay[NMAG !ID SHOP ba5]: %GREEN%Immortal King's Will%NAME%
