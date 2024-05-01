@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 30%CL%Season 9 - version 41%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 30%CL%Season 9 - version 43%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -87,7 +87,7 @@ ItemDisplay[cwss QTY>1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WO
 ItemDisplay[jewf]: %ORANGE%X    %GRAY%%NAME%  %ORANGE%X%WHITE%%MAP-68%{50 jewelfrags - Um/Mal%CL%50 pgems - Um/Mal%CL%50 Map Runes - Mal/Ist}
 ItemDisplay[rkey]: %DARK_GREEN%>> Y <<    %ORANGE%Skeleton Key   %DARK_GREEN%>> Y <<%MAP-68%
 ItemDisplay[lbox]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[lpp]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lpp]: %MAP-4A%%ORANGE%<> <> <> %NAME% %ORANGE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
 ItemDisplay[llmr]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
 ItemDisplay[lsvl]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
@@ -99,7 +99,7 @@ ItemDisplay[rid]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma T
 // DClone mats
 ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>
 // PD2 Items - Rathma mats
-ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%X X %ORANGE%%NAME% %RED%X X
+ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
@@ -115,7 +115,7 @@ ItemDisplay[(rtma OR dcma)]: %MAP-0A%%RED%* * %NAME% %RED%* *{%NAME%}
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
 ItemDisplay[ubab]: %NAME%{Found in T2 Maps}%CONTINUE%
 ItemDisplay[ubac]: %NAME%{Found in T3 Maps}%CONTINUE%
-ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%X X %RED%%NAME%%YELLOW% X X{%NAME%}
+ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%X X X X %RED%%NAME%%YELLOW% X X X X{%NAME%}
 ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 //-----------------------------------------------------------------------------------
 
@@ -1417,7 +1417,14 @@ ItemDisplay[ASSASSIN CL5 FILTLVL<8 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
 ItemDisplay[SORCERESS CL6 FILTLVL<8 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
 ItemDisplay[AMAZON CL7 FILTLVL<8 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
 
-
+//mag for class you are player
+ItemDisplay[DRUID CL1 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[BARBARIAN CL2 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[PALADIN CL3 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[NECROMANCER CL4 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[ASSASSIN CL5 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[SORCERESS CL6 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[AMAZON CL7 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
 
 // Arrows and Bolts - Amazon View
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
