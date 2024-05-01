@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 30%CL%Season 9 - version 41%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 30%CL%Season 9 - version 42%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1417,7 +1417,14 @@ ItemDisplay[ASSASSIN CL5 FILTLVL<8 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
 ItemDisplay[SORCERESS CL6 FILTLVL<8 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
 ItemDisplay[AMAZON CL7 FILTLVL<8 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
 
-
+//mag for class you are player
+ItemDisplay[DRUID CL1 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[BARBARIAN CL2 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[PALADIN CL3 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[NECROMANCER CL4 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[ASSASSIN CL5 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[SORCERESS CL6 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
+ItemDisplay[AMAZON CL7 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%CONTINUE%
 
 // Arrows and Bolts - Amazon View
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
