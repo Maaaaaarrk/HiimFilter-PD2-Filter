@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 30%CL%Season 9 - version 43%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 6%CL%Season 9 - version 44%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -360,14 +360,14 @@ ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>99) OR (STAT372>69 AND STAT375>29
 ItemDisplay[(MAPTIER=2 OR MAPTIER=1) ((STAT372>99) OR (STAT372>69 AND STAT375>29) OR (STAT372>39 AND STAT375>59) OR (STAT372>9 AND STAT375>89) OR (STAT372>84 AND STAT373>9) OR (STAT372>54 AND STAT375>29 AND STAT373>9) OR (STAT372>24 AND STAT375>59 AND STAT373>9) OR (STAT372>77 AND STAT373>14) OR (STAT372>47 AND STAT375>29 AND STAT373>14) OR (STAT372>17 AND STAT375>59 AND STAT373>14) OR (STAT372>69 AND STAT373>19) OR (STAT372>39 AND STAT375>29 AND STAT373>19) OR (STAT372>9 AND STAT375>59 AND STAT373>19) OR (STAT372>62 AND STAT373>24) OR (STAT372>32 AND STAT375>29 AND STAT373>24) OR (STAT372>2 AND STAT375>59 AND STAT373>24) OR (STAT372>54 AND STAT373>29) OR (STAT372>24 AND STAT375>29 AND STAT373>29) OR (STAT372>-6 AND STAT375>59 AND STAT373>29) OR (STAT372>74 AND STAT374>0) OR (STAT372>44 AND STAT375>29 AND STAT374>0) OR (STAT372>14 AND STAT375>59 AND STAT374>0) OR (STAT372>29 AND STAT375>29 AND STAT373>9 AND STAT374>0)) STAT360>0]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 
 // Tier 3 MF Maps >90 den >60 mf
-ItemDisplay[MAPTIER=3 (STAT372>89 AND STAT370>60) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=3 (STAT372>89 AND STAT370>60) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats < < <%CL%}
 // Slammed
-ItemDisplay[MAPTIER=3 (STAT372>89 AND STAT370>60) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=3 (STAT372>89 AND STAT370>60) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats < < <%CL%}
 
 // Tier 1-2 MF Maps >75 den >30 MF
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>74 AND STAT370>30) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%CL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>74 AND STAT370>30) STAT360=0]:  %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats < < <%CL%}
 // Slammed
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>74 AND STAT370>30) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Rolls < < <%CL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) (STAT372>74 AND STAT370>30) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats < < <%CL%}
 
 // Tell the User to convert map to rare
 ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%CL%%PURPLE%Convert to Plain Map%CL%%NAME%}
@@ -493,8 +493,8 @@ ItemDisplay[RUNE=28]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1-1.25%CL%}%CONTINU
 ItemDisplay[RUNE=29]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.5%CL%}%CONTINUE%
 ItemDisplay[RUNE=30]: %NAME%{%TAN%HR Estimated Value%WHITE%: 3%CL%}%CONTINUE%
 ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.25-1.5%CL%}%CONTINUE%
-ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.5+%CL%}%CONTINUE%
-ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 3+%CL%}%CONTINUE%
+ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2.25+%CL%}%CONTINUE%
+ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 4.5+%CL%}%CONTINUE%
 
 // Tooltip notes & show runes
 ItemDisplay[r01s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld%CL%%CL%Shield: +15 Defense%CL%Armor/Helm: +15 Defense%CL%Weapon: +50 Attack Rating%CL%}
@@ -3559,7 +3559,7 @@ ItemDisplay[!UNI ID (CLSK6>1 AND SK366>2) SIN]: %NAME% %ORANGE%+5 Lightning Sent
 ItemDisplay[!UNI ID (TABSK50=2 AND SK254=3) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Tiger Strike katar
 ItemDisplay[!UNI ID (TABSK50=2 AND SK265=3) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Cobra Strike katar
 ItemDisplay[!UNI ID (TABSK50=2 AND SK269=3) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK275=3) SIN]: %NAME% %ORANG E%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Dragon Flight katar
+ItemDisplay[!UNI ID (TABSK50=2 AND SK275=3) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Dragon Flight katar
 ItemDisplay[!UNI ID (TABSK49=2 AND SK252=3) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Dagger & Claw Mastery katar
 ItemDisplay[!UNI ID (TABSK49=2 AND SK253=3) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Psychic Hammer katar
 ItemDisplay[!UNI ID (TABSK49=2 AND SK273=3) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Mind Blast katar
@@ -3914,11 +3914,14 @@ ItemDisplay[WEAPON RARE ETH !ID FILTLVL<3]: %DOT-ED%%PURPLE%* %YELLOW%%NAME% %PU
 ItemDisplay[WEAPON RARE !ID FILTLVL<3]: * * %YELLOW%%NAME% * *
 ItemDisplay[WEAPON RARE ETH !ID FILTLVL<7]: %YELLOW%* %YELLOW%%NAME% %YELLOW%*
 ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<7]: %DOT-ED%* %NAME% *
-ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp) RARE (ILVL>84) !ID]: %NAME%
+ItemDisplay[!ID ETH SIN RARE FILTLVL<7 ILVL>84]: %DOT-ED%* %NAME% * //eth sin claws
+ItemDisplay[!ID ETH SIN RARE FILTLVL<8 ILVL>84]: %DOT-ED%%NAME% //eth sin claws
+ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp) RARE FILTLVL<8 (ILVL>84) !ID]: %NAME%
 
 // High Ilvl Rares
 ItemDisplay[RARE !WEAPON (ILVL>91) !ID FILTLVL<7]: %YELLOW% * * * %NAME% * * *
 ItemDisplay[RARE ARMOR ETH !ID FILTLVL<7]: %DOT-ED%* *%NAME% * *
+ItemDisplay[RARE ARMOR ETH !ID FILTLVL<8]: %DOT-ED%%NAME%
 ItemDisplay[RARE !WEAPON (ILVL>84) !ID  FILTLVL<7]: * *%NAME% * *
 ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) !ID]: %NAME%
 ItemDisplay[ARMOR RARE (ILVL>84) !ID FILTLVL<7]: %NAME%
@@ -3927,10 +3930,19 @@ ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
 // Rare special cases
 ItemDisplay[RARE !ID CLASS FILTLVL<5]: %NAME%
 ItemDisplay[RARE !ID MAPID=83 FILTLVL<5]: %NAME%
-ItemDisplay[!ID AMAZON (am5 OR ama OR amf) RARE FILTLVL<7]: %NAME%//zon javs
 
 // Warrior Map
 ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)  FILTLVL<7]: %NAME%
+
+// Class specific rares show for all
+ItemDisplay[!ID AMAZON (am5 OR ama OR amf) RARE FILTLVL<8 ILVL>84]: %NAME% //zon javs
+ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<8 ILVL>84]: %NAME% //Zon bow
+ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %NAME% //Zon bow
+ItemDisplay[!ID (pab OR pa6 OR pa1) RARE FILTLVL<7 ILVL>84]: %NAME% //pala shield
+ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<7 ILVL>84]: %NAME% //4os able scepters
+ItemDisplay[!ID !ETH RARE DRU FILTLVL<7 ILVL>84]: %NAME% //dudu helms
+ItemDisplay[!ID RARE NEC FILTLVL<7 ILVL>84]: %NAME% //nec heads
+ItemDisplay[!ID ETH BAR RARE FILTLVL<7 ILVL>84]: %NAME% //barb helm
 
 // Silence rest on super stricters
 ItemDisplay[RARE !ID FILTLVL<5 !ETH]:
