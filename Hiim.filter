@@ -5865,7 +5865,8 @@ ItemDisplay[(7kr OR 9kr OR kri) (SOCK=0 OR SOCK=3) !ETH NMAG (SK73>2) FILTLVL<7]
 //-----------------------------------------------------------------------------------
 // Chests
 ItemDisplay[xtp !INF !ETH NMAG !RW !SOCK=1]: %NAME%{%NAME%}
-ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW (SOCK=0 OR SOCK>2)]: %NAME%{%NAME%}
+ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW (SOCK=0 OR SOCK>2) FILTLVL<5]: %NAME%{%NAME%}
+ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW SUP (SOCK=0 OR SOCK>2)]: %NAME%{%NAME%}
 ItemDisplay[CHEST ELT !INF ETH NMAG !RW !SOCK=1 FILTLVL<3]: %NAME%{%NAME%}
 
 // Helmets
