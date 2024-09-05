@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 2%CL%Season 9 - version 52%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 4%CL%Season 9 - version 53%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -140,9 +140,9 @@ ItemDisplay[pk2]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %
 ItemDisplay[pk3]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
 
 // Organs
-ItemDisplay[mbr]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
-ItemDisplay[bey]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
-ItemDisplay[dhn]: %PX-9D%%NAME%{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
+ItemDisplay[mbr]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
+ItemDisplay[bey]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
+ItemDisplay[dhn]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
 ItemDisplay[(dhn OR bey OR mbr)]: %MAP-4A%> >> %NAME% << <
 ItemDisplay[ubtm]: %MAP-A9%%RED%> >> %NAME%  %RED%<< <
 //-----------------------------------------------------------------------------------
@@ -1468,6 +1468,7 @@ ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%YELLOW%X%BLUE%     %NAME% 
 
 // Jewel
 ItemDisplay[MAG (jew) !ID]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
+ItemDisplay[RARE jew !ID ILVL>84]: %DOT-A8%%PURPLE%X X X%YELLOW%     %NAME%     %PURPLE%X X X
 ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
 
 // Circlets
