@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 4%CL%Season 9 - version 53%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 6%CL%Season 9 - version 54%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -692,7 +692,7 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) !RW FILTLVL>6 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
+ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) !RW FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
 ItemDisplay[STAT360>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[STAT360=0 FILTLVL=8 (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
 ItemDisplay[STAT360=0 FILTLVL=9 !SHOP]:%NOTIFY-DEAD%
@@ -1521,30 +1521,27 @@ ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<8 ILVL>84]: %YELLOW%* %NAME% %Y
 ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //Zon bow
 ItemDisplay[!ID (pab OR pa6 OR pa1) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //pala shield
 ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //4os able scepters
-ItemDisplay[!ID !ETH RARE DRU FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //dudu helms
+ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //dudu helms
 ItemDisplay[!ID RARE NEC FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //nec heads
-ItemDisplay[!ID ETH BAR RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //barb helm
+ItemDisplay[!ID RARE BAR FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //barb helm
 
 // High Ilvl Non-weap Rares
-ItemDisplay[RARE !WEAPON (ILVL>91) !ID FILTLVL<7]: %YELLOW% * * * %NAME% %YELLOW%* * *
 ItemDisplay[RARE ARMOR ETH !ID FILTLVL<7]: %DOT-ED%%YELLOW%* * %NAME% %YELLOW%* *
 ItemDisplay[RARE ARMOR ETH !ID FILTLVL<8]: %DOT-ED%%NAME%
-ItemDisplay[RARE !WEAPON (ILVL>84) !ID  FILTLVL<7]: %NAME%
-ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) !ID]: %NAME%
-ItemDisplay[ARMOR RARE (ILVL>84) !ID FILTLVL<7]: %NAME%
-ItemDisplay[RARE (CLVL<80) !ID]: %NAME%
+ItemDisplay[RARE !WEAPON (ILVL>84) !ID FILTLVL<3]: %YELLOW%* %NAME% %YELLOW%*
+ItemDisplay[(GLOVES OR BOOTS OR BELT OR CHEST) RARE (ILVL>84) !ID FILTLVL<8]: %NAME%
+ItemDisplay[RARE (CLVL<86 OR FILTLVL<3) !ID]: %NAME%
 
 // Rare special cases
 ItemDisplay[RARE !ID CLASS FILTLVL<5]: %NAME%
-ItemDisplay[RARE !ID MAPID=83 FILTLVL<5]: %NAME%
+ItemDisplay[RARE !ID MAPID=83 FILTLVL<7]: %NAME%
 
 // Warrior Map catch rest
 ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182) FILTLVL<7]: %NAME%
 
 
-// Silence rest on super stricters
-ItemDisplay[RARE !ID FILTLVL<5 !ETH]:
-ItemDisplay[RARE !ID FILTLVL<7]:
+// Silence rest on stricts
+ItemDisplay[RARE !ID FILTLVL>2]:
 //-----------------------------------------------------------------------------------
 
 
