@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 7%CL%Season 9 - version 55%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 8%CL%Season 9 - version 56%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -537,9 +537,9 @@ ItemDisplay[RUNE>0]: %NAME%{%NAME%}
 // CONSUMABLES
 //-----------------------------------------------------------------------------------
 // Keys
-ItemDisplay[key FILTLVL>1]: {%NAME%}
-ItemDisplay[key ASSASSIN]: {%NAME%}
-ItemDisplay[key]: %GOLD%+%WHITE%%NAME%{%NAME%}
+ItemDisplay[key ASSASSIN]:{%NAME%}
+ItemDisplay[key (FILTLVL<2 OR CLVL<25))]: %GOLD%+%WHITE%%NAME%{%NAME%}
+ItemDisplay[key]:{%NAME%}
 
 // TP / ID books and scrolls
 ItemDisplay[(isc OR tsc) FILTLVL>1 CLVL>20]:
@@ -588,10 +588,10 @@ ItemDisplay[mp5 FILTLVL<3]: %BLUE%+ %WHITE%MP5 %BLUE%+
 ItemDisplay[mp5]: %BLUE%+ MP
 
 // Other Potion Tooltips
-ItemDisplay[vps FILTLVL<2 DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta
+ItemDisplay[vps DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta
 ItemDisplay[vps]:
 ItemDisplay[yps (MAPID=161 OR MAPID=162 OR MAPID=163)]: %GREEN%!Anti{Good Luck on Rathma}
-ItemDisplay[yps (FILTLVL<2 OR CLVL<24)]: %GREEN%!Anti
+ItemDisplay[yps (FILTLVL<3 OR CLVL<24)]: %GREEN%!Anti
 ItemDisplay[yps]:
 
 
