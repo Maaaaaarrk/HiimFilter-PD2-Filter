@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 8%CL%Season 9 - version 57%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 16%CL%Season 9 - version 58%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1446,8 +1446,9 @@ ItemDisplay[AMAZON CL7 FILTLVL<5 MAG !ID]: %DOT-90%%GREEN%* * %NAME% %GREEN%* *%
 
 // Arrows and Bolts - Amazon View
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[aqv RARE !ID AMAZON FILTLVL<5]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
-ItemDisplay[aqv RARE !ID AMAZON]: %ORANGE%*%YELLOW%  %NAME%  %ORANGE%*
+ItemDisplay[(aqv OR cqv) RARE !ID AMAZON FILTLVL<5]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
+ItemDisplay[(aqv OR cqv) RARE !ID AMAZON]: %ORANGE%*%YELLOW%  %NAME%  %ORANGE%*
+ItemDisplay[(aqv OR cqv) RARE !ID AMAZON FILTLVL<8]: %YELLOW%%NAME%
 ItemDisplay[(aqv OR cqv) NMAG CLVL>5]:
 
 // Arrows and Bolts - Hide Rules
