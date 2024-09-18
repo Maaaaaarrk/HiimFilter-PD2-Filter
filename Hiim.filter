@@ -26,8 +26,8 @@ ItemDisplayFilterName[]: Base
 ItemDisplayFilterName[]: Semi-Strict
 ItemDisplayFilterName[]: Strict+Crafting
 ItemDisplayFilterName[]: Strict+Crafting+No HP/MP
-ItemDisplayFilterName[]: Strict
-ItemDisplayFilterName[]: Strict+No HP/MP
+ItemDisplayFilterName[]: Stricter
+ItemDisplayFilterName[]: Stricter+No HP/MP
 ItemDisplayFilterName[]: Extremely Strict
 ItemDisplayFilterName[]: Rejuvs Only
 ItemDisplayFilterName[]: No Items Out of Town
@@ -36,14 +36,14 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 16%CL%Season 9 - version 58%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Sep 18%CL%Season 9 - version 59%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% Strict & Crafting}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Strict & Crafting & No HP/MP}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% Strict}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% Strict & No HP/MP}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=8]: %NAME%{%NAME% Rejuvs Only}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=9]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
@@ -3896,63 +3896,6 @@ ItemDisplay[TABSK8=3 SK56=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Meteor%CONTIN
 ItemDisplay[CLSK1=2 SK56=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Meteor%CONTINUE%{%NAME%}
 
 
-// Bow SK weap
-ItemDisplay[CLSK0=0 TABSK0=5 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK0=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=6 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+7 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=6 ALLSK=0]: %NAME% %DOT-ED%%PURPLE%+6 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=5 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK0=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK0=3 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK0=2 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=5 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK0=3 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK0=3 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK0=2 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK0=4 ALLSK=0]: %NAME% %DOT-ED%+4 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK0=3 ALLSK=0]: %NAME% %DOT-ED%+4 BowSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK0=2 ALLSK=0]: %NAME% %DOT-ED%+4 BowSkills %CONTINUE%{%NAME%}
-
-
-// Jav SK weap
-ItemDisplay[CLSK0=0 TABSK2=5 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK2=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=6 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+7 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=6 ALLSK=0]: %NAME% %DOT-ED%%PURPLE%+6 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=5 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK2=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK2=3 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK2=2 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=5 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK2=3 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK2=3 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK2=2 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK2=4 ALLSK=0]: %NAME% %DOT-ED%+4 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK2=3 ALLSK=0]: %NAME% %DOT-ED%+4 JavSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK2=2 ALLSK=0]: %NAME% %DOT-ED%+4 JavSkills %CONTINUE%{%NAME%}
-
-// Passive & Magic
-ItemDisplay[CLSK0=0 TABSK1=5 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK1=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=6 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+7 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=6 ALLSK=0]: %NAME% %DOT-ED%%PURPLE%+6 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=5 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK1=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK1=3 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK1=2 ALLSK=2]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=5 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK1=3 ALLSK=0]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=4 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK1=3 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK1=2 ALLSK=1]: %NAME% %DOT-ED%%ORANGE%+5 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=0 TABSK1=4 ALLSK=0]: %NAME% %DOT-ED%+4 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=1 TABSK1=3 ALLSK=0]: %NAME% %DOT-ED%+4 PassiveSkills %CONTINUE%{%NAME%}
-ItemDisplay[CLSK0=2 TABSK1=2 ALLSK=0]: %NAME% %DOT-ED%+4 PassiveSkills %CONTINUE%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 
@@ -4063,40 +4006,40 @@ ItemDisplay[MAG ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7
 ItemDisplay[MAG ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%NAME%%CL%%RED% Target ALVL 51 for LLD Crafting}%CONTINUE%  // rin/amu
 
 // Weapons
-ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
-ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Ghost Glaive
-ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Berserker Axe
-ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Thunder Maul
-ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Ogre Maul
-ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Blade
-ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Sword
-ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Glorious Axe
-ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Legendary Mallet
-ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//War Pike
-ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Stygian Pilum
-ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Balrog Spear
-ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Ghost Glaive
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Berserker Axe
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Thunder Maul
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Legendary Mallet
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//War Pike
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
 
 // Armor 
-ItemDisplay[(xvb OR zvb OR xsh OR zvb OR xh9) MAG SHOP]: %GREEN%* %NAME%%GREEN% [LLD Craft] *{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//good craft when shopping
-ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
-ItemDisplay[(bhm OR xh9 OR uh9) MAG ID]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
-ItemDisplay[(bsh OR xsh OR ush) MAG ID]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
-ItemDisplay[(lbt OR xlb OR ulb) MAG ID]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//boots
-ItemDisplay[(vbt OR xvb OR uvb) MAG ID]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(xvb OR zvb OR xsh OR zvb OR xh9) MAG SHOP STAT360=0]: %GREEN%* %NAME%%GREEN% [LLD Craft] *{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//good craft when shopping
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//boots
 
 // Class specific
-ItemDisplay[BAR MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
-ItemDisplay[(ob5 OR oba OR obf) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
-ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
-ItemDisplay[(am5 OR ama OR amf) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
-ItemDisplay[(am2 OR am7 OR amc) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
-ItemDisplay[(am1 OR am6 OR amb) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
-ItemDisplay[(pab OR pa6 OR pa1) MAG ID]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
-ItemDisplay[MAG ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws)]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
-ItemDisplay[MAG ID (DRU)]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
-ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp)]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
-ItemDisplay[SIN MAG ID ETH]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
+ItemDisplay[BAR MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
+ItemDisplay[(am5 OR ama OR amf) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
+ItemDisplay[MAG ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
+ItemDisplay[MAG ID (DRU) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
+ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
+ItemDisplay[SIN MAG ID ETH STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
 
 // Crafting Reciepe
 ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ith, Jewel%CL%%BLUE%HitPwr: O, Ith, Jewel%CL%%RED%Blood: O, Ral, Jewel%CL%%PURPLE%* Caster: O, Nef, Jewel *%CL%%YELLOW%MF: O, Tir, Jewel%CL%%GRAY%* Vamp: SK, Lum, Jewel *%CL%%NAME%}%CONTINUE%
@@ -5707,7 +5650,7 @@ ItemDisplay[NMAG !RW !SHOP MACE SOCK=6]: %NAME%{%GOLD%Last Wish %GRAY%Jah + Mal 
 // RW BASES - PART 1
 //-----------------------------------------------------------------------------------
 // High HR worth base
-ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6)]: %DOT-E1%%PURPLE%> >  %NAME%  %PURPLE%< <{%NAME%}%CONTINUE%
+ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6)]: %DOT-E1%%NAME%{%NAME%}%CONTINUE%
 
 // LLD divine/war scepter bases with 2 of hammer/conc/joust for LLD
 ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
@@ -5791,9 +5734,9 @@ ItemDisplay[7xf !RW SK252>2 ETH !INF SOCK=3 NMAG]: %DOT-D6%%PURPLE%O O %NAME% %P
 ItemDisplay[7xf !RW SK252>2 ETH !INF SOCK=0 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%%CL%%PURPLE%Roll for 3 sockets for GG Chaos base}
 ItemDisplay[7xf !RW (SK275>0 OR SK252>0) ETH !INF SOCK=3 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%%CL%%PURPLE%Chaos base}
 ItemDisplay[7xf !RW (SK275>0 OR SK252>0) ETH !INF SOCK=0 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%%CL%%PURPLE%Roll for 3 sockets for Chaos base}
-ItemDisplay[7xf !RW ETH (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{{%NAME%%CL%%GREEN%Chaos base}
+ItemDisplay[7xf !RW ETH (SOCK=0 OR SOCK=3) NMAG]: %DOT-D6%%NAME%{%NAME%%CL%%GREEN%Chaos base}
 
-// worse chaos
+// lesser chaos base
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH !INF (SOCK=0 OR SOCK=3) NMAG  FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH (SOCK=0 OR SOCK=3) SUP NMAG  FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 
@@ -5872,10 +5815,14 @@ ItemDisplay[(7kr OR 9kr OR kri) (SOCK=0 OR SOCK=3) !ETH NMAG (SK73>2) FILTLVL<7]
 ItemDisplay[xtp !INF !ETH NMAG !RW !SOCK=1]: %NAME%{%NAME%}
 ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW (SOCK=0 OR SOCK>2) FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW SUP (SOCK=0 OR SOCK>2)]: %NAME%{%NAME%}
-ItemDisplay[EQ2 ELT ETH !INF SOCK=4 NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CHEST ELT !INF ETH NMAG !RW !SOCK=1 FILTLVL<3]: %NAME%{%NAME%}
+ItemDisplay[EQ2 ELT ETH !INF (SOCK=4 OR SOCK=0) NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[EQ2 ELT ETH !INF SOCK=3 NMAG]: %NAME%{%NAME%}
+ItemDisplay[CHEST ELT !INF ETH NMAG !RW !(SOCK=1) FILTLVL<5]: %NAME%{%NAME%}
 
 // Helmets
+ItemDisplay[EQ1 ELT ETH !INF SUP (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl)]: %DOT-D6%%NAME%{%NAME%} //ferocity
+ItemDisplay[EQ1 ELT ETH !INF (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) FILTLVL<5]: %NAME%{%NAME%} //ferocity
+ItemDisplay[EQ1 ELT SUP !INF (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) FILTLVL<5]: %NAME%{%NAME%} //flickering flame
 ItemDisplay[(ci3 OR uh9) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW SOCK=2]: %NAME%{%NAME%}
 ItemDisplay[DRU (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !INF !ETH NMAG !RW !SOCK=1]: %NAME%{%NAME%}
@@ -5884,23 +5831,26 @@ ItemDisplay[BAR SK149>2 !INF ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %NAME%{%NAME%}
 ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
 
 // Shields
-ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) (AR>100 OR EDAM>50)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) (AR>100 OR EDAM>49)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) RES>19]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN (ELT OR paa) !INF NMAG !RW (SOCK=0 OR SOCK=4) EDAM>60]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80]: %NAME%{%NAME%}
-ItemDisplay[(uit OR uow OR uts) !INF NMAG !RW (SOCK=0 OR SOCK=4)]: %NAME%{%NAME%}
+ItemDisplay[(uit OR uow OR uts OR ush) !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[(uit OR uow OR uts OR ush) !INF SUP NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) FILTLVL<8]: %NAME%{%NAME%}
 
 // Bows/Crossbows
-ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 SOCK=3]: %NAME%{%NAME%}
-ItemDisplay[6cb NMAG !RW !INF SOCK=3]: %NAME%{%NAME%}
+ItemDisplay[(amc OR amb) NMAG EDAM>0 !RW TABSK0>2 (SOCK=0 OR SOCK=4 OR SOCK=3 OR SOCK=5) FILTLVL<6]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(amc OR amb) NMAG EDAM>0 !RW TABSK0>2 (SOCK=0 OR SOCK=4 OR SOCK=3 OR SOCK=5) FILTLVL<8]: %NAME%{%NAME%}
+ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=0 OR SOCK=4) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=3 OR SOCK=5) FILTLVL<5]: %NAME%{%NAME%}
+ItemDisplay[6cb NMAG !RW !INF SOCK=3 FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[6mx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=4) FILTLVL<7]: %NAME%{%NAME%}
-ItemDisplay[(6cb OR 8rx OR 6rx OR 6mx) NMAG !INF !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[(6hx OR 6mx) EDAM>0 NMAG !INF !RW (SOCK=0) FILTLVL<5]: %NAME%{%NAME%%CL%4os for Harmony}
+ItemDisplay[(6hx OR 6mx) EDAM>0 NMAG !INF !RW (SOCK=0) FILTLVL<5]: %NAME%{%NAME%%CL%4os for Merc Harmony}
 ItemDisplay[(6hx OR 6mx) EDAM>0 NMAG !INF !RW (SOCK=4) FILTLVL<5]: %NAME%{%NAME%%CL%Merc Harmony Base}
 ItemDisplay[(6hx OR 6mx) NMAG !INF !RW (SOCK=0) FILTLVL<3]: %NAME%{%NAME%%CL%4os for Merc Harmony}
 ItemDisplay[(6hx OR 6mx) NMAG !INF !RW (SOCK=4) FILTLVL<3]: %NAME%{%NAME%%CL%Merc Harmony Base}
+ItemDisplay[(6cb OR 8rx OR 6rx OR 6mx) NMAG !INF !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
 
 // Clubs
 ItemDisplay[(7cl OR 7sp) NMAG !INF !RW !SOCK=1 (SK221>2 OR SK223>2 OR SK224>2 OR SK225>2 OR SK227>2 OR SK228>2 OR SK233>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK248>2 OR SK249>2 OR SK250>2)]: %NAME%{%NAME%}
@@ -5930,6 +5880,8 @@ ItemDisplay[7fb ETH NMAG !RW (SOCK=0 OR SOCK>1) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7gd ETH NMAG !RW (SOCK=0 OR SOCK>1) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7fb ILVL>40 SUP !INF !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7gd ILVL>40 SUP !INF !RW (SOCK=0 OR SOCK=6) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[7cr !INF !RW !(SOCK=1) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[7cr !INF SUP !RW !(SOCK=1) FILTLVL<8]: %NAME%{%NAME%}
 
 // Maces
 ItemDisplay[fla NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<3]: %NAME%{%NAME%}
@@ -5940,12 +5892,11 @@ ItemDisplay[WAND !(wnd OR ywn OR 9wn) (SK67>2 OR SK74>2 OR SK94>2 OR SK75>2 OR S
 
 // Endgame LEAP BARB RW bases (any filter level)
 ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6) EDAM>0]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%} // %ED Eth Thundermaul or war pike
-ItemDisplay[6ws ETH NMAG !RW !(SOCK=1) EDAM>0]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%} // %ED Eth Archon staff
+ItemDisplay[6ws ETH NMAG !RW !(SOCK=1) EDAM>0]: %DOT-D6%%NAME%{%NAME%} // %ED Eth Archon staff
 ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6)]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%} //Thundermaul or war pike
 ItemDisplay[6ws ETH NMAG !RW !(SOCK=1)]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%} // Archon staff
 
 // Starter LEAP BARB RW bases (Semi-strict or less)
-ItemDisplay[(6cs OR 6bs) ETH NMAG !RW !(SOCK=1) FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Lesser staff rw base
 ItemDisplay[(7p7 OR 7gm) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<3]: %DOT-D6%%NAME%{%NAME%} // non eth thundermaul or war pike 0/5 socket
 ItemDisplay[ELT (POLEARM OR SPEAR OR 7m7) ETH NMAG !RW SOCK=5 FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Eth pole arm or spear or ogre maul 5 soc
 ItemDisplay[ELT (7s8 OR 7pa OR 7m7) ETH NMAG !RW SOCK=0 FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Eth laz for 5 socket or 90+ avrg damage base 0 soc
