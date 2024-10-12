@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 12%CL%Season 9 - version 66%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 12%CL%Season 9 - version 67%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -101,16 +101,20 @@ ItemDisplay[rid]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma T
 ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>
 // PD2 Items - Rathma mats
 ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
+// PD2 Items - S10 Boss mats
+ItemDisplay[lucb OR lucc OR lucd]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
-ItemDisplay[(rtma OR dcma)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CONTINUE%
-ItemDisplay[(rtma OR dcma) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
-ItemDisplay[(rtma OR dcma) STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
-ItemDisplay[(rtma OR dcma) STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Larger Boss Item Chance)%ORANGE% < <%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
+// S10 boss entry ItemDisplay[luca]: Vision of Terror%CONTINUE%
+ItemDisplay[(rtma OR dcma OR luca)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CONTINUE%
+ItemDisplay[(rtma OR dcma OR luca) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
+ItemDisplay[(rtma OR dcma OR luca) STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[(rtma OR dcma OR luca) STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Larger Boss Item Chance)%ORANGE% < <%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
 ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%CL%%RED%Diablo Clone Entry}
 ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%CL%%BLUE%Rathma Entry}
-ItemDisplay[(rtma OR dcma)]: %MAP-0A%%RED%* * %NAME% %RED%* *{%NAME%}
+ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%S10 Boss Entry}
+ItemDisplay[(rtma OR dcma OR luca)]: %MAP-0A%%RED%* * %NAME% %RED%* *{%NAME%}
 
 // PD2 Items - Uber Ancients Tokens
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
@@ -183,43 +187,45 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR  MAPTIER=4 OR t51 OR t52 OR t53 OR t61 OR t62) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
 
 // Map Immunities
-ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) NMAG]: %NAME%%CONTINUE%{%TAN%Immunities (Updated Sep 19 2024):%CL%%NAME%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) NMAG]: %NAME%%CONTINUE%{%TAN%Immunities (Updated Oct 12 2024):%CL%%NAME%}
 ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) !NMAG]: %NAME%%CONTINUE%{%TAN%Immunities:%CL%%NAME%}
 
-ItemDisplay[t23]: %NAME%{%CL%%RED%F 130% %YELLOW%L 100% %BLUE% C 80%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Arreat Battlefield Level id 139 Updated: Sep 19 2024
-ItemDisplay[t25]: %NAME%{%CL%%RED%F 75% %YELLOW%L 135% %BLUE% C 85%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 125%%CL%%NAME%}%CONTINUE% // Sewers of Harrogath Level id 141 Updated: Sep 19 2024
-ItemDisplay[t12]: %NAME%{%CL%%RED%F 135% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Horazon's Memory Level id 142 Updated: Sep 19 2024
-ItemDisplay[t11]: %NAME%{%CL%%RED%F 130% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 80% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Ruins of Viz-jun Level id 143 Updated: Sep 19 2024
-ItemDisplay[t31]: %NAME%{%CL%%RED%F 90% %YELLOW%L 85% %BLUE% C 180%%CL%%GRAY%Ph 66% %ORANGE%M 100% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // River of Blood Level id 144 Updated: Sep 19 2024
-ItemDisplay[t21]: %NAME%{%CL%%RED%F 140% %YELLOW%L 125% %BLUE% C 80%%CL%%GRAY%Ph 75% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Phlegethon Level id 145 Updated: Sep 19 2024
-ItemDisplay[t34]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Ancestral Trial Level id 146 Updated: Sep 19 2024
-ItemDisplay[t39]: %NAME%{%CL%%RED%F 125% %YELLOW%L 90% %BLUE% C 130%%CL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace Level id 147 Updated: Sep 19 2024
-ItemDisplay[t22]: %NAME%{%CL%%RED%F 125% %YELLOW%L 105% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Torajan Jungle Level id 148 Updated: Sep 19 2024
-ItemDisplay[t13]: %NAME%{%CL%%RED%F 125% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep Level id 149 Updated: Sep 19 2024
-ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: Sep 19 2024
-ItemDisplay[t24]: %NAME%{%CL%%RED%F 85% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 105% %ORANGE%M 50% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle Level id 151 Updated: Sep 19 2024
-ItemDisplay[t35]: %NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: Sep 19 2024
-ItemDisplay[t36]: %NAME%{%CL%%RED%F 95% %YELLOW%L 100% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fall of Caldeum Level id 155 Updated: Sep 19 2024
-ItemDisplay[t37]: %NAME%{%CL%%RED%F 75% %YELLOW%L 135% %BLUE% C 75%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Pandemonium Citadel Level id 156 Updated: Sep 19 2024
-ItemDisplay[t33]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 110%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Lost Temple Level id 158 Updated: Sep 19 2024
-ItemDisplay[t38]: %NAME%{%CL%%RED%F 130% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 120% %ORANGE%M 70% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Canyon of Sescheron Level id 160 Updated: Sep 19 2024
-ItemDisplay[t14]: %NAME%{%CL%%RED%F 75% %YELLOW%L 125% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Sanatorium Level id 167 Updated: Sep 19 2024
-ItemDisplay[t26]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 135%%CL%%NAME%}%CONTINUE% // Shadows of Westmarch Level id 169 Updated: Sep 19 2024
-ItemDisplay[t15]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 125%%CL%%GRAY%Ph 60% %ORANGE%M 150% %GREEN%P 105%%CL%%NAME%}%CONTINUE% // Royal Crypts Level id 170 Updated: Sep 19 2024
-ItemDisplay[t16]: %NAME%{%CL%%RED%F 135% %YELLOW%L 75% %BLUE% C 115%%CL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ruined Cistern Level id 174 Updated: Sep 19 2024
-ItemDisplay[t3a]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Ashen Plains Level id 175 Updated: Sep 19 2024
+ItemDisplay[t23]: %NAME%{%CL%%RED%F 130% %YELLOW%L 100% %BLUE% C 80%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Arreat Battlefield Level id 139 Updated: Oct 12 2024
+ItemDisplay[t25]: %NAME%{%CL%%RED%F 75% %YELLOW%L 135% %BLUE% C 85%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 125%%CL%%NAME%}%CONTINUE% // Sewers of Harrogath Level id 141 Updated: Oct 12 2024
+ItemDisplay[t12]: %NAME%{%CL%%RED%F 135% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Horazon's Memory Level id 142 Updated: Oct 12 2024
+ItemDisplay[t11]: %NAME%{%CL%%RED%F 130% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 80% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Ruins of Viz-jun Level id 143 Updated: Oct 12 2024
+ItemDisplay[t31]: %NAME%{%CL%%RED%F 90% %YELLOW%L 85% %BLUE% C 180%%CL%%GRAY%Ph 66% %ORANGE%M 100% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // River of Blood Level id 144 Updated: Oct 12 2024
+ItemDisplay[t21]: %NAME%{%CL%%RED%F 140% %YELLOW%L 125% %BLUE% C 80%%CL%%GRAY%Ph 75% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Phlegethon Level id 145 Updated: Oct 12 2024
+ItemDisplay[t34]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Ancestral Trial Level id 146 Updated: Oct 12 2024
+ItemDisplay[t39]: %NAME%{%CL%%RED%F 125% %YELLOW%L 90% %BLUE% C 130%%CL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace Level id 147 Updated: Oct 12 2024
+ItemDisplay[t22]: %NAME%{%CL%%RED%F 125% %YELLOW%L 105% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Torajan Jungle Level id 148 Updated: Oct 12 2024
+ItemDisplay[t13]: %NAME%{%CL%%RED%F 125% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep Level id 149 Updated: Oct 12 2024
+ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: Oct 12 2024
+ItemDisplay[t24]: %NAME%{%CL%%RED%F 85% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 105% %ORANGE%M 50% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle Level id 151 Updated: Oct 12 2024
+ItemDisplay[t35]: %NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: Oct 12 2024
+ItemDisplay[t36]: %NAME%{%CL%%RED%F 95% %YELLOW%L 100% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fall of Caldeum Level id 155 Updated: Oct 12 2024
+ItemDisplay[t37]: %NAME%{%CL%%RED%F 75% %YELLOW%L 135% %BLUE% C 75%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Pandemonium Citadel Level id 156 Updated: Oct 12 2024
+ItemDisplay[t33]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 110%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Lost Temple Level id 158 Updated: Oct 12 2024
+ItemDisplay[t38]: %NAME%{%CL%%RED%F 130% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 120% %ORANGE%M 70% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Canyon of Sescheron Level id 160 Updated: Oct 12 2024
+ItemDisplay[t14]: %NAME%{%CL%%RED%F 75% %YELLOW%L 125% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Sanatorium Level id 167 Updated: Oct 12 2024
+ItemDisplay[t26]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 135%%CL%%NAME%}%CONTINUE% // Shadows of Westmarch Level id 169 Updated: Oct 12 2024
+ItemDisplay[t15]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 125%%CL%%GRAY%Ph 60% %ORANGE%M 150% %GREEN%P 105%%CL%%NAME%}%CONTINUE% // Royal Crypts Level id 170 Updated: Oct 12 2024
+ItemDisplay[t16]: %NAME%{%CL%%RED%F 135% %YELLOW%L 75% %BLUE% C 115%%CL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ruined Cistern Level id 174 Updated: Oct 12 2024
+ItemDisplay[t3a]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Ashen Plains Level id 175 Updated: Oct 12 2024
+ItemDisplay[t28]: %NAME%{%CL%%RED%F 65% %YELLOW%L 125% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 20% %GREEN%P 100%%CL%%NAME%}%CONTINUE% // Skovos Stronghold Map Level id 190 Updated: Oct 12 2024
+ItemDisplay[t27]: %NAME%{%CL%%RED%F 100% %YELLOW%L 110% %BLUE% C 140%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 100%%CL%%NAME%}%CONTINUE% // Demon Road Map Level id 191 Updated: Oct 12 2024
 // Dungeon
-//ItemDisplay[t41]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Cathedral of Light Level id 152 Updated: Sep 19 2024
-//ItemDisplay[t42]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Plains of Torment Level id 164 Updated: Sep 19 2024
-//ItemDisplay[t43]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Sanctuary of Sin Level id 171 Updated: Sep 19 2024
-//ItemDisplay[t44]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Steppes of Daken-Shar Level id 186 Updated: Sep 19 2024
+//ItemDisplay[t41]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Cathedral of Light Level id 152 Updated: Oct 12 2024
+//ItemDisplay[t42]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Plains of Torment Level id 164 Updated: Oct 12 2024
+//ItemDisplay[t43]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Sanctuary of Sin Level id 171 Updated: Oct 12 2024
+//ItemDisplay[t44]: %NAME%{%CL%%RED%F 165% %YELLOW%L 165% %BLUE% C 165%%CL%%GRAY%Ph 140% %ORANGE%M 165% %GREEN%P 165%%CL%%NAME%}%CONTINUE% // Steppes of Daken-Shar Level id 186 Updated: Oct 12 2024
 // Unique maps
-//ItemDisplay[t51]: %NAME%{%CL%%RED%F 80% %YELLOW%L 80% %BLUE% C 80%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Rivers Level id 177 Updated: Sep 19 2024
-//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 40% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Ice Level id 178 Updated: Sep 19 2024
-//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 80%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar Kurast Level id 179 Updated: Sep 19 2024
+//ItemDisplay[t51]: %NAME%{%CL%%RED%F 80% %YELLOW%L 80% %BLUE% C 80%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Rivers Level id 177 Updated: Oct 12 2024
+//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 40% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Ice Level id 178 Updated: Oct 12 2024
+//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 80%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar Kurast Level id 179 Updated: Oct 12 2024
 ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 85%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar
-ItemDisplay[t52]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Hellcaves Level id 181 Updated: Sep 19 2024
-ItemDisplay[t53]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 75%%CL%%GRAY%Ph 65% %ORANGE%M 80% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fallen Gardens Level id 183 Updated: Sep 19 2024
+ItemDisplay[t52]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Hellcaves Level id 181 Updated: Oct 12 2024
+ItemDisplay[t53]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 75%%CL%%GRAY%Ph 65% %ORANGE%M 80% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fallen Gardens Level id 183 Updated: Oct 12 2024
 
 // Item code no longer dictates map tier
 // Maps [T1X]
@@ -240,8 +246,8 @@ ItemDisplay[t14]: %NAME%Sanatorium Map%CONTINUE%{%NAME%}
 ItemDisplay[t34]: %NAME%Ancestral Trial Map%CONTINUE%{%NAME%}
 ItemDisplay[t36]: %NAME%Fall of Caldeum Map%CONTINUE%{%NAME%}
 ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%CONTINUE%{%NAME%}
-ItemDisplay[t27]: %NAME%T2-7 Map%CONTINUE%{%NAME%}
-ItemDisplay[t28]: %NAME%T2-8 Map%CONTINUE%{%NAME%}
+ItemDisplay[t27]: %NAME%Demon Road Map%CONTINUE%{%NAME%}
+ItemDisplay[t28]: %NAME%Skovos Stronghold Map%CONTINUE%{%NAME%}
 ItemDisplay[t29]: %NAME%T2-9 Map%CONTINUE%{%NAME%}
 
 // Maps [T3X]
