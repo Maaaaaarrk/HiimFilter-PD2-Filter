@@ -109,8 +109,10 @@ ItemDisplay[dcma]: Vision of Terror%CONTINUE%
 // S10 boss entry ItemDisplay[luca]: Vision of Terror%CONTINUE%
 ItemDisplay[(rtma OR dcma OR luca)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CONTINUE%
 ItemDisplay[(rtma OR dcma OR luca) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
-ItemDisplay[(rtma OR dcma OR luca) STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
-ItemDisplay[(rtma OR dcma OR luca) STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Larger Boss Item Chance)%ORANGE% < <%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
+ItemDisplay[(rtma OR dcma) STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[(rtma OR dcma) STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Larger Boss Item Chance)%ORANGE% < <%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
+ItemDisplay[luca STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2%CL%%ORANGE%> > %TAN%Tier 1%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[luca STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 %ORANGE% < <%CL%%TAN%Tier 1 %CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
 ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%CL%%RED%Diablo Clone Entry}
 ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%CL%%BLUE%Rathma Entry}
 ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%S10 Boss Entry}
