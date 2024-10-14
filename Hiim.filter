@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 12%CL%Season 9 - version 67%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 13%CL%Still works for Season 9%CL%Season 10 - version 1%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -106,6 +106,7 @@ ItemDisplay[lucb OR lucc OR lucd]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
+ItemDisplay[luca]: Shawdow of Hatred%CONTINUE%
 // S10 boss entry ItemDisplay[luca]: Vision of Terror%CONTINUE%
 ItemDisplay[(rtma OR dcma OR luca)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CONTINUE%
 ItemDisplay[(rtma OR dcma OR luca) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
@@ -320,6 +321,8 @@ ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR t43 OR STAT438>0)]: %NAME%%CONTI
 // Map Contains SOULS
 ItemDisplay[(t14 OR t3a OR STAT470>0)]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 
+// Map Contains Added PSN
+ItemDisplay[STAT435>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
 
 // Map Contains Projectile Pierce
 ItemDisplay[STAT406>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
@@ -604,30 +607,6 @@ ItemDisplay[vps]:
 ItemDisplay[yps (MAPID=161 OR MAPID=162 OR MAPID=163)]: %GREEN%!Anti{Good Luck on Rathma}
 ItemDisplay[yps (FILTLVL<3 OR CLVL<24)]: %GREEN%!Anti
 ItemDisplay[yps]:
-
-
-// PVP modifiers
-// LLD & MLD
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP BARBARIAN]: %CONTINUE%{Open Wounds: 10% (Normal)%CL%Deep wounds: 50%%CL%Whirlwind: 75%%CL%Warcry: 135%%CL%Stun: 100%%CL%Frenzy: 200%%CL%Double Swing: 200%%CL%Double Throw: 114%%CL%Concentrate: 50% (Magic)%CL%Berserk: 125%%CL%Bash: 100%%CL%%TAN%~Barbarian~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP ASSASSIN]: %CONTINUE%{Wake of Fire: 60%%CL%Chain Lightning: Sentry: 35%%CL%Lightning: Sentry: 35%%CL%Psychic Hammer: 20%%CL%Mind Blast: 30%%CL%Blade Sentinel: 80%%CL%Blade Fury: 80%%CL%%TAN%~Assassin~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP PALADIN]: %CONTINUE%{Zeal: All: 75%%CL%Vengeance: 200% (Ele)%CL%Smite: 85%%CL%Sacrifice: 150%%CL%Joust: 20%%CL%Holy Nova: 50%%CL%Holy Fire: 125%%CL%Holy Bolt: 65%%CL%Fist of the Heavens: 55%%CL%Charge: 70%%CL%Blessed Hammer: 60%%CL%%TAN%~Paladin~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP DRUID]: %CONTINUE%{Volcano: 45%%CL%Tornado: 60%%CL%Shockwave: 175%%CL%Raven: 60%%CL%Rabies: 150% (Psn)%CL%Molten Boulder: 90%%CL%Maul: 150%%CL%Firestorm: 150%%CL%Fire Claws: 300% (Fire)%CL%Hurricane: 150%%CL%Arctic Blast: 200%%CL%Armageddon: 30%%CL%%TAN%~Druid~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP NECROMANCER]: %CONTINUE%{Teeth: 40%%CL%Poison Nova: 150%%CL%Poison Strike: 150%%CL%Desecrate: 85%%CL%Dark Pact: 50%%CL%Corpse Explosion: 65%%CL%Bone Spear: 55%%CL%Bone Spirit: 30%%CL%%TAN%~Necromancer~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP AMAZON]: %CONTINUE%{Valkyrie: 70%%CL%Strafe: 65%%CL%Power Strike: 17% (Phys)%CL%Poison Javelin: 85%%CL%Plague Javelin: 85% (Psn)%CL%Magic Arrow: 100%%CL%Lightning: Bolt: 85%%CL%Lightning: Fury: 100%%CL%Jab: 80%%CL%Ice Arrow: 175%%CL%Immolation Arrow: 200%%CL%Guided Arrow: 115%%CL%Freezing Arrow: 175%%CL%Decoy: 50%%CL%Charged Strike: 130% (Light)%CL%%TAN%~Amazon~}
-ItemDisplay[DIFF<2 (wms OR pvpp) SHOP SORCERESS]: %CONTINUE%{Telekinesis: 10%%CL%Thunder Storm: 30%%CL%Nova: 150%%CL%Meteor: 65%%CL%Lesser Hydra: 40%%CL%Lightning: 200%%CL%Ice Barrage: 175%%CL%Ice Bolt: 135%%CL%Ice Blast: 150%%CL%Inferno: 114%%CL%Hydra: 30%%CL%Glacial Spike: 150%%CL%Frost Nova: 165%%CL%Frozen Orb: 150%%CL%Fire Wall: 90%%CL%Fire Bolt: 95%%CL%Fire Ball: 95%%CL%Charged Bolt: 185%%CL%Chain Lightning: 120%%CL%Combustion: 80%%CL%Blizzard: 145%%CL%Blaze: 130%%CL%%TAN%~Sorceress~}
-// HLD
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP BARBARIAN]: %CONTINUE%{Open Wounds: 6% (Hell)%CL%Deep wounds: 50%%CL%Whirlwind: 110%%CL%Warcry: 125%%CL%Stun: 100%%CL%Frenzy: 125%%CL%Double Swing: 200%%CL%Double Throw: 114%%CL%Concentrate: 100% (Magic)%CL%Berserk: 125%%CL%Bash: 100%%CL%%TAN%~Barbarian~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP ASSASSIN]: %CONTINUE%{Wake of Fire: 60%%CL%Chain Lightning: Sentry: 40%%CL%Lightning: Sentry: 40%%CL%Psychic Hammer: 10%%CL%Mind Blast: 35%%CL%Blade Sentinel: 60%%CL%Blade Fury: 60%%CL%%TAN%~Assassin~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP PALADIN]: %CONTINUE%{Zeal: All: 75%%CL%Vengeance: 100%%CL%Smite: 75%%CL%Sacrifice: 100%%CL%Joust: 20%%CL%Holy Nova: 50%%CL%Holy Fire: 50%%CL%Holy Bolt: 65%%CL%Fist of the Heavens: 65%%CL%Charge: 70%%CL%Blessed Hammer: 40%%CL%%TAN%~Paladin~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP DRUID]: %CONTINUE%{Volcano: 45%%CL%Tornado: 50%%CL%Shockwave: 175%%CL%Raven: 60%%CL%Rabies: 125% (Psn)%CL%Molten Boulder: 80%%CL%Maul: 150%%CL%Firestorm: 120%%CL%Fire Claws: 100%%CL%Hurricane: 150%%CL%Arctic Blast: 200%%CL%Armageddon: 35%%CL%%TAN%~Druid~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP NECROMANCER]: %CONTINUE%{Teeth: 35%%CL%Poison Nova: 125%%CL%Poison Strike: 125%%CL%Desecrate: 60%%CL%Dark Pact: 50%%CL%Corpse Explosion: 65%%CL%Bone Spear: 45%%CL%Bone Spirit: 15%%CL%%TAN%~Necromancer~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP AMAZON]: %CONTINUE%{Valkyrie: 70%%CL%Strafe: 65%%CL%Power Strike: 17% (Phys)%CL%Poison Javelin: 80%%CL%Plague Javelin: 40(Psn)%CL%Plague Javelin: All: 100% (Phys)%CL%Magic Arrow: 100%%CL%Lightning: Bolt: 100%%CL%Lightning: Fury: 100%%CL%Jab: 80%%CL%Ice Arrow: 120%%CL%Immolation Arrow: 1350%%CL%Guided Arrow: 120%%CL%Freezing Arrow: 130%%CL%Decoy: 100%%CL%Charged Strike: 100%%CL%%TAN%~Amazon~}
-ItemDisplay[DIFF=2 (wms OR pvpp) SHOP SORCERESS]: %CONTINUE%{Telekinesis: 10%%CL%Thunder Storm: 35%%CL%Nova: 140%%CL%Meteor: 90%%CL%Lesser Hydra: 80%%CL%Lightning: 180%%CL%Ice Barrage: 140%%CL%Ice Bolt: 135%%CL%Ice Blast: 135%%CL%Inferno: 100%%CL%Hydra: 80%%CL%Glacial Spike: 135%%CL%Frost Nova: 125%%CL%Frozen Orb: 114%%CL%Fire Wall: 90%%CL%Fire Bolt: 114%%CL%Fire Bolt: 135%%CL%Fire Ball: 130%%CL%Charged Bolt: 75%%CL%Chain Lightning: 120%%CL%Combustion: 90%%CL%Blizzard: 130%%CL%Blaze: 100%%CL%%TAN%~Sorceress~}
-
-ItemDisplay[(wms OR pvpp) SHOP DIFF=0]: %CONTINUE%{%NAME%%CL%PvP Modifiers (Normal)%CL%Last updated April 3(S9)}
-ItemDisplay[(wms OR pvpp) SHOP DIFF=1]: %CONTINUE%{%NAME%%CL%PvP Modifiers (Nightmare)%CL%Last updated April 3(S9)}
-ItemDisplay[(wms OR pvpp) SHOP DIFF=2]: %CONTINUE%{%NAME%%CL%PvP Modifiers (Hell)%CL%Last updated April 3(S9)}
-
 
 ItemDisplay[wms FILTLVL<2 CLVL<60]: %GREEN%!%WHITE%thaw{%NAME%}
 ItemDisplay[wms FILTLVL<3 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{%NAME%}
@@ -1937,6 +1916,9 @@ ItemDisplay[jew !UNI STAT501>0 LVLREQ<31]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%LL
 // CHARMS
 //-----------------------------------------------------------------------------------
 
+//PVP Charms
+ItemDisplay[(cm1p OR cm2p OR cm3p)]: %NAME% %RED%[PVP]
+
 // Charm Stat Tags - REROLL tag for 40-45 HP GC or plains
 ItemDisplay[cm3 !UNI ILVL<61 ILVL>49 ID]: %YELLOW%[REROLL]%BLUE%%NAME%%CONTINUE%
 ItemDisplay[cm3 !UNI ID (ILVL>90)]: %MAP%%PURPLE%[REROLL]%BLUE% %NAME%%CONTINUE%
@@ -3214,10 +3196,11 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Deaths Web - Unearthed Wand
 // Boneflame - Succubus Skull
 // Skull Collector - Rune Staff
+// Gore Rider - War Boots
 // Amulet
 // Ring
 
-ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR amu OR rin)]: %BORDER-9B%%PURPLE%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
+ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR amu OR rin)]: %BORDER-9B%%PURPLE%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
 
 // Tier 3 Unique Callouts
 // Filter level 1-7
@@ -3240,7 +3223,6 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm
 // Nosferatus Coil - Vampirefang Belt
 // Verdungos Hearty Cord - Mithril Coil
 // Hotspur - Boots
-// Gore Rider - War Boots
 // Soul Drainer - Vambraces
 // Occultist - Crusader Gauntlets
 // Steelrend - Ogre Gauntlets
@@ -3259,7 +3241,7 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm
 // Snowclash - Battle Belt
 // Denmother - Sun Spirit
 
-ItemDisplay[UNI !ID (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl OR xtp OR uul OR zlb OR uvc OR umc OR lbt OR xhb OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR drc)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
+ItemDisplay[UNI !ID (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl OR xtp OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR drc)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3308,8 +3290,9 @@ ItemDisplay[UNI !ID (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg
 // Wraithskin - Diamond Mail
 // Ebonbane - Grand Matron Bow
 // Hellslayer - Decapitator
+// Guardian Angel - Templar Coat
 
-ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR ung OR amc OR 7bt)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR ung OR amc OR 7bt OR xlt)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3319,7 +3302,6 @@ ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar
 // Ursa's Nightmare - Dream Spirit
 // Alma Negra - Sacred Rondache
 // Skullders Ire - Russet Armor
-// Guardian Angel - Templar Coat
 // Black Hades - Chaos Armor
 // Goldwrap - Heavy Belt
 // Razortail - Sharkskin Belt
@@ -3378,7 +3360,7 @@ ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar
 // Plague Bearer - Rune Sword
 // Odium - Colossus Sword
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xlt OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR 8hx OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR ltp OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 8mx OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR 8hx OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR ltp OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 8mx OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -3489,8 +3471,9 @@ ItemDisplay[SET !ID (kit OR ulg OR uhm OR 6cs OR dr8 OR xtb OR uul OR ba5 OR 7m7
 // Aldurs Rhythm - Jagged Star
 // Najs Circlet - Circlet
 // Najs Light Plate - Hellforge Plate
+// Dangoons Teaching - Reinforced Mace
 
-ItemDisplay[SET !ID (ltp OR xlb OR 9mt OR ci0 OR ult)]: %GREEN%%NAME%
+ItemDisplay[SET !ID (ltp OR xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%%NAME%
 
 // LLD  lld catch callouts
 //-----------------------------------------------------------------------------------
@@ -6184,6 +6167,13 @@ ItemDisplay[SK73>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling I
 ItemDisplay[SK222>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK222>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
+// holy sword SK116
+ItemDisplay[SK116>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK116>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
 // General leveling items
 //---------------------------------------
 
