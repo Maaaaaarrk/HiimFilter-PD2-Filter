@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 16%CL%Still works for Season 9%CL%Season 10 - version 5%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 16%CL%Still works for Season 9%CL%Season 10 - version 6%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -701,7 +701,7 @@ ItemDisplay[STAT360>0 FILTLVL>7]: %MAP-58%%NAME% %RED%[C]// Incase you drop a pi
 ItemDisplay[RW FILTLVL>7]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hides
 ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
-ItemDisplay[(MAG OR RARE) !ID FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
+ItemDisplay[(MAG OR RARE OR SET) !ID FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
