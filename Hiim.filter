@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 15%CL%Still works for Season 9%CL%Season 10 - version 4%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 16%CL%Still works for Season 9%CL%Season 10 - version 5%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -51,8 +51,6 @@ ItemDisplay[(box OR key) FILTLVL=9]: %NAME%{%NAME% No Items Out of Town}%CONTINU
 ItemDisplay[(box OR key)]: %NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[(box OR key) CLVL=99]: %NAME%{%CL%%PURPLE%Grats on 99%CL%%CL%%NAME%}%CONTINUE%
 ItemDisplay[box]: %NAME%{%NAME%}%MAP-58%
-
-ItemDisplay[FILTLVL=9 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -394,9 +392,6 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t
 // Hide low tier gems outside of normal or with filter strictness
 ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) (FILTLVL>2 OR DIFF>1)]:
 
-// Hide all but perfect gems by filter strictness
-ItemDisplay[GEM=4 FILTLVL=8]:
-
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%* %TAN%F.%WHITE% Amethyst %PURPLE%*%CONTINUE%
 ItemDisplay[gpv OR gpvs]: %PURPLE%*  %TAN%P.%WHITE% Amethyst  %PURPLE%*%CONTINUE%
@@ -411,37 +406,53 @@ ItemDisplay[gpb OR gpbs]: %BLUE%*  %TAN%P.%WHITE% Sapphire  %BLUE%*%CONTINUE%
 ItemDisplay[gly OR glys]: %YELLOW%* %TAN%F.%WHITE% Topaz %YELLOW%*%CONTINUE%
 ItemDisplay[gpy OR gpys]: %YELLOW%*  %TAN%P.%WHITE% Topaz  %YELLOW%*%CONTINUE%
 ItemDisplay[skl OR skls]: %GRAY%* %TAN%F.%WHITE% Skull %GRAY%*%CONTINUE%
-ItemDisplay[skz OR skzs]: %GRAY%**  %TAN%P.%WHITE% Skull  %GRAY%**%CONTINUE%
+ItemDisplay[skz OR skzs]: %GRAY%* *  %TAN%P.%WHITE% Skull  %GRAY%* *%CONTINUE%
+
+ItemDisplay[gzv OR gzvs FILTLVL=7]: %PURPLE%F.Amethyst%CONTINUE%
+ItemDisplay[gpv OR gpvs FILTLVL=7]: %PURPLE%P.Amethyst%CONTINUE%
+ItemDisplay[glw OR glws FILTLVL=7]: %WHITE%F.Diamond%CONTINUE%
+ItemDisplay[gpw OR gpws FILTLVL=7]: %WHITE%P.Diamond%CONTINUE%
+ItemDisplay[glg OR glgs FILTLVL=7]: %GREEN%F.Emerald%GREEN%%CONTINUE%
+ItemDisplay[gpg OR gpgs FILTLVL=7]: %GREEN%P.Emerald%GREEN%%CONTINUE%
+ItemDisplay[glr OR glrs FILTLVL=7]: %RED%F.Ruby%CONTINUE%
+ItemDisplay[gpr OR gprs FILTLVL=7]: %RED%P.Ruby%CONTINUE%
+ItemDisplay[glb OR glbs FILTLVL=7]: %BLUE%F.Sapphire%CONTINUE%
+ItemDisplay[gpb OR gpbs FILTLVL=7]: %BLUE%P.Sapphire%CONTINUE%
+ItemDisplay[gly OR glys FILTLVL=7]: %YELLOW%F.Topaz%CONTINUE%
+ItemDisplay[gpy OR gpys FILTLVL=7]: %YELLOW%P.Topaz%CONTINUE%
+ItemDisplay[skl OR skls FILTLVL=7]: %WHITE%F.Skull%CONTINUE%
+ItemDisplay[skz OR skzs FILTLVL=7]: %GRAY%*  %WHITE%P.Skull  %GRAY%*%CONTINUE%
 
 // Formatting for stacked vs unstacked with warning
 ItemDisplay[GEM>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED% UNSTACKED {%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
+ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
 
 // Tooltips
-ItemDisplay[(gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) FILTLVL>6]:
 ItemDisplay[gzvs FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: +24 Def%CL%Armor/Helm: +8 to Strength%CL%Weapon: +100 to Attack Rating%CL%}
 ItemDisplay[glys FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Light Res%CL%Armor/Helm: 20% Magic Find%CL%Weapon: 1-30 Light Damage%CL%}
 ItemDisplay[glbs FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Cold Res%CL%Armor/Helm: +31 to Mana%CL%Weapon: 6-10 Cold Damage%CL%}
 ItemDisplay[glgs FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Psn Res%CL%Armor/Helm: +8 Dexterity%CL%Weapon: +60 Psn Dmg over 6 Sec%CL%}
 ItemDisplay[glrs FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Fire Res%CL%Armor/Helm: +31 to Life%CL%Weapon: 10-16 Fire Dmg%CL%}
 ItemDisplay[glws FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: All Res +14%%CL%Armor/Helm: +80 to AR%CL%Weapon: +54% Dmg vs Undead%CL%}
-ItemDisplay[skls FILTLVL<7]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: Atcker+16Dmg%CL%Armor/Helm: Rep Life 4, Reg Mana 12%%CL%Weapon: 3%Life 3%Mana %CL%}
+ItemDisplay[skls FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: Atcker+16Dmg%CL%Armor/Helm: Rep Life 4, Reg Mana 12%%CL%Weapon: 3%Life 3%Mana %CL%}
 
 // Ame
-ItemDisplay[gpvs]: %DOT-70%%NAME%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Chest Tal, +[5-10]% FCR +[3-6] MPK +[20-30] to Mana%CL%Shield Eth, [10-20]% Block +[5-10]% FCR +[20-30] Mana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
+ItemDisplay[gpvs FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Chest Tal, +[5-10]% FCR +[3-6] MPK +[20-30] to Mana%CL%Shield Eth, [10-20]% Block +[5-10]% FCR +[20-30] Mana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
 // Topaz
-ItemDisplay[gpys]: %DOT-70%%NAME%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring Lum, +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest Eld, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Shield Dol, [10-20]% Block [20-30]% MF +[1-3]L.Radius%CL%Weapon Shael, +[50-80]% EDmg [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft}
+ItemDisplay[gpys FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring Lum, +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest Eld, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Shield Dol, [10-20]% Block [20-30]% MF +[1-3]L.Radius%CL%Weapon Shael, +[50-80]% EDmg [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft}
 // Saph
-ItemDisplay[gpbs]: %DOT-70%%NAME%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring Amn, +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt Tal, [5-10]%Dmg Gned as Mana +[10-20]% FHR 5%CTC FNova%CL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots Ral, +[60-120]DefvMelee [10-20]% FHR 5%CTC FNova%CL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest Nef, +[25-50]%EDef +[30-40]% FHR 5%CTC FNova%CL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft}
+ItemDisplay[gpbs FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring Amn, +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt Tal, [5-10]%Dmg Gned as Mana +[10-20]% FHR 5%CTC FNova%CL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots Ral, +[60-120]DefvMelee [10-20]% FHR 5%CTC FNova%CL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest Nef, +[25-50]%EDef +[30-40]% FHR 5%CTC FNova%CL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft}
 // Emerald
-ItemDisplay[gpgs]: %DOT-70%%NAME%{Amulet Thul, 10% Block [4-7]MDR & PDR%CL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%CL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%CL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%CL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%CL%Helm Ith, +[20-60]% EDef +[10-20]% Light Res [5-10]% PDR%CL%Chest Eth, +[20-60]% EDef +[100-150]DefvMelee [5-10]% PDR%CL%Shield Nef, +[20-60]% EDef [5-10]% PDR  +[100-150]DefvMelee%CL%Weapon Sol, +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft}
+ItemDisplay[gpgs FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Thul, 10% Block [4-7]MDR & PDR%CL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%CL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%CL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%CL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%CL%Helm Ith, +[20-60]% EDef +[10-20]% Light Res [5-10]% PDR%CL%Chest Eth, +[20-60]% EDef +[100-150]DefvMelee [5-10]% PDR%CL%Shield Nef, +[20-60]% EDef [5-10]% PDR  +[100-150]DefvMelee%CL%Weapon Sol, +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft}
 // Ruby
-ItemDisplay[gprs]: %DOT-70%%NAME%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring Sol, +[5-10] Str [1-3]% LL +[10-20] Life%CL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots Eth, Rep Life +[15-30] [2-4]%LL +[10-20] Life%CL%Helm Ral, [10-20]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest Thul, +[3-6] LPK [3-6]% LL +[20-40] Life%CL%Shield Ith, [10-20]% Block [3-6]% LL +[10-20] Life%CL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft}
+ItemDisplay[gprs FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring Sol, +[5-10] Str [1-3]% LL +[10-20] Life%CL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots Eth, Rep Life +[15-30] [2-4]%LL +[10-20] Life%CL%Helm Ral, [10-20]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest Thul, +[3-6] LPK [3-6]% LL +[20-40] Life%CL%Shield Ith, [10-20]% Block [3-6]% LL +[10-20] Life%CL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft}
 //Diamond
-ItemDisplay[gpws]: %DOT-70%%NAME%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
+ItemDisplay[gpws FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
 // Skull
-ItemDisplay[skzs]:%DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%CL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%CL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%CL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%CL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%CL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%CL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
+ItemDisplay[skzs FILTLVL<8]: %DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%CL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%CL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%CL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%CL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%CL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%CL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
 
+// Hide gems otherwise
+ItemDisplay[GEM>0]:
 
 // Crafting orb formatting
 // crfb (blood craft)
@@ -510,6 +521,9 @@ ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.25-1.5%CL%}%CONTI
 ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2.25+%CL%}%CONTINUE%
 ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 4.5+%CL%}%CONTINUE%
 
+// Potions only Runes
+ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7]:
+
 // Tooltip notes & show runes
 ItemDisplay[r01s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld%CL%%CL%Shield: +15 Defense%CL%Armor/Helm: +15 Defense%CL%Weapon: +50 Attack Rating%CL%}
 ItemDisplay[r02s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEld + %GRAY%key %WHITE%= Tir%CL%%CL%Shield: 7% Block Chance%CL%Armor/Helm: -15% Stamina Drain%CL%Weapon: +75% Dmg, +50 AR vs Undead%CL%}
@@ -544,7 +558,7 @@ ItemDisplay[r30s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xBer + %GRAY%key %WHITE%= Jah
 ItemDisplay[r31s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xJah + %GRAY%key %WHITE%= Cham%CL%%CL%Shield: +75 to Life%CL%Armor/Helm: Inc Max Life 5%%CL%Weapon: Ignore Target's Defense%CL%}
 ItemDisplay[r32s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xCham + %GRAY%key %WHITE%= Zod%CL%%CL%Shield: Cannot be Frozen%CL%Armor/Helm: Cannot be Frozen%CL%Weapon: Freezes Target +3%CL%}
 ItemDisplay[r33s]: %NAME%{%NAME%%TAN%Note%WHITE%: Zod + Perf %GRAY%O %WHITE%= Repair any Item%CL%%CL%%WHITE%Shield: Indestructible%CL%Armor/Helm: Indestructible%CL%Weapon: Indestructible%CL%}
-ItemDisplay[RUNE>0]: %NAME%{%NAME%}
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -564,8 +578,9 @@ ItemDisplay[ibk]: %RED%+%WHITE%ID Tome
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome
 
 // Potions Only Mode name for pots
-ItemDisplay[rvl DIFF=2 (FILTLVL=8 OR FILTLVL=9)]: %PURPLE%GATORADE
-ItemDisplay[rvs DIFF=2 (FILTLVL=8 OR FILTLVL=9)]: %PURPLE%powerade
+ItemDisplay[rvl FILTLVL=8]: %PURPLE%GATORADE
+ItemDisplay[rvs FILTLVL=8]: %PURPLE%powerade
+ItemDisplay[FILTLVL=9 (rvl OR rvs)]:
 
 // Juvs
 ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %TAN%65%  %PURPLE%*
@@ -681,11 +696,12 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
-
-ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) !RW FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
-ItemDisplay[STAT360>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[STAT360=0 FILTLVL=8 (RARE OR MAG OR NMAG OR CRAFT) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
-ItemDisplay[STAT360=0 FILTLVL=9 !SHOP]:%NOTIFY-DEAD%
+// Shows
+ItemDisplay[STAT360>0 FILTLVL>7]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>7]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+// Hides
+ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
+ItemDisplay[(MAG OR RARE) !ID FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -3241,7 +3257,7 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm
 // Wraithskin - Diamond Mail
 // Ebonbane - Grand Matron Bow
 
-ItemDisplay[UNI !ID (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl OR xtp OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR drc OR ung OR amc)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
+ItemDisplay[UNI !ID FILTLVL<8 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl OR xtp OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR drc OR ung OR amc)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3269,7 +3285,7 @@ ItemDisplay[UNI !ID (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn
 // Lightsabre or Azurewrath//  Phase Blade
 // Marrowwalk - Boneweave Boots
 
-ItemDisplay[UNI !ID (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg OR xow OR ush OR 7bl OR 9wc OR 7b7 OR 7gd OR 9wn OR 7bw OR xld OR ulb OR xh9 OR 7cr OR umb)]: %MAP-68%%GOLD%* *  %NAME%  %GOLD%* *
+ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg OR xow OR ush OR 7bl OR 9wc OR 7b7 OR 7gd OR 9wn OR 7bw OR xld OR ulb OR xh9 OR 7cr OR umb)]: %MAP-68%%GOLD%* *  %NAME%  %GOLD%* *
 
 // Tier 1 Unique Callouts
 // Filter level 1-7
@@ -3290,8 +3306,9 @@ ItemDisplay[UNI !ID (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg
 // Hellslayer - Decapitator
 // Guardian Angel - Templar Coat
 // Pus Spitter - Siege Crossbow
+// Buriza-Do Kyanon - Ballista
 
-ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR 7bt OR xlt OR 8mx)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR 7bt OR xlt OR 8mx OR 8hx)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3321,7 +3338,6 @@ ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar
 // Rune Master - Ettin Axe
 // Kuko Shakaku - Cedar Bow
 // Endlesshail - Double Bow
-// Buriza-Do Kyanon - Ballista
 // Gull Dagger
 // Viperfork - Mancatcher
 // Chromatic Ire - Cedar Staff
@@ -3359,7 +3375,7 @@ ItemDisplay[UNI !ID (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar
 // Odium - Colossus Sword
 // Cloudcrack - Gothic Sword
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR 8hx OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR ltp OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR ltp OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -3384,7 +3400,7 @@ ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR 
 // Magefist - Light Gauntlets
 // Rockfleece - Field Plate
 // True Silver - Maiden Javelin
-ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR 9ar OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR 9ar OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 // Set GG Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3487,7 +3503,7 @@ ItemDisplay[SET !ID (vbt OR bwn OR vgl OR lgl OR lbl)]: %DOT-84%%GREEN%*  %NAME%
 ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%*     %GOLD%%NAME%%PURPLE%     *%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*
 
 // All other conditions
-ItemDisplay[UNI !ID ETH]: %DOT-68%%NAME%// Eth uni show all
+ItemDisplay[UNI !ID ETH FILTLVL<8]: %DOT-68%%NAME%// Eth uni show all
 ItemDisplay[SET !ID ETH]: %DOT-84%%NAME%// Eth set show all
 ItemDisplay[ELT UNI !ID FILTLVL<5]: %PX-68%%NAME%// Show all elite level 1-4
 ItemDisplay[UNI !ID FILTLVL>4 CLVL>85]:// Hide not called out on Stricter +
@@ -3541,103 +3557,103 @@ ItemDisplay[!UNI !RW ID !CIRC ARMOR STAT36>0 EDAM>99]: %NAME% %PURPLE%!!{%PURPLE
 
 // Scepters
 //SK123 Conviction
-ItemDisplay[TABSK25=3 SK123=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK123=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[TABSK25=2 SK123=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[TABSK25=3 SK123=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[TABSK25=3 SK123=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[TABSK25=2 SK123=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK123=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[TABSK25=2 SK123=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[TABSK25=3 SK123=2 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Conviction%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK123=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=3 SK123=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK123=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=2 SK123=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=3 SK123=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=3 SK123=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=2 SK123=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK123=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=2 SK123=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK25=3 SK123=2 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Conviction%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK123=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Conviction%CONTINUE%{%NAME%}
 
 
 // Assassin Katars
 // Phoenix Strike
-ItemDisplay[TABSK50=3 SK280=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=2 SK280=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[TABSK50=3 SK280=2 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK280=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=3 SK280=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK280=3 ALLSK=2]: %NAME% %DOT-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=2 SK280=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=3 SK280=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=3 SK280=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=2 SK280=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK280=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=2 SK280=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK50=3 SK280=2 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK280=3 !(ALLSK>0)]: %NAME% %DOT-ED%%ORANGE%+5 Phoenix Strike%CONTINUE%{%NAME%}
 
 // Blade Sentinel
-ItemDisplay[TABSK48=2 SK257=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK257=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=2 SK257=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinelt%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK257=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=2 SK257=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[TABSK48=3 SK257=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
-ItemDisplay[CLSK6=2 SK257=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=2 SK257=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK257=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=3 SK257=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=3 SK257=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=3 SK257=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=2 SK257=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 Blade Sentinelt%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK257=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=2 SK257=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK48=3 SK257=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK6=2 SK257=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Blade Sentinel%CONTINUE%{%NAME%}
 
 //  +2 Sin / +3 skill
-ItemDisplay[!UNI ID (CLSK6>1 AND SK254>2) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Assassin, +3 Tiger Strike katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK265>2) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Assassin, +3 Cobra Strike katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK269>2) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Assassin, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK275>2) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Assassin, +3 Dragon Flight katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK252>2) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Assassin, +3 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK253>2) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Assassin, +3 Psychic Hammer katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK273>2) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Assassin, +3 Mind Blast katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK278>2) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +2 Assassin, +3 Venom katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK262>2) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +2 Assassin, +3 Wake of Fire katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK276>2) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Death Sentry katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK271>2) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (CLSK6>1 AND SK366>2) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK254>2) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Assassin, +3 Tiger Strike katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK265>2) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Assassin, +3 Cobra Strike katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK269>2) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Assassin, +3 Claws of Thunder katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK275>2) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Assassin, +3 Dragon Flight katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK252>2) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Assassin, +3 Dagger & Claw Mastery katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK253>2) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Assassin, +3 Psychic Hammer katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK273>2) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Assassin, +3 Mind Blast katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK278>2) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +2 Assassin, +3 Venom katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK262>2) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +2 Assassin, +3 Wake of Fire katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK276>2) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Death Sentry katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK271>2) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Chain Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (CLSK6>1 AND SK366>2) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +2 Assassin, +3 Lightning Sentry katar
 
 //  +2 tab / +3 skill
-ItemDisplay[!UNI ID (TABSK50=2 AND SK254=3) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Tiger Strike katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK265=3) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Cobra Strike katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK269=3) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=2 AND SK275=3) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Dragon Flight katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK252=3) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK253=3) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Psychic Hammer katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK273=3) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Mind Blast katar
-ItemDisplay[!UNI ID (TABSK49=2 AND SK278=3) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Venom katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK262=3) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +2 Trap, +3 Wake of Fire katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK276=3) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Death Sentry katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK271=3) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (TABSK48=2 AND SK366=3) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK50=2 AND SK254=3) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Tiger Strike katar
+ItemDisplay[!RW !UNI ID (TABSK50=2 AND SK265=3) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Cobra Strike katar
+ItemDisplay[!RW !UNI ID (TABSK50=2 AND SK269=3) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Claws of Thunder katar
+ItemDisplay[!RW !UNI ID (TABSK50=2 AND SK275=3) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +2 Martial Arts, +3 Dragon Flight katar
+ItemDisplay[!RW !UNI ID (TABSK49=2 AND SK252=3) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Dagger & Claw Mastery katar
+ItemDisplay[!RW !UNI ID (TABSK49=2 AND SK253=3) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Psychic Hammer katar
+ItemDisplay[!RW !UNI ID (TABSK49=2 AND SK273=3) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Mind Blast katar
+ItemDisplay[!RW !UNI ID (TABSK49=2 AND SK278=3) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +2 Shadow Disciplines, +3 Venom katar
+ItemDisplay[!RW !UNI ID (TABSK48=2 AND SK262=3) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +2 Trap, +3 Wake of Fire katar
+ItemDisplay[!RW !UNI ID (TABSK48=2 AND SK276=3) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Death Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK48=2 AND SK271=3) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Chain Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK48=2 AND SK366=3) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +2 Trap, +3 Lightning Sentry katar
 
 //  +3 tab / +2 skill
-ItemDisplay[!UNI ID (TABSK50=3 AND SK254=2) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Tiger Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK265=2) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Cobra Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK269=2) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK275=2) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Dragon Flight katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK252=2) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK253=2) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Psychic Hammer katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK273=2) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Mind Blast katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK278=2) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Venom katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK262=2) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +3 Trap, +2 Wake of Fire katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK276=2) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Death Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK271=2) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK366=2) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK254=2) SIN]: %NAME% %ORANGE%+5 Tiger Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Tiger Strike katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK265=2) SIN]: %NAME% %ORANGE%+5 Cobra Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Cobra Strike katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK269=2) SIN]: %NAME% %ORANGE%+5 Claws of Thunder%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Claws of Thunder katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK275=2) SIN]: %NAME% %ORANGE%+5 Dragon Flight%CONTINUE%{%NAME%}// +3 Martial Arts, +2 Dragon Flight katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK252=2) SIN]: %NAME% %ORANGE%+5 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Dagger & Claw Mastery katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK253=2) SIN]: %NAME% %ORANGE%+5 Psychic Hammer%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Psychic Hammer katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK273=2) SIN]: %NAME% %ORANGE%+5 Mind Blast%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Mind Blast katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK278=2) SIN]: %NAME% %ORANGE%+5 Venom%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +2 Venom katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK262=2) SIN]: %NAME% %ORANGE%+5 Wake of Fire%CONTINUE%{%NAME%}// +3 Trap, +2 Wake of Fire katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK276=2) SIN]: %NAME% %ORANGE%+5 Death Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Death Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK271=2) SIN]: %NAME% %ORANGE%+5 Chain Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Chain Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK366=2) SIN]: %NAME% %ORANGE%+5 Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +2 Lightning Sentry katar
 
 //  +3 tab / +3 skill
-ItemDisplay[!UNI ID (TABSK50=3 AND SK254=3) SIN]: %NAME% %ORANGE%+6 Tiger Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Tiger Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK265=3) SIN]: %NAME% %ORANGE%+6 Cobra Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Cobra Strike katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK269=3) SIN]: %NAME% %ORANGE%+6 Claws of Thunder%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Claws of Thunder katar
-ItemDisplay[!UNI ID (TABSK50=3 AND SK275=3) SIN]: %NAME% %ORANGE%+6 Dragon Flight%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Dragon Flight katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK252=3) SIN]: %NAME% %ORANGE%+6 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Dagger & Claw Mastery katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK253=3) SIN]: %NAME% %ORANGE%+6 Psychic Hammer%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Psychic Hammer katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK273=3) SIN]: %NAME% %ORANGE%+6 Mind Blast%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Mind Blast katar
-ItemDisplay[!UNI ID (TABSK49=3 AND SK278=3) SIN]: %NAME% %ORANGE%+6 Venom%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Venom katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK262=3) SIN]: %NAME% %ORANGE%+6 Wake of Fire%CONTINUE%{%NAME%}// +3 Trap, +3 Wake of Fire katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK276=3) SIN]: %NAME% %ORANGE%+6 Death Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Death Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK271=3) SIN]: %NAME% %ORANGE%+6 Chain Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Chain Lightning Sentry katar
-ItemDisplay[!UNI ID (TABSK48=3 AND SK366=3) SIN]: %NAME% %ORANGE%+6 Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK254=3) SIN]: %NAME% %ORANGE%+6 Tiger Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Tiger Strike katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK265=3) SIN]: %NAME% %ORANGE%+6 Cobra Strike%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Cobra Strike katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK269=3) SIN]: %NAME% %ORANGE%+6 Claws of Thunder%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Claws of Thunder katar
+ItemDisplay[!RW !UNI ID (TABSK50=3 AND SK275=3) SIN]: %NAME% %ORANGE%+6 Dragon Flight%CONTINUE%{%NAME%}// +3 Martial Arts, +3 Dragon Flight katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK252=3) SIN]: %NAME% %ORANGE%+6 Dagger & Claw Mastery%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Dagger & Claw Mastery katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK253=3) SIN]: %NAME% %ORANGE%+6 Psychic Hammer%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Psychic Hammer katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK273=3) SIN]: %NAME% %ORANGE%+6 Mind Blast%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Mind Blast katar
+ItemDisplay[!RW !UNI ID (TABSK49=3 AND SK278=3) SIN]: %NAME% %ORANGE%+6 Venom%CONTINUE%{%NAME%}// +3 Shadow Disciplines, +3 Venom katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK262=3) SIN]: %NAME% %ORANGE%+6 Wake of Fire%CONTINUE%{%NAME%}// +3 Trap, +3 Wake of Fire katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK276=3) SIN]: %NAME% %ORANGE%+6 Death Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Death Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK271=3) SIN]: %NAME% %ORANGE%+6 Chain Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Chain Lightning Sentry katar
+ItemDisplay[!RW !UNI ID (TABSK48=3 AND SK366=3) SIN]: %NAME% %ORANGE%+6 Lightning Sentry%CONTINUE%{%NAME%}// +3 Trap, +3 Lightning Sentry katar
  
 //  +3 tab
-//Un needed ItemDisplay[!UNI ID TABSK50>2 SIN]: %NAME% %ORANGE%+3 Martial Arts%CONTINUE%{%NAME%}
-//Un needed ItemDisplay[!UNI ID TABSK49>2 SIN]: %NAME% %ORANGE%+3 Shadow Disciplines%CONTINUE%{%NAME%}
-//Un needed ItemDisplay[!UNI ID TABSK48>2 SIN]: %NAME% %ORANGE%+3 Traps%CONTINUE%{%NAME%}
+//Un needed ItemDisplay[!RW !UNI ID TABSK50>2 SIN]: %NAME% %ORANGE%+3 Martial Arts%CONTINUE%{%NAME%}
+//Un needed ItemDisplay[!RW !UNI ID TABSK49>2 SIN]: %NAME% %ORANGE%+3 Shadow Disciplines%CONTINUE%{%NAME%}
+//Un needed ItemDisplay[!RW !UNI ID TABSK48>2 SIN]: %NAME% %ORANGE%+3 Traps%CONTINUE%{%NAME%}
 
 // Barbarian helms
 ItemDisplay[!UNI ID (CLSK4>1 AND SK149>2) BAR]: %NAME% %ORANGE%+2/3 Battle Orders Helm%CONTINUE%{%NAME%}// +2 Barbarian, +3 Battle Orders Barb helm
@@ -3736,6 +3752,20 @@ ItemDisplay[!RW CLSK2=2 SK67=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 Teeth%CONTINU
 ItemDisplay[!RW TABSK17=2 SK67=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Teeth%CONTINUE%{%NAME%}
 ItemDisplay[!RW TABSK17=3 SK67=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Teeth%CONTINUE%{%NAME%}
 ItemDisplay[!RW CLSK2=2 SK67=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 Teeth%CONTINUE%{%NAME%}
+
+
+// Fire Gol sk wands / offhand //ALLSK 
+ItemDisplay[!RW TABSK18=2 SK94=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK2=2 SK94=3 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK18=3 SK94=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+7 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK18=3 SK94=3 !(ALLSK=1)]: %NAME% %BORDER-ED%%PURPLE%+6 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK18=3 SK94=2 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK18=2 SK94=3 ALLSK=1]: %NAME% %BORDER-ED%%PURPLE%+6 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK2=2 SK94=3 ALLSK=1]: %NAME% %DOT-ED%%PURPLE%+6 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK18=2 SK94=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW TABSK18=3 SK94=2 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FireGol%CONTINUE%{%NAME%}
+ItemDisplay[!RW CLSK2=2 SK94=3 !(ALLSK=1)]: %NAME% %DOT-ED%%ORANGE%+5 FireGol%CONTINUE%{%NAME%}
+
 
 // SK245	Tornado
 ItemDisplay[!RW TABSK42=3 SK245=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Tornado%CONTINUE%{%NAME%}
@@ -5919,8 +5949,8 @@ ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<
 
 // Claws
 // venom  if gg again ItemDisplay[((SIN ELT) OR 9tw OR 9lw) (SK275>0 OR SK276>0 OR SK278>0) !INF ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(9tw OR btl OR 7tw) (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 // PLague claws
+ItemDisplay[(9tw OR btl OR 7tw) (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[9tw (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 
