@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 16%CL%Still works for Season 9%CL%Season 10 - version 7%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 18%CL%Still works for Season 9%CL%Season 10 - version 8%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2948,7 +2948,7 @@ ItemDisplay[UNI !ID 9gw]: %CONTINUE%Blackhand Key - Grave Wand
 ItemDisplay[UNI !ID 7wn]: %CONTINUE%Polished Wand (No Unique for this base)
 ItemDisplay[UNI !ID 7yw]: %CONTINUE%Ghost Wand (No Unique for this base)
 ItemDisplay[UNI !ID 7bw]: %CONTINUE%Boneshade - Lich Wand
-ItemDisplay[UNI !ID 7gw]: %CONTINUE%Deathss Web - Unearthed Wand
+ItemDisplay[UNI !ID 7gw]: %CONTINUE%Deaths Web - Unearthed Wand
 //-----------------------------------------------------------------------------------
 
 // ------------------------------------------------------------------------------
@@ -3519,12 +3519,16 @@ ItemDisplay[SET !ID FILTLVL<5]: %GREEN%%NAME%
 //-----------------------------------------------------------------------------------
 // LLD - Wands
 ItemDisplay[WAND TABSK17>1 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD WAND%RED%   ***}
-ItemDisplay[WAND CLSK2>0 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
+ItemDisplay[WAND CLSK2>0 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
 ItemDisplay[WAND TABSK17>0 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
 ItemDisplay[WAND TABSK17>1 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
-ItemDisplay[WAND CLSK2>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
+ItemDisplay[WAND CLSK2>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
 ItemDisplay[WAND TABSK17>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
 ItemDisplay[WAND TABSK17>1 (SK83>1 OR SK84>1 OR SK92>1 OR SK93>1 OR SK74>1) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
+
+ItemDisplay[(WAND OR CL4) TABSK18>1 FCR>10 SK94>2 LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD Firegol%RED%   ***}
+ItemDisplay[(WAND OR CL4) TABSK18>0 FCR>10 SK94>2 LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD Firegol%RED%   ***}
+ItemDisplay[(WAND OR CL4) TABSK18>1 SK94>2 LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
 
 // LLD - SCEPTER
 ItemDisplay[SCEPTER CLSK3>0 (STAT93>20 OR STAT105>10) (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}
