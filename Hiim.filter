@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 18%CL%Still works for Season 9%CL%Season 10 - version 8%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 18%CL%Still works for Season 9%CL%Season 10 - version 9%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3526,9 +3526,9 @@ ItemDisplay[WAND CLSK2>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94
 ItemDisplay[WAND TABSK17>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
 ItemDisplay[WAND TABSK17>1 (SK83>1 OR SK84>1 OR SK92>1 OR SK93>1 OR SK74>1) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
 
-ItemDisplay[(WAND OR CL4) TABSK18>1 FCR>10 SK94>2 LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD Firegol%RED%   ***}
-ItemDisplay[(WAND OR CL4) TABSK18>0 FCR>10 SK94>2 LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD Firegol%RED%   ***}
-ItemDisplay[(WAND OR CL4) TABSK18>1 SK94>2 LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
+ItemDisplay[(WAND OR CL4) TABSK18>1 FCR>10 (SK85>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD Gol%RED%   ***}
+ItemDisplay[(WAND OR CL4) TABSK18>0 FCR>10 (SK85>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD Gol%RED%   ***}
+ItemDisplay[(WAND OR CL4) TABSK18>1 (SK85>2 OR SK94>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
 
 // LLD - SCEPTER
 ItemDisplay[SCEPTER CLSK3>0 (STAT93>20 OR STAT105>10) (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}
@@ -5940,7 +5940,7 @@ ItemDisplay[6ws SK56>2 NMAG !RW SOCK=6 ILVL>25]: %DOT-9B%%PURPLE%O %NAME% %PURPL
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0 ILVL>25]: %DOT-9B%%PURPLE%O %NAME% %PURPLE%O{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
 // Staff CTA
 ItemDisplay[(wst OR 8ws OR 6ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%< < <{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
 //Misc staff
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK47>2 OR SK376>2 OR SK61>2) NMAG !RW FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
@@ -5952,7 +5952,17 @@ ItemDisplay[(7p7 OR 7h7) ETH NMAG !INF !RW SOCK=6]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
 
 // Claws
-// venom  if gg again ItemDisplay[((SIN ELT) OR 9tw OR 9lw) (SK275>0 OR SK276>0 OR SK278>0) !INF ETH NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME%{%NAME%}
+
+// venom focused
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%GG Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]]: %DOT-D6%%NAME% %PURPLE%**{%NAME%%CL%%GREEN%Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom Pre-buff}
+
+// venom rw 
+ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 AND SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%Venom RW}
+ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 OR SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
+ItemDisplay[(9tw OR btl OR 7tw) (SK252>0 AND SK263>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
+
 // PLague claws
 ItemDisplay[(9tw OR btl OR 7tw) (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[9tw (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %NAME%{%NAME%}
