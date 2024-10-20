@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 19%CL%Still works for Season 9%CL%Season 10 - version 11%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 20%CL%Still works for Season 9%CL%Season 10 - version 12%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1626,7 +1626,7 @@ ItemDisplay[jew FHR>0 (STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew STAT86>2 STAT138>2]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>29 (MINDMG+MAXDMG>19)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew (MINDMG+MAXDMG>29)]: %NAME%%PURPLE%BIG %CONTINUE%
-ItemDisplay[jew EDAM>34 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew EDAM>30 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
 
 // Jewel name formatting
 ItemDisplay[jew MAG ID (STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0)]: %NAME%%BLUE%jewel%CONTINUE%
@@ -1641,16 +1641,16 @@ ItemDisplay[!(STAT477=21 OR STAT477=4) STAT477>0 jew]: %NAME% %PURPLE%[M]{New Ar
 
 // Rainbow Facet Type and Value Tags
 // Fire
-ItemDisplay[jew UNI STAT333>0]: %RED%%STAT333%/%STAT329% Fire%GOLD% %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT333>0]: %RED%-%STAT333%/+%STAT329% Fire%GOLD% %NAME%%CONTINUE%
 
 // Lightning
-ItemDisplay[jew UNI STAT334>0]: %YELLOW%%STAT334%/%STAT330% Light%GOLD% %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT334>0]: %YELLOW%-%STAT334%/+%STAT330% Light%GOLD% %NAME%%CONTINUE%
 
 // Cold
-ItemDisplay[jew UNI STAT335>0]: %BLUE%%STAT335%/%STAT331% Cold%GOLD% %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT335>0]: %BLUE%-%STAT335%/+%STAT331% Cold%GOLD% %NAME%%CONTINUE%
 
 // Poison
-ItemDisplay[jew UNI STAT336>0]: %GREEN%%STAT336%/%STAT332% Psn%GOLD% %NAME%%CONTINUE%
+ItemDisplay[jew UNI STAT336>0]: %GREEN%-%STAT336%/+%STAT332% Psn%GOLD% %NAME%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 
@@ -3373,8 +3373,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 
 // Plague Bearer - Rune Sword
 // Odium - Colossus Sword
 // Cloudcrack - Gothic Sword
+// Dragonscale - Zakarum Shield
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR ltp OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR ltp OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9 OR pae)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
