@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 20%CL%Still works for Season 9%CL%Season 10 - version 12%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 20%CL%Still works for Season 9%CL%Season 10 - version 13%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -145,11 +145,8 @@ ItemDisplay[pk2]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %
 ItemDisplay[pk3]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
 
 // Organs
-ItemDisplay[mbr]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
-ItemDisplay[bey]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
-ItemDisplay[dhn]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
-ItemDisplay[(dhn OR bey OR mbr)]: %MAP-4A%> >> %NAME% << <
-ItemDisplay[ubtm]: %MAP-A9%%RED%> >> %NAME%  %RED%<< <
+ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
+ItemDisplay[(ubtm OR toa)]: %MAP-A9%%RED%> >> %ORANGE%%NAME%  %RED%<< <
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -570,7 +567,7 @@ ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%NAME%{%NAME%}
 ItemDisplay[key]:{%NAME%}
 
 // TP / ID books and scrolls
-ItemDisplay[(isc OR tsc) FILTLVL>1 CLVL>20]:
+ItemDisplay[(isc OR tsc) FILTLVL>2 CLVL>20]:
 ItemDisplay[isc]: %RED%+%WHITE%ID
 ItemDisplay[tsc]: %BLUE%+%WHITE%TP
 ItemDisplay[(tbk OR ibk) QTY<6]: %RED%LOW QTY %NAME%%CONTINUE%
@@ -627,8 +624,6 @@ ItemDisplay[wms FILTLVL<2 CLVL<60]: %GREEN%!%WHITE%thaw{%NAME%}
 ItemDisplay[wms FILTLVL<3 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{%NAME%}
 ItemDisplay[wms]: {%NAME%}
 ItemDisplay[pvpp]: %BLUE%PVP Mana Pot{%NAME%}
-
-// S8 New Throwing Potions
 
 //Hide conditions
 ItemDisplay[(tpfs OR tpgs OR tpcs OR tpls) (FILTLVL>1 OR CLVL>19) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Small
@@ -1425,33 +1420,32 @@ ItemDisplay[(RARE OR MAG) (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182) FILTLVL
 // CLASS SPECIFIC Items UNID
 //-----------------------------------------------------------------------------------
 // Pally Shields and Scepters Extra low filter level for paladin
-ItemDisplay[PALADIN MAG !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-90%%ORANGE%**         %NAME%         %ORANGE%**
-ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-90%%ORANGE%**          %NAME%         %ORANGE%**
+ItemDisplay[PALADIN MAG !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-90%%BLUE%**         %NAME%         **
+ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-90%%YELLOW%**          %NAME%         **
 
 // Druid Pelts and Clubs Extra low filter level for druid
-ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %DOT-90%%ORANGE%**         %NAME%         %ORANGE%**
-ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %DOT-90%%ORANGE%**          %NAME%         %ORANGE%**
+ItemDisplay[DRUID MAG !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %DOT-90%%BLUE%**         %NAME%         **
+ItemDisplay[DRUID RARE !ID (DRU OR clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %DOT-90%%YELLOW%**          %NAME%         **
 
 //magic for class you are player additional notes
-ItemDisplay[DRUID CL1 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
-ItemDisplay[BARBARIAN CL2 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
-ItemDisplay[PALADIN CL3 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
-ItemDisplay[NECROMANCER CL4 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
-ItemDisplay[ASSASSIN CL5 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
-ItemDisplay[SORCERESS CL6 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
-ItemDisplay[AMAZON CL7 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% %BLUE%* *%CONTINUE%
+ItemDisplay[DRUID CL1 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
+ItemDisplay[BARBARIAN CL2 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
+ItemDisplay[PALADIN CL3 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
+ItemDisplay[NECROMANCER CL4 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
+ItemDisplay[ASSASSIN CL5 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
+ItemDisplay[SORCERESS CL6 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
+ItemDisplay[AMAZON CL7 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
 
 // Arrows and Bolts - Amazon View
-ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %YELLOW%*%BLUE%     %NAME%     %YELLOW%* 
-ItemDisplay[(aqv OR cqv) RARE !ID AMAZON FILTLVL<5]: %ORANGE%*%YELLOW%     %NAME%     %ORANGE%*
+ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %BLUE%*    %NAME%    * 
+ItemDisplay[(aqv OR cqv) RARE !ID AMAZON FILTLVL<5]: %YELLOW%*     %NAME%     *
 
 // Arrows and Bolts - Non zon
-ItemDisplay[(aqv OR cqv) NMAG !(AMAZON)]:
-ItemDisplay[(aqv OR cqv) MAG !ID FILTLVL>1]:
+ItemDisplay[(aqv OR cqv) NMAG]:
+ItemDisplay[(aqv OR cqv) MAG !ID]:
 ItemDisplay[(aqv OR cqv) RARE !ID FILTLVL<8]:%NAME%
 ItemDisplay[cqv FILTLVL>4 !ID]:
 ItemDisplay[aqv FILTLVL>4 !ID]:
-ItemDisplay[(aqv OR cqv) NMAG CLVL>5]:
 //-----------------------------------------------------------------------------------
 
 
@@ -2176,7 +2170,7 @@ ItemDisplay[WEAPON EDAM>49]: %NAME% [%EDAM%% ED]%CONTINUE%
 // ITEM TAGS - LLD UNI - Uniqes and sets to look out for or weapon rares
 ItemDisplay[WEAPON !UNI (EDAM>149 OR SUFFIX=662 OR SUFFIX=898) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[WEAPON !UNI (SUFFIX=907 OR SUFFIX=908 OR SUFFIX=910 OR SUFFIX=911) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
-ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR 9ar OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% %TEAL%[LLD]%CONTINUE%
@@ -3154,7 +3148,7 @@ ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 
 // LLD UNI
-ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR 9ar OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
 
 // LLD SET
 ItemDisplay[SET (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
@@ -3394,13 +3388,12 @@ ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR 
 // Ripsaw - Flamberge
 // The Patriarch - Great Sword
 // Goblin Toe - Light Plated Boots
-// Mage Slayer - Quhab
 // String of Ears - Demonhide Sash
 // Quetzalcoatl - Hawk Helm
 // Magefist - Light Gauntlets
 // Rockfleece - Field Plate
 // True Silver - Maiden Javelin
-ItemDisplay[UNI !ID FILTLVL<8 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR 9ar OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 // Set GG Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3419,43 +3412,50 @@ ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb)]: %MAP-84%%GREEN%* * * *  %NAME%  %G
 
 // Set tier 3 Set Callouts
 //-----------------------------------------------------------------------------------
-// Immortal Kings Soul Cage - Sacred Armor
 // Tal Rashas Guardianship - Lacquered Plate
 // Trang-Ouls Wing - Cantor Trophy
 // Trang-Ouls Girth - Troll Belt
 // Trang-Ouls Claws - Heavy Bracers
+// Ondals Almighty - Spired Helm
 
-
-
-ItemDisplay[SET !ID (uar OR uth OR ne9 OR utc OR xmg)]: %MAP-84%%GREEN%* * *  %NAME%  %GREEN%* * *
+ItemDisplay[SET !ID (uth OR ne9 OR utc OR xmg OR uhm)]: %MAP-84%%GREEN%* * *  %NAME%  %GREEN%* * *
 
 // Set tier 2 Set Callouts
 //-----------------------------------------------------------------------------------
 // Cow Kings Horns - War Hat
 // Cow Kings Hide - Studded Leather
 // Taebaeks Glory - Ward
-// Guillaumes Face//  Winged Helm
+// Guillaumes Face - Winged Helm
 // Griswolds Heart - Ornate Plate
 // Griswolds Valor - Corona
 // Griswolds Redemption - Caduceus
 // Griswolds Honor - Vortex Shield
-// Natalyas Mark - Scissors Suwayyah
 // Trang-Ouls Scales - Chaos Armor
 // Deaths Hand - Leather Gloves
 // Deaths Guard - Sash
+// Aldurs Stony Gaze - Hunters Guise
 
-ItemDisplay[SET !ID (xap OR stu OR uts OR xhm OR xar OR urn OR 7ws OR paf OR 7qr OR xul OR lgl OR lbl)]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
+ItemDisplay[SET !ID (xap OR stu OR uts OR xhm OR xar OR urn OR 7ws OR paf OR xul OR lgl OR lbl OR dr8)]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
 
-// Any ETH Set weapon catch all
-ItemDisplay[SET !ID ETH WEAPON]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
+// Any ETH Set weapon catch rest
+ItemDisplay[SET !ID ETH WEAPON FILTLVL>6]: %DOT-84%%GREEN%%NAME%
+ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
-// Milabregas Orb - Kite Shield
+// Arcannas Flesh Light Plate
+// Mavinas True Sight - Diadem
+// Mavinas Caster - Grand Matron Bow
+// Mavinas Embrace - Kraken Shell
+// Mavinas Icy Clutch - Battle Gauntlets
+// Mavinas Tenet - Sharkskin Belt
+
+ItemDisplay[SET !ID (ltp OR ci3 OR amc OR uld OR xtg OR zvb)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+
+// Set tier 1 Set Callouts
+//-----------------------------------------------------------------------------------
 // Laying of Hands - Bramble Mitts
-// Ondals Almighty - Spired Helm
 // Najs Puzzler//  Elder Staff
-// Aldurs Stony Gaze - Hunters Guise
 // Aldurs Advance - Battle Boots
 // Aldurs Deception - Shadow Plate
 // Immortal Kings Will - Avenger Guard
@@ -3463,11 +3463,6 @@ ItemDisplay[SET !ID ETH WEAPON]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
 // Immortal Kings Detail - War Belt
 // Immortal Kings Forge - War Gauntlets
 // Immortal Kings Pillar - War Boots
-// Mavinas True Sight - Diadem
-// Mavinas Caster - Grand Matron Bow
-// Mavinas Embrace - Kraken Shell
-// Mavinas Icy Clutch - Battle Gauntlets
-// Mavinas Tenet - Sharkskin Belt
 // Natalyas Soul - Mesh Boots
 // Tal Rashas Lidless Eye - Swirling Crystal
 // Tal Rashas Horadric Crest - Death Mask
@@ -3475,12 +3470,14 @@ ItemDisplay[SET !ID ETH WEAPON]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
 // Trang-Ouls Guise - Bone Visage
 // Natalyas Shadow - Loricated Mail
 // Natalyas Totem - Grim Helm
+// Natalyas Mark - Scissors Suwayyah
+// Immortal Kings Soul Cage - Sacred Armor
 
-ItemDisplay[SET !ID (kit OR ulg OR uhm OR 6cs OR dr8 OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR ci3 OR amc OR uld OR xtg OR zvb OR xmb OR oba OR xsk OR zmb OR uh9 OR ucl OR xh9)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<7 (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR ucl OR xh9 OR 7qr OR uar)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 0 Set Callouts
 //-----------------------------------------------------------------------------------
-// Arcannas Flesh Light Plate
+
 // Rite of Passage - Demonhide Boots
 // Haemosus Adament - Cuirass
 // Aldurs Rhythm - Jagged Star
@@ -3488,7 +3485,7 @@ ItemDisplay[SET !ID (kit OR ulg OR uhm OR 6cs OR dr8 OR xtb OR uul OR ba5 OR 7m7
 // Najs Light Plate - Hellforge Plate
 // Dangoons Teaching - Reinforced Mace
 
-ItemDisplay[SET !ID (ltp OR xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%%NAME%
+ItemDisplay[SET !ID FILTLVL<5 (xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%%NAME%
 
 // LLD  lld catch callouts
 //-----------------------------------------------------------------------------------
@@ -3497,7 +3494,7 @@ ItemDisplay[SET !ID (ltp OR xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%%NA
 // Sanders Taboo - Heavy Gloves
 // Deaths Hand - Leather Gloves
 // Deaths Guard - Sash
-ItemDisplay[SET !ID (vbt OR bwn OR vgl OR lgl OR lbl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<7 (vbt OR bwn OR vgl OR lgl OR lbl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Rainbow Facet
 ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%*     %GOLD%%NAME%%PURPLE%     *%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*
@@ -5669,13 +5666,13 @@ ItemDisplay[NMAG !RW !SHOP MACE SOCK=6]: %NAME%{%GOLD%Last Wish %GRAY%Jah + Mal 
 ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6)]: %DOT-E1%%NAME%{%NAME%}%CONTINUE%
 
 // LLD divine/war scepter bases with 2 of hammer/conc/joust for LLD
-ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
 
-ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(wsp OR 9ws) SK113>2 (SK378>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(wsp OR 9ws) SK378>2 (SK113>2 OR SK112>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // LLD divine/war scepter bases with 3 to hammer
 ItemDisplay[(wsp OR 9ws) SK112>2 !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %ORANGE%[LLD]{%ORANGE%Cheap Hammerdin LLD Insight%CL%%NAME%}
@@ -5683,37 +5680,37 @@ ItemDisplay[(wsp OR 9ws) SK112>2 !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORA
 
 // LLD divine scepter 0 or 4 socket with charge/zeal staffmods (should be total +skills >= 4, or 3 fana):
 // fanaticism SK122 zeal SK106 charge SK107 vigor SK115 holyshield SK117 holysword SK116
-ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK116>2 !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%ORANGE%>  %NAME% %ORANGE%[LLD]  <{%NAME%}
+ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK116>2 !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %ORANGE%[LLD]{%NAME%}
 
 
-ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // LLD +3 holy bolt SK101 war/divine scepter
 // LLD +3 holy nova war/divine scepter
 // LLD might SK98
 // lld charge SK107
-ItemDisplay[9ws (SK101>2 OR SK364>2 OR SK98>2 OR SK107>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%PURPLE%> >  %NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws (SK101>2 OR SK364>2 OR SK98>2 OR SK107>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%PURPLE%>  %NAME% %PURPLE%[LLD]  <{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[9ws (SK101>2 OR SK364>2 OR SK98>2 OR SK107>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+ItemDisplay[9ws (SK101>2 OR SK364>2 OR SK98>2 OR SK107>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // LLD Staff base
 // SK46	Blaze
 // SK60	Chilling Armor
 // SK50	Shiver Armor
 ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < < <{%PURPLE%GG LLD Insight Base%CL%%NAME%}
-ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[LLD]  <{%GREEN%LLD Insight Base%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[LLD]{%GREEN%LLD Insight Base%CL%%NAME%}
 ItemDisplay[(8cs OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[LLD]{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 
 // Hand of Justice/CTA Scepters
-ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) NMAG !INF !SUP (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) NMAG !INF !SUP (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %GREEN%[CTA]{%NAME%}
+ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %GREEN%[CTA]{%NAME%}
+ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %GREEN%[CTA]{%NAME%}
 
 // Spirit Swords
 ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<85 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4os]{%NAME%}
@@ -5722,15 +5719,13 @@ ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %TAN%%DARK_GREEN%[Larzuk 4os]{%NAME%}
 
 // Infi/Insi/Pride and Obedience/Doom
-ItemDisplay[(7vo OR 7tr) ETH !INF SOCK=0 NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) ETH !INF SOCK=0 NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7vo OR 7tr) ETH SOCK=0 !INF NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(SPEAR OR POLEARM) ETH !INF SOCK=0 NMAG !RW (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 
 // Insight for A3
-ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws) FILTLVL<5]: %DOT-D6%* %NAME% *{%NAME%}%CONTINUE% // All Scepter, 4os
+ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
 
 // Grief/Beast/Passion
-ItemDisplay[7wa !ETH !INF SOCK=0 NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[7wa !ETH !INF SOCK=0 NMAG EDAM>0 (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7m7 OR 7gm OR 7ga OR 7gi OR 7bt OR 7ba) ETH !INF SOCK=0 NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(7bt OR 7ba) ETH SOCK=0 !INF NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 
@@ -5756,38 +5751,32 @@ ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH !INF (SOCK=0 OR 
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH (SOCK=0 OR SOCK=3) SUP NMAG FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 
 // Plague
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK271>2 OR SK278>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK121>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG FILTLVL<5]: %NAME%{%NAME%}
-ItemDisplay[(SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK121>2) (SOCK=0 OR SOCK=3) !RW !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) (SK262>2 OR SK271>2 OR SK278>2) (SOCK=0 OR SOCK=3) !RW !INF NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG]:%DOT-D6%%NAME% %PURPLE%<><><>{%NAME%%CL%%GREEN%3os for Plague Base}
-ItemDisplay[SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG]:%DOT-D6%%NAME% %PURPLE%<><><>{%NAME%}
-ItemDisplay[SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG]:%DOT-D6%%NAME% %GREEN%*****{%NAME%%CL%%GREEN%3os for Plague Base}
-ItemDisplay[SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG]:%DOT-D6%%NAME% %GREEN%*****{%NAME%}
+ItemDisplay[!RW (SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK121>2) !INF (SOCK=0 OR SOCK=3) NMAG FILTLVL<5]: %NAME%{%NAME%}
+ItemDisplay[!RW (SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK121>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
+ItemDisplay[!RW SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG]:%DOT-D6%%NAME% %PURPLE%< < <{%NAME%%CL%%GREEN%3os for Plague Base}
+ItemDisplay[!RW SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG]:%DOT-D6%%NAME% %PURPLE%< < <{%NAME%}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG]:%DOT-D6%%NAME% %GREEN%*****{%NAME%%CL%%GREEN%3os for Plague Base}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG]:%DOT-D6%%NAME% %GREEN%*****{%NAME%}
 
 //Druid items
-ItemDisplay[SK222>2 SK226>0 SK224>0 DRU NMAG]:%DOT-D6%%NAME% %PURPLE%<><><>{%NAME%}
-ItemDisplay[SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=0 NMAG]:%DOT-D6%%NAME% %TEAL%[LLD] %GREEN%***{%NAME%%CL%%TEAL%2os for LLD Lore Base%CL%%GREEN%3os for Delrium Base}
-ItemDisplay[SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=2 NMAG]:%DOT-D6%%NAME% %TEAL%[LLD]{%NAME%%CL%%TEAL%LLD Lore Base}
-ItemDisplay[SK222>2 (SK226>0 OR SK224>0) DRU SOCK=0 NMAG]:%DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%3os for Delrium Base}
-ItemDisplay[SK222>2 (SK226>0 OR SK224>0) DRU SOCK=3 NMAG]:%DOT-D6%%NAME% %GREEN%***{%NAME%}
-ItemDisplay[(SK221>2 OR SK222>2 OR SK226>2 OR SK227>2 OR SK229>2 OR SK230>2 OR SK234>2 OR SK235>2 OR SK236>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK245>2 OR SK243>2 OR SK244>2 OR SK247>2 OR SK250>2 OR SK249>2 OR SK370>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[!RW SK222>2 SK226>0 SK224>0 DRU NMAG]:%DOT-D6%%NAME% %PURPLE%< < <{%NAME%}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=0 NMAG]:%DOT-D6%%NAME% %TEAL%[LLD] %GREEN%***{%NAME%%CL%%TEAL%2os for LLD Lore Base%CL%%GREEN%3os for Delrium Base}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=2 NMAG]:%DOT-D6%%NAME% %TEAL%[LLD]{%NAME%%CL%%TEAL%LLD Lore Base}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=0 NMAG]:%DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%3os for Delrium Base}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=3 NMAG]:%DOT-D6%%NAME% %GREEN%***{%NAME%}
+ItemDisplay[!RW (SK221>2 OR SK222>2 OR SK226>2 OR SK227>2 OR SK229>2 OR SK230>2 OR SK234>2 OR SK235>2 OR SK236>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK245>2 OR SK243>2 OR SK244>2 OR SK247>2 OR SK250>2 OR SK249>2 OR SK370>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
 
 //Barb helms
 ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK149>2 OR SK150>2 OR SK155>2) (SOCK=0 OR SOCK=3) !INF NMAG BARBARIAN]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK149>2 OR SK150>2 OR SK155>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK149>2 OR SK150>2 OR SK155>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
 
 //Nec items
 ItemDisplay[(SK75>2 OR SK80>2 OR SK91>2 OR SK92>2 OR SK94>2 OR SK95>2 OR SK367>2 OR SK374>2 OR SK381>2) SOCK=0 !INF NMAG NECROMANCER]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(SK75>2 OR SK80>2 OR SK91>2 OR SK92>2 OR SK94>2 OR SK95>2 OR SK367>2 OR SK374>2 OR SK381>2) SOCK>1 !INF NMAG FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(SK75>2 OR SK80>2 OR SK91>2 OR SK92>2 OR SK94>2 OR SK95>2 OR SK367>2 OR SK374>2 OR SK381>2) SOCK>1 !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
 
 // Enchant Sorceress Orbs
 ItemDisplay[(ob5 OR oba OR obf) (SK40>2 OR SK52>2) !INF (SOCK=0 OR SOCK=3) NMAG SORCERESS]: %NAME%{%NAME%}
 ItemDisplay[(ob5 OR oba OR obf) (SK40>2 OR SK52>2) !INF (SOCK=0 OR SOCK=3) NMAG FILTLVL<5]: %NAME%{%NAME%}
-
-// Amazon Spears
-ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF !SUP SOCK=0 NMAG AMAZON]: %ORANGE%* %NAME%{%NAME%}
-ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF !SUP SOCK=0 NMAG FILTLVL<5]: %ORANGE%* %NAME%{%NAME%}
 
 // Armors
 ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) !ETH !INF SOCK=0 NMAG FILTLVL<5]: %NAME%{%NAME%}
@@ -5798,22 +5787,9 @@ ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) SOCK=0 NMAG E
 ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH EDEF>0 NMAG (EDEF=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[CL2 FILTLVL<5 (SK149>2 OR SK154>2) !ETH !INF SOCK=0 NMAG]: %NAME%{%NAME%}
 ItemDisplay[CL1 FILTLVL<5 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
-ItemDisplay[CL1 FILTLVL<5 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
+ItemDisplay[CL1 FILTLVL<5 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME% %ORANGE%*{%NAME%}
 ItemDisplay[CL1 FILTLVL<5 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
-ItemDisplay[CL1 FILTLVL<5 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%ORANGE%* %NAME%{%NAME%}
-
-// Shields
-ItemDisplay[CL3 ELT AR>100 ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%[%RED%ed%GRAY%] %NAME%{%NAME%}
-ItemDisplay[CL3 ELT RES>19 ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%%NAME%{%NAME%}
-ItemDisplay[CL3 (EXC OR ELT) RES>19 !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%GRAY%%NAME%{%NAME%}
-ItemDisplay[CL3 RES>19 !ETH !INF !SUP SOCK=0 NMAG CLVL<80 FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[(ush OR xsh) !ETH !INF !SUP SOCK=0 NMAG FILTLVL<2]: %NAME%{%NAME%}
-ItemDisplay[uit !INF SOCK=0 NMAG (EDEF=15 OR FILTLVL<5)]: %NAME%{%NAME%}
-ItemDisplay[CL3 ELT AR>100 SOCK=0 ETH SUP NMAG]: %DOT-D6%%GRAY%[%RED%ed%GRAY%] %NAME%{%NAME%}
-ItemDisplay[CL3 ELT RES>19 SOCK=0 ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CL3 (EXC OR ELT) RES>19 SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CL3 (RES>19 AND CLVL<80) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
-ItemDisplay[(ush OR xsh) SOCK=0 !ETH SUP NMAG FILTLVL<3]: %NAME%{%NAME%}
+ItemDisplay[CL1 FILTLVL<5 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME% %ORANGE%*{%NAME%}
 
 // Daggers
 ItemDisplay[(7kr OR 9kr OR kri) (SOCK=0 OR SOCK=3) !ETH NMAG (SK73>2) FILTLVL<7]: %NAME%{%NAME%}
@@ -5833,10 +5809,9 @@ ItemDisplay[FILTLVL<3 EXC DIFF<2 (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %
 // Chests
 ItemDisplay[CHEST ELT !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) DEF>900]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%}
 ItemDisplay[xtp !INF !ETH NMAG !RW !SOCK=1 (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW (SOCK=0 OR SOCK>2) FILTLVL<5]: %NAME%{%NAME%}
-ItemDisplay[(utp OR uui OR uea OR ula OR utu OR urs OR uar) !INF !ETH NMAG !RW EDEF>0 (SOCK=0 OR SOCK>2) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[EQ2 ELT ETH !INF (SOCK=4 OR SOCK=0) NMAG]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[EQ2 ELT ETH !INF SOCK=3 NMAG]: %NAME%{%NAME%}
+ItemDisplay[CHEST ELT !INF !ETH NMAG !RW EDEF>0 (SOCK=0 OR SOCK>2) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
+ItemDisplay[CHEST ELT ETH !INF (SOCK=4 OR SOCK=0) NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CHEST ELT ETH !INF SOCK=3 NMAG]: %NAME%{%NAME%}
 ItemDisplay[CHEST ELT !INF ETH NMAG !RW !(SOCK=1) FILTLVL<5]: %NAME%{%NAME%}
 
 // Helmets
@@ -5950,15 +5925,13 @@ ItemDisplay[(wst OR 8ws OR 6ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW 
 //Misc staff
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK47>2 OR SK376>2 OR SK61>2) NMAG !RW FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<7]: %DOT-D6%* %NAME% *{%NAME%}
+ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<7]: %DOT-D6%%NAME% %ORANGE%< < <{%NAME%}
 
 // Polearms/Spears/Amazon Spears
-ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7 OR 7o7) ETH NMAG !INF !RW (SOCK=0 OR SOCK=3 OR SOCK=4 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(7p7 OR 7h7) ETH NMAG !INF !RW SOCK=6]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
+ItemDisplay[(SPEAR OR POLEARM) ETH NMAG !INF (SOCK=0 OR SOCK=3 OR SOCK=4 OR SOCK=5 OR SOCK=6) NMAG !RW (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) (EDAM=15 OR FILTLVL<3)]: %NAME%{%NAME%}
 
 // Claws
-
 // Venom Pre-buff
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%GG Venom Pre-buff}
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]]: %DOT-D6%%NAME% %PURPLE%**{%NAME%%CL%%GREEN%Venom Pre-buff}
@@ -5974,8 +5947,9 @@ ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>2 AND SK275>2) !INF NMAG !RW (SOC
 ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK252>2 OR SK263>2 OR SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>0 AND SK275>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 
-// Plague ele claws
+// Plague ele claws / trap
 ItemDisplay[(9tw OR btl OR 7tw) (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) (SK262>2 OR SK271>2 OR SK276>2 OR SK366>2) !INF (SOCK=0 OR SOCK=3) !RW NMAG FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[9tw (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 OR SK280>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
