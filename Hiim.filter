@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 21%CL%Still works for Season 9%CL%Season 10 - version 16%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 21%CL%Season 10 - version 16%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -5901,6 +5901,7 @@ ItemDisplay[fla NMAG !RW !INF !ETH SOCK>2 FILTLVL<7]: %NAME%{%NAME%}
 // Wands Dominion SK94	Fire Golem  SK367 Blood Warp SK91 Lower Resist SK68 Bone Armor
 ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK94>2 SK68>0 SK91>0 !SOCK=1 NMAG !RW]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%%NL%%PURPLE%GG Dominion Base}
 ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK94>2 (SK367>0 OR SK68>0 OR SK91>0) !SOCK=1 NMAG !RW]: %DOT-D6%%NAME% %GREEN%****{%NAME%%NL%%GREEN%Dominion Base}
+ItemDisplay[FILTLVL<7 WAND !(wnd OR ywn OR 9wn) SK68>0 SK91>2 !SOCK=1 NMAG !RW]: %NAME% %GREEN%****{%NAME%%NL%%GREEN%Dominion Base}
 ItemDisplay[FILTLVL<7 WAND !(wnd OR ywn OR 9wn) SK94>2 !SOCK=1 NMAG !RW]: %NAME%{%NAME%%NL%%GREEN%Dominion Base}
 ItemDisplay[FILTLVL<5 WAND !(wnd OR ywn OR 9wn) SK68>0 SK91>0 !SOCK=1 NMAG !RW]: %NAME%{%NAME%%NL%%GREEN%Dominion Base}
 
