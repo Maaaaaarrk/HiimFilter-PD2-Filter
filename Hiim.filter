@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 21%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 22%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -5859,7 +5859,7 @@ ItemDisplay[(amc OR amb) NMAG EDAM>0 !RW TABSK0>2 (SOCK=0 OR SOCK=4 OR SOCK=3 OR
 ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=0 OR SOCK=4) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=3 OR SOCK=5) FILTLVL<5]: %NAME%{%NAME%}
 // Good merc xbow
-ItemDisplay[6mx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=4) (EDEF=15 OR FILTLVL<7): %NAME%{%NAME%}
+ItemDisplay[6mx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=4) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 ItemDisplay[6rx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=5) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 ItemDisplay[6hx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=6) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 // Lower levels
@@ -6254,7 +6254,7 @@ ItemDisplay[!SHOP PALADIN DIN !SOCK=1 (CLVL<70 OR FILTLVL<3) RES>19]: %NAME%{%NA
 
 // Alternate Bases when lower CLVL
 ItemDisplay[!SHOP WEAPON ELT ETH !INF NMAG !THROWING !SOCK=1 (CLVL<70 OR FILTLVL<3)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[!SHOP (CHEST OR HELM OR SHIELD) ELT !INF NMAG !SOCK=1 (CLVL<70 OR FILTLVL<2)]: %MAP-D6%%NAME%{%NAME%}
+ItemDisplay[!SHOP (CHEST OR HELM OR SHIELD) ELT !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D6%%NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 
