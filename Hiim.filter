@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 24%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 25%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6251,12 +6251,50 @@ ItemDisplay[!SHOP CHEST NORM !INF !SOCK=1 NMAG CLVL<30]: %NAME%{%NAME%}
 // Early Imbue options
 ItemDisplay[!SHOP (WEAPON AND !THROWING) NORM !SUP !INF SOCK=0 NMAG CLVL<30]: %NAME%{%NAME%}
 ItemDisplay[!SHOP CIRC NORM !INF !SUP SOCK=0 NMAG CLVL<31]: %NAME%{%NAME%}
-ItemDisplay[!SHOP SHIELD (EXC OR ELT) !INF !SOCK=1 NMAG (CLVL<70 OR FILTLVL<2)]: %NAME%{%NAME%}
+ItemDisplay[!SHOP SHIELD (EXC OR ELT) !INF SOCK>0 !SOCK=1 NMAG (DIFF<2 OR CLVL<60) FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[!SHOP PALADIN DIN !SOCK=1 (CLVL<70 OR FILTLVL<3) RES>19]: %NAME%{%NAME%}
 
 // Alternate Bases when lower CLVL
 ItemDisplay[!SHOP WEAPON ELT ETH !INF NMAG !THROWING !SOCK=1 (CLVL<70 OR FILTLVL<3)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[!SHOP (CHEST OR HELM OR SHIELD) ELT !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D6%%NAME%{%NAME%}
+ItemDisplay[!SHOP (CHEST OR HELM OR SHIELD) (ELT OR EXC) !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D6%%NAME%{%NAME%}
+
+// Purity
+ItemDisplay[NMAG !INF !RW SOCK=3 FILTLVL<3 (SPEAR OR POLEARM OR BOW OR XBOW OR STAFF)]: %NAME%{%NAME%}
+
+// Insight
+ItemDisplay[NMAG !INF !RW SOCK=4 (SPEAR OR POLEARM) FILTLVL<3]: %NAME%{%NAME%} // All War Pike, 0os, ilvl 26-40
+// Polearms
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 vou FILTLVL<3]: %NAME%{%NAME%} // All Voulge, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 scy FILTLVL<3]: %NAME%{%NAME%} // All Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pax FILTLVL<3]: %NAME%{%NAME%} // All Poleaxe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 hal FILTLVL<3]: %NAME%{%NAME%} // All Halberd, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 wsc FILTLVL<3]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%} // All War Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 9b7 FILTLVL<3]: %NAME%{%NAME%} // All Lochaber Axe, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9vo FILTLVL<3]: %NAME%{%NAME%} // All Bill, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9s8 FILTLVL<3]: %NAME%{%NAME%} // All Battle Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9pa FILTLVL<3]: %NAME%{%NAME%} // All Partizan, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9h9 FILTLVL<3]: %NAME%{%NAME%} // All Bec-de-Corbin, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9wc FILTLVL<3]: %NAME%{%NAME%} // All Grim Scythe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 7o7 FILTLVL<3]: %NAME%{%NAME%} // All Ogre Axe, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7vo FILTLVL<3]: %NAME%{%NAME%} // All Colossus Voulge, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7s8 FILTLVL<3]: %NAME%{%NAME%} // All Thresher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7pa FILTLVL<3]: %NAME%{%NAME%} // All Cryptic Axe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7h7 FILTLVL<3]: %NAME%{%NAME%} // All Great Poleaxe, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7wc FILTLVL<3]: %NAME%{%NAME%} // All Giant Thresher, 0os, ilvl 26-40
+
+// Spears
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 tri FILTLVL<3]: %NAME%{%NAME%} // All Trident, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 brn FILTLVL<3]: %NAME%{%NAME%} // All Brandistock, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 spt FILTLVL<3]: %NAME%{%NAME%} // All Spetum, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik FILTLVL<3]: %NAME%{%NAME%} // All Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr FILTLVL<3]: %NAME%{%NAME%} // All Fuscina, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9br FILTLVL<3]: %NAME%{%NAME%} // All War Fork, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9st FILTLVL<3]: %NAME%{%NAME%} // All Yari, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9 FILTLVL<3]: %NAME%{%NAME%} // All Lance, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr FILTLVL<3]: %NAME%{%NAME%} // All Stygian Pike, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7br FILTLVL<3]: %NAME%{%NAME%} // All Mancatcher, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7st FILTLVL<3]: %NAME%{%NAME%} // All Ghost Spear, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7p7 FILTLVL<3]: %NAME%{%NAME%} // All War Pike, 0os, ilvl 26-40
 
 //-----------------------------------------------------------------------------------
 
