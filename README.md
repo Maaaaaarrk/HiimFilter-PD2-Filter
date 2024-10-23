@@ -13,15 +13,15 @@
 Cube will state filter version & choosen filter level
 
 * 0]: OFF
-* 1]: Base (For New Character)
+* 1]: Base (For Normal Difficulty or Speed runners)
 * 2]: Semi-Strict (For NM / Hell New Character)
 * 3]: Strict+Crafting (Mapping Grade Character, Shows good Crafts)
 * 4]: Strict+Crafting NO HP/MP
-* 5]: Strict (Mapping Grade Character, Shows no Crafts)
-* 6]: Strict NO HP/MP
+* 5]: Stricter (Mapping Grade Character, Hides low value uniques & sets)
+* 6]: Stricter NO HP/MP
 * 7]: Extremely Strict (This is VERY restrictive)
-* 8]: Rejuvs Only (This is for front line Characters in group play where you only pick-up Purple Gatorade)
-* 9]: No Items Out of Town (This is for front line Characters in group play where you pick-up NOTHING)
+* 8]: Rejuvs Only (Designed for group play where you only pick-up Purple Gatorade)
+* 9]: No Items Out of Town (Designed for group play where you pick-up NOTHING)
 
 ## Charm Stats on Ground
 
@@ -33,7 +33,7 @@ Charms on ground will show important stats
 These items also show important stats on the ground. This applies to many gear slots not just the ones in the example.
 
 Rings & Amulets also have points implemented:
-* Range: 2pt, 3Pt, 4Pt, GG, OMG
+* Range: 2pt, 3Pt, 4Pt, 5pt, 6pt
 * Evaluation includes crafts & a few slams
 * 1Pt of Value = high roll of a valuable stat
 * Evaluation takes into account partial rolls
