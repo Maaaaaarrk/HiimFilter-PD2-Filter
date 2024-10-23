@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 25%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 26%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -5812,12 +5812,11 @@ ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=2 OR SOCK=0) FILTL
 // Daggers
 ItemDisplay[(7kr OR 9kr OR kri) (SOCK=0 OR SOCK=3) !ETH NMAG (SK73>2) FILTLVL<7]: %NAME%{%NAME%}
 
-
 // Purity Base for leveling
-ItemDisplay[FILTLVL<3 ELT (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
-ItemDisplay[FILTLVL<3 ELT ETH (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
-ItemDisplay[FILTLVL<3 ELT CLVL<80 (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
-ItemDisplay[FILTLVL<3 EXC DIFF<2 (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
+ItemDisplay[FILTLVL<3 ELT (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
+ItemDisplay[FILTLVL<5 ELT ETH (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
+ItemDisplay[FILTLVL<3 ELT CLVL<80 (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
+ItemDisplay[FILTLVL<3 EXC DIFF<2 (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
 
 //-----------------------------------------------------------------------------------
 
@@ -6259,10 +6258,18 @@ ItemDisplay[!SHOP WEAPON ELT ETH !INF NMAG !THROWING !SOCK=1 (CLVL<70 OR FILTLVL
 ItemDisplay[!SHOP (CHEST OR HELM OR SHIELD) (ELT OR EXC) !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D6%%NAME%{%NAME%}
 
 // Purity
-ItemDisplay[NMAG !INF !RW SOCK=3 FILTLVL<3 (SPEAR OR POLEARM OR BOW OR XBOW OR STAFF)]: %NAME%{%NAME%}
+ItemDisplay[NMAG !INF !RW SOCK=3 FILTLVL<3 (SPEAR OR POLEARM OR BOW OR XBOW OR STAFF)]: %NAME% %DARK_GREEN%[Purity]{%NAME%}
+
+// Staves
+ItemDisplay[NMAG !INF !RW SOCK=0 lst]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Long Staff, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 8ss]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Jo Staff, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 8ls]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Quarterstaff, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 6ss]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Walking Stick, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 6ls]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Stalagmite, 0os
+
 
 // Insight
-ItemDisplay[NMAG !INF !RW SOCK=4 (SPEAR OR POLEARM) FILTLVL<3]: %NAME%{%NAME%} // All War Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=4 (SPEAR OR POLEARM) FILTLVL<3]: %NAME% %DARK_GREEN%[Insight]{%NAME%} // All War Pike, 0os, ilvl 26-40
 // Polearms
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 vou FILTLVL<3]: %NAME%{%NAME%} // All Voulge, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 scy FILTLVL<3]: %NAME%{%NAME%} // All Scythe, 0os, ilvl 26-40
