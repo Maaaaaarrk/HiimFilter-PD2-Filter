@@ -1,3 +1,7 @@
+Season 10 v1
+- Rebalanced items for new patch
+- Added new items
+- Added new runewords
 Season 9 v34
 - Map res update (cistern was wrong pd2 bug was fixed)
 - adjusted lld insight staff calliuts
