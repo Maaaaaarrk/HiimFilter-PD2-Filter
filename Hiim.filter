@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 22%CL%Season 10 - version 26%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 23%CL%Season 10 - version 27%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -99,12 +99,12 @@ ItemDisplay[rid]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma T
 ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>
 // PD2 Items - Rathma mats
 ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
-// PD2 Items - S10 Boss mats
+// PD2 Items - mats
 ItemDisplay[lucb OR lucc OR lucd]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
-ItemDisplay[luca]: Shawdow of Hatred%CONTINUE%
+ItemDisplay[luca]: Shadow of Hatred%CONTINUE%
 // S10 boss entry ItemDisplay[luca]: Vision of Terror%CONTINUE%
 ItemDisplay[(rtma OR dcma OR luca)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CONTINUE%
 ItemDisplay[(rtma OR dcma OR luca) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
@@ -5459,6 +5459,7 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik]: %NAME%{%TAN%Larzuk for 4 
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik FILTLVL<3]: %NAME% %DARK_GREEN%[Larzuk 4os]{%NAME%}%CONTINUE% // All Pike, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 pik]: %NAME%{%TAN%Larzuk for 6 sockets%CL%%NAME%}%CONTINUE% // All Pike, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 9sr]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All War Spear, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 9sr FILTLVL<3]: %NAME% %DARK_GREEN%[Larzuk 4os]{%NAME%}%CONTINUE% // All War Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9tr]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr FILTLVL<3]: %NAME% %DARK_GREEN%[Larzuk 4os]{%NAME%}%CONTINUE% // All Fuscina, 0os, ilvl 26+
@@ -5474,7 +5475,10 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9p9]: %NAME%{%TAN%Larzuk for 3 sockets%
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Lance, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9p9 FILTLVL<3]: %NAME% %DARK_GREEN%[Larzuk 4os]{%NAME%}%CONTINUE% // All Lance, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9p9]: %NAME%{%TAN%Larzuk for 6 sockets%CL%%NAME%}%CONTINUE% // All Lance, 0os, ilvl 41+
-ItemDisplay[NMAG !INF !RW SOCK=0 7sr]: %NAME%{%TAN%Larzuk for 6 sockets%CL%%NAME%}%CONTINUE% // All Hyperion Spear, 0os
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7sr]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Hyperion Spear, 0os, ilvl 1-25
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7sr]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All WHyperion Spear, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7sr FILTLVL<5]: %NAME% %DARK_GREEN%[Larzuk 4os]{%NAME%}%CONTINUE% // All Hyperion Spear, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7sr]: %NAME%{%TAN%Larzuk for 6 sockets%CL%%NAME%}%CONTINUE% // All Hyperion Spear, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7tr]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7tr FILTLVL<5]: %NAME% %DARK_GREEN%[Larzuk 4os]{%NAME%}%CONTINUE% // All Stygian Pike, 0os, ilvl 26+
@@ -5547,7 +5551,8 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9cr]: %NAME%{%TAN%Larzuk for 6 sockets%
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9bs]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Battle Sword, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9bs]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Battle Sword, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9ls]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Rune Sword, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9ls]: %NAME%{%TAN%Larzuk for 5 sockets%CL%%NAME%}%CONTINUE% // All Rune Sword, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9ls]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Rune Sword, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 9ls]: %NAME%{%TAN%Larzuk for 5 sockets%CL%%NAME%}%CONTINUE% // All Rune Sword, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 9wd]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Ancient Sword, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 92h]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Espandon, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 9cm]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Dacian Falx, 0os, ilvl 1-25
@@ -5572,7 +5577,8 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7cr]: %NAME%{%TAN%Larzuk for 6 sockets%
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7bs]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Conquest Sword, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7bs]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Conquest Sword, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7ls]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Cryptic Sword, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 7ls]: %NAME%{%TAN%Larzuk for 5 sockets%CL%%NAME%}%CONTINUE% // All Cryptic Sword, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7ls]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All Cryptic Sword, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>40 7ls]: %NAME%{%TAN%Larzuk for 5 sockets%CL%%NAME%}%CONTINUE% // All Cryptic Sword, 0os, ilvl 41+
 ItemDisplay[NMAG !INF !RW SOCK=0 7wd]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Mythical Sword, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 72h]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Legend Sword, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 7cm]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Highland Blade, 0os, ilvl 1-25
@@ -6294,6 +6300,9 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 tri FILTLVL<3]: %NAME%{%NAME%} // All T
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 brn FILTLVL<3]: %NAME%{%NAME%} // All Brandistock, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 spt FILTLVL<3]: %NAME%{%NAME%} // All Spetum, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 pik FILTLVL<3]: %NAME%{%NAME%} // All Pike, 0os, ilvl 26-40
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 7sr FILTLVL<3]: %NAME%{%NAME%} // All WHyperion Spear, 0os, ilvl 26-40
+
+ItemDisplay[NMAG !INF !RW SOCK=0 9sr FILTLVL<3]: %NAME%{%NAME%} // All War Spear, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 9tr FILTLVL<3]: %NAME%{%NAME%} // All Fuscina, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9br FILTLVL<3]: %NAME%{%NAME%} // All War Fork, 0os, ilvl 26-40
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 9st FILTLVL<3]: %NAME%{%NAME%} // All Yari, 0os, ilvl 26-40
