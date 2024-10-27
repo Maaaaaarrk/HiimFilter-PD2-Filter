@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 23%CL%Season 10 - version 29%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 27%CL%Season 10 - version 30%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1442,6 +1442,8 @@ ItemDisplay[ASSASSIN CL5 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTIN
 ItemDisplay[SORCERESS CL6 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
 ItemDisplay[AMAZON CL7 FILTLVL<5 MAG !ID]: %DOT-90%%BLUE%* * %NAME% * *%CONTINUE%
 
+ItemDisplay[MAG CL4 MAPID=83 FILTLVL<8]: %NAME%%MAP-97%%TIER-2%
+
 // Arrows and Bolts - Amazon View
 ItemDisplay[(aqv OR cqv) MAG !ID AMAZON FILTLVL<3]: %BLUE%*    %NAME%    * 
 ItemDisplay[(aqv OR cqv) RARE !ID AMAZON FILTLVL<5]: %YELLOW%*     %NAME%     *
@@ -2438,7 +2440,7 @@ ItemDisplay[UNI !ID lea]: %CONTINUE%Blinkbats Form - Leather Armor
 ItemDisplay[UNI !ID hla]: %CONTINUE%The Centurion - Hard Leather Armor
 ItemDisplay[UNI !ID stu]: %CONTINUE%Twitchthroe - Studded Leather
 ItemDisplay[UNI !ID rng]: %CONTINUE%Darkglow - Ring Mail
-ItemDisplay[UNI !ID scl]: %CONTINUE%Hawkmail - Scale Mail
+ItemDisplay[UNI !ID scl]: %CONTINUE%Hawk Tuah//Hawkmail - Scale Mail
 ItemDisplay[UNI !ID brs]: %CONTINUE%Venom Ward - Breast Plate
 ItemDisplay[UNI !ID chn]: %CONTINUE%Sparking Mail - Chain Mail
 ItemDisplay[UNI !ID spl]: %CONTINUE%Iceblink - Splint Mail
@@ -6257,12 +6259,7 @@ ItemDisplay[!SHOP (EXC OR ELT) (ELT OR EXC) !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D
 ItemDisplay[NMAG !INF !RW SOCK=3 FILTLVL<3 (SPEAR OR POLEARM OR BOW OR XBOW OR STAFF)]: %NAME% %DARK_GREEN%[Purity]{%NAME%}
 
 // Staves
-ItemDisplay[NMAG !INF !RW SOCK=0 lst]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Long Staff, 0os
-ItemDisplay[NMAG !INF !RW SOCK=0 8ss]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Jo Staff, 0os
-ItemDisplay[NMAG !INF !RW SOCK=0 8ls]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Quarterstaff, 0os
-ItemDisplay[NMAG !INF !RW SOCK=0 6ss]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Walking Stick, 0os
-ItemDisplay[NMAG !INF !RW SOCK=0 6ls]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // All Stalagmite, 0os
-
+ItemDisplay[NMAG !INF !RW SOCK=0 (lst OR 8ss OR 8ls OR 6ss OR 6ls) FILTLVL<3]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // 0os: Long Staff, Jo Staff, Quarterstaff, Walking Stick, Stalagmite
 
 // Insight
 ItemDisplay[NMAG !INF !RW SOCK=4 (SPEAR OR POLEARM) FILTLVL<3]: %NAME% %DARK_GREEN%[Insight]{%NAME%}
