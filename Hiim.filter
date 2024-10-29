@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 28%CL%Season 10 - version 31%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 29%CL%Season 10 - version 32%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -697,7 +697,8 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 // POTIONS ONLY FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
-// Shows
+// Shows 
+ItemDisplay[STAT206>0 FILTLVL>7]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
 ItemDisplay[STAT360>0 FILTLVL>7]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>7]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hides
@@ -2118,20 +2119,45 @@ ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK>0]: %GRAY%%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[SOCK>0]: %NAME% %GRAY%[%SOCKETS%]%CONTINUE%{%NAME%}
 
 // ITEM TAGS - Corrupted [C] - NOTE indexes are off by 1 from wiki
-ItemDisplay[STAT360=45]: %NAME% %RED%CBF%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=16]: %NAME% %RED%FCR%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=42]: %NAME% %RED%FCR%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=28]: %NAME% %RED%FCR Fire%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=29]: %NAME% %RED%FCR Cold%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=30]: %NAME% %RED%FCR Light%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=31]: %NAME% %RED%FCR Poison%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=27]: %NAME% %RED%+1 Skill%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=50]: %NAME% %RED%+1 Skill%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=72]: %NAME% %RED%MaxAllRes%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=52]: %NAME% %RED%%PDR%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=19]: %NAME% %RED%DS%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=25]: %NAME% %RED%ED-DS%CONTINUE%{%NAME%}
-ItemDisplay[STAT360>0]: %NAME% %RED%[C]%CONTINUE%{%NAME%}
+// corrupted	360
+// corruptor	361
+ItemDisplay[STAT360>0]: %NAME%%RED%%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=45]: %NAME% CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=16]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=42]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=28]: %NAME% FCR Fire%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=29]: %NAME% FCR Cold%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=30]: %NAME% FCR Light%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=31]: %NAME% FCR Poison%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=27]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=50]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=52]: %NAME% PDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=19]: %NAME% DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360>0]: %NAME% [C]%CONTINUE%{%NAME%}
+
+
+// ITEM TAGS - Corrupted [D]
+// desecrated	206
+// desecrator	207
+ItemDisplay[STAT206>0]: %NAME%%GOLD%%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=45]: %NAME% CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=16]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=42]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=28]: %NAME% FCR Fire%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=29]: %NAME% FCR Cold%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=30]: %NAME% FCR Light%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=31]: %NAME% FCR Poison%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=27]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=50]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=52]: %NAME% PDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=19]: %NAME% DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT206>0]: %NAME% [D]%CONTINUE%{%NAME%}
+
+
 
 // ITEM TAGS - ILVL
 //ItemDisplay[(MAG OR RARE) ILVL<92 STAT360=0]: %NAME% [%ILVL%]%CONTINUE%
@@ -3459,8 +3485,11 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* 
 // Mavinas Embrace - Kraken Shell
 // Mavinas Icy Clutch - Battle Gauntlets
 // Mavinas Tenet - Sharkskin Belt
+// Natalyas Shadow - Loricated Mail
+// Natalyas Totem - Grim Helm
+// Natalyas Mark - Scissors Suwayyah
 
-ItemDisplay[SET !ID (ltp OR ci3 OR amc OR uld OR xtg OR zvb)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID (ltp OR ci3 OR amc OR uld OR xtg OR zvb OR ucl OR xh9 OR 7qr)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3478,12 +3507,9 @@ ItemDisplay[SET !ID (ltp OR ci3 OR amc OR uld OR xtg OR zvb)]: %DOT-84%%GREEN%* 
 // Tal Rashas Horadric Crest - Death Mask
 // Tal Rashas Fine-Spun Cloth - Mesh Belt
 // Trang-Ouls Guise - Bone Visage
-// Natalyas Shadow - Loricated Mail
-// Natalyas Totem - Grim Helm
-// Natalyas Mark - Scissors Suwayyah
 // Immortal Kings Soul Cage - Sacred Armor
 
-ItemDisplay[SET !ID FILTLVL<7 (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR ucl OR xh9 OR 7qr OR uar)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<7 (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR uar)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 0 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3557,7 +3583,7 @@ ItemDisplay[ID (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %NAME% [LLD]{%ORANGE%LLD FCR T
 ItemDisplay[ID (CHSK54>0) STAFF LVLREQ<31]: %NAME% [LLD]{%GREEN%LLD Teleport Charges Staff} // Teleport charges
 
 // Circlets
-ItemDisplay[!UNI ID (CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1) FCR>19 CIRC]: %ORANGE%2/20 %NAME%{%NAME%}// +2 class skills, +20 FCR circlet
+ItemDisplay[!UNI RARE ID (CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1) FCR>19 CIRC]: %NAME%{%NAME%%CL%%ORANGE%> > > >    2/20    < < < <}%CONTINUE%// +2 class skills, +20 FCR circlet
 
 // Armor(Chest helm shield etc) extra callout
 ItemDisplay[!UNI !RW ID !CIRC ARMOR FCR>0 LIFE>0 (CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0)]: %NAME% %PURPLE%!!{%PURPLE%>   %TAN%FCR & Skill & Life   %PURPLE%<%CL%%NAME%}%CONTINUE%// class skills & FCR & Life
@@ -3781,6 +3807,30 @@ ItemDisplay[!RW CLSK2=2 SK94=3 ALLSK=1]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >
 ItemDisplay[!RW TABSK18=2 SK94=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 FireGol   < < < <%CL%%NAME%}
 ItemDisplay[!RW TABSK18=3 SK94=2 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 FireGol   < < < <%CL%%NAME%}
 ItemDisplay[!RW CLSK2=2 SK94=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 FireGol   < < < <%CL%%NAME%}
+
+
+// Clay Gol sk wands / offhand //ALLSK 
+ItemDisplay[!RW TABSK18=2 SK75=3 ALLSK=2]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK75=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK75=3 !(ALLSK=1)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK75=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=2 SK75=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW CLSK2=2 SK75=3 ALLSK=1]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +6 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=2 SK75=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK75=2 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW CLSK2=2 SK75=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 ClayGol   < < < <%CL%%NAME%}
+
+
+// Blood Gol sk wands / offhand //ALLSK 
+ItemDisplay[!RW TABSK18=2 SK85=3 ALLSK=2]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK85=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK85=3 !(ALLSK=1)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK85=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=2 SK85=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW CLSK2=2 SK85=3 ALLSK=1]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +6 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=2 SK85=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK18=3 SK85=2 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW CLSK2=2 SK85=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
 
 
 // SK245	Tornado
@@ -4729,21 +4779,21 @@ ItemDisplay[!UNI !SET !RW SK59=3]: +3 Blizz %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK60=1 FILTLVL<2]: +1 ChilArm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK60=2 FILTLVL<2]: +2 ChilArm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK60=3]: +3 ChilArm %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK61=1 FILTLVL<2]: +1 FireMastr %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK61=2 FILTLVL<2]: +2 FireMastr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK61=1]: +1 FireMstr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK61=2]: +2 FireMstr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK61=3]: +3 FireMastr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK62=1 FILTLVL<2]: +1 Hydra %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK62=2 FILTLVL<2]: +2 Hydra %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK62=3]: +3 Hydra %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK63=1 FILTLVL<2]: +1 LightMastr %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK63=2 FILTLVL<2]: +2 LightMastr %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK63=3]: +3 LightMastr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK63=1]: +1 LightMstr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK63=2]: +2 LightMstr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK63=3]: +3 LightMstr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK64=1 FILTLVL<2]: +1 FOrb %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK64=2 FILTLVL<2]: +2 FOrb %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK64=3]: +3 FOrb %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK65=1 FILTLVL<2]: +1 ColdMastr %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK65=2 FILTLVL<2]: +2 ColdMastr %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK65=3]: +3 ColdMastr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK65=1]: +1 ColdMstr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK65=2]: +2 ColdMstr %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK65=3]: +3 ColdMstr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK369=1 FILTLVL<2]: +1 IceBarr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK369=2 FILTLVL<2]: +2 IceBarr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK369=3]: +3 IceBarr %NAME%{%NAME%}%CONTINUE%
@@ -4754,7 +4804,7 @@ ItemDisplay[!UNI !SET !RW SK383=1 FILTLVL<2]: +1 LilHydra %NAME%{%NAME%}%CONTINU
 ItemDisplay[!UNI !SET !RW SK383=2 FILTLVL<2]: +2 LilHydra %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK383=3]: +3 LilHydra %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW FILTLVL<3 (SK36>0 OR SK37>0 OR SK38>0 OR SK39>0 OR SK40>0 OR SK41>0 OR SK42>0 OR SK43>0 OR SK44>0 OR SK45>0 OR SK46>0 OR SK47>0 OR SK48>0 OR SK49>0 OR SK50>0 OR SK51>0 OR SK52>0 OR SK53>0 OR SK54>0 OR SK55>0 OR SK56>0 OR SK57>0 OR SK58>0 OR SK59>0 OR SK60>0 OR SK61>0 OR SK62>0 OR SK63>0 OR SK64>0 OR SK65>0 OR SK369>0 OR SK383>0 OR SK376>0 OR SK383>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK36>2 OR SK37>2 OR SK38>2 OR SK39>2 OR SK40>2 OR SK41>2 OR SK42>2 OR SK43>2 OR SK44>2 OR SK45>2 OR SK46>2 OR SK47>2 OR SK48>2 OR SK49>2 OR SK50>2 OR SK51>2 OR SK52>2 OR SK53>2 OR SK54>2 OR SK55>2 OR SK56>2 OR SK57>2 OR SK58>2 OR SK59>2 OR SK60>2 OR SK61>2 OR SK62>2 OR SK63>2 OR SK64>2 OR SK65>2 OR SK369>2 OR SK383>2 OR SK376>2 OR SK383>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK36>2 OR SK37>2 OR SK38>2 OR SK39>2 OR SK40>2 OR SK41>2 OR SK42>2 OR SK43>2 OR SK44>2 OR SK45>2 OR SK46>2 OR SK47>2 OR SK48>2 OR SK49>2 OR SK50>2 OR SK51>2 OR SK52>2 OR SK53>2 OR SK54>2 OR SK55>2 OR SK56>2 OR SK57>2 OR SK58>2 OR SK59>2 OR SK60>2 OR SK61>0 OR SK62>2 OR SK63>0 OR SK64>2 OR SK65>0 OR SK369>2 OR SK383>2 OR SK376>2 OR SK383>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 
 
 //-----------------------------------------------------------------------------------
