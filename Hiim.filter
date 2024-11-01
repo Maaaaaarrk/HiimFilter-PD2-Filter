@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 31%CL%Season 10 - version 37%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Oct 31%CL%Season 10 - version 38%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3464,16 +3464,11 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
 // Arcannas Flesh Light Plate
-// Mavinas True Sight - Diadem
-// Mavinas Caster - Grand Matron Bow
-// Mavinas Embrace - Kraken Shell
-// Mavinas Icy Clutch - Battle Gauntlets
-// Mavinas Tenet - Sharkskin Belt
 // Natalyas Shadow - Loricated Mail
 // Natalyas Totem - Grim Helm
 // Natalyas Mark - Scissors Suwayyah
 
-ItemDisplay[SET !ID (ltp OR ci3 OR amc OR uld OR xtg OR zvb OR ucl OR xh9 OR 7qr)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID (ltp OR ucl OR xh9 OR 7qr)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3493,8 +3488,13 @@ ItemDisplay[SET !ID (ltp OR ci3 OR amc OR uld OR xtg OR zvb OR ucl OR xh9 OR 7qr
 // Trang-Ouls Guise - Bone Visage
 // Immortal Kings Soul Cage - Sacred Armor
 // Guillaumes Face - Winged Helm
+// Mavinas True Sight - Diadem
+// Mavinas Caster - Grand Matron Bow
+// Mavinas Embrace - Kraken Shell
+// Mavinas Icy Clutch - Battle Gauntlets
+// Mavinas Tenet - Sharkskin Belt
 
-ItemDisplay[SET !ID FILTLVL<7 (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR uar OR xhm)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<7 (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR uar OR xhm OR ci3 OR amc OR uld OR xtg OR zvb)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 0 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -5874,13 +5874,14 @@ ItemDisplay[DRU (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND 
 ItemDisplay[BAR SK149>2 !INF ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 
-// Shields
-ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) (AR>100 OR EDAM>49)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) RES>19]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[DIN (ELT OR paa) !INF NMAG !RW (SOCK=0 OR SOCK=4) EDAM>60]: %DOT-D6%%NAME%{%NAME%}
+// Paladin Shields
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDAM>59]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>29]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>24 FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19 FILTLVL<5]: %DOT-D6%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80]: %NAME%{%NAME%}
-ItemDisplay[(uit OR uow OR uts OR ush) !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) (EDEF=15 OR FILTLVL<5)]: %NAME%{%NAME%}
+// Shield
+ItemDisplay[(uit OR uow OR uts OR ush) !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDEF>4 (EDEF=15 OR FILTLVL<5)]: %NAME%{%NAME%}
 
 // Bows/Crossbows
 // Class bows
