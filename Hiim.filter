@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 2%CL%Season 10 - version 41%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 2%CL%Season 10 - version 42%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -95,12 +95,13 @@ ItemDisplay[cm2f]: %MAP-4A%%ORANGE%O O %NAME% %ORANGE%O O
 ItemDisplay[rtp]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma Tome of Town Portal
 ItemDisplay[rid]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma Tome of Identify
 
+
 // DClone mats
-ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-4A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>
+ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
 // PD2 Items - Rathma mats
-ItemDisplay[rtmo OR rtmv OR rtmf]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
-// PD2 Items - mats
-ItemDisplay[lucb OR lucc OR lucd]: %MAP-0A%%RED%X X X %ORANGE%%NAME% %RED%X X X
+ItemDisplay[rtmo OR rtmv OR cm2f]: %MAP-0A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GOLD%Voidstone - Rathma boss fight}
+// PD2 Items - lucion mats
+ItemDisplay[lucb OR lucc OR lucd]:%MAP-0A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
@@ -114,8 +115,8 @@ ItemDisplay[luca STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2%CL%%ORANGE%> > %T
 ItemDisplay[luca STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 %ORANGE% < <%CL%%TAN%Tier 1 %CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
 ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%CL%%RED%Diablo Clone Entry}
 ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%CL%%BLUE%Rathma Entry}
-ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%S10 Boss Entry}
-ItemDisplay[(rtma OR dcma OR luca)]: %MAP-0A%%RED%* * %NAME% %RED%* *{%NAME%}
+ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%Lucion Boss Entry}
+ItemDisplay[(rtma OR dcma OR luca)]: %MAP-0A%%RED%* *   %NAME%   %RED%* *{%NAME%}
 
 // PD2 Items - Uber Ancients Tokens
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
@@ -614,15 +615,22 @@ ItemDisplay[mp5 FILTLVL<3]: %BLUE%+ %WHITE%MP5 %BLUE%+
 ItemDisplay[mp5]: %BLUE%+ MP
 
 // Other Potion Tooltips
-ItemDisplay[vps DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta
-ItemDisplay[vps]:
+// Stanima
+ItemDisplay[vps DIFF=2]:{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}%CONTINUE%
+ItemDisplay[vps DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta{%NAME%}
+ItemDisplay[vps]:{%NAME%}
+// Antidote
+ItemDisplay[yps DIFF=2]:{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GOLD%Voidstone - Rathma boss fight}%CONTINUE%
 ItemDisplay[yps (MAPID=161 OR MAPID=162 OR MAPID=163)]: %GREEN%!Anti{Good Luck on Rathma}
-ItemDisplay[yps (FILTLVL<3 OR CLVL<24)]: %GREEN%!Anti
-ItemDisplay[yps]:
-
+ItemDisplay[yps (FILTLVL<3 OR CLVL<24)]: %GREEN%!Anti{%NAME%}
+ItemDisplay[yps]:{%NAME%}
+// Thawing
+ItemDisplay[wms DIFF=2]:{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}%CONTINUE%
 ItemDisplay[wms FILTLVL<2 CLVL<80]: %GREEN%!%WHITE%thaw{%NAME%}
 ItemDisplay[wms FILTLVL<3 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{%NAME%}
-ItemDisplay[wms]: {%NAME%}
+ItemDisplay[wms]:{%NAME%}
+
+
 
 //PvP Mana Potions
 ItemDisplay[pvpp SHOP DIFF=0]: %CONTINUE%{%BLUE%Oak Sage: Rep Disabled%NL%Energy Shield: Potions Disabled%NL%Mind Blast: Only stuns with 1/0 Hard Point(s)%NL%Weapon Block, Holy Sword, Dodge, Evade: Half Chance%NL%Slow, Absorb, ATD, Life Leech, Melee Splash: Disabled%NL%Passive Pierce (Sorc Mastery, Gear, Facets, Etc.): Disabled%NL%Skill Pierce (Lower Resist, Conviction, Etc.): Enabled%NL%Life Rep: Capped at 30%NL%Open Wounds: 8% Modifier%NL%%TAN%Normal PvP Notes}
