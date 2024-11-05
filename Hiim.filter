@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 4%CL%Season 10 - version 46%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 5%CL%Season 10 - version 47%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -581,10 +581,11 @@ ItemDisplay[rvs FILTLVL=8]: %PURPLE%powerade
 ItemDisplay[FILTLVL=9 (rvl OR rvs)]:
 
 // Juvs
-ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %TAN%65%  %PURPLE%*
-ItemDisplay[rvs FILTLVL<3]: %PURPLE%*%WHITE%Rejuv %TAN%35%%WHITE%
-ItemDisplay[rvl]: %PURPLE%*       %WHITE%Rejuv %TAN%65%%PURPLE%       *
-ItemDisplay[rvs]: %PURPLE%* %WHITE%Rejuv %TAN%35% %PURPLE%*
+ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %PURPLE%65%  %PURPLE%*
+ItemDisplay[rvl]: %PURPLE%*       %WHITE%Rejuv %PURPLE%65%%PURPLE%       *
+ItemDisplay[rvs FILTLVL=7]: %WHITE%juv%PURPLE%35%
+ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
+ItemDisplay[rvs]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
 
 // Hide pots when appropriate based on filter level
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>2]:
@@ -1474,14 +1475,16 @@ ItemDisplay[MAG (rin OR amu) !ID FILTLVL>2]:%NOTIFY-DEAD%
 ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%YELLOW%X%BLUE%     %NAME%     %YELLOW%X
 
 // Jewel
-ItemDisplay[MAG (jew) !ID]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
+ItemDisplay[MAG (jew) !ID FILTLVL<7]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
+ItemDisplay[MAG (jew) !ID FILTLVL=7]: %NAME%
 ItemDisplay[RARE jew !ID ILVL>84]: %DOT-A8%%PURPLE%X X X%YELLOW%     %NAME%     %PURPLE%X X X
 ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
 
 // Circlets
 ItemDisplay[EQ7 RARE !ID]: %DOT-A8%%PURPLE%X X X X X %NAME% %PURPLE%X X X X X
-ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<7]: %DOT-91%%YELLOW% X X X %NAME% %YELLOW%X X X
-ItemDisplay[EQ7 MAG !ETH !ID FILTLVL=7]: %DOT-91%%YELLOW%X %NAME% %YELLOW%X
+ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<5]: %DOT-91%%YELLOW% X X X %NAME% %YELLOW%X X X
+ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<7]: %DOT-91%%YELLOW% X X %NAME% %YELLOW%X X
+ItemDisplay[EQ7 MAG !ETH !ID FILTLVL=7]: %NAME%
 ItemDisplay[EQ7 MAG !ID FILTLVL<3]: %NAME%
 ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME% %GRAY%[imbue]{%TAN%Note%WHITE%: You can %YELLOW%imbue %WHITE%it using Charsi quest}
 //-----------------------------------------------------------------------------------
@@ -3399,8 +3402,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 
 // Odium - Colossus Sword
 // Cloudcrack - Gothic Sword
 // Dragonscale - Zakarum Shield
+// Jadetalon - Wrist Sword
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9 OR pae)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ls OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9 OR pae OR 7wb)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -5842,8 +5846,8 @@ ItemDisplay[!RW SK222>2 NMAG FILTLVL<7 (9cl OR 9sp OR 7cl OR 7sp) (SK226>0 OR SK
 //ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=3 NMAG FILTLVL<7]]:%DOT-D6%%NAME% %GREEN%***{%NAME%}
 //
 //Barb helms
-ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK149>2 OR SK150>2 OR SK155>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
-
+ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK151>2) (SOCK=0 OR SOCK=3) ETH !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
+ItemDisplay[SK149>2 (SOCK=0 OR SOCK=2) !INF NMAG FILTLVL<3]: %NAME% %BLUE%[LORE]{%NAME%}
 
 // Enchant Sorceress Orbs
 ItemDisplay[(ob5 OR oba OR obf) (SK40>2 OR SK52>2) !INF (SOCK=0 OR SOCK=3) NMAG FILTLVL<5]: %NAME%{%NAME%}
@@ -5873,18 +5877,19 @@ ItemDisplay[CHEST EXC !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>9 (EDEF=15 OR F
 ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH EDEF>0 NMAG (EDEF=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=2 OR SOCK=0) FILTLVL<3]: %NAME%{%NAME%}
 // DUDU pelts > any RW
+ItemDisplay[DRU (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !INF !ETH NMAG !RW !SOCK=1 FILTLVL<3]: %NAME%{%NAME%}
+ItemDisplay[DRU (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !INF !ETH NMAG !RW !SOCK=1 FILTLVL<3]: %DOT-D6%%NAME%{%NAME%}
 //ItemDisplay[CL1 FILTLVL<5 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !ETH !INF !SUP SOCK=0 NMAG]: %NAME%{%NAME%}
 //ItemDisplay[CL1 FILTLVL<5 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !ETH !INF !SUP SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
 //ItemDisplay[CL1 FILTLVL<5 (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) SOCK=0 !ETH SUP NMAG]: %NAME%{%NAME%}
 //ItemDisplay[CL1 FILTLVL<5 (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) SOCK=0 !ETH SUP NMAG]: %DOT-D6%%NAME% %ORANGE%*{%NAME%}
-ItemDisplay[EQ1 ELT ETH !INF EDEF>0 (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) (EDEF=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%} //ferocity
-ItemDisplay[EQ1 ELT ETH !INF (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) FILTLVL<5]: %NAME%{%NAME%} //ferocity
-ItemDisplay[EQ1 ELT !INF (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) FILTLVL<5]: %NAME%{%NAME%} //flickering flame
-ItemDisplay[EQ1 ELT !INF EDEF>0 (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%} //flickering flame
+ItemDisplay[EQ1 ELT !CLASS ETH !INF EDEF>0 (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) (EDEF=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%} //ferocity
+ItemDisplay[EQ1 ELT !CLASS ETH !INF (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) FILTLVL<5]: %NAME%{%NAME%} //ferocity
+ItemDisplay[EQ1 ELT !CLASS !INF (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) FILTLVL<5]: %NAME%{%NAME%} //flickering flame
+ItemDisplay[EQ1 ELT !CLASS !INF EDEF>0 (SOCK=3 OR SOCK=0) NMAG !(uap OR ukp OR ulm OR uhl) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%} //flickering flame
 ItemDisplay[ci3 !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>0 (EDEF=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 
-ItemDisplay[DRU (SK221>2 OR SK225>2 OR SK227>2 OR SK237>2 OR SK238>2 OR SK239>2 OR SK240>2 OR SK243>2 OR SK244>2 OR SK245>2 OR SK247>2 OR SK249>2 OR SK250>2) !INF !ETH NMAG !RW !SOCK=1 FILTLVL<5]: %NAME%{%NAME%}
-ItemDisplay[DRU (((SK227>1 OR SK221>1) AND SK237>1 AND SK247>1) OR (SK240>1 AND SK245>1 AND SK250>1) OR ((SK240>2 OR SK250>2) AND SK245>2) OR (SK240>2 AND (SK245>2 OR SK250>2))) !INF !ETH NMAG !RW !SOCK=1 FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
+// barb hats
 ItemDisplay[BAR SK149>2 !INF ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 
@@ -5928,7 +5933,7 @@ ItemDisplay[(7wh OR 7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=2) (EDAM=15 OR
 
 // Scepters
 ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(wsp OR 9ws OR 7ws) !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<4]: %NAME%{%NAME%}
+ItemDisplay[(wsp OR 9ws OR 7ws) !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[(SCEPTER !scp) !INF !ETH NMAG !RW (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) (SOCK=0 OR SOCK=3) FILTLVL<7]: %NAME%{%NAME%}
 
 // Swords
@@ -6335,6 +6340,7 @@ ItemDisplay[!SHOP FILTLVL<3 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %N
 
 //hide most nmag non called out on middle filter levels
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>2 NMAG !RW WEAPON]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW ARMOR !(CHEST AND ETH)]:%NOTIFY-DEAD%{%NAME%}
 
 //hide all remaining nmag
