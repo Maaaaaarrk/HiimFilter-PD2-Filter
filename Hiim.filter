@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 3%CL%Season 10 - version 45%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 4%CL%Season 10 - version 46%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6334,7 +6334,7 @@ ItemDisplay[!SHOP FILTLVL<3 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %N
 
 
 //hide most nmag non called out on middle filter levels
-ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !(ETH OR CL5)]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW ARMOR !(CHEST AND ETH)]:%NOTIFY-DEAD%{%NAME%}
 
 //hide all remaining nmag
