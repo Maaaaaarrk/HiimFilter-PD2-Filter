@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 6%CL%Season 10 - version 50%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 6%CL%Season 10 - version 51%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -582,10 +582,11 @@ ItemDisplay[FILTLVL=9 (rvl OR rvs)]:
 
 // Juvs
 ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %PURPLE%65%  %PURPLE%*
-ItemDisplay[rvl FILTLVL=7]: %PURPLE%*     %WHITE%Rejuv %PURPLE%65%%PURPLE%     *
+ItemDisplay[rvl FILTLVL=7]: %PURPLE%*    %WHITE%Rejuv %PURPLE%65%%PURPLE%    *
 ItemDisplay[rvl]: %PURPLE%*       %WHITE%Rejuv %PURPLE%65%%PURPLE%       *
-ItemDisplay[rvs FILTLVL=7]: %WHITE%juv%PURPLE%35%
+ItemDisplay[rvs FILTLVL=7]: %WHITE%j%PURPLE%35%
 ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
+ItemDisplay[rvs FILTLVL<7]: %WHITE%juv%PURPLE%35%
 ItemDisplay[rvs]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
 
 // Hide pots when appropriate based on filter level
