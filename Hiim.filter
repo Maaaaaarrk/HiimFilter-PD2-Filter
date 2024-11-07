@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 52%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 53%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2096,6 +2096,8 @@ ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>12 RES>4]: %DOT-50%%NAME% %PURPLE%[LLD]{%G
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>9 (MAXDMG>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 (FHR>0 OR FRW>0) (RES>0 OR FRES>8 OR LRES>8 OR CRES>8 OR PRES>8)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 FRW>0 (RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0)]: %DOT-50%%NAME% %ORANGE%[LLD]%TIER-6%{%GRAY%For LLD}
+ItemDisplay[MAG LVLREQ<31 cm1 LIFE>14 (STAT48>7 OR STAT49>8 OR STAT51>14 OR STAT54>7 OR STAT55>8)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG Flat Ele & Life LLD%CL%%NAME%}
+ItemDisplay[MAG LVLREQ<31 cm1 LIFE>9 (STAT48>7 OR STAT49>8 OR STAT51>14 OR STAT54>7 OR STAT55>8)]: %DOT-50%%NAME% %ORANGE%[LLD]%TIER-6%{%GRAY%Flat Ele & Life LLD%CL%%NAME%}
 
 // LLD - Large Charms
 ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>11 (MAXDMG>5 OR RES>7 OR STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
@@ -2110,7 +2112,7 @@ ItemDisplay[MAG cm2 ID LVLREQ<31 STAT331=3 (FHR>0 OR FRW>0 OR MAXDMG>0 OR MANA>0
 ItemDisplay[MAG cm2 ID LVLREQ<31 STAT332=3 (FHR>0 OR FRW>0 OR MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 OR RES>0 OR FRES>0 OR LRES>0 OR CRES>0 OR PRES>0 OR STAT31>15)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 
 // All other LLD charms
-ItemDisplay[MAG LVLREQ<31 (cm1 OR cm2 OR cm3) (STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0 OR STAT56>0)]: %DOT-50%%TIER-4%%NAME% %BLUE%[LLD]%WHITE%{%GRAY%Usable Flat Ele LLD%CL%%NAME%}
+ItemDisplay[MAG LVLREQ<31 (cm1 OR cm2 OR cm3) (STAT48>0 OR STAT49>0 OR STAT50>0 OR STAT51>0 OR STAT54>0 OR STAT55>0)]: %DOT-50%%TIER-4%%NAME% %BLUE%[LLD]%WHITE%{%GRAY%Usable Flat Ele LLD%CL%%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
