@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 57%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 58%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2027,6 +2027,7 @@ ItemDisplay[MAG cm1 (STAT49>34 OR STAT51>59 OR STAT55>31)]: %DOT-50%%NAME% %PURP
 ItemDisplay[MAG cm1 STAT49>23 (STAT51>19 OR STAT55>8)]: %DOT-50%%NAME% %PURPLE%[Veng]%CONTINUE%
 ItemDisplay[MAG cm1 STAT51>39 (STAT49>10 OR STAT55>8)]: %DOT-50%%NAME% %PURPLE%[Veng]%CONTINUE%
 ItemDisplay[MAG cm1 STAT55>20 (STAT49>10 OR STAT51>19)]: %DOT-50%%NAME% %PURPLE%[Veng]%CONTINUE%
+ItemDisplay[MAG cm1 (STAT49>23 OR STAT51>39 OR STAT55>20)]: %DOT-50%%NAME% %ORANGE%[Veng]%CONTINUE%
 
 // Combo charm notification For a combo of desired prefix and suffix
 // Prefix: Gold Find, Mana, Max Damage, All Res, Specific Resists, Damage % Charm
