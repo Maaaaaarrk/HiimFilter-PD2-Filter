@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 59%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 60%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3855,6 +3855,17 @@ ItemDisplay[!RW TABSK18=2 SK85=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> 
 ItemDisplay[!RW TABSK18=3 SK85=2 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
 ItemDisplay[!RW CLSK2=2 SK85=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
 
+
+// Shock Web sk wands / offhand //ALLSK
+ItemDisplay[!RW CLSK6=2 SK256=3 ALLSK=2]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK48=3 SK256=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK48=3 SK256=3 !(ALLSK=1)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK48=3 SK256=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK48=2 SK256=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW CLSK6=2 SK256=3 ALLSK=1]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +6 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK48=2 SK256=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK48=3 SK256=2 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW CLSK6=2 SK256=3 !(ALLSK=1)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Shock Web   < < < <%CL%%NAME%}
 
 // SK245	Tornado
 ItemDisplay[!RW TABSK42=3 SK245=2 ALLSK=2]: %NAME% %BORDER-ED%%PURPLE%+7 Tornado%CONTINUE%{%NAME%}
