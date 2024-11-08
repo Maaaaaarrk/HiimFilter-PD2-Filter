@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 7%CL%Season 10 - version 60%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 8%CL%Season 10 - version 61%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -4644,7 +4644,7 @@ ItemDisplay[!UNI !SET !RW SK98=2 FILTLVL<2]: +2 Might %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK98=3 FILTLVL<3]: +3 Might %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK99=1 FILTLVL<2]: +1 Pray %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK99=2 FILTLVL<2]: +2 Pray %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK99=3 FILTLVL<2]: +3 Pray %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK99=3]: +3 Pray %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK100=1 FILTLVL<3]: +1 ResFire %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK100=2 FILTLVL<3]: +2 ResFire %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK100=3 FILTLVL<5]: +3 ResFire %NAME%{%NAME%}%CONTINUE%
@@ -4733,7 +4733,7 @@ ItemDisplay[!UNI !SET !RW SK378=1 FILTLVL<3]: +1 Joust %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK378=2 FILTLVL<3]: +2 Joust %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK378=3 FILTLVL<3]: +3 Joust %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW FILTLVL<3 (SK96>0 OR SK97>0 OR SK98>0 OR SK99>0 OR SK100>0 OR SK101>0 OR SK102>0 OR SK103>0 OR SK104>0 OR SK105>0 OR SK106>0 OR SK107>0 OR SK108>0 OR SK109>0 OR SK110>0 OR SK111>0 OR SK112>0 OR SK113>0 OR SK114>0 OR SK115>0 OR SK116>0 OR SK117>0 OR SK118>0 OR SK119>0 OR SK120>0 OR SK121>0 OR SK122>0 OR SK123>0 OR SK124>0 OR SK125>0 OR SK364>0 OR SK371>0 OR SK378>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK101>2 OR SK101>2 OR SK105>2 OR SK109>2 OR SK110>2 OR SK111>2 OR SK112>2 OR SK113>2 OR SK116>2 OR SK117>0 OR SK121>2 OR SK122>2 OR SK123>2 OR SK125>2 OR SK364>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK99>2 OR SK101>2 OR SK101>2 OR SK105>2 OR SK109>2 OR SK110>2 OR SK111>2 OR SK112>2 OR SK113>2 OR SK116>2 OR SK117>0 OR SK121>2 OR SK122>2 OR SK123>2 OR SK125>2 OR SK364>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 // low level
 ItemDisplay[NMAG !INF FILTLVL<3 (SK116=3 OR SK117>0 OR SK112=3 OR SK121>0 OR SK123>0 OR SK109>0 OR (SK113=3 AND SK112>0)) (SOCK=0 OR SOCK>2) FILTLVL<3]: %NAME% %ORANGE%****{%NAME%}%CONTINUE%
 
@@ -5824,16 +5824,16 @@ ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2
 ItemDisplay[(8cs OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %NAME% [LLD]{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // Hand of Justice/CTA Scepters
-ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) NMAG !INF !SUP (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %DARK_GREEN%[CTA]{%NAME%}
+ItemDisplay[7ws SK123>2 NMAG !INF !SUP (SOCK=0 OR SOCK=5) !RW EDAM>4 (EDAM=15 OR FILTLVL<7)]: %NAME% %DARK_GREEN%[HOJ]{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %DARK_GREEN%[CTA]{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %DARK_GREEN%[CTA]{%NAME%}
-ItemDisplay[(wsp OR 9ws OR 7ws) (SK117>2 OR SK116>2) NMAG !RW (SOCK=0 OR SOCK=5)]: %DOT-D6%%NAME%{%NAME%}
 
 // Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(SPEAR OR POLEARM) ELT ETH !INF SOCK=0 NMAG !RW (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 
-// Insight for A3
-ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws) FILTLVL<5]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
+// Insight for A3 SK99 prayer SK109 cleansing
+ItemDisplay[NMAG !INF !RW SOCK=4 (SK99>2 OR SK109>2) (wsp OR 9ws OR 7ws) FILTLVL<5]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
+ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
 
 // Grief/Beast/Passion
 ItemDisplay[7wa !ETH !INF (SOCK=0 OR SOCK=5) NMAG EDAM>0 (EDAM=15 OR FILTLVL<5)]: %DOT-D6%%NAME%{%NAME%}
@@ -5964,9 +5964,8 @@ ItemDisplay[(7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=5) (EDAM=15 OR FILTLV
 ItemDisplay[(7wh OR 7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=2) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%} // WIND RW
 
 // Scepters
-ItemDisplay[(wsp OR 9ws OR 7ws) (SK100>2 OR SK125>2 OR SK108>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=4)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[(SCEPTER !scp) !INF !ETH NMAG !RW (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) (SOCK=0 OR SOCK=3) FILTLVL<7]: %NAME%{%NAME%}
+// plague for foh/bolt ItemDisplay[(SCEPTER !scp) !INF !ETH NMAG !RW (SK101>2 OR SK112>2 OR SK118>2 OR SK121>2) (SOCK=0 OR SOCK=3) FILTLVL<5]: %NAME%{%NAME%}
 
 // Swords
 // Spirit Swords
