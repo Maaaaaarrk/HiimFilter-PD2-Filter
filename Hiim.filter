@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 8%CL%Season 10 - version 63%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 8%CL%Season 10 - version 64%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3822,6 +3822,26 @@ ItemDisplay[!RW TABSK50=3 SK269=1 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%>
 ItemDisplay[!RW (TABSK50=1 OR CLSK6=1) SK269=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claws of Thunder   < < < <%CL%%NAME%}
 ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK269=3 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Claws of Thunder   < < < <%CL%%NAME%}
 ItemDisplay[!RW TABSK50=3 SK269=2 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Claws of Thunder   < < < <%CL%%NAME%}
+// Fists of Fire Skills SK259
+ItemDisplay[!RW TABSK50=3 SK259=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK259=3 !(ALLSK=1)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK259=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK259=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK259=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK259=1 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=1 OR CLSK6=1) SK259=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK259=3 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK259=2 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
+// Blades of Ice Skills SK274
+ItemDisplay[!RW TABSK50=3 SK274=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK274=3 !(ALLSK=1)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK274=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK274=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK274=2 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK274=1 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=1 OR CLSK6=1) SK274=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW (TABSK50=2 OR CLSK6=2) SK274=3 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW TABSK50=3 SK274=2 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
 // Claw Mastery Skills SK252
 ItemDisplay[!RW TABSK49=3 SK252=3 ALLSK=1]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claw Mastery   < < < <%CL%%NAME%}
 ItemDisplay[!RW TABSK49=3 SK252=3 !(ALLSK=1)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claw Mastery   < < < <%CL%%NAME%}
