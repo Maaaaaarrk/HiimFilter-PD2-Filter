@@ -1,3 +1,7 @@
+NOTE: This changelog is not maintained, placeholder for when integrated into the launcher
+NOTE: This changelog is not maintained, placeholder for when integrated into the launcher
+NOTE: This changelog is not maintained, placeholder for when integrated into the launcher
+
 Season 10 v1
 - Rebalanced items for new patch
 - Added new items
