@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 69%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 70%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1518,7 +1518,7 @@ ItemDisplay[cm3 UNI !ID]: %BORDER-9B%> >  Unidentified Gheeds Fortune  < <
 //-----------------------------------------------------------------------------------
 
 // Weapon Rares
-ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf) RARE ETH (ILVL>84) !ID]: %DOT-ED%%PURPLE%* * * * %NAME%%PURPLE% * * * *
+ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr) RARE ETH (ILVL>84) !ID]: %DOT-ED%%PURPLE%* * * * %NAME%%PURPLE% * * * *
 ItemDisplay[WEAPON RARE ETH (ILVL>84) !ID FILTLVL<7]: %DOT-ED%%PURPLE%* %YELLOW%%NAME% %PURPLE%*
 ItemDisplay[WEAPON RARE ETH !ID FILTLVL<3]: %DOT-ED%%PURPLE%* %YELLOW%%NAME% %PURPLE%*
 ItemDisplay[WEAPON RARE !ID FILTLVL<3]: %YELLOW%* * %NAME% %YELLOW%* *
@@ -1529,7 +1529,7 @@ ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<5]: %DOT-ED%%YELLOW%* %NAME
 ItemDisplay[!ID ETH SIN RARE FILTLVL<7 ILVL>84]: %DOT-ED%%YELLOW%* %NAME% %YELLOW%* //eth sin claws
 ItemDisplay[!ID ETH SIN RARE FILTLVL<8 ILVL>84]: %DOT-ED%%NAME% //eth sin claws
 ItemDisplay[!ID SIN RARE FILTLVL<7 ILVL>84]: %NAME% //non eth sin claws
-ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf) RARE FILTLVL<8 (ILVL>84) !ID]: %NAME%
+ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr) RARE FILTLVL<8 (ILVL>84) !ID]: %NAME%
 
 // Rare for class you are playing unid
 ItemDisplay[DRUID CL1 FILTLVL<5 RARE !ID]: %DOT-90%%ORANGE%* %NAME% %ORANGE%*
@@ -1728,6 +1728,13 @@ ItemDisplay[(ARMOR OR rin OR amu) (MAG OR RARE OR CRAFT) (FRES+CRES+LRES+PRES>19
 
 // PLR
 ItemDisplay[(ARMOR OR WEAPON OR rin OR amu OR aqv OR cqv) (MAG OR RARE OR CRAFT) STAT110>0]: %DARK_GREEN%%STAT110%PLR %NAME%%CONTINUE%%DOT-0B%
+
+// Weapon ele pierce
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON (PREFIX=822 OR PREFIX=823 OR PREFIX=824)]: %RED%PIERCE %NAME%%CONTINUE%%DOT-0B% // Fire
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON (PREFIX=825 OR PREFIX=826 OR PREFIX=827)]: %BLUE%PIERCE %NAME%%CONTINUE%%DOT-0B% // Cold
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON (PREFIX=828 OR PREFIX=829 OR PREFIX=830)]: %YELLOW%PIERCE %NAME%%CONTINUE%%DOT-0B% // Light
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON (PREFIX=831 OR PREFIX=832 OR PREFIX=833)]: %GREEN%PIERCE %NAME%%CONTINUE%%DOT-0B% // PSN
+
 
 // STATS
 //-----------------------------------------------------------------------------------
@@ -2118,7 +2125,7 @@ ItemDisplay[cm3 UNI]: %MAP% %NAME%
 ItemDisplay[MAG cm1 ID LVLREQ<10 LIFE>12 (MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 OR STAT31>0 OR STAT19>0)]: %DOT-50%%NAME% %PURPLE%[VLLD]%WHITE%%TIER-6%{%GRAY%GG VLLD}
 
 // LLD - Small Charms
-ItemDisplay[MAG cm1 ID LVLREQ<31 (LIFE>14 OR FRW>0) (MAXDMG>1 OR MANA>9 OR STR>0 OR DEX>0 OR RES>2 OR STAT31>10)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm1 ID LVLREQ<31 (LIFE>14 OR FRW>0) (MAXDMG>1 OR MANA>9 OR STR>0 OR DEX>0 OR RES>2 OR STAT31>9)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>13 (MANA>9 OR RES>3 OR FRES>8 OR LRES>8 OR CRES>8 OR PRES>8)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>12 RES>4]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>9 (MAXDMG>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
@@ -2130,6 +2137,7 @@ ItemDisplay[MAG LVLREQ<31 cm1 (STAT49>26 OR STAT51>46 OR STAT55>24)]: %DOT-50%%N
 ItemDisplay[MAG LVLREQ<31 cm1 STAT49>13 (STAT51>23 OR STAT55>12)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG Flat Ele LLD%CL%%NAME%}
 ItemDisplay[MAG LVLREQ<31 cm1 STAT55>12 STAT51>23]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG Flat Ele LLD%CL%%NAME%}
 ItemDisplay[MAG LVLREQ<31 cm1 LIFE>9 (STAT48>7 OR STAT49>8 OR STAT51>14 OR STAT54>7 OR STAT55>8)]: %DOT-50%%NAME% %ORANGE%[LLD]%TIER-6%{%GRAY%Flat Ele & Life LLD%CL%%NAME%}
+ItemDisplay[MAG cm1 ID LVLREQ<31 (LIFE>9 OR FRW>0) STAT31>9]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%LLD}
 
 // LLD - Large Charms
 ItemDisplay[MAG cm2 ID LVLREQ<31 LIFE>11 (MAXDMG>5 OR RES>7 OR STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
@@ -4109,11 +4117,13 @@ ItemDisplay[!ID MAG ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr
 // Weapons
 ItemDisplay[!ID (7gl OR 9gl OR glv) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
 ItemDisplay[!ID (7p7 OR 9p9 OR pik) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Pike
-ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
-ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Phase Blade
+ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *///Ogre Maul
 ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Fist
+ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Champion Axe
+ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Hyperion spear
+ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
+ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Phase Blade
 ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
-ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Ogre Maul
 ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
 ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
 ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
@@ -6040,6 +6050,7 @@ ItemDisplay[(7bt OR 7ba OR 7ga OR 7gi OR 7la) !INF ETH NMAG !RW (SOCK=0 OR SOCK=
 
 // Hammers
 ItemDisplay[(7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7m7 OR 7gm) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=5) EDAM>4 (EDAM=15 OR FILTLVL<5) FILTLVL<8]: %DOT-D6%%NAME%%TIER-6%{%NAME%}//rampage
 ItemDisplay[(7wh OR 7m7 OR 7gm) !INF ETH NMAG !RW (SOCK=0 OR SOCK=2) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%} // WIND RW
 
 // Scepters
