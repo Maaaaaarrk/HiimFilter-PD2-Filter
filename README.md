@@ -96,10 +96,10 @@ All UNID Set/Unique items show their identified name options
 * Typical craft are denoted by *
 * Notes about Alvl are on the crafting bases
 
-![img1](examples/runewords1.png?raw=true)
-![img1](examples/hints1.PNG?raw=true)
-![img1](examples/hints2.PNG?raw=true)
-![img1](examples/hints3.PNG?raw=true)
+![img1](examples/craft1.PNG?raw=true)
+![img1](examples/craft2.PNG?raw=true)
+![img1](examples/craft3.PNG?raw=true)
+![img1](examples/craft4.PNG?raw=true)
 
 
 
