@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 68%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 69%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -62,7 +62,6 @@ ItemDisplay[FILTLVL=0]: %NAME%{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}// 
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp) QTY>1 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 //-----------------------------------------------------------------------------------
-
 
 //-----------------------------------------------------------------------------------
 // HIDE JUNK RULES
@@ -1546,7 +1545,7 @@ ItemDisplay[!ID AMAZON (am5 OR ama OR amf) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %N
 ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //Zon bow
 ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<8 ILVL>84]: %NAME% //Zon bow
 ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //Zon bow
-ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: NAME% //Zon bow
+ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %NAME% //Zon bow
 ItemDisplay[!ID (pab OR pa6 OR pa1) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //pala shield
 ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //4os able scepters
 ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %YELLOW%* %NAME% %YELLOW%* //dudu helms
