@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 71%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 72%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -4184,6 +4184,7 @@ ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth 
 // Crafting notes
 ItemDisplay[MAG ID STAT360=0 !aqv !cqv !cm1 !cm2 !cm3 !jew !EQ7]: %NAME%{%CORAL%Crafted Alvl: %CRAFTALVL%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RARE ID STAT360=0 !aqv !cqv !cm1 !cm2 !cm3 !jew !EQ7 FILTLVL<5]: %NAME%{%CORAL%Crafted Alvl: %CRAFTALVL%%CL%%NAME%}%CONTINUE%
+ItemDisplay[CHEST MAG ID !(STAT360>0)]: %NAME%{%CORAL%Alvl 85+ for 200% EDAM & 20% PDR Chance%CL%%NAME%}%CONTINUE%
 
 // Crafting tag when identified
 //purgatory builds
@@ -4241,7 +4242,7 @@ ItemDisplay[BOOTS MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Ort, Je
 ItemDisplay[GLOVES MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ral, Jewel%CL%%BLUE%* HitPwr: O, Ort, Jewel *%CL%%RED%* Blood: O, Nef, Jewel *%CL%%PURPLE%* Caster: O, Ort, Jewel *%CL%%YELLOW%MF: O, Hel, Jewel%CL%%GRAY%* Vamp: SK, Io, Jewel *%CL%%wHITE%Brilliant: O, Shael, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[BELT MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Tal, Jewel%CL%%BLUE%* HitPwr: O, Tal, Jewel *%CL%%RED%Blood: O, Tal, Jewel%CL%%PURPLE%* Caster: O, Ith, Jewel *%CL%%YELLOW%MF: O, El, Jewel%CL%%GRAY%Vamp: SK, Eld, Jewel%CL%%wHITE%Brilliant: O, Io, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[SHIELD MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Nef, Jewel *%CL%%BLUE%* HitPwr: O, Eth, Jewel *%CL%%RED%Blood: O, Ith, Jewel%CL%%PURPLE%* Caster: O, Eth, Jewel *%CL%%YELLOW%MF: O, Dol, Jewel%CL%%GRAY%Vamp: SK, Sol, Jewel%CL%%wHITE%Brilliant: O, Ort, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%CORAL%Alvl 85+ for 200% EDAM & 20% PDR Chance%CL%%NAME%}%CONTINUE%
+ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[amu MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Thul, Jewel%CL%%BLUE%HitPwr: O,Thul , Jewel%CL%%RED%Blood: O, Amn, Jewel%CL%%PURPLE%* Caster: O, Ral, Jewel *%CL%%YELLOW%* MF: O, Ko, Jewel *%CL%%GRAY%Vamp: SK, Dol, Jewel%CL%%wHITE%Brilliant: O, Tal, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[rin MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Amn, Jewel%CL%%BLUE%HitPwr: O, Amn, Jewel%CL%%RED%* Blood: O, Sol, Jewel *%CL%%PURPLE%Caster: O, Amn, Jewel%CL%%YELLOW%* MF: O, Lum, Jewel *%CL%%GRAY%* Vamp: SK, Hel, Jewel *%CL%%wHITE%* Brilliant: O, Hel, Jewel *%CL%%NAME%}%CONTINUE%
 ItemDisplay[(WAND OR SOR) MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
