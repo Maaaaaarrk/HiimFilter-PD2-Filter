@@ -36,7 +36,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 72%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 73%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -225,6 +225,7 @@ ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 85%%CL%%GRAY%Ph 6
 ItemDisplay[t52]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Hellcaves Level id 181 Updated: Oct 12 2024
 ItemDisplay[t53]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 75%%CL%%GRAY%Ph 65% %ORANGE%M 80% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fallen Gardens Level id 183 Updated: Oct 12 2024
 
+
 // Item code no longer dictates map tier
 // Maps [T1X]
 ItemDisplay[t22]: %NAME%Torajan Jungle Map%CONTINUE%{%NAME%}
@@ -314,7 +315,8 @@ ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR t43 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
 
 // Map Contains SOULS
-ItemDisplay[(t14 OR t3a OR STAT470>0)]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a OR STAT470>0) RARE]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a OR STAT470>0) NMAG]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 
 // Map Contains Added PSN
 ItemDisplay[STAT435>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
@@ -326,6 +328,10 @@ ItemDisplay[STAT406>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pi
 ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
 
 // Buffs / Tags
+// Map Contains Ghosts
+ItemDisplay[(t12 OR t27 OR t34 OR STAT442>0) RARE]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34 OR STAT442>0) NMAG]: %NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+
 // Map has Standard of Heroes applied
 ItemDisplay[STAT458>0]: %GREEN% [H]%NAME%%CONTINUE%{%NAME%}
 
