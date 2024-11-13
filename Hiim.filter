@@ -24,19 +24,20 @@
 // Filter Levels (0 = No Filter)
 ItemDisplayFilterName[]: Base
 ItemDisplayFilterName[]: Semi-Strict
-ItemDisplayFilterName[]: Strict+Crafting
-ItemDisplayFilterName[]: Strict+Crafting+No HP/MP
+ItemDisplayFilterName[]: Strict + Crafting
+ItemDisplayFilterName[]: Strict + Crafting + No HP/MP
 ItemDisplayFilterName[]: Stricter
-ItemDisplayFilterName[]: Stricter+No HP/MP
+ItemDisplayFilterName[]: Stricter + No HP/MP
 ItemDisplayFilterName[]: Extremely Strict
-ItemDisplayFilterName[]: Rejuvs Only
+ItemDisplayFilterName[]: High roller
+ItemDisplayFilterName[]: Rejuvs Only - No Other Items Out of Town
 ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 10%CL%Season 10 - version 73%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 13%CL%Season 10 - version 74%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -45,8 +46,9 @@ ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Strict & Crafting & No HP/MP}
 ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=8]: %NAME%{%NAME% Rejuvs Only}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=9]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=8]: %NAME%{%NAME% High roller}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=9]: %NAME%{%NAME% Rejuvs Only - No Other Items Out of Town}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=10]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
 
 ItemDisplay[(box OR key)]: %NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[(box OR key) CLVL=99]: %NAME%{%CL%%PURPLE%Grats on 99%CL%%CL%%NAME%}%CONTINUE%
@@ -70,6 +72,18 @@ ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:// Hide inferior items
 ItemDisplay[ear]:// Hide player ears
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuff always after 80
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher Filter levels after 60
+//-----------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------------
+// POTIONS ONLY FILTER ENFORCEMENT
+//-----------------------------------------------------------------------------------
+// Shows 
+ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+// Hide EVERYTHING ELSE
+ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -411,26 +425,26 @@ ItemDisplay[gpy OR gpys]: %YELLOW%*  %TAN%P.%WHITE% Topaz  %YELLOW%*%CONTINUE%
 ItemDisplay[skl OR skls]: %GRAY%* %TAN%F.%WHITE% Skull %GRAY%*%CONTINUE%
 ItemDisplay[skz OR skzs]: %GRAY%* *  %TAN%P.%WHITE% Skull  %GRAY%* *%CONTINUE%
 
-ItemDisplay[gzv OR gzvs FILTLVL=7]: %PURPLE%O%CONTINUE%
-ItemDisplay[gpv OR gpvs FILTLVL=7]: %PURPLE%P.Amethyst%CONTINUE%
-ItemDisplay[glw OR glws FILTLVL=7]: %WHITE%O%CONTINUE%
-ItemDisplay[gpw OR gpws FILTLVL=7]: %WHITE%P.Diamond%CONTINUE%
-ItemDisplay[glg OR glgs FILTLVL=7]: %GREEN%O%GREEN%%CONTINUE%
-ItemDisplay[gpg OR gpgs FILTLVL=7]: %GREEN%P.Emerald%GREEN%%CONTINUE%
-ItemDisplay[glr OR glrs FILTLVL=7]: %RED%O%CONTINUE%
-ItemDisplay[gpr OR gprs FILTLVL=7]: %RED%P.Ruby%CONTINUE%
-ItemDisplay[glb OR glbs FILTLVL=7]: %BLUE%O%CONTINUE%
-ItemDisplay[gpb OR gpbs FILTLVL=7]: %BLUE%P.Sapphire%CONTINUE%
-ItemDisplay[gly OR glys FILTLVL=7]: %YELLOW%O%CONTINUE%
-ItemDisplay[gpy OR gpys FILTLVL=7]: %YELLOW%P.Topaz%CONTINUE%
-ItemDisplay[skl OR skls FILTLVL=7]: %WHITE%F.Skull%CONTINUE%
-ItemDisplay[skz OR skzs FILTLVL=7]: %GRAY%*  %WHITE%P.Skull  %GRAY%*%CONTINUE%
+ItemDisplay[gzv OR gzvs FILTLVL>6]: %PURPLE%O%CONTINUE%
+ItemDisplay[gpv OR gpvs FILTLVL>6]: %PURPLE%P.Amethyst%CONTINUE%
+ItemDisplay[glw OR glws FILTLVL>6]: %WHITE%O%CONTINUE%
+ItemDisplay[gpw OR gpws FILTLVL>6]: %WHITE%P.Diamond%CONTINUE%
+ItemDisplay[glg OR glgs FILTLVL>6]: %GREEN%O%GREEN%%CONTINUE%
+ItemDisplay[gpg OR gpgs FILTLVL>6]: %GREEN%P.Emerald%GREEN%%CONTINUE%
+ItemDisplay[glr OR glrs FILTLVL>6]: %RED%O%CONTINUE%
+ItemDisplay[gpr OR gprs FILTLVL>6]: %RED%P.Ruby%CONTINUE%
+ItemDisplay[glb OR glbs FILTLVL>6]: %BLUE%O%CONTINUE%
+ItemDisplay[gpb OR gpbs FILTLVL>6]: %BLUE%P.Sapphire%CONTINUE%
+ItemDisplay[gly OR glys FILTLVL>6]: %YELLOW%O%CONTINUE%
+ItemDisplay[gpy OR gpys FILTLVL>6]: %YELLOW%P.Topaz%CONTINUE%
+ItemDisplay[skl OR skls FILTLVL>6]: %WHITE%F.Skull%CONTINUE%
+ItemDisplay[skz OR skzs FILTLVL>6]: %GRAY%*  %WHITE%P.Skull  %GRAY%*%CONTINUE%
 
 // Formatting for stacked vs unstacked with warning
 ItemDisplay[GEM>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
 
-// Tooltips
+// Flawless
 ItemDisplay[gzvs FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: +24 Def%CL%Armor/Helm: +8 to Strength%CL%Weapon: +100 to Attack Rating%CL%}
 ItemDisplay[glys FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Light Res%CL%Armor/Helm: 20% Magic Find%CL%Weapon: 1-30 Light Damage%CL%}
 ItemDisplay[glbs FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Cold Res%CL%Armor/Helm: +31 to Mana%CL%Weapon: 6-10 Cold Damage%CL%}
@@ -439,6 +453,7 @@ ItemDisplay[glrs FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless
 ItemDisplay[glws FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: All Res +14%%CL%Armor/Helm: +80 to AR%CL%Weapon: +54% Dmg vs Undead%CL%}
 ItemDisplay[skls FILTLVL<8]: %DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: Atcker+16Dmg%CL%Armor/Helm: Rep Life 4, Reg Mana 12%%CL%Weapon: 3%Life 3%Mana %CL%}
 
+//Perfect
 // Ame
 ItemDisplay[gpvs FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Chest Tal, +[5-10]% FCR +[3-6] MPK +[20-30] to Mana%CL%Shield Eth, [10-20]% Block +[5-10]% FCR +[20-30] Mana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
 // Topaz
@@ -452,9 +467,10 @@ ItemDisplay[gprs FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Amn, 10% FRW +[3-6] L
 //Diamond
 ItemDisplay[gpws FILTLVL<8]: %DOT-70%%NAME%%TIER-6%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
 // Skull
-ItemDisplay[skzs FILTLVL<8]: %DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%CL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%CL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%CL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%CL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%CL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%CL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
+ItemDisplay[skzs FILTLVL<9]: %DOT-70%%NAME%{Amulet Dol, [5-10]% CurseDurReduct [3-6]%ML +[5-10] RepLife%CL%Ring Hel,[10-20]% PLR [1-3]%ML +[5-10] RepLife%CL%Belt Eld, [10-20]% Dmg Gned as Mana [3-6]%ML +[5-10] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[5-10] RepLife%CL%Boots El, [10-20]% PLR [2-4]%ML +[5-10] RepLife%CL%Helm Lum, [10-20]% DeadlyStrike [2-4]%ML [5-10] RepLife%CL%Chest Tir, [3-6]%ML +[5-10] RepLife -[20-30]%Req%CL%Shield Sol, [10-20]% Block [3-6]%ML -[20-30]%Req%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
 
-// Hide gems otherwise
+// Hide/show gems otherwise
+ItemDisplay[GEM>0 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%
 ItemDisplay[GEM>0 QTY>0]:
 
 // Crafting orb formatting
@@ -524,8 +540,8 @@ ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.75%CL%}%CONTINUE%
 ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2.25-2.5%CL%}%CONTINUE%
 ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 4.5-5%CL%}%CONTINUE%
 
-// Potions only Runes
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7]:
+// High roller
+ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 
 // Tooltip notes & show runes
 ItemDisplay[r01s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld%CL%%CL%Shield: +15 Defense%CL%Armor/Helm: +15 Defense%CL%Weapon: +50 Attack Rating%CL%}
@@ -580,25 +596,22 @@ ItemDisplay[(tbk OR ibk) QTY<6]: %RED%LOW QTY %NAME%%CONTINUE%
 ItemDisplay[ibk]: %RED%+%WHITE%ID Tome
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome
 
-// Potions Only Mode name for pots
-ItemDisplay[rvl FILTLVL=8]: %PURPLE%GATORADE
-ItemDisplay[rvs FILTLVL=8]: %PURPLE%powerade
-ItemDisplay[FILTLVL=9 (rvl OR rvs)]:
-
 // Juvs
 ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %PURPLE%65%  %PURPLE%*
-ItemDisplay[rvl FILTLVL=7]: %PURPLE%*    %WHITE%Rejuv %PURPLE%65%%PURPLE%    *
-ItemDisplay[rvl]: %PURPLE%*       %WHITE%Rejuv %PURPLE%65%%PURPLE%       *
-ItemDisplay[rvs FILTLVL=7]: %WHITE%j%PURPLE%35%
+ItemDisplay[rvl FILTLVL<7]: %PURPLE%*    %WHITE%Rejuv %PURPLE%65%%PURPLE%    *
+ItemDisplay[rvl FILTLVL<8]: %PURPLE%* %WHITE%Rejuv %PURPLE%65% %PURPLE%*
+ItemDisplay[rvl FILTLVL<9]: %WHITE%Rejuv %PURPLE%65%
+ItemDisplay[rvl FILTLVL=9]: %PURPLE%GATORADE
+ItemDisplay[rvl]:
 ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
 ItemDisplay[rvs FILTLVL<7]: %WHITE%juv%PURPLE%35%
-ItemDisplay[rvs]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
+ItemDisplay[rvs FILTLVL<8]: %WHITE%j%PURPLE%35%
+ItemDisplay[rvs FILTLVL=9]: %PURPLE%powerade
+ItemDisplay[rvs]:
 
-// Hide pots when appropriate based on filter level
+// Hide bad pots when appropriate based on filter level
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>2]:
 ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) FILTLVL>2]:
-ItemDisplay[hp5 (FILTLVL=4 OR FILTLVL=6 OR FILTLVL=7 OR FILTLVL=8)]:
-ItemDisplay[mp5 (FILTLVL=4 OR FILTLVL=6 OR FILTLVL=7 OR FILTLVL=8)]:
 
 // Hide pots when appropriate based on gameplay
 ItemDisplay[(hp1 OR hp2) (DIFF>0 OR CLVL>79)]:
@@ -607,20 +620,22 @@ ItemDisplay[(mp1 OR mp2) (DIFF>0 OR CLVL>79)]:
 ItemDisplay[(mp3 OR mp4) (DIFF>1 OR CLVL>79)]:
 
 // Show HP Pots
-ItemDisplay[hp1 DIFF<1 CLVL<80]: %RED%+ %WHITE%HP1 %RED%+
-ItemDisplay[hp2 DIFF<1 CLVL<80]: %RED%+ %WHITE%HP2 %RED%+
-ItemDisplay[hp3 DIFF<2 CLVL<80]: %RED%+ %WHITE%HP3 %RED%+
-ItemDisplay[hp4 DIFF<2 CLVL<80]: %RED%+ %WHITE%HP4 %RED%+
+ItemDisplay[hp1]: %RED%+ %WHITE%HP1 %RED%+
+ItemDisplay[hp2]: %RED%+ %WHITE%HP2 %RED%+
+ItemDisplay[hp3]: %RED%+ %WHITE%HP3 %RED%+
+ItemDisplay[hp4]: %RED%+ %WHITE%HP4 %RED%+
 ItemDisplay[hp5 FILTLVL<3]: %RED%+ %WHITE%HP5 %RED%+
-ItemDisplay[hp5]: %RED%+ HP
+ItemDisplay[hp5 (FILTLVL=3 OR FILTLVL=5)]: %RED%+ HP
+ItemDisplay[hp5]:
 
 // Show MP Pots
-ItemDisplay[mp1 DIFF<1 CLVL<80]: %BLUE%+ %WHITE%MP1 %BLUE%+
-ItemDisplay[mp2 DIFF<1 CLVL<80]: %BLUE%+ %WHITE%MP2 %BLUE%+
-ItemDisplay[mp3 DIFF<2 CLVL<80]: %BLUE%+ %WHITE%MP3 %BLUE%+
-ItemDisplay[mp4 DIFF<2 CLVL<80]: %BLUE%+ %WHITE%MP4 %BLUE%+
+ItemDisplay[mp1]: %BLUE%+ %WHITE%MP1 %BLUE%+
+ItemDisplay[mp2]: %BLUE%+ %WHITE%MP2 %BLUE%+
+ItemDisplay[mp3]: %BLUE%+ %WHITE%MP3 %BLUE%+
+ItemDisplay[mp4]: %BLUE%+ %WHITE%MP4 %BLUE%+
 ItemDisplay[mp5 FILTLVL<3]: %BLUE%+ %WHITE%MP5 %BLUE%+
-ItemDisplay[mp5]: %BLUE%+ MP
+ItemDisplay[mp5 (FILTLVL=3 OR FILTLVL=5)]: %BLUE%+ MP
+ItemDisplay[mp5]:
 
 // Other Potion Tooltips
 // Stanima
@@ -708,18 +723,6 @@ ItemDisplay[tr2]: %GOLD%Scroll of Resistance%MAP-58%{%TAN%All Resistances +10%CL
 ItemDisplay[GOLD<100 CLVL<18]:
 ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
 ItemDisplay[GOLD<5000 CLVL>79]:
-//-----------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------
-// POTIONS ONLY FILTER ENFORCEMENT
-//-----------------------------------------------------------------------------------
-// Shows 
-ItemDisplay[STAT206>0 FILTLVL>7]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>7]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[RW FILTLVL>7]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
-// Hides
-ItemDisplay[(NMAG OR SUP) (ARMOR OR WEAPON) FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
-ItemDisplay[(MAG OR RARE OR SET) !ID FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -1394,6 +1397,9 @@ ItemDisplay[!RW !UNI !SET 7gw]: %CONTINUE%Unearthed Wand
 // Item Formatting
 //-----------------------------------------------------------------------------------
 
+// Lucion item in Lucion
+ItemDisplay[amu STAT206>0 MAPID=189]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?
+
 ItemDisplay[!RW SUP]: Sup %NAME%%CONTINUE%
 //ItemDisplay[MAG !ID !cm1 !cm2 !cm3 !EQ7]: %BLUE%%NAME% (Magic)%CONTINUE%
 //ItemDisplay[RARE !ID]: %YELLOW%%NAME% (Rare)%CONTINUE%
@@ -1437,7 +1443,7 @@ ItemDisplay[NMAG ETH !RW SOCK=0]:%NAME%%CONTINUE%{%RED%SLAM %WHITE%For chance of
 // UNID Formatting
 //-----------------------------------------------------------------------------------
 // Warrior Map Formatting
-ItemDisplay[(RARE OR MAG) (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182) FILTLVL<7]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[(RARE OR MAG) (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
@@ -1478,8 +1484,9 @@ ItemDisplay[aqv FILTLVL>4 !ID]:
 // UNID Jewelry
 //-----------------------------------------------------------------------------------
 // ring amulet
-ItemDisplay[MAG (rin OR amu) !ID FILTLVL>2]:%NOTIFY-DEAD%
 ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%YELLOW%X%BLUE%     %NAME%     %YELLOW%X
+ItemDisplay[MAG amu !ID (MAPID=181 OR MAPID=182)]: %NAME%
+ItemDisplay[MAG (rin OR amu) !ID]:%NOTIFY-DEAD%
 
 // Jewel
 ItemDisplay[MAG (jew) !ID FILTLVL<7]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
@@ -1506,13 +1513,15 @@ ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID]: %BLUE%Mid Level %BLUE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<7]: %DOT-9B%%YELLOW%XX     %NAME%     %YELLOW%XX
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %DOT-9B%%YELLOW%X   %NAME%   %YELLOW%X
 ItemDisplay[MAG cm3 CLVL<80 !ID]: %DOT-9B%%YELLOW%XX     %NAME%     %YELLOW%XX
-ItemDisplay[MAG cm3 !ID FILTLVL<8]]: %NAME%
+ItemDisplay[MAG cm3 !ID FILTLVL<8]: %NAME%
+ItemDisplay[MAG cm3 !ID FILTLVL<9 ILVL>90]: %NAME%
 // small
 ItemDisplay[MAG cm1 !ID FILTLVL<7]: %DOT-9B%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
 ItemDisplay[MAG cm1 !ID FILTLVL<8]: %DOT-9B%%YELLOW%X%BLUE%   %NAME%    %YELLOW%X
+ItemDisplay[MAG cm1 !ID FILTLVL<9]: %NAME%
 // large
-ItemDisplay[MAG cm2 !ID FILTLVL<3]]: %DOT-9B%%BLUE%X%BLUE%   %NAME%   %BLUE%X
-ItemDisplay[MAG cm2 !ID FILTLVL<7]]: %NAME%
+ItemDisplay[MAG cm2 !ID FILTLVL<3]: %DOT-9B%%BLUE%X%BLUE%   %NAME%   %BLUE%X
+ItemDisplay[MAG cm2 !ID FILTLVL<7]: %NAME%
 // Unique Charms - UNID
 ItemDisplay[cm2 UNI !ID]: %BORDER-68%> >  Unidentified Hellfire Torch  < <
 ItemDisplay[cm1 UNI !ID]: %BORDER-9B%> >  Unidentified Annihilus  < <
@@ -1572,7 +1581,7 @@ ItemDisplay[RARE !ID CLASS FILTLVL<5]: %NAME%
 ItemDisplay[RARE !ID MAPID=83 FILTLVL<7]: %NAME%
 
 // Warrior Map catch rest
-ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182) FILTLVL<7]: %NAME%
+ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)]: %NAME%
 
 
 // Silence rest on stricts
@@ -2558,7 +2567,8 @@ ItemDisplay[UNI !ID uld]: %CONTINUE%Leviathan - Kraken Shell
 ItemDisplay[UNI !ID ult]: %CONTINUE%Hellforge Plate (No Unique for this base)
 ItemDisplay[UNI !ID uth]: %CONTINUE%Dark Abyss - Lacquered Plate
 ItemDisplay[UNI !ID uul]: %CONTINUE%Steel Carapace - Shadow Plate
-ItemDisplay[UNI !ID uar]: %CONTINUE%Templars Might or Tyraels Might// Sacred Armor
+ItemDisplay[UNI !ID uar !ETH]: %CONTINUE%Templars Might or Tyraels Might// Sacred Armor
+ItemDisplay[UNI !ID uar ETH]: %CONTINUE%Templars Might// Sacred Armor
 
 // Normal tier Belts
 ItemDisplay[UNI !ID lbl]: %CONTINUE%Lenymo - Sash
@@ -3238,6 +3248,9 @@ ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR 
 // LLD SET
 ItemDisplay[SET (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
 
+// Warrior Map Formatting
+ItemDisplay[(UNI OR SET) (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -3331,11 +3344,10 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm
 // Windforce - Hydra Bow
 // War Traveler - Battle Boots
 // Snowclash - Battle Belt
-// Denmother - Sun Spirit
-// Wraithskin - Diamond Mail
-// Ebonbane - Grand Matron Bow
+// Dragonscale - Zakarum Shield
+// The Spirit Shroud - Ghost Armor
 
-ItemDisplay[UNI !ID FILTLVL<8 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR drc OR ung OR amc)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
+ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR pae OR xui)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3386,9 +3398,11 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Buriza-Do Kyanon - Ballista
 // Que-Hegans Wisdom - Mage Plate
 // Heavenly Garb - Light Plate
-// Dragonscale - Zakarum Shield
+// Denmother - Sun Spirit
+// Wraithskin - Diamond Mail
+// Ebonbane - Grand Matron Bow
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR 8hx OR xtp OR ltp OR pae)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR 8hx OR xtp OR ltp OR drc OR ung OR amc)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3479,14 +3493,13 @@ ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR 
 // Magefist - Light Gauntlets
 // Rockfleece - Field Plate
 // True Silver - Maiden Javelin
-ItemDisplay[UNI !ID FILTLVL<8 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 // Set GG Set Callouts
 //-----------------------------------------------------------------------------------
 // Tancreds Hobnails - Boots
-// Trang-Ouls Scales - Chaos Armor
 
-ItemDisplay[SET !ID (lbt OR xul)]: %MAP-84%%GREEN%* * * *  %NAME%  %GREEN%* * * *
+ItemDisplay[SET !ID lbt]: %MAP-84%%GREEN%* * * *  %NAME%  %GREEN%* * * *
 
 // Set Ring
 // Set Amulet
@@ -3507,8 +3520,9 @@ ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb)]: %MAP-84%%GREEN%* * * *  %NAME%  %G
 // Trang-Ouls Girth - Troll Belt
 // Trang-Ouls Claws - Heavy Bracers
 // Ondals Almighty - Spired Helm
+// Trang-Ouls Scales - Chaos Armor
 
-ItemDisplay[SET !ID (uth OR ne9 OR utc OR xmg OR uhm)]: %MAP-84%%GREEN%* * *  %NAME%  %GREEN%* * *
+ItemDisplay[SET !ID FILTLVL<8 (uth OR ne9 OR utc OR xmg OR uhm OR xul)]: %MAP-84%%GREEN%* * *  %NAME%  %GREEN%* * *
 
 // Set tier 2 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3522,7 +3536,7 @@ ItemDisplay[SET !ID (uth OR ne9 OR utc OR xmg OR uhm)]: %MAP-84%%GREEN%* * *  %N
 // Deaths Hand - Leather Gloves
 // Aldurs Stony Gaze - Hunters Guise
 
-ItemDisplay[SET !ID (xap OR stu OR uts OR xar OR urn OR 7ws OR paf OR lgl OR dr8)]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
+ItemDisplay[SET !ID FILTLVL<8 (xap OR stu OR uts OR xar OR urn OR 7ws OR paf OR lgl OR dr8)]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
 
 // Any ETH Set weapon catch rest
 ItemDisplay[SET !ID ETH WEAPON FILTLVL>6]: %DOT-84%%GREEN%%NAME%
@@ -3535,7 +3549,7 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* 
 // Natalyas Totem - Grim Helm
 // Natalyas Mark - Scissors Suwayyah
 
-ItemDisplay[SET !ID (ltp OR ucl OR xh9 OR 7qr)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<8 (ltp OR ucl OR xh9 OR 7qr)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3588,6 +3602,7 @@ ItemDisplay[SET !ID FILTLVL<7 (vbt OR bwn OR vgl OR lgl OR lbl)]: %DOT-84%%GREEN
 ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%*     %GOLD%%NAME%%PURPLE%     *%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*
 
 // All other conditions
+ItemDisplay[(UNI OR SET) !ID (MAPID=181 OR MAPID=182)]: %NAME%// Warrior Map catch rest
 ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %DOT-68%%NAME%// Eth uni show all
 ItemDisplay[SET !ID ETH]: %DOT-84%%NAME%// Eth set show all
 ItemDisplay[ELT UNI !ID FILTLVL<5]: %PX-68%%NAME%// Show all elite level 1-4
