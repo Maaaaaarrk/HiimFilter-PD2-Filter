@@ -5,24 +5,22 @@
 // Basic Formatting
 // Make sure HR's notify
 ItemDisplay[RUNE>20]: %BORDER-62%%NAME%%CONTINUE%
-ItemDisplay[RUNE>0 FILTLVL<3]: %DOT-0A%%TIER-6%%NAME% %GREEN%(%RUNENUM%)%CONTINUE%
+ItemDisplay[RUNE>0]: %DOT-0A%%TIER-6%%NAME% %GREEN%(%RUNENUM%)%CONTINUE%
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
 
 // Low rune name decorations
 // Valuable Crafting rune callout TIR 3, ORT 6, RAL 8, AMN 11, SOL 12, ETH 5
-ItemDisplay[RUNE<21 FILTLVL<5 (RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %ORANGE%****    %NAME%%ORANGE%    ****%CONTINUE%
-ItemDisplay[RUNE<21 FILTLVL<5 !(RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %ORANGE%**    %NAME%    %ORANGE%**%CONTINUE%
-ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %ORANGE%*  %NAME%  %ORANGE%*%CONTINUE%
+ItemDisplay[RUNE<21 (RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %ORANGE%****    %NAME%%ORANGE%    ****%CONTINUE%
+ItemDisplay[RUNE<21 !(RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %ORANGE%**    %NAME%    %ORANGE%**%CONTINUE%
 
 
 // Mid rune
-ItemDisplay[RUNE>20 AND RUNE<24]: %PURPLE%> >    %NAME%%PURPLE%    < <%CONTINUE%
-ItemDisplay[RUNE>23 AND RUNE<26]: %PURPLE%> > > >    %NAME%%PURPLE%    < < < <%CONTINUE%
+ItemDisplay[RUNE>20 AND RUNE<24]: %PURPLE%>>    %NAME%%PURPLE%    <<%CONTINUE%
+ItemDisplay[RUNE>23 AND RUNE<26]: %PURPLE%>>>>    %NAME%%PURPLE%    <<<<%CONTINUE%
 // High rune
-ItemDisplay[RUNE>25 RUNE<30]: %PURPLE%<> <> <> <> <>    %NAME%%PURPLE%    <> <> <> <> <>%CONTINUE%
-ItemDisplay[RUNE>29]: %PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>     %NAME%%PURPLE%    <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>%CONTINUE%
+ItemDisplay[RUNE>25]: %PURPLE%<> <> <> <> <>    %NAME%%PURPLE%    <> <> <> <> <>%CONTINUE%
 
 
 
@@ -44,9 +42,6 @@ ItemDisplay[RUNE=30]: %NAME%{%TAN%HR Estimated Value%WHITE%: 3%CL%}%CONTINUE%
 ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.75%CL%}%CONTINUE%
 ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2.25-2.5%CL%}%CONTINUE%
 ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 4.5-5%CL%}%CONTINUE%
-
-// High roller
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 
 // Tooltip notes & show runes
 ItemDisplay[r01s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld%CL%%CL%Shield: +15 Defense%CL%Armor/Helm: +15 Defense%CL%Weapon: +50 Attack Rating%CL%}
@@ -70,7 +65,7 @@ ItemDisplay[r18s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xKo + %GRAY%key %WHITE%= Fal%
 ItemDisplay[r19s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xFal + %GRAY%key %WHITE%= Lem%CL%%CL%Shield: +10 to Strength%CL%Armor/Helm: +10 to Strength%CL%Weapon: +10 to Strength%CL%}
 ItemDisplay[r20s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xLem + %GRAY%key %WHITE%= Pul%CL%%CL%Shield: 50% Extra Gold%CL%Armor/Helm: 50% Extra Gold%CL%Weapon: 75% Extra Gold%CL%}
 ItemDisplay[r21s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xPul + %GRAY%key %WHITE%= Um%CL%%CL%Shield: 30% Enhanced Def%CL%Armor/Helm: 30% Enhanced Def%CL%Weapon: +75% Dmg, +100 AR vs Demon%CL%}
-ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%CL%%CL%Shield: All Res +22%CL%Armor/Helm: All Res +15%CL%Weapon: 120 dmg & 10% Chance of Open Wounds%CL%}
+ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal%CL%%CL%Shield: All Res +22%CL%Armor/Helm: All Res +15%CL%Weapon: 10% Chance of Open Wounds%CL%}
 ItemDisplay[r23s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xMal + %GRAY%key %WHITE%= Ist%CL%%CL%Shield: Magic Dmg Red by 7%CL%Armor/Helm: Magic Dmg Red by 7%CL%Weapon: Prevent Monster Heal%CL%}
 ItemDisplay[r24s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xIst + %GRAY%key %WHITE%= Gul%CL%%CL%Shield: 30% Magic Find%CL%Armor/Helm: 30% Magic Find%CL%Weapon: 30% Magic Find%CL%}
 ItemDisplay[r25s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xGul + %GRAY%key %WHITE%= Vex%CL%%CL%Shield: +4% to Max Psn Res%CL%Armor/Helm: +4% to Max Psn Res%CL%Weapon: +20% to Attack Rating%CL%}
