@@ -5,7 +5,8 @@
 // Basic Formatting
 // Make sure HR's notify
 ItemDisplay[RUNE>20]: %BORDER-62%%NAME%%CONTINUE%
-ItemDisplay[RUNE>0]: %DOT-0A%%TIER-6%%NAME% %GREEN%(%RUNENUM%)%CONTINUE%
+ItemDisplay[RUNE>0]: %DOT-0A%%TIER-6%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%(%RUNENUM%)%CONTINUE%
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1]: %NAME% %TAN%QTY %QTY%%CONTINUE%
@@ -17,10 +18,11 @@ ItemDisplay[RUNE<21 !(RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5
 
 
 // Mid rune
-ItemDisplay[RUNE>20 AND RUNE<24]: %PURPLE%>>    %NAME%%PURPLE%    <<%CONTINUE%
-ItemDisplay[RUNE>23 AND RUNE<26]: %PURPLE%>>>>    %NAME%%PURPLE%    <<<<%CONTINUE%
+ItemDisplay[RUNE>20 AND RUNE<24]: %PURPLE%> >    %NAME%%PURPLE%    < <%CONTINUE%
+ItemDisplay[RUNE>23 AND RUNE<26]: %PURPLE%> > > >    %NAME%%PURPLE%    < < < <%CONTINUE%
 // High rune
-ItemDisplay[RUNE>25]: %PURPLE%<> <> <> <> <>    %NAME%%PURPLE%    <> <> <> <> <>%CONTINUE%
+ItemDisplay[RUNE>25 RUNE<30]: %PURPLE%<> <> <> <> <>    %NAME%%PURPLE%    <> <> <> <> <>%CONTINUE%
+ItemDisplay[RUNE>29]: %PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>     %NAME%%PURPLE%    <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>%CONTINUE%
 
 
 
