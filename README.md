@@ -6,21 +6,28 @@
 
 ![img1](examples/cube.png?raw=true)
 
+## Filters
+
+* Hiim.filter - All in one filter Level 3/4 reserved for crafting
+* Hiim_Crafting.filter Same as all in one filter, but good crafting bases are not limited to level 3/4
+* Hiim_Mystery.filter - Same as all in one filter, but Runes Pul(21)+ and GG uniques are renamed 
+* Hiim_Vanilla_Plus.filter - Same as all in one filter, but without all of the item re-naming (example identified rares or unidentified uniques)
 
 ## Filter Levels
 
-Cube will state filter version & choosen filter level information
+Cube will state current filter version & choosen filter level information
 
-* 0]: OFF
-* 1]: Base (For Normal Difficulty or Speed runners)
-* 2]: Semi-Strict (For NM & Hell New Character)
-* 3]: Strict+Crafting (Mapping Grade Character, Shows good craft bases)
-* 4]: Strict+Crafting NO HP/MP potions
-* 5]: Stricter (Mapping Grade Character, Hides low value uniques & sets)
-* 6]: Stricter NO HP/MP
-* 7]: Extremely Strict (This is VERY restrictive, lots of items no longer chat notify)
-* 8]: Rejuvs Only (Designed for group play where you only pick-up the Purple Gatorade)
-* 9]: No Items Out of Town (Designed for group play where you aimt to pick-up NOTHING)
+* 0: OFF
+* 1: Base (For Normal Difficulty or Speed runners)
+* 2: Semi-Strict (For NM & Hell New Character)
+* 3: Strict+Crafting (Mapping Grade Character, Shows good craft bases)
+* 4: Strict+Crafting NO HP/MP potions
+* 5: Stricter (Mapping Grade Character, Hides low value uniques & sets)
+* 6: Stricter NO HP/MP
+* 7: Extremely Strict (This is VERY restrictive, lots of items no longer chat notify)
+* 8: High Roller (Most restrictive, Only GG items)
+* 9: Rejuvs Only (Designed for group play where you only pick-up the Purple Gatorade)
+* 10: No Items Out of Town (Designed for group play where you aimt to pick-up NOTHING)
 
 
 ## Charm Stats on Ground
