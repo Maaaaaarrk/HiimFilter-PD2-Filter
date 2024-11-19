@@ -1,0 +1,40 @@
+
+//-----------------------------------------------------------------------------------
+// Item Formatting
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[!RW SUP]: Sup %NAME%%CONTINUE%
+ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[(RARE OR MAG) !ID]: %NAME% ?%CONTINUE%
+
+// ITEM TAGS - ETH
+ItemDisplay[ETH RARE !(REPAIR>0)]: %GRAY%[eth] %YELLOW%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH MAG !(REPAIR>0)]: %GRAY%[eth] %BLUE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH NMAG !(REPAIR>0)]: %GRAY%[eth] %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH CRAFT !(REPAIR>0)]: %GRAY%[eth] %ORANGE%%NAME%%CONTINUE%{%NAME%}
+
+// ETH Rep
+ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%[eth-rep] %YELLOW%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%[eth-rep] %BLUE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%[eth-rep] %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%[eth-rep] %ORANGE%%NAME%%CONTINUE%{%NAME%}
+
+// stats
+ItemDisplay[(MAG OR RARE OR CRAFT) ID]: %CL%%NAME%%CONTINUE%
+
+//imbue/slam
+//Non magic item to slam for rare chance Feral Axe Phase Blade Ghost Glaive Berserker Axe Thunder Maul Ogre Maul Colossus Blade Colossus Sword Glorious Axe Legendary Mallet War Pike Stygian Pilum Balrog Spear Winged Harpoon
+ItemDisplay[NMAG ETH !RW SOCK=0 FILTLVL<3 SOCK=0 (EQ7 OR lax OR 9la OR 7la OR 7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7wa OR 9wa OR wax OR 7gm OR 9gm OR gma OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7p7 OR 9p9 OR pik OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf)]:* * %NAME% * *{%GOLD%Imbue %WHITE%at Charsi for %YELLOW%Rare item%CL%%NAME%}%CONTINUE%
+ItemDisplay[NMAG ETH !RW SOCK=0 FILTLVL>2 SOCK=0 (EQ7 OR lax OR 9la OR 7la OR 7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7wa OR 9wa OR wax OR 7gm OR 9gm OR gma OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7p7 OR 9p9 OR pik OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf)]:%NAME%{%GOLD%Imbue %WHITE%at Charsi for %YELLOW%Rare item%CL%%NAME%}%CONTINUE%
+ItemDisplay[NMAG ETH !RW SOCK=0]:%NAME%%CONTINUE%{%RED%SLAM %WHITE%For chance of %YELLOW%Rare item%CL%%NAME%}
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// UNID Formatting
+//-----------------------------------------------------------------------------------
+// Warrior Map Formatting
+ItemDisplay[MAG (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[RARE (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
+//-----------------------------------------------------------------------------------

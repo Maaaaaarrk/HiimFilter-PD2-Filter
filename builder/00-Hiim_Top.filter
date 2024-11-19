@@ -1,0 +1,24 @@
+//-----------------------------------------------------------------------------------
+// HiimFilter - PD2 Filter
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// FILTER CONFIG
+//-----------------------------------------------------------------------------------
+// Filter Levels (0 = No Filter)
+ItemDisplayFilterName[]: Base
+ItemDisplayFilterName[]: Semi-Strict
+ItemDisplayFilterName[]: Strict + Crafting
+ItemDisplayFilterName[]: Strict + Crafting + No HP/MP
+ItemDisplayFilterName[]: Stricter
+ItemDisplayFilterName[]: Stricter + No HP/MP
+ItemDisplayFilterName[]: Extremely Strict
+ItemDisplayFilterName[]: High roller
+ItemDisplayFilterName[]: Rejuvs Only - No Other Items Out of Town
+ItemDisplayFilterName[]: No Items Out of Town
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
+//-----------------------------------------------------------------------------------
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%
