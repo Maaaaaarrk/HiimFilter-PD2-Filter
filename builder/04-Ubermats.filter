@@ -1,0 +1,57 @@
+
+//-----------------------------------------------------------------------------------
+// Boss Mats
+//-----------------------------------------------------------------------------------
+// DClone mats
+ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
+// PD2 Items - Rathma mats
+ItemDisplay[rtmo OR rtmv OR cm2f]: %MAP-0A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GOLD%Voidstone - Rathma boss fight}
+// PD2 Items - lucion mats
+ItemDisplay[lucb OR lucc OR lucd]:%MAP-0A%%YELLOW%<> <> <> <> <> %RED%%NAME%%YELLOW% <> <> <> <> <>{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
+// Boss Item Entry
+ItemDisplay[rtma]: Voidstone%CONTINUE%
+ItemDisplay[dcma]: Vision of Terror%CONTINUE%
+ItemDisplay[luca]: Shadow of Hatred%CONTINUE%
+// S10 boss entry ItemDisplay[luca]: Vision of Terror%CONTINUE%
+ItemDisplay[(rtma OR dcma OR luca)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CONTINUE%
+ItemDisplay[(rtma OR dcma OR luca) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
+ItemDisplay[(rtma OR dcma) STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Larger Boss Item Chance)%CL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[(rtma OR dcma) STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Larger Boss Item Chance)%ORANGE% < <%CL%%TAN%Tier 1 (Boss Item Chance)%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
+ItemDisplay[luca STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Alleged lower brick rate)%CL%%ORANGE%> > %TAN%Tier 1%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[luca STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Alleged lower brick rate)%ORANGE% < <%CL%%TAN%Tier 1 %CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
+ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%CL%%RED%Diablo Clone Entry}
+ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%CL%%BLUE%Rathma Entry}
+ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%Lucion Boss Entry}
+ItemDisplay[(rtma OR dcma OR luca)]: %MAP-0A%%RED%* *   %NAME%   %RED%* *{%NAME%}
+
+// PD2 Items - Uber Ancients Tokens
+ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
+ItemDisplay[ubab]: %NAME%{Found in T2 Maps}%CONTINUE%
+ItemDisplay[ubac]: %NAME%{Found in T3 Maps}%CONTINUE%
+ItemDisplay[(ubaa OR ubab OR ubac)]: %MAP-4A%%YELLOW%X X X X %RED%%NAME%%YELLOW% X X X X{%NAME%}
+ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// RESET TOKEN AND ESSENCES
+//-----------------------------------------------------------------------------------
+// Essences
+ItemDisplay[tes OR ceh OR bet OR fed]: %MAP-4A%%ORANGE%> > %NAME% %ORANGE%< < %CONTINUE%
+ItemDisplay[tes]: %NAME%{%TAN%Essence %WHITE%from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
+ItemDisplay[ceh]: %NAME%{%TAN%Essence %WHITE%from: %TAN%Mephisto}
+ItemDisplay[bet]: %NAME%{%TAN%Essence %WHITE%from: %RED%Diablo}
+ItemDisplay[fed]: %NAME%{%TAN%Essence %WHITE%from: %DARK_GREEN%Baal}
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// UBERS - KEYS, ORGANS, ETC
+//-----------------------------------------------------------------------------------
+// Uber Keys
+ItemDisplay[pk1]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven}%CONTINUE%
+ItemDisplay[pk2]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch}%CONTINUE%
+ItemDisplay[pk3]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
+
+// Organs
+ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
+ItemDisplay[(ubtm OR toa)]: %MAP-A9%%RED%> >> %ORANGE%%NAME%  %RED%<< <
+//-----------------------------------------------------------------------------------

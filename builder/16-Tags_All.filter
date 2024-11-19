@@ -1,0 +1,107 @@
+
+//-----------------------------------------------------------------------------------
+// ITEM TAGS
+//-----------------------------------------------------------------------------------
+// ITEM TAGS - ETH
+ItemDisplay[ETH UNI !(REPAIR>0)]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH SET !(REPAIR>0)]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%{%NAME%}
+
+// ETH Rep
+ItemDisplay[ETH UNI (REPAIR>0)]: %GRAY%[eth-rep] %GOLD%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH SET (REPAIR>0)]: %GRAY%[eth-rep] %GREEN%%NAME%%CONTINUE%{%NAME%}
+
+// Vial candidate
+ItemDisplay[!ETH !UNI (REPAIR>0)]: %NAME% %GRAY%[rep]%CONTINUE%{%NAME%}
+
+// ITEM TAGS- SOCKETS
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0]: %WHITE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK>0]: %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[SOCK>0]: %NAME% %GRAY%[%SOCKETS%]%CONTINUE%{%NAME%}
+
+// ITEM TAGS - Corrupted [C] - NOTE indexes are off by 1 from wiki
+// corrupted	360
+// corruptor	361
+ItemDisplay[STAT360>0]: %NAME%%RED%%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=45]: %NAME% CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=16]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=42]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=28]: %NAME% FCR Fire%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=29]: %NAME% FCR Cold%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=30]: %NAME% FCR Light%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=31]: %NAME% FCR Poison%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=27]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=50]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=52]: %NAME% PDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=19]: %NAME% DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360>0]: %NAME% [C]%CONTINUE%{%NAME%}
+
+
+// ITEM TAGS - Corrupted [D]
+// desecrated	206
+// desecrator	207
+ItemDisplay[STAT206>0]: %NAME%%GOLD%%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=45]: %NAME% CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=16]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=42]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=28]: %NAME% FCR Fire%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=29]: %NAME% FCR Cold%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=30]: %NAME% FCR Light%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=31]: %NAME% FCR Poison%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=27]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=50]: %NAME% +1 Skill%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=52]: %NAME% PDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=19]: %NAME% DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT206=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT206>0]: %NAME% [D]%CONTINUE%{%NAME%}
+
+// ITEM TAGS - Specific Mods
+ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%FOOLS%CONTINUE%
+
+// Amplify Damage on Striking
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=662]: %NAME% %ORANGE%[AMP]%CONTINUE%%DOT-0B% // Low amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=898]: %NAME% %ORANGE%[AMP]%CONTINUE%%DOT-0B% // mid amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=899]: %NAME% %ORANGE%[AMP]%CONTINUE%%DOT-0B% // High amp
+
+// Amplify Damage on Casting
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=904]: %NAME% %ORANGE%[AMP]%CONTINUE%%DOT-0B% // Low amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=905]: %NAME% %ORANGE%[AMP]%CONTINUE%%DOT-0B% // mid amp
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=906]: %NAME% %ORANGE%[AMP]%CONTINUE%%DOT-0B% // High amp
+
+// Lower Res on Striking 
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=907]: %NAME% %PURPLE%[LR]%CONTINUE%%DOT-0B% // Low lr
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=908]: %NAME% %PURPLE%[LR]%CONTINUE%%DOT-0B% // mid lr
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=909]: %NAME% %PURPLE%[LR]%CONTINUE%%DOT-0B% // High lr
+
+// Lower Res on Casting
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=910]: %NAME% %PURPLE%[LR]%CONTINUE%%DOT-0B% // Low lr
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=911]: %NAME% %PURPLE%[LR]%CONTINUE%%DOT-0B% // mid lr
+ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=912]: %NAME% %PURPLE%[LR]%CONTINUE%%DOT-0B% // High lr
+
+//DEF on Chest
+ItemDisplay[CHEST (MAG OR CRAFT OR RARE) ID DEF>400]: %NAME% %TAN%%DEF% Def{%NAME%}%CONTINUE%
+
+
+//ED
+ItemDisplay[WEAPON EDAM>49 EDAM<200]: %NAME%%WHITE%%CONTINUE%
+ItemDisplay[WEAPON EDAM>199 EDAM<300]: %DOT-0B%%NAME%%BLUE%%CONTINUE%
+ItemDisplay[WEAPON EDAM>299 EDAM<400]: %DOT-0B%%NAME%%ORANGE%%CONTINUE%
+ItemDisplay[WEAPON EDAM>399]: %DOT-0B%%NAME%%PURPLE%%CONTINUE%
+ItemDisplay[WEAPON EDAM>49]: %NAME% %EDAM%% ED%CONTINUE%
+
+// ITEM TAGS - LLD UNI - Uniqes and sets to look out for or weapon rares
+ItemDisplay[WEAPON !UNI (EDAM>149 OR SUFFIX=662 OR SUFFIX=898) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[WEAPON !UNI (SUFFIX=907 OR SUFFIX=908 OR SUFFIX=910 OR SUFFIX=911) LVLREQ<31]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[SET (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[SET amu (STAT360=0 AND STAT89=3)]: %NAME% %TEAL%[LLD]%CONTINUE%
+ItemDisplay[SET rin (STAT360=0 AND STAT74=6)]: %NAME% %TEAL%[LLD]%CONTINUE%
+
+//Half freeze duration when no CBF
+ItemDisplay[STAT118>0 !EQUIPPED CHARSTAT118=1 CHARSTAT153=0]: %NAME% {%TAN%Equip to Gain: %BLUE%Cannot Be Frozen}%CONTINUE%
+ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118<2 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %GRAY%Cannot Be Frozen}%CONTINUE%
+ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118>1 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %BLUE%Cannot Be Frozen}%CONTINUE%
+
+//-----------------------------------------------------------------------------------

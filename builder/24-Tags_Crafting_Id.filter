@@ -1,0 +1,74 @@
+
+//-----------------------------------------------------------------------------------
+// CRAFTING - id
+//-----------------------------------------------------------------------------------
+// Crafting notes
+ItemDisplay[MAG ID STAT360=0 !aqv !cqv !cm1 !cm2 !cm3 !jew !EQ7]: %NAME%{%CORAL%Crafted Alvl: %CRAFTALVL%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RARE ID STAT360=0 !aqv !cqv !cm1 !cm2 !cm3 !jew !EQ7 FILTLVL<5]: %NAME%{%CORAL%Crafted Alvl: %CRAFTALVL%%CL%%NAME%}%CONTINUE%
+ItemDisplay[CHEST MAG ID !(STAT360>0)]: %NAME%{%CORAL%Alvl 85+ for 200% EDAM & 20% PDR Chance%CL%%NAME%}%CONTINUE%
+
+// Crafting tag when identified
+//purgatory builds
+ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) !BAR ETH MAG ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%NAME%%CL%%RED% ETH Crafting Bases for Purgatory}%CONTINUE%
+
+// LLD
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 btl]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (ne5 OR ne4)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 51 for LLD Crafting}%CONTINUE%  // rin/amu
+
+// Weapons
+ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
+ItemDisplay[(7gl OR 9gl OR glv) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Ghost Glaive
+ItemDisplay[(7wa OR 9wa OR wax) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Berserker Axe
+ItemDisplay[(7gm OR 9gm OR gma) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Thunder Maul
+ItemDisplay[(7m7 OR 9m9 OR mau) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Ogre Maul
+ItemDisplay[(7gd OR 9gd OR gsd) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Blade
+ItemDisplay[(7fb OR 9fb OR flb) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Colossus Sword
+ItemDisplay[(7gi OR 9gi OR gix) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Glorious Axe
+ItemDisplay[(7wh OR 9wh OR whm) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Legendary Mallet
+ItemDisplay[(7p7 OR 9p9 OR pik) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//War Pike
+ItemDisplay[(7pi OR 9pi OR pil) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Stygian Pilum
+ItemDisplay[(7s7 OR 9s9 OR ssp) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Balrog Spear
+ItemDisplay[(7ts OR 9ts OR tsp) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Winged Harpoon
+
+// Armor 
+ItemDisplay[(xvb OR zvb OR xsh OR zvb OR xh9) MAG SHOP STAT360=0]: %GREEN%* %NAME%%GREEN% [LLD Craft] *{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//good craft when shopping
+ItemDisplay[GLOVES ((EXC OR ELT) !(utg OR uhg)) MAG !ETH ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//gloves
+ItemDisplay[(bhm OR xh9 OR uh9) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//skull helm
+ItemDisplay[(bsh OR xsh OR ush) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//bone shield
+ItemDisplay[(lbt OR xlb OR ulb) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+ItemDisplay[(vbt OR xvb OR uvb) MAG ID STAT360=0]: %NAME%{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//boots
+
+// Class specific
+ItemDisplay[BAR MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//barb helm
+ItemDisplay[(ob5 OR oba OR obf) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//sorc orb
+ItemDisplay[(lwb OR 8lw OR 6lw) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//long bow
+ItemDisplay[(am5 OR ama OR amf) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//zon javs
+ItemDisplay[(am2 OR am7 OR amc) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(am1 OR am6 OR amb) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Zon bow
+ItemDisplay[(pab OR pa6 OR pa1) MAG ID STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//pala shield
+ItemDisplay[MAG ID (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//scepters
+ItemDisplay[MAG ID !ETH (DRU) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//dudu helms
+ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
+ItemDisplay[SIN MAG ID ETH STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
+
+// Crafting Reciepe
+ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ith, Jewel%CL%%BLUE%HitPwr: O, Ith, Jewel%CL%%RED%Blood: O, Ral, Jewel%CL%%PURPLE%* Caster: O, Nef, Jewel *%CL%%YELLOW%MF: O, Tir, Jewel%CL%%GRAY%* Vamp: SK, Lum, Jewel *%CL%%wHITE%Brilliant: O, Eld, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[BOOTS MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Ort, Jewel *%CL%%BLUE%HitPwr: O, Ral, Jewel%CL%%RED%Blood: O, Eth, Jewel%CL%%PURPLE%Caster: O, Thul, Jewel%CL%%YELLOW%* MF: O, Io, Jewel *%CL%%GRAY%Vamp: SK, El, Jewel%CL%%wHITE%Brilliant: O, Ko, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[GLOVES MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ral, Jewel%CL%%BLUE%* HitPwr: O, Ort, Jewel *%CL%%RED%* Blood: O, Nef, Jewel *%CL%%PURPLE%* Caster: O, Ort, Jewel *%CL%%YELLOW%MF: O, Hel, Jewel%CL%%GRAY%* Vamp: SK, Io, Jewel *%CL%%wHITE%Brilliant: O, Shael, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[BELT MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Tal, Jewel%CL%%BLUE%* HitPwr: O, Tal, Jewel *%CL%%RED%Blood: O, Tal, Jewel%CL%%PURPLE%* Caster: O, Ith, Jewel *%CL%%YELLOW%MF: O, El, Jewel%CL%%GRAY%Vamp: SK, Eld, Jewel%CL%%wHITE%Brilliant: O, Io, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[SHIELD MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Nef, Jewel *%CL%%BLUE%* HitPwr: O, Eth, Jewel *%CL%%RED%Blood: O, Ith, Jewel%CL%%PURPLE%* Caster: O, Eth, Jewel *%CL%%YELLOW%MF: O, Dol, Jewel%CL%%GRAY%Vamp: SK, Sol, Jewel%CL%%wHITE%Brilliant: O, Ort, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[amu MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Thul, Jewel%CL%%BLUE%HitPwr: O,Thul , Jewel%CL%%RED%Blood: O, Amn, Jewel%CL%%PURPLE%* Caster: O, Ral, Jewel *%CL%%YELLOW%* MF: O, Ko, Jewel *%CL%%GRAY%Vamp: SK, Dol, Jewel%CL%%wHITE%Brilliant: O, Tal, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[rin MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Amn, Jewel%CL%%BLUE%HitPwr: O, Amn, Jewel%CL%%RED%* Blood: O, Sol, Jewel *%CL%%PURPLE%Caster: O, Amn, Jewel%CL%%YELLOW%* MF: O, Lum, Jewel *%CL%%GRAY%* Vamp: SK, Hel, Jewel *%CL%%wHITE%* Brilliant: O, Hel, Jewel *%CL%%NAME%}%CONTINUE%
+ItemDisplay[(WAND OR SOR) MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%* HitPwr: O, Tir, Jewel *%CL%%RED%* Blood: O, Ort, Jewel *%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Sol, Jewel *%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+//-----------------------------------------------------------------------------------

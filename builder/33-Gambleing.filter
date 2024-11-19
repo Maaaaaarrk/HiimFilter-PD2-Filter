@@ -1,0 +1,270 @@
+
+// ------------------------------------------------------------------------------
+// Gamble Screen Items
+// ------------------------------------------------------------------------------
+
+// Have no set/unique
+//ItemDisplay[NMAG !ID SHOP axf]: %NAME%
+//ItemDisplay[NMAG !ID SHOP ne2]: %NAME%
+//ItemDisplay[NMAG !ID SHOP pa1]: %NAME%
+//ItemDisplay[NMAG !ID SHOP ob3]: %NAME%
+//ItemDisplay[NMAG !ID SHOP ob4]: %NAME%
+//ItemDisplay[NMAG !ID SHOP jav]: %NAME%
+//ItemDisplay[NMAG !ID SHOP pil]: %NAME%
+
+// Gamble callout
+ItemDisplay[NMAG !ID SHOP ci0 CLVL<92 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%DARK_GREEN%Buy at Clvl 92+ for PVM/HLD%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ci0 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%DARK_GREEN%Buy at Clvl 42 for LLD%CL%%NAME%%CONTINUE%
+
+// Main title
+ItemDisplay[NMAG !ID SHOP]: %CL%%ORANGE%Possible Items:%WHITE%%CL%%NAME%%CONTINUE%
+
+// Magic Rare in town
+ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%YELLOW%Rare%CL%%BLUE%Magic%NAME%%CONTINUE%
+
+// rin/amu until big box is supported
+ItemDisplay[NMAG !ID SHOP (rin OR amu)]: %GOLD%Unique%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP (rin OR amu) (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GREEN%Set%CL%%NAME%%CONTINUE%
+
+// Uniques
+// Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GOLD%Nokozan Relic%CL%The Eye of Etlich%CL%The Mahim-Oak Curio%CL%Saracen's Chance%CL%The Cat's Eye%CL%Crescent Moon%CL%Atma's Scarab%CL%The Rising Sun%CL%Highlord's Wrath%CL%Mara's Kaleidoscope%CL%Seraph's Hymn%CL%Metalgrid%CL%%NAME%%CONTINUE%
+// Cant do this yet ItemDisplay[NMAG !ID SHOP rin]: %GOLD%Wisp Projector%CL%Stone of Jordan%CL%Raven Frost%CL%Nature's Peace%CL%Nagelring%CL%Manald Heal%CL%Dwarf Star%CL%Carrion Wind%CL%Bul-Kathos' Wedding Band%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP jew]: %GOLD%Rainbow Facet%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP (ci0 OR ci1)]: %GOLD%Kira's Guardian%CL%Griffon's Eye%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP am1]: %GOLD%Blood Raven's Charge%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP am2]: %GOLD%Ebonbane%CL%Lycander's Aim%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP am5]: %GOLD%Thunderstroke%CL%Titan's Revenge%CL%True Silver%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP am3]: %GOLD%Stoneraven%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP am4]: %GOLD%Zerae's Resolve%CL%Lycander's Flank%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ktr]: %GOLD%Mage Slayer%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wrb]: %GOLD%Jade Talon%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ces]: %GOLD%Shadow Killer%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP clw]: %GOLD%Firelizard's Talons%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP btl]: %GOLD%Stalker's Cull%CL%Bartuc's Cut-Throat%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ba1]: %GOLD%Cyclopean Roar%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ba2]: %GOLD%Wolfhowl%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ba3]: %GOLD%Demonhorn's Edge%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ba4]: %GOLD%Halaberd's Reign%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ba5]: %GOLD%Raekor's Virtue%CL%Arreat's Face%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dr1]: %GOLD%Cerebus' Bite%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dr2]: %GOLD%Denmother%CL%Quetzalcoatl%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dr3]: %GOLD%Spirit Keeper%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dr4]: %GOLD%Ravenlore%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dr5]: %GOLD%Ursa's Nightmare%CL%Jalal's Mane%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne1]: %GOLD%Kalan's Legacy%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne3]: %GOLD%Martyrdom%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne4]: %GOLD%Boneflame%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne5]: %GOLD%Darkforce Spawn%CL%Homunculus%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP pa2]: %GOLD%Alma Negra%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP pa3]: %GOLD%Sankekur's Fall%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP pa4]: %GOLD%Dragonscale%CL%Herald of Zakarum%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ob1]: %GOLD%Tempest%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ob2]: %GOLD%Eschuta's Temper%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ob5]: %GOLD%Death's Fathom%CL%The Oculus%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP qui]: %GOLD%Ormus' Robes%CL%Spirit Shroud%CL%Greyform%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lea]: %GOLD%Skin of the Vipermagi%CL%Blinkbat's Form%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hla]: %GOLD%Skin of the Flayed One%CL%The Centurion%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP stu]: %GOLD%The Gladiator's Bane%CL%Iron Pelt%CL%Twitchthroe%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP rng]: %GOLD%Wraithskin%CL%Spirit Forge%CL%Darkglow%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP scl]: %GOLD%Crow Caw%CL%Hawkmail%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP brs]: %GOLD%Duriel's Shell%CL%Venom Ward%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP chn]: %GOLD%Shaftstop%CL%Sparking Mail%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP spl]: %GOLD%Arkaine's Valor%CL%Skullder's Ire%CL%Iceblink%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ltp]: %GOLD%Purgatory%CL%Que-Hegan's Wisdom%CL%Heavenly Garb%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP fld]: %GOLD%Leviathan%CL%Toothrow%CL%Rockfleece%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP plt]: %GOLD%Guardian Angel%CL%Boneflesh%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gth]: %GOLD%Atma's Wail%CL%Rattlecage%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ful]: %GOLD%Steel Carapace%CL%Black Hades%CL%Goldskin%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP aar]: %GOLD%Tyrael's Might%CL%Templar's Might%CL%Corpsemourn%CL%Silks of the Victor%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lbl]: %GOLD%Arachnid Mesh%CL%String of Ears%CL%Lenymo%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP vbl]: %GOLD%Nosferatu's Coil%CL%Razortail%CL%Snakecord%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mbl]: %GOLD%Verdungo's Hearty Cord%CL%Gloom's Trap%CL%Nightsmoke%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tbl]: %GOLD%Snowclash%CL%Goldwrap%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hbl]: %GOLD%Thundergod's Vigor%CL%Bladebuckle%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lbt]: %GOLD%Merman's Sprocket%CL%Infernostride%CL%Hotspur%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP vbt]: %GOLD%Sandstorm Trek%CL%Waterwalk%CL%Gorefoot%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mbt]: %GOLD%Marrowwalk%CL%Silkweave%CL%Treads of Cthon%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tbt]: %GOLD%War Traveler%CL%Goblin Toe%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hbt]: %GOLD%Shadow Dancer%CL%Gore Rider%CL%Tearhaunch%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lgl]: %GOLD%Titan's Grip%CL%Venom Grip%CL%The Hand of Broc%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP vgl]: %GOLD%Dracul's Grasp%CL%Gravepalm%CL%Bloodfist%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mgl]: %GOLD%Soul Drainer%CL%Ghoulhide%CL%Chance Guards%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tgl]: %GOLD%Occultist%CL%Lava Gout%CL%Magefist%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hgl]: %GOLD%Steelrend%CL%Hellmouth%CL%Frostburn%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP cap]: %GOLD%Harlequin Crest%CL%Peasant Crown%CL%Biggin's Bonnet%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP skp]: %GOLD%Rockstopper%CL%Tarnhelm%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hlm]: %GOLD%Steel Shade%CL%Stealskull%CL%Coif of Glory%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP fhl]: %GOLD%Darksight Helm%CL%Duskdeep%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ghm]: %GOLD%Nightwing's Veil%CL%Veil of Steel%CL%Valkyrie Wing%CL%Howltusk%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP msk]: %GOLD%Andariel's Visage%CL%Blackhorn's Face%CL%The Face of Horror%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP crn]: %GOLD%Crown of Ages%CL%Crown of Thieves%CL%Undead Crown%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bhm]: %GOLD%Giant Skull%CL%Vampire Gaze%CL%Wormskull%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP buc]: %GOLD%Visceratuant%CL%Pelta Lunata%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP sml]: %GOLD%Blackoak Shield%CL%Moser's Blessed Circle%CL%Umbral Disk%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lrg]: %GOLD%Twilight's Reflection%CL%Stormchaser%CL%Stormguild%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP kit]: %GOLD%Stormshield%CL%Tiamat's Rebuke%CL%Steelclash%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP spk]: %GOLD%Spike Thorn%CL%Lance Guard%CL%Swordback Hold%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tow]: %GOLD%Medusa's Gaze%CL%Gerke's Sanctuary%CL%Bverrit Keep%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bsh]: %GOLD%Head Hunter's Glory%CL%Lidless Wall%CL%Wall of the Eyeless%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gts]: %GOLD%Spirit Ward%CL%Radament's Sphere%CL%The Ward%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hax]: %GOLD%Razor's Edge%CL%Coldkill%CL%The Gnasher%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP axe]: %GOLD%Butcher's Pupil%CL%Deathspade%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP 2ax]: %GOLD%Rune Master%CL%Islestrike%CL%Bladebone%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mpi]: %GOLD%Cranebeak%CL%Pompeii's Wrath%CL%Skull Splitter%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wax]: %GOLD%Death Cleaver%CL%Guardian Naga%CL%Rakescar%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lax]: %GOLD%Warlord's Trust%CL%Axe of Fechmar%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bax]: %GOLD%Ethereal Edge%CL%Spellsteel%CL%Goreshovel%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP btx]: %GOLD%Hellslayer%CL%Stormrider%CL%The Chieftain%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gax]: %GOLD%Messerschmidt's Reaver%CL%Boneslayer Blade%CL%Brainhew%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gix]: %GOLD%Executioner's Justice%CL%The Minotaur%CL%Humongous%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP sbw]: %GOLD%Skystrike%CL%Pluckeye%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hbw]: %GOLD%Riphook%CL%Witherstring%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lbw]: %GOLD%Kuko Shakaku%CL%Raven Claw%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP cbw]: %GOLD%Endlesshail%CL%Rogue's Bow%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP sbb]: %GOLD%Witchwild String%CL%Stormstrike%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lbb]: %GOLD%Eaglehorn%CL%Cliffkiller%CL%Wizendraw%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP swb]: %GOLD%Widowmaker%CL%Magewrath%CL%Hellclap%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lwb]: %GOLD%Windforce%CL%Goldstrike Arch%CL%Blastbark%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lxb]: %GOLD%Langer Briser%CL%Leadcrow%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mxb]: %GOLD%Pus Spitter%CL%Ichorsting%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hxb]: %GOLD%Hellrack%CL%Buriza-Do Kyanon%CL%Hellcast%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP rxb]: %GOLD%Gut Siphon%CL%Demon Machine%CL%Doomslinger%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dgr]: %GOLD%Wizardspike%CL%Spineripper%CL%Gull%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP dir]: %GOLD%Shatterblade%CL%Heart Carver%CL%The Diggler%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP kri]: %GOLD%Fleshripper%CL%Blackbog's Sharp%CL%The Jade Tan Do%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bld]: %GOLD%Ghostflame%CL%Stormspike%CL%Spectral Shard%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ssp]: %GOLD%Demon's Arch%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP glv]: %GOLD%Wraith Flight%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tsp]: %GOLD%Gargoyle's Bite%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP clb]: %GOLD%Nord's Tenderizer%CL%Dark Clan Crusher%CL%Felloak%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP spc]: %GOLD%Demon Limb%CL%Fleshrender%CL%Stoutnail%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mac]: %GOLD%Sureshrill Frost%CL%Crushflange%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mst]: %GOLD%Baranar's Star%CL%Moonfall%CL%Bloodrise%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP fla]: %GOLD%Stormlash%CL%Horizon's Tornado%CL%Baezil's Vortex%CL%The General's Tan Do Li Ga%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP whm]: %GOLD%Schaefer's Hammer%CL%Stone Crusher%CL%Earthshaker%CL%Ironstone%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP mau]: %GOLD%Windhammer%CL%Bloodtree Stump%CL%Bonesnap%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gma]: %GOLD%The Cranium Basher%CL%Earth Shifter%CL%The Gavel of Pain%CL%Steeldriver%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bar]: %GOLD%Bonehew%CL%The Meat Scraper%CL%Dimoak's Hew%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP vou]: %GOLD%Blackleach Blade%CL%Steelgoad%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP scy]: %GOLD%The Reaper's Toll%CL%Athena's Wrath%CL%Soul Harvest%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP pax]: %GOLD%Tomb Reaver%CL%Pierre Tombale Couant%CL%The Battlebranch%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP hal]: %GOLD%Husoldal Evo%CL%Woestave%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wsc]: %GOLD%Stormspire%CL%Grim's Burning Dead%CL%The Grim Reaper%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP scp]: %GOLD%The Redeemer%CL%Heaven's Light%CL%Zakarum's Hand%CL%Knell Striker%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gsc]: %GOLD%Akarat's Devotion%CL%The Fetid Sprinkler%CL%Rusthandle%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wsp]: %GOLD%Astreon's Iron Ward%CL%Hand of Blessed Light%CL%Stormeye%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP spr]: %GOLD%Arioc's Needle%CL%The Impaler%CL%The Dragon Chang%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tri]: %GOLD%Kelpie Snare%CL%Razortine%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP brn]: %GOLD%Viperfork%CL%Soulfeast Tine%CL%Bloodthief%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP spt]: %GOLD%Uldyssian's Awakening%CL%Hone Sundan%CL%Lance of Yaggai%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP pik]: %GOLD%Steel Pillar%CL%Spire of Honor%CL%The Tannr Gorerod%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP sst]: %GOLD%Razorswitch%CL%Bane Ash%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lst]: %GOLD%Ribcracker%CL%Serpent Lord%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP cst]: %GOLD%Ondal's Wisdom%CL%Chromatic Ire%CL%Spire of Lazarus%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bst]: %GOLD%Brimstone Rain%CL%Warpspear%CL%The Salamander%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wst]: %GOLD%Mang Song's Lesson%CL%Skull Collector%CL%The Iron Jang Bong%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ssd]: %GOLD%Bloodletter%CL%Rixot's Keen%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP scm]: %GOLD%Djinn Slayer%CL%Coldsteel Eye%CL%Blood Crescent%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP sbr]: %GOLD%Bloodmoon%CL%Hexfire%CL%Skewer of Krintiz%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP flc]: %GOLD%Blade of Ali Baba%CL%Gleamscythe%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP crs]: %GOLD%Lightsabre%CL%Azurewrath%CL%Ginther's Rift%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bsd]: %GOLD%Headstriker%CL%Griswold's Edge%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP lsd]: %GOLD%Frostwind%CL%Plague Bearer%CL%Hellplague%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wsd]: %GOLD%The Atlantean%CL%Culwen's Point%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP 2hs]: %GOLD%Crainte Vomir%CL%Shadowfang%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP clm]: %GOLD%Leoric's Mithril Bane%CL%Bing Sz Wang%CL%Soulflay%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gis]: %GOLD%Flamebellow%CL%The Vile Husk%CL%Kinemil's Awl%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bsw]: %GOLD%Doombringer%CL%Cloudcrack%CL%Blacktongue%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP flb]: %GOLD%Odium%CL%Todesfaelle Flamme%CL%Ripsaw%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gsd]: %GOLD%The Grandfather%CL%Swordguard%CL%The Patriarch%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tkf]: %GOLD%Deathbit%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bkf]: %GOLD%Warshrike%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP tax]: %GOLD%Gimmershred%CL%The Scalper%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bal]: %GOLD%Lacerator%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP wnd]: %GOLD%Suicide Branch%CL%Torch of Iro%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ywn]: %GOLD%Carin Shard%CL%Maelstrom%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP bwn]: %GOLD%Boneshade%CL%Arm of King Leoric%CL%Gravenspine%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP gwn]: %GOLD%Death's Web%CL%Blackhand Key%CL%Ume's Lament%CL%%NAME%%CONTINUE%
+
+// Gheed Event
+ItemDisplay[NMAG !ID SHOP !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%
+
+// Sets
+// Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GREEN%Angelic Wings%CL%Arcanna's Sign%CL%Cathan's Sigil%CL%Civerb's Icon%CL%Iratha's Collar%CL%Tancred's Weird%CL%Vidala's Snare%CL%Telling of Beads%CL%Tal Rasha's Adjudication%CL%%CL%%NAME%
+// Cant do this yet ItemDisplay[NMAG !ID SHOP rin]: %GREEN%Cathan's Seal%CL%Bul-Kathos' Death Band%CL%Angelic Halo%CL%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP (ci0 OR ci1)]: %GREEN%Naj's Circlet%CL%M'avina's True Sight%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP am2]: %GREEN%M'avina's Caster%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP skr]: %GREEN%Natalya's Mark%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP ba5]: %GREEN%Immortal King's Will%NAME%
+ItemDisplay[NMAG !ID SHOP dr3]: %GREEN%Aldur's Stony Gaze%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP ne4]: %GREEN%Trang-Oul's Wing%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP pa5]: %GREEN%Griswold's Honor%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP ob5]: %GREEN%Tal Rasha's Lidless Eye%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP qui]: %GREEN%Dark Adherent%CL%Arctic Furs%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lea]: %GREEN%Vidala's Ambush%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP stu]: %GREEN%Cow King's Hide%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP rng]: %GREEN%Angelic Mantle%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP scl]: %GREEN%Natalya's Shadow%CL%Hwanin's Refuge%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP brs]: %GREEN%Haemosu's Adamant%CL%Isenhart's Case%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP chn]: %GREEN%Cathan's Mesh%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP spl]: %GREEN%Sazabi's Ghost Liberator%CL%Berserker's Hauberk%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP ltp]: %GREEN%Arcanna's Flesh%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP fld]: %GREEN%M'avina's Embrace%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP plt]: %GREEN%Naj's Light Plate%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP gth]: %GREEN%Tal Rasha's Guardianship%CL%Sigon's Shelter%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP ful]: %GREEN%Aldur's Deception%CL%Trang-Oul's Scales%CL%Tancred's Spine%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP aar]: %GREEN%Immortal King's Soul Cage%CL%Griswold's Heart%CL%Milabrega's Robe%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lbl]: %GREEN%Death's Guard%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP vbl]: %GREEN%M'avina's Tenet%CL%Arctic Binding%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mbl]: %GREEN%Credendum%CL%Tal Rasha's Fine-Spun Cloth%CL%Hwanin's Blessing%CL%Hsarus' Iron Stay%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP tbl]: %GREEN%Trang-Oul's Girth%CL%Wilhelm's Pride%CL%Iratha's Cord%CL%Infernal Sign%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP hbl]: %GREEN%Immortal King's Detail%CL%Sigon's Wrap%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lbt]: %GREEN%Rite of Passage%CL%Tancred's Hobnails%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP vbt]: %GREEN%Sander's Riprap%CL%Cow King's Hooves%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mbt]: %GREEN%Natalya's Soul%CL%Hsarus' Iron Heel%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP tbt]: %GREEN%Aldur's Advance%CL%Vidala's Fetlock%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP hbt]: %GREEN%Immortal King's Pillar%CL%Sigon's Sabot%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lgl]: %GREEN%Laying of Hands%CL%Death's Hand%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP vgl]: %GREEN%Magnus' Skin%CL%Sander's Taboo%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mgl]: %GREEN%Trang-Oul's Claws%CL%Cleglaw's Pincers%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP tgl]: %GREEN%M'avina's Icy Clutch%CL%Iratha's Cuff%CL%Arctic Mitts%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP hgl]: %GREEN%Immortal King's Forge%CL%Sigon's Gage%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP cap]: %GREEN%Cow King's Horns%CL%Sander's Paragon%CL%Infernal Cranium%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP skp]: %GREEN%Arcanna's Head%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP hlm]: %GREEN%Berserker's Headgear%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP fhl]: %GREEN%Sazabi's Mental Sheath%CL%Isenhart's Horns%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP ghm]: %GREEN%Ondal's Almighty%CL%Guillaume's Face%CL%Sigon's Visor%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP msk]: %GREEN%Tal Rasha's Horadric Crest%CL%Cathan's Visage%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP crn]: %GREEN%Griswold's Valor%CL%Hwanin's Splendor%CL%Milabrega's Diadem%CL%Iratha's Coil%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP bhm]: %GREEN%Trang-Oul's Guise%CL%Natalya's Totem%CL%Tancred's Skull%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP buc]: %GREEN%Hsarus' Iron Fist%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP sml]: %GREEN%Whitstan's Guard%CL%Cleglaw's Claw%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lrg]: %GREEN%Civerb's Ward%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP kit]: %GREEN%Milabrega's Orb%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP tow]: %GREEN%Sigon's Guard%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP gts]: %GREEN%Taebaek's Glory%CL%Isenhart's Parry%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP 2ax]: %GREEN%Berserker's Hatchet%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mpi]: %GREEN%Tancred's Crowbill%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lbb]: %GREEN%Vidala's Barb%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP swb]: %GREEN%Arctic Horn%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP dgr]: %GREEN%Infernal Spike%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mac]: %GREEN%Dangoon's Teaching%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mst]: %GREEN%Aldur's Rhythm%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP mau]: %GREEN%Immortal King's Stone Crusher%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP vou]: %GREEN%Hwanin's Justice%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP gsc]: %GREEN%Civerb's Cudgel%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP cst]: %GREEN%Naj's Puzzler%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP bst]: %GREEN%Cathan's Rule%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP wst]: %GREEN%Arcanna's Deathwand%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP sbr]: %GREEN%Angelic Sickle%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP bsd]: %GREEN%Isenhart's Lightbrand%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP lsd]: %GREEN%Sazabi's Cobalt Redeemer%CL%Cleglaw's Tooth%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP wsd]: %GREEN%Death's Touch%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP flb]: %GREEN%Bul-Kathos' Tribal Guardian%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP gsd]: %GREEN%Bul-Kathos' Sacred Charge%CL%%CONTINUE%%CL%%NAME%
+ItemDisplay[NMAG !ID SHOP bwn]: %GREEN%Sander's Superstition%CL%%CONTINUE%%CL%%NAME%
+
+ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%NAME%
+
+
+//-----------------------------------------------------------------------------------

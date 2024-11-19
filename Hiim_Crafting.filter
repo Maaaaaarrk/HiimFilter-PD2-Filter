@@ -8,8 +8,8 @@
 // Filter Levels (0 = No Filter)
 ItemDisplayFilterName[]: Base
 ItemDisplayFilterName[]: Semi-Strict
-ItemDisplayFilterName[]: Strict + Crafting
-ItemDisplayFilterName[]: Strict + Crafting + No HP/MP
+ItemDisplayFilterName[]: Strict
+ItemDisplayFilterName[]: Strict + No HP/MP
 ItemDisplayFilterName[]: Stricter
 ItemDisplayFilterName[]: Stricter + No HP/MP
 ItemDisplayFilterName[]: Extremely Strict
@@ -21,12 +21,12 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 18%CL%Season 10 - version 81%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 18%CL%Season 10 - version 81%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% Strict & Crafting}%CONTINUE%
-ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Strict & Crafting & No HP/MP}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=3]: %NAME%{%NAME% Strict}%CONTINUE%
+ItemDisplay[(box OR key) FILTLVL=4]: %NAME%{%NAME% Strict & No HP/MP}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
@@ -4073,26 +4073,26 @@ ItemDisplay[!RW TABSK8=3 SK56=2 !(ALLSK=1) !(ALLSK=2)]:%CONTINUE%%NAME%%DOT-ED%{
 // CRAFTING
 //-----------------------------------------------------------------------------------
 // LLD craft tag in trav
-ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa1 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Targe
-ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa2 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Rondache
-ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa5 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Crown Shield
-ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa6 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Targe
-ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa7 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Rondache
-ItemDisplay[MAG ILVL>50 !ETH btl MAPID=83 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
-ItemDisplay[RARE aqv MAPID=83 FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD]
-ItemDisplay[MAG ILVL>50 MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8) FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
-ItemDisplay[MAG ILVL>50 MAPID=83 (am1 OR am5 OR am6 OR ama) FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
-ItemDisplay[MAG ILVL>50 MAPID=83 (ne5 OR ne4) FILTLVL<5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
-ItemDisplay[MAG ILVL>50 MAPID=83 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8) FILTLVL<5]: %NAME%%TIER-2%%MAP-97%%GREEN% [LLD Craft]
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa1]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Targe
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa2]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Rondache
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Crown Shield
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa6]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Targe
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa7]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Rondache
+ItemDisplay[MAG ILVL>50 !ETH btl MAPID=83]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[RARE aqv MAPID=83]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD]
+ItemDisplay[MAG ILVL>50 MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[MAG ILVL>50 MAPID=83 (am1 OR am5 OR am6 OR ama)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[MAG ILVL>50 MAPID=83 (ne5 OR ne4)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[MAG ILVL>50 MAPID=83 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%TIER-2%%MAP-97%%GREEN% [LLD Craft]
 
 // LLD craft unid
-ItemDisplay[!ID MAG ILVL>50 (pa1 OR pa2 OR pa5 OR pa6 OR pa7) FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[!ID MAG ILVL>50 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
 ItemDisplay[!ID MAG ILVL>50 btl FILTLVL<3]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //blade talons (can shop)
-ItemDisplay[!ID MAG ILVL>50 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8) FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Sorc orbs
-ItemDisplay[!ID MAG ILVL>50 (am1 OR am5 OR am6 OR ama) FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Javs
-ItemDisplay[!ID MAG ILVL>50 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7) FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Nec heads
-ItemDisplay[!ID MAG ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8) FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Barb helms
-ItemDisplay[!ID MAG ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8) FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // dudu helms
+ItemDisplay[!ID MAG ILVL>50 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Sorc orbs
+ItemDisplay[!ID MAG ILVL>50 (am1 OR am5 OR am6 OR ama)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Javs
+ItemDisplay[!ID MAG ILVL>50 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Nec heads
+ItemDisplay[!ID MAG ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Barb helms
+ItemDisplay[!ID MAG ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // dudu helms
 //Id-ed
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
@@ -4103,38 +4103,35 @@ ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // dudu helms
 
 // Weapons
-ItemDisplay[!ID (7gl OR 9gl OR glv) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
-ItemDisplay[!ID (7p7 OR 9p9 OR pik) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Pike
-ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *///Ogre Maul
-ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Fist
-ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Champion Axe
-ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Hyperion spear
-ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG FILTLVL<7]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
-ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Phase Blade
-ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
-ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
-ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
-ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
-ItemDisplay[!ID (7wh OR 9wh OR whm) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Legendary Mallet
-ItemDisplay[!ID (7pi OR 9pi OR pil) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Stygian Pilum
-ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Balrog Spear
-ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
-ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Scourge
-ItemDisplay[!ID (lax OR 9la OR 7la) ETH MAG FILTLVL<5]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Feral Axe
+ItemDisplay[!ID (7gl OR 9gl OR glv) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Ghost Glaive
+ItemDisplay[!ID (7p7 OR 9p9 OR pik) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Pike
+ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *///Ogre Maul
+ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//War Fist
+ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Champion Axe
+ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Hyperion spear
+ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG]: %DOT-ED%%TIER-5%%GREEN%* * %BLUE%%NAME% %GREEN%[Craft] * *//Thunder Maul
+ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Phase Blade
+ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Berserker Axe
+ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Blade
+ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Colossus Sword
+ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Glorious Axe
+ItemDisplay[!ID (7wh OR 9wh OR whm) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Legendary Mallet
+ItemDisplay[!ID (7pi OR 9pi OR pil) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Stygian Pilum
+ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Balrog Spear
+ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Winged Harpoon
+ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Scourge
+ItemDisplay[!ID (lax OR 9la OR 7la) ETH MAG]: %DOT-ED%%GREEN%* %BLUE%%NAME% %GREEN%[Craft] *//Feral Axe
 
 // Elite non eth bases for crafters league
 ItemDisplay[!ID (7la OR 7fb OR 7gd OR 7m7 OR 7gm OR 7p7 OR 7gl OR 7xf) MAG FILTLVL<3]: %BLUE%%NAME% %GREEN%[Craft]
 
 // Armor
-ItemDisplay[!ID (GLOVES OR HELM OR BOOTS OR BELT) ETH MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
+ItemDisplay[!ID (GLOVES OR HELM OR BOOTS OR BELT) ETH MAG FILTLVL<7 ILVL>84]: %NAME% %GREEN%[Craft]{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
 ItemDisplay[!ID GLOVES !(utg OR uhg) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //gloves
 ItemDisplay[!ID (bhm OR xh9 OR uh9) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //skull helm
 ItemDisplay[!ID (bsh OR xsh OR ush) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //bone shield
 ItemDisplay[!ID (lbt OR xlb OR ulb) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
 ItemDisplay[!ID (vbt OR xvb OR uvb) MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //boots
-
-
-//ItemDisplay[!ID uth MAG ILVL>84]: %NAME% %GREEN%[Craft] //Lacquered Plate transmog
 
 // Class specific show for all
 ItemDisplay[!ID (ob5 OR oba OR obf) MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //sorc orb
@@ -4149,8 +4146,8 @@ ItemDisplay[!ID MAG NEC FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //nec heads
 ItemDisplay[!ID ETH SIN MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth sin claws
 ItemDisplay[!ID ETH BAR MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
 ItemDisplay[!ID ETH CHEST MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //eth chest
-ItemDisplay[!ID SIN !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) MAG FILTLVL<5]: %NAME% %GREEN%[Craft] // Claws for all
-ItemDisplay[!ID SIN ETH !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) MAG FILTLVL<7]: %NAME% %GREEN%[Craft] // Claws for all
+ItemDisplay[!ID SIN !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) MAG]: %NAME% %GREEN%[Craft] // Claws for all
+ItemDisplay[!ID SIN ETH !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) MAG]: %NAME% %GREEN%[Craft] // Claws for all
 
 ItemDisplay[!ID BAR MAG FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft] //barb helm
 ItemDisplay[!ID WAND MAG FILTLVL<3 ILVL>84]: %NAME% %GREEN%[Craft] //Wand for Caster craft
