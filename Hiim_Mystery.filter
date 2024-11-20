@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 19%CL%Season 10 - version 87%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 19%CL%Season 10 - version 88%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -107,6 +107,7 @@ ItemDisplay[rid]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma T
 //-----------------------------------------------------------------------------------
 // mats
 ItemDisplay[(dcbl OR dcho OR dcso OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: BIG%CONTINUE%
+ItemDisplay[(pk1 OR pk2 OR pk3) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Uber Key%CONTINUE%
 //-----------------------------------------------------------------------------------
 // Boss Mats
 //-----------------------------------------------------------------------------------
@@ -360,7 +361,7 @@ ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 O
 
 
 // Map Contains Dolls
-ItemDisplay[STAT437>0]: %BLUE% [DOLLS]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT437>0]: %RED% [DOLLS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Dolls %CL%%NAME%}
 
 // 2x Map Boss
 ItemDisplay[STAT498>0]: %BLUE% [2xBoss]%NAME%%CONTINUE%{%NAME%}
