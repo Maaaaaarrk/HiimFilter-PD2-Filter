@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 21%CL%Season 10 - version 90%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 22%CL%Season 10 - version 91%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -4188,14 +4188,23 @@ ItemDisplay[CHEST MAG ID !(STAT360>0)]: %NAME%{%CORAL%Alvl 85+ for 200% EDAM & 2
 ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) !BAR ETH MAG ID FILTLVL<5 ILVL>84]: %NAME% %GREEN%[Craft]{%NAME%%CL%%RED% ETH Crafting Bases for Purgatory}%CONTINUE%
 
 // LLD
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 btl]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (ne5 OR ne4)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
+ItemDisplay[MAG ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[MAG ILVL>50 STAT360=0 btl]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
+ItemDisplay[MAG ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
+ItemDisplay[MAG ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
+ItemDisplay[MAG ILVL>50 STAT360=0 (ne5 OR ne4)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
+ItemDisplay[MAG ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
+ItemDisplay[MAG ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
 ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 51 for LLD Crafting}%CONTINUE%  // rin/amu
+
+
+ItemDisplay[RARE ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[RARE ILVL>50 STAT360=0 btl]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
+ItemDisplay[RARE ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
+ItemDisplay[RARE ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
+ItemDisplay[RARE ILVL>50 STAT360=0 (ne5 OR ne4)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
+ItemDisplay[RARE ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
+ItemDisplay[RARE ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
 
 // Weapons
 ItemDisplay[(7cr OR 9cr OR crs) ETH MAG ID !SHOP STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//Phase Blade
