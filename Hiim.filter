@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 23%CL%Season 10 - version 92%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 27%CL%Season 10 - version 93%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -645,6 +645,8 @@ ItemDisplay[vps]:{%NAME%}
 ItemDisplay[yps (MAPID=161 OR MAPID=162 OR MAPID=163)]: %GREEN%!Anti{Good Luck on Rathma}
 ItemDisplay[yps DIFF=2]:%NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GOLD%Voidstone - Rathma boss fight}%CONTINUE%
 ItemDisplay[yps (FILTLVL<3 OR CLVL<24)]: %GREEN%!Anti{%NAME%}
+// Show antis on level 1-4 in maps:	Ruins of Viz-jun	143	Ancestral Trial	146	Tomb of Zoltun Kulle	151	Lost Temple	158	
+ItemDisplay[yps FILTLVL<5 (MAPID=143 OR MAPID=146 OR MAPID=151 OR MAPID=158)]: %GREEN%!A{%NAME%}
 ItemDisplay[yps]:{%NAME%}
 // Thawing
 ItemDisplay[wms DIFF=2]:{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}%CONTINUE%
@@ -3313,8 +3315,10 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm
 // Hellslayer - Decapitator
 // Lightsabre or Azurewrath//  Phase Blade
 // Frostwind - Cryptic Sword
+// Alma Negra - Sacred Rondache
+// Lava Gout - Battle Gauntlets
 
-ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR pae OR xui OR 7bt OR 7cr OR 7ls)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
+ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR pae OR xui OR 7bt OR 7cr OR 7ls OR pac OR xtg)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3369,8 +3373,10 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Peasant Crown - War Hat
 // The Patriarch - Great Sword
 // Silks of the Victor - Ancient Armor
+// Leviathan - Kraken Shell
+// Plague Bearer - Rune Sword
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3378,7 +3384,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 
 //-----------------------------------------------------------------------------------
 // Bloodravens Charge - Matriarchal Bow
 // Ursa's Nightmare - Dream Spirit
-// Alma Negra - Sacred Rondache
 // Skullders Ire - Russet Armor
 // Black Hades - Chaos Armor
 // Goldwrap - Heavy Belt
@@ -3392,7 +3397,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 
 // Frostburn - Gauntlets
 // Venom Grip - Demonhide Gloves
 // Ghoulhide - Heavy Bracers
-// Lava Gout - Battle Gauntlets
 // Hellmouth - War Gauntlets
 // Biggins Bonnet - Cap
 // Rockstopper - Sallet
@@ -3415,7 +3419,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 
 // Venom Ward - Breast Plate
 // Raekor's Virtue - Guardian Crown
 // Purgatory - Archon Plate
-// Leviathan - Kraken Shell
 // Valkyrie Wing - Winged Helm
 // Windhammer - Ogre Maul
 // Titans Revenge - Ceremonial Javelin
@@ -3431,12 +3434,12 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 
 // Ariocs Needle - Hyperion Spear
 // Ribcracker - Quarterstaff
 // Blade of Ali Baba - Tulwar
-// Plague Bearer - Rune Sword
 // Odium - Colossus Sword
 // Cloudcrack - Gothic Sword
 // Jadetalon - Wrist Sword
+// Swordguard - Executioner Sword
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR pac OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xtg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR uld OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 9ls OR 7fb OR 9b9 OR 7wb)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR xpl OR xul OR tbl OR zvb OR vbt OR mbt OR xlb OR uvb OR uhb OR lgl OR hgl OR xlg OR xmg OR xhg OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR xth OR 9kr OR kri OR brs OR baf OR utp OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -3514,8 +3517,9 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* 
 // Natalyas Shadow - Loricated Mail
 // Natalyas Totem - Grim Helm
 // Natalyas Mark - Scissors Suwayyah
+// Hsaru or Hwanin - Belt
 
-ItemDisplay[SET !ID FILTLVL<8 (ltp OR ucl OR xh9 OR 7qr)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<8 (ltp OR ucl OR xh9 OR 7qr OR mbl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -3572,13 +3576,11 @@ ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PUR
 ItemDisplay[(UNI OR SET) !ID (MAPID=181 OR MAPID=182)]: %NAME%// Warrior Map catch rest
 ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %DOT-68%%NAME%// Eth uni show all
 ItemDisplay[SET !ID ETH]: %DOT-84%%NAME%// Eth set show all
-ItemDisplay[ELT UNI !ID FILTLVL<5]: %PX-68%%NAME%// Show all elite level 1-4
+ItemDisplay[ELT UNI !ID FILTLVL<8]: %PX-68%%TIER-4%%NAME%// Show all elite level 1-7 announce 1-4
 ItemDisplay[UNI !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
 ItemDisplay[SET !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
-ItemDisplay[UNI !ID FILTLVL<3]: %PX-68%%GOLD%%NAME%
-ItemDisplay[UNI !ID FILTLVL<5]: %GOLD%%NAME%
-ItemDisplay[SET !ID FILTLVL<3]: %PX-84%%GREEN%%NAME%
-ItemDisplay[SET !ID FILTLVL<5]: %GREEN%%NAME%
+ItemDisplay[UNI !ID FILTLVL<5]: %PX-68%%TIER-2%%GOLD%%NAME%
+ItemDisplay[SET !ID FILTLVL<5]: %PX-84%%TIER-2%%GREEN%%NAME%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // Weapon range
@@ -5970,6 +5972,7 @@ ItemDisplay[(7kr OR 9kr OR kri) (SOCK=0 OR SOCK=3) !ETH NMAG (SK73>2) FILTLVL<7]
 
 // Purity Base for leveling
 ItemDisplay[FILTLVL<3 ELT (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
+ItemDisplay[FILTLVL<8 ELT ETH (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3 EDAM>0 (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
 ItemDisplay[FILTLVL<5 ELT ETH (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
 ItemDisplay[FILTLVL<3 ELT CLVL<80 (POLEARM OR SPEAR) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
 ItemDisplay[FILTLVL<3 EXC DIFF<2 (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %DOT-D6%%NAME% %DARK_GREEN%[Purity]{%NAME%%CL%%GREEN%Purity RW Base}
@@ -6009,7 +6012,8 @@ ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTL
 // Paladin Shields
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDAM>59]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>29]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>24 FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDAM>57 FILTLVL<8]: %DOT-D6%%TIER-6%%NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>24 FILTLVL<8]: %DOT-D6%%TIER-6%%NAME%{%NAME%}
 ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19 FILTLVL<5]: %DOT-D6%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80]: %NAME%{%NAME%}
 // Shield
