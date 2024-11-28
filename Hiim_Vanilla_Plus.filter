@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 27%CL%Season 10 - version 93%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Nov 27%CL%Season 10 - version 94%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1387,8 +1387,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Silks of the Victor - Ancient Armor
 // Leviathan - Kraken Shell
 // Plague Bearer - Rune Sword
+// Baezils - Vortex Knout
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uvg OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3991,13 +3992,12 @@ ItemDisplay[FILTLVL<3 EXC DIFF<2 (STAFF OR BOW OR XBOW) !INF NMAG !RW SOCK=3]: %
 
 // Chests
 ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) !ETH !INF SOCK=0 NMAG FILTLVL<5]: %NAME%{%NAME%}
-ItemDisplay[EQ2 ELT ETH !INF SOCK=0 NMAG]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CHEST ELT ETH !INF (SOCK=4 OR SOCK=0 OR SOCK=3) NMAG EDEF>0]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CHEST ELT ETH SUP (SOCK=4 OR SOCK=0 OR SOCK=3) NMAG FILTLVL<8]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[CHEST ELT ETH !INF (SOCK=4 OR SOCK=0 OR SOCK=3) NMAG FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) SOCK=0 NMAG EDEF>0 (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 ItemDisplay[CHEST ELT !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) DEF>900]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%}
 ItemDisplay[xtp !INF !ETH NMAG !RW !SOCK=1 (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[CHEST ELT !INF !ETH NMAG !RW EDEF>0 (SOCK=0 OR SOCK>2) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[CHEST ELT ETH !INF (SOCK=4 OR SOCK=0) NMAG !RW]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[CHEST ELT ETH !INF SOCK=3 NMAG !RW]: %NAME%{%NAME%}
 ItemDisplay[CHEST ELT !INF ETH NMAG !RW !(SOCK=1) (EDEF>10 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[CHEST EXC !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>9 (EDEF=15 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
 
