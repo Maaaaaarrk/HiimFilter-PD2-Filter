@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Dec 2%CL%Season 10 - version 97%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Dec 2%CL%Season 10 - version 98%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -638,18 +638,18 @@ ItemDisplay[mp5]:
 
 // Other Potion Tooltips
 // Stanima
-ItemDisplay[vps DIFF=2]:{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}%CONTINUE%
+ItemDisplay[vps DIFF=2 SHOP]:{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}%CONTINUE%
 ItemDisplay[vps DIFF<2 CLVL<24]: %GREEN%!%WHITE%sta{%NAME%}
 ItemDisplay[vps]:{%NAME%}
 // Antidote
 ItemDisplay[yps (MAPID=161 OR MAPID=162 OR MAPID=163)]: %GREEN%!Anti{Good Luck on Rathma}
-ItemDisplay[yps DIFF=2]:%NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GOLD%Voidstone - Rathma boss fight}%CONTINUE%
+ItemDisplay[yps DIFF=2 SHOP]:%NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GOLD%Voidstone - Rathma boss fight}%CONTINUE%
 ItemDisplay[yps (FILTLVL<3 OR CLVL<24)]: %GREEN%!Anti{%NAME%}
 // Show antis on level 1-4 in maps:	Ruins of Viz-jun	143	Ancestral Trial	146	Tomb of Zoltun Kulle	151	Lost Temple	158	
 ItemDisplay[yps FILTLVL<5 (MAPID=143 OR MAPID=146 OR MAPID=151 OR MAPID=158)]: %GREEN%!A{%NAME%}
 ItemDisplay[yps]:{%NAME%}
 // Thawing
-ItemDisplay[wms DIFF=2]:{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}%CONTINUE%
+ItemDisplay[wms DIFF=2 SHOP]:{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}%CONTINUE%
 ItemDisplay[wms FILTLVL<2 CLVL<80]: %GREEN%!%WHITE%thaw{%NAME%}
 ItemDisplay[wms FILTLVL<3 DIFF<2 CLVL<24]: %GREEN%!%WHITE%thaw{%NAME%}
 ItemDisplay[wms]:{%NAME%}
@@ -1503,8 +1503,11 @@ ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb)]: %MAP-84%%GREEN%* * * *  %NAME%  %G
 // Trang-Ouls Claws - Heavy Bracers
 // Ondals Almighty - Spired Helm
 // Trang-Ouls Scales - Chaos Armor
+// Griswolds Redemption - Caduceus
+// Griswolds Honor - Vortex Shield
+// Deaths Hand - Leather Gloves
 
-ItemDisplay[SET !ID FILTLVL<8 (ne9 OR utc OR xmg OR uhm OR xul)]: %MAP-84%%GREEN%* * *  %NAME%  %GREEN%* * *
+ItemDisplay[SET !ID FILTLVL<9 (ne9 OR utc OR xmg OR uhm OR xul OR 7ws OR paf OR lgl)]: %MAP-84%%TIER-7%%GREEN%* * *  %NAME%  %GREEN%* * *
 
 // Set tier 2 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -1513,12 +1516,9 @@ ItemDisplay[SET !ID FILTLVL<8 (ne9 OR utc OR xmg OR uhm OR xul)]: %MAP-84%%GREEN
 // Taebaeks Glory - Ward
 // Griswolds Heart - Ornate Plate
 // Griswolds Valor - Corona
-// Griswolds Redemption - Caduceus
-// Griswolds Honor - Vortex Shield
-// Deaths Hand - Leather Gloves
 // Aldurs Stony Gaze - Hunters Guise
 
-ItemDisplay[SET !ID FILTLVL<8 (xap OR stu OR uts OR xar OR urn OR 7ws OR paf OR lgl OR dr8)]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
+ItemDisplay[SET !ID FILTLVL<8 (xap OR stu OR uts OR xar OR urn OR dr8)]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* *
 
 // Any ETH Set weapon catch rest
 ItemDisplay[SET !ID ETH WEAPON FILTLVL>6]: %DOT-84%%GREEN%%NAME%
@@ -1532,7 +1532,7 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %DOT-84%%GREEN%* *  %NAME%  %GREEN%* 
 // Natalyas Mark - Scissors Suwayyah
 // Hsaru or Hwanin - Belt
 
-ItemDisplay[SET !ID FILTLVL<8 (ltp OR ucl OR xh9 OR 7qr OR mbl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*
+ItemDisplay[SET !ID FILTLVL<9 (ltp OR ucl OR xh9 OR 7qr OR mbl)]: %DOT-84%%TIER-7%%GREEN%*  %NAME%  %GREEN%*
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
