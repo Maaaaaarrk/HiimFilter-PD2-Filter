@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Dec 2%CL%Season 10 - version 99%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Dec 6%CL%Season 10 - version 100%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1425,8 +1425,8 @@ ItemDisplay[NMAG ETH !RW SOCK=0]:%NAME%%CONTINUE%{%RED%SLAM %WHITE%For chance of
 // UNID Formatting
 //-----------------------------------------------------------------------------------
 // Warrior Map Formatting
-ItemDisplay[MAG (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
-ItemDisplay[RARE (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[MAG (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[RARE (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
@@ -5892,7 +5892,7 @@ ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=4 FILTLVL<7]: %NAME% %ORANGE%[LL
 
 ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0 OR SK98>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[9ws SK112>2 (SK115>0 OR SK117>0 OR SK106>0 OR SK113>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+ItemDisplay[9ws SK112>2 (SK115>0 OR SK117>0 OR SK106>0 OR SK113>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%NAME%}
 
 // LLD +3 holy bolt SK101 war/divine scepter
