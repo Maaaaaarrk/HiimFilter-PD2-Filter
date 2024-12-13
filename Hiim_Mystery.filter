@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Dec 6%CL%Season 10 - version 100%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Dec 12%CL%Season 10 - version 100%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1667,15 +1667,17 @@ ItemDisplay[jew !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%
 ItemDisplay[jew ID (STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9)]: %DOT-50%%NAME%%CL%%CONTINUE%{%NAME%}
 
 // BIG jewel callouts
+ItemDisplay[jew FHR>0 STAT91<0 RES>0]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew (FHR>0 OR STAT91<0) RES>14]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew (RES>14 OR STAT91<0 OR FHR>0) (STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew (STR+DEX>15) (FHR>0 OR STAT91<0 OR REPLIFE>4 OR STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew STAT86>1 STAT138>1]: %NAME%%PURPLE%BIG %CONTINUE%
-ItemDisplay[jew EDAM>37 (MINDMG+MAXDMG>13)]: %NAME%%PURPLE%BIG %CONTINUE%
-ItemDisplay[jew EDAM>29 (MINDMG+MAXDMG>19)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew EDAM>37 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>25)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew EDAM>29 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>38)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>29 STAT501>0]: %NAME%%PURPLE%BIG %CONTINUE%
-ItemDisplay[jew (MINDMG+MAXDMG>28)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew (MINDMG>0 OR MAXDMG>0) (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>28)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>30 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew RES>9 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
 
 // Jewel name formatting
 ItemDisplay[jew MAG ID (STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9)]: %NAME%%BLUE%jewel%CONTINUE%{%NAME%}
