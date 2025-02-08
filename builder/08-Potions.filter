@@ -18,8 +18,8 @@ ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome
 // Juvs
 ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %PURPLE%65%  %PURPLE%*
 ItemDisplay[rvl FILTLVL<7]: %PURPLE%*    %WHITE%Rejuv %PURPLE%65%%PURPLE%    *
-ItemDisplay[rvl FILTLVL<8]: %PURPLE%* %WHITE%Rejuv %PURPLE%65% %PURPLE%*
-ItemDisplay[rvl FILTLVL<9]: %WHITE%Rejuv %PURPLE%65%
+ItemDisplay[rvl FILTLVL<8]: %WHITE%Rejuv %PURPLE%65%
+ItemDisplay[rvl FILTLVL<9]: %WHITE%juv %PURPLE%65%
 ItemDisplay[rvl FILTLVL=9]: %PURPLE%GATORADE
 ItemDisplay[rvl]:
 ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
@@ -34,9 +34,11 @@ ItemDisplay[(mp1 OR mp2 OR mp3 OR mp4) FILTLVL>2]:
 
 // Hide pots when appropriate based on gameplay
 ItemDisplay[(hp1 OR hp2) (DIFF>0 OR CLVL>79)]:
-ItemDisplay[(hp3 OR hp4) (DIFF>1 OR CLVL>79)]:
+ItemDisplay[hp3 (DIFF>1 OR CLVL>79)]:
+ItemDisplay[hp4 DIFF>1 CLVL>79]:
 ItemDisplay[(mp1 OR mp2) (DIFF>0 OR CLVL>79)]:
-ItemDisplay[(mp3 OR mp4) (DIFF>1 OR CLVL>79)]:
+ItemDisplay[mp3 (DIFF>1 OR CLVL>79)]:
+ItemDisplay[mp4 DIFF>1 CLVL>79]:
 
 // Show HP Pots
 ItemDisplay[hp1]: %RED%+ %WHITE%HP1 %RED%+
