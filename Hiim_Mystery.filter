@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Feb 8%CL%Season 10 - version 104%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Feb 9%CL%Season 10 - version 105%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -518,6 +518,8 @@ ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%OR
 //-----------------------------------------------------------------------------------
 
 // Out of Town
+// low rune
+ItemDisplay[RUNE<21 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%Rune%CONTINUE%
 // Mid rune
 ItemDisplay[RUNE>20 RUNE<24 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%lil Rune%CONTINUE%
 ItemDisplay[RUNE>23 RUNE<26 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%LIL Rune%CONTINUE%
@@ -3254,7 +3256,36 @@ ItemDisplay[SET (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0 !ID]: %NAME% %TEAL%[
 ItemDisplay[UNI (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GOLD%%NAME% %RED%[C] *%CONTINUE%
 ItemDisplay[SET (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%NAME% %RED%[C] *%CONTINUE%
 
-//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------ItemDisplay[(UNI OR SET) NORM !ID]Normal%CONTINUE%
+ItemDisplay[(UNI OR SET) EXC !ID]Exceptional%CONTINUE%
+ItemDisplay[(UNI OR SET) ELT !ID]Elite%CONTINUE%
+
+ItemDisplay[UNI !ID]%GOLD%%NAME% Unique%CONTINUE%
+ItemDisplay[SET !ID]%GREEN%%NAME% Set%CONTINUE%
+
+ItemDisplay[(UNI OR SET) WP1 !ID]%NAME% Axe%CONTINUE%
+ItemDisplay[(UNI OR SET) WP2 !ID]%NAME% Mace%CONTINUE%
+ItemDisplay[(UNI OR SET) WP3 !ID]%NAME% Sword%CONTINUE%
+ItemDisplay[(UNI OR SET) WP4 !ID]%NAME% Dagger%CONTINUE%
+ItemDisplay[(UNI OR SET) WP5 !ID]%NAME% Throwing Weapon%CONTINUE%
+ItemDisplay[(UNI OR SET) WP6 !ID]%NAME% Javelin%CONTINUE%
+ItemDisplay[(UNI OR SET) WP7 !ID]%NAME% Spear%CONTINUE%
+ItemDisplay[(UNI OR SET) WP8 !ID]%NAME% Polearm%CONTINUE%
+ItemDisplay[(UNI OR SET) WP9 !ID]%NAME% Bow%CONTINUE%
+ItemDisplay[(UNI OR SET) WP10 !ID]%NAME% Crossbow%CONTINUE%
+ItemDisplay[(UNI OR SET) WP11 !ID]%NAME% Stave%CONTINUE%
+ItemDisplay[(UNI OR SET) WP12 !ID]%NAME% Wand%CONTINUE%
+ItemDisplay[(UNI OR SET) WP13 !ID]%NAME% Scepter%CONTINUE%
+
+
+ItemDisplay[(UNI OR SET) EQ1 !ID]%NAME% Helm%CONTINUE%
+ItemDisplay[(UNI OR SET) EQ2 !ID]%NAME% Chest%CONTINUE%
+ItemDisplay[(UNI OR SET) EQ3 !ID]%NAME% Shield%CONTINUE%
+ItemDisplay[(UNI OR SET) EQ4 !ID]%NAME% Glove%CONTINUE%
+ItemDisplay[(UNI OR SET) EQ5 !ID]%NAME% Boot%CONTINUE%
+ItemDisplay[(UNI OR SET) EQ6 !ID]%NAME% Belt%CONTINUE%
+ItemDisplay[(UNI OR SET) EQ7 !ID]%NAME% Circlet%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 // GG Unique Callouts
 //-----------------------------------------------------------------------------------
