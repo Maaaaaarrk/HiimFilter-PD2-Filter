@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Feb 9%CL%Season 10 - version 107%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Feb 10%CL%Season 10 - version 108%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3258,6 +3258,8 @@ ItemDisplay[SET (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%
 
 //-----------------------------------------------------------------------------------
 
+ItemDisplay[(UNI OR SET) (rin OR amu) !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Jewerly%CONTINUE%
+
 ItemDisplay[(UNI OR SET) NORM !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Normal%CONTINUE%
 ItemDisplay[(UNI OR SET) EXC !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Exceptional%CONTINUE%
 ItemDisplay[(UNI OR SET) ELT !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Elite%CONTINUE%
@@ -3287,6 +3289,20 @@ ItemDisplay[(UNI OR SET) EQ4 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 
 ItemDisplay[(UNI OR SET) EQ5 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Boot%CONTINUE%
 ItemDisplay[(UNI OR SET) EQ6 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Belt%CONTINUE%
 ItemDisplay[(UNI OR SET) EQ7 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Circlet%CONTINUE%
+
+
+ItemDisplay[(UNI OR SET) CL1 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Pelt%CONTINUE%
+ItemDisplay[(UNI OR SET) CL2 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Barb%CONTINUE%
+ItemDisplay[(UNI OR SET) CL3 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Pala%CONTINUE%
+ItemDisplay[(UNI OR SET) CL4 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Head%CONTINUE%
+ItemDisplay[(UNI OR SET) CL5 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Claw%CONTINUE%
+ItemDisplay[(UNI OR SET) CL6 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Sorc%CONTINUE%
+ItemDisplay[(UNI OR SET) CL7 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Zon%CONTINUE%
+
+
+// Eth add on callout
+ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 // GG Unique Callouts
@@ -3320,7 +3336,7 @@ ItemDisplay[(UNI OR SET) EQ7 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 
 // Amulet
 // Ring
 
-ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR 7gd OR amu OR rin)]: %BORDER-9B%%PURPLE%> > > > >   %GOLD%BIG%PURPLE%   < < < < <
+ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR 7gd OR amu OR rin)]: %BORDER-9B%%PURPLE%> > > > >   %GOLD%BIG UNIQUE%PURPLE%   < < < < <
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -6130,6 +6146,7 @@ ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19 FILTLVL<5]: %DOT-
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80]: %NAME%{%NAME%}
 // Shield
 ItemDisplay[(uit OR uow OR uts OR ush) !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDEF>4 (EDEF=15 OR FILTLVL<5)]: %NAME%{%NAME%}
+ItemDisplay[uow !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) (EDEF=15 OR FILTLVL<5)]: %NAME%{%NAME%}
 
 // Bows/Crossbows
 // Class bows
