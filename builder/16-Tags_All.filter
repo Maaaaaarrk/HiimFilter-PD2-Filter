@@ -100,8 +100,8 @@ ItemDisplay[SET ID amu (STAT360=0 AND STAT89=3)]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[SET ID rin (STAT360=0 AND STAT74=6)]: %NAME% %TEAL%[LLD]%CONTINUE%
 
 //Half freeze duration when no CBF
-ItemDisplay[STAT118>0 !EQUIPPED CHARSTAT118=1 CHARSTAT153=0]: %NAME% {%TAN%Equip to Gain: %BLUE%Cannot Be Frozen}%CONTINUE%
-ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118<2 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %GRAY%Cannot Be Frozen}%CONTINUE%
-ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118>1 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %BLUE%Cannot Be Frozen}%CONTINUE%
+ItemDisplay[STAT118>0 !EQUIPPED CHARSTAT118=1 CHARSTAT153=0]: %NAME% {%TAN%Equip to Gain: %BLUE%Cannot Be Frozen%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118<2 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %GRAY%Cannot Be Frozen%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT118>0 EQUIPPED CHARSTAT118>1 CHARSTAT153=0]: %NAME% {%TAN%%CHARSTAT118% of 2 Items for %BLUE%Cannot Be Frozen%CL%%NAME%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
