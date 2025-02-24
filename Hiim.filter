@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Feb 22%CL%Season 10 - version 111%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Feb 23%CL%Season 10 - version 112%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1485,12 +1485,17 @@ ItemDisplay[aqv FILTLVL>4 !ID]:
 ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %DOT-91%%YELLOW%X%BLUE%     %NAME%     %YELLOW%X
 ItemDisplay[MAG amu !ID (MAPID=181 OR MAPID=182)]: %NAME%
 ItemDisplay[MAG (rin OR amu) !ID]:%NOTIFY-DEAD%
+//90+ amu
+ItemDisplay[RARE amu !ID (FILTLVL<5 OR ILVL>89)]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
+//85+ ring
+ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84)]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
+ItemDisplay[RARE (rin OR amu) !ID]: %YELLOW%%NAME%
 
 // Jewel
 ItemDisplay[MAG (jew) !ID FILTLVL<7]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
 ItemDisplay[MAG (jew) !ID FILTLVL=7]: %NAME%
 ItemDisplay[RARE jew !ID ILVL>84]: %DOT-A8%%PURPLE%X X X%YELLOW%     %NAME%     %PURPLE%X X X
-ItemDisplay[RARE (jew OR rin OR amu) !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
+ItemDisplay[RARE jew !ID]: %DOT-9B%%ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X
 
 // Circlets
 ItemDisplay[EQ7 RARE !ID]: %DOT-A8%%PURPLE%X X X X X %NAME% %PURPLE%X X X X X
