@@ -1,6 +1,7 @@
 
 
-ItemDisplay[(UNI OR SET) (rin OR amu) !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Jewerly%CONTINUE%
+
+//ItemDisplay[(UNI OR SET) (rin OR amu) !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Jewerly%CONTINUE%
 
 ItemDisplay[(UNI OR SET) NORM !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Normal%CONTINUE%
 ItemDisplay[(UNI OR SET) EXC !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Exceptional%CONTINUE%
@@ -43,6 +44,8 @@ ItemDisplay[(UNI OR SET) CL7 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 
 
 
 // Eth add on callout
+ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 
@@ -78,6 +81,7 @@ ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 // Amulet
 // Ring
 
-ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR 7gd OR amu OR rin)]: %BORDER-9B%%PURPLE%> > > > >   %GOLD%BIG UNIQUE%PURPLE%   < < < < <
+ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR 7gd)]: %BORDER-9B%%PURPLE%> > > > >   %GOLD%BIG UNIQUE%PURPLE%   < < < < <
+ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) (amu OR rin)]: %BORDER-9B%%PURPLE%> > >   %NAME%%PURPLE%   < < <
 
 //-----------------------------------------------------------------------------------
