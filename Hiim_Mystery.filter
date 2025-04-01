@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Mar 31%CL%Season 10 - version 114%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Mar 31%CL%Season 10 - version 115%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3420,8 +3420,8 @@ ItemDisplay[(UNI OR SET) NORM !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103
 ItemDisplay[(UNI OR SET) EXC !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Exceptional%CONTINUE%
 ItemDisplay[(UNI OR SET) ELT !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Elite%CONTINUE%
 
-ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GOLD%%NAME% Unique%CONTINUE%
-ItemDisplay[SET !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GREEN%%NAME% Set%CONTINUE%
+ItemDisplay[UNI !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !(rin OR amu)]: %GOLD%%NAME% Unique%CONTINUE%
+ItemDisplay[SET !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !(rin OR amu)]: %GREEN%%NAME% Set%CONTINUE%
 
 ItemDisplay[(UNI OR SET) WP1 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Axe%CONTINUE%
 ItemDisplay[(UNI OR SET) WP2 !ID !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% Mace%CONTINUE%
