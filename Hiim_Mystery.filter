@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Mar 31%CL%Season 10 - version 114%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Apr 12%CL%Season 11 - version 1%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2595,7 +2595,7 @@ ItemDisplay[UNI !ID 9tw]: %CONTINUE%Bartucs Cut-Throat - Greater Talons
 ItemDisplay[UNI !ID 9qr]: %CONTINUE%Scissors Quhab (No Unique for this base)
 ItemDisplay[UNI !ID 7ar]: %CONTINUE%Suwayyah (No Unique for this base)
 ItemDisplay[UNI !ID 7wb]: %CONTINUE%Jadetalon - Wrist Sword
-ItemDisplay[UNI !ID 7xf]: %CONTINUE%War Fist (No Unique for this base)
+ItemDisplay[UNI !ID 7xf]: %CONTINUE%War Fist - Whispering Mirage
 ItemDisplay[UNI !ID 7cs]: %CONTINUE%Shadowkiller - Battle Cestus
 ItemDisplay[UNI !ID 7lw]: %CONTINUE%Firelizards Talons - Feral Claws
 ItemDisplay[UNI !ID 7tw]: %CONTINUE%Stalker's Cull - Runic Talons
@@ -2667,7 +2667,7 @@ ItemDisplay[UNI !ID pab]: %CONTINUE%Sacred Targe (No Unique for this base)
 ItemDisplay[UNI !ID pac]: %CONTINUE%Alma Negra - Sacred Rondache
 ItemDisplay[UNI !ID pad]: %CONTINUE%Kurast Shield (No Unique for this base)
 ItemDisplay[UNI !ID pae]: %CONTINUE%Dragonscale - Zakarum Shield
-ItemDisplay[UNI !ID paf]: %CONTINUE%Vortex Shield (No Unique for this base)
+ItemDisplay[UNI !ID paf]: %CONTINUE%Vortex Shield - Skywarden
 
 // Sorceress Orbs
 ItemDisplay[UNI !ID ob1]: %CONTINUE%Eagle Orb (No Unique for this base)
@@ -3554,7 +3554,7 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR 7gd OR amu OR rin)]: %BORDER-9B%%PURPLE%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
 
 // Tier 3 Unique Callouts
-// Filter level 1-7
+// Filter level 1-8
 //-----------------------------------------------------------------------------------
 // Kiras Guardian - Tiara
 // Thunderstroke - Matriarchal Javelin
@@ -3624,8 +3624,9 @@ ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR 
 // Vampire Gaze - Grim Helm
 // Marrowwalk - Boneweave Boots
 // Buriza-Do Kyanon - Ballista
+// Vortex Shield - Skywarden
 
-ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg OR xow OR ush OR 7bl OR 9wc OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR xh9 OR umb OR 8hx)]: %MAP-68%%GOLD%* *  %NAME%  %GOLD%* *
+ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg OR xow OR ush OR 7bl OR 9wc OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR xh9 OR umb OR 8hx OR paf)]: %MAP-68%%GOLD%* *  %NAME%  %GOLD%* *
 
 // Tier 1 Unique Callouts
 // Filter level 1-7
@@ -3655,8 +3656,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Leviathan - Kraken Shell
 // Plague Bearer - Rune Sword
 // Baezils - Vortex Knout
+// Firelizards Talons - Feral Claws
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl OR 7lw)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3726,8 +3728,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR 
 // Cloudcrack - Gothic Sword
 // Jadetalon - Wrist Sword
 // Swordguard - Executioner Sword
+// War Fist - Whispering Mirage
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR xul OR tbl OR vbt OR mbt OR xlb OR uvb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR xul OR tbl OR vbt OR mbt OR xlb OR uvb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -6095,8 +6098,8 @@ ItemDisplay[NMAG !RW !SHOP CHEST SOCK=3]: %NAME%{%GOLD%Wealth     Lem + Ko + Tir
 ItemDisplay[NMAG !RW !SHOP CHEST SOCK=4]: %NAME%{%GOLD%Stone %GRAY%Shael + Um + Pul + Lum%CL%%GOLD%Innocence %GRAY%Gul + Lem + Zod + Hel%CL%%GOLD%Fortitude %GRAY%El + Sol + Dol + Lo%CL%%GOLD%Chains of Honor %GRAY%Dol + Um + Ber + Ist%CL%%GOLD%Bramble %GRAY%Ral + Ohm + Sur + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																					// Armor 4s
 ItemDisplay[NMAG !RW !SHOP SHIELD SOCK=2]: %NAME%{%GOLD%Splendor %GRAY%Eth + Lum%CL%%GOLD%Rhyme %GRAY%Shael + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																	// Shield 2s
 ItemDisplay[NMAG !RW !SHOP SHIELD SOCK=3]: %NAME%{%GOLD%Sanctuary %GRAY%Ko + Ko + Mal%CL%%GOLD%Dream %GRAY%Io + Jah + Pul%CL%%GOLD%Dragon %GRAY%Sur + Lo + Sol%CL%%GOLD%Ancient's Pledge %GRAY%Ral + Ort + Tal%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																							// Shield 3s
-ItemDisplay[NMAG !RW !SHOP SHIELD !DIN SOCK=4]: %NAME%{%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Exile %GRAY%Vex + Ohm + Ist + Dol%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Shield 4s
-ItemDisplay[NMAG !RW !SHOP DIN SOCK=4]: %NAME%{%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Shattered Wall %GRAY%Zod + Jah + Ral + Cham%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Exile %GRAY%Vex + Ohm + Ist + Dol%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Paladin Shield 4s
+ItemDisplay[NMAG !RW !SHOP SHIELD !DIN SOCK=4]: %NAME%{%GOLD%Epiphany %GRAY%Lo + Ith + Lo + Ist%CL%%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Exile %GRAY%Vex + Ohm + Ist + Dol%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Shield 4s
+ItemDisplay[NMAG !RW !SHOP DIN SOCK=4]: %NAME%{%GOLD%Epiphany %GRAY%Lo + Ith + Lo + Ist%CL%%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Shattered Wall %GRAY%Zod + Jah + Ral + Cham%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Exile %GRAY%Vex + Ohm + Ist + Dol%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Paladin Shield 4s
 ItemDisplay[NMAG !RW !SHOP WAND SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%White %GRAY%Dol + Io%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Dominion %GRAY%Cham + Ohm%CL%%GOLD%X Runewords X}%CONTINUE%																																											// Wand
 ItemDisplay[NMAG !RW !SHOP SOR SOCK=2]: %NAME%{%GOLD%Neophyte %GRAY%Thul + Tir%CL%%GOLD%X Runewords X}%CONTINUE%																																																						// Orb 2s
 ItemDisplay[NMAG !RW !SHOP SOR SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%X Runewords X}%CONTINUE%																																																	// Orb 3s
@@ -6144,6 +6147,8 @@ ItemDisplay[NMAG !RW !SHOP MACE !fla !9fl !7fl SOCK=4]: %NAME%{%GOLD%Phoenix %GR
 ItemDisplay[NMAG !RW !SHOP (fla OR 9fl OR 7fl) SOCK=5]: %NAME%{%GOLD%Honor %GRAY%Amn + El + Ith + Tir + Sol%CL%%GOLD%Eternity %GRAY%Amn + Ber + Ist + Sol + Sur%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																							// Mace (Pointed Mace) 5s
 ItemDisplay[NMAG !RW !SHOP MACE !fla !9fl !7fl SOCK=5]: %NAME%{%GOLD%Obedience %GRAY%Hel + Ko + Thul + Eth + Fal%CL%%GOLD%Honor %GRAY%Amn + El + Ith + Tir + Sol%CL%%GOLD%Eternity %GRAY%Amn + Ber + Ist + Sol + Sur%CL%%GOLD%Doom %GRAY%Hel + Ohm + Um + Lo + Cham%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%Beast %GRAY%Ber + Tir + Um + Mal + Lum%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																								// Mace (Hammer) 5s
 ItemDisplay[NMAG !RW !SHOP MACE SOCK=6]: %NAME%{%GOLD%Last Wish %GRAY%Jah + Mal + Jah + Sur + Jah + Ber%CL%%GOLD%Silence %GRAY%Dol + Eld + Hel + Ist + Tir + Vex%CL%%GOLD%Rapture %GRAY%Vex + Jah + Lo + Ral + Ko + Mal%CL%%GOLD%Breath of the Dying %GRAY%Vex + Hel + El + Eld + Zod + Eth%CL%%GOLD%Asylum %GRAY%Gul + Cham + Hel + Jah + Dol + Um%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																						// Mace (Hammer) 6s
+ItemDisplay[NMAG !RW !SHOP THROWING SOCK=2]: %NAME%{%GOLD%Zephyr %GRAY%Ort + Eth%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Steel %GRAY%Tir + El%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																		// throw 2s
+ItemDisplay[NMAG !RW !SHOP THROWING SOCK=3]: %NAME%{%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Crescent Moon %GRAY%Shael + Im + Tir%CL%%GOLD%Lawbringer %GRAY%Amn + Lem + Ko%CL%%GOLD%Kings Grace %GRAY%Amn + Ral + Thul%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																									// throw 3s
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
