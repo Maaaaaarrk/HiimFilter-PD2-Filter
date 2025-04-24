@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Apr 12%CL%Season 11 - version 1%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Apr 24%CL%Season 11 - version 2%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -2585,7 +2585,7 @@ ItemDisplay[UNI !ID ba3]: %CONTINUE%Horned Helm (No Unique for this base)
 ItemDisplay[UNI !ID ba4]: %CONTINUE%Assault Helmet (No Unique for this base)
 ItemDisplay[UNI !ID ba5]: %CONTINUE%Avenger Guard (No Unique for this base)
 ItemDisplay[UNI !ID ba6]: %CONTINUE%Cyclopean Roar - Jawbone Visor
-ItemDisplay[UNI !ID ba7]: %CONTINUE%Lion Helm (No Unique for this base)
+ItemDisplay[UNI !ID ba7]: %CONTINUE%Wildspeaker - Lion Helm
 ItemDisplay[UNI !ID ba8]: %CONTINUE%Rage Mask (No Unique for this base)
 ItemDisplay[UNI !ID ba9]: %CONTINUE%Savage Helmet (No Unique for this base)
 ItemDisplay[UNI !ID baa]: %CONTINUE%Arreats Face - Slayer Guard
@@ -2601,7 +2601,7 @@ ItemDisplay[UNI !ID dr2]: %CONTINUE%Quetzalcoatl - Hawk Helm
 ItemDisplay[UNI !ID dr3]: %CONTINUE%Antlers (No Unique for this base)
 ItemDisplay[UNI !ID dr4]: %CONTINUE%Falcon Mask (No Unique for this base)
 ItemDisplay[UNI !ID dr5]: %CONTINUE%Spirit Mask (No Unique for this base)
-ItemDisplay[UNI !ID dr6]: %CONTINUE%Alpha Helm (No Unique for this base)
+ItemDisplay[UNI !ID dr6]: %CONTINUE%Fenris - Alpha Helm
 ItemDisplay[UNI !ID dr7]: %CONTINUE%Griffon Headdress (No Unique for this base)
 ItemDisplay[UNI !ID dr8]: %CONTINUE%Hunters Guise (No Unique for this base)
 ItemDisplay[UNI !ID dr9]: %CONTINUE%Sacred Feathers (No Unique for this base)
@@ -2653,7 +2653,7 @@ ItemDisplay[UNI !ID ob3]: %CONTINUE%Smoked Sphere (No Unique for this base)
 ItemDisplay[UNI !ID ob4]: %CONTINUE%Clasped Orb (No Unique for this base)
 ItemDisplay[UNI !ID ob5]: %CONTINUE%Jareds Stone (No Unique for this base)
 ItemDisplay[UNI !ID ob6]: %CONTINUE%Tempest - Glowing Orb
-ItemDisplay[UNI !ID ob7]: %CONTINUE%Crystalline Globe (No Unique for this base)
+ItemDisplay[UNI !ID ob7]: %CONTINUE%Skorn - Crystalline Globe
 ItemDisplay[UNI !ID ob8]: %CONTINUE%Cloudy Sphere (No Unique for this base)
 ItemDisplay[UNI !ID ob9]: %CONTINUE%Sparkling Ball (No Unique for this base)
 ItemDisplay[UNI !ID oba]: %CONTINUE%The Oculus - Swirling Crystal
@@ -3488,8 +3488,10 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm
 // Alma Negra - Sacred Rondache
 // Lava Gout - Battle Gauntlets
 // Draculs Grasp - Vampirebone Gloves
+// Firelizards Talons - Feral Claws
 
-ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR pae OR xui OR 7bt OR 7cr OR 7ls OR pac OR xtg OR uvg)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
+
+ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR pae OR xui OR 7bt OR 7cr OR 7ls OR pac OR xtg OR uvg OR 7lw)]: %MAP-68%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3547,9 +3549,8 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Leviathan - Kraken Shell
 // Plague Bearer - Rune Sword
 // Baezils - Vortex Knout
-// Firelizards Talons - Feral Claws
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl OR 7lw)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3567,15 +3568,15 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR 
 // Raekor's Virtue - Guardian Crown
 // Purgatory - Archon Plate
 // Demon Machine - Chu-Ko-Nu
+// Ursa's Nightmare - Dream Spirit
 
-ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR xth OR 9kr OR baf OR utp OR 8rx)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR xth OR 9kr OR baf OR utp OR 8rx OR drf)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
 // Filter level 1-6
 //-----------------------------------------------------------------------------------
 // Bloodravens Charge - Matriarchal Bow
-// Ursa's Nightmare - Dream Spirit
 // Black Hades - Chaos Armor
 // Goldwrap - Heavy Belt
 // Gorefoot - Heavy Boots
@@ -3620,8 +3621,10 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR 
 // Jadetalon - Wrist Sword
 // Swordguard - Executioner Sword
 // War Fist - Whispering Mirage
+// Wildspeaker - Lion Helm
+// Fenris - Alpha Helm
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR drf OR xul OR tbl OR vbt OR mbt OR xlb OR uvb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR xul OR tbl OR vbt OR mbt OR xlb OR uvb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf OR ba7 OR dr6)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -6005,12 +6008,14 @@ ItemDisplay[NMAG !RW !SHOP STAFF SOCK=6]: %NAME%{%GOLD%Silence %GRAY%Dol + Eld +
 ItemDisplay[NMAG !RW !SHOP DAGGER SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																		// Dagger 2s
 ItemDisplay[NMAG !RW !SHOP DAGGER SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																									// Dagger 3s
 ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=2]: %NAME%{%GOLD%Zephyr %GRAY%Ort + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																					// Bow & Crossbow 2s
-ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Melody %GRAY%Shael + Ko + Nef%CL%%GOLD%Edge %GRAY%Tir + Tal + Amn%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																								// Bow & Crossbow 3s
+ItemDisplay[NMAG !RW !SHOP BOW SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Melody %GRAY%Shael + Ko + Nef%CL%%GOLD%Loyalty %GRAY%Pul + Tir + Dol%CL%%GOLD%Edge %GRAY%Tir + Tal + Amn%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																								// Bow & Crossbow 3s
+ItemDisplay[NMAG !RW !SHOP XBOW SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Melody %GRAY%Shael + Ko + Nef%CL%%GOLD%Edge %GRAY%Tir + Tal + Amn%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																								// Bow & Crossbow 3s
 ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=4]: %NAME%{%GOLD%Wrath %GRAY%Pul + Lum + Ber + Mal%CL%%GOLD%Voice of Reason %GRAY%Lem + Ko + El + Eld%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Passion %GRAY%Dol + Ort + Eld + Lem%CL%%GOLD%Ice %GRAY%Amn + Shael + Jah + Lo%CL%%GOLD%Harmony %GRAY%Tir + Ith + Sol + Ko%CL%%GOLD%Hand of Justice %GRAY%Sur + Cham + Amn + Lo%CL%%GOLD%Fortitude %GRAY%El + Sol + Dol + Lo%CL%%GOLD%Faith %GRAY%Ohm + Jah + Lem + Eld%CL%%GOLD%Brand %GRAY%Jah + Lo + Mal + Gul%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%							// Bow & Crossbow 4s
 ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=5]: %NAME%{%GOLD%Zenith %GRAY%Jah + Zod + Ort + Thul + Ral%CL%%GOLD%Mist %GRAY%Cham + Shael + Gul + Thul + Ith%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																								// Bow & Crossbow 5s
 ItemDisplay[NMAG !RW !SHOP (BOW OR XBOW) SOCK=6]: %NAME%{%GOLD%Silence %GRAY%Dol + Eld + Hel + Ist + Tir + Vex%CL%%GOLD%Breath of the Dying %GRAY%Vex + Hel + El + Eld + Zod + Eth%CL%%GOLD%Asylum %GRAY%Gul + Cham + Hel + Jah + Dol + Um%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Bow & Crossbow 6s
 ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																// Spear & Polearm 2s
-ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Crescent Moon %GRAY%Shael + Um + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																		// Spear & Polearm 3s
+ItemDisplay[NMAG !RW !SHOP POLEARM SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Crescent Moon %GRAY%Shael + Um + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																		// Spear & Polearm 3s
+ItemDisplay[NMAG !RW !SHOP SPEAR SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Loyalty %GRAY%Pul + Tir + Dol%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Crescent Moon %GRAY%Shael + Um + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																		// Spear & Polearm 3s
 ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=4]: %NAME%{%GOLD%Rift %GRAY%Hel + Ko + Lem + Gul%CL%%GOLD%Rampage %GRAY%Shael + El + Ith + Eth%CL%%GOLD%Pride %GRAY%Cham + Sur + Io + Lo%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Passion %GRAY%Dol + Ort + Eld + Lem%CL%%GOLD%Insight %GRAY%Ral + Tir + Tal + Sol%CL%%GOLD%Infinity %GRAY%Ber + Mal + Ber + Ist%CL%%GOLD%Hand of Justice %GRAY%Sur + Cham + Amn + Lo%CL%%GOLD%Fortitude %GRAY%El + Sol + Dol + Lo%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%												// Spear & Polearm 4s
 ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=5]: %NAME%{%GOLD%Zenith %GRAY%Jah + Zod + Ort + Thul + Ral%CL%%GOLD%Obedience %GRAY%Hel + Ko + Thul + Eth + Fal%CL%%GOLD%Honor %GRAY%Amn + El + Ith + Tir + Sol%CL%%GOLD%Eternity %GRAY%Amn + Ber + Ist + Sol + Sur%CL%%GOLD%Doom %GRAY%Hel + Ohm + Um + Lo + Cham%CL%%GOLD%Destruction %GRAY%Vex + Lo + Ber + Jah + Ko%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																		// Spear & Polearm 5s
 ItemDisplay[NMAG !RW !SHOP (SPEAR OR POLEARM) SOCK=6]: %NAME%{%GOLD%Silence %GRAY%Dol + Eld + Hel + Ist + Tir + Vex%CL%%GOLD%Breath of the Dying %GRAY%Vex + Hel + El + Eld + Zod + Eth%CL%%GOLD%Asylum %GRAY%Gul + Cham + Hel + Jah + Dol + Um%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Spear & Polearm 6s
