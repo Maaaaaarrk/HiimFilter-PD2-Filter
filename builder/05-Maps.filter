@@ -9,7 +9,7 @@ ItemDisplay[imra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%
 ItemDisplay[rera]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
 ItemDisplay[scou]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Any Map to make a White Map}
 ItemDisplay[upma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Skull to make a %YELLOW%Rare Map}
-ItemDisplay[irma FILTLVL>2]://Angelic useless Normal -> Blue map
+ItemDisplay[irma FILTLVL>6]://Angelic useless Normal -> Blue map
 ItemDisplay[irma]: %MAP-4A%%NAME%//Infused Arcane Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %BLUE%Magic Map}
 ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O
 ItemDisplay[irra]: %MAP-4A%%NAME%//Infused Zakarum Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map}
@@ -162,9 +162,9 @@ ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR t43 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
 
 // Map Contains SOULS
-ItemDisplay[(t14 OR t3a) STAT470>0 RARE]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
-ItemDisplay[!(t14 OR t3a) STAT470>0 RARE]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) STAT470=0 RARE]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
+ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 ItemDisplay[(t14 OR t3a) NMAG]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 
 // Map Contains Added PSN
@@ -178,9 +178,9 @@ ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs 
 
 // Buffs / Tags
 // Map Contains Ghosts
-ItemDisplay[(t12 OR t27 OR t34) STAT442>0 RARE]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
-ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 RARE]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-ItemDisplay[(t12 OR t27 OR t34) STAT442=0 RARE]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
+ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
 ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
 
 // Map has Standard of Heroes applied

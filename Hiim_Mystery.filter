@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Apr 24%CL%Season 11 - version 2%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated Apr 24%CL%Season 11 - version 3%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -94,6 +94,7 @@ ItemDisplay[jewf]: %ORANGE%X    %GRAY%%NAME%  %ORANGE%X%WHITE%%MAP-68%{50 jewelf
 ItemDisplay[rkey]: %DARK_GREEN%>> Y <<    %ORANGE%Skeleton Key   %DARK_GREEN%>> Y <<%MAP-68%
 ItemDisplay[lbox]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp]: %MAP-4A%%ORANGE%<> <> <> %NAME% %ORANGE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+// TODO item code ItemDisplay[demon box]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
 ItemDisplay[llmr]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
 ItemDisplay[lsvl]: %MAP-4A%%PURPLE%<> <> <> <> <> %NAME% <> <> <> <> <>
@@ -174,7 +175,7 @@ ItemDisplay[imra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%
 ItemDisplay[rera]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
 ItemDisplay[scou]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Any Map to make a White Map}
 ItemDisplay[upma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Skull to make a %YELLOW%Rare Map}
-ItemDisplay[irma FILTLVL>2]://Angelic useless Normal -> Blue map
+ItemDisplay[irma FILTLVL>6]://Angelic useless Normal -> Blue map
 ItemDisplay[irma]: %MAP-4A%%NAME%//Infused Arcane Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %BLUE%Magic Map}
 ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O
 ItemDisplay[irra]: %MAP-4A%%NAME%//Infused Zakarum Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map}
@@ -327,9 +328,9 @@ ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(t12 OR t13 OR t31 OR t41 OR t42 OR t43 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
 
 // Map Contains SOULS
-ItemDisplay[(t14 OR t3a) STAT470>0 RARE]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
-ItemDisplay[!(t14 OR t3a) STAT470>0 RARE]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) STAT470=0 RARE]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
+ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 ItemDisplay[(t14 OR t3a) NMAG]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 
 // Map Contains Added PSN
@@ -343,9 +344,9 @@ ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs 
 
 // Buffs / Tags
 // Map Contains Ghosts
-ItemDisplay[(t12 OR t27 OR t34) STAT442>0 RARE]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
-ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 RARE]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-ItemDisplay[(t12 OR t27 OR t34) STAT442=0 RARE]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
+ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
 ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
 
 // Map has Standard of Heroes applied
@@ -2648,7 +2649,7 @@ ItemDisplay[UNI !ID ne8]: %CONTINUE%Sexton Trophy (No Unique for this base)
 ItemDisplay[UNI !ID ne9]: %CONTINUE%Cantor Trophy (No Unique for this base)
 ItemDisplay[UNI !ID nea]: %CONTINUE%Homunculus - Hierophant Trophy
 ItemDisplay[UNI !ID neb]: %CONTINUE%Minion Skull (No Unique for this base)
-ItemDisplay[UNI !ID neg]: %CONTINUE%Hellspawn Skull (No Unique for this base)
+ItemDisplay[UNI !ID neg]: %CONTINUE%Sacred Totem - Hellspawn Skull
 ItemDisplay[UNI !ID ned]: %CONTINUE%Martyrdom - Overseer Skull
 ItemDisplay[UNI !ID nee]: %CONTINUE%Boneflame - Succubus Skull
 ItemDisplay[UNI !ID nef]: %CONTINUE%Darkforce - Spawn Bloodlord Skull
@@ -3733,8 +3734,10 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR 
 // War Fist - Whispering Mirage
 // Wildspeaker - Lion Helm
 // Fenris - Alpha Helm
+// Zerae's Resolve - Matriarchal Pike
+// Sacred Totem - Hellspawn Skull
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR xul OR tbl OR vbt OR mbt OR xlb OR uvb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf OR ba7 OR dr6)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR xul OR tbl OR vbt OR mbt OR xlb OR uvb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf OR ba7 OR dr6 OR ame OR neg)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
