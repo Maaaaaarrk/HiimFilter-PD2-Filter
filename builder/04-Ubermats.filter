@@ -36,12 +36,18 @@ ItemDisplay[uba]: %MAP-4A%%YELLOW%<> %RED%%NAME%%YELLOW% <>
 //-----------------------------------------------------------------------------------
 // RESET TOKEN AND ESSENCES
 //-----------------------------------------------------------------------------------
-// Essences
-ItemDisplay[tes OR ceh OR bet OR fed]: %MAP-4A%%ORANGE%> > %NAME% %ORANGE%< < %CONTINUE%
-ItemDisplay[tes]: %NAME%{%TAN%Essence %WHITE%from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
-ItemDisplay[ceh]: %NAME%{%TAN%Essence %WHITE%from: %TAN%Mephisto}
-ItemDisplay[bet]: %NAME%{%TAN%Essence %WHITE%from: %RED%Diablo}
-ItemDisplay[fed]: %NAME%{%TAN%Essence %WHITE%from: %DARK_GREEN%Baal}
+// Essences 
+ItemDisplay[tes OR ceh OR bet OR fed]: %ORANGE%> > %NAME% %ORANGE%< < %CONTINUE%
+ItemDisplay[tes]: %NAME%{%TAN%Essence %WHITE%from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}%CONTINUE%
+ItemDisplay[ceh]: %NAME%{%TAN%Essence %WHITE%from: %TAN%Mephisto}%CONTINUE%
+ItemDisplay[bet]: %NAME%{%TAN%Essence %WHITE%from: %RED%Diablo}%CONTINUE%
+ItemDisplay[fed]: %NAME%{%TAN%Essence %WHITE%from: %DARK_GREEN%Baal}%CONTINUE%
+ItemDisplay[tes MAPID=37]: %MAP-4A%%SOUNDID-4630%%NAME%{%NAME%}
+ItemDisplay[tes MAPID=73]: %MAP-4A%%SOUNDID-4641%%NAME%{%NAME%}
+ItemDisplay[ceh MAPID=102]: %MAP-4A%%SOUNDID-4646%%NAME%{%NAME%}
+ItemDisplay[bet MAPID=108]: %MAP-4A%%SOUNDID-4638%%NAME%{%NAME%}
+ItemDisplay[fed MAPID=132]: %MAP-4A%%SOUNDID-4631%%NAME%{%NAME%}
+ItemDisplay[tes OR ceh OR bet OR fed]: %MAP-4A%%NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
