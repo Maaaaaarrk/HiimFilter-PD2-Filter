@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8%CL%Season 11 - version 14%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 9%CL%Season 11 - version 15%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6337,15 +6337,22 @@ ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25 FILTLVL<7]: %D
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
 ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]%GREEN%Hit 6 sockets for Obsession base%CL%%NAME%}
 // Staff CTA / Memory es 3 & shiver 1 & thunder 1 for gg
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>0 SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>0 SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>2 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>0 SK57>0 !INF NMAG !RW SOCK=5 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>0 !INF NMAG !RW SOCK=0 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>0 !INF NMAG !RW SOCK=5 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>2 SK50>0 !INF NMAG !RW SOCK=4 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=5 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=5 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
+//memory
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=4 FILTLVL<7]: %DOT-E1%%NAME% %PURPLE%[MEMORY]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 SK57>0 !INF NMAG !RW SOCK=4 FILTLVL<7]: %DOT-E1%%NAME% %PURPLE%[MEMORY]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
+
 //Misc staff
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK47>2 OR SK376>2 OR SK61>2) NMAG !RW FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK44>2 OR SK64>2 OR SK65>2) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
@@ -6391,6 +6398,7 @@ ItemDisplay[THROWING ELT ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG EDAM>4 (E
 
 
 //-----------------------------------------------------------------------------------
+
 //-----------------------------------------------------------------------------------
 // TOOLTIPS - Sockets for RARE OR CRAFT OR UNI OR SET
 //-----------------------------------------------------------------------------------
