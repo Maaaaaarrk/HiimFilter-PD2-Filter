@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 10%CL%Season 11 - version 16%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 11%CL%Season 11 - version 17%CL%HiimFilter -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -345,7 +345,10 @@ ItemDisplay[STAT435>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%
 ItemDisplay[STAT406>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
 
 // Map Contains Fearing Mobs
-ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
+// No long in S11 ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
+
+//Map contains minions
+ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%WHITE%>  Contains Minions!  <%CL%%NAME%}
 
 // Buffs / Tags
 // Map Contains Ghosts
@@ -383,23 +386,23 @@ ItemDisplay[STAT374>1 STAT374<3]: %PURPLE% [+2]%NAME%%CONTINUE%{%NAME%}
 // Tier 3 Good Maps 
 ItemDisplay[MAPTIER=3 STAT360=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>249)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 // Slammed
-ItemDisplay[MAPTIER=3 STAT360=1 STAT374=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>309)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT360>0 STAT374=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>309)]: %GOLD% [XP]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 // Slammed +1
-ItemDisplay[MAPTIER=3 STAT360=1 STAT374=1 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>209)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT360>0 STAT374=1 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>209)]: %GOLD% [XP]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 
-// Tier 2 Good Maps 
+// Tier 2 Good Maps
 ItemDisplay[MAPTIER=2 STAT360=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>199)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 // Slammed
-ItemDisplay[MAPTIER=2 STAT360=1 STAT374=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>259)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=2 STAT360>0 STAT374=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>259)]: %GOLD% [XP]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 // Slammed +1
-ItemDisplay[MAPTIER=2 STAT360=1 STAT374=1 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>159)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=2 STAT360>0 STAT374=1 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>159)]: %GOLD% [XP]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 
-// Tier 1 Good Maps 
+// Tier 1 Good Maps
 ItemDisplay[MAPTIER=1 STAT360=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>174)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 // Slammed
-ItemDisplay[MAPTIER=1 STAT360=1 STAT374=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>233)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=1 STAT360>0 STAT374=0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>233)]: %GOLD% [XP]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 // Slammed +1
-ItemDisplay[MAPTIER=1 STAT360=1 STAT374=1 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>133)]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
+ItemDisplay[MAPTIER=1 STAT360>0 STAT374=1 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>133)]: %GOLD% [XP]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls < < <%CL%}
 
 // Juicer tag
 ItemDisplay[(MAPTIER=3 OR MAPTIER=2 OR MAPTIER=1) STAT372>0 STAT375>0 STAT373>0 (STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>249)]: %NAME%%CONTINUE%{%NAME%%ORANGE%> > > XP & Density & Rarity < < <%CL%}
@@ -3559,7 +3562,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Shatterblade - Mithril Point
 // Guardian Angel - Templar Coat
 // Pus Spitter - Siege Crossbow
-// Que-Hegans Wisdom - Mage Plate
 // Heavenly Garb - Light Plate
 // Denmother - Sun Spirit
 // Wraithskin - Diamond Mail
@@ -3572,7 +3574,7 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR 
 // Baezils - Vortex Knout
 // Executioners Justice - Glorious Axe
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR xtp OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl OR 7gi)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl OR 7gi)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3648,8 +3650,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR 
 // Zerae's Resolve - Matriarchal Pike
 // Sacred Totem - Hellspawn Skull
 // Spike Thorn - Blade Barrier
+// Que-Hegans Wisdom - Mage Plate
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf OR ba7 OR dr6 OR ame OR neg OR upk)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (amb OR xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf OR ba7 OR dr6 OR ame OR neg OR upk OR xtp)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
