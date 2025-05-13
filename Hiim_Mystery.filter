@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 21%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 22%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6215,7 +6215,7 @@ ItemDisplay[NMAG !RW !SHOP (fla OR 9fl OR 7fl) SOCK=5]: %NAME%{%GOLD%Honor %GRAY
 ItemDisplay[NMAG !RW !SHOP MACE !fla !9fl !7fl SOCK=5]: %NAME%{%GOLD%Obedience %GRAY%Hel + Ko + Thul + Eth + Fal%CL%%GOLD%Honor %GRAY%Amn + El + Ith + Tir + Sol%CL%%GOLD%Eternity %GRAY%Amn + Ber + Ist + Sol + Sur%CL%%GOLD%Doom %GRAY%Hel + Ohm + Um + Lo + Cham%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%Beast %GRAY%Ber + Tir + Um + Mal + Lum%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																								// Mace (Hammer) 5s
 ItemDisplay[NMAG !RW !SHOP MACE SOCK=6]: %NAME%{%GOLD%Last Wish %GRAY%Jah + Mal + Jah + Sur + Jah + Ber%CL%%GOLD%Silence %GRAY%Dol + Eld + Hel + Ist + Tir + Vex%CL%%GOLD%Rapture %GRAY%Vex + Jah + Lo + Ral + Ko + Mal%CL%%GOLD%Breath of the Dying %GRAY%Vex + Hel + El + Eld + Zod + Eth%CL%%GOLD%Asylum %GRAY%Gul + Cham + Hel + Jah + Dol + Um%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																						// Mace (Hammer) 6s
 ItemDisplay[NMAG !RW !SHOP THROWING SOCK=2]: %NAME%{%GOLD%Zephyr %GRAY%Ort + Eth%CL%%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Steel %GRAY%Tir + El%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																		// throw 2s
-ItemDisplay[NMAG !RW !SHOP THROWING SOCK=3]: %NAME%{%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Crescent Moon %GRAY%Shael + Im + Tir%CL%%GOLD%Lawbringer %GRAY%Amn + Lem + Ko%CL%%GOLD%Kings Grace %GRAY%Amn + Ral + Thul%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																									// throw 3s
+ItemDisplay[NMAG !RW !SHOP THROWING SOCK=3]: %NAME%{%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Crescent Moon %GRAY%Shael + Im + Tir%CL%%GOLD%Lawbringer %GRAY%Amn + Lem + Ko%CL%%GOLD%Kings Grace %GRAY%Amn + Ral + Thul%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																									// throw 3s
 
 //-----------------------------------------------------------------------------------
 
@@ -6783,7 +6783,7 @@ ItemDisplay[SK222>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling 
 // ItemDisplay[SK116>2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // Loyalty Bow
-ItemDisplay[NMAG (BOW OR XBOW) !RW SOCK=3 FILTLVL<3 CLVL<80]: %PX-62%%NAME% %ORANGE%[Loyalty]{%RED%Loyalty Base%CL%%NAME%}
+ItemDisplay[NMAG BOW !RW SOCK=3 FILTLVL<3 CLVL<80]: %PX-62%%NAME% %ORANGE%[Loyalty]{%RED%Loyalty Base%CL%%NAME%}
 
 
 // Leaf base
@@ -6947,8 +6947,7 @@ ItemDisplay[NMAG !ID SHOP dr2]: %GOLD%Denmother%CL%Quetzalcoatl%CL%%NAME%%CONTIN
 ItemDisplay[NMAG !ID SHOP dr3]: %GOLD%Spirit Keeper%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP dr4]: %GOLD%Ravenlore%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP dr5]: %GOLD%Ursa's Nightmare%CL%Jalal's Mane%CL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP ne1]: %GOLD%Kalan's Legacy%CL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP ne1]: %GOLD%Sacred Totem%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne1]: %GOLD%Sacred Totem%CL%Kalan's Legacy%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ne3]: %GOLD%Martyrdom%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ne4]: %GOLD%Boneflame%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ne5]: %GOLD%Darkforce Spawn%CL%Homunculus%CL%%NAME%%CONTINUE%
