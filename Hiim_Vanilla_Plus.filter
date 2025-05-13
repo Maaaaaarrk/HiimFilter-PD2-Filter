@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 19%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 20%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -152,19 +152,20 @@ ItemDisplay[ceh MAPID=102]: %MAP-4A%%SOUNDID-4646%%NAME%{%NAME%}
 ItemDisplay[bet MAPID=108]: %MAP-4A%%SOUNDID-4638%%NAME%{%NAME%}
 ItemDisplay[fed MAPID=132]: %MAP-4A%%SOUNDID-4631%%NAME%{%NAME%}
 ItemDisplay[tes OR ceh OR bet OR fed]: %MAP-4A%%NAME%{%NAME%}
+ItemDisplay[toa]: %MAP-A9%%RED%> >> %ORANGE%%NAME%  %RED%<< <
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
 // UBERS - KEYS, ORGANS, ETC
 //-----------------------------------------------------------------------------------
 // Uber Keys
-ItemDisplay[pk1]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven}%CONTINUE%
-ItemDisplay[pk2]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch}%CONTINUE%
-ItemDisplay[pk3]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual}%CONTINUE%
+ItemDisplay[pk1]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
+ItemDisplay[pk2]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
+ItemDisplay[pk3]: %MAP-62%%RED%>  >>  %NAME%  %RED%<<  <{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
 
 // Organs
-ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%WHITE%to open %GRAY%Uber %RED%Tristram%CL%%TAN%Note%WHITE%: Cube %ORANGE%ANY %WHITE%3 Organs}
-ItemDisplay[(ubtm OR toa)]: %MAP-A9%%RED%> >> %ORANGE%%NAME%  %RED%<< <
+ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%RED%>  >>  %ORANGE%%NAME%  %RED%<<  <{%ORANGE%Uber Izual %WHITE%- Furnace of Pain - Mephisto's Brain%CL%%ORANGE%Uber Duriel %WHITE%- Forgotten Sands - Baal's Eye%CL%%ORANGE%Lilith %WHITE%- Matron's Den - Diablo's Horn%CL%%WHITE%to create %RED%Uber Tristram %WHITE%Entry%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the 3 Organs together}
+ItemDisplay[ubtm]: %MAP-A9%%RED%> >> %ORANGE%%NAME%  %RED%<< <{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristam - Uber bosses fight}
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // MAPS
@@ -2477,19 +2478,19 @@ ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) STAT360=0]: %N
 ItemDisplay[SIN MAG ID ETH STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
 
 // Crafting Reciepe
-ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ith, Jewel%CL%%BLUE%HitPwr: O, Ith, Jewel%CL%%RED%Blood: O, Ral, Jewel%CL%%PURPLE%* Caster: O, Nef, Jewel *%CL%%YELLOW%MF: O, Tir, Jewel%CL%%GRAY%* Vamp: SK, Lum, Jewel *%CL%%wHITE%Brilliant: O, Eld, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[BOOTS MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Ort, Jewel *%CL%%BLUE%HitPwr: O, Ral, Jewel%CL%%RED%Blood: O, Eth, Jewel%CL%%PURPLE%Caster: O, Thul, Jewel%CL%%YELLOW%* MF: O, Io, Jewel *%CL%%GRAY%Vamp: SK, El, Jewel%CL%%wHITE%Brilliant: O, Ko, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[GLOVES MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Ral, Jewel%CL%%BLUE%* HitPwr: O, Ort, Jewel *%CL%%RED%* Blood: O, Nef, Jewel *%CL%%PURPLE%* Caster: O, Ort, Jewel *%CL%%YELLOW%MF: O, Hel, Jewel%CL%%GRAY%* Vamp: SK, Io, Jewel *%CL%%wHITE%Brilliant: O, Shael, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[BELT MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Tal, Jewel%CL%%BLUE%* HitPwr: O, Tal, Jewel *%CL%%RED%Blood: O, Tal, Jewel%CL%%PURPLE%* Caster: O, Ith, Jewel *%CL%%YELLOW%MF: O, El, Jewel%CL%%GRAY%Vamp: SK, Eld, Jewel%CL%%wHITE%Brilliant: O, Io, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[SHIELD MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Nef, Jewel *%CL%%BLUE%* HitPwr: O, Eth, Jewel *%CL%%RED%Blood: O, Ith, Jewel%CL%%PURPLE%* Caster: O, Eth, Jewel *%CL%%YELLOW%MF: O, Dol, Jewel%CL%%GRAY%Vamp: SK, Sol, Jewel%CL%%wHITE%Brilliant: O, Ort, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[amu MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Thul, Jewel%CL%%BLUE%HitPwr: O,Thul , Jewel%CL%%RED%Blood: O, Amn, Jewel%CL%%PURPLE%* Caster: O, Ral, Jewel *%CL%%YELLOW%* MF: O, Ko, Jewel *%CL%%GRAY%Vamp: SK, Dol, Jewel%CL%%wHITE%Brilliant: O, Tal, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[rin MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%Safety: O, Amn, Jewel%CL%%BLUE%HitPwr: O, Amn, Jewel%CL%%RED%* Blood: O, Sol, Jewel *%CL%%PURPLE%Caster: O, Amn, Jewel%CL%%YELLOW%* MF: O, Lum, Jewel *%CL%%GRAY%* Vamp: SK, Hel, Jewel *%CL%%wHITE%* Brilliant: O, Hel, Jewel *%CL%%NAME%}%CONTINUE%
-ItemDisplay[(WAND OR SOR) MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%* HitPwr: O, Tir, Jewel *%CL%%RED%* Blood: O, Ort, Jewel *%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !(STAT360>0)]: %NAME%{%GREEN%* Safety: O, Sol, Jewel *%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Ith, Jewel%CL%%BLUE%HitPwr: O, Ith, Jewel%CL%%RED%Blood: O, Ral, Jewel%CL%%PURPLE%* Caster: O, Nef, Jewel *%CL%%YELLOW%MF: O, Tir, Jewel%CL%%GRAY%* Vamp: SK, Lum, Jewel *%CL%%wHITE%Brilliant: O, Eld, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[BOOTS MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Ort, Jewel *%CL%%BLUE%HitPwr: O, Ral, Jewel%CL%%RED%Blood: O, Eth, Jewel%CL%%PURPLE%Caster: O, Thul, Jewel%CL%%YELLOW%* MF: O, Io, Jewel *%CL%%GRAY%Vamp: SK, El, Jewel%CL%%wHITE%Brilliant: O, Ko, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[GLOVES MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Ral, Jewel%CL%%BLUE%* HitPwr: O, Ort, Jewel *%CL%%RED%* Blood: O, Nef, Jewel *%CL%%PURPLE%* Caster: O, Ort, Jewel *%CL%%YELLOW%MF: O, Hel, Jewel%CL%%GRAY%* Vamp: SK, Io, Jewel *%CL%%wHITE%Brilliant: O, Shael, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[BELT MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Tal, Jewel%CL%%BLUE%* HitPwr: O, Tal, Jewel *%CL%%RED%Blood: O, Tal, Jewel%CL%%PURPLE%* Caster: O, Ith, Jewel *%CL%%YELLOW%MF: O, El, Jewel%CL%%GRAY%Vamp: SK, Eld, Jewel%CL%%wHITE%Brilliant: O, Io, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[SHIELD MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Nef, Jewel *%CL%%BLUE%* HitPwr: O, Eth, Jewel *%CL%%RED%Blood: O, Ith, Jewel%CL%%PURPLE%* Caster: O, Eth, Jewel *%CL%%YELLOW%MF: O, Dol, Jewel%CL%%GRAY%Vamp: SK, Sol, Jewel%CL%%wHITE%Brilliant: O, Ort, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[amu MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Thul, Jewel%CL%%BLUE%HitPwr: O,Thul , Jewel%CL%%RED%Blood: O, Amn, Jewel%CL%%PURPLE%* Caster: O, Ral, Jewel *%CL%%YELLOW%* MF: O, Ko, Jewel *%CL%%GRAY%Vamp: SK, Dol, Jewel%CL%%wHITE%Brilliant: O, Tal, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[rin MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Amn, Jewel%CL%%BLUE%HitPwr: O, Amn, Jewel%CL%%RED%* Blood: O, Sol, Jewel *%CL%%PURPLE%Caster: O, Amn, Jewel%CL%%YELLOW%* MF: O, Lum, Jewel *%CL%%GRAY%* Vamp: SK, Hel, Jewel *%CL%%wHITE%* Brilliant: O, Hel, Jewel *%CL%%NAME%}%CONTINUE%
+ItemDisplay[(WAND OR SOR) MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%* HitPwr: O, Tir, Jewel *%CL%%RED%* Blood: O, Ort, Jewel *%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Sol, Jewel *%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS ENFORCEMENT 
@@ -4009,6 +4010,38 @@ ItemDisplay[NMAG !INF !RW SOCK=0 7wn]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME
 ItemDisplay[NMAG !INF !RW SOCK=0 7yw]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Ghost Wand, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 7bw]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Lich Wand, 0os
 ItemDisplay[NMAG !INF !RW SOCK=0 7gw]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Unearthed Wand, 0os
+
+// Throwables
+ItemDisplay[NMAG !INF !RW SOCK=0 tkf]: %NAME%{%TAN%Larzuk for 1 sock}%CONTINUE% //Throwing Knife can now roll up to 1 socket
+ItemDisplay[NMAG !INF !RW SOCK=0 bkf]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Balanced Knife can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9tk]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Battle Dart can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9bk]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //War Dart can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7tk]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Flying Knife can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7bk]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Winged Knife can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 tax]: %NAME%{%TAN%Larzuk for 1 sock}%CONTINUE% //Throwing Axe can now roll up to 1 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 bal]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Balanced Axe can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9ta]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Francisca can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9b8]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Hurlbat can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7ta]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Flying Axe can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7b8]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Winged Axe can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 jav]: %NAME%{%TAN%Larzuk for 1 sock}%CONTINUE% //Javelin can now roll up to 1 socket
+ItemDisplay[NMAG !INF !RW SOCK=0 pil]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Pilum can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 ssp]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Short Spear can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 glv]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Glaive can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 tsp]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Throwing Spear can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9ja]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //War Javelin can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9pi]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Great Pilum can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9s9]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Simbilan can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9gl]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Spiculum can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 9ts]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Harpoon can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7ja]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Hyperion Javelin can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7pi]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Stygian Pilum can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7s7]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Balrog Spear can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7gl]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Ghost Glaive can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 7ts]: %NAME%{%TAN%Larzuk for 3 sockets}%CONTINUE% //Winged Harpoon can now roll up to 3 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 am5]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Maiden Javelin can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 ama]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Ceremonial Javelin can now roll up to 2 sockets
+ItemDisplay[NMAG !INF !RW SOCK=0 amf]: %NAME%{%TAN%Larzuk for 2 sockets}%CONTINUE% //Matriarchal Javelin can now roll up to 2 sockets
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -4111,23 +4144,22 @@ ItemDisplay[(wsp OR 9ws) SK112>2 !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %DOT-E1%%
 
 // LLD divine scepter 0 or 4 socket with charge/zeal staffmods (should be total +skills >= 4, or 3 fana):
 // fanaticism SK122 zeal SK106 charge SK107 vigor SK115 holyshield SK117 holysword SK116
-ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0 OR SK98>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK112>2 (SK115>0 OR SK117>0 OR SK106>0 OR SK113>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=4 FILTLVL<7]: %NAME% %ORANGE%[LLD]{%NAME%}
+// RIP Insight ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+// RIP Insight ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0 OR SK98>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+// RIP Insight ItemDisplay[9ws SK112>2 (SK115>0 OR SK117>0 OR SK106>0 OR SK113>0) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+// RIP Insight ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=4 FILTLVL<7]: %NAME% %ORANGE%[LLD]{%NAME%}
 // cant spawn ItemDisplay[9ws SK116>2 !INF !ETH NMAG !RW SOCK=4 FILTLVL<5]: %DOT-E1%%NAME% [LLD]{%NAME%}
-
-ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0 OR SK98>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[9ws SK112>2 (SK115>0 OR SK117>0 OR SK106>0 OR SK113>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%NAME%}
+// RIP Insight ItemDisplay[9ws SK106>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK107>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+// RIP Insight ItemDisplay[9ws SK107>2 (SK115>0 OR SK117>0 OR SK122>0 OR SK106>0 OR SK98>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+// RIP Insight ItemDisplay[9ws SK112>2 (SK115>0 OR SK117>0 OR SK106>0 OR SK113>0) !INF !ETH NMAG !RW SOCK=0]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+// RIP Insight ItemDisplay[9ws SK122>2 !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%NAME%}
 
 // LLD +3 holy bolt SK101 war/divine scepter
 // lld charge SK107
-ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=4 SK101>2 (SK115>0 OR SK117>0)]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
-ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=0 SK101>2 (SK115>0 OR SK117>0)  FILTLVL<7]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
-ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=4 SK101>2 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%NAME%}
-ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=0 SK101>2 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+// RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=4 SK101>2 (SK115>0 OR SK117>0)]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
+// RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=0 SK101>2 (SK115>0 OR SK117>0)  FILTLVL<7]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+// RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=4 SK101>2 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%NAME%}
+// RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=0 SK101>2 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // LLD Staff base
 // SK46	Blaze
@@ -4139,7 +4171,8 @@ ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2
 ItemDisplay[(8cs OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %NAME% [LLD]{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // Hand of Justice/CTA Scepters
-ItemDisplay[7ws SK123>2 NMAG !INF !SUP (SOCK=0 OR SOCK=5) !RW EDAM>4 (EDAM=15 OR FILTLVL<7)]: %NAME% %DARK_GREEN%[HOJ]{%NAME%}
+ItemDisplay[7ws SK123>2 SK96>2 NMAG !INF !SUP (SOCK=0 OR SOCK=4) !RW (EDAM=15 OR FILTLVL<8)]: %NAME% %PURPLE%[HOJ]{%NAME%}
+ItemDisplay[7ws (SK123>2 OR SK96>2) NMAG !INF !SUP (SOCK=0 OR SOCK=4) !RW EDAM>4 (EDAM=15 OR FILTLVL<8)]: %NAME% %DARK_GREEN%[HOJ]{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW]: %DOT-D6%%NAME% %DARK_GREEN%[CTA]{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL<5]: %DOT-D6%%NAME% %DARK_GREEN%[CTA]{%NAME%}
 
@@ -4147,8 +4180,8 @@ ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL
 ItemDisplay[(SPEAR OR POLEARM) ELT ETH !INF SOCK=0 NMAG !RW (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 
 // Insight for A3 SK99 prayer SK109 cleansing
-ItemDisplay[NMAG !INF !RW SOCK=4 (SK99>2 OR SK109>2) (wsp OR 9ws OR 7ws) FILTLVL<5]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
-ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
+// RIP ItemDisplay[NMAG !INF !RW SOCK=4 (SK99>2 OR SK109>2) (wsp OR 9ws OR 7ws) FILTLVL<5]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
+// RIP ItemDisplay[NMAG !INF !RW SOCK=4 (wsp OR 9ws OR 7ws) FILTLVL<3]: %DOT-D6%%NAME% %DARK_GREEN%[Insight]{%NAME%}%CONTINUE% // All Scepter, 4os
 
 // Grief/Beast/Passion
 ItemDisplay[7wa !ETH !INF (SOCK=0 OR SOCK=5) NMAG EDAM>0 (EDAM=15 OR FILTLVL<5)]: %DOT-D6%%NAME%{%NAME%}
@@ -4459,13 +4492,13 @@ ItemDisplay[NEC (EXC OR ELT) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360
 
 // Weapons
 // always 1
-ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
+ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
 
 // always 2
-ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR (SOR !(ob5 OR oba OR obf))) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
+ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR bkf OR 9tk OR 9bk OR 7tk OR 7bk OR 9ta OR 7ta OR pil OR ssp OR 9ja OR 9pi OR 9s9 OR 7ja OR 7pi OR 7s7 OR am5 OR ama OR amf OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR (SOR !(ob5 OR oba OR obf))) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
 
 // always 3
-ItemDisplay[(9ha OR 7ha OR 9cl OR 7cl OR 9sp OR 7sp OR 9ma OR 7ma OR mst OR 9mt OR 7mt OR 9ss OR 9sm OR 9sb OR 9fc OR 7ss OR 7sm OR 7sb OR 7fc OR wsd OR 9wd OR 7wd OR 2hs OR 92h OR 72h OR 9kr OR 7kr OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR (SIN !(ktr OR wrb OR axf OR ces OR clw OR btl OR skr)) OR oba OR obf) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
+ItemDisplay[(9ha OR 7ha OR 9cl OR 7cl OR 9sp OR 7sp OR 9ma OR 7ma OR mst OR 9mt OR 7mt OR 9ss OR 9sm OR 9sb OR 9fc OR 7ss OR 7sm OR 7sb OR 7fc OR wsd OR 9wd OR 7wd OR 2hs OR 92h OR 72h OR 9kr OR 7kr OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR (SIN !(ktr OR wrb OR axf OR ces OR clw OR btl OR skr)) OR oba OR obf OR bal OR 9b8 OR 7b8 OR glv OR tsp OR 9gl OR 9ts OR 7gl OR 7ts) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 
 // always 4
 ItemDisplay[(axe OR 9ax OR 7ax OR lax OR 9wh OR 7wh OR 9bs OR 7bs OR 9cm OR 9gs OR 9b9 OR 7cm OR 7gs OR 7b7 OR 9tr OR 7tr OR 9b7 OR 9vo OR 7o7 OR 7vo OR 8sb OR 6sb OR 8hb OR 6hb OR 8cb OR 6cb OR 8lx OR 6lx OR 8mx OR 6mx OR cst OR 8cs OR 6cs OR bst OR 8bs OR 6bs OR 9sr) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:4}%CONTINUE%
