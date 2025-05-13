@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 20%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 21%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -4685,6 +4685,10 @@ ItemDisplay[SK222>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling 
 // ItemDisplay[SK116>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 // ItemDisplay[SK116>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 // ItemDisplay[SK116>2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// Loyalty Bow
+ItemDisplay[NMAG (BOW OR XBOW) !RW SOCK=3 FILTLVL<3 CLVL<80]: %PX-62%%NAME% %ORANGE%[Loyalty]{%RED%Loyalty Base%CL%%NAME%}
+
 
 // Leaf base
 ItemDisplay[NMAG STAFF ELT !RW (SK56>1 OR SK51>1 OR SK41>1 OR SK62>1) (SOCK=0 OR SOCK=2) FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leaf Base%CL%%NAME%}
