@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12%CL%Season 11 - version 22%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 13%CL%Season 11 - version 23%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6316,10 +6316,10 @@ ItemDisplay[!RW SK222>2 NMAG FILTLVL<7 (9cl OR 9sp OR 7cl OR 7sp) (SK226>0 OR SK
 //ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG FILTLVL<7]:%DOT-D6%%NAME% %DARK_GREEN%[Plague]{%NAME%%CL%%GREEN%3os for Plague Base}
 //ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG FILTLVL<7]:%DOT-D6%%NAME% %DARK_GREEN%[Plague]{%NAME%%CL%%GREEN%Plague base}
 //ItemDisplay[!RW SK222>2 SK226>0 SK224>0 DRU NMAG]:%DOT-D6%%NAME% %PURPLE%< < <{%NAME%}
-//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=0 NMAG FILTLVL<7]]:%DOT-D6%%NAME% %TEAL%[LLD]{%NAME%%CL%%TEAL%2os for LLD Lore Base%CL%%GREEN%3os for Delrium Base}
-//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=2 NMAG FILTLVL<7]]:%DOT-D6%%NAME% %TEAL%[LLD]{%NAME%%CL%%TEAL%LLD Lore Base}
-//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=0 NMAG FILTLVL<7]]:%DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%3os for Delrium Base}
-//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=3 NMAG FILTLVL<7]]:%DOT-D6%%NAME% %GREEN%***{%NAME%}
+//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=0 NMAG FILTLVL<7]:%DOT-D6%%NAME% %TEAL%[LLD]{%NAME%%CL%%TEAL%2os for LLD Lore Base%CL%%GREEN%3os for Delrium Base}
+//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU LVLREQ<31 SOCK=2 NMAG FILTLVL<7]:%DOT-D6%%NAME% %TEAL%[LLD]{%NAME%%CL%%TEAL%LLD Lore Base}
+//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=0 NMAG FILTLVL<7]:%DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%3os for Delrium Base}
+//ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=3 NMAG FILTLVL<7]:%DOT-D6%%NAME% %GREEN%***{%NAME%}
 //
 //Barb helms
 ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK151>2) (SOCK=0 OR SOCK=3) ETH !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
@@ -6482,9 +6482,9 @@ ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANG
 // CTA
 ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=5 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
@@ -6509,7 +6509,7 @@ ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) (EDAM=15
 // Claws
 // Venom Pre-buff
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%GG Venom Pre-buff}
-ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]]: %DOT-D6%%NAME% %PURPLE%**{%NAME%%CL%%GREEN%Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %PURPLE%**{%NAME%%CL%%GREEN%Venom Pre-buff}
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom Pre-buff}
 
 // venom RW blade dance focused
@@ -6535,7 +6535,7 @@ ItemDisplay[FILTLVL<3 NEC (SK67>2 OR SK74>2 OR SK84>2 OR SK83>2 OR SK92>2) !INF 
 ItemDisplay[FILTLVL<3 (WAND OR NEC) !(wnd OR ywn OR 9wn) (SK70>2 OR SK89>2 OR SK75>2 OR SK94>2) !INF NMAG !RW !(SOCK=1)]: %DOT-D6%%NAME% %ORANGE%****{%NAME%}
 
 //Throwing bases
-ItemDisplay[(7gl OR 7pi OR 7s7 OR 7ts) TABSK2=3 ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG (EDAM>4 OR FILTLVL<5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[(7gl OR 7pi OR 7s7 OR 7ts) ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG (EDAM>4 OR FILTLVL<5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[amf TABSK2=3 ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG (EDAM>4 OR FILTLVL<5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[THROWING ELT ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG EDAM>4 (EDAM=15 OR FILTLVL<7) FILTLVL<8]: %DOT-D6%%NAME%{%NAME%}
 
