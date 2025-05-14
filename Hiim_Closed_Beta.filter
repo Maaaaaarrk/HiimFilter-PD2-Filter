@@ -44,6 +44,7 @@ ItemDisplay[box]: %NAME%{%NAME%}%MAP-58%
 //-----------------------------------------------------------------------------------
 ItemDisplay[FILTLVL=0 (hp1 OR hp2 OR hp3 OR hp4 OR hp5 OR mp1 OR mp2 OR mp3 OR mp4 OR hp5)]: %NAME% - Filter is off{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}// Fallback for when filter is off
 ItemDisplay[FILTLVL=0]: %NAME%{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}// Fallback for when filter is off
+ItemDisplay[FILTLVL>0]: CLOSED BETA IS OVER USE NORMAL FILTER
 
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR cqv) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
