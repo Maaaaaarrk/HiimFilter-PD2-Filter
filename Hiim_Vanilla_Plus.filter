@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 13%CL%Season 11 - version 23%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[(box OR key)]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14%CL%Season 11 - version 25%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -419,11 +419,11 @@ ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT370>29 (STAT372+STAT370>99) (STAT372>74
 ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT370>29 (STAT372+STAT370>149) STAT360>0]:  %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats < < <%CL%}
 
 // T3 Reroll note
-ItemDisplay[RARE MAPTIER=3 STAT360=0 !(STAT372>89 AND STAT370>60) !((STAT372>124) OR (STAT372>94 AND STAT375>29) OR (STAT372>64 AND STAT375>59) OR (STAT372>34 AND STAT375>89) OR (STAT372>109 AND STAT373>9) OR (STAT372>79 AND STAT375>29 AND STAT373>9) OR (STAT372>49 AND STAT375>59 AND STAT373>9) OR (STAT372>102 AND STAT373>14) OR (STAT372>72 AND STAT375>29 AND STAT373>14) OR (STAT372>42 AND STAT375>59 AND STAT373>14) OR (STAT372>94 AND STAT373>19) OR (STAT372>64 AND STAT375>29 AND STAT373>19) OR (STAT372>34 AND STAT375>59 AND STAT373>19) OR (STAT372>87 AND STAT373>24) OR (STAT372>57 AND STAT375>29 AND STAT373>24) OR (STAT372>27 AND STAT375>59 AND STAT373>24) OR (STAT372>79 AND STAT373>29) OR (STAT372>49 AND STAT375>29 AND STAT373>29) OR (STAT372>19 AND STAT375>59 AND STAT373>29) OR (STAT372>74 AND STAT374>0) OR (STAT372>44 AND STAT375>29 AND STAT374>0) OR (STAT372>14 AND STAT375>59 AND STAT374>0) OR (STAT372>29 AND STAT375>29 AND STAT373>9 AND STAT374>0))]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=3 STAT360=0 !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>249)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T2 Reroll note
-ItemDisplay[RARE MAPTIER=2 STAT360=0 !(STAT372>74 AND STAT370>30) !((STAT372>99) OR (STAT372>69 AND STAT375>29) OR (STAT372>39 AND STAT375>59) OR (STAT372>9 AND STAT375>89) OR (STAT372>84 AND STAT373>9) OR (STAT372>54 AND STAT375>29 AND STAT373>9) OR (STAT372>24 AND STAT375>59 AND STAT373>9) OR (STAT372>77 AND STAT373>14) OR (STAT372>47 AND STAT375>29 AND STAT373>14) OR (STAT372>17 AND STAT375>59 AND STAT373>14) OR (STAT372>69 AND STAT373>19) OR (STAT372>39 AND STAT375>29 AND STAT373>19) OR (STAT372>9 AND STAT375>59 AND STAT373>19) OR (STAT372>62 AND STAT373>24) OR (STAT372>32 AND STAT375>29 AND STAT373>24) OR (STAT372>2 AND STAT375>59 AND STAT373>24) OR (STAT372>54 AND STAT373>29) OR (STAT372>24 AND STAT375>29 AND STAT373>29) OR (STAT372>49 AND STAT374>0) OR (STAT372>19 AND STAT375>29 AND STAT374>0) OR (STAT372>4 AND STAT375>29 AND STAT373>9 AND STAT374>0))]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=2 STAT360=0 !(STAT372>74 AND STAT370>30) !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>199)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T1 Reroll note
-ItemDisplay[RARE MAPTIER=1 STAT360=0 !(STAT372>74 AND STAT370>30) !((STAT372>87) OR (STAT372>57 AND STAT375>29) OR (STAT372>27 AND STAT375>59) OR (STAT372>72 AND STAT373>9) OR (STAT372>42 AND STAT375>29 AND STAT373>9) OR (STAT372>12 AND STAT375>59 AND STAT373>9) OR (STAT372>65 AND STAT373>14) OR (STAT372>35 AND STAT375>29 AND STAT373>14) OR (STAT372>5 AND STAT375>59 AND STAT373>14) OR (STAT372>57 AND STAT373>19) OR (STAT372>27 AND STAT375>29 AND STAT373>19) OR (STAT372>50 AND STAT373>24) OR (STAT372>20 AND STAT375>29 AND STAT373>24) OR (STAT372>42 AND STAT373>29) OR (STAT372>12 AND STAT375>29 AND STAT373>29) OR (STAT372>37 AND STAT374>0) OR (STAT372>7 AND STAT375>29 AND STAT374>0))]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=1 STAT360=0 !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>174)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 
 
 // Tell the User to convert map to rare
@@ -2478,19 +2478,19 @@ ItemDisplay[MAG ID !SHOP (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) STAT360=0]: %N
 ItemDisplay[SIN MAG ID ETH STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
 
 // Crafting Reciepe
-ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Ith, Jewel%CL%%BLUE%HitPwr: O, Ith, Jewel%CL%%RED%Blood: O, Ral, Jewel%CL%%PURPLE%* Caster: O, Nef, Jewel *%CL%%YELLOW%MF: O, Tir, Jewel%CL%%GRAY%* Vamp: SK, Lum, Jewel *%CL%%wHITE%Brilliant: O, Eld, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[BOOTS MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Ort, Jewel *%CL%%BLUE%HitPwr: O, Ral, Jewel%CL%%RED%Blood: O, Eth, Jewel%CL%%PURPLE%Caster: O, Thul, Jewel%CL%%YELLOW%* MF: O, Io, Jewel *%CL%%GRAY%Vamp: SK, El, Jewel%CL%%wHITE%Brilliant: O, Ko, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[GLOVES MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Ral, Jewel%CL%%BLUE%* HitPwr: O, Ort, Jewel *%CL%%RED%* Blood: O, Nef, Jewel *%CL%%PURPLE%* Caster: O, Ort, Jewel *%CL%%YELLOW%MF: O, Hel, Jewel%CL%%GRAY%* Vamp: SK, Io, Jewel *%CL%%wHITE%Brilliant: O, Shael, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[BELT MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Tal, Jewel%CL%%BLUE%* HitPwr: O, Tal, Jewel *%CL%%RED%Blood: O, Tal, Jewel%CL%%PURPLE%* Caster: O, Ith, Jewel *%CL%%YELLOW%MF: O, El, Jewel%CL%%GRAY%Vamp: SK, Eld, Jewel%CL%%wHITE%Brilliant: O, Io, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[SHIELD MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Nef, Jewel *%CL%%BLUE%* HitPwr: O, Eth, Jewel *%CL%%RED%Blood: O, Ith, Jewel%CL%%PURPLE%* Caster: O, Eth, Jewel *%CL%%YELLOW%MF: O, Dol, Jewel%CL%%GRAY%Vamp: SK, Sol, Jewel%CL%%wHITE%Brilliant: O, Ort, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[amu MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Thul, Jewel%CL%%BLUE%HitPwr: O,Thul , Jewel%CL%%RED%Blood: O, Amn, Jewel%CL%%PURPLE%* Caster: O, Ral, Jewel *%CL%%YELLOW%* MF: O, Ko, Jewel *%CL%%GRAY%Vamp: SK, Dol, Jewel%CL%%wHITE%Brilliant: O, Tal, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[rin MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%Safety: O, Amn, Jewel%CL%%BLUE%HitPwr: O, Amn, Jewel%CL%%RED%* Blood: O, Sol, Jewel *%CL%%PURPLE%Caster: O, Amn, Jewel%CL%%YELLOW%* MF: O, Lum, Jewel *%CL%%GRAY%* Vamp: SK, Hel, Jewel *%CL%%wHITE%* Brilliant: O, Hel, Jewel *%CL%%NAME%}%CONTINUE%
-ItemDisplay[(WAND OR SOR) MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%* HitPwr: O, Tir, Jewel *%CL%%RED%* Blood: O, Ort, Jewel *%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !(STAT360>0)]: %NAME%{-%CL%%GREEN%* Safety: O, Sol, Jewel *%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
-ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[HELM MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: O, Ith, Jewel%CL%%BLUE%HitPwr: O, Ith, Jewel%CL%%RED%Blood: O, Ral, Jewel%CL%%PURPLE%* Caster: O, Nef, Jewel *%CL%%YELLOW%MF: O, Tir, Jewel%CL%%GRAY%* Vamp: SK, Lum, Jewel *%CL%%wHITE%Brilliant: O, Eld, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[BOOTS MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%* Safety: O, Ort, Jewel *%CL%%BLUE%HitPwr: O, Ral, Jewel%CL%%RED%Blood: O, Eth, Jewel%CL%%PURPLE%Caster: O, Thul, Jewel%CL%%YELLOW%* MF: O, Io, Jewel *%CL%%GRAY%Vamp: SK, El, Jewel%CL%%wHITE%Brilliant: O, Ko, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[GLOVES MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: O, Ral, Jewel%CL%%BLUE%* HitPwr: O, Ort, Jewel *%CL%%RED%* Blood: O, Nef, Jewel *%CL%%PURPLE%* Caster: O, Ort, Jewel *%CL%%YELLOW%MF: O, Hel, Jewel%CL%%GRAY%* Vamp: SK, Io, Jewel *%CL%%wHITE%Brilliant: O, Shael, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[BELT MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: O, Tal, Jewel%CL%%BLUE%* HitPwr: O, Tal, Jewel *%CL%%RED%Blood: O, Tal, Jewel%CL%%PURPLE%* Caster: O, Ith, Jewel *%CL%%YELLOW%MF: O, El, Jewel%CL%%GRAY%Vamp: SK, Eld, Jewel%CL%%wHITE%Brilliant: O, Io, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[SHIELD MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%* Safety: O, Nef, Jewel *%CL%%BLUE%* HitPwr: O, Eth, Jewel *%CL%%RED%Blood: O, Ith, Jewel%CL%%PURPLE%* Caster: O, Eth, Jewel *%CL%%YELLOW%MF: O, Dol, Jewel%CL%%GRAY%Vamp: SK, Sol, Jewel%CL%%wHITE%Brilliant: O, Ort, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[CHEST MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%* Safety: O, Eth, Jewel *%CL%%BLUE%HitPwr: O, Nef, Jewel%CL%%RED%Blood: O, Thul, Jewel%CL%%PURPLE%* Caster: O, Tal, Jewel *%CL%%YELLOW%MF: O, Eld, Jewel%CL%%GRAY%Vamp: SK, Tir, Jewel%CL%%wHITE%Brilliant: O, El, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[amu MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: O, Thul, Jewel%CL%%BLUE%HitPwr: O,Thul , Jewel%CL%%RED%Blood: O, Amn, Jewel%CL%%PURPLE%* Caster: O, Ral, Jewel *%CL%%YELLOW%* MF: O, Ko, Jewel *%CL%%GRAY%Vamp: SK, Dol, Jewel%CL%%wHITE%Brilliant: O, Tal, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[rin MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: O, Amn, Jewel%CL%%BLUE%HitPwr: O, Amn, Jewel%CL%%RED%* Blood: O, Sol, Jewel *%CL%%PURPLE%Caster: O, Amn, Jewel%CL%%YELLOW%* MF: O, Lum, Jewel *%CL%%GRAY%* Vamp: SK, Hel, Jewel *%CL%%wHITE%* Brilliant: O, Hel, Jewel *%CL%%NAME%}%CONTINUE%
+ItemDisplay[(WAND OR SOR) MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON MAG ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%BLUE%* HitPwr: O, Tir, Jewel *%CL%%RED%* Blood: O, Ort, Jewel *%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%* Safety: O, Sol, Jewel *%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%* Caster: O, Tir, Jewel *%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
+ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !(STAT360>0)]: %NAME%{%BLACK%-%CL%%BLUE%HitPwr: O, Tir, Jewel%CL%%RED%Blood: O, Ort, Jewel%CL%%PURPLE%Caster: O, Tir, Jewel%CL%%YELLOW%MF: O, Shael, Jewel%CL%%GRAY%Vamp: SK, Shael, Jewel%CL%%wHITE%Brilliant: O, Sol, Jewel%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // FILTER STRICTNESS ENFORCEMENT 
@@ -2740,7 +2740,7 @@ ItemDisplay[!UNI !SET !RW SK155=3]: +3 B.Comm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK368=1 FILTLVL<2]: +1 O.Wound %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK368=2 FILTLVL<2]: +2 O.Wound %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK368=3]: +3 O.Wound %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW FILTLVL<3 (SK126>0 OR SK128>0 OR SK130>0 OR SK131>0 OR SK132>0 OR SK133>0 OR SK135>0 OR SK136>0 OR SK137>0 OR SK138>0 OR SK139>0 OR SK140>0 OR SK141>0 OR SK142>0 OR SK143>0 OR SK144>0 OR SK145>0 OR SK146>0 OR SK147>0 OR SK148>0 OR SK149>0 OR SK150>0 OR SK151>0 OR SK152>0 OR SK153>0 OR SK154>0 OR SK155>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW FILTLVL<3 (SK126>0 OR SK128>0 OR SK134>0 OR SK130>0 OR SK131>0 OR SK132>0 OR SK133>0 OR SK135>0 OR SK136>0 OR SK137>0 OR SK138>0 OR SK139>0 OR SK140>0 OR SK141>0 OR SK142>0 OR SK143>0 OR SK144>0 OR SK145>0 OR SK146>0 OR SK147>0 OR SK148>0 OR SK149>0 OR SK150>0 OR SK151>0 OR SK152>0 OR SK153>0 OR SK154>0 OR SK155>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK128>2 OR SK133>2 OR SK134>2 OR SK135>2 OR SK136>2 OR SK140>2 OR SK141>2 OR SK143>2 OR SK145>2 OR SK146>2 OR SK147>2 OR SK148>2 OR SK149>0 OR SK151>2 OR SK153>2 OR SK154>2 OR SK155>2 OR SK368>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 // Low level
 ItemDisplay[FILTLVL<2 BAR NMAG !RW !INF (SK149>0 OR SK155>0)]: %NAME% %ORANGE%***{%NAME%}%CONTINUE%
@@ -4331,10 +4331,11 @@ ItemDisplay[(72h OR 7fb OR 7gd OR 7gs OR 7ls) ETH NMAG !RW !INF (SOCK=0 OR SOCK>
 ItemDisplay[7fb ETH NMAG !RW (SOCK=0 OR SOCK>1) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7gd ETH NMAG !RW (SOCK=0 OR SOCK>1) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7fb ILVL>40 SUP !INF !RW (SOCK=0 OR SOCK=5) FILTLVL<7]: %NAME%{%NAME%}
-ItemDisplay[7gd ILVL>40 SUP !INF !RW (SOCK=0 OR SOCK=6) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[7gd ILVL>40 !INF !RW (SOCK=0 OR SOCK=6) (FILTLVL<5 OR EDAM>4) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7cr !INF !RW !(SOCK=1) FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[7cr !INF SUP !RW !(SOCK=1) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[7cr !INF SUP !RW EDAM=15 !(SOCK=1)]: %NAME%{%NAME%}
+
 
 // Maces
 ItemDisplay[fla NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<3]: %NAME%{%NAME%}
@@ -4672,6 +4673,11 @@ ItemDisplay[!RW SK95>2 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveli
 ItemDisplay[SK257>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK257>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK257>2 CLVL<80 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+
+// blade fury
+ItemDisplay[SK266>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK266>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK266>2 CLVL<80 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // psn strike SK73
 ItemDisplay[SK73>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
