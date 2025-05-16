@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14%CL%Season 11 - version 33%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16%CL%Season 11 - version 34%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -6524,10 +6524,15 @@ ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG 
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=5 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=5 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
-// Memory
+// Memory buff
 ItemDisplay[STAFF SK58>2 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=4 FILTLVL<7]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
 ItemDisplay[STAFF SK58>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
 ItemDisplay[STAFF SK57>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %DOT-E1%%NAME% %ORANGE%[MEMORY]{%NAME%}
+// Memory dmg
+ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK56>2 OR SK51>2 OR SK62>2) SK61>0 (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
+ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK369>2 OR SK64>2 OR SK44>2 OR SK59>2) SK65>0 (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
+ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK38>2 OR SK47>2 OR SK48>2) SK63>0 (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
+ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) SK40>2 SK52>2 (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
 
 //Misc staff
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK47>2 OR SK376>2 OR SK61>2) NMAG !RW FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
@@ -6830,11 +6835,14 @@ ItemDisplay[NMAG STAFF ELT !RW (SK56>1 OR SK51>1 OR SK41>1 OR SK62>1) (SOCK=0 OR
 ItemDisplay[NMAG STAFF !RW DIFF<2 (SK41>2 OR SK51>2 OR SK56>2) (SOCK=0 OR SOCK=2) FILTLVL<3 CLVL<80]: %PX-62%%NAME% %PURPLE%****{%RED%Leaf Base%CL%%NAME%}
 
 // Memory
-ItemDisplay[NMAG STAFF (ELT OR EXC) !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK56>1 OR SK369>1 OR SK51>1 OR SK41>1 OR SK47>1 OR SK38>1 OR SK48>1 OR SK53>1 OR SK49>1 OR SK49>1 OR SK64>1 OR SK44>1) (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%}
+ItemDisplay[NMAG STAFF (ELT OR EXC) !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK56>1 OR SK51>1 OR SK41>1 OR SK62>1) (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%}
+ItemDisplay[NMAG STAFF (ELT OR EXC) !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK369>1 OR SK64>1 OR SK44>1 OR SK59>1) (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%}
+ItemDisplay[NMAG STAFF (ELT OR EXC) !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK38>1 OR SK47>1 OR SK48>1) (SOCK=0 OR SOCK=4) FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%}
 
 // Memory
 ItemDisplay[(EXC OR ELT) FILTLVL<3 STAFF (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 !(8ss OR 8ls OR 6ss OR 6ls)]: %PX-62%%NAME% %ORANGE%****{%RED%Roll 4os for Memory Base%CL%%NAME%
 ItemDisplay[(EXC OR ELT) FILTLVL<3 STAFF (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%
+
 
 
 //-----------------------------------------------------------------------------------
