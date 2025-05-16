@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14%CL%Season 11 - version 32%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14%CL%Season 11 - version 33%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -3722,8 +3722,11 @@ ItemDisplay[UNI !ID FILTLVL<8 (7tw OR uml OR xar OR ulg OR urg OR xlt OR 8mx OR 
 // Sandstorm Trek - Scarabshell Boots
 // Bloodravens Charge - Matriarchal Bow
 // Stoneraven - Matriarchal Spear
+// Heart Carver - Rondel
+// Bloodfist - Heavy Gloves
+// Duskdeep - Full Helm
 
-ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR xlg OR xmg OR xhg OR xth OR baf OR utp OR uvb OR amb OR amd)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR xlg OR xmg OR xhg OR xth OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR fhl)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -3748,7 +3751,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR xlg OR xmg OR xhg OR xth OR baf OR 
 // Gimmershred - Flying Axe
 // Lacerator - Winged Axe
 // Bartucs Cut-Throat - Greater Talons
-// Duskdeep - Full Helm
 // Ondals Wisdom - Elder Staff
 // The Jade Tan Do - Kris
 // Venom Ward - Breast Plate
@@ -3793,7 +3795,7 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR xlg OR xmg OR xhg OR xth OR baf OR 
 // Ursa's Nightmare - Dream Spirit
 // Buriza-Do Kyanon - Ballista
 
-ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR ame OR neg OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR 6sw OR ltp OR 7di OR ung OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR ame OR neg OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR 6sw OR ltp OR 7di OR ung OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -3921,6 +3923,7 @@ ItemDisplay[SET !ID FILTLVL<5 (xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%
 // Sanders Taboo - Heavy Gloves
 // Deaths Hand - Leather Gloves
 // Deaths Guard - Sash
+// Bloodfist - Heavy Gloves
 ItemDisplay[SET !ID FILTLVL<7 (vbt OR bwn OR vgl OR lgl OR lbl)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*%TIER-6%
 
 // Rainbow Facet
@@ -6803,6 +6806,7 @@ ItemDisplay[SK257>2 CLVL<80 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling
 ItemDisplay[SK266>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK266>1 DIFF<2 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK266>2 CLVL<80 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[ELT (SOCK=0 OR SOCK=2 OR SOCK=3) CLVL<80 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // psn strike SK73
 ItemDisplay[SK73>0 DIFF<1 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
