@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14%CL%Season 11 - version 31%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14%CL%Season 11 - version 32%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[OR FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -364,7 +364,7 @@ ItemDisplay[t34]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 75%%CL%%GRAY%Ph 
 ItemDisplay[t39]: %NAME%{%CL%%RED%F 125% %YELLOW%L 90% %BLUE% C 130%%CL%%GRAY%Ph 40% %ORANGE%M 50% %GREEN%P 1000%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace Level id 147 Updated: May 15 2025
 ItemDisplay[t22]: %NAME%{%CL%%RED%F 125% %YELLOW%L 105% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Torajan Jungle Level id 148 Updated: May 15 2025
 ItemDisplay[t13]: %NAME%{%CL%%RED%F 125% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep Level id 149 Updated: May 15 2025
-ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: May 15 2025
+//ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 130% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: May 15 2025
 ItemDisplay[t24]: %NAME%{%CL%%RED%F 85% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 105% %ORANGE%M 50% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle Level id 151 Updated: May 15 2025
 ItemDisplay[t35]: %NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: May 15 2025
 ItemDisplay[t36]: %NAME%{%CL%%RED%F 95% %YELLOW%L 100% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fall of Caldeum Level id 155 Updated: May 15 2025
@@ -374,7 +374,7 @@ ItemDisplay[t38]: %NAME%{%CL%%RED%F 130% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 
 ItemDisplay[t14]: %NAME%{%CL%%RED%F 75% %YELLOW%L 125% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Sanatorium Level id 167 Updated: May 15 2025
 ItemDisplay[t26]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 135%%CL%%NAME%}%CONTINUE% // Shadows of Westmarch Level id 169 Updated: May 15 2025
 ItemDisplay[t15]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 125%%CL%%GRAY%Ph 60% %ORANGE%M 150% %GREEN%P 105%%CL%%NAME%}%CONTINUE% // Royal Crypts Level id 170 Updated: May 15 2025
-ItemDisplay[t16]: %NAME%{%CL%%RED%F 135% %YELLOW%L 75% %BLUE% C 115%%CL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ruined Cistern Level id 174 Updated: May 15 2025
+//ItemDisplay[t16]: %NAME%{%CL%%RED%F 135% %YELLOW%L 75% %BLUE% C 115%%CL%%GRAY%Ph 60% %ORANGE%M 125% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ruined Cistern Level id 174 Updated: May 15 2025
 ItemDisplay[t3a]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 120% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Ashen Plains Level id 175 Updated: May 15 2025
 //ItemDisplay[t28]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 85%%CL%%GRAY%Ph 45% %ORANGE%M 40% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Skovos Stronghold Map Level id 190 Updated: May 15 2025
 //ItemDisplay[t27]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 85%%CL%%GRAY%Ph 45% %ORANGE%M 40% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Demon Road Map Level id 191 Updated: May 15 2025
@@ -1593,101 +1593,89 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 //-----------------------------------------------------------------------------------
 // Griffons Eye - Diadem
 // Herald of Zakarum - Gilded Shield
-// Eschutas Temper - Eldritch Orb
 // Deaths Fathom - Dimensional Shard
 // Templars Might or Tyraels Might Sacred Armor
 // Arachnid Mesh - Spiderweb Sash
 // SHAKO Harlequin Crest Shako
-// Steel Shade - Armet
 // Veil of Steel or Nightwings Veil Spired Helm
 // Andariels Visage - Demonhead
 // Crown of Ages - Corona
 // Stormshield Monarch
-// Medusas Gaze - Aegis
 // Spirit Ward Ward
-// Death Cleaver - Berserker Axe
 // Stone Crusher or Schaefers Hammer Legendary Mallet
 // Earth Shifter or The Cranium Basher Thunder Maul
 // Astreons Iron Ward - Caduceus
-// Steel Pillar - War Pike
 // Brimstone Rain - Shillelagh
 // Mang Songs Lesson - Archon Staff
 // Deaths Web - Unearthed Wand
-// Boneflame - Succubus Skull
-// Skull Collector - Rune Staff
 // Gore Rider - War Boots
 // The Grandfather - Colossus Blade
 // Siggard's Staunch - Colossus Girdle
+// Kiras Guardian - Tiara
+// Darkforce - Spawn Bloodlord Skull
+// Ormus Robes - Dusk Shroud
+// Arkaines Valor - Balrog Skin
+// Steel Carapace - Shadow Plate
 // Amulet
 // Ring
 
-ItemDisplay[UNI !ID (ci3 OR pa9 OR obc OR obf OR uar OR ulc OR uap OR ulm OR uhm OR usk OR urn OR uit OR uow OR uts OR 7wa OR 7wh OR 7gm OR 7ws OR 7p7 OR 6bs OR 6ws OR 7gw OR 8ws OR nee OR xhb OR 7gd OR uhc OR amu OR rin)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
+ItemDisplay[UNI !ID (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul OR amu OR rin)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
 
 // Tier 3 Unique Callouts
 // Filter level 1-8
 //-----------------------------------------------------------------------------------
-// Kiras Guardian - Tiara
 // Thunderstroke - Matriarchal Javelin
 // Cyclopean Roar - Jawbone Visor
 // Demonhorns Edge - Destroyer Helm
 // Halaberds Reign - Conqueror Crown
 // Jalals Mane - Totemic Mask
 // Spirit Keeper - Earth Spirit
-// Darkforce - Spawn Bloodlord Skull
 // Shaftstop - Mesh Armor
 // The Gladiators Bane Wire Fleece
-// Ormus Robes - Dusk Shroud
-// Arkaines Valor - Balrog Skin
-// Steel Carapace - Shadow Plate
 // String of Ears - Demonhide Sash
 // Nosferatus Coil - Vampirefang Belt
 // Verdungos Hearty Cord - Mithril Coil
-// Hotspur - Boots
 // Soul Drainer - Vambraces
 // Occultist - Crusader Gauntlets
 // Steelrend - Ogre Gauntlets
 // Giant Skull - Bone Visage
 // Lidless Wall - Grim Shield
-// Warlords Trust - Military Axe
 // The Gavel Of Pain - Martel de Fer
 // Horizons Tornado or Stormlash - Scourge
 // Stormspire - Giant Thresher
 // Tomb Reaver - Cryptic Axe
-// Flamebellow - Balrog Blade
 // Arm of King Leoric - Tomb Wand
 // Blackhand Key - Grave Wand
 // Windforce - Hydra Bow
 // War Traveler - Battle Boots
 // Snowclash - Battle Belt
-// Dragonscale - Zakarum Shield
 // The Spirit Shroud - Ghost Armor
-// Hellslayer - Decapitator
 // Lightsabre or Azurewrath//  Phase Blade
 // Frostwind - Cryptic Sword
 // Alma Negra - Sacred Rondache
-// Lava Gout - Battle Gauntlets
 // Draculs Grasp - Vampirebone Gloves
-// Firelizards Talons - Feral Claws
+// Steel Shade - Armet
+// Medusas Gaze - Aegis
+// Steel Pillar - War Pike
+// Boneflame - Succubus Skull
+// Ravenlore - Sky Spirit
+// Waterwalk - Sharkskin Boots
+// War Fist - Whispering Mirage
 
 
-ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR nef OR xhn OR utu OR uui OR upl  OR uul OR zlb OR uvc OR umc OR lbt OR umg OR utg OR uhg OR uh9 OR xsh OR 9la OR 9gm OR 7fl OR 7wc OR 7pa OR 7gs OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR pae OR xui OR 7bt OR 7cr OR 7ls OR pac OR xtg OR uvg OR 7lw)]: %MAP-68%%SOUNDID-2670%%GOLD%* * *  %NAME%  %GOLD%* * *
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bad OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf)]: %MAP-68%%SOUNDID-2670%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
 // Cerebus Bite - Blood Spirit
-// Ravenlore - Sky Spirit
 // The Oculus - Swirling Crystal
 // Skin of the Vipermagi - Serpentskin Armor
 // Thundergods Vigor - War Belt
-// Waterwalk - Sharkskin Boots
 // Silkweave - Mesh Boots
 // Magefist - Light Gauntlets
 // Gravepalm - Sharkskin Gloves
-// Gerkes Sanctuary - Pavise
-// Head Hunters Glory - Troll Nest
 // Ghostflame - Legend Spike
-// Grims Burning Dead Grim - Scythe
 // Doombringer - Champion Sword
 // Suicide Branch - Burnt Wand
 // Boneshade Lich - Wand
@@ -1695,41 +1683,40 @@ ItemDisplay[UNI !ID FILTLVL<9 (ci2 OR amf OR ba6 OR bad OR bae OR dra OR drd OR 
 // Merman's Spocket - Wyrmhide Boots
 // Vampire Gaze - Grim Helm
 // Marrowwalk - Boneweave Boots
-// Buriza-Do Kyanon - Ballista
-// Vortex Shield - Skywarden
+// Warlords Trust - Military Axe
+// Hellslayer - Decapitator
+// Dragonscale - Zakarum Shield
+// Lava Gout - Battle Gauntlets
+// Death Cleaver - Berserker Axe
+// Skull Collector - Rune Staff
+// Eschutas Temper - Eldritch Orb
+// Shadow Dancer - Myrmidon Greaves
 
-ItemDisplay[UNI !ID FILTLVL<8 (drb OR dre OR oba OR xea OR zhb OR xvb OR xmb OR tgl OR xvg OR xow OR ush OR 7bl OR 9wc OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR xh9 OR umb OR 8hx OR paf)]: %MAP-68%%SOUNDID-2678%%GOLD%* *  %NAME%  %GOLD%* *
+ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 7bl OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR xh9 OR umb OR 9la OR 7bt OR pae OR xtg OR 7lw OR 7wa OR 8ws OR obc OR uhb)]: %MAP-68%%SOUNDID-2678%%GOLD%* *  %NAME%  %GOLD%* *
 
 // Tier 1 Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
 
-// Wolfhowl - Fury Visor 
 // Stalker's Cull - Runic Talons
-// Kalans Legacy - Mummified Trophy
 // Blackoak Shield - Luna
-// Wizendraw - Long Battle Bow 
-// Magewrath - Rune Bow
-// Widowmaker - Ward Bow
 // Corpsemourn - Ornate Plate
 // Titans Grip - Bramble Mitts  
 // Twilights Reflection - Hyperion
-// Shatterblade - Mithril Point
 // Guardian Angel - Templar Coat
 // Pus Spitter - Siege Crossbow
-// Heavenly Garb - Light Plate
 // Denmother - Sun Spirit
-// Wraithskin - Diamond Mail
 // Ebonbane - Grand Matron Bow
 // Peasant Crown - War Hat
 // The Patriarch - Great Sword
 // Silks of the Victor - Ancient Armor
 // Leviathan - Kraken Shell
 // Plague Bearer - Rune Sword
-// Baezils - Vortex Knout
-// Executioners Justice - Glorious Axe
+// Demon Machine - Chu-Ko-Nu
+// Wildspeaker - Lion Helm
+// Fenris - Alpha Helm
 
-ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR xar OR ulg OR urg OR 7di OR xlt OR 8mx OR ltp OR drc OR ung OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 9fl OR 7gi)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (7tw OR uml OR xar OR ulg OR urg OR xlt OR 8mx OR drc OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 8rx OR ba7 OR dr6)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
@@ -1737,26 +1724,22 @@ ItemDisplay[UNI !ID FILTLVL<8 (bac OR 7tw OR ne6 OR uml OR lbb OR 8sw OR 6sw OR 
 //-----------------------------------------------------------------------------------
 // Skullders Ire - Russet Armor
 // Razortail - Sharkskin Belt
-// Shadow Dancer - Myrmidon Greaves
-// Frostburn - Gauntlets
 // Venom Grip - Demonhide Gloves
 // Ghoulhide - Heavy Bracers
 // Hellmouth - War Gauntlets
 // Atmas Wail - Embossed Plate
-// Blackbogs Sharp - Cinquedeas
 // Raekor's Virtue - Guardian Crown
 // Purgatory - Archon Plate
-// Demon Machine - Chu-Ko-Nu
-// Ursa's Nightmare - Dream Spirit
 // Sandstorm Trek - Scarabshell Boots
+// Bloodravens Charge - Matriarchal Bow
+// Stoneraven - Matriarchal Spear
 
-ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR xth OR 9kr OR baf OR utp OR 8rx OR drf OR uvb)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR xlg OR xmg OR xhg OR xth OR baf OR utp OR uvb OR amb OR amd)]: %DOT-68%%SOUNDID-2666%%GOLD%*  %NAME%  %GOLD%*
 
 
 // Tier 0 Unique Callouts
 // Filter level 1-6
 //-----------------------------------------------------------------------------------
-// Bloodravens Charge - Matriarchal Bow
 // Black Hades - Chaos Armor
 // Goldwrap - Heavy Belt
 // Gorefoot - Heavy Boots
@@ -1783,7 +1766,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR 
 // Valkyrie Wing - Winged Helm
 // Windhammer - Ogre Maul
 // Titans Revenge - Ceremonial Javelin
-// Stoneraven - Matriarchal Spear
 // Arreats Face - Slayer Guard
 // Homunculus - Hierophant Trophy
 // Chance Guards - Chain Gloves
@@ -1799,15 +1781,30 @@ ItemDisplay[UNI !ID FILTLVL<8 (xpl OR zvb OR uhb OR hgl OR xlg OR xmg OR xhg OR 
 // Cloudcrack - Gothic Sword
 // Jadetalon - Wrist Sword
 // Swordguard - Executioner Sword
-// War Fist - Whispering Mirage
-// Wildspeaker - Lion Helm
-// Fenris - Alpha Helm
 // Zerae's Resolve - Matriarchal Pike
 // Sacred Totem - Hellspawn Skull
 // Spike Thorn - Blade Barrier
 // Que-Hegans Wisdom - Mage Plate
+// Flamebellow - Balrog Blade
+// Firelizards Talons - Feral Claws
+// Gerkes Sanctuary - Pavise
+// Head Hunters Glory - Troll Nest
+// Grims Burning Dead Grim - Scythe
+// Wolfhowl - Fury Visor
+// Wizendraw - Long Battle Bow
+// Magewrath - Rune Bow
+// Widowmaker - Ward Bow
+// Heavenly Garb - Light Plate
+// Shatterblade - Mithril Point
+// Wraithskin - Diamond Mail
+// Baezils - Vortex Knout
+// Executioners Justice - Glorious Axe
+// Frostburn - Gauntlets
+// Blackbogs Sharp - Cinquedeas
+// Ursa's Nightmare - Dream Spirit
+// Buriza-Do Kyanon - Ballista
 
-ItemDisplay[UNI !ID FILTLVL<7 (amb OR xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR amd OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR 7xf OR ba7 OR dr6 OR ame OR neg OR upk OR xtp)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR fhl OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7s8 OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 7wb OR 9gd OR ame OR neg OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR 6sw OR ltp OR 7di OR ung OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
