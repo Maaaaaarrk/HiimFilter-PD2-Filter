@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 22%CL%Season 11 - version 44%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 27%CL%Season 11 - version 45%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[OR FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[(box OR key) FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
@@ -1060,6 +1060,7 @@ ItemDisplay[!ID SIN RARE FILTLVL<7 ILVL>84]: %NAME% //non eth sin claws
 ItemDisplay[RARE FILTLVL<7 (ILVL>84) !ID (7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr)]: %NAME%
 
 // Class specific rares show for all
+ItemDisplay[!ID (axf OR 9xf OR 7xf) RARE FILTLVL<8 ILVL>84]: %NAME% //sin warfist
 ItemDisplay[!ID (am5 OR ama OR amf) RARE FILTLVL<8 ILVL>84]: %NAME% //zon javs
 ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<8 ILVL>84]: %NAME% //Zon bow
 ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %NAME% //Zon bow
@@ -1620,6 +1621,17 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Ring
 
 ItemDisplay[UNI !ID (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul OR amu OR rin)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
+
+// GG Unique Callouts only when ETH
+//-----------------------------------------------------------------------------------
+// Purgatory - Archon Plate
+// Thunderstroke - Matriarchal Javelin
+// The Gavel Of Pain - Martel de Fer
+// Steel Pillar - War Pike
+// War Fist - Whispering Mirage
+// The Reapers Toll - Thresher
+
+ItemDisplay[UNI !ID ETH (utp OR amf OR 9gm OR 7p7 OR 7xf OR 7s8)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
 
 // Tier 3 Unique Callouts
 // Filter level 1-8
@@ -4283,7 +4295,7 @@ ItemDisplay[NMAG !RW !SHOP THROWING SOCK=3]: %NAME%{%GOLD%Plague %GRAY%Cham + Fa
 //-----------------------------------------------------------------------------------
 
 // S11?
-ItemDisplay[7cr NMAG !RW SOCK=0 FILTLVL<9]: %DOT-E1%%TIER-6%%NAME%{%TAN%Imbue at Charsi for Hidden item chance%CL%%NAME%}
+ItemDisplay[7cr NMAG !RW SOCK=0 FILTLVL<7]: %DOT-E1%%TIER-6%%NAME%{%TAN%Imbue at Charsi for Hidden item chance%CL%%NAME%}
 
 // Eth Axe 1H
 ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6) EDAM>0 (EDEF=15 OR FILTLVL<7)]: %DOT-E1%%NAME%{%NAME%}%CONTINUE%
@@ -4538,12 +4550,13 @@ ItemDisplay[6ws SK59>2 SK39>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<7]: %DOT-9B%%NAME%
 ItemDisplay[6ws SK59>2 SK39>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
 ItemDisplay[6ws (SK59>2 OR SK39>2) NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
 ItemDisplay[6ws (SK59>2 OR SK39>2) NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%GREEN%Hit 6 sockets for Obsession base%CL%%NAME%}
-// Obsession SK56 meteor SK61 fire mastery SK60 1pt chilling
-ItemDisplay[6ws SK56>2 SK61>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<8]: %DOT-9B%%NAME% %PURPLE%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
-ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=6 ILVL>25 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
-ItemDisplay[6ws SK56>2 (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
-ItemDisplay[6ws SK56>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
-ItemDisplay[6ws SK56>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]%GREEN%Hit 6 sockets for Obsession base%CL%%NAME%}
+// Obsession SK56 meteor SK62 hydra SK61 fire mastery SK60 1pt chilling
+ItemDisplay[6ws (SK56>2 OR SK62>2) SK61>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<8]: %DOT-9B%%NAME% %PURPLE%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
+ItemDisplay[6ws (SK56>2 OR SK62>2) SK61>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<8]: %DOT-9B%%NAME% %PURPLE%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
+ItemDisplay[6ws (SK56>2 OR SK62>2) (SK61>2 OR SK60>0) NMAG !RW SOCK=6 ILVL>25 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
+ItemDisplay[6ws (SK56>2 OR SK62>2) (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
+ItemDisplay[6ws (SK56>2 OR SK62>2) NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
+ItemDisplay[6ws (SK56>2 OR SK62>2) NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]%GREEN%Hit 6 sockets for Obsession base%CL%%NAME%}
 // CTA
 ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
@@ -4617,7 +4630,7 @@ ItemDisplay[THROWING ELT ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG EDAM>4 (E
 ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) !THROWING (MAG OR RARE OR CRAFT OR UNI OR SET) ID SOCK=0]:%NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR (ci0 ILVL<26)) MAG ID SOCK=0]:%NAME%{%NAME%%TAN%Max Sockets: %TAN%[%WHITE%LQ:1}%CONTINUE%
 ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) !(THROWING OR dgr OR dir OR wnd OR ywn OR 9wn OR (ci0 ILVL<26)) MAG ID SOCK=0]:%NAME%{%NAME%%TAN%Max Sockets: %TAN%[%WHITE%LQ:2}%CONTINUE%
-ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) !THROWING (RARE OR CRAFT OR UNI OR SET) ID SOCK=0]:%NAME%{%NAME%%TAN%Max Sockets: %TAN%[%WHITE%LQ:1}%CONTINUE%
+ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) (RARE OR CRAFT OR UNI OR SET) ID SOCK=0]:%NAME%{%NAME%%TAN%Max Sockets: %TAN%[%WHITE%LQ:1}%CONTINUE%
 ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR (ci0 ILVL<26) OR buc OR xuc) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:1}%CONTINUE%
 ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR 1H) !(THROWING OR dgr OR dir OR wnd OR ywn OR 9wn OR (ci0 ILVL<26) OR buc OR xuc) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:2}%CONTINUE%
 ItemDisplay[sst (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:2}%CONTINUE%
