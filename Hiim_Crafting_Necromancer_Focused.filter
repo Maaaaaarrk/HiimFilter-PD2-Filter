@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 27%CL%Season 11 - version 48%CL%HiimFilter - Crafting - Necromancer-}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 27%CL%Season 11 - version 49%CL%HiimFilter - Crafting - Necromancer-}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -1669,7 +1669,8 @@ ItemDisplay[RARE amu !ID (FILTLVL<5 OR ALVL>89) FILTLVL<7]: %ORANGE%X X    %NAME
 ItemDisplay[RARE amu !ID (FILTLVL<5 OR ALVL>89) FILTLVL<8]: %ORANGE%X   %NAME%   %ORANGE%X%CONTINUE%
 //85+ ring
 ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7]: %ORANGE%X X%YELLOW%     %NAME%     %ORANGE%X X%CONTINUE%
-ItemDisplay[RARE (rin OR amu) !ID]: %DOT-9B%%NAME%
+ItemDisplay[RARE rin !ID FILTLVL<8]: %DOT-9B%%NAME%
+ItemDisplay[RARE amu !ID]: %DOT-9B%%NAME%
 
 // Jewel
 ItemDisplay[MAG (jew) !ID FILTLVL<7]: %DOT-91%%YELLOW%XX%BLUE%     %NAME%     %YELLOW%XX
@@ -3616,10 +3617,11 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Ormus Robes - Dusk Shroud
 // Arkaines Valor - Balrog Skin
 // Steel Carapace - Shadow Plate
+// The Reapers Toll - Thresher
 // Amulet
 // Ring
 
-ItemDisplay[UNI !ID (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul OR amu OR rin)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
+ItemDisplay[UNI !ID (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 7s8) OR amu OR rin)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
 
 // GG Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -3628,9 +3630,9 @@ ItemDisplay[UNI !ID (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn
 // The Gavel Of Pain - Martel de Fer
 // Steel Pillar - War Pike
 // War Fist - Whispering Mirage
-// The Reapers Toll - Thresher
+// Warlords Trust - Military Axe
 
-ItemDisplay[UNI !ID ETH (utp OR amf OR 9gm OR 7p7 OR 7xf OR 7s8)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
+ItemDisplay[UNI !ID ETH (utp OR amf OR 9gm OR 7p7 OR 7xf OR 7s8 OR 9la)]: %BORDER-9B%%PURPLE%%SOUNDID-2680%>>>>>   %GOLD%%NAME%%PURPLE%   <<<<<
 
 // Tier 3 Unique Callouts
 // Filter level 1-8
@@ -3673,10 +3675,9 @@ ItemDisplay[UNI !ID ETH (utp OR amf OR 9gm OR 7p7 OR 7xf OR 7s8)]: %BORDER-9B%%P
 // Waterwalk - Sharkskin Boots
 // War Fist - Whispering Mirage
 // Martyrdom - Overseer Skull
-// The Reapers Toll - Thresher
 
 
-ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bad OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8)]: %MAP-68%%SOUNDID-2670%%GOLD%* * *  %NAME%  %GOLD%* * *
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bad OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned]: %MAP-68%%SOUNDID-2670%%GOLD%* * *  %NAME%  %GOLD%* * *
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
