@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 27%CL%Season 11 - version 51%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 28%CL%Season 11 - version 52%CL%HiimFilter - Crafting -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -590,35 +590,20 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t
 ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) (FILTLVL>2 OR DIFF>1)]:
 
 // Formating for names
-ItemDisplay[gzv OR gzvs]: %PURPLE%* %TAN%F.%WHITE% Amethyst %PURPLE%*%CONTINUE%
-ItemDisplay[gpv OR gpvs]: %PURPLE%*  %TAN%P.%WHITE% Amethyst  %PURPLE%*%CONTINUE%
-ItemDisplay[glw OR glws]: %WHITE%* %TAN%F.%WHITE% Diamond *%CONTINUE%
-ItemDisplay[gpw OR gpws]: %WHITE%*  %TAN%P.%WHITE% Diamond  *%CONTINUE%
-ItemDisplay[glg OR glgs]: %GREEN%* %TAN%F.%WHITE% Emerald %GREEN%*%CONTINUE%
-ItemDisplay[gpg OR gpgs]: %GREEN%*  %TAN%P.%WHITE% Emerald  %GREEN%*%CONTINUE%
-ItemDisplay[glr OR glrs]: %RED%* %TAN%F.%WHITE% Ruby %RED%*%CONTINUE%
-ItemDisplay[gpr OR gprs]: %RED%*  %TAN%P.%WHITE% Ruby  %RED%*%CONTINUE%
-ItemDisplay[glb OR glbs]: %BLUE%* %TAN%F.%WHITE% Sapphire %BLUE%*%CONTINUE%
-ItemDisplay[gpb OR gpbs]: %BLUE%*  %TAN%P.%WHITE% Sapphire  %BLUE%*%CONTINUE%
-ItemDisplay[gly OR glys]: %YELLOW%* %TAN%F.%WHITE% Topaz %YELLOW%*%CONTINUE%
-ItemDisplay[gpy OR gpys]: %YELLOW%*  %TAN%P.%WHITE% Topaz  %YELLOW%*%CONTINUE%
-ItemDisplay[skl OR skls]: %GRAY%* %TAN%F.%WHITE% Skull %GRAY%*%CONTINUE%
-ItemDisplay[skz OR skzs]: %GRAY%* *  %TAN%P.%WHITE% Skull  %GRAY%* *%CONTINUE%
-
-ItemDisplay[gzv OR gzvs FILTLVL>6]: %PURPLE% O %CONTINUE%
-ItemDisplay[gpv OR gpvs FILTLVL>6]: %PURPLE%P.Amethyst%CONTINUE%
-ItemDisplay[glw OR glws FILTLVL>6]: %WHITE% O %CONTINUE%
-ItemDisplay[gpw OR gpws FILTLVL>6]: %WHITE%P.Diamond%CONTINUE%
-ItemDisplay[glg OR glgs FILTLVL>6]: %GREEN% O %GREEN%%CONTINUE%
-ItemDisplay[gpg OR gpgs FILTLVL>6]: %GREEN%P.Emerald%GREEN%%CONTINUE%
-ItemDisplay[glr OR glrs FILTLVL>6]: %RED% O %CONTINUE%
-ItemDisplay[gpr OR gprs FILTLVL>6]: %RED%P.Ruby%CONTINUE%
-ItemDisplay[glb OR glbs FILTLVL>6]: %BLUE% O %CONTINUE%
-ItemDisplay[gpb OR gpbs FILTLVL>6]: %BLUE%P.Sapphire%CONTINUE%
-ItemDisplay[gly OR glys FILTLVL>6]: %YELLOW% O %CONTINUE%
-ItemDisplay[gpy OR gpys FILTLVL>6]: %YELLOW%P.Topaz%CONTINUE%
-ItemDisplay[skl OR skls FILTLVL>6]: %WHITE%F.Skull%CONTINUE%
-ItemDisplay[skz OR skzs FILTLVL>6]: %GRAY%*  %WHITE%P.Skull  %GRAY%*%CONTINUE%
+ItemDisplay[gzv OR gzvs]: %PURPLE%* F. Amethyst *%CONTINUE%
+ItemDisplay[gpv OR gpvs]: %PURPLE%O  P. Amethyst  O%CONTINUE%
+ItemDisplay[glw OR glws]: %WHITE%* F. Diamond *%CONTINUE%
+ItemDisplay[gpw OR gpws]: %WHITE%O  P. Diamond  O%CONTINUE%
+ItemDisplay[glg OR glgs]: %GREEN%* F. Emerald *%CONTINUE%
+ItemDisplay[gpg OR gpgs]: %GREEN%O  P. Emerald  O%CONTINUE%
+ItemDisplay[glr OR glrs]: %RED%* F. Ruby *%CONTINUE%
+ItemDisplay[gpr OR gprs]: %RED%O  P. Ruby  O%CONTINUE%
+ItemDisplay[glb OR glbs]: %BLUE%* F. Sapphire *%CONTINUE%
+ItemDisplay[gpb OR gpbs]: %BLUE%O  P. Sapphire  O%CONTINUE%
+ItemDisplay[gly OR glys]: %YELLOW%* F. Topaz *%CONTINUE%
+ItemDisplay[gpy OR gpys]: %YELLOW%O  P. Topaz  O%CONTINUE%
+ItemDisplay[skl OR skls]: %GRAY%* F. Skull *%CONTINUE%
+ItemDisplay[skz OR skzs]: %GRAY%O O  P. Skull  O O%CONTINUE%
 
 // Formatting for stacked vs unstacked with warning
 ItemDisplay[GEM>0 QTY>1 QTY<51]: %NAME% %TAN%QTY %QTY%%CONTINUE%
