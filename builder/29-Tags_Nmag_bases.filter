@@ -297,21 +297,21 @@ ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK50>0
 
 // Polearms/Spears/Amazon Spears
 ItemDisplay[(SPEAR OR POLEARM) ETH ELT NMAG !INF (SOCK=0 OR SOCK=3 OR SOCK=4 OR SOCK=5 OR SOCK=6) NMAG !RW (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) (EDAM=15 OR FILTLVL<3)]: %NAME%{%NAME%}
+ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) (EDAM>4 OR FILTLVL<3) (EDAM=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 
 // Claws
 // Venom Pre-buff
-ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%GG Venom Pre-buff}
-ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %PURPLE%**{%NAME%%CL%%GREEN%Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%****{%NAME%%CL%%GREEN%Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%**{%NAME%%CL%%GREEN%Venom Pre-buff}
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom Pre-buff}
 
 // venom RW blade dance focused
-ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 AND SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%Venom RW}
+ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 AND SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%****{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 OR SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) (SK252>0 AND SK263>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 
 // venom RW blade sentinal focused
-ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>2 AND SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%Venom RW}
+ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>2 AND SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%****{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK252>2 OR SK263>2 OR SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>0 AND SK275>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 
