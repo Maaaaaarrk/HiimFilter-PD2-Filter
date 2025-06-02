@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 1%CL%Season 11 - version 61%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 2%CL%Season 11 - version 63%CL%HiimFilter -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -3961,7 +3961,7 @@ ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PUR
 ItemDisplay[(UNI OR SET) !ID (MAPID=181 OR MAPID=182)]: %NAME%// Warrior Map catch rest
 ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %DOT-68%%TIER-6%%NAME%// Eth uni show all
 ItemDisplay[SET !ID ETH]: %DOT-84%%TIER-6%%NAME%// Eth set show all
-ItemDisplay[ELT UNI !ID FILTLVL<8]: %PX-68%%TIER-4%%NAME%// Show all elite level 1-7 announce 1-4
+ItemDisplay[ELT UNI !ID FILTLVL<7]: %PX-68%%TIER-4%%NAME%// Show all elite level 1-6 announce 1-4
 ItemDisplay[UNI !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
 ItemDisplay[SET !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
 ItemDisplay[UNI !ID FILTLVL<5]: %PX-68%%TIER-2%%GOLD%%NAME%
@@ -5302,8 +5302,8 @@ ItemDisplay[!UNI !SET !RW SK58=3]: +3 E.S. %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK59=1 FILTLVL<2]: +1 Blizz %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK59=2 FILTLVL<2]: +2 Blizz %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK59=3]: +3 Blizz %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK60=1 FILTLVL<2]: +1 ChilArm %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK60=2 FILTLVL<2]: +2 ChilArm %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK60=1]: +1 ChilArm %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK60=2]: +2 ChilArm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK60=3]: +3 ChilArm %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK61=1]: +1 FireMstr %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK61=2]: +2 FireMstr %NAME%{%NAME%}%CONTINUE%
@@ -5330,7 +5330,7 @@ ItemDisplay[!UNI !SET !RW SK383=1 FILTLVL<2]: +1 LilHydra %NAME%{%NAME%}%CONTINU
 ItemDisplay[!UNI !SET !RW SK383=2 FILTLVL<2]: +2 LilHydra %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK383=3]: +3 LilHydra %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW FILTLVL<3 (SK36>0 OR SK37>0 OR SK38>0 OR SK39>0 OR SK40>0 OR SK41>0 OR SK42>0 OR SK43>0 OR SK44>0 OR SK45>0 OR SK46>0 OR SK47>0 OR SK48>0 OR SK49>0 OR SK50>0 OR SK51>0 OR SK52>0 OR SK53>0 OR SK54>0 OR SK55>0 OR SK56>0 OR SK57>0 OR SK58>0 OR SK59>0 OR SK60>0 OR SK61>0 OR SK62>0 OR SK63>0 OR SK64>0 OR SK65>0 OR SK369>0 OR SK383>0 OR SK376>0 OR SK383>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK36>2 OR SK37>2 OR SK38>2 OR SK39>2 OR SK40>2 OR SK41>2 OR SK42>2 OR SK43>2 OR SK44>2 OR SK45>2 OR SK46>2 OR SK47>2 OR SK48>2 OR SK49>2 OR SK50>0 OR SK51>2 OR SK52>2 OR SK53>2 OR SK54>2 OR SK55>2 OR SK56>2 OR SK57>2 OR SK58>0 OR SK59>2 OR SK60>2 OR SK61>0 OR SK62>2 OR SK63>0 OR SK64>2 OR SK65>0 OR SK369>2 OR SK383>2 OR SK376>2 OR SK383>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK36>2 OR SK37>2 OR SK38>2 OR SK39>2 OR SK40>2 OR SK41>2 OR SK42>2 OR SK43>2 OR SK44>2 OR SK45>2 OR SK46>2 OR SK47>2 OR SK48>2 OR SK49>2 OR SK50>0 OR SK51>2 OR SK52>2 OR SK53>2 OR SK54>2 OR SK55>2 OR SK56>2 OR SK57>2 OR SK58>0 OR SK59>2 OR SK60>0 OR SK61>0 OR SK62>2 OR SK63>0 OR SK64>2 OR SK65>0 OR SK369>2 OR SK383>2 OR SK376>2 OR SK383>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -6593,21 +6593,21 @@ ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK50>0
 
 // Polearms/Spears/Amazon Spears
 ItemDisplay[(SPEAR OR POLEARM) ETH ELT NMAG !INF (SOCK=0 OR SOCK=3 OR SOCK=4 OR SOCK=5 OR SOCK=6) NMAG !RW (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) (EDAM=15 OR FILTLVL<3)]: %NAME%{%NAME%}
+ItemDisplay[(amd OR ame) TABSK2>2 !ETH !INF NMAG !RW (SOCK=0 OR SOCK=4) (EDAM>4 OR FILTLVL<3) (EDAM=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 
 // Claws
 // Venom Pre-buff
-ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%GG Venom Pre-buff}
-ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %PURPLE%**{%NAME%%CL%%GREEN%Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>2 OR SK267>2 OR SK277>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%****{%NAME%%CL%%GREEN%Venom Pre-buff}
+ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 (SK258>0 OR SK267>0 OR SK277>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%**{%NAME%%CL%%GREEN%Venom Pre-buff}
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces) SK278>2 !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom Pre-buff}
 
 // venom RW blade dance focused
-ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 AND SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3)]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%Venom RW}
+ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 AND SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%****{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) (SK252>2 OR SK263>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) (SK252>0 AND SK263>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 
 // venom RW blade sentinal focused
-ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>2 AND SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %PURPLE%****{%NAME%%CL%%PURPLE%Venom RW}
+ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>2 AND SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%****{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK252>2 OR SK263>2 OR SK275>2) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<7]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 ItemDisplay[(9tw OR btl OR 7tw) SK257>2 (SK263>0 AND SK275>0) !INF NMAG !RW (SOCK=0 OR SOCK=3) FILTLVL<5]: %DOT-D6%%NAME% %GREEN%***{%NAME%%CL%%GREEN%Venom RW}
 
