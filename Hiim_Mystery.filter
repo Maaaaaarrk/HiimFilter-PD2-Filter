@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 4%CL%Season 11 - version 64%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 9%CL%Season 11 - version 65%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -1870,6 +1870,7 @@ ItemDisplay[jew (FHR>0 OR STAT91<0) (FRES+CRES+LRES+PRES>25) RES=0]: %NAME%%PURP
 ItemDisplay[jew (RES>14 OR STAT91<0 OR FHR>0) (STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew (STR+DEX>15) (FHR>0 OR STAT91<0 OR REPLIFE>4 OR STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew STAT86>1 STAT138>1]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[jew EDAM>34 (STAT121>34 OR STAT122>34)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>37 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>25)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>29 EDAM<38 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>38)]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew EDAM>9 EDAM<30 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>57)]: %NAME%%PURPLE%BIG %CONTINUE%
@@ -6415,7 +6416,7 @@ ItemDisplay[NMAG !RW !SHOP THROWING SOCK=3]: %NAME%{%GOLD%Plague %GRAY%Cham + Fa
 ItemDisplay[7cr NMAG !RW SOCK=0 FILTLVL<7]: %DOT-E1%%TIER-6%%NAME%{%TAN%Imbue at Charsi for Hidden item chance%CL%%NAME%}
 
 // Eth Axe 1H
-ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6) EDAM>0 (EDEF=15 OR FILTLVL<7)]: %DOT-E1%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[7wa ETH !INF NMAG !RW (SOCK=0 OR SOCK=3 OR SOCK=5 OR SOCK=6) EDAM>0 (EDAM=15 OR FILTLVL<7)]: %DOT-E1%%NAME%{%NAME%}%CONTINUE%
 
 // LLD divine/war scepter bases with 2 of hammer/conc/joust for LLD
 ItemDisplay[(wsp OR 9ws) SK112>2 (SK378>2 OR SK113>2) !INF !ETH NMAG !RW SOCK=4]: %DOT-E1%%NAME% %PURPLE%[LLD]  < <{%NAME%}
@@ -6580,9 +6581,9 @@ ItemDisplay[(amc OR amb) NMAG EDAM>0 !RW TABSK0>2 (SOCK=0 OR SOCK=4 OR SOCK=3 OR
 ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=0 OR SOCK=4) FILTLVL<5]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(amc OR amb) NMAG !INF !RW TABSK0>2 (SOCK=3 OR SOCK=5) FILTLVL<5]: %NAME%{%NAME%}
 // Good merc xbow
-ItemDisplay[6mx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=4) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[6rx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=5) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[6hx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=6) (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
+ItemDisplay[6mx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=4) (EDAM=15 OR FILTLVL<7)]: %NAME%{%NAME%}
+ItemDisplay[6rx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=5) (EDAM=15 OR FILTLVL<7)]: %NAME%{%NAME%}
+ItemDisplay[6hx NMAG EDAM>0 !RW (SOCK=0 OR SOCK=6) (EDAM=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 // Lower levels
 ItemDisplay[(6hx OR 6mx) EDAM>0 NMAG !INF !RW (SOCK=0) FILTLVL<5]: %NAME%{%NAME%%CL%4os for Merc Harmony}
 ItemDisplay[(6hx OR 6mx) EDAM>0 NMAG !INF !RW (SOCK=4) FILTLVL<5]: %NAME%{%NAME%%CL%Merc Harmony Base}
