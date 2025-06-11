@@ -5,7 +5,7 @@
 ItemDisplay[SHOP !NMAG]: %NAME%%WHITE%{%NAME%}
 ItemDisplay[!SHOP !NMAG]: %NAME%%WHITE%{%NAME%}%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3 OR jew) ID]: %NAME%{%NAME%}
-ItemDisplay[MAG ID FILTLVL<7]: %DOT-0B%%NAME%%TIER-2%{%NAME%}
+ItemDisplay[MAG ID FILTLVL<5]: %DOT-0B%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[RARE ID]: %DOT-0B%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[CRAFT ID]: %DOT-0B%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[RW]: %MAP-68%%NAME%{%NAME%}
@@ -14,61 +14,7 @@ ItemDisplay[SET ID]: %PX-84%%NAME%{%NAME%}
 ItemDisplay[UNI FILTLVL<5]: %MAP-68%%NAME%{%NAME%}
 ItemDisplay[SET FILTLVL<5]: %PX-84%%NAME%{%NAME%}
 ItemDisplay[CRAFT]: %NAME%{%NAME%}
-ItemDisplay[ID (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME%{%NAME%}
-//-----------------------------------------------------------------------------------
-
-// ------------------------------------------------------------------------------
-// Leveling trash
-// ------------------------------------------------------------------------------
-ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
-ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %ORANGE%* %GRAY%%NAME% %ORANGE%*{%NAME%}
-ItemDisplay[SHIELD NMAG DIFF<2 FILTLVL<3 SOCK=3]: %ORANGE%** %GRAY%%NAME% %ORANGE%**{%NAME%}
-
-// display all mag/rare on lower filters
-ItemDisplay[RARE (FILTLVL<3 OR CLVL<80)]: %NAME%{%NAME%}
-ItemDisplay[(ARMOR OR WEAPON) MAG ((FILTLVL<2 AND DIFF<2) OR CLVL<30)]: %NAME%{%NAME%}
-ItemDisplay[WEAPON (EXC OR ELT) MAG CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
-ItemDisplay[WEAPON (EXC OR ELT) NMAG ETH SOCK=0 CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
-
-ItemDisplay[WEAPON ETH CLVL<80 FILTLVL<3]: %NAME%{%NAME%}//melee for leveling
-ItemDisplay[RARE CLVL<80 FILTLVL<3]: %NAME%{%NAME%}//melee for leveling
-
-ItemDisplay[!SHOP MAG CLASS FILTLVL<3]: %NAME%{%NAME%}
-
-ItemDisplay[!SHOP CHEST NORM !INF !SOCK=1 NMAG CLVL<30]: %NAME%{%NAME%}
-// Early Imbue options
-ItemDisplay[!SHOP (WEAPON AND !THROWING) NORM !SUP !INF SOCK=0 NMAG CLVL<30]: %NAME%{%NAME%}
-ItemDisplay[!SHOP CIRC NORM !INF !SUP SOCK=0 NMAG CLVL<31]: %NAME%{%NAME%}
-ItemDisplay[!SHOP SHIELD (EXC OR ELT) !INF SOCK>0 !SOCK=1 NMAG (DIFF<2 OR CLVL<60) FILTLVL<2]: %NAME%{%NAME%}
-ItemDisplay[!SHOP EXC CHEST SOCK=3 (CLVL<70 OR FILTLVL<3)]: %NAME%{%NAME%}
-
-// Alternate Bases when lower CLVL
-ItemDisplay[!SHOP WEAPON ELT ETH !INF NMAG !THROWING !SOCK=1 (CLVL<70 OR FILTLVL<3)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[!SHOP (CHEST OR HELM OR SHIELD) (ELT OR EXC) !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D6%%NAME%{%NAME%}
-ItemDisplay[!SHOP (EXC OR ELT) (ELT OR EXC) !INF NMAG !SOCK=1 FILTLVL<2]: %MAP-D6%%NAME%{%NAME%}
-
-// Purity
-ItemDisplay[NMAG !INF !RW SOCK=3 FILTLVL<3 (SPEAR OR POLEARM OR BOW OR XBOW OR STAFF)]: %NAME% %DARK_GREEN%[Purity]{%NAME%}
-
-// Staves
-ItemDisplay[NMAG !INF !RW SOCK=0 (lst OR 8ss OR 8ls OR 6ss OR 6ls) FILTLVL<3]: %NAME% %DARK_GREEN%[Larzuk 3os]{%NAME%%CL%3os for Purity} // 0os: Long Staff, Jo Staff, Quarterstaff, Walking Stick, Stalagmite
-
-// Insight
-ItemDisplay[NMAG !INF !RW SOCK=4 (SPEAR OR POLEARM) FILTLVL<3]: %NAME% %DARK_GREEN%[Insight]{%NAME%}
-// Polearms
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL>25 (vou OR 9b7 OR 9vo OR 7o7 OR 7vo)]: %NAME%{%NAME%} // 0os, ilvl 26+: Voulge, Lochaber Axe, Bill, Ogre Axe, Colossus Voulge
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 (scy OR pax hal OR wsc OR 9s8 OR 9pa OR 9h9 OR 9wc OR 7s8 OR 7pa OR 7h7 7wc)]: %NAME%{%NAME%} // 0os, ilvl 26-40: Scythe, Poleaxe, Halberd, War Scythe, Battle Scythe, Partizan, Bec-de-Corbin, Grim Scythe, Thresher, Cryptic Axe, Great Poleaxe, Giant Thresher, 0os, ilvl 26-40
-
-// Spears
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL>25 (tri OR 9sr OR 9tr OR 7tr)]: %NAME%{%NAME%} // 0os, ilvl 26+: Trident, War Spear, Fuscina, Stygian Pike
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 (brn OR spt OR pik OR 7sr OR 9br OR 9st OR 9p9 OR 7br OR 7st OR 7p7)]: %NAME%{%NAME%} // 0os, ilvl 26-40: Brandistock, Spetum, Pike, Hyperion Spear, War Fork, Yari, Lance, Mancatcher, Ghost Spear, War Pike
-
-// Harmony
-ItemDisplay[FILTLVL<3 NMAG !RW !SHOP (BOW OR XBOW) SOCK=4]: %NAME%{%NAME%}
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (6sb OR 8sb)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All 0os: laz for 4os
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL>25 (cbw OR 8hb OR 8cb OR 6hb OR 6cb)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All 0os, ilvl 26+: laz for 4os
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 (am1 OR am2 OR am6 OR am7 OR amb OR amc OR lbw OR sbb OR lbb OR swb OR lwb OR 8lb OR 8s8 OR 8l8 OR 8sw OR 8lw OR 6lb OR 6s7 OR 6l7 OR 6sw OR 6lw)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // 0os, ilvl 26-40: laz for 4os
-
+ItemDisplay[ID (MAG OR RARE OR SET OR UNI OR CRAFT)]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 // ------------------------------------------------------------------------------
@@ -76,7 +22,7 @@ ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 ILVL<41 ILVL>25 (am1 OR am2 OR am6 OR
 // ------------------------------------------------------------------------------
 
 // Show high value small items for gold
-ItemDisplay[!SHOP FILTLVL<3 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %NAME% %GREEN%${%NAME%}
+ItemDisplay[!SHOP FILTLVL<5 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
 
 
 //hide most nmag non called out on middle filter levels
