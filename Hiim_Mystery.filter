@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 11%CL%Season 11 - version 69%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 11%CL%Season 11 - version 70%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -6898,7 +6898,7 @@ ItemDisplay[SK266>1 DIFF<2 FILTLVL<3 ASSASSIN]: %PX-62%%NAME% %ORANGE%****{%RED%
 ItemDisplay[SK266>2 CLVL<80 FILTLVL<3 ASSASSIN]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // general claw
-ItemDisplay[ELT (SOCK=0 OR SOCK=2 OR SOCK=3) CLVL<80 FILTLVL<3 ASSASSIN]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[ELT CL5 (SOCK=0 OR SOCK=2 OR SOCK=3) CLVL<80 FILTLVL<3 ASSASSIN]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 //------------------------------------
 //----- NECROMANCER
@@ -6987,7 +6987,7 @@ ItemDisplay[(MAG OR RARE) TABSK40>2 CLVL<80 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORA
 
 // dudu sk
 ItemDisplay[(MAG OR RARE) CLSK5>0 DIFF<1 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
-ItemDisplay[(MAG OR RARE) CLSK5>1 DIFF<2 FILTLVL<3 DRUID: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[(MAG OR RARE) CLSK5>1 DIFF<2 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // fissure lore
 ItemDisplay[NMAG HELM SK234>0 SOCK=2 NMAG !RW FILTLVL<3 DIFF<2 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Lore Base%CL%%NAME%}
@@ -7011,7 +7011,7 @@ ItemDisplay[SK222>1 DIFF<2 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Lev
 ItemDisplay[SK222>2 CLVL<80 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
 // SK236	Heart of Wolverine
-ItemDisplay[SK236>0 DIFF<1 FILTLVL<3] DRUID: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
+ItemDisplay[SK236>0 DIFF<1 FILTLVL<3] DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK236>1 DIFF<2 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 ItemDisplay[SK236>2 CLVL<80 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Leveling Item%CL%%NAME%}
 
@@ -7041,7 +7041,7 @@ ItemDisplay[NMAG !INF !RW SOCK=4 (SPEAR OR POLEARM) (FILTLVL<2 OR DIFF<2) FILTLV
 ItemDisplay[NMAG !INF !RW SOCK=4 ELT (SPEAR OR POLEARM) FILTLVL<3]: %NAME% %DARK_GREEN%[Insight]{%NAME%}
 
 // Polearms
-ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) OR ILVL>25 (vou OR 9b7 OR 9vo OR 7o7 OR 7vo)]: %NAME%{%NAME%} // 0os, ilvl 26+: Voulge, Lochaber Axe, Bill, Ogre Axe, Colossus Voulge
+ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2 OR ILVL>25) (vou OR 9b7 OR 9vo OR 7o7 OR 7vo)]: %NAME%{%NAME%} // 0os, ilvl 26+: Voulge, Lochaber Axe, Bill, Ogre Axe, Colossus Voulge
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL<41 ILVL>25 (scy OR pax hal OR wsc OR 9s8 OR 9pa OR 9h9 OR 9wc OR 7s8 OR 7pa OR 7h7 7wc)]: %NAME%{%NAME%} // 0os, ilvl 26-40: Scythe, Poleaxe, Halberd, War Scythe, Battle Scythe, Partizan, Bec-de-Corbin, Grim Scythe, Thresher, Cryptic Axe, Great Poleaxe, Giant Thresher, 0os, ilvl 26-40
 
 // Spears
@@ -7049,7 +7049,7 @@ ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL>25 
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL<41 ILVL>25 (brn OR spt OR pik OR 7sr OR 9br OR 9st OR 9p9 OR 7br OR 7st OR 7p7)]: %NAME%{%NAME%} // 0os, ilvl 26-40: Brandistock, Spetum, Pike, Hyperion Spear, War Fork, Yari, Lance, Mancatcher, Ghost Spear, War Pike
 
 // Harmony
-ItemDisplay[FILTLVL<3 NMAG !RW !SHOP (BOW OR XBOW) SOCK=4  (ELT OR FILTLVL<2 OR DIFF<2)]: %NAME%{%NAME%}
+ItemDisplay[FILTLVL<3 NMAG !RW !SHOP (BOW OR XBOW) SOCK=4 (ELT OR FILTLVL<2 OR DIFF<2)]: %NAME%{%NAME%}
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) (6sb OR 8sb)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All 0os: laz for 4os
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL>25 (cbw OR 8hb OR 8cb OR 6hb OR 6cb)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // All 0os, ilvl 26+: laz for 4os
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL<41 ILVL>25 (am1 OR am2 OR am6 OR am7 OR amb OR amc OR lbw OR sbb OR lbb OR swb OR lwb OR 8lb OR 8s8 OR 8l8 OR 8sw OR 8lw OR 6lb OR 6s7 OR 6l7 OR 6sw OR 6lw)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE% // 0os, ilvl 26-40: laz for 4os
