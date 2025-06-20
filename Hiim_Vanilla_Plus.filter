@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 19%CL%Season 11 - version 71%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 20%CL%Season 11 - version 72%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -5045,11 +5045,11 @@ ItemDisplay[CIRC NMAG !INF SOCK=0 DIFF<1]: %NAME%{%GOLD%Imbue This%CL%%NAME%}
 
 //------------------------------------
 //----- Show high value small items for gold
-ItemDisplay[!SHOP NMAG DIFF<1 MAPID<39 FILTLVL<3 PRICE>4999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
-ItemDisplay[!SHOP NMAG DIFF<1 MAPID<75 FILTLVL<3 PRICE>9999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
-ItemDisplay[!SHOP NMAG DIFF<1 MAPID<103 FILTLVL<3 PRICE>14999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
-ItemDisplay[!SHOP NMAG DIFF<1 FILTLVL<3 PRICE>24999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
-ItemDisplay[!SHOP NMAG DIFF<2 FILTLVL<3 PRICE>29999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP NMAG DIFF<1 MAPID<39 FILTLVL<3 PRICE>4999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP NMAG DIFF<1 MAPID<75 FILTLVL<3 PRICE>9999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP NMAG DIFF<1 MAPID<103 FILTLVL<3 PRICE>14999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP NMAG DIFF<1 FILTLVL<3 PRICE>24999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP NMAG DIFF<2 FILTLVL<3 PRICE>29999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -5075,7 +5075,7 @@ ItemDisplay[ID (MAG OR RARE OR SET OR UNI OR CRAFT)]: %NAME%{%NAME%}
 // ------------------------------------------------------------------------------
 
 // Show high value small items for gold
-ItemDisplay[!SHOP FILTLVL<5 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP FILTLVL<5 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
 
 
 //hide most nmag non called out on middle filter levels
