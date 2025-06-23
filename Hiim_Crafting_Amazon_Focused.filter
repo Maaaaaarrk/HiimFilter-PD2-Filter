@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 20%CL%Season 11 - version 72%CL%HiimFilter - Crafting - Amazon -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 23%CL%Season 11 - version 73%CL%HiimFilter - Crafting - Amazon -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -53,10 +53,17 @@ ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv 
 ItemDisplay[amu STAT206>0 (MAPID=188 OR MAPID=189)]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?
 //-----------------------------------------------------------------------------------
 
+
+
+
+//------------------------------------
+//----- Tier List
+ItemDisplay[INF PRICE=1 DIFF<1]: %NAME%{%BLACK%~%CL%%BLUE%tinyurl.com/HiimS11GroupMapTierList%CL%%TAN%Player 8 mapping tier list%CL%%BLACK%~%CL%%BLUE%tinyurl.com/HiimS11SoloMapTierList%CL%%TAN%Solo mapping tier list%CL%%BLACK%~%CL%%GOLD%Hiim Tier Lists:%CL%%BLACK%~%CL%%NAME%}%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 // HIDE JUNK RULES
 //-----------------------------------------------------------------------------------
-ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:// Hide inferior items
+ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:{%NAME%}// Hide inferior items
 ItemDisplay[ear]:// Hide player ears
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuff always after 80
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher Filter levels after 60
@@ -5100,7 +5107,7 @@ ItemDisplay[!UNI !SET !RW SK101=2 FILTLVL<2]: +2 HlyBlt %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK101=3]: +3 HlyBlt %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK102=1 FILTLVL<2]: +1 HlyFire %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK102=2 FILTLVL<2]: +2 HlyFire %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK102=3 FILTLVL<3]: +3 HlyFire %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK102=3]: +3 HlyFire %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK103=1 FILTLVL<2]: +1 Thorn %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK103=2 FILTLVL<2]: +2 Thorn %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK103=3 FILTLVL<2]: +3 Thorn %NAME%{%NAME%}%CONTINUE%
@@ -5136,7 +5143,7 @@ ItemDisplay[!UNI !SET !RW SK113=2 FILTLVL<2]: +2 Conc %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK113=3]: +3 Conc %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK114=1 FILTLVL<2]: +1 HlyFrz %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK114=2 FILTLVL<2]: +2 HlyFrz %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK114=3 FILTLVL<3]: +3 HlyFrz %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK114=3]: +3 HlyFrz %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK115=1 FILTLVL<3]: +1 Vigor %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK115=2 FILTLVL<3]: +2 Vigor %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK115=3 FILTLVL<3]: +3 Vigor %NAME%{%NAME%}%CONTINUE%
@@ -5148,7 +5155,7 @@ ItemDisplay[!UNI !SET !RW SK117=2]: +2 HlyShld %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK117=3]: +3 HlyShld %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK118=1 FILTLVL<2]: +1 HlyShck %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK118=2 FILTLVL<2]: +2 HlyShck %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW SK118=3 FILTLVL<3]: +3 HlyShck %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW SK118=3]: +3 HlyShck %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK119=1 FILTLVL<2]: +1 Sanc %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK119=2 FILTLVL<2]: +2 Sanc %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK119=3]: +3 Sanc %NAME%{%NAME%}%CONTINUE%
@@ -5180,7 +5187,7 @@ ItemDisplay[!UNI !SET !RW SK378=1 FILTLVL<3]: +1 Joust %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK378=2 FILTLVL<3]: +2 Joust %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK378=3 FILTLVL<3]: +3 Joust %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW FILTLVL<3 (SK96>0 OR SK97>0 OR SK98>0 OR SK99>0 OR SK100>0 OR SK101>0 OR SK102>0 OR SK103>0 OR SK104>0 OR SK105>0 OR SK106>0 OR SK107>0 OR SK108>0 OR SK109>0 OR SK110>0 OR SK111>0 OR SK112>0 OR SK113>0 OR SK114>0 OR SK115>0 OR SK116>0 OR SK117>0 OR SK118>0 OR SK119>0 OR SK120>0 OR SK121>0 OR SK122>0 OR SK123>0 OR SK124>0 OR SK125>0 OR SK364>0 OR SK371>0 OR SK378>0)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK99>2 OR SK101>2 OR SK101>2 OR SK105>2 OR SK109>2 OR SK110>2 OR SK111>2 OR SK112>2 OR SK113>2 OR SK116>2 OR SK117>0 OR SK119>2 OR SK121>2 OR SK122>2 OR SK123>2 OR SK125>2 OR SK364>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!UNI !SET !RW FILTLVL>2 (SK99>2 OR SK101>2 OR SK101>2 OR SK105>2 OR SK109>2 OR SK110>2 OR SK102>2 OR SK111>2 OR SK112>2 OR SK113>2 OR SK116>2 OR SK117>0 OR SK119>2 OR SK121>2 OR SK122>2 OR SK123>2 OR SK125>2 OR SK364>2 OR SK114>2 OR SK118>2)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
 
 // Sorceress
 ItemDisplay[!UNI !SET !RW (SK36>0 OR SK37>0 OR SK38>0 OR SK39>0 OR SK40>0 OR SK41>0 OR SK42>0 OR SK43>0 OR SK44>0 OR SK45>0 OR SK46>0 OR SK47>0 OR SK48>0 OR SK49>0 OR SK50>0 OR SK51>0 OR SK52>0 OR SK53>0 OR SK54>0 OR SK55>0 OR SK56>0 OR SK57>0 OR SK58>0 OR SK59>0 OR SK60>0 OR SK61>0 OR SK62>0 OR SK63>0 OR SK64>0 OR SK65>0 OR SK369>0 OR SK383>0 OR SK376>0 OR SK383>0)]: %CL%%NAME%{%NAME%}%CONTINUE%
@@ -6290,6 +6297,9 @@ ItemDisplay[(wsp OR 9ws) SK112>2 !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %DOT-E1%%
 // RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=0 SK101>2 (SK115>0 OR SK117>0)  FILTLVL<7]: %DOT-E1%%NAME% %PURPLE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
 // RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=4 SK101>2 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%NAME%}
 // RIP Insight ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW SOCK=0 SK101>2 FILTLVL<5]: %NAME% %ORANGE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
+
+// Honor bases
+ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW (SOCK=5 OR SOCK=0) SK378>0 (SK118>2 OR SK102>2 OR SK114>2) FILTLVL<8]: %NAME% %ORANGE%[LLD]{%NAME%}
 
 // LLD Staff base
 // SK46	Blaze

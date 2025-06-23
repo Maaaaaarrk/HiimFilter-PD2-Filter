@@ -29,10 +29,17 @@ ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv 
 ItemDisplay[amu STAT206>0 (MAPID=188 OR MAPID=189)]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?
 //-----------------------------------------------------------------------------------
 
+
+
+
+//------------------------------------
+//----- Tier List
+ItemDisplay[INF PRICE=1 DIFF<1]: %NAME%{%BLACK%~%CL%%BLUE%tinyurl.com/HiimS11GroupMapTierList%CL%%TAN%Player 8 mapping tier list%CL%%BLACK%~%CL%%BLUE%tinyurl.com/HiimS11SoloMapTierList%CL%%TAN%Solo mapping tier list%CL%%BLACK%~%CL%%GOLD%Hiim Tier Lists:%CL%%BLACK%~%CL%%NAME%}%CONTINUE%
+
 //-----------------------------------------------------------------------------------
 // HIDE JUNK RULES
 //-----------------------------------------------------------------------------------
-ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:// Hide inferior items
+ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:{%NAME%}// Hide inferior items
 ItemDisplay[ear]:// Hide player ears
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuff always after 80
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher Filter levels after 60
