@@ -1,0 +1,100 @@
+
+//-----------------------------------------------------------------------------------
+// CRAFTING
+//-----------------------------------------------------------------------------------
+// LLD craft tag in trav
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa1]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Targe
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa2]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Rondache
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa5]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft] // Crown Shield
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa6]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Targe
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa7]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Rondache
+ItemDisplay[MAG ILVL>50 !ETH btl MAPID=83]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[RARE aqv MAPID=83]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD]
+ItemDisplay[MAG ILVL>50 MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[MAG ILVL>50 MAPID=83 (am1 OR am5 OR am6 OR ama)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[MAG ILVL>50 MAPID=83 (ne5 OR ne4)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
+ItemDisplay[MAG ILVL>50 MAPID=83 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%TIER-2%%MAP-97%%GREEN% [LLD Craft]
+
+// LLD craft unid
+ItemDisplay[!ID MAG ILVL>50 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[!ID MAG ILVL>50 btl FILTLVL<3]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //blade talons (can shop)
+ItemDisplay[!ID MAG ILVL>50 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Sorc orbs
+ItemDisplay[!ID MAG ILVL>50 (am1 OR am5 OR am6 OR ama)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Javs
+ItemDisplay[!ID MAG ILVL>50 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Nec heads
+ItemDisplay[!ID MAG ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Barb helms
+ItemDisplay[!ID MAG ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // dudu helms
+//Id-ed
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //Sorc orbs
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (am1 OR am5 OR am6 OR ama)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //Javs
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Nec heads
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Barb helms
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // dudu helms
+
+// Weapons
+ItemDisplay[!ID (7gl OR 9gl OR glv) ETH MAG]: %NAME% %GREEN%[Craft]//Ghost Glaive
+ItemDisplay[!ID (7p7 OR 9p9 OR pik) ETH MAG]: %NAME% %GREEN%[Craft]//War Pike
+ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG]: %NAME% %GREEN%[Craft]///Ogre Maul
+ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH MAG]: %NAME% %GREEN%[Craft]//War Fist
+ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH MAG]: %NAME% %GREEN%[Craft]//Champion Axe
+ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH MAG]: %NAME% %GREEN%[Craft]//Hyperion spear
+ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG]: %NAME% %GREEN%[Craft]//Thunder Maul
+ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG]: %NAME% %GREEN%[Craft]//Phase Blade
+ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG]: %NAME% %GREEN%[Craft]//Berserker Axe
+ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG]: %NAME% %GREEN%[Craft]//Colossus Blade
+ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG]: %NAME% %GREEN%[Craft]//Colossus Sword
+ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG]: %NAME% %GREEN%[Craft]//Glorious Axe
+ItemDisplay[!ID (7wh OR 9wh OR whm) ETH MAG]: %NAME% %GREEN%[Craft]//Legendary Mallet
+ItemDisplay[!ID (7pi OR 9pi OR pil) ETH MAG]: %NAME% %GREEN%[Craft]//Stygian Pilum
+ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH MAG]: %NAME% %GREEN%[Craft]//Balrog Spear
+ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH MAG]: %NAME% %GREEN%[Craft]//Winged Harpoon
+ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH MAG]: %NAME% %GREEN%[Craft]//Scourge
+ItemDisplay[!ID (lax OR 9la OR 7la) ETH MAG]: %NAME% %GREEN%[Craft]//Feral Axe
+
+// more claws
+ItemDisplay[!ID ETH (axf OR 9xf OR 7xf OR ktr OR 9ar OR 7ar OR skr OR 9qr OR 7qr) (MAG OR RARE) FILTLVL<9]: %NAME% %GREEN%[Craft]
+ItemDisplay[!ID ETH SIN (MAG OR RARE) FILTLVL<9]: %DOT-ED%%TIER-6%%NAME% %GREEN%[Craft] //eth sin claws
+
+// Generic
+ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
+ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
+
+//  lld catch callouts as Tier 1
+//-----------------------------------------------------------------------------------
+// Twitchthroe - Studded Leather
+// Rattlecage - Gothic Plate
+// Silks of the Victor - Ancient Armor
+// The Spirit Shroud - Ghost Armor
+// Bloodfist - Heavy Gloves
+// Peasant Crown - War Hat
+// Steelclash - Kite Shield
+// Rakescar - War Axe
+// Rogues Bow - Composite Bow
+// Bonesnap - Maul
+// Steeldriver - Great Maul
+// The Iron Jang Bong - War Staff
+// Ripsaw - Flamberge
+// The Patriarch - Great Sword
+// Goblin Toe - Light Plated Boots
+// String of Ears - Demonhide Sash
+// Quetzalcoatl - Hawk Helm
+// Magefist - Light Gauntlets
+// Rockfleece - Field Plate
+// True Silver - Maiden Javelin
+
+ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+
+
+// LLD  lld catch callouts
+//-----------------------------------------------------------------------------------
+// Cow King or Sander - Heavy Boots
+// Sanders Superstition - Bone Wand
+// Sanders Taboo - Heavy Gloves
+// Deaths Hand - Leather Gloves
+// Deaths Guard - Sash
+// Tancreds Hobnails - Boots
+
+ItemDisplay[SET !ID (vbt OR bwn OR vgl OR lgl OR lbl OR lbt)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*%TIER-6%
+
+//-----------------------------------------------------------------------------------
