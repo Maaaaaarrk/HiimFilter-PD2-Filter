@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 23%CL%Season 11 - version 74%CL%HiimFilter - Crafting - Necromancer -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 24%CL%Season 11 - version 75%CL%HiimFilter - Crafting - Necromancer -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -1611,7 +1611,7 @@ ItemDisplay[!RW !UNI !SET 9gw]: %CONTINUE%Grave Wand
 // Elite tier Wands
 ItemDisplay[!RW !UNI !SET 7wn]: %CONTINUE%Polished Wand
 ItemDisplay[!RW !UNI !SET 7yw]: %CONTINUE%Ghost Wand
-ItemDisplay[!RW !UNI !SET 7bw]: %CONTINUE%Wand
+ItemDisplay[!RW !UNI !SET 7bw]: %CONTINUE%Lich Wand
 ItemDisplay[!RW !UNI !SET 7gw]: %CONTINUE%Unearthed Wand
 //-----------------------------------------------------------------------------------
 
@@ -2505,6 +2505,30 @@ ItemDisplay[SET !ID utc]: %CONTINUE%Trang-Oul's Girthquake - Troll Belt
 ItemDisplay[SET !ID xmg]: %CONTINUE%Trang-Oul's Claws - Heavy Bracers
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
+// UNI/SET !ID Formatting
+//-----------------------------------------------------------------------------------
+
+// FORMATTING
+ItemDisplay[(UNI OR SET) !ID]: %NAME% ?%CONTINUE%
+ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
+
+// Eth add on callout
+ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+
+// LLD UNI
+ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
+
+// LLD SET
+ItemDisplay[SET (vbt OR vgl OR lgl OR lbl OR lbt) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
+
+// Warrior Map Formatting
+ItemDisplay[UNI (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GOLD%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[SET (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%NAME% %RED%[C] *%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
 // CRAFTING
 //-----------------------------------------------------------------------------------
 
@@ -3383,6 +3407,8 @@ ItemDisplay[MAG cm1 ID LVLREQ<10 LIFE>12 (MAXDMG>0 OR MANA>0 OR STR>0 OR DEX>0 O
 // LLD - Small Charms
 ItemDisplay[MAG cm1 ID LVLREQ<31 (LIFE>14 OR FRW>0) (MAXDMG>1 OR MANA>9 OR STR>0 OR DEX>0 OR RES>2 OR STAT31>9)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>13 (MANA>9 OR RES>3 OR FRES>8 OR LRES>8 OR CRES>8 OR PRES>8)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE+MANA>21]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
+ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE+MANA>15]: %DOT-50%%NAME% %ORANGE%[LLD]{%GRAY%For LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>12 RES>4]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 LIFE>9 (MAXDMG>2)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
 ItemDisplay[MAG cm1 ID LVLREQ<31 (FHR>0 OR FRW>0) (RES>0 OR FRES>8 OR LRES>8 OR CRES>8 OR PRES>8)]: %DOT-50%%NAME% %PURPLE%[LLD]{%GRAY%GG LLD}
@@ -3606,30 +3632,6 @@ ItemDisplay[(RARE OR CRAFT) (9pi OR 9s9 OR 9gl OR 9ts OR ama) ED>139 STAT360=0 E
 ItemDisplay[(RARE OR CRAFT) (9pi OR 9s9 OR 9gl OR 9ts OR ama) ((ED>179) OR (ED>139 ((IAS>19) OR (MAXDMG>19)))) STAT360>0 ETH LVLREQ<31]: %NAME%{%TAN%Low Level Dueling Usable%CL%%NAME%}%CONTINUE%
 ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>199 STAT360>0 ((IAS>19) OR (MAXDMG>19))) OR (ED>199 STAT360>0 IAS<20 SOCK>2) OR (ED>229 STAT360>0 IAS<20 SOCK<3) OR (STAT360>0 TABSK0>2 ((IAS>19 SOCK>2) OR (IAS>39 SOCK=0)))) LVLREQ<31]: %NAME%{%TAN%Low Level Dueling Usable%CL%%NAME%}%CONTINUE%
 ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>169 STAT360=0) OR (STAT360=0 TABSK0>2 IAS>19) OR (STAT360=0 TABSK0>3 IAS<20)) LVLREQ<31]: %NAME%{%RED%Slam for %TAN%Low Level Dueling %CL%%NAME%}%CONTINUE%
-//-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
-// UNI/SET !ID Formatting
-//-----------------------------------------------------------------------------------
-
-// FORMATTING
-ItemDisplay[(UNI OR SET) !ID]: %NAME% ?%CONTINUE%
-ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
-
-// Eth add on callout
-ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
-ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
-
-// LLD UNI
-ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
-
-// LLD SET
-ItemDisplay[SET (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
-
-// Warrior Map Formatting
-ItemDisplay[UNI (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GOLD%%NAME% %RED%[C] *%CONTINUE%
-ItemDisplay[SET (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%NAME% %RED%[C] *%CONTINUE%
-
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // IMPORTANT DROPS
@@ -3906,7 +3908,9 @@ ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR 
 // Magefist - Light Gauntlets
 // Rockfleece - Field Plate
 // True Silver - Maiden Javelin
-ItemDisplay[UNI !ID FILTLVL<7 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+// Tearhaunch - Greaves
+
+ItemDisplay[UNI !ID FILTLVL<7 (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
 
 // Set GG Set Callouts
 //-----------------------------------------------------------------------------------
@@ -4007,13 +4011,12 @@ ItemDisplay[SET !ID FILTLVL<5 (xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%
 // LLD  lld catch callouts
 //-----------------------------------------------------------------------------------
 // Cow King or Sander - Heavy Boots
-// Sanders Superstition - Bone Wand
 // Sanders Taboo - Heavy Gloves
 // Deaths Hand - Leather Gloves
 // Deaths Guard - Sash
 // Tancreds Hobnails - Boots
 
-ItemDisplay[SET !ID FILTLVL<7 (vbt OR bwn OR vgl OR lgl OR lbl OR lbt)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*%TIER-6%
+ItemDisplay[SET !ID FILTLVL<7 (vbt OR vgl OR lgl OR lbl OR lbt)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*%TIER-6%
 
 // Rainbow Facet
 ItemDisplay[jew UNI !ID]: %BORDER-68%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%*     %GOLD%%NAME%%PURPLE%     *%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*
@@ -6599,8 +6602,8 @@ ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) (RARE OR CRAFT OR UNI 
 // Lbox/piece
 ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav OR (ci0 ILVL<26) OR buc OR xuc) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:1}%CONTINUE%
 ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR 1H) !(THROWING OR dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav OR (ci0 ILVL<26) OR buc OR xuc) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:2}%CONTINUE%
-ItemDisplay[(sst OR bkf OR 9tk OR 9bk OR 7tk OR 7bk OR 9ta OR 7ta OR pil OR ssp OR 9ja OR 9pi OR 9s9 OR 7ja OR 7pi OR 7s7 OR am5 OR ama OR amf) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:2}%CONTINUE%
-ItemDisplay[(((mau OR gma OR clm OR gis OR bsw OR tri OR brn OR spt OR pik OR vou OR scy OR pax OR hbw OR lbw OR cbw OR sbb OR lbb OR mxb OR hxb OR am1 OR am3) ILVL<26) OR 2hs OR 92h OR 72h OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls OR bal OR glv OR tsp OR 9gl OR 9ts OR 7gl OR 7ts OR 7b8) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:3}%CONTINUE%
+ItemDisplay[(sst OR bkf OR 9tk OR 9bk OR 7tk OR 7bk OR 9ta OR 7ta OR pil OR ssp OR 9ja OR 9pi OR 9s9 OR 7ja OR 7pi OR 7s7 OR am5 OR ama OR amf OR bal OR glv OR tsp OR 9gl OR 9ts OR 7gl OR 7ts OR 7b8) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:2}%CONTINUE%
+ItemDisplay[(((mau OR gma OR clm OR gis OR bsw OR tri OR brn OR spt OR pik OR vou OR scy OR pax OR hbw OR lbw OR cbw OR sbb OR lbb OR mxb OR hxb OR am1 OR am3) ILVL<26) OR 2hs OR 92h OR 72h OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:3}%CONTINUE%
 ItemDisplay[2H !(THROWING OR (((mau OR gma OR clm OR gis OR bsw OR tri OR brn OR spt OR pik OR vou OR scy OR pax OR hbw OR lbw OR cbw OR sbb OR lbb OR mxb OR hxb OR am1 OR am3) ILVL<26) OR 2hs OR 92h OR 72h OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls) OR sst) (RARE OR CRAFT OR UNI OR SET OR MAG) ID SOCK=0]:%NAME%{%NAME%, %TAN%LP%WHITE%:4}%CONTINUE%
 
 //corruptions
