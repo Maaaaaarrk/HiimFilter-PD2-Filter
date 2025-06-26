@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 24%CL%Season 11 - version 75%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 25%CL%Season 11 - version 76%CL%HiimFilter -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -2107,6 +2107,60 @@ ItemDisplay[ID (MAG OR RARE OR CRAFT) TABSK50>0]: %DOT-0B%%PURPLE%+%TABSK50% M.A
 
 //-----------------------------------------------------------------------------------
 
+// ------------------------------------------------------------------------------
+//    =======================  Rathma Gear Tags Display ======================
+// ------------------------------------------------------------------------------
+
+// Rare/Crafted Amulets - PLR
+// 50-75 PLR, 30+Life/15+Str/15+Dex, 5+FCR/10+FHR/100+AR/HFD/8+AllRes/20+C.Res/20+F.Res/20+P.Res, Corruption: Uncorrupted/FRW/CBF/All-Attributes/Block/+1-All-Skills/CBF/2-Max-Resist, +2 to Class/Tab Skills
+ItemDisplay[(RARE OR CRAFT) amu ID STAT110>49 (LIFE>29 OR STR>14 OR DEX>14) ((LIFE>29 (STR>14 OR DEX>14)) OR FCR>4 OR FHR>9 OR AR>99 OR STAT118=1 OR RES>7 OR CRES>19 OR FRES>19 OR PRES>19) (STAT360=0 OR STAT360=44 OR STAT360=45 OR STAT360=65 OR STAT360=67 OR ALLSK=1 OR (STAT40=2 STAT42=2 STAT44=2 STAT46=2)) (TABSK40>1 OR TABSK41>1 OR TABSK42>1 OR TABSK32>1 OR TABSK33>1 OR TABSK34>1 OR TABSK24>1 OR TABSK25>1 OR TABSK26>1 OR TABSK16>1 OR TABSK17>1 OR TABSK18>1 OR TABSK8>1 OR TABSK9>1 OR TABSK10>1 OR TABSK48>1 OR TABSK49>1 OR TABSK50>1 OR TABSK0>1 OR TABSK1>1 OR TABSK2>1 OR CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1)]:%NAME%{%RED%Rathma Amulet%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Amulets - 2% Max Res
+// MaxRes(c) 40+Life/15+Str/15+Dex, 5+FCR/10+AllRes/20+C.Res/20+L.Res/20+F.Res/20+P.Res, +2-3 to Class/Tab Skills
+ItemDisplay[(RARE OR CRAFT) amu ID (STAT40=2 STAT42=2 STAT44=2 STAT46=2) (LIFE>39 OR STR>14 OR DEX>14) (FCR>4 OR RES>9 OR CRES>19 OR FRES>19 OR PRES>19) (TABSK40>1 OR TABSK41>1 OR TABSK42>1 OR TABSK32>1 OR TABSK33>1 OR TABSK34>1 OR TABSK24>1 OR TABSK25>1 OR TABSK26>1 OR TABSK16>1 OR TABSK17>1 OR TABSK18>1 OR TABSK8>1 OR TABSK9>1 OR TABSK10>1 OR TABSK48>1 OR TABSK49>1 OR TABSK50>1 OR TABSK0>1 OR TABSK1>1 OR TABSK2>1 OR CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1)]:%NAME%{%GREEN%***%DARK_GREEN%**%BLUE%**   %PURPLE%Max Resistances   %BLUE%**%DARK_GREEN%**%GREEN%***%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Rings - PLR
+// 25-45 PLR, 30+Life/10+Str/10+Dex, 10+FCR/10+MaxDmg/10+MinDmg, 5+AllRes/20+C.Res/20+F.Res/20+P.Res
+ItemDisplay[(RARE OR CRAFT) rin ID STAT110>24 (LIFE>29 OR STR>9 OR DEX>9) (FCR>9 OR MINDMG>9 OR MAXDMG>9) (RES>4 OR CRES>19 OR FRES>19 OR PRES>19)]:%NAME%{%RED%Rathma Ring%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Boots - PLR
+// 25-45 PLR, 30+FRW, Dual Res with at least 20 C.Res/P.Res, 10+Dex/10+FHR/2%MaxC.Res/2%MaxP.Res, Uncorrupted/3%PDR/30+Life/3%MaxF.Res/3%MaxC.Res/3%MaxP.Res/IncreasedBlock/20FHR
+ItemDisplay[(RARE OR CRAFT) BOOTS ID STAT110>24 FRW>29 ((CRES>19 (PRES>19 OR FRES>19)) OR (PRES>19 (CRES>19 OR FRES>19))) (DEX>9 OR FHR>9 OR STAT40>2 OR STAT44>2 OR STAT46>2) (STAT360=0 OR STAT36>2 OR LIFE>29 OR STAT44>2 OR STAT46>2 OR STAT20>0 OR FHR>19)]:%NAME%{%RED%Rathma Boots%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Shields - PLR
+// 75 PLR, 30+Life/15+Str/15+Dex, Uncorrupted/MaxFire/MaxCold/MaxPoison/+1AllSkill/CBF/Max%Life, FBR+Block/20+AllRes/20+FCR/100+%ED/3Sockets
+ItemDisplay[(RARE OR CRAFT) SHIELD ID STAT110>74 (LIFE>29 OR STR>14 OR DEX>14 OR STAT216>0) (STAT360=0 OR STAT360=53 OR STAT360=54 OR STAT360=56 OR ALLSK=1 OR STAT360=45 OR STAT360=43) (STAT20>19 OR RES>19 OR FCR>19 OR EDAM>99 OR SOCK=3)]:%NAME%{%RED%Rathma Shield%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Belts - PLR
+// 25 PLR, 60+Life/20+Str/40+Life,10+Str/30+Life,15+Str, 10+FCR/17+FHR/80+Life,20+Str/20+C.Res/20+F.Res/20+P.Res, Uncorrupted/Str/Dex/Vit/FCR/FHR/AllAttr/AR/AllRes/%PDR/FRW/%Block
+ItemDisplay[(RARE OR CRAFT) BELT ID STAT110>24 (LIFE>59 OR STR>19 OR (LIFE>39 STR>9) OR (LIFE>29 STR>14)) (FCR>9 OR FHR>16 OR (LIFE>79 STR>19) OR CRES>19 OR FRES>19 OR PRES>19) (STAT360=0 OR STAT360=68 OR STAT360=69 OR STAT360=70 OR STAT360=42 OR STAT360=35 OR STAT360=65 OR STAT360=3 OR STAT360=51 OR STAT360=44 OR STAT360=52 OR STAT360=67)]:%NAME%{%RED%T0 Rathma Belt%CL%%NAME%}%CONTINUE%//
+// 25 PLR, 60+Life/20+Str/40+Life,10+Str/30+Life,15+Str, 10+FCR/17+FHR/80+Life,20+Str/20+C.Res/20+F.Res/20+P.Res, 2%MaxRes
+ItemDisplay[(RARE OR CRAFT) BELT ID STAT110>24 (LIFE>59 OR STR>19 OR (LIFE>39 STR>9) OR (LIFE>29 STR>14)) (FCR>9 OR FHR>16 OR (LIFE>79 STR>19) OR CRES>19 OR FRES>19 OR PRES>19) (STAT40=2 STAT42=2 STAT44=2 STAT46=2)]:%NAME%{%RED%T2 Rathma Belt%CL%%NAME%}%CONTINUE%//
+
+// 0 PLR, 80+Life/25+Str/50+Life,10+Str/40+Life,15+Str, 10+FCR/17+FHR/80+Life,20+Str, 20+C.Res/20+F.Res/20+P.Res, Uncorrupted/Str/Dex/Vit/FCR/FHR/AllAttr/AR/AllRes/%PDR/FRW/%Block
+ItemDisplay[(RARE OR CRAFT) BELT ID !STAT110>0 (LIFE>79 OR STR>24 OR (LIFE>49 STR>9) OR (LIFE>39 STR>14)) (FCR>9 OR FHR>16 OR (LIFE>79 STR>19)) (CRES>19 OR FRES>19 OR PRES>19) (STAT360=0 OR STAT360=68 OR STAT360=69 OR STAT360=70 OR STAT360=42 OR STAT360=35 OR STAT360=65 OR STAT360=3 OR STAT360=51 OR STAT360=44 OR STAT360=52 OR STAT360=67)]:%NAME%{%RED%T0 Rathma Belt%CL%%NAME%}%CONTINUE%//
+// 0 PLR, 80+Life/25+Str/50+Life,10+Str/40+Life,15+Str, 10+FCR/17+FHR/80+Life,20+Str, 20+C.Res/20+F.Res/20+P.Res, 2%MaxRes
+ItemDisplay[(RARE OR CRAFT) BELT ID !STAT110>0 (LIFE>79 OR STR>24 OR (LIFE>49 STR>9) OR (LIFE>39 STR>14)) (FCR>9 OR FHR>16 OR (LIFE>79 STR>19)) (CRES>19 OR FRES>19 OR PRES>19) (STAT40=2 STAT42=2 STAT44=2 STAT46=2)]:%NAME%{%RED%T2 Rathma Belt%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Belts - 2% Max Res
+// 2% MaxRes (c), 30+Life/15+Str, 5+%PDR/10+FCR/17+FHR/25%PLR, 19+C.Res/19+L.Res/19+F.Res/19+P.Res
+ItemDisplay[(RARE OR CRAFT) BELT ID (STAT40=2 STAT42=2 STAT44=2 STAT46=2) (LIFE>29 OR STR>14) (STAT36>4 OR FHR>9 OR FCR>9 OR STAT110>24) (CRES>19 OR LRES>19 OR FRES>19 OR PRES>19)]:%NAME%{%GREEN%***%DARK_GREEN%**%BLUE%**   %PURPLE%Max Resistances   %BLUE%**%DARK_GREEN%**%GREEN%***%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Chest - PLR
+// 75 PLR, 30+Life/15+Str/15+Dex/+LifePerLevel, 20+FCR/24+FHR/100+ED/3Sockets/15+AllRes/+1ClassSkill, Uncorrupted/MaxFireRes/MaxColdRes/MaxPsnRes/Max%Life/20FRW/+1AllSkill/CBF/FHR/FCR/%PDR/AllRes/SingleRes
+ItemDisplay[(RARE OR CRAFT) CHEST ID STAT110>74 (LIFE>29 OR STR>14 OR DEX>14 OR STAT216>0) (FCR>19 OR FHR>23 OR EDAM>99 OR SOCK=3 OR RES>14 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0) (STAT360=0 OR STAT360=53 OR STAT360=54 OR STAT360=56 OR STAT360=43 OR STAT360=44 OR ALLSK=1 OR STAT360=62 OR STAT360=45 OR STAT360=35 OR STAT360=42 OR STAT360=52 OR STAT360=51 OR STAT360=36 OR STAT360=37 OR STAT360=38 OR STAT360=39)]:%NAME%{%RED%Rathma Chest%CL%%NAME%}%CONTINUE%//
+
+// Rare Circlets - PLR
+// 50-75 PLR, 30+Life/LifePerLevel/15+Str/15+Dex, 20+FCR/20+FRW/15+AllRes/3Sockets, +2-3 to Class/Tab Skills
+ItemDisplay[RARE CIRC ID STAT110>49 (LIFE>29 OR STAT216>0 OR STR>14 OR DEX>14) (FCR>19 OR FRW>19 OR RES>14 OR SOCK=3) (TABSK40>1 OR TABSK42>1 OR TABSK32>1 OR TABSK33>1 OR TABSK34>1 OR TABSK24>1 OR TABSK25>1 OR TABSK16>1 OR TABSK17>1 OR TABSK18>1 OR TABSK8>1 OR TABSK9>1 OR TABSK10>1 OR TABSK48>1 OR TABSK49>1 OR TABSK50>1 OR TABSK0>1 OR TABSK1>1 OR TABSK2>1 OR CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1)]:%NAME%{%RED%Rathma Circlet%CL%%NAME%}%CONTINUE%//
+
+// Rare/Crafted Gloves - PLR
+// 25 PLR, 20IAS, +2 Bow/Jav/M.Arts, Uncorrupted/30+IAS/20+Life/5+AllRes/3+Attr/-%TargetDef/100+AR/SingleResCorr, Uncorrupted/30+IAS/10+%AR/HFD/10+Str/10+Dex/20+SingleResist
+ItemDisplay[(RARE OR CRAFT) GLOVES ID STAT110>24 IAS>19 (TABSK0=2 OR TABSK2=2 OR TABSK50=2) (STAT360=0 OR IAS>29 OR LIFE>19 OR RES>4 OR (STAT0>2 STAT1>2 STAT2>2 STAT3>2) OR STAT116>0 OR AR>99 OR STAT360=36 OR STAT360=37 OR STAT360=39) (STAT360=0 OR IAS>29 OR STAT119>9 OR STAT118=1 OR STR>9 OR DEX>9 OR CRES>19 OR FRES>19 OR PRES>19)]:%NAME%{%RED%Rathma Gloves%CL%%NAME%}%CONTINUE%//
+
+//-----------------------------------------------------------------------------------
+
+
 
 //-----------------------------------------------------------------------------------
 // LLD Jewels Pts
@@ -2823,7 +2877,7 @@ ItemDisplay[UNI !ID 9lw]: %CONTINUE%Greater Claws (No Unique for this base)
 ItemDisplay[UNI !ID 9tw]: %CONTINUE%Bartucs Cut-Throat - Greater Talons
 ItemDisplay[UNI !ID 9qr]: %CONTINUE%Scissors Quhab (No Unique for this base)
 ItemDisplay[UNI !ID 7ar]: %CONTINUE%Suwayyah (No Unique for this base)
-ItemDisplay[UNI !ID 7wb]: %CONTINUE%Jadetalon - Wrist Sword
+ItemDisplay[UNI !ID 7wb]: %CONTINUE%Jade Talon - Wrist Sword
 ItemDisplay[UNI !ID 7xf]: %CONTINUE%War Fist - Whispering Mirage
 ItemDisplay[UNI !ID 7cs]: %CONTINUE%Shadowkiller - Battle Cestus
 ItemDisplay[UNI !ID 7lw]: %CONTINUE%Firelizards Talons - Feral Claws
