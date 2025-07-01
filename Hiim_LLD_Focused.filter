@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 30%CL%Season 11 - version 82%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated July 1%CL%Season 11 - version 83%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -2513,7 +2513,6 @@ ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa5]: %NAME%%MAP-97%%TIER-2%%GREEN% [
 ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa6]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Targe
 ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa7]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]// Akaran Rondache
 ItemDisplay[(MAG OR RARE) ILVL>50 !ETH btl MAPID=83]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
-ItemDisplay[RARE aqv MAPID=83]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD]
 ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
 ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (am1 OR am5 OR am6 OR ama)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
 ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (ne5 OR ne4)]: %NAME%%MAP-97%%TIER-2%%GREEN% [LLD Craft]
@@ -2564,6 +2563,8 @@ ItemDisplay[!ID ETH SIN (MAG OR RARE) FILTLVL<9]: %DOT-ED%%TIER-6%%NAME% %GREEN%
 // Generic
 ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all throwing eth weapons
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %NAME% %GREEN%[Craft]//Catch all eth weapons when lower filter level
+ItemDisplay[RARE aqv !ID]: %NAME%%MAP-97%%TIER-2%
+ItemDisplay[MAG aqv !ID FILTLVL<5]: %NAME%%MAP-97%%TIER-2%
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -2602,6 +2603,16 @@ ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw
 
 ItemDisplay[SET !ID (vbt OR vgl OR lgl OR lbl OR lbt)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*%TIER-6%
 
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// Shopping extra
+//-----------------------------------------------------------------------------------
+// LLD Staff
+ItemDisplay[ID SHOP (CHSK54>0) FCR>29 STAFF LVLREQ<31]: %PURPLE%* * *   LLD FCR Teleport Charges Staff [LLD]   * * *{%RED%***   %PURPLE%GG LLD FCR Teleport Charges Staff%RED%   ***} // GG Teleport charges FCR
+ItemDisplay[ID SHOP (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %ORANGE%* * *   LLD FCR Teleport Charges Staff [LLD]   * * *{%RED%***   %PURPLE%LLD FCR Teleport Charges Staff%RED%   ***}  // Teleport charges FCR
+ItemDisplay[ID SHOP STAFF]: {%NAME%} // Hide the rest
+// No longer possible because of automod ItemDisplay[ID (CHSK54>0) STAFF LVLREQ<31]: %GREEN%LLD FCR Teleport Charges Staff [LLD]{%GREEN%LLD Teleport Charges Staff} // Teleport charges
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
