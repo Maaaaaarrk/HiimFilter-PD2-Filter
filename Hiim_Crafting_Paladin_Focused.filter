@@ -21,7 +21,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated July 1%CL%Season 11 - version 83%CL%HiimFilter - Crafting - Paladin -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated July 1%CL%Season 11 - version 85%CL%HiimFilter - Crafting - Paladin -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -6834,6 +6834,7 @@ ItemDisplay[SK226>2 CLVL<80 FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Le
 
 ItemDisplay[DRUID CL1 FILTLVL<3 (MAG OR RARE) !ID]: %NAME%{%NAME%}
 
+ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SOCK=0 OR SOCK=4) FILTLVL<3 DRUID]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%}
 //------------------------------------
 //-----Amazon
 // Loyalty Bow
@@ -6878,6 +6879,7 @@ ItemDisplay[SHIELD NMAG DIFF<2 FILTLVL<3 SOCK=3]: %ORANGE%** %GRAY%%NAME% %ORANG
 ItemDisplay[WEAPON ELT MAG CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON EXC MAG DIFF<2 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON ETH CLVL<80 FILTLVL<2]: %NAME%{%NAME%}//melee for leveling
+ItemDisplay[NMAG STAFF ELT !RW SOCK=4 FILTLVL<3]: %PX-62%%NAME% %ORANGE%****{%RED%Memory Base%CL%%NAME%}
 
 // mag/rare on lower levels
 ItemDisplay[RARE (FILTLVL<3 OR CLVL<80)]: %NAME%{%NAME%}
