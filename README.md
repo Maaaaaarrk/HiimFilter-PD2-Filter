@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated August 11th Season 11 - version 103
+## Last updated August 15th Season 11 - version 104
 ## NOTE Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 * To confirm installation check tool tip on the Cube
 [img1](examples/cube.png?raw=true)
@@ -23,8 +23,9 @@ Cube will state current filter version & choosen filter level information
 * 6: Stricter NO HP/MP
 * 7: Extremely Strict (This is VERY restrictive, lots of items no longer chat notify)
 * 8: High Roller (Most restrictive, Only GG items)
-* 9: Rejuvs Only (Designed for group play where you only pick-up the Purple Gatorade)
-* 10: No Items Out of Town (Designed for group play where you aimt to pick-up NOTHING)
+* 9: Currency & Rejuvs Only (Designed for group play where you only pick-up the Purple Gatorade & Stackables)
+* 10: Currency Only (Designed for group play where you only pick-up stackables)
+* 11: No Items Out of Town (Designed for group play where you aimt to pick-up NOTHING)
 ## Helper text
 * Check Tooltip on Boss mats for help on Uber Bosses
 * Check Tooltip on keys tooltip for pathing help
