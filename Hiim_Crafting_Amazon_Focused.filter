@@ -21,19 +21,20 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated August 11th%CL%Season 11 - version 103%CL%HiimFilter - Crafting - Amazon -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated August 15th%CL%Season 11 - version 104%CL%HiimFilter - Crafting - Amazon -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
-ItemDisplay[box FILTLVL=3]: %NAME%{%NAME% Strict & Crafting}%CONTINUE%
-ItemDisplay[box FILTLVL=4]: %NAME%{%NAME% Strict & Crafting & No HP/MP}%CONTINUE%
+ItemDisplay[box FILTLVL=3]: %NAME%{%NAME% Strict}%CONTINUE%
+ItemDisplay[box FILTLVL=4]: %NAME%{%NAME% Strict & No HP/MP}%CONTINUE%
 ItemDisplay[box FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
 ItemDisplay[box FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
 ItemDisplay[box FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
 ItemDisplay[box FILTLVL=8]: %NAME%{%NAME% High roller}%CONTINUE%
-ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% Rejuvs Only - No Other Items Out of Town}%CONTINUE%
-ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
+ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% Currency & Rejuvs Only - No Other Items Out of Town}%CONTINUE%
+ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% Currency Only - No Other Items Out of Town}%CONTINUE%
+ItemDisplay[box FILTLVL=11]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
 
 ItemDisplay[box]: %NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[box CLVL=99]: %NAME%{%CL%%PURPLE%Grats on 99%CL%%CL%%NAME%}%CONTINUE%
@@ -71,14 +72,15 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide jun
 
 
 //-----------------------------------------------------------------------------------
-// POTIONS ONLY FILTER ENFORCEMENT
+// ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
 ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
 ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
-ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP]:%NOTIFY-DEAD%
+ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
+ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -6576,7 +6578,7 @@ ItemDisplay[((CHEST OR HELM OR CIRC OR SHIELD) OR WEAPON) (RARE OR CRAFT OR UNI 
 // TOOLTIPS - ALVL
 //-----------------------------------------------------------------------------------
 
-// TODO currently bugged ItemDisplay[stat360=0 (ARMOR OR WEAPON OR rin OR amu) (RARE OR MAG) ID SOCK=0]:%NAME%{%NAME%%CL%%WHITE%Affix level: %ALVL%}%CONTINUE%
+// currently bugged ItemDisplay[stat360=0 (ARMOR OR WEAPON OR rin OR amu) (RARE OR MAG) ID SOCK=0]:%NAME%{%NAME%%CL%%WHITE%Affix level: %ALVL%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 
