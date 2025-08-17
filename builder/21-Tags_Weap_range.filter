@@ -3,7 +3,7 @@
 // Weapon range
 //-----------------------------------------------------------------------------------
 // Weapon Speed and Range
-ItemDisplay[WEAPON !BOW !XBOW !WAND !SOR FILTLVL<3]: %NAME%{%CL%%WHITE%Base Speed: %WPNSPD% || Range: +%RANGE%}%CONTINUE%
-ItemDisplay[WEAPON (BOW OR XBOW) FILTLVL<3]: %NAME%{%CL%%WHITE%Base Speed: %WPNSPD%}%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON !BOW !XBOW !WAND !SOR]: %NAME%{%CL%%WHITE%Base Speed: %WPNSPD% || Range: +%RANGE%}%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (BOW OR XBOW)]: %NAME%{%CL%%WHITE%Base Speed: %WPNSPD%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
