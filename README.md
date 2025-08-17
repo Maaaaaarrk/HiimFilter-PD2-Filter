@@ -1,16 +1,18 @@
 # Project Diablo 2 (PD2) Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated August 15th Season 11 - version 104
+## Last updated August 17th Season 11 - version 105
 ## NOTE Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 * To confirm installation check tool tip on the Cube
 [img1](examples/cube.png?raw=true)
 ## Filters
 * Hiim.filter - All in one filter
 * Hiim_Crafting.filter - Same as all in one filter, but good crafting bases are not limited to filter level 3/4
-* Hiim_Crafting_<Class Name>.filter - Will show items targeted to this class at higher filter levels
+* Hiim_Crafting_-Class Name-.filter - Will show items targeted to this class at higher filter levels
+* Hiim_Hyper.filter - All in one filter - Hyper themed - Work in progress
 * Hiim_LLD_Focused.filter - Filter that will show LLD relevant items at higher filter levels
 * Hiim_Mystery.filter - Same as all in one filter, but Runes Pul(21)+ and GG uniques are renamed
+* Hiim_Only_Fitler.filter - All in one filter - No item display changes only filtering - Work in progress
 * Hiim_Vanilla_Plus.filter - Same as all in one filter, but without all of the item re-naming (example identified rares or unidentified uniques)
 ## Filter Levels
 Cube will state current filter version & choosen filter level information

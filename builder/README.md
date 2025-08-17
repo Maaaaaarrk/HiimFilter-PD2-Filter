@@ -8,9 +8,11 @@
 ## Filters
 * Hiim.filter - All in one filter
 * Hiim_Crafting.filter - Same as all in one filter, but good crafting bases are not limited to filter level 3/4
-* Hiim_Crafting_<Class Name>.filter - Will show items targeted to this class at higher filter levels
+* Hiim_Crafting_-Class Name-.filter - Will show items targeted to this class at higher filter levels
+* Hiim_Hyper.filter - All in one filter - Hyper themed - Work in progress
 * Hiim_LLD_Focused.filter - Filter that will show LLD relevant items at higher filter levels
 * Hiim_Mystery.filter - Same as all in one filter, but Runes Pul(21)+ and GG uniques are renamed
+* Hiim_Only_Fitler.filter - All in one filter - No item display changes only filtering - Work in progress
 * Hiim_Vanilla_Plus.filter - Same as all in one filter, but without all of the item re-naming (example identified rares or unidentified uniques)
 ## Filter Levels
 Cube will state current filter version & choosen filter level information

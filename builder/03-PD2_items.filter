@@ -3,23 +3,21 @@
 // PD2 ITEMS
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS - General
-ItemDisplay[wss]: %PURPLE%WORLDSTAR!!! %CONTINUE%
 ItemDisplay[wss QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
-ItemDisplay[wss]: %MAP-62%%ORANGE%O O O %NAME%%ORANGE%O O O%WHITE%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
-
-ItemDisplay[cwss QTY=1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %DARK_GREEN%<> <> <>{%RED%Corrupts %TAN%your Annihilus}
-ItemDisplay[cwss QTY>1]: %MAP-0A%%DARK_GREEN%<> <> <> %ORANGE%Tainted %PURPLE%WORLDSTAR!!! %ORANGE%QTY %QTY% %DARK_GREEN%<> <> <>{%RED%Corrupts %TAN%your Annihilus}
-ItemDisplay[jewf]: %ORANGE%X    %GRAY%%NAME%  %ORANGE%X%WHITE%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
-ItemDisplay[lbox]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[lpp]: %MAP-4A%%ORANGE%<> <> <> %NAME% %ORANGE%<> <> <>{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[imrn]: %MAP-4A%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>{%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
+ItemDisplay[wss]: %MAP-62%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
+ItemDisplay[cwss QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
+ItemDisplay[cwss]: %MAP-0A%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%RED%Corrupts %TAN%your Annihilus}
+ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM_LEFT%    %GRAY%%NAME%    %MAG_DBL_AFFIX_ITEM_RIGHT%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
+ItemDisplay[lbox]: %MAP-4A%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lpp]: %MAP-4A%%GEN_RARE_ITEM_LEFT% %NAME% %GEN_RARE_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[imrn]: %MAP-4A%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
-ItemDisplay[llmr]: %MAP-4A%%PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%>
-ItemDisplay[lsvl]: %MAP-4A%%PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%>
-ItemDisplay[iwss]: %MAP-4A%%PURPLE%O O %NAME% %PURPLE%O O
-ItemDisplay[cm2f]: %MAP-4A%%ORANGE%O O %NAME% %ORANGE%O O
-ItemDisplay[rtp]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma Tome of Town Portal
-ItemDisplay[rid]: %MAP-0A%%RED%X X X X %ORANGE%%NAME% %RED%X X X X   // Rathma Tome of Identify
+ItemDisplay[llmr]: %MAP-4A%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
+ItemDisplay[lsvl]: %MAP-4A%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
+ItemDisplay[iwss]: %MAP-4A%%GEN_ITEM_ALT_LEFT% %NAME% %GEN_ITEM_ALT_RIGHT%
+ItemDisplay[cm2f]: %MAP-4A%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%
+ItemDisplay[rtp]: %MAP-0A%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Town Portal
+ItemDisplay[rid]: %MAP-0A%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Identify
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[(key OR rkey) MAPID=1]: %NAME%{%BLACK%-%CL%%GRAY%Town!%CL%%BLACK%-%CL%%GOLD%Rogue Encampment%CL%%NAME%}%CONTINUE%
@@ -193,4 +191,4 @@ ItemDisplay[(key OR rkey) MAPID<132]:%NAME%{%BLUE%maxroll.gg/d2/resources/map-re
 ItemDisplay[key ASSASSIN]:{%NAME%}
 ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%NAME%{%NAME%}
 ItemDisplay[key]:{%NAME%}
-ItemDisplay[rkey]: %DARK_GREEN%>> Y <<    %ORANGE%Skeleton Key   %DARK_GREEN%>> Y <<%MAP-68%{%NAME%}
+ItemDisplay[rkey]: %RARE_GG_ITEM_ALT_LEFT%    %ORANGE%%NAME%   %RARE_GG_ITEM_ALT_RIGHT%%MAP-68%{%NAME%}
