@@ -17,7 +17,7 @@
 // Band of Skulls - Troll Belt
 // Itheraels Path - Mirrored Boots
 // Overlords Helm - Giant Conch
-// Hadriels Hand - Conquest Sword 
+// Hadriels Hand - Conquest Sword
 
 ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl OR 7bs OR 7cr2)]: %BORDER-9B%%SOUNDID-2679%%UNI_BOSS_ITEM_LEFT%     %NAME%     %UNI_BOSS_ITEM_RIGHT%
 
@@ -146,7 +146,7 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 
 // Stalker's Cull - Runic Talons
 // Blackoak Shield - Luna
 // Corpsemourn - Ornate Plate
-// Titans Grip - Bramble Mitts  
+// Titans Grip - Bramble Mitts
 // Twilights Reflection - Hyperion
 // Guardian Angel - Templar Coat
 // Pus Spitter - Siege Crossbow
@@ -292,7 +292,7 @@ ItemDisplay[SET !ID (amu OR rin) FILTLVL<8]: %NAME%
 
 // Only ETH
 // Immortal Kings Stone Crusher - Ogre Maul
-// Bul-Kathos Sacred Charge - Colossus Blade 
+// Bul-Kathos Sacred Charge - Colossus Blade
 // Bul-Kathos Tribal Guardian - Colossus Sword
 
 ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb)]: %MAP-84%%SET_GG_ITEM_LEFT%  %NAME%  %SET_GG_ITEM_RIGHT%
@@ -388,13 +388,4 @@ ItemDisplay[SET !ID FILTLVL<7 (vbt OR vgl OR lgl OR lbl OR lbt)]: %MAP-84%%SET_T
 // Rainbow Facet
 ItemDisplay[jew UNI !ID]: %BORDER-68%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %FACET_ITEM_RIGHT%
 
-// All other conditions
-ItemDisplay[(UNI OR SET) !ID (MAPID=181 OR MAPID=182)]: %NAME%// Warrior Map catch rest
-ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %DOT-68%%TIER-6%%NAME%// Eth uni show all
-ItemDisplay[SET !ID ETH]: %DOT-84%%TIER-6%%NAME%// Eth set show all
-ItemDisplay[ELT UNI !ID FILTLVL<7]: %PX-68%%TIER-4%%NAME%// Show all elite level 1-6 announce 1-4
-ItemDisplay[UNI !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
-ItemDisplay[SET !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
-ItemDisplay[UNI !ID FILTLVL<5]: %PX-68%%TIER-2%%GOLD%%NAME%
-ItemDisplay[SET !ID FILTLVL<5]: %PX-84%%TIER-2%%GREEN%%NAME%
 //-----------------------------------------------------------------------------------
