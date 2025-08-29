@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated August 21th Season 11 - version 107
+## Last updated August 28th Season 11 - version 108
 ## NOTE Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 * To confirm installation check tool tip on the Cube
 [img1](examples/cube.png?raw=true)
