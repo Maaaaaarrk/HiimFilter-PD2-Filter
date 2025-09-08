@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated September 7th%CL%Season 11 - version 109%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated September 8th%CL%Season 11 - version 110%CL%HiimFilter - Crafting -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -6670,9 +6670,10 @@ ItemDisplay[9tw (SK259>2 OR SK262>2 OR SK271>2 OR SK274>2 OR SK269>2 OR SK366>2 
 // Low/mid level nec heads
 // pnova descreate teeth bone spear ce
 ItemDisplay[FILTLVL<5 WAND !(wnd OR ywn OR 9wn) (SK67>2 OR SK74>2 OR SK84>2 OR SK83>2 OR SK92>2) !INF NMAG !RW !(SOCK=1)]: %DOT-D6%%NAME%{%NAME%}
-ItemDisplay[FILTLVL<3 NEC (SK67>2 OR SK74>2 OR SK84>2 OR SK83>2 OR SK92>2) !INF NMAG !RW !(SOCK=1)]: %DOT-D6%%NAME% %LEVELING_TAG%{%NAME%}
+ItemDisplay[FILTLVL<3 NEC (SK67>2 OR SK74>2 OR SK84>2 OR SK83>2 OR SK92>2 OR SK75>2) !INF NMAG !RW !(SOCK=1)]: %DOT-D6%%NAME% %LEVELING_TAG%{%NAME%}
 // skeleton warr, arch, clay gol, fire gol
 ItemDisplay[FILTLVL<3 (WAND OR NEC) !(wnd OR ywn OR 9wn) (SK70>2 OR SK89>2 OR SK75>2 OR SK94>2) !INF NMAG !RW !(SOCK=1)]: %DOT-D6%%NAME% %LEVELING_TAG%{%NAME%}
+ItemDisplay[FILTLVL<5 (WAND OR NEC) !(wnd OR ywn OR 9wn) (SK70>2 OR SK89>2 OR SK75>2 OR SK94>2) !INF NMAG !RW !(SOCK=1)]: %NAME%{%NAME%}
 
 //Throwing bases
 ItemDisplay[(7gl OR 7pi OR 7s7 OR 7ts) ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG (EDAM>4 OR FILTLVL<5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
