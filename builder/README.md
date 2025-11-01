@@ -1,9 +1,9 @@
-# Project Diablo 2 (PD2) Himm Loot Filters
+# Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
 ## {{REPLACE_ME}}
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
-##
+## Put all feedback in the PD2 Discord #lootfilter channel
 ## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 * To confirm installation check tool tip on the Cube
 ![cube](examples/cube.png?raw=true)
