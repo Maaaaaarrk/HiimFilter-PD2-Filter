@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 16th%CL%Season 12 - version 1%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 17th%CL%Season 12 - version 2%CL%HiimFilter -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -4105,7 +4105,7 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %MAP-84%%SET_TIER2_ITEM_LEFT%  %NAME%
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
 // Arcannas Flesh Light Plate
-ItemDisplay[SET !ID FILTLVL<9 (ltp)]: %MAP-84%%SOUNDID-4700%%SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%
+// ItemDisplay[SET !ID FILTLVL<9 (ltp)]: %MAP-84%%SOUNDID-4700%%SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%
 
 // Natalyas Shadow - Loricated Mail
 // Natalyas Totem - Grim Helm
@@ -6743,8 +6743,8 @@ ItemDisplay[2H !(THROWING OR (((mau OR gma OR clm OR gis OR bsw OR tri OR brn OR
 
 //corruptions
 // quivers
-ItemDisplay[(aqv OR cqv)) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
-ItemDisplay[(aqv2 OR aqv3 OR cqv2 OR cqv3)) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
+ItemDisplay[(aqv OR cqv) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
+ItemDisplay[(aqv2 OR aqv3 OR cqv2 OR cqv3) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
 
 // helmets & circlets
 ItemDisplay[ci0 (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL<26]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
