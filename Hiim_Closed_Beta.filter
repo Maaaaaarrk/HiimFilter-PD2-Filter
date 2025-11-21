@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 17th%CL%Season 12 - version 2%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 21st%CL%Season 12 - version 3%CL%HiimFilter -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -3819,9 +3819,8 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Ormus Robes - Dusk Shroud
 // Arkaines Valor - Balrog Skin
 // Steel Carapace - Shadow Plate
-// The Reapers Toll - Thresher
 
-ItemDisplay[UNI !ID (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 7s8)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4726%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR 7gd OR uhc OR ci2 OR nef OR uui OR upl OR uul)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4726%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // GG Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -3831,15 +3830,20 @@ ItemDisplay[UNI !ID (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm
 // Steel Pillar - War Pike
 // War Fist - Whispering Mirage
 // Warlords Trust - Military Axe
+// The Reapers Toll - Thresher
+// Doombringer - Champion Sword
+// Lacerator - Winged Axe
+// Titans Revenge - Ceremonial Javelin
+// Silks of the Victor - Ancient Armor
+// Guardian Angel - Templar Coat
 
-ItemDisplay[UNI !ID ETH (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4726%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4726%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // Tier 3 Unique Callouts
 // Filter level 1-8
 //-----------------------------------------------------------------------------------
 // Thunderstroke - Matriarchal Javelin
 // Cyclopean Roar - Jawbone Visor
-// Demonhorns Edge - Destroyer Helm
 // Halaberds Reign - Conqueror Crown
 // Jalals Mane - Totemic Mask
 // Spirit Keeper - Earth Spirit
@@ -3875,9 +3879,14 @@ ItemDisplay[UNI !ID ETH (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la)]: %BORDER-9B%%U
 // Waterwalk - Sharkskin Boots
 // War Fist - Whispering Mirage
 // Martyrdom - Overseer Skull
+// The Reapers Toll - Thresher
+// Vampire Gaze - Grim Helm
+// Stalker's Cull - Runic Talons
+// Razortail - Sharkskin Belt
+// Widowmaker - Ward Bow
 
 
-ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bad OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned)]: %MAP-68%%SOUNDID-4723%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR 7tw OR zvb OR 6sw)]: %MAP-68%%SOUNDID-4723%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3895,7 +3904,6 @@ ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bad OR bae OR dra OR drd OR xhn OR 
 // Boneshade Lich - Wand
 // Toothrow - Sharktooth Armor
 // Merman's Spocket - Wyrmhide Boots
-// Vampire Gaze - Grim Helm
 // Marrowwalk - Boneweave Boots
 // Warlords Trust - Military Axe
 // Hellslayer - Decapitator
@@ -3905,14 +3913,14 @@ ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bad OR bae OR dra OR drd OR xhn OR 
 // Skull Collector - Rune Staff
 // Eschutas Temper - Eldritch Orb
 // Shadow Dancer - Myrmidon Greaves
+// Demonhorns Edge - Destroyer Helm
 
-ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 7bl OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR xh9 OR umb OR 9la OR 7bt OR pae OR xtg OR 7lw OR 7wa OR 8ws OR obc OR uhb)]: %MAP-68%%SOUNDID-4717%%UNI_TIER2_ITEM_LEFT%  %NAME%  %UNI_TIER2_ITEM_LEFT%
+ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 7bl OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR umb OR 9la OR 7bt OR pae OR xtg OR 7wa OR 8ws OR obc OR uhb OR bad)]: %MAP-68%%SOUNDID-4717%%UNI_TIER2_ITEM_LEFT%  %NAME%  %UNI_TIER2_ITEM_LEFT%
 
 // Tier 1 Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
 
-// Stalker's Cull - Runic Talons
 // Blackoak Shield - Luna
 // Corpsemourn - Ornate Plate
 // Titans Grip - Bramble Mitts
@@ -3931,15 +3939,15 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 
 // Fenris - Alpha Helm
 // Atmas Wail - Embossed Plate
 // Skullders Ire - Russet Armor
+// Treads of Cthon - Chain Boots
 //%SOUNDID-2666%
 
-ItemDisplay[UNI !ID FILTLVL<8 (7tw OR uml OR xar OR ulg OR urg OR xlt OR 8mx OR drc OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 8rx OR ba7 OR dr6 OR xth OR xpl)]: %DOT-68%%UNI_TIER1_ITEM_LEFT%  %NAME%  %UNI_TIER1_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<8 (uml OR xar OR ulg OR urg OR xlt OR 8mx OR drc OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 8rx OR ba7 OR dr6 OR xth OR xpl OR mbt)]: %DOT-68%%UNI_TIER1_ITEM_LEFT%  %NAME%  %UNI_TIER1_ITEM_RIGHT%
 
 
 // Tier 0 Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
-// Razortail - Sharkskin Belt
 // Venom Grip - Demonhide Gloves
 // Ghoulhide - Heavy Bracers
 // Hellmouth - War Gauntlets
@@ -3954,10 +3962,11 @@ ItemDisplay[UNI !ID FILTLVL<8 (7tw OR uml OR xar OR ulg OR urg OR xlt OR 8mx OR 
 // Elite arrows
 // Elite bolts
 // exceptional arrows
-//  exceptional bolts
+// exceptional bolts
+// Firelizards Talons - Feral Claws
 // %SOUNDID-2666%
 
-ItemDisplay[UNI !ID FILTLVL<8 (zvb OR xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR aqv2 OR aqv3 OR cqv2 OR cqv3)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<8 (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR aqv2 OR aqv3 OR cqv2 OR cqv3 OR 7lw)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
 
 
 // Tier 0 Unique Callouts
@@ -3966,7 +3975,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (zvb OR xlg OR xmg OR xhg OR baf OR utp OR uvb OR 
 // Black Hades - Chaos Armor
 // Goldwrap - Heavy Belt
 // Gorefoot - Heavy Boots
-// Treads of Cthon - Chain Boots
 // Infernostride - Demonhide Boots
 // The Hand of Broc - Leather Gloves
 // Biggins Bonnet - Cap
@@ -4006,14 +4014,12 @@ ItemDisplay[UNI !ID FILTLVL<8 (zvb OR xlg OR xmg OR xhg OR baf OR utp OR uvb OR 
 // Spike Thorn - Blade Barrier
 // Que-Hegans Wisdom - Mage Plate
 // Flamebellow - Balrog Blade
-// Firelizards Talons - Feral Claws
 // Gerkes Sanctuary - Pavise
 // Head Hunters Glory - Troll Nest
 // Grims Burning Dead Grim - Scythe
 // Wolfhowl - Fury Visor
 // Wizendraw - Long Battle Bow
 // Magewrath - Rune Bow
-// Widowmaker - Ward Bow
 // Heavenly Garb - Light Plate
 // Shatterblade - Mithril Point
 // Wraithskin - Diamond Mail
@@ -4028,7 +4034,7 @@ ItemDisplay[UNI !ID FILTLVL<8 (zvb OR xlg OR xmg OR xhg OR baf OR utp OR uvb OR 
 // arrows
 // bolts
 
-ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR mbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 9gd OR ame OR neg OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR 6sw OR ltp OR 7di OR ung OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx OR fhl OR 9sr OR aqv OR cqv)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7sr OR 8ls OR 9fc OR 7fb OR 9b9 OR 9gd OR ame OR neg OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR ltp OR 7di OR ung OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx OR fhl OR 9sr OR aqv OR cqv)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
@@ -4065,7 +4071,8 @@ ItemDisplay[SET !ID lbt]: %MAP-84%%SOUNDID-4719%%SET_GG_ITEM_LEFT%  %NAME%  %SET
 // Set Ring
 // Set Amulet
 ItemDisplay[SET !ID (amu OR rin) FILTLVL<7]: %MAP-84%%SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
-ItemDisplay[SET !ID (amu OR rin) FILTLVL<8]: %NAME%
+ItemDisplay[SET !ID amu FILTLVL<8]: %NAME%
+ItemDisplay[SET !ID rin FILTLVL<9]: %NAME%
 
 // Only ETH
 // Immortal Kings Stone Crusher - Ogre Maul
@@ -4083,9 +4090,11 @@ ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb)]: %MAP-84%%SET_GG_ITEM_LEFT%  %NAME%
 // Trang-Ouls Scales - Chaos Armor
 // Griswolds Redemption - Caduceus
 // Griswolds Honor - Vortex Shield
-// Deaths Hand - Leather Gloves
+// Deaths Hand - Leather Glove
+// Magnus Skin - Sharkskin Gloves
 
-ItemDisplay[SET !ID FILTLVL<9 (ne9 OR utc OR xmg OR uhm OR xul OR 7ws OR paf OR lgl)]: %MAP-84%%SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
+
+ItemDisplay[SET !ID FILTLVL<9 (ne9 OR utc OR xmg OR uhm OR xul OR 7ws OR paf OR lgl OR xvg)]: %MAP-84%%SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
 
 // Set tier 2 Set Callouts
 //-----------------------------------------------------------------------------------
