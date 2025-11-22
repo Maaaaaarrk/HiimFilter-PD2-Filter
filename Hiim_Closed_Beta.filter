@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 21st%CL%Season 12 - version 3%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 22nd%CL%Season 12 - version 4%CL%HiimFilter -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -244,6 +244,9 @@ Alias[SET_TIER2_ITEM_RIGHT]: %GREEN%* *
 // SET Tier1 Item
 Alias[SET_TIER1_ITEM_LEFT]: %GREEN%*
 Alias[SET_TIER1_ITEM_RIGHT]: %GREEN%*
+
+// RW Bases GG
+Alias[RW_BASE_GG_LEFT]: %BORDER-9B%%SOUNDID-4719%
 
 
 //-----------------------------------------------------------------------------------
@@ -4357,6 +4360,14 @@ ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=5)]:%CONT
 ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Dark Pact   < < < <%CL%%NAME%}
 ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Dark Pact   < < < <%CL%%NAME%}
 ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Dark Pact   < < < <%CL%%NAME%}
+// Amp Damage Skills Tab+Class+Skill+AllSK
+ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Amp Damage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Amp Damage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Amp Damage   < < < <%CL%%NAME%}
+// Lower Res Skills Tab+Class+Skill+AllSK
+ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lower Res   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lower Res   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lower Res   < < < <%CL%%NAME%}
 // Desecrate Skills Tab+Class+Skill+AllSK
 ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Desecrate   < < < <%CL%%NAME%}
 ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Desecrate   < < < <%CL%%NAME%}
@@ -6470,10 +6481,12 @@ ItemDisplay[(7wa OR 7gd OR 7p7) ETH !RW !INF (SOCK=0 OR SOCK=6) NMAG (EDAM=15 OR
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH !RW (SOCK=0 OR SOCK=6) !INF NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 
 // Chaos
-ItemDisplay[7xf !RW (SK263>2 OR SK252>2) ETH !INF SOCK=3 NMAG]: %DOT-D6%%NAME% %PURPLE%GG [Chaos]{%NAME%%CL%%PURPLE%GG Chaos base}
-ItemDisplay[7xf !RW (SK263>2 OR SK252>2) ETH !INF SOCK=0 NMAG]: %DOT-D6%%NAME% %PURPLE%GG [Chaos]{%NAME%%CL%%PURPLE%Larzuk for 3 sockets for GG Chaos base}
-ItemDisplay[7xf !RW (SK275>0 OR SK252>0 OR SK263>0) ETH !INF SOCK=3 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%[Chaos]{%NAME%%CL%%PURPLE%Chaos base}
-ItemDisplay[7xf !RW (SK275>0 OR SK252>0 OR SK263>0) ETH !INF SOCK=0 NMAG]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%[Chaos]{%NAME%%CL%%PURPLE%Larzuk for 3 sockets for Chaos base}
+ItemDisplay[7xf !RW SK263>2 SK252>2 ETH !INF SOCK=3 NMAG]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%GG [Chaos]{%NAME%%CL%%PURPLE%GG Chaos base}
+ItemDisplay[7xf !RW SK263>2 SK252>2 ETH !INF SOCK=0 NMAG]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%GG [Chaos]{%NAME%%CL%%PURPLE%Larzuk for 3 sockets for GG Chaos base}
+ItemDisplay[7xf !RW (SK263>2 OR SK252>2) ETH !INF SOCK=3 NMAG]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Chaos]{%NAME%%CL%%PURPLE%Chaos base}
+ItemDisplay[7xf !RW (SK263>2 OR SK252>2) ETH !INF SOCK=0 NMAG]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Chaos]{%NAME%%CL%%PURPLE%Larzuk for 3 sockets for GG Chaos base}
+ItemDisplay[7xf !RW (SK275>0 OR SK252>0 OR SK263>0) ETH !INF SOCK=3 NMAG]: %DOT-D6%%NAME% %DARK_GREEN%[Chaos]{%NAME%%CL%%PURPLE%Chaos base}
+ItemDisplay[7xf !RW (SK275>0 OR SK252>0 OR SK263>0) ETH !INF SOCK=0 NMAG]: %DOT-D6%%NAME% %DARK_GREEN%[Chaos]{%NAME%%CL%%PURPLE%Larzuk for 3 sockets for Chaos base}
 ItemDisplay[7xf !RW ETH (SOCK=0 OR SOCK=3) NMAG (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME% %DARK_GREEN%[Chaos]{%NAME%%CL%%GREEN%Chaos base}
 
 // lesser chaos base
@@ -6520,7 +6533,7 @@ ItemDisplay[CHEST ELT ETH !INF (SOCK=4 OR SOCK=0 OR SOCK=3) NMAG EDEF>0]: %DOT-D
 ItemDisplay[CHEST ELT ETH SUP (SOCK=4 OR SOCK=0 OR SOCK=3) NMAG FILTLVL<8]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[CHEST ELT ETH !INF (SOCK=4 OR SOCK=0 OR SOCK=3) NMAG FILTLVL<7]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[(xtp OR utp OR uui OR uea OR ula OR utu OR urs OR uar) SOCK=0 NMAG EDEF>0 (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
-ItemDisplay[CHEST ELT !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) DEF>900]: %DOT-D6%%PURPLE%O %NAME% %PURPLE%O{%NAME%}
+ItemDisplay[CHEST ELT !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) DEF>900]: %RW_BASE_GG_LEFT%%PURPLE%O %NAME% %PURPLE%O{%NAME%}
 ItemDisplay[xtp !INF !ETH NMAG !RW !SOCK=1 (EDEF=15 OR FILTLVL<7)]: %NAME%{%NAME%}
 ItemDisplay[CHEST ELT !INF NMAG !RW !(SOCK=1) (EDEF>10 OR FILTLVL<5) (FILTLVL<7 OR EDEF>14)]: %NAME%{%NAME%}
 ItemDisplay[CHEST EXC !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>9 (EDEF=15 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
@@ -6614,8 +6627,8 @@ ItemDisplay[fla NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[fla NMAG !RW !INF !ETH SOCK>2 FILTLVL<7]: %NAME%{%NAME%}
 
 // Wands Dominion SK94	Fire Golem SK85	Blood Golem SK367 Blood Warp SK91 Lower Resist SK68 Bone Armor SK95 revive
-ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK94>2 SK68>0 (SK91>0 OR SK95>0) !SOCK=1 NMAG !RW]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%%NL%%PURPLE%GG Dominion Base}
-ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK85>2 SK68>0 SK95>0 !SOCK=1 NMAG !RW]: %DOT-D6%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%%NL%%PURPLE%GG Dominion Base}
+ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK94>2 SK68>0 (SK91>0 OR SK95>0) !SOCK=1 NMAG !RW]: %RW_BASE_GG_LEFT%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%%NL%%PURPLE%GG Dominion Base}
+ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK85>2 SK68>0 SK95>0 !SOCK=1 NMAG !RW]: %RW_BASE_GG_LEFT%%PURPLE%O O %NAME% %PURPLE%O O{%NAME%%NL%%PURPLE%GG Dominion Base}
 ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK85>2 (SK68>0 OR SK95>0) !SOCK=1 NMAG !RW]: %DOT-D6%%NAME% %GREEN%****{%NAME%%NL%%GREEN%Dominion Base}
 ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK94>2 (SK367>0 OR SK68>0 OR SK91>0 OR SK95>0) !SOCK=1 NMAG !RW]: %DOT-D6%%NAME% %GREEN%****{%NAME%%NL%%GREEN%Dominion Base}
 ItemDisplay[WAND !(wnd OR ywn OR 9wn) SK85>2 (SK367>0 OR SK68>0 OR SK95>0) !SOCK=1 NMAG !RW]: %DOT-D6%%NAME% %GREEN%****{%NAME%%NL%%GREEN%Dominion Base}
@@ -6641,8 +6654,8 @@ ItemDisplay[ELT (7s8 OR 7pa OR 7m7) ETH NMAG !RW SOCK=0 FILTLVL<3]: %DOT-D6%%ORA
 
 // Staves
 // Infinity SK48 nova SK49 lightning SK38 Charged Bolt SK53 Chain Lightning SK57 Thunder Storm SK63 Lightning Mastery
-ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>2) NMAG !RW SOCK=4]: %DOT-9B%%NAME% %PURPLE%[Infinity]{%NAME%%CL%%PURPLE%GG Infinity base}
-ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>2) NMAG !RW SOCK=0]: %DOT-9B%%NAME% %PURPLE%[Infinity]{%GREEN%Hit 4 sockets for GG Infinity base%CL%%NAME%}
+ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>2) NMAG !RW SOCK=4]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Infinity]{%NAME%%CL%%PURPLE%GG Infinity base}
+ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>2) NMAG !RW SOCK=0]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Infinity]{%GREEN%Hit 4 sockets for GG Infinity base%CL%%NAME%}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) NMAG !RW SOCK=4 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Infinity]{%NAME%%CL%%GREEN%Good Infinity base}
 ItemDisplay[(6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) NMAG !RW SOCK=0 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Infinity]{%GREEN%Hit 4 sockets for Infinity base%CL%%NAME%}
 // Obsession SK59 blizzard SK39 ice bolt SK65 cold mastery SK46 1pt blaze
@@ -6660,10 +6673,10 @@ ItemDisplay[6ws (SK56>2 OR SK62>2) (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25 FI
 ItemDisplay[6ws (SK56>2 OR SK62>2) NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
 ItemDisplay[6ws (SK56>2 OR SK62>2) NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %DOT-9B%%NAME% %ORANGE%[Obsession]%GREEN%Hit 6 sockets for Obsession base%CL%%NAME%}
 // CTA
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=0]: %RW_BASE_GG_LEFT%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) SK58>0 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=5]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[CTA]{%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
-ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %PURPLE%[CTA]{%NAME%}
+ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=5]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[CTA]{%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=5]: %DOT-E1%%NAME% %ORANGE%[CTA]{%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK50>2 OR SK60>2) !INF NMAG !RW SOCK=0]: %DOT-E1%%NAME% %ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
