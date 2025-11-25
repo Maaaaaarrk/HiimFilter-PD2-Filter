@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 24th%CL%Season 12 - version 11
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 25th%CL%Season 12 - version 12
 %CL%HiimFilter - Only Filter Mode -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -587,16 +587,17 @@ ItemDisplay[ibk]: %RED%+%WHITE%ID Tome
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome
 
 // Juvs
-ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %WHITE%Rejuv %PURPLE%65%  %PURPLE%*
-ItemDisplay[rvl FILTLVL<7]: %PURPLE%*    %WHITE%Rejuv %PURPLE%65%%PURPLE%    *
-ItemDisplay[rvl FILTLVL<8]: %WHITE%Rejuv %PURPLE%65%
-ItemDisplay[rvl FILTLVL<9]: %WHITE%juv %PURPLE%65%
-ItemDisplay[rvl FILTLVL=9]: %PURPLE%GATORADE
+ItemDisplay[rvl]: %PURPLE%big%WHITE%Rejuv{Heals 65% of Life & Mana up to a limit}%CONTINUE%
+ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %NAME%  %PURPLE%*{%NAME%}
+ItemDisplay[rvl FILTLVL<7]: %PURPLE%*    %NAME%    %PURPLE%*{%NAME%}
+ItemDisplay[rvl FILTLVL<9]: %NAME%{%NAME%}
+ItemDisplay[rvl FILTLVL=9]: %PURPLE%GATORADE{%NAME%}
 ItemDisplay[rvl]:
-ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %WHITE%Rejuv %PURPLE%35% %PURPLE%*
-ItemDisplay[rvs FILTLVL<7]: %WHITE%juv%PURPLE%35%
-ItemDisplay[rvs FILTLVL<8]: %WHITE%j35%
-ItemDisplay[rvs FILTLVL=9]: %PURPLE%powerade
+ItemDisplay[rvs]: %WHITE%rejuv{Heals 35% of Life & Mana up to a limit}%CONTINUE%
+ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %NAME% %PURPLE%35% %PURPLE%*{%NAME%}
+ItemDisplay[rvs FILTLVL<7]: %NAME%%PURPLE%35%{%NAME%}
+ItemDisplay[rvs FILTLVL<8]: %NAME%{%NAME%}
+ItemDisplay[rvs FILTLVL=9]: %PURPLE%powerade{%NAME%}
 ItemDisplay[rvs]:
 
 // Hide bad pots when appropriate based on filter level
