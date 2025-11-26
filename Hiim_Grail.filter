@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 25th%CL%Season 12 - version 14%CL%HiimFilter - Grail Hunt -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 25th%CL%Season 12 - version 15%CL%HiimFilter - Grail Hunt -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -6080,6 +6080,9 @@ ItemDisplay[FILTLVL<5 (WAND OR NEC) !(wnd OR ywn OR 9wn) (SK70>2 OR SK89>2 OR SK
 ItemDisplay[(7gl OR 7pi OR 7s7 OR 7ts) ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG (EDAM>4 OR FILTLVL<5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[amf TABSK2=3 ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG (EDAM>4 OR FILTLVL<5) (EDAM=15 OR FILTLVL<7)]: %DOT-D6%%NAME%{%NAME%}
 ItemDisplay[THROWING ELT ETH !RW ETH (SOCK=0 OR SOCK=2 OR SOCK=3) NMAG EDAM>4 (EDAM=15 OR FILTLVL<7) FILTLVL<8]: %DOT-D6%%NAME%{%NAME%}
+
+//arrow bases for low levels
+ItemDisplay[(aqv3 OR cqv3) !RW SOCK=2 NMAG FILTLVL<3]: %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 
