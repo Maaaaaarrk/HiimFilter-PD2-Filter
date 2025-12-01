@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 29th%CL%Season 12 - version 24%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 1st%CL%Season 12 - version 25%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -897,7 +897,7 @@ ItemDisplay[RUNE>29]: %RUNE_HIGH_ALT_LEFT%     %NAME%     %RUNE_HIGH_ALT_RIGHT%%
 ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %NAME%%CONTINUE%
 
 // Estimated HR value notes
-ItemDisplay[RUNE>19]: %NAME%{%WHITE%HR Values Last updated August 11th%CL%}%CONTINUE%
+ItemDisplay[RUNE>19]: %NAME%{%WHITE%HR Values Last updated Dec 1st%CL%}%CONTINUE%
 ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value%WHITE%: 1%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value%WHITE%: 3%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=22]: %NAME%{%PURPLE%WSS %TAN%Estimated Value%WHITE%: 5%CL%%NAME%}%CONTINUE%
@@ -909,9 +909,9 @@ ItemDisplay[RUNE=27]: %NAME%{%TAN%HR Estimated Value%WHITE%: .75%CL%%NAME%}%CONT
 ItemDisplay[RUNE=28]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=29]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.5%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=30]: %NAME%{%TAN%HR Estimated Value%WHITE%: 3%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: 2.25-2.5%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 4.5-5%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value%WHITE%: 1.5%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value%WHITE%: ~2%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value%WHITE%: 4%CL%%NAME%}%CONTINUE%
 
 // High roller
 ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
@@ -1832,9 +1832,11 @@ ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s
 // The Grandfather - Colossus Blade
 // Vortex Shield - Skywarden
 // Ribcracker - Quarterstaff
+// Crow Caw - Tigulated Mail
+// Cranebeak - War Spike
 
 
-ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR 7tw OR zvb OR 6sw OR neg OR 7gd OR paf OR 8ls)]: %MAP-68%%SOUNDID-4723%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR 7tw OR zvb OR 6sw OR neg OR 7gd OR paf OR 8ls OR 7mp OR xcl)]: %MAP-68%%SOUNDID-4723%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
