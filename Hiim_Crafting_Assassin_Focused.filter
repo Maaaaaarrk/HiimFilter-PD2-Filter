@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 1st%CL%Season 12 - version 25%CL%HiimFilter - Crafting - Assassin -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 2nd%CL%Season 12 - version 27%CL%HiimFilter - Crafting - Assassin -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -140,8 +140,8 @@ Alias[RARE_GG_ITEM_LEFT]: %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> 
 Alias[RARE_GG_ITEM_RIGHT]: %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%>
 
 // Unlimited Use items
-Alias[RARE_GG_ITEM_ALT_LEFT]: %RED%X X X X
-Alias[RARE_GG_ITEM_ALT_RIGHT]: %RED%X X X X
+Alias[RARE_GG_ITEM_ALT_LEFT]: %RED%XxXxXxX
+Alias[RARE_GG_ITEM_ALT_RIGHT]: %RED%XxXxXxX
 
 // Low rune
 Alias[RUNE_LOW_LEFT]: %ORANGE%**
@@ -280,16 +280,16 @@ ItemDisplay[wss]: %MAP-62%%SOUNDID-4715%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{
 ItemDisplay[cwss QTY>1]: %NAME%%TAN%QTY %QTY% %CONTINUE%
 ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM_LEFT%    %GRAY%%NAME%    %MAG_DBL_AFFIX_ITEM_RIGHT%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
-ItemDisplay[lbox]: %MAP-4A%%SOUNDID-4716%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lbox]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp]: %MAP-4A%%SOUNDID-4715%%GEN_RARE_ITEM_LEFT% %NAME% %GEN_RARE_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[imrn]: %MAP-4A%%SOUNDID-4715%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
+ItemDisplay[imrn]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
-ItemDisplay[llmr]: %MAP-4A%%SOUNDID-4709%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
-ItemDisplay[lsvl]: %MAP-4A%%SOUNDID-4709%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
+ItemDisplay[llmr]: %MAP-4A%%SOUNDID-4719%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
+ItemDisplay[lsvl]: %MAP-4A%%SOUNDID-4719%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
 ItemDisplay[iwss]: %MAP-4A%%SOUNDID-4715%%GEN_ITEM_ALT_LEFT% %NAME% %GEN_ITEM_ALT_RIGHT%
 ItemDisplay[cm2f]: %MAP-4A%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%
-ItemDisplay[rtp]: %MAP-0A%%SOUNDID-4721%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Town Portal
-ItemDisplay[rid]: %MAP-0A%%SOUNDID-4721%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Identify
+ItemDisplay[rtp]: %MAP-0A%%SOUNDID-4719%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Town Portal
+ItemDisplay[rid]: %MAP-0A%%SOUNDID-4719%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Identify
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[(key OR rkey) MAPID=1]: %NAME%{%BLACK%-%CL%%GRAY%Town!%CL%%BLACK%-%CL%%GOLD%Rogue Encampment%CL%%NAME%}%CONTINUE%
@@ -468,11 +468,11 @@ ItemDisplay[rkey]: %RARE_GG_ITEM_ALT_LEFT%    %ORANGE%%NAME%   %RARE_GG_ITEM_ALT
 // Boss Mats
 //-----------------------------------------------------------------------------------
 // DClone mats
-ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4716% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
+ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
 // PD2 Items - Rathma mats
-ItemDisplay[(rtmo OR rtmv OR cm2f)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4716% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Res:%CL%%GOLD%Voidstone - Rathma boss fight}
+ItemDisplay[(rtmo OR rtmv OR cm2f)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Res:%CL%%GOLD%Voidstone - Rathma boss fight}
 // PD2 Items - lucion mats
-ItemDisplay[(lucb OR lucc OR lucd)]:%MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4716% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
+ItemDisplay[(lucb OR lucc OR lucd)]:%MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
@@ -794,6 +794,7 @@ ItemDisplay[NMAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CON
 // Inform how to clear the map
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Fast Map Clear Guides Visit:%NL%%CL%%NAME%}%CONTINUE%
 
+ItemDisplay[MAPTIER=5]: %MAP-4A%%SOUNDID-4716%%NAME%{%NAME%}
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62)]: %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
@@ -1066,37 +1067,37 @@ ItemDisplay[(wms OR gpl OR gpm OR gps OR opl OR opm OR ops) (FILTLVL>1 OR CLVL>2
 //-----------------------------------------------------------------------------------
 // QUEST ITEMS
 //-----------------------------------------------------------------------------------
-ItemDisplay[bks]: X   X   %NAME%   X   X%MAP-58%{%TAN%in Act 1%CL%Talk to Akara%CL%}
-ItemDisplay[bkd]: X   X   %NAME%   X   X%MAP-58%{%TAN%Go to Act 1 Stony Field%CL%}
-ItemDisplay[leg]: %GOLD%X   %NAME%   X%MAP-58%{%TAN%Cube w/ Tome of Town Portal in Act 1 to open Cow Level}
-ItemDisplay[hdm]: X   X   %NAME%   X   X%MAP-58%{%TAN%Give to Charsi in Act 1}
-ItemDisplay[ass]: %GOLD%X   Book of Skill   X%MAP-58%{%TAN%+1 Skill Point%CL%Right click for %CL%}
+ItemDisplay[bks]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 1%CL%Talk to Akara%CL%}
+ItemDisplay[bkd]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Go to Act 1 Stony Field%CL%}
+ItemDisplay[leg]: %GOLD%X   %NAME%   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Tome of Town Portal in Act 1 to open Cow Level}
+ItemDisplay[hdm]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Give to Charsi in Act 1}
+ItemDisplay[ass]: %GOLD%X   Book of Skill   X%MAP-58%%SOUNDID-4721%{%TAN%+1 Skill Point%CL%Right click for %CL%}
 ItemDisplay[tr1]:
-ItemDisplay[hst]: X   X   %NAME%   X   X%MAP-58%{%TAN%Act 2: Tal Rashas Tomb%CL%Place in Tomb Orifice in}
-ItemDisplay[vip]: X   X   %NAME%   X   X%MAP-58%{%TAN%Cube w/ Staff of Kings}
-ItemDisplay[msf]: X   X   %NAME%   X   X%MAP-58%{%TAN%Cube w/ Amulet of the Viper}
-ItemDisplay[j34]: X   X   %NAME%   X   X%MAP-58%{%TAN%in Act 3%CL%Give to Meshif%CL%}
-ItemDisplay[g34]: X   X   %NAME%   X   X%MAP-58%{%TAN%in Act 3%CL%Give to Alkor%CL%}
-ItemDisplay[xyz]: %GOLD%Potion of Life%MAP-58%{%TAN%permanent +20 to Life%CL%Right click for a%CL%}
-ItemDisplay[g33]: X   X   %NAME%   X   X%MAP-58%{%TAN%Give to Ormus in Act 3}
-ItemDisplay[qey]: X   X   %NAME%   X   X%MAP-58%{%TAN%Heart, & Flail%CL%Cube w/ Brain,%CL%}
-ItemDisplay[qbr]: X   X   %NAME%   X   X%MAP-58%{%TAN%Heart, & Flail%CL%Cube w/ Eye,%CL%}
-ItemDisplay[qhr]: X   X   %NAME%   X   X%MAP-58%{%TAN%Brain, & Flail%CL%Cube w/ Eye,%CL%}
+ItemDisplay[hst]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Act 2: Tal Rashas Tomb%CL%Place in Tomb Orifice in}
+ItemDisplay[vip]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Staff of Kings}
+ItemDisplay[msf]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Amulet of the Viper}
+ItemDisplay[j34]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 3%CL%Give to Meshif%CL%}
+ItemDisplay[g34]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 3%CL%Give to Alkor%CL%}
+ItemDisplay[xyz]: %GOLD%Potion of Life%MAP-58%%SOUNDID-4721%{%TAN%permanent +20 to Life%CL%Right click for a%CL%}
+ItemDisplay[g33]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Give to Ormus in Act 3}
+ItemDisplay[qey]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Heart, & Flail%CL%Cube w/ Brain,%CL%}
+ItemDisplay[qbr]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Heart, & Flail%CL%Cube w/ Eye,%CL%}
+ItemDisplay[qhr]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Brain, & Flail%CL%Cube w/ Eye,%CL%}
 ItemDisplay[qf1]: X   %NAME%   X{%TAN%Cube w/ Eye, Brain, & Heart}
-ItemDisplay[qf2]: X   X   %NAME%   X   X%MAP-58%{%TAN%Hit Compelling Orb in Act 3: Travincal}
-ItemDisplay[bbb]: X   X   %NAME%   X   X%MAP-58%{%TAN%+5 Stat Points%CL%Give to Alkor for%CL%}
+ItemDisplay[qf2]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Compelling Orb in Act 3: Travincal}
+ItemDisplay[bbb]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%+5 Stat Points%CL%Give to Alkor for%CL%}
 ItemDisplay[mss]: X   %NAME%   X{%TAN%Act 4: River of Flame%CL%Take to the Hellforge in%CL%}
-ItemDisplay[hfh]: X   X   %NAME%   X   X%MAP-58%{%TAN%Hit Hellforge in Act 4: River of Flame}
-ItemDisplay[ice]: %GOLD%Malahs Potion%MAP-58%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
-ItemDisplay[tr2]: %GOLD%Scroll of Resistance%MAP-58%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
+ItemDisplay[hfh]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Hellforge in Act 4: River of Flame}
+ItemDisplay[ice]: %GOLD%Malahs Potion%MAP-58%%SOUNDID-4721%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
+ItemDisplay[tr2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // Base item names
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
-ItemDisplay[(aqv OR aqv2 OR aqv3) (MAG OR RARE) !ID FILTLVL>4]: }}-->%CONTINUE%
-ItemDisplay[(cqv OR cqv2 OR cqv3) (MAG OR RARE) !ID FILTLVL>4]: ]]==>%CONTINUE%
+ItemDisplay[(aqv OR aqv2 OR aqv3) (MAG OR RARE) !ID]: }}-->%CONTINUE%
+ItemDisplay[(cqv OR cqv2 OR cqv3) (MAG OR RARE) !ID]: ]]==>%CONTINUE%
 // Jewelry
 ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
 ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
@@ -1155,6 +1156,13 @@ ItemDisplay[UNI !ID rbe]: %CONTINUE%Band of Skulls
 // These item bases belong to multiple sets, so you cannot know what one they are until identified
 ItemDisplay[UNI !ID amu]: %CONTINUE%Unique Amulet
 ItemDisplay[UNI !ID rin]: %CONTINUE%Unique Ring
+
+ItemDisplay[aqv UNI !ID]: }}-->%CONTINUE%
+ItemDisplay[aqv2 UNI !ID]: }}--> Exc%CONTINUE%
+ItemDisplay[aqv3 UNI !ID]: }}--> Elt%CONTINUE%
+ItemDisplay[cqv UNI !ID]: ]]==>%CONTINUE%
+ItemDisplay[cqv2 UNI !ID]: ]]==> Exc%CONTINUE%
+ItemDisplay[cqv3 UNI !ID]: ]]==> Elt%CONTINUE%
 
 // Circlets
 ItemDisplay[UNI !ID ci0]: %CONTINUE%Circlet (No Unique for this base)
@@ -2106,11 +2114,11 @@ ItemDisplay[RARE amu !ID]: %DOT-9B%%NAME%
 // Jewel
 ItemDisplay[MAG (jew) !ID FILTLVL<7]: %DOT-91%%MAG_DBL_AFFIX_ITEM_LEFT%%BLUE%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[MAG (jew) !ID FILTLVL=7]: %NAME%
-ItemDisplay[RARE jew !ID ILVL>84]: %DOT-A8%%SOUNDID-4716%%RARE_GOOD_ITEM_LEFT%%YELLOW%     %NAME%     %RARE_GOOD_ITEM_RIGHT%
+ItemDisplay[RARE jew !ID ILVL>84]: %DOT-A8%%SOUNDID-4715%%RARE_GOOD_ITEM_LEFT%%YELLOW%     %NAME%     %RARE_GOOD_ITEM_RIGHT%
 ItemDisplay[RARE jew !ID]: %DOT-9B%%RARE_HIGH_ITEM_LEFT%    %NAME%    %RARE_HIGH_ITEM_RIGHT%%CONTINUE%
 
 // Circlets
-ItemDisplay[EQ7 RARE !ID]: %DOT-A8%%SOUNDID-4716%%RARE_RARE_ITEM_LEFT% %NAME% %RARE_RARE_ITEM_RIGHT%
+ItemDisplay[EQ7 RARE !ID]: %DOT-A8%%SOUNDID-4715%%RARE_RARE_ITEM_LEFT% %NAME% %RARE_RARE_ITEM_RIGHT%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID ILVL>89 FILTLVL<8]: %DOT-91%%MAG_DBL_AFFIX_ITEM_LEFT% %NAME% %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID FILTLVL<7]: %DOT-91%%MAG_ITEM_LEFT% %NAME% %MAG_ITEM_RIGHT%
 ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<7]: %NAME%
@@ -3154,7 +3162,7 @@ ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>169 STAT360=0) OR (S
 // Overlords Helm - Giant Conch
 // Hadriels Hand - Conquest Sword
 
-ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl OR 7bs OR 7cr2)]: %BORDER-9B%%SOUNDID-4728%%UNI_BOSS_ITEM_LEFT%     %NAME%     %UNI_BOSS_ITEM_RIGHT%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl OR 7bs OR 7cr2)]: %BORDER-9B%%SOUNDID-4719%%UNI_BOSS_ITEM_LEFT%     %NAME%     %UNI_BOSS_ITEM_RIGHT%
 
 // GG Unique Callouts
 //-----------------------------------------------------------------------------------
@@ -3184,8 +3192,9 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Ormus Robes - Dusk Shroud
 // Arkaines Valor - Balrog Skin
 // Steel Carapace - Shadow Plate
+// Pus Spitter - Siege Crossbow
 
-ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4726%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 8mx)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // GG Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -3205,7 +3214,7 @@ ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR
 // Tomb Reaver - Cryptic Axe
 // Ribcracker - Quarterstaff
 
-ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4726%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // Tier 3 Unique Callouts
 // Filter level 1-8
@@ -3260,7 +3269,7 @@ ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s
 // Cranebeak - War Spike
 
 
-ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR 7tw OR zvb OR 6sw OR neg OR 7gd OR paf OR 8ls OR 7mp OR xcl)]: %MAP-68%%SOUNDID-4723%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR 7tw OR zvb OR 6sw OR neg OR 7gd OR paf OR 8ls OR 7mp OR xcl)]: %MAP-68%%SOUNDID-4715%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -3290,7 +3299,7 @@ ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR 
 // Demonhorns Edge - Destroyer Helm
 // Athenas Wrath - Battle Scythe
 
-ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 7bl OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR umb OR 9la OR 7bt OR pae OR xtg OR 7wa OR 8ws OR obc OR uhb OR bad OR 9s8)]: %MAP-68%%SOUNDID-4717%%UNI_TIER2_ITEM_LEFT%  %NAME%  %UNI_TIER2_ITEM_LEFT%
+ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 7bl OR 7b7 OR 9wn OR 7bw OR xld OR ulb OR umb OR 9la OR 7bt OR pae OR xtg OR 7wa OR 8ws OR obc OR uhb OR bad OR 9s8)]: %MAP-68%%SOUNDID-4715%%UNI_TIER2_ITEM_LEFT%  %NAME%  %UNI_TIER2_ITEM_LEFT%
 
 // Tier 1 Unique Callouts
 // Filter level 1-7
@@ -3301,7 +3310,6 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 
 // Titans Grip - Bramble Mitts
 // Twilights Reflection - Hyperion
 // Guardian Angel - Templar Coat
-// Pus Spitter - Siege Crossbow
 // Denmother - Sun Spirit
 // Ebonbane - Grand Matron Bow
 // Peasant Crown - War Hat
@@ -3317,7 +3325,7 @@ ItemDisplay[UNI !ID FILTLVL<8 (drb OR oba OR xea OR zhb OR xmb OR tgl OR xvg OR 
 // Treads of Cthon - Chain Boots
 //%SOUNDID-2666%
 
-ItemDisplay[UNI !ID FILTLVL<8 (uml OR xar OR ulg OR urg OR xlt OR 8mx OR drc OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 8rx OR ba7 OR dr6 OR xth OR xpl OR mbt)]: %DOT-68%%UNI_TIER1_ITEM_LEFT%  %NAME%  %UNI_TIER1_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<8 (uml OR xar OR ulg OR urg OR xlt OR drc OR amc OR xap OR gsd OR aar OR uld OR 9ls OR 8rx OR ba7 OR dr6 OR xth OR xpl OR mbt)]: %DOT-68%%UNI_TIER1_ITEM_LEFT%  %NAME%  %UNI_TIER1_ITEM_RIGHT%
 
 
 // Tier 0 Unique Callouts
@@ -3336,13 +3344,11 @@ ItemDisplay[UNI !ID FILTLVL<8 (uml OR xar OR ulg OR urg OR xlt OR 8mx OR drc OR 
 // Jadetalon - Wrist Sword
 // Elite arrows
 // Elite bolts
-// exceptional arrows
-// exceptional bolts
 // Firelizards Talons - Feral Claws
 // Wraithskin - Diamond Mail
 // %SOUNDID-2666%
 
-ItemDisplay[UNI !ID FILTLVL<8 (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR aqv2 OR aqv3 OR cqv2 OR cqv3 OR 7lw OR ung)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<8 (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR aqv3 OR cqv3 OR 7lw OR ung)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
 
 
 // Tier 0 Unique Callouts
@@ -3404,10 +3410,10 @@ ItemDisplay[UNI !ID FILTLVL<8 (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR 
 // Buriza-Do Kyanon - Ballista
 // Duskdeep - Full Helm
 // The Impaler - War Spear
-// arrows
-// bolts
+// exceptional arrows
+// exceptional bolts
 
-ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7sr OR 9fc OR 7fb OR 9b9 OR 9gd OR ame OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR ltp OR 7di OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx OR fhl OR 9sr)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<7 (xul OR tbl OR vbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR 8cb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7sr OR 9fc OR 7fb OR 9b9 OR 9gd OR ame OR upk OR xtp OR 7gs OR xow OR ush OR 9wc OR bac OR lbb OR 8sw OR ltp OR 7di OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx OR fhl OR 9sr OR aqv2 OR cqv2)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------
