@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 2nd%CL%Season 12 - version 34%CL%HiimFilter - Hyper (Work in progress) -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 3rd%CL%Season 12 - version 37%CL%HiimFilter - Hyper (Work in progress) -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -555,14 +555,14 @@ ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
 ItemDisplay[MAPTIER=2]: %YELLOW%* [T2] %CONTINUE%
 ItemDisplay[MAPTIER=3]: %ORANGE%* [T3] %CONTINUE%
 ItemDisplay[MAPTIER=4]: %RED%* [T4] %CONTINUE%
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55) !ID]: %GOLD%* * * * [U] %CONTINUE%
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55) ID]: %GOLD%* [U] %CONTINUE%
+ItemDisplay[(MAPTIER=5) !ID]: %GOLD%* * * * [U] %CONTINUE%
+ItemDisplay[(MAPTIER=5) ID]: %GOLD%* [U] %CONTINUE%
 ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%
 
 // Map Color Fixing
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
 
 // Map Immunities
 ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) NMAG]: %NAME%%CONTINUE%{%TAN%Immunities (Updated May 16 2025):%CL%%NAME%}
@@ -618,7 +618,7 @@ ItemDisplay[t23]: %NAME%Arreat Battlefield Map%CONTINUE%{%NAME%}
 ItemDisplay[t21]: %NAME%Phlegathon Map%CONTINUE%{%NAME%}
 ItemDisplay[t16]: %NAME%Ruined Cistern Map%CONTINUE%{%NAME%}
 ItemDisplay[t33]: %NAME%Lost Temple Map%CONTINUE%{%NAME%}
-ItemDisplay[t17]: %NAME%Halls of Torture%CONTINUE%{%NAME%}
+ItemDisplay[t17]: %NAME%Halls of Torture Map%CONTINUE%{%NAME%}
 ItemDisplay[t18]: %NAME%T1-8 Map%CONTINUE%{%NAME%}
 ItemDisplay[t19]: %NAME%T1-9 Map%CONTINUE%{%NAME%}
 
@@ -661,7 +661,7 @@ ItemDisplay[t52]: %NAME%Stygian Caverns (Slammed)%CONTINUE%{%NAME%}
 ItemDisplay[t53]: %NAME%Fallen Gardens (Facet)%CONTINUE%{%NAME%}
 ItemDisplay[t54]: %NAME%Imperial Palace (PBox)%CONTINUE%{%NAME%}
 ItemDisplay[t55]: %NAME%Outer Void (Boss Mat)%CONTINUE%{%NAME%}
-//ItemDisplay[t56]: %NAME%City of Ureh (Socketed)%CONTINUE%{%NAME%}
+ItemDisplay[t56]: %NAME%City of Ureh (Socketed)%CONTINUE%{%NAME%}
 //ItemDisplay[t57]: %NAME%T5-7 Map%CONTINUE%{%NAME%}
 //ItemDisplay[t58]: %NAME%T5-8 Map%CONTINUE%{%NAME%}
 //ItemDisplay[t59]: %NAME%T5-9 Map%CONTINUE%{%NAME%}
@@ -678,15 +678,15 @@ ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
 //ItemDisplay[t69]: %NAME%t6-9 Map%CONTINUE%{%NAME%}
 
 
-ItemDisplay[(MAPTIER>0 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
+ItemDisplay[(MAPTIER>0 OR MAPTIER=5 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
 
 // Map End Wrapper by Tier
 ItemDisplay[MAPTIER=1]: %MAP-62%%NAME% %GREEN%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=2]: %MAP-62%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=3]: %MAP-62%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=4]: %MAP-62%%NAME% %RED%*{%NAME%}%CONTINUE%
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55) !ID]: %MAP-62%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
-ItemDisplay[(t51 OR t52 OR t53 OR t54 OR t55) ID]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=5) !ID]: %MAP-62%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=5) ID]: %MAP-62%%NAME% %GOLD%*{%NAME%}%CONTINUE%
 ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
 
 ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
@@ -733,7 +733,7 @@ ItemDisplay[STAT493>0]: %ORANGE% [F]%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[STAT500>0]: %CORAL% [E]%NAME%%CONTINUE%{%PURPLE%Catalyzed%CL%%NAME%}
 
 // Slammed
-ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62)]: %RED% [C]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %RED% [C]%NAME%%CONTINUE%{%NAME%}
 
 
 // Map Contains Dolls
@@ -795,7 +795,7 @@ ItemDisplay[NMAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CON
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Fast Map Clear Guides Visit:%NL%%CL%%NAME%}%CONTINUE%
 
 ItemDisplay[MAPTIER=5]: %MAP-4A%%SOUNDID-4716%%NAME%{%NAME%}
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR t51 OR t52 OR t53 OR t54 OR t55 OR t61 OR t62)]: %NAME%{%NAME%}
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 
