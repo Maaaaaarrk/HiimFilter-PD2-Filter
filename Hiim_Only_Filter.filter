@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 4th%CL%Season 12 - version 38%CL%HiimFilter - Only Filter Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 5th%CL%Season 12 - version 39%CL%HiimFilter - Only Filter Mode -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -1660,9 +1660,10 @@ ItemDisplay[ELT (POLEARM OR SPEAR OR 7m7) ETH NMAG !RW SOCK=5 FILTLVL<3]: %DOT-D
 ItemDisplay[ELT (7s8 OR 7pa OR 7m7) ETH NMAG !RW SOCK=0 FILTLVL<3]: %DOT-D6%%ORANGE%O %NAME% %ORANGE%O{%NAME%} // Eth laz for 5 socket or 90+ avrg damage base 0 soc
 
 // Staves
-// Infinity SK48 nova SK49 lightning SK38 Charged Bolt SK53 Chain Lightning SK57 Thunder Storm SK63 Lightning Mastery
-ItemDisplay[(6ls OR 6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>2) NMAG !RW SOCK=4]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Infinity]{%NAME%%CL%%PURPLE%GG Infinity base}
-ItemDisplay[(6ls OR 6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>2) NMAG !RW SOCK=0]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Infinity]{%GREEN%Hit 4 sockets for GG Infinity base%CL%%NAME%}
+// Infinity SK48 nova SK38 Charged Bolt SK53 Chain Lightning SK63 Lightning Mastery SK54 Teleport
+// not including SK49 lightning SK57 Thunder Storm
+ItemDisplay[(6ls OR 6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>0) NMAG !RW SOCK=4]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Infinity]{%NAME%%CL%%PURPLE%GG Infinity base}
+ItemDisplay[(6ls OR 6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) (SK63>0 OR SK54>0) NMAG !RW SOCK=0]: %RW_BASE_GG_LEFT%%NAME% %PURPLE%[Infinity]{%GREEN%Hit 4 sockets for GG Infinity base%CL%%NAME%}
 ItemDisplay[(6ls OR 6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) NMAG !RW SOCK=4 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Infinity]{%NAME%%CL%%GREEN%Good Infinity base}
 ItemDisplay[(6ls OR 6cs OR 6bs OR 6ws) (SK48>2 OR SK38>2 OR SK53>2) NMAG !RW SOCK=0 FILTLVL<7]: %DOT-9B%%NAME% %ORANGE%[Infinity]{%GREEN%Hit 4 sockets for Infinity base%CL%%NAME%}
 // Obsession SK59 blizzard SK39 ice bolt SK65 cold mastery SK46 1pt blaze
