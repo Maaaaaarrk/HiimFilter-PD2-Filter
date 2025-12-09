@@ -51,7 +51,7 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Steel Carapace - Shadow Plate
 // Pus Spitter - Siege Crossbow
 
-ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 8mx)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<10 (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7gm OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 8mx)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // GG Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -72,6 +72,16 @@ ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin OR ci3 OR pa9 OR obf OR uar OR ulc OR
 // Ribcracker - Quarterstaff
 
 ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+
+// Jewerly
+//-----------------------------------------------------------------------------------
+// Amulet
+// Ring
+
+ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin)]: %BORDER-9B%%UNI_GG_ITEM_LEFT%%SOUNDID-4715%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+
+// Rainbow Facet
+ItemDisplay[jew UNI !ID]: %BORDER-68%%SOUNDID-4719%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %FACET_ITEM_RIGHT%
 
 // Tier 3 Unique Callouts
 // Filter level 1-8
@@ -115,7 +125,6 @@ ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s
 // Martyrdom - Overseer Skull
 // The Reapers Toll - Thresher
 // Vampire Gaze - Grim Helm
-// Stalker's Cull - Runic Talons
 // Razortail - Sharkskin Belt
 // Widowmaker - Ward Bow
 // Sacred Totem - Hellspawn Skull
@@ -126,7 +135,7 @@ ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s
 // Hawk Tuah//Hawkmail - Scale Mail
 
 
-ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR 7tw OR zvb OR 6sw OR neg OR 7gd OR paf OR 8ls OR 7mp OR scl)]: %MAP-68%%SOUNDID-4715%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR ba6 OR bae OR dra OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR 7ls OR pac OR uvg OR ulm OR uow OR 7p7 OR nee OR dre OR xvb OR 7xf OR ned OR 7s8 OR xh9 OR zvb OR 6sw OR neg OR 7gd OR paf OR 8ls OR 7mp OR scl)]: %MAP-68%%SOUNDID-4726%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
 
 // Tier 2 Unique Callouts
 // Filter level 1-7
@@ -203,8 +212,9 @@ ItemDisplay[UNI !ID FILTLVL<8 (uml OR xar OR ulg OR urg OR xlt OR drc OR amc OR 
 // Firelizards Talons - Feral Claws
 // Wraithskin - Diamond Mail
 // Endlesshail - Double Bow
+// Stalker's Cull - Runic Talons
 
-ItemDisplay[UNI !ID FILTLVL<8 (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR aqv3 OR cqv3 OR 7lw OR ung OR 8cb)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<8 (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR aqv3 OR cqv3 OR 7lw OR ung OR 8cb OR 7tw)]: %DOT-68%%UNI_TIER0_ITEM_LEFT%  %NAME%  %UNI_TIER0_ITEM_RIGHT%
 
 
 // Tier 0 Unique Callouts
@@ -356,7 +366,7 @@ ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %MAP-84%%SET_TIER2_ITEM_LEFT%  %NAME%
 // Natalyas Mark - Scissors Suwayyah
 // Cow King or Sander - Heavy Boots
 
-ItemDisplay[SET !ID FILTLVL<9 (ltp OR ucl OR xh9 OR 7qr OR vbt)]: %MAP-84%%SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%
+ItemDisplay[SET !ID FILTLVL<9 (ucl OR xh9 OR 7qr OR vbt)]: %MAP-84%%SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -407,8 +417,5 @@ ItemDisplay[SET !ID FILTLVL<5 (xlb OR xrs OR 9mt OR ci0 OR ult OR 7ma)]: %GREEN%
 // Tancreds Hobnails - Boots
 
 ItemDisplay[SET !ID FILTLVL<7 (vbt OR vgl OR lgl OR lbl OR lbt)]: %MAP-84%%SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%%TIER-6%
-
-// Rainbow Facet
-ItemDisplay[jew UNI !ID]: %BORDER-68%%SOUNDID-4726%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %FACET_ITEM_RIGHT%
 
 //-----------------------------------------------------------------------------------
