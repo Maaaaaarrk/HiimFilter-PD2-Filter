@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 9th%CL%Season 12 - version 45%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 10th%CL%Season 12 - version 46%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -4098,22 +4098,6 @@ ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=5)]:%CO
 //-----------------------------------------------------------------------------------
 // CRAFTING
 //-----------------------------------------------------------------------------------
-// LLD craft tag in trav
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 btl FILTLVL<5]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //blade talons (can shop)
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Sorc orbs
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 (am1 OR am5 OR am6 OR ama)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] //Javs
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Nec heads
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // Barb helms
-ItemDisplay[!ID MAG ILVL>50 MAPID=83 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %DOT-ED%%TIER-2%%NAME%%GREEN% [LLD Craft] // dudu helms
-//Id-ed
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //Sorc orbs
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (am1 OR am5 OR am6 OR ama)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //Javs
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Nec heads
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Barb helms
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // dudu helms
 
 // Weapons
 ItemDisplay[!ID (7gl OR 9gl OR glv) ETH MAG FILTLVL<5]: %DOT-ED%%TIER-5%%GREEN%* * %NAME% %GREEN%[Craft] * *//Ghost Glaive
