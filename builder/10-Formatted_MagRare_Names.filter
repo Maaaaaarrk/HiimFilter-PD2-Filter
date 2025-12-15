@@ -10,6 +10,10 @@ ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
 ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
 ItemDisplay[!UNI !SET jew]: %CONTINUE%Jewel
 
+// Select item name blanking
+ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>6]: %CONTINUE%Nec Head
+ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>6]: %CONTINUE%Sorc Orb
+
 // Quivers
 ItemDisplay[aqv (MAG OR RARE OR UNI) !ID]: Arrow%CONTINUE%
 ItemDisplay[aqv2 (MAG OR RARE OR UNI) !ID]: Exc Arrow%CONTINUE%
