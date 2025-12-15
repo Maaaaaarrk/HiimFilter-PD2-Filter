@@ -3,7 +3,11 @@
 // CRAFTING
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[!ID (ob5 OR oba OR obf) (MAG OR RARE) FILTLVL<9]: %NAME% %GREEN%[Craft] //sorc orb
+ItemDisplay[!ID (ob5 OR oba OR obf) MAG FILTLVL<9]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //sorc orb
+ItemDisplay[!ID (ob5 OR oba OR obf) RARE FILTLVL<9]: %RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT% //sorc orb
 ItemDisplay[!ID SOR (MAG OR RARE) FILTLVL<9]: %NAME%//sorc orb
+
+ItemDisplay[MAG amu !ID FILTLVL<5]: %NAME%
+ItemDisplay[MAG amu !ID FILTLVL<7]: %BLUE%Amu
 
 //-----------------------------------------------------------------------------------
