@@ -3,9 +3,11 @@
 // Unique/Set All other conditions
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[(UNI OR SET) !ID (MAPID=181 OR MAPID=182)]: %NAME%// Warrior Map catch rest
-ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %DOT-68%%TIER-6%%NAME%// Eth uni show all
-ItemDisplay[SET !ID ETH]: %DOT-84%%TIER-6%%NAME%// Eth set show all
-ItemDisplay[UNI !ID]: %PX-68%%TIER-2%%GOLD%%NAME%
-ItemDisplay[SET !ID]: %PX-84%%TIER-2%%GREEN%%NAME%
+ItemDisplay[UNI !ID (MAPID=181 OR MAPID=182)]: %DOT-D3%%NAME%// Warrior Map catch rest
+ItemDisplay[SET !ID (MAPID=181 OR MAPID=182)]: %DOT-7D%%NAME%// Warrior Map catch rest
+ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %PX-D3%%TIER-6%%NAME%// Eth uni show all
+ItemDisplay[SET !ID ETH]: %PX-7D%%TIER-6%%NAME%// Eth set show all
+ItemDisplay[ELT UNI !ID FILTLVL<7]: %PX-D3%%TIER-4%%NAME%// Show all elite level 1-6 announce 1-4
+ItemDisplay[UNI !ID FILTLVL<5]: %PX-D3%%TIER-2%%GOLD%%NAME%
+ItemDisplay[SET !ID FILTLVL<5]: %PX-7D%%TIER-2%%GREEN%%NAME%
 //-----------------------------------------------------------------------------------
