@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 15th%CL%Season 12 - version 56%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 16th%CL%Season 12 - version 57%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 
@@ -6646,7 +6646,7 @@ ItemDisplay[STAT360=0 FILTLVL>4 BOOTS ID (MAG OR RARE OR CRAFT) !(MAPID=1 OR MAP
 //-----------------------------------------------------------------------------------
 // ALWAYS SHOW
 //-----------------------------------------------------------------------------------
-ItemDisplay[STAT360>0]: %MAP-55%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360>0 !NMAG]: %MAP-55%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[SHOP !NMAG]: %NAME%%WHITE%{%NAME%}
 ItemDisplay[!SHOP !NMAG]: %NAME%%WHITE%{%NAME%}%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3 OR jew) ID]: %NAME%{%NAME%}
