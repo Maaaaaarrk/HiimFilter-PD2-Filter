@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 17th%CL%Season 12 - version 63%CL%HiimFilter - Crafting - Necromancer -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 17th%CL%Season 12 - version 64%CL%HiimFilter - Crafting - Necromancer -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -6028,8 +6028,8 @@ ItemDisplay[6ws SK59>2 SK39>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<7]: %NAME% %RW_BAS
 ItemDisplay[6ws (SK59>2 OR SK39>2) NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
 ItemDisplay[6ws (SK59>2 OR SK39>2) NMAG !RW SOCK=0 ILVL>25 FILTLVL<5]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[Obsession]{%GREEN%Hit 6 sockets for Obsession base%CL%%NAME%}
 // Obsession SK56 meteor SK62 hydra SK61 fire mastery SK60 1pt chilling
-ItemDisplay[6ws (SK56>2 OR SK62>2) SK61>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<8]: %NAME% %PURPLE%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
-ItemDisplay[6ws (SK56>2 OR SK62>2) SK61>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<8]: %NAME% %PURPLE%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
+ItemDisplay[6ws (SK56>2 OR SK62>2) SK61>2 NMAG !RW SOCK=6 ILVL>25 FILTLVL<8]: %RW_BASE_GG_LEFT%%NAME% %RW_BASE_GG_RIGHT%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
+ItemDisplay[6ws (SK56>2 OR SK62>2) SK61>2 NMAG !RW SOCK=0 ILVL>25 FILTLVL<8]: %RW_BASE_GG_LEFT%%NAME% %RW_BASE_GG_RIGHT%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
 ItemDisplay[6ws (SK56>2 OR SK62>2) (SK61>2 OR SK60>0) NMAG !RW SOCK=6 ILVL>25 FILTLVL<7]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[Obsession]{%NAME%%CL%%GREEN%Good Obsession base}
 ItemDisplay[6ws (SK56>2 OR SK62>2) (SK61>2 OR SK60>0) NMAG !RW SOCK=0 ILVL>25 FILTLVL<7]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[Obsession]{%GREEN%Hit 6 sockets for Good Obsession base%CL%%NAME%}
 ItemDisplay[6ws (SK56>2 OR SK62>2) NMAG !RW SOCK=6 ILVL>25 FILTLVL<5]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[Obsession]{%NAME%%CL%%GREEN%Obsession base}
@@ -6048,9 +6048,13 @@ ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG 
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<7]: %NAME% %RW_BASE_ORANGE_RIGHT%{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=5 FILTLVL<7]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[CTA]{%NAME%}
 // Memory buff
+ItemDisplay[STAFF SK57>2 SK63>2 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<9]: %RW_BASE_GG_LEFT%%NAME% %RW_BASE_GG_RIGHT%[MEMORY]{%NAME%}
+ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>2 SK63>2 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<9]: %RW_BASE_GG_LEFT%%NAME% %RW_BASE_GG_RIGHT%[MEMORY]{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[STAFF SK57>2 SK63>2 !INF NMAG !RW SOCK=4 FILTLVL<8]: %RW_BASE_GG_LEFT%%NAME% %RW_BASE_GG_RIGHT%[MEMORY]{%NAME%}
+ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>2 SK63>2 !INF NMAG !RW SOCK=0 FILTLVL<8]: %RW_BASE_GG_LEFT%%NAME% %RW_BASE_GG_RIGHT%[MEMORY]{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[STAFF SK58>2 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=4 FILTLVL<7]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[MEMORY]{%NAME%}
 ItemDisplay[STAFF SK58>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[MEMORY]{%NAME%}
-ItemDisplay[STAFF SK57>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[MEMORY]{%NAME%}
+ItemDisplay[STAFF SK57>0 (SK50>0 OR SK60>0 OR SK63>2) !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[MEMORY]{%NAME%}
 ItemDisplay[STAFF SK40>2 SK52>2 !INF NMAG !RW SOCK=4 FILTLVL<9]: %NAME% %RW_BASE_ORANGE_ALT_RIGHT%[MEMORY]{%NAME%}
 ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK40>2 SK52>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %RW_BASE_ORANGE_RIGHT%{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 
