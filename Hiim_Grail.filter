@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 17th%CL%Season 12 - version 69%CL%HiimFilter - Grail Hunt -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 18th%CL%Season 12 - version 71%CL%HiimFilter - Grail Hunt -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -308,7 +308,13 @@ ItemDisplay[skz OR skzs]: %CORAL%O O  %LIGHT_GRAY%P. Skull  %CORAL%O O%CONTINUE%
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS
 //-----------------------------------------------------------------------------------
-// PD2 ITEMS - General
+
+//-----------------------------------------------------------------------------------
+// Mirrored Items
+ItemDisplay[STAT477>0 !jew]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
+
+//-----------------------------------------------------------------------------------
+// General
 ItemDisplay[wss QTY>1]: %NAME% %TAN%QTY %QTY% %CONTINUE%
 ItemDisplay[wss]: %MAP-62%%SOUNDID-4715%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
 ItemDisplay[cwss QTY>1]: %NAME% %TAN%QTY %QTY% %CONTINUE%
@@ -1244,18 +1250,17 @@ ItemDisplay[MAG amu !ID MAPID=83 FILTLVL<7]: %NAME%%TIER-2%
 //Warlords
 ItemDisplay[MAG amu !ID (MAPID=181 OR MAPID=182)]: %NAME%%TIER-2%
 //90+ amu 2skill
-ItemDisplay[RARE amu !ID (FILTLVL<5 OR ALVL>89) FILTLVL<7 FILTLVL>2]: %RARE_HIGH_ITEM_LEFT%    %NAME%    %RARE_HIGH_ITEM_RIGHT%
-ItemDisplay[RARE amu !ID (FILTLVL<5 OR ALVL>89) FILTLVL<8 FILTLVL>2]: %RARE_ITEM_LEFT%   %NAME%   %RARE_ITEM_RIGHT%
-ItemDisplay[RARE amu !ID FILTLVL<7]: %NAME%
+ItemDisplay[RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %RARE_HIGH_ITEM_LEFT%%TIER-7%    %NAME%    %RARE_HIGH_ITEM_RIGHT%
+ItemDisplay[RARE amu !ID FILTLVL<5]: %NAME%
 //85+ ring
-ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_HIGH_ITEM_LEFT%    %NAME%    %RARE_HIGH_ITEM_RIGHT%
+ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM_LEFT%    %NAME%    %RARE_ITEM_LEFT%
 ItemDisplay[RARE rin !ID FILTLVL<8]: %NAME%
 
 // Jewel
 ItemDisplay[MAG jew !ID FILTLVL<8 ILVL>89]: %MAG_DBL_AFFIX_ITEM_LEFT%%BLUE%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[MAG jew !ID FILTLVL<7]: %MAG_ITEM_LEFT%%BLUE%     %NAME%     %MAG_ITEM_RIGHT%
-ItemDisplay[MAG jew !ID FILTLVL<8]: %NAME%
-ItemDisplay[MAG jew !ID FILTLVL=8 ILVL>89]: %NAME%
+ItemDisplay[MAG jew !ID FILTLVL<8]: %MAG_ITEM_LEFT%%BLUE% %NAME% %MAG_ITEM_RIGHT%
+ItemDisplay[MAG jew !ID FILTLVL=8 ILVL>89]: %MAG_DBL_AFFIX_ITEM_LEFT%%BLUE% %NAME% %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM_LEFT%%YELLOW%     %NAME%     %RARE_GOOD_ITEM_RIGHT%
 ItemDisplay[RARE jew !ID]: %RARE_HIGH_ITEM_LEFT%    %NAME%    %RARE_HIGH_ITEM_RIGHT%
 
@@ -1304,7 +1309,7 @@ ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm 
 ItemDisplay[WEAPON RARE ETH (ILVL>84 OR FILTLVL<3) !ID FILTLVL<7]: %TIER-2%%RARE_HIGH_ITEM_LEFT% %YELLOW%%NAME% %RARE_HIGH_ITEM_RIGHT%
 ItemDisplay[WEAPON RARE !ID FILTLVL<3]: %RARE_HIGH_ITEM_LEFT% %YELLOW%%NAME% %RARE_HIGH_ITEM_RIGHT%
 ItemDisplay[WEAPON RARE ETH !ID FILTLVL<7]: %TIER-2%%RARE_HIGH_ITEM_LEFT% %YELLOW%%NAME% %RARE_HIGH_ITEM_RIGHT%
-ItemDisplay[(mxb OR 8mx OR 6mx) RARE (ILVL>84) !ID FILTLVL<7]: %NAME%
+ItemDisplay[(mxb OR 8mx OR 6mx) RARE (ILVL>84) !ID FILTLVL<5]: %NAME%
 ItemDisplay[(6hx OR 8hx OR hxb) RARE (ILVL>84) !ID FILTLVL<7]: %NAME%
 
 ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<5]: %TIER-2%%RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT%
@@ -3706,373 +3711,373 @@ ItemDisplay[ID (CHSK447>0) WAND]: %NAME%{%ORANGE%Lower Res Charges Wand%CL%%NAME
 // Sorceress
 //-----------------------------------------------------------------------------------
 // Lightning Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,49+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lightning   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,49+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lightning   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,49+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lightning   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK49>0 (MULTI188,9+MULTI83,1+MULTI107,49+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lightning   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK49>0 (MULTI188,9+MULTI83,1+MULTI107,49+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lightning   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK49>0 (MULTI188,9+MULTI83,1+MULTI107,49+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lightning   < < < <%CL%%NAME%}
 // Nova Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,48+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,48+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,48+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK48>0 (MULTI188,9+MULTI83,1+MULTI107,48+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK48>0 (MULTI188,9+MULTI83,1+MULTI107,48+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK48>0 (MULTI188,9+MULTI83,1+MULTI107,48+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Nova   < < < <%CL%%NAME%}
 // Chain Lightning Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,53+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Chain Lightning   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,53+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Chain Lightning   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,53+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Chain Lightning   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK53>0 (MULTI188,9+MULTI83,1+MULTI107,53+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Chain Lightning   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK53>0 (MULTI188,9+MULTI83,1+MULTI107,53+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Chain Lightning   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK53>0 (MULTI188,9+MULTI83,1+MULTI107,53+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Chain Lightning   < < < <%CL%%NAME%}
 // Charged Bolt Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,38+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Charged Bolt   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,38+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Charged Bolt   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,38+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Charged Bolt   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK38>0 (MULTI188,9+MULTI83,1+MULTI107,38+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Charged Bolt   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK38>0 (MULTI188,9+MULTI83,1+MULTI107,38+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Charged Bolt   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK38>0 (MULTI188,9+MULTI83,1+MULTI107,38+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Charged Bolt   < < < <%CL%%NAME%}
 // Lightning Mastery Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,63+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lightning Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,63+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lightning Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,63+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lightning Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK63>0 (MULTI188,9+MULTI83,1+MULTI107,63+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lightning Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK63>0 (MULTI188,9+MULTI83,1+MULTI107,63+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lightning Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK63>0 (MULTI188,9+MULTI83,1+MULTI107,63+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lightning Mastery   < < < <%CL%%NAME%}
 // Thunder Storm Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,57+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Thunder Storm   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,57+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Thunder Storm   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,9+MULTI83,1+MULTI107,57+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Thunder Storm   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK57>0 (MULTI188,9+MULTI83,1+MULTI107,57+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Thunder Storm   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK57>0 (MULTI188,9+MULTI83,1+MULTI107,57+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Thunder Storm   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK57>0 (MULTI188,9+MULTI83,1+MULTI107,57+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Thunder Storm   < < < <%CL%%NAME%}
 // Frost Nova Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,44+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Frost Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,44+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Frost Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,44+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Frost Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK44>0 (MULTI188,10+MULTI83,1+MULTI107,44+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Frost Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK44>0 (MULTI188,10+MULTI83,1+MULTI107,44+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Frost Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK44>0 (MULTI188,10+MULTI83,1+MULTI107,44+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Frost Nova   < < < <%CL%%NAME%}
 // Blizzard Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,59+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blizzard   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,59+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blizzard   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,59+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blizzard   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK59>0 (MULTI188,10+MULTI83,1+MULTI107,59+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blizzard   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK59>0 (MULTI188,10+MULTI83,1+MULTI107,59+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blizzard   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK59>0 (MULTI188,10+MULTI83,1+MULTI107,59+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blizzard   < < < <%CL%%NAME%}
 // Frozen Orb Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,64+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Frozen Orb   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,64+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Frozen Orb   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,64+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Frozen Orb   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK64>0 (MULTI188,10+MULTI83,1+MULTI107,64+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Frozen Orb   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK64>0 (MULTI188,10+MULTI83,1+MULTI107,64+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Frozen Orb   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK64>0 (MULTI188,10+MULTI83,1+MULTI107,64+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Frozen Orb   < < < <%CL%%NAME%}
 // Ice Barrage Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,369+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Ice Barrage   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,369+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Ice Barrage   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,369+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Ice Barrage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK369>0 (MULTI188,10+MULTI83,1+MULTI107,369+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Ice Barrage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK369>0 (MULTI188,10+MULTI83,1+MULTI107,369+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Ice Barrage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK369>0 (MULTI188,10+MULTI83,1+MULTI107,369+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Ice Barrage   < < < <%CL%%NAME%}
 // Cold Mastery Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,65+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Cold Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,65+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Cold Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,65+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Cold Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK65>0 (MULTI188,10+MULTI83,1+MULTI107,65+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Cold Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK65>0 (MULTI188,10+MULTI83,1+MULTI107,65+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Cold Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK65>0 (MULTI188,10+MULTI83,1+MULTI107,65+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Cold Mastery   < < < <%CL%%NAME%}
 // Cold Enchant Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,40+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Cold Enchant   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,40+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Cold Enchant   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,10+MULTI83,1+MULTI107,40+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Cold Enchant   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK40>0 (MULTI188,10+MULTI83,1+MULTI107,40+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Cold Enchant   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK40>0 (MULTI188,10+MULTI83,1+MULTI107,40+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Cold Enchant   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK40>0 (MULTI188,10+MULTI83,1+MULTI107,40+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Cold Enchant   < < < <%CL%%NAME%}
 // Fire Enchant Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,52+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fire Enchant   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,52+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fire Enchant   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,52+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fire Enchant   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK52>0 (MULTI188,8+MULTI83,1+MULTI107,52+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fire Enchant   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK52>0 (MULTI188,8+MULTI83,1+MULTI107,52+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fire Enchant   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK52>0 (MULTI188,8+MULTI83,1+MULTI107,52+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fire Enchant   < < < <%CL%%NAME%}
 // Combustion Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,376+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Combustion   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,376+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Combustion   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,376+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Combustion   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK376>0 (MULTI188,8+MULTI83,1+MULTI107,376+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Combustion   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK376>0 (MULTI188,8+MULTI83,1+MULTI107,376+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Combustion   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK376>0 (MULTI188,8+MULTI83,1+MULTI107,376+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Combustion   < < < <%CL%%NAME%}
 // Hydra Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,62+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Hydra   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,62+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Hydra   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,62+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Hydra   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK62>0 (MULTI188,8+MULTI83,1+MULTI107,62+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Hydra   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK62>0 (MULTI188,8+MULTI83,1+MULTI107,62+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Hydra   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK62>0 (MULTI188,8+MULTI83,1+MULTI107,62+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Hydra   < < < <%CL%%NAME%}
 // Meteor Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,56+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Meteor   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,56+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Meteor   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,56+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Meteor   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK56>0 (MULTI188,8+MULTI83,1+MULTI107,56+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Meteor   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK56>0 (MULTI188,8+MULTI83,1+MULTI107,56+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Meteor   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK56>0 (MULTI188,8+MULTI83,1+MULTI107,56+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Meteor   < < < <%CL%%NAME%}
 // Fire Mastery Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fire Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fire Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fire Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK61>0 (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fire Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK61>0 (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fire Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK61>0 (MULTI188,8+MULTI83,1+MULTI107,61+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fire Mastery   < < < <%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 // Necromancer
 //-----------------------------------------------------------------------------------
 // Dark Pact Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Dark Pact   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Dark Pact   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Dark Pact   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK381>0 (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Dark Pact   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK381>0 (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Dark Pact   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK381>0 (MULTI188,16+MULTI83,2+MULTI107,381+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Dark Pact   < < < <%CL%%NAME%}
 // Amp Damage Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Amp Damage   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Amp Damage   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Amp Damage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK66>0 (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Amp Damage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK66>0 (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Amp Damage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK66>0 (MULTI188,16+MULTI83,2+MULTI107,66+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Amp Damage   < < < <%CL%%NAME%}
 // Lower Res Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lower Res   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lower Res   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lower Res   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK91>0 (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lower Res   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK91>0 (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lower Res   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK91>0 (MULTI188,16+MULTI83,2+MULTI107,91+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lower Res   < < < <%CL%%NAME%}
 // Desecrate Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Desecrate   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Desecrate   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Desecrate   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK83>0 (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Desecrate   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK83>0 (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Desecrate   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK83>0 (MULTI188,17+MULTI83,2+MULTI107,83+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Desecrate   < < < <%CL%%NAME%}
 // Psn Nova Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,92+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Psn Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,92+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Psn Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,92+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Psn Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK92>0 (MULTI188,17+MULTI83,2+MULTI107,92+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Psn Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK92>0 (MULTI188,17+MULTI83,2+MULTI107,92+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Psn Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK92>0 (MULTI188,17+MULTI83,2+MULTI107,92+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Psn Nova   < < < <%CL%%NAME%}
 // Corpse Explosion Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,74+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Corpse Explosion   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,74+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Corpse Explosion   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,74+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Corpse Explosion   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK74>0 (MULTI188,17+MULTI83,2+MULTI107,74+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Corpse Explosion   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK74>0 (MULTI188,17+MULTI83,2+MULTI107,74+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Corpse Explosion   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK74>0 (MULTI188,17+MULTI83,2+MULTI107,74+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Corpse Explosion   < < < <%CL%%NAME%}
 // Teeth Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,67+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Teeth   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,67+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Teeth   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,67+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Teeth   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK67>0 (MULTI188,17+MULTI83,2+MULTI107,67+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Teeth   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK67>0 (MULTI188,17+MULTI83,2+MULTI107,67+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Teeth   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK67>0 (MULTI188,17+MULTI83,2+MULTI107,67+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Teeth   < < < <%CL%%NAME%}
 // Bone Spear Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,84+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Bone Spear   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,84+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Bone Spear   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,84+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Bone Spear   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK84>0 (MULTI188,17+MULTI83,2+MULTI107,84+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Bone Spear   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK84>0 (MULTI188,17+MULTI83,2+MULTI107,84+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Bone Spear   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK84>0 (MULTI188,17+MULTI83,2+MULTI107,84+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Bone Spear   < < < <%CL%%NAME%}
 // Bone Spirit Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,93+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Bone Spirit   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,93+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Bone Spirit   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,17+MULTI83,2+MULTI107,93+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Bone Spirit   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK93>0 (MULTI188,17+MULTI83,2+MULTI107,93+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Bone Spirit   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK93>0 (MULTI188,17+MULTI83,2+MULTI107,93+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Bone Spirit   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK93>0 (MULTI188,17+MULTI83,2+MULTI107,93+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Bone Spirit   < < < <%CL%%NAME%}
 // FireGol Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,94+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 FireGol   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,94+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 FireGol   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,94+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 FireGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK94>0 (MULTI188,18+MULTI83,2+MULTI107,94+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 FireGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK94>0 (MULTI188,18+MULTI83,2+MULTI107,94+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 FireGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK94>0 (MULTI188,18+MULTI83,2+MULTI107,94+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 FireGol   < < < <%CL%%NAME%}
 // ClayGol Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,75+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 ClayGol   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,75+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 ClayGol   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,75+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK75>0 (MULTI188,18+MULTI83,2+MULTI107,75+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK75>0 (MULTI188,18+MULTI83,2+MULTI107,75+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 ClayGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK75>0 (MULTI188,18+MULTI83,2+MULTI107,75+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 ClayGol   < < < <%CL%%NAME%}
 // BloodGol Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,85+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 BloodGol   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,85+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 BloodGol   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,85+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK85>0 (MULTI188,18+MULTI83,2+MULTI107,85+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK85>0 (MULTI188,18+MULTI83,2+MULTI107,85+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 BloodGol   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK85>0 (MULTI188,18+MULTI83,2+MULTI107,85+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 BloodGol   < < < <%CL%%NAME%}
 // Skele Mastery Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,69+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,69+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,69+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK69>0 (MULTI188,18+MULTI83,2+MULTI107,69+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK69>0 (MULTI188,18+MULTI83,2+MULTI107,69+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK69>0 (MULTI188,18+MULTI83,2+MULTI107,69+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Mastery   < < < <%CL%%NAME%}
 // Skele Warrior Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,70+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Warrior   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,70+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Warrior   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,70+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Warrior   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK70>0 (MULTI188,18+MULTI83,2+MULTI107,70+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Warrior   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK70>0 (MULTI188,18+MULTI83,2+MULTI107,70+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Warrior   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK70>0 (MULTI188,18+MULTI83,2+MULTI107,70+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Warrior   < < < <%CL%%NAME%}
 // Skele Archers Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,89+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Archers   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,89+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Archers   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,89+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Archers   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK89>0 (MULTI188,18+MULTI83,2+MULTI107,89+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Archers   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK89>0 (MULTI188,18+MULTI83,2+MULTI107,89+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Archers   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK89>0 (MULTI188,18+MULTI83,2+MULTI107,89+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Archers   < < < <%CL%%NAME%}
 // Skele Mages Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,80+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Mages   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,80+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Mages   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,18+MULTI83,2+MULTI107,80+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Mages   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK80>0 (MULTI188,18+MULTI83,2+MULTI107,80+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Skele Mages   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK80>0 (MULTI188,18+MULTI83,2+MULTI107,80+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Skele Mages   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK80>0 (MULTI188,18+MULTI83,2+MULTI107,80+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Skele Mages   < < < <%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 // Paladin
 //-----------------------------------------------------------------------------------
 // Holy Fire Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,102+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Fire   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,102+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Fire   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,102+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK102>0 (MULTI188,25+MULTI83,3+MULTI107,102+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK102>0 (MULTI188,25+MULTI83,3+MULTI107,102+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK102>0 (MULTI188,25+MULTI83,3+MULTI107,102+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Fire   < < < <%CL%%NAME%}
 // Holy Freeze Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,114+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Freeze   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,114+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Freeze   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,114+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Freeze   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK114>0 (MULTI188,25+MULTI83,3+MULTI107,114+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Freeze   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK114>0 (MULTI188,25+MULTI83,3+MULTI107,114+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Freeze   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK114>0 (MULTI188,25+MULTI83,3+MULTI107,114+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Freeze   < < < <%CL%%NAME%}
 // Holy Shock Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,118+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Shock   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,118+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Shock   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,118+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Shock   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK118>0 (MULTI188,25+MULTI83,3+MULTI107,118+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Shock   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK118>0 (MULTI188,25+MULTI83,3+MULTI107,118+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Shock   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK118>0 (MULTI188,25+MULTI83,3+MULTI107,118+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Shock   < < < <%CL%%NAME%}
 // Sanctuary Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,119+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Sanctuary   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,119+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Sanctuary   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,119+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Sanctuary   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK119>0 (MULTI188,25+MULTI83,3+MULTI107,119+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Sanctuary   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK119>0 (MULTI188,25+MULTI83,3+MULTI107,119+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Sanctuary   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK119>0 (MULTI188,25+MULTI83,3+MULTI107,119+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Sanctuary   < < < <%CL%%NAME%}
 // Fanaticism Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,122+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fanaticism   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,122+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fanaticism   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,122+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fanaticism   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK122>0 (MULTI188,25+MULTI83,3+MULTI107,122+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fanaticism   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK122>0 (MULTI188,25+MULTI83,3+MULTI107,122+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fanaticism   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK122>0 (MULTI188,25+MULTI83,3+MULTI107,122+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fanaticism   < < < <%CL%%NAME%}
 // Conviction Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,123+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Conviction   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,123+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Conviction   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,123+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Conviction   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK123>0 (MULTI188,25+MULTI83,3+MULTI107,123+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Conviction   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK123>0 (MULTI188,25+MULTI83,3+MULTI107,123+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Conviction   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK123>0 (MULTI188,25+MULTI83,3+MULTI107,123+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Conviction   < < < <%CL%%NAME%}
 // Concentration Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,113+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Concentration   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,113+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Concentration   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,25+MULTI83,3+MULTI107,113+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Concentration   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK113>0 (MULTI188,25+MULTI83,3+MULTI107,113+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Concentration   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK113>0 (MULTI188,25+MULTI83,3+MULTI107,113+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Concentration   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK113>0 (MULTI188,25+MULTI83,3+MULTI107,113+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Concentration   < < < <%CL%%NAME%}
 // Holy Nova Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,364+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,364+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Nova   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,364+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK364>0 (MULTI188,24+MULTI83,3+MULTI107,364+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK364>0 (MULTI188,24+MULTI83,3+MULTI107,364+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Nova   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK364>0 (MULTI188,24+MULTI83,3+MULTI107,364+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Nova   < < < <%CL%%NAME%}
 // Holy Bolt Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,101+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Bolt   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,101+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Bolt   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,101+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Bolt   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK101>0 (MULTI188,24+MULTI83,3+MULTI107,101+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Bolt   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK101>0 (MULTI188,24+MULTI83,3+MULTI107,101+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Bolt   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK101>0 (MULTI188,24+MULTI83,3+MULTI107,101+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Bolt   < < < <%CL%%NAME%}
 // Blessed Hammer Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,112+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blessed Hammer   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,112+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blessed Hammer   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,112+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blessed Hammer   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK112>0 (MULTI188,24+MULTI83,3+MULTI107,112+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blessed Hammer   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK112>0 (MULTI188,24+MULTI83,3+MULTI107,112+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blessed Hammer   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK112>0 (MULTI188,24+MULTI83,3+MULTI107,112+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blessed Hammer   < < < <%CL%%NAME%}
 // Vengeance Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,111+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Vengeance   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,111+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Vengeance   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,111+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Vengeance   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK111>0 (MULTI188,24+MULTI83,3+MULTI107,111+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Vengeance   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK111>0 (MULTI188,24+MULTI83,3+MULTI107,111+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Vengeance   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK111>0 (MULTI188,24+MULTI83,3+MULTI107,111+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Vengeance   < < < <%CL%%NAME%}
 // Holy Shield Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,117+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Shield   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,117+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Shield   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,24+MULTI83,3+MULTI107,117+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Shield   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK117>0 (MULTI188,24+MULTI83,3+MULTI107,117+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Holy Shield   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK117>0 (MULTI188,24+MULTI83,3+MULTI107,117+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Holy Shield   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK117>0 (MULTI188,24+MULTI83,3+MULTI107,117+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Holy Shield   < < < <%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 // Barbarian
 //-----------------------------------------------------------------------------------
 // Battle Orders Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,149+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Battle Orders   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,149+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Battle Orders   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,149+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Battle Orders   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK149>0 (MULTI188,34+MULTI83,4+MULTI107,149+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Battle Orders   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK149>0 (MULTI188,34+MULTI83,4+MULTI107,149+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Battle Orders   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK149>0 (MULTI188,34+MULTI83,4+MULTI107,149+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Battle Orders   < < < <%CL%%NAME%}
 // War Cry Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,154+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 War Cry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,154+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 War Cry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,154+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 War Cry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK154>0 (MULTI188,34+MULTI83,4+MULTI107,154+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 War Cry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK154>0 (MULTI188,34+MULTI83,4+MULTI107,154+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 War Cry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK154>0 (MULTI188,34+MULTI83,4+MULTI107,154+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 War Cry   < < < <%CL%%NAME%}
 // Battle Command Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,155+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Battle Command   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,155+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Battle Command   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,155+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Battle Command   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK155>0 (MULTI188,34+MULTI83,4+MULTI107,155+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Battle Command   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK155>0 (MULTI188,34+MULTI83,4+MULTI107,155+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Battle Command   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK155>0 (MULTI188,34+MULTI83,4+MULTI107,155+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Battle Command   < < < <%CL%%NAME%}
 // Grim ward Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,150+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Grim ward   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,150+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Grim ward   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,150+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Grim ward   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK150>0 (MULTI188,34+MULTI83,4+MULTI107,150+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Grim ward   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK150>0 (MULTI188,34+MULTI83,4+MULTI107,150+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Grim ward   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK150>0 (MULTI188,34+MULTI83,4+MULTI107,150+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Grim ward   < < < <%CL%%NAME%}
 // Battle Cry Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,146+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Battle Cry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,146+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Battle Cry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,34+MULTI83,4+MULTI107,146+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Battle Cry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK146>0 (MULTI188,34+MULTI83,4+MULTI107,146+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Battle Cry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK146>0 (MULTI188,34+MULTI83,4+MULTI107,146+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Battle Cry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK146>0 (MULTI188,34+MULTI83,4+MULTI107,146+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Battle Cry   < < < <%CL%%NAME%}
 // Deep wounds Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,33+MULTI83,4+MULTI107,368+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Deep wounds   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,33+MULTI83,4+MULTI107,368+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Deep wounds   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,33+MULTI83,4+MULTI107,368+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Deep wounds   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK368>0 (MULTI188,33+MULTI83,4+MULTI107,368+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Deep wounds   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK368>0 (MULTI188,33+MULTI83,4+MULTI107,368+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Deep wounds   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK368>0 (MULTI188,33+MULTI83,4+MULTI107,368+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Deep wounds   < < < <%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 // Druid
 //-----------------------------------------------------------------------------------
 // Tornado Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,245+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Tornado   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,245+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Tornado   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,245+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Tornado   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK245>0 (MULTI188,42+MULTI83,5+MULTI107,245+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Tornado   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK245>0 (MULTI188,42+MULTI83,5+MULTI107,245+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Tornado   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK245>0 (MULTI188,42+MULTI83,5+MULTI107,245+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Tornado   < < < <%CL%%NAME%}
 // Twister Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,240+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Twister   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,240+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Twister   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,240+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Twister   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK240>0 (MULTI188,42+MULTI83,5+MULTI107,240+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Twister   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK240>0 (MULTI188,42+MULTI83,5+MULTI107,240+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Twister   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK240>0 (MULTI188,42+MULTI83,5+MULTI107,240+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Twister   < < < <%CL%%NAME%}
 // Molten Boulder Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,229+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Molten Boulder   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,229+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Molten Boulder   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,229+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Molten Boulder   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK229>0 (MULTI188,42+MULTI83,5+MULTI107,229+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Molten Boulder   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK229>0 (MULTI188,42+MULTI83,5+MULTI107,229+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Molten Boulder   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK229>0 (MULTI188,42+MULTI83,5+MULTI107,229+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Molten Boulder   < < < <%CL%%NAME%}
 // Fissure Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,234+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fissure   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,234+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fissure   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,234+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fissure   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK234>0 (MULTI188,42+MULTI83,5+MULTI107,234+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fissure   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK234>0 (MULTI188,42+MULTI83,5+MULTI107,234+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fissure   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK234>0 (MULTI188,42+MULTI83,5+MULTI107,234+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fissure   < < < <%CL%%NAME%}
 // Volcano Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,244+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Volcano   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,244+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Volcano   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,244+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Volcano   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK244>0 (MULTI188,42+MULTI83,5+MULTI107,244+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Volcano   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK244>0 (MULTI188,42+MULTI83,5+MULTI107,244+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Volcano   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK244>0 (MULTI188,42+MULTI83,5+MULTI107,244+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Volcano   < < < <%CL%%NAME%}
 // Armageddon Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,249+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Armageddon   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,249+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Armageddon   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,249+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Armageddon   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK249>0 (MULTI188,42+MULTI83,5+MULTI107,249+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Armageddon   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK249>0 (MULTI188,42+MULTI83,5+MULTI107,249+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Armageddon   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK249>0 (MULTI188,42+MULTI83,5+MULTI107,249+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Armageddon   < < < <%CL%%NAME%}
 // Hurricane Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,250+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Hurricane   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,250+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Hurricane   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,42+MULTI83,5+MULTI107,250+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Hurricane   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK250>0 (MULTI188,42+MULTI83,5+MULTI107,250+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Hurricane   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK250>0 (MULTI188,42+MULTI83,5+MULTI107,250+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Hurricane   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK250>0 (MULTI188,42+MULTI83,5+MULTI107,250+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Hurricane   < < < <%CL%%NAME%}
 // Poison Creeper Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,222+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Poison Creeper   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,222+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Poison Creeper   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,222+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Poison Creeper   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK222>0 (MULTI188,40+MULTI83,5+MULTI107,222+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Poison Creeper   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK222>0 (MULTI188,40+MULTI83,5+MULTI107,222+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Poison Creeper   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK222>0 (MULTI188,40+MULTI83,5+MULTI107,222+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Poison Creeper   < < < <%CL%%NAME%}
 // Raven Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,221+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Raven   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,221+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Raven   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,221+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Raven   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK221>0 (MULTI188,40+MULTI83,5+MULTI107,221+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Raven   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK221>0 (MULTI188,40+MULTI83,5+MULTI107,221+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Raven   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK221>0 (MULTI188,40+MULTI83,5+MULTI107,221+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Raven   < < < <%CL%%NAME%}
 // Oak Sage Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,226+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Oak Sage   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,226+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Oak Sage   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,226+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Oak Sage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK226>0 (MULTI188,40+MULTI83,5+MULTI107,226+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Oak Sage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK226>0 (MULTI188,40+MULTI83,5+MULTI107,226+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Oak Sage   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK226>0 (MULTI188,40+MULTI83,5+MULTI107,226+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Oak Sage   < < < <%CL%%NAME%}
 // Grizzly Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,247+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Grizzly   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,247+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Grizzly   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,247+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Grizzly   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK247>0 (MULTI188,40+MULTI83,5+MULTI107,247+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Grizzly   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK247>0 (MULTI188,40+MULTI83,5+MULTI107,247+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Grizzly   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK247>0 (MULTI188,40+MULTI83,5+MULTI107,247+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Grizzly   < < < <%CL%%NAME%}
 // Spirit Wolf Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,227+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Spirit Wolf   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,227+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Spirit Wolf   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,227+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Spirit Wolf   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK227>0 (MULTI188,40+MULTI83,5+MULTI107,227+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Spirit Wolf   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK227>0 (MULTI188,40+MULTI83,5+MULTI107,227+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Spirit Wolf   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK227>0 (MULTI188,40+MULTI83,5+MULTI107,227+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Spirit Wolf   < < < <%CL%%NAME%}
 // Dire Wolf Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,237+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Dire Wolf   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,237+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Dire Wolf   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,237+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Dire Wolf   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK237>0 (MULTI188,40+MULTI83,5+MULTI107,237+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Dire Wolf   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK237>0 (MULTI188,40+MULTI83,5+MULTI107,237+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Dire Wolf   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK237>0 (MULTI188,40+MULTI83,5+MULTI107,237+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Dire Wolf   < < < <%CL%%NAME%}
 // Heat of Wolverine Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,236+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Heat of Wolverine   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,236+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Heat of Wolverine   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,40+MULTI83,5+MULTI107,236+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Heat of Wolverine   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK236>0 (MULTI188,40+MULTI83,5+MULTI107,236+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Heat of Wolverine   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK236>0 (MULTI188,40+MULTI83,5+MULTI107,236+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Heat of Wolverine   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK236>0 (MULTI188,40+MULTI83,5+MULTI107,236+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Heat of Wolverine   < < < <%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 // Assassin
 //-----------------------------------------------------------------------------------
 // Phoenix Strike Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,280+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Phoenix Strike   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,280+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Phoenix Strike   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,280+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Phoenix Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK280>0 (MULTI188,50+MULTI83,6+MULTI107,280+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Phoenix Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK280>0 (MULTI188,50+MULTI83,6+MULTI107,280+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Phoenix Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK280>0 (MULTI188,50+MULTI83,6+MULTI107,280+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Phoenix Strike   < < < <%CL%%NAME%}
 // Tiger Strike Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,254+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Tiger Strike   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,254+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Tiger Strike   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,254+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Tiger Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK254>0 (MULTI188,50+MULTI83,6+MULTI107,254+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Tiger Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK254>0 (MULTI188,50+MULTI83,6+MULTI107,254+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Tiger Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK254>0 (MULTI188,50+MULTI83,6+MULTI107,254+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Tiger Strike   < < < <%CL%%NAME%}
 // Cobra Strike Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,265+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Cobra Strike   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,265+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Cobra Strike   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,265+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Cobra Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK265>0 (MULTI188,50+MULTI83,6+MULTI107,265+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Cobra Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK265>0 (MULTI188,50+MULTI83,6+MULTI107,265+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Cobra Strike   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK265>0 (MULTI188,50+MULTI83,6+MULTI107,265+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Cobra Strike   < < < <%CL%%NAME%}
 // Claws of Thunder Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,269+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claws of Thunder   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,269+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claws of Thunder   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,269+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claws of Thunder   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK269>0 (MULTI188,50+MULTI83,6+MULTI107,269+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claws of Thunder   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK269>0 (MULTI188,50+MULTI83,6+MULTI107,269+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claws of Thunder   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK269>0 (MULTI188,50+MULTI83,6+MULTI107,269+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claws of Thunder   < < < <%CL%%NAME%}
 // Fists of Fire Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,259+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fists of Fire   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,259+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fists of Fire   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,259+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK259>0 (MULTI188,50+MULTI83,6+MULTI107,259+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK259>0 (MULTI188,50+MULTI83,6+MULTI107,259+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fists of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK259>0 (MULTI188,50+MULTI83,6+MULTI107,259+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fists of Fire   < < < <%CL%%NAME%}
 // Blades of Ice Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,274+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blades of Ice   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,274+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blades of Ice   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,50+MULTI83,6+MULTI107,274+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK274>0 (MULTI188,50+MULTI83,6+MULTI107,274+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK274>0 (MULTI188,50+MULTI83,6+MULTI107,274+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blades of Ice   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK274>0 (MULTI188,50+MULTI83,6+MULTI107,274+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blades of Ice   < < < <%CL%%NAME%}
 // Claw Mastery Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,252+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claw Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,252+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claw Mastery   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,252+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claw Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK252>0 (MULTI188,49+MULTI83,6+MULTI107,252+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claw Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK252>0 (MULTI188,49+MULTI83,6+MULTI107,252+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claw Mastery   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK252>0 (MULTI188,49+MULTI83,6+MULTI107,252+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claw Mastery   < < < <%CL%%NAME%}
 // Psychic Hammer Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,253+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Psychic Hammer   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,253+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Psychic Hammer   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,253+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Psychic Hammer   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK253>0 (MULTI188,49+MULTI83,6+MULTI107,253+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Psychic Hammer   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK253>0 (MULTI188,49+MULTI83,6+MULTI107,253+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Psychic Hammer   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK253>0 (MULTI188,49+MULTI83,6+MULTI107,253+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Psychic Hammer   < < < <%CL%%NAME%}
 // Mind Blast Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,273+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Mind Blast   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,273+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Mind Blast   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,273+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Mind Blast   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK273>0 (MULTI188,49+MULTI83,6+MULTI107,273+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Mind Blast   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK273>0 (MULTI188,49+MULTI83,6+MULTI107,273+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Mind Blast   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK273>0 (MULTI188,49+MULTI83,6+MULTI107,273+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Mind Blast   < < < <%CL%%NAME%}
 // Venom Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,278+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Venom   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,278+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Venom   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,278+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Venom   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK278>0 (MULTI188,49+MULTI83,6+MULTI107,278+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Venom   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK278>0 (MULTI188,49+MULTI83,6+MULTI107,278+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Venom   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK278>0 (MULTI188,49+MULTI83,6+MULTI107,278+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Venom   < < < <%CL%%NAME%}
 // Burst of Speed Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,258+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Burst of Speed   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,258+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Burst of Speed   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,258+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Burst of Speed   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK258>0 (MULTI188,49+MULTI83,6+MULTI107,258+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Burst of Speed   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK258>0 (MULTI188,49+MULTI83,6+MULTI107,258+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Burst of Speed   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK258>0 (MULTI188,49+MULTI83,6+MULTI107,258+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Burst of Speed   < < < <%CL%%NAME%}
 // Claw Block Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,263+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claw Block   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,263+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claw Block   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,263+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claw Block   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK263>0 (MULTI188,49+MULTI83,6+MULTI107,263+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Claw Block   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK263>0 (MULTI188,49+MULTI83,6+MULTI107,263+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Claw Block   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK263>0 (MULTI188,49+MULTI83,6+MULTI107,263+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Claw Block   < < < <%CL%%NAME%}
 // Fade Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,267+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fade   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,267+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fade   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,49+MULTI83,6+MULTI107,267+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fade   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK267>0 (MULTI188,49+MULTI83,6+MULTI107,267+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fade   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK267>0 (MULTI188,49+MULTI83,6+MULTI107,267+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fade   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK267>0 (MULTI188,49+MULTI83,6+MULTI107,267+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fade   < < < <%CL%%NAME%}
 // Wake of Fire Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,262+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Wake of Fire   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,262+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Wake of Fire   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,262+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Wake of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK262>0 (MULTI188,48+MULTI83,6+MULTI107,262+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Wake of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK262>0 (MULTI188,48+MULTI83,6+MULTI107,262+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Wake of Fire   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK262>0 (MULTI188,48+MULTI83,6+MULTI107,262+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Wake of Fire   < < < <%CL%%NAME%}
 // Death Sentry Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,276+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Death Sentry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,276+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Death Sentry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,276+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Death Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK276>0 (MULTI188,48+MULTI83,6+MULTI107,276+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Death Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK276>0 (MULTI188,48+MULTI83,6+MULTI107,276+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Death Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK276>0 (MULTI188,48+MULTI83,6+MULTI107,276+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Death Sentry   < < < <%CL%%NAME%}
 // Chain Lightning Sentry Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,271+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Chain Lightning Sentry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,271+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Chain Lightning Sentry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,271+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Chain Lightning Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK271>0 (MULTI188,48+MULTI83,6+MULTI107,271+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Chain Lightning Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK271>0 (MULTI188,48+MULTI83,6+MULTI107,271+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Chain Lightning Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK271>0 (MULTI188,48+MULTI83,6+MULTI107,271+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Chain Lightning Sentry   < < < <%CL%%NAME%}
 // Lightning Sentry Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,366+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lightning Sentry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,366+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lightning Sentry   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,366+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lightning Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK366>0 (MULTI188,48+MULTI83,6+MULTI107,366+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Lightning Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK366>0 (MULTI188,48+MULTI83,6+MULTI107,366+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Lightning Sentry   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK366>0 (MULTI188,48+MULTI83,6+MULTI107,366+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Lightning Sentry   < < < <%CL%%NAME%}
 // Blade Sentinel Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,257+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blade Sentinel   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,257+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blade Sentinel   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,257+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blade Sentinel   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK257>0 (MULTI188,48+MULTI83,6+MULTI107,257+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blade Sentinel   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK257>0 (MULTI188,48+MULTI83,6+MULTI107,257+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blade Sentinel   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK257>0 (MULTI188,48+MULTI83,6+MULTI107,257+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blade Sentinel   < < < <%CL%%NAME%}
 // Blade Fury Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,266+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blade Fury   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,266+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blade Fury   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,266+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blade Fury   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK266>0 (MULTI188,48+MULTI83,6+MULTI107,266+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Blade Fury   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK266>0 (MULTI188,48+MULTI83,6+MULTI107,266+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Blade Fury   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK266>0 (MULTI188,48+MULTI83,6+MULTI107,266+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Blade Fury   < < < <%CL%%NAME%}
 // Shock Web Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,256+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Shock Web   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,256+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Shock Web   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,256+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK256>0 (MULTI188,48+MULTI83,6+MULTI107,256+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK256>0 (MULTI188,48+MULTI83,6+MULTI107,256+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Shock Web   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK256>0 (MULTI188,48+MULTI83,6+MULTI107,256+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Shock Web   < < < <%CL%%NAME%}
 // Fire Blast Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,251+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fire Blast   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,251+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fire Blast   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,251+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fire Blast   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK251>0 (MULTI188,48+MULTI83,6+MULTI107,251+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Fire Blast   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK251>0 (MULTI188,48+MULTI83,6+MULTI107,251+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Fire Blast   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK251>0 (MULTI188,48+MULTI83,6+MULTI107,251+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Fire Blast   < < < <%CL%%NAME%}
 // Wake of Inferno Skills Tab+Class+Skill+AllSK
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Wake of Inferno   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Wake of Inferno   < < < <%CL%%NAME%}
-ItemDisplay[!RW !UNI !SET ID (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Wake of Inferno   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK272>0 (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=7)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +7 Wake of Inferno   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK272>0 (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=6)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +6 Wake of Inferno   < < < <%CL%%NAME%}
+ItemDisplay[!RW !UNI !SET ID SK272>0 (MULTI188,48+MULTI83,6+MULTI107,272+STAT127=5)]:%CONTINUE%%NAME%%BORDER-ED%{%PURPLE%> > > >   +5 Wake of Inferno   < < < <%CL%%NAME%}
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
