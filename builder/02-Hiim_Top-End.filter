@@ -8,8 +8,8 @@ ItemDisplay[box FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
 ItemDisplay[box FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
 ItemDisplay[box FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
 ItemDisplay[box FILTLVL=8]: %NAME%{%NAME% High roller}%CONTINUE%
-ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% Currency & Rejuvs Only - No Other Items Out of Town}%CONTINUE%
-ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% Currency Only - No Other Items Out of Town}%CONTINUE%
+ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% 3 Minute Mapper & Rejuves}%CONTINUE%
+ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% 3 Minute Mapper}%CONTINUE%
 ItemDisplay[box FILTLVL=11]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
 
 ItemDisplay[box]: %NAME%{%NAME%%CL%}%CONTINUE%
@@ -55,7 +55,7 @@ ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 O
 ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
-ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
+//ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
 ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 

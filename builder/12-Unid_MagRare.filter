@@ -80,11 +80,11 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 //-----------------------------------------------------------------------------------
 // Charms - UNID
 // grand
-ItemDisplay[MAG cm3 ILVL>90 !ID]: %YELLOW%HIGH LEVEL %NAME%%CONTINUE%
-ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID]: %BLUE%Mid Level %NAME%%CONTINUE%
+ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %YELLOW%HIGH LEVEL %NAME%%CONTINUE%
+ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %BLUE%Mid Level %NAME%%CONTINUE%
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %MAG_DBL_AFFIX_ITEM_LEFT%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
-ItemDisplay[MAG cm3 CLVL<80 !ID]: %MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
+ItemDisplay[MAG cm3 CLVL<80 !ID FILTLVL<9]: %MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
 // small
 ItemDisplay[MAG cm1 !ID FILTLVL>6]: %BLUE%SC%CONTINUE%
