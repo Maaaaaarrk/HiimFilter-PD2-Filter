@@ -14,15 +14,15 @@ ItemDisplayFilterName[]: Stricter
 ItemDisplayFilterName[]: Stricter + No HP/MP
 ItemDisplayFilterName[]: Extremely Strict
 ItemDisplayFilterName[]: High roller
-ItemDisplayFilterName[]: Currency & Rejuvs Only - No Other Items Out of Town
-ItemDisplayFilterName[]: Currency Only - No Other Items Out of Town
+ItemDisplayFilterName[]: 3 Minute Mapper & Rejuvs
+ItemDisplayFilterName[]: 3 Minute Mapper
 ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 23rd%CL%Season 12 - version 90%CL%HiimFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 24th%CL%Season 12 - version 91%CL%HiimFilter -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -33,8 +33,8 @@ ItemDisplay[box FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
 ItemDisplay[box FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
 ItemDisplay[box FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
 ItemDisplay[box FILTLVL=8]: %NAME%{%NAME% High roller}%CONTINUE%
-ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% Currency & Rejuvs Only - No Other Items Out of Town}%CONTINUE%
-ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% Currency Only - No Other Items Out of Town}%CONTINUE%
+ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% 3 Minute Mapper & Rejuves}%CONTINUE%
+ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% 3 Minute Mapper}%CONTINUE%
 ItemDisplay[box FILTLVL=11]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
 
 ItemDisplay[box]: %NAME%{%NAME%%CL%}%CONTINUE%
@@ -80,7 +80,7 @@ ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 O
 ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
-ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
+//ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
 ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 

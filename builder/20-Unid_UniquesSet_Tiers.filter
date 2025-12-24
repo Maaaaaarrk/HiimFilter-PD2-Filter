@@ -48,8 +48,17 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl
 // Steel Carapace - Shadow Plate
 // Pus Spitter - Siege Crossbow
 // Ravenlore - Sky Spirit
+// Tomb Reaver - Cryptic Axe
+// Spirit Keeper - Earth Spirit
+// Verdungos Hearty Cord - Mithril Coil
+// Soul Drainer - Vambraces
+// Occultist - Crusader Gauntlets
+// Snowclash - Battle Belt
+// Waterwalk - Sharkskin Boots
+// Elite bolts
+// Lidless Wall - Grim Shield
 
-ItemDisplay[UNI !ID FILTLVL<10 (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 8mx OR dre)]: %UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<11 (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 8mx OR dre OR 7pa OR drd OR umc OR umg OR utg OR ztb OR xvb OR cqv3 OR xsh)]: %UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // 4 Star Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -71,43 +80,36 @@ ItemDisplay[UNI !ID FILTLVL<10 (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR
 // Earth Shifter or The Cranium Basher Thunder Maul
 // Gargoyles Bite - Winged Harpoon
 
-ItemDisplay[UNI !ID ETH FILTLVL<10 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls OR 7gm OR 7ts)]: %UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID ETH FILTLVL<11 (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls OR 7gm OR 7ts)]: %UNI_GG_ITEM_LEFT%%SOUNDID-4719%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // Jewerly
 //-----------------------------------------------------------------------------------
 // Amulet
 // Ring
 
-ItemDisplay[UNI !ID FILTLVL<10 (amu OR rin)]: %UNI_GG_ITEM_LEFT%%SOUNDID-4715%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<11 (amu OR rin)]: %UNI_GG_ITEM_LEFT%%SOUNDID-4715%   %GOLD%%NAME%   %UNI_GG_ITEM_RIGHT%
 
 // Rainbow Facet
-ItemDisplay[jew UNI !ID]: %SOUNDID-4719%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %FACET_ITEM_RIGHT%
+ItemDisplay[jew UNI !ID FILTLVL<11]: %SOUNDID-4719%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %FACET_ITEM_RIGHT%
 
 // 3 Star Unique Callouts
 // Filter level 1-8
 //-----------------------------------------------------------------------------------
 // Thunderstroke - Matriarchal Javelin
 // Halaberds Reign - Conqueror Crown
-// Spirit Keeper - Earth Spirit
 // Shaftstop - Mesh Armor
 // The Gladiators Bane Wire Fleece
 // String of Ears - Demonhide Sash
 // Nosferatus Coil - Vampirefang Belt
-// Verdungos Hearty Cord - Mithril Coil
-// Soul Drainer - Vambraces
-// Occultist - Crusader Gauntlets
 // Steelrend - Ogre Gauntlets
 // Giant Skull - Bone Visage
-// Lidless Wall - Grim Shield
 // The Gavel Of Pain - Martel de Fer
 // Horizons Tornado or Stormlash - Scourge
 // Stormspire - Giant Thresher
-// Tomb Reaver - Cryptic Axe
 // Arm of King Leoric - Tomb Wand
 // Blackhand Key - Grave Wand
 // Windforce - Hydra Bow
 // War Traveler - Battle Boots
-// Snowclash - Battle Belt
 // The Spirit Shroud - Ghost Armor
 // Lightsabre or Azurewrath//  Phase Blade
 // Draculs Grasp - Vampirebone Gloves
@@ -115,7 +117,6 @@ ItemDisplay[jew UNI !ID]: %SOUNDID-4719%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %
 // Medusas Gaze - Aegis
 // Steel Pillar - War Pike
 // Boneflame - Succubus Skull
-// Waterwalk - Sharkskin Boots
 // War Fist - Whispering Mirage
 // Martyrdom - Overseer Skull
 // Vampire Gaze - Grim Helm
@@ -132,11 +133,10 @@ ItemDisplay[jew UNI !ID]: %SOUNDID-4719%%FACET_ITEM_LEFT%     %GOLD%%NAME%     %
 // Doombringer - Champion Sword
 // Denmother - Sun Spirit
 // Demon Machine - Chu-Ko-Nu
-// Elite bolts
 // Elite arrows
 // exceptional arrows
 
-ItemDisplay[UNI !ID FILTLVL<9 (amf OR bae OR drd OR xhn OR utu OR zlb OR uvc OR umc OR umg OR utg OR uhg OR uh9 OR xsh OR 9gm OR 7fl OR 7wc OR 7pa OR 9bw OR 9gw OR 6lw OR xtb OR ztb OR xui OR 7cr OR uvg OR ulm OR uow OR 7p7 OR nee OR xvb OR 7xf OR ned OR xh9 OR zvb OR 6sw OR 7gd OR paf OR 8ls OR 7mp OR scl OR 8cb OR 7gm OR zhb OR 7b7 OR drc OR 8rx OR cqv3 OR aqv3 OR aqv2)]: %SOUNDID-4726%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
+ItemDisplay[UNI !ID FILTLVL<9 (amf OR bae OR xhn OR utu OR zlb OR uvc OR uhg OR uh9 OR 9gm OR 7fl OR 7wc OR 9bw OR 9gw OR 6lw OR xtb OR xui OR 7cr OR uvg OR ulm OR uow OR 7p7 OR nee OR 7xf OR ned OR xh9 OR zvb OR 6sw OR 7gd OR paf OR 8ls OR 7mp OR scl OR 8cb OR 7gm OR zhb OR 7b7 OR drc OR 8rx OR aqv3 OR aqv2)]: %SOUNDID-4726%%UNI_TIER3_ITEM_LEFT%  %NAME%  %UNI_TIER3_ITEM_RIGHT%
 
 // 2 Star Unique Callouts
 // Filter level 1-7
@@ -314,9 +314,9 @@ ItemDisplay[SET !ID lbt]: %SOUNDID-4719%%SET_GG_ITEM_LEFT%  %NAME%  %SET_GG_ITEM
 
 // Set Ring
 // Set Amulet
-ItemDisplay[SET !ID (amu OR rin) FILTLVL<7]: %SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
-ItemDisplay[SET !ID amu FILTLVL<8]: %NAME%
-ItemDisplay[SET !ID rin FILTLVL<9]: %NAME%
+ItemDisplay[SET !ID (amu OR rin) FILTLVL<6]: %SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
+ItemDisplay[SET !ID amu FILTLVL<7]: %NAME%
+ItemDisplay[SET !ID rin FILTLVL<8]: %NAME%
 
 // Only ETH
 // Immortal Kings Stone Crusher - Ogre Maul
