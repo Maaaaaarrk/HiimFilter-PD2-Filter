@@ -12,11 +12,12 @@
 * Hiim_Crafting.filter - Same as all in one filter, but good crafting bases are not limited to filter level 3/4
 * Hiim_Crafting_-Class Name-.filter - Will show items and crafting bases targeted to this class at higher filter levels
 * Hiim_Grail.filter - All in one filter & Always shows Uniques & Set items on level 1-8
-* Hiim_Hyper.filter - All in one filter - Hyper themed - Work in progress
+* Hiim_Hyper.filter - All in one filter - Hyper themed
 * Hiim_LLD_Focused.filter - Filter that will show LLD relevant items at higher filter levels
 * Hiim_Mystery.filter - Same as all in one filter, but Runes Pul(21)+ and GG uniques are renamed
-* Hiim_Only_Fitler.filter - All in one filter - No item display changes only filtering - Work in progress
-* Hiim_Vanilla_Plus.filter - Same as all in one filter, but without all of the item re-naming (example identified rares or unidentified uniques)
+* Hiim_Only_Fitler.filter - All in one filter - No item display changes only filtering
+* Hiim_TalRasha_Themed.filter - All in one filter - TalRasha Color Themed
+* Hiim_Vanilla_Plus.filter - All in one filter - but without all of the item re-naming (example identified rares or unidentified uniques)
 ## Filter Levels
 Cube will state current filter version & choosen filter level information
 * 0: OFF
@@ -27,10 +28,10 @@ Cube will state current filter version & choosen filter level information
 * 5: Stricter (Mapping Grade Character, Hides low value uniques & sets)
 * 6: Stricter NO HP/MP
 * 7: Extremely Strict (This is VERY restrictive, lots of items no longer chat notify)
-* 8: High Roller (Most restrictive, Only GG items)
-* 9: Currency & Rejuvs Only (Designed for group play where you only pick-up the Purple Gatorade & Stackables)
-* 10: Currency Only (Designed for group play where you only pick-up stackables)
-* 11: No Items Out of Town (Designed for group play where you aimt to pick-up NOTHING)
+* 8: High Roller (Extremely restrictive, Only 3/4-Star items)
+* 9: 3 Minute Mapper & Rejuvs Only (For builds like p-nova)
+* 10: 3 Minute Mapper (For builds like p-nova)
+* 11: No Items Out of Town (Designed for group play where you aim to pick-up NOTHING)
 ## Helper text
 * Check Tooltip on Boss mats for help on Uber Bosses
 * Check Tooltip on keys tooltip for pathing help
