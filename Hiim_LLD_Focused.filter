@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 23rd%CL%Season 12 - version 90%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 29th%CL%Season 12 - version 93%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 
@@ -50,8 +50,10 @@ ItemDisplay[box]: %NAME%{%NAME%}%MAP-58%
 ItemDisplay[FILTLVL=0 (hp1 OR hp2 OR hp3 OR hp4 OR hp5 OR mp1 OR mp2 OR mp3 OR mp4 OR hp5)]: %NAME% - Filter is off{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}// Fallback for when filter is off
 ItemDisplay[FILTLVL=0]: %NAME%{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}// Fallback for when filter is off
 
+// QTY Alias
+Alias[QTY_TAG]: %TAN%x %QTY%
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
 
 // Lucion item in Lucion
 ItemDisplay[amu STAT206>0 (MAPID=188 OR MAPID=189)]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?
@@ -317,9 +319,9 @@ ItemDisplay[STAT477>0 !jew]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 // General
-ItemDisplay[wss QTY>1]: %NAME% %TAN%QTY %QTY% %CONTINUE%
+ItemDisplay[wss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[wss]: %MAP-62%%SOUNDID-4715%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
-ItemDisplay[cwss QTY>1]: %NAME% %TAN%QTY %QTY% %CONTINUE%
+ItemDisplay[cwss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM_LEFT%    %GRAY%%NAME%    %MAG_DBL_AFFIX_ITEM_RIGHT%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
 ItemDisplay[lbox]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
@@ -913,7 +915,7 @@ ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%(%RUNENUM%)%CONTINUE%
 
 // Show Quantity
-ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %TAN%QTY %QTY%%CONTINUE%
+ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 
 // Low rune name decorations
 // Valuable Crafting rune callout TIR 3, ORT 6, RAL 8, AMN 11, SOL 12, ETH 5
@@ -2464,20 +2466,20 @@ ItemDisplay[jew UNI STAT336>0]: %GREEN%-%STAT336%/+%STAT332% Psn%GOLD% %NAME%%CO
 // MAG OR RARE OR CRAFT - ITEM TAGS (Extends on some of the Shopping and tags)
 //-----------------------------------------------------------------------------------
 
+// LLD CIRC
+ItemDisplay[CIRC ID (MAG OR RARE OR CRAFT) LVLREQ<31 (CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR TABSK0>0 OR TABSK1>0 OR TABSK2>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
+// LLD GLOVES
+ItemDisplay[GLOVES ID (MAG OR RARE OR CRAFT) LVLREQ<31 IAS>0 (TABSK0>1 OR TABSK1>1 OR TABSK2>1 OR TABSK50>1)]: %CONTINUE%%NAME% %TEAL%[LLD]
 // LLD
-ItemDisplay[(HELM OR CIRC) ID (MAG OR RARE OR CRAFT) LVLREQ<31 ((FRES+CRES+LRES+PRES>19) OR IAS>0 OR ALLSK>0 OR FCR>0 OR STAT60>0 OR STAT62>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FRW>0 OR TABSK0>0 OR TABSK1>0 OR TABSK2>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
+ItemDisplay[QUIVER ID (RARE OR CRAFT) LVLREQ<31 (FCR>0 OR IAS>0 OR TABSK0>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
 // LLD
-ItemDisplay[GLOVES ID (RARE OR CRAFT) LVLREQ<31 ((FRES+CRES+LRES+PRES>19) OR IAS>0 OR ALLSK>0 OR FCR>0 OR STAT60>0 OR STAT62>0 OR TABSK0>0 OR TABSK1>0 OR TABSK2>0 OR TABSK50>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
+ItemDisplay[BELT ID (RARE OR CRAFT) LVLREQ<31 (FCR>0 OR FHR>16 OR LIFE>69)]: %CONTINUE%%NAME% %TEAL%[LLD]
 // LLD
-ItemDisplay[(cqv OR aqv) ID (RARE OR CRAFT) LVLREQ<31 (FCR>0 OR IAS>0 OR TABSK0>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
+ItemDisplay[CHEST ID (RARE OR CRAFT) LVLREQ<31 STAT36>7 LIFE>49 (EDAM>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR SOCK=3)]: %CONTINUE%%NAME% %TEAL%[LLD]
+// Eth Chests LLD
+ItemDisplay[(aar OR xar OR ful OR xul OR gth OR xth) ID (RARE OR CRAFT) LVLREQ<31 ETH EDEF>0 (STAT36>7 OR EDAM>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR SOCK=3 OR REPAIR>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
 // LLD
-ItemDisplay[BELT ID (RARE OR CRAFT) LVLREQ<31 (FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0 OR STAT36>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
-// LLD
-ItemDisplay[CHEST ID (RARE OR CRAFT) LVLREQ<31 (STAT36>0 OR EDAM>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
-// LLD
-ItemDisplay[SHIELD ID (RARE OR CRAFT) LVLREQ<31 (STAT36>0 OR EDAM>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR IAS>0 OR FHR>0 OR CRES>0 OR FRES>0 OR LRES>0 OR PRES>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
-// LLD
-ItemDisplay[BOOTS ID (RARE OR CRAFT) LVLREQ<31 (FRW>0 OR FRES>0 OR CRES>0 OR LRES>0 OR PRES>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
+ItemDisplay[SHIELD ID (RARE OR CRAFT) LVLREQ<31 (STAT36>0 OR EDAM>0)]: %CONTINUE%%NAME% %TEAL%[LLD]
 
 // Resists
 //-----------------------------------------------------------------------------------
@@ -6698,7 +6700,7 @@ ItemDisplay[ID (MAG OR RARE OR SET OR UNI OR CRAFT)]: %NAME%{%NAME%}
 // ------------------------------------------------------------------------------
 
 // Show high value small items for gold
-ItemDisplay[!SHOP !RW FILTLVL<5 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%$$${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
+ItemDisplay[!SHOP !RW FILTLVL<5 FILTLVL>1 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%$$${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
 
 
 //hide most nmag non called out on middle filter levels
