@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 29th%CL%Season 12 - version 95%CL%HiimFilter - Crafting - Assassin -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 29th%CL%Season 12 - version 96%CL%HiimFilter - Crafting - Assassin -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
@@ -1147,8 +1147,8 @@ ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
 ItemDisplay[!UNI !SET jew]: %CONTINUE%Jewel
 
 // Select item name blanking
-ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>6]: %CONTINUE%Nec Head
-ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>6]: %CONTINUE%Sorc Orb
+ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>4]: %CONTINUE%Nec Head
+ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>4]: %CONTINUE%Sorc Orb
 
 // Quivers
 ItemDisplay[aqv (MAG OR RARE OR UNI) !ID]: Arrow%CONTINUE%
@@ -2236,11 +2236,9 @@ ItemDisplay[!ID (pab OR pa6 OR pa1) RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //pa
 ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //4os able scepters
 ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //dudu helms
 ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%NAME% //nec heads
-ItemDisplay[!ID MAG NEC FILTLVL<9 ILVL>89]: %TIER-6%%NAME% //nec heads
-ItemDisplay[!ID MAG NEC FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //nec heads
-ItemDisplay[!ID RARE SOR FILTLVL<9 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
-ItemDisplay[!ID MAG SOR FILTLVL<9 ILVL>89]: %TIER-6%%NAME% //Sorc Orbs
-ItemDisplay[!ID MAG SOR FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
+ItemDisplay[!ID MAG NEC FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //nec heads
+ItemDisplay[!ID RARE SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
+ItemDisplay[!ID MAG SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
 
 // High Ilvl Non-weap Rares
 ItemDisplay[RARE CHEST !ID FILTLVL<9 ALVL>84]: %RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT%
