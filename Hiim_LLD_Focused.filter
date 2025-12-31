@@ -22,22 +22,22 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 30th%CL%Season 12 - version 97%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated December 31st%CL%Season 12 - build 98%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
-ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base}%CONTINUE%
-ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict}%CONTINUE%
-ItemDisplay[box FILTLVL=3]: %NAME%{%NAME% Strict}%CONTINUE%
-ItemDisplay[box FILTLVL=4]: %NAME%{%NAME% Strict & No HP/MP}%CONTINUE%
-ItemDisplay[box FILTLVL=5]: %NAME%{%NAME% Stricter}%CONTINUE%
-ItemDisplay[box FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP}%CONTINUE%
-ItemDisplay[box FILTLVL=7]: %NAME%{%NAME% Extremely Strict}%CONTINUE%
-ItemDisplay[box FILTLVL=8]: %NAME%{%NAME% High roller}%CONTINUE%
-ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% 3 Minute Mapper & Rejuves}%CONTINUE%
-ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% 3 Minute Mapper}%CONTINUE%
-ItemDisplay[box FILTLVL=11]: %NAME%{%NAME% No Items Out of Town}%CONTINUE%
+ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
+ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
+ItemDisplay[box FILTLVL=3]: %NAME%{%NAME% Strict (3)}%CONTINUE%
+ItemDisplay[box FILTLVL=4]: %NAME%{%NAME% Strict & No HP/MP (4)}%CONTINUE%
+ItemDisplay[box FILTLVL=5]: %NAME%{%NAME% Stricter (5)}%CONTINUE%
+ItemDisplay[box FILTLVL=6]: %NAME%{%NAME% Stricter & No HP/MP (6)}%CONTINUE%
+ItemDisplay[box FILTLVL=7]: %NAME%{%NAME% Extremely Strict (7)}%CONTINUE%
+ItemDisplay[box FILTLVL=8]: %NAME%{%NAME% High roller (8)}%CONTINUE%
+ItemDisplay[box FILTLVL=9]: %NAME%{%NAME% 3 Minute Mapper & Rejuves (9)}%CONTINUE%
+ItemDisplay[box FILTLVL=10]: %NAME%{%NAME% 3 Minute Mapper (10)}%CONTINUE%
+ItemDisplay[box FILTLVL=11]: %NAME%{%NAME% No Items Out of Town (11)}%CONTINUE%
 
 ItemDisplay[box]: %NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[box CLVL=99]: %NAME%{%CL%%PURPLE%Grats on 99%CL%%CL%%NAME%}%CONTINUE%
@@ -80,11 +80,11 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide jun
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
-//ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
+//ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
 ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------
 
@@ -320,7 +320,7 @@ ItemDisplay[STAT477>0 !jew]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 // General
 ItemDisplay[wss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
-ItemDisplay[wss]: %MAP-62%%SOUNDID-4715%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
+ItemDisplay[wss]: %TIER-7%%MAP-62%%SOUNDID-4715%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
 ItemDisplay[cwss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM_LEFT%    %GRAY%%NAME%    %MAG_DBL_AFFIX_ITEM_RIGHT%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
@@ -1198,8 +1198,8 @@ ItemDisplay[NMAG ETH !RW SOCK=0]:%NAME%%CONTINUE%{%RED%SLAM %WHITE%For chance of
 // UNID Formatting
 //-----------------------------------------------------------------------------------
 // Warrior Map Formatting
-ItemDisplay[MAG (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
-ItemDisplay[RARE (ARMOR OR WEAPON) !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[MAG !ID (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -2193,6 +2193,9 @@ ItemDisplay[ID SHOP (CHSK54>0) FCR>29 STAFF LVLREQ<31]: %PURPLE%* * *   LLD FCR 
 ItemDisplay[ID SHOP (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %ORANGE%* * *   LLD FCR Teleport Charges Staff [LLD]   * * *{%RED%***   %PURPLE%LLD FCR Teleport Charges Staff%RED%   ***}  // Teleport charges FCR
 ItemDisplay[ID SHOP STAFF]: {%NAME%} // Hide the rest
 // No longer possible because of automod ItemDisplay[ID (CHSK54>0) STAFF LVLREQ<31]: %GREEN%LLD FCR Teleport Charges Staff [LLD]{%GREEN%LLD Teleport Charges Staff} // Teleport charges
+
+ItemDisplay[GEM=5]: %NAME%
+ItemDisplay[GEM=4]: %NAME%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
@@ -2302,7 +2305,7 @@ ItemDisplay[cm3 UNI !ID]: %UBER_KEYS_LEFT%%GOLD%  Unidentified Gheeds Fortune  %
 //-----------------------------------------------------------------------------------
 
 // Weapon Rares
-ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr) RARE ETH (ILVL>84) !ID]: %RARE_GOOD_ITEM_LEFT% %NAME% %RARE_GOOD_ITEM_RIGHT%
+ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr) RARE ETH (ILVL>84) !ID]: %TIER-7%%RARE_GOOD_ITEM_LEFT% %NAME% %RARE_GOOD_ITEM_RIGHT%
 ItemDisplay[WEAPON RARE ETH (ILVL>84 OR FILTLVL<3) !ID FILTLVL<7]: %TIER-2%%RARE_HIGH_ITEM_LEFT% %YELLOW%%NAME% %RARE_HIGH_ITEM_RIGHT%
 ItemDisplay[WEAPON RARE !ID FILTLVL<3]: %RARE_HIGH_ITEM_LEFT% %YELLOW%%NAME% %RARE_HIGH_ITEM_RIGHT%
 ItemDisplay[WEAPON RARE ETH !ID FILTLVL<7]: %TIER-2%%RARE_HIGH_ITEM_LEFT% %YELLOW%%NAME% %RARE_HIGH_ITEM_RIGHT%
@@ -2311,7 +2314,7 @@ ItemDisplay[(6hx OR 8hx OR hxb) RARE (ILVL>84) !ID FILTLVL<7]: %NAME%
 
 ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<5]: %TIER-2%%RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT%
 ItemDisplay[!ID ETH SIN RARE FILTLVL<7 ILVL>84]: %RARE_ITEM_LEFT% %NAME% %RARE_ITEM_RIGHT% //eth sin claws
-ItemDisplay[!ID ETH SIN RARE FILTLVL<8 ILVL>84]: %NAME% //eth sin claws
+ItemDisplay[!ID ETH SIN RARE FILTLVL<8 ILVL>84]: %TIER-7%%NAME% //eth sin claws
 ItemDisplay[!ID SIN RARE FILTLVL<7 ILVL>84]: %NAME% //non eth sin claws
 ItemDisplay[RARE FILTLVL<7 (ILVL>84) !ID (7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr)]: %NAME%
 
@@ -2331,7 +2334,7 @@ ItemDisplay[!ID RARE SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
 ItemDisplay[!ID MAG SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
 
 // High Ilvl Non-weap Rares
-ItemDisplay[RARE CHEST !ID FILTLVL<9 ALVL>84]: %RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT%
+ItemDisplay[RARE CHEST !ID FILTLVL<9 ALVL>84]: %TIER-7%%RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT%
 ItemDisplay[RARE !WEAPON (ILVL>84) !ID FILTLVL<3]: %RARE_ITEM_EXTRA_LEFT% %NAME% %RARE_ITEM_EXTRA_RIGHT%
 ItemDisplay[RARE ARMOR ETH !ID FILTLVL<7]: %TIER-6%%NAME%
 ItemDisplay[RARE (GLOVES OR BELT) ETH !ID FILTLVL<8]: %TIER-6%%NAME%
@@ -3719,8 +3722,8 @@ ItemDisplay[SET !ID FILTLVL<7 (vbt OR vgl OR lgl OR lbl OR lbt)]: %SET_TIER1_ITE
 
 ItemDisplay[UNI !ID (MAPID=181 OR MAPID=182)]: %DOT-D3%%NAME%// Warrior Map catch rest
 ItemDisplay[SET !ID (MAPID=181 OR MAPID=182)]: %DOT-7D%%NAME%// Warrior Map catch rest
-ItemDisplay[UNI !ID ETH FILTLVL<8 !(7ba OR 7cs OR 7gl)]: %PX-D3%%TIER-6%%NAME%// Eth uni show all
-ItemDisplay[SET !ID ETH]: %PX-7D%%TIER-6%%NAME%// Eth set show all
+ItemDisplay[UNI !ID ETH FILTLVL<7 !(7ba OR 7cs OR 7gl)]: %PX-D3%%TIER-6%%NAME%// Eth uni show all
+ItemDisplay[SET !ID ETH FILTLVL<7]: %PX-7D%%TIER-6%%NAME%// Eth set show all
 ItemDisplay[ELT UNI !ID FILTLVL<7]: %PX-D3%%TIER-4%%NAME%// Show all elite level 1-6 announce 1-4
 ItemDisplay[UNI !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
 ItemDisplay[SET !ID FILTLVL>4 CLVL>84]:// Hide not called out on Stricter +
@@ -6698,6 +6701,8 @@ ItemDisplay[ID (MAG OR RARE OR SET OR UNI OR CRAFT)]: %NAME%{%NAME%}
 // Show high value small items for gold
 ItemDisplay[!SHOP !RW FILTLVL<5 FILTLVL>1 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%$$${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
 
+// Hide gems
+ItemDisplay[GEM>0 QTY>0]:
 
 //hide most nmag non called out on middle filter levels
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH]:%NOTIFY-DEAD%{%NAME%}

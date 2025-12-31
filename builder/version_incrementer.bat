@@ -53,7 +53,7 @@ set "OUTFILE=01-Version.filter"
 
 rem === Build the file content ===
 > "%OUTFILE%" (
-    <nul set /p "=Last updated !PRETTYDATE!%%CL%%Season 12 - version !VERSION!"
+    <nul set /p "=Last updated !PRETTYDATE!%%CL%%Season 12 - build !VERSION!"
 )
 
 echo Created/updated "%OUTFILE%" with version !VERSION! and date !PRETTYDATE!.
