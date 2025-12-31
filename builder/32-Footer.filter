@@ -52,6 +52,8 @@ ItemDisplay[ID (MAG OR RARE OR SET OR UNI OR CRAFT)]: %NAME%{%NAME%}
 // Show high value small items for gold
 ItemDisplay[!SHOP !RW FILTLVL<5 FILTLVL>1 PRICE>34999 (WP12 OR WP4 OR WP13 OR CL6 OR CL5) !(wsp OR 9ws OR 7ws)]: %GREEN%$$${%GREEN%Sell to Vendor for %GOLD%Gold%CL%%NAME%}
 
+// Hide gems
+ItemDisplay[GEM>0 QTY>0]:
 
 //hide most nmag non called out on middle filter levels
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH]:%NOTIFY-DEAD%{%NAME%}
