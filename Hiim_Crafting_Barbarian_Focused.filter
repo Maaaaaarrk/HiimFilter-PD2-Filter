@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 2nd%CL%Season 12 - build 100%CL%HiimFilter - Crafting - Barbarian -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 5th%CL%Season 12 - build 101%CL%HiimFilter - Crafting - Barbarian -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -73,6 +73,14 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuf
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher Filter levels after 60
 //-----------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------
+// Desecrated
+//-----------------------------------------------------------------------------------
+ItemDisplay[STAT206>0 MAG]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[STAT206>0 RARE]: %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[STAT206>0 CRAFT]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[STAT206>0 SET]: %GREEN%%NAME%%CONTINUE%
+ItemDisplay[STAT206>0]: %BORDER-55%%MAP-58%%GOLD%Desecrated %NAME%
 
 //-----------------------------------------------------------------------------------
 // ONLYs FILTER ENFORCEMENT
