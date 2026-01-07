@@ -16,9 +16,8 @@ ItemDisplay[irra]: %MAP-4A%%NAME%//Infused Zakarum Orb {%WHITE%Cube with: %WHITE
 ItemDisplay[urma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Angelic Orb
 ItemDisplay[rrra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map -> %WHITE%to make a new %YELLOW%Rare Map} //Infused Horadric Orb
 ItemDisplay[upmp]: %NAME% %ORANGE%*//{%WHITE%3 x Map + %GOLD%Orb%CL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
-ItemDisplay[scrb QTY=1]: %MAP-4A%%BOSS_MAT_LEFT% %NAME% %BOSS_MAT_RIGHT%%CONTINUE%//{%WHITE%This Item + T3 Map%CL%Note: Enter Group Dungeon:}
-ItemDisplay[scrb QTY>1]: %MAP-4A%%ORANGE%%NAME%//{%WHITE%This Item + T3 Map%CL%Note: Enter Group Dungeon:}%CONTINUE%
-ItemDisplay[std]: %DOT-9D%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%WHITE%+10% Experience%CL%+20% Magic&Gold Find%CL%+20% Monster Density%CL%%TAN%Note%WHITE%: Cube it with Map to gain:}
+ItemDisplay[scrb]: %MAP-4A%%BOSS_MAT_LEFT% %NAME% %BOSS_MAT_RIGHT%%CONTINUE%{%NAME%}
+ItemDisplay[std]: %DOT-9D%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%NAME%}
 
 // Map Tier Tags
 ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
@@ -50,7 +49,7 @@ ItemDisplay[t22]: %NAME%{%CL%%RED%F 125% %YELLOW%L 105% %BLUE% C 75%%CL%%GRAY%Ph
 ItemDisplay[t13]: %NAME%{%CL%%RED%F 125% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 110% %ORANGE%M 50% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep Level id 149 Updated: Dec 17th 2025
 ItemDisplay[t32]: %NAME%{%CL%%RED%F 130% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 75% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: Dec 17th 2025
 ItemDisplay[t24]: %NAME%{%CL%%RED%F 85% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 105% %ORANGE%M 50% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle Level id 151 Updated: Dec 17th 2025
-ItemDisplay[t35]: %NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: Dec 17th 2025
+ItemDisplay[t35]: %PX-62%%SOUNDID-4715%%NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: Dec 17th 2025
 ItemDisplay[t36]: %NAME%{%CL%%RED%F 95% %YELLOW%L 100% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fall of Caldeum Level id 155 Updated: Dec 17th 2025
 ItemDisplay[t37]: %NAME%{%CL%%RED%F 75% %YELLOW%L 135% %BLUE% C 75%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 130%%CL%%NAME%}%CONTINUE% // Pandemonium Citadel Level id 156 Updated: Dec 17th 2025
 ItemDisplay[t33]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 110%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Lost Temple Level id 158 Updated: Dec 17th 2025
@@ -152,13 +151,13 @@ ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
 ItemDisplay[(MAPTIER>0 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
 
 // Map End Wrapper by Tier
-ItemDisplay[MAPTIER=1]: %MAP-62%%NAME% %GREEN%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=2]: %MAP-62%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=3]: %MAP-62%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=4]: %MAP-62%%NAME% %RED%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1]: %MAP-62%%TIER-8%%NAME% %GREEN%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=4]: %MAP-62%%TIER-8%%NAME% %RED%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=5 !ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=5 ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%*{%NAME%}%CONTINUE%
-ItemDisplay[(t61 OR t62)]: %MAP-62%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
+ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
 
 ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 //Warnings 
