@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 5th%CL%Season 12 - build 101%CL%HiimFilter - Only Filter Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 6th%CL%Season 12 - build 102%CL%HiimFilter - Only Filter Mode -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -80,7 +80,8 @@ ItemDisplay[STAT206>0 MAG]: %BLUE%%NAME%%CONTINUE%
 ItemDisplay[STAT206>0 RARE]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[STAT206>0 CRAFT]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[STAT206>0 SET]: %GREEN%%NAME%%CONTINUE%
-ItemDisplay[STAT206>0]: %BORDER-55%%MAP-58%%GOLD%Desecrated %NAME%
+ItemDisplay[STAT206>0 GROUND]: %BORDER-55%%MAP-58%%GOLD%Desecrated %NAME%
+ItemDisplay[STAT206>0]: %NAME%
 
 //-----------------------------------------------------------------------------------
 // ONLYs FILTER ENFORCEMENT
@@ -305,16 +306,15 @@ ItemDisplay[STAT477>0 !jew]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
 ItemDisplay[wss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[wss]: %TIER-7%%MAP-62%%SOUNDID-4715%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%{%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt%CL%50 Wss ~.01-.02 each}
 ItemDisplay[cwss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
-ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%RED%Corrupts %TAN%your Annihilus}
+ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%GEN_RARER_ITEM_LEFT% %NAME% %GEN_RARER_ITEM_RIGHT%{%TAN%HR Estimated Value Each%WHITE%: 0.75%CL%%WHITE%HR Values Last updated January 6 2026%CL%%RED%Corrupts %TAN%your Annihilus}
 ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM_LEFT%    %GRAY%%NAME%    %MAG_DBL_AFFIX_ITEM_RIGHT%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
-ItemDisplay[lbox]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[lpp]: %MAP-4A%%SOUNDID-4715%%GEN_RARE_ITEM_LEFT% %NAME% %GEN_RARE_ITEM_RIGHT%{%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[imrn]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
+ItemDisplay[lbox]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%TAN%HR Estimated Value Each%WHITE%: 0.7%CL%%WHITE%HR Values Last updated January 6 2026%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lpp]: %MAP-4A%%SOUNDID-4715%%GEN_RARE_ITEM_LEFT% %NAME% %GEN_RARE_ITEM_RIGHT%{%TAN%HR Estimated Value Each%WHITE%: 0.05%CL%%WHITE%HR Values Last updated January 6 2026%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[imrn]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM_LEFT% %NAME% %GEN_GG_ITEM_RIGHT%{%TAN%HR Estimated Value Each%WHITE%: 1.4%CL%%WHITE%HR Values Last updated January 6 2026%CL%%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
 ItemDisplay[llmr]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
 ItemDisplay[lsvl]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%RARE_GG_ITEM_LEFT% %NAME% %RARE_GG_ITEM_RIGHT%{%NAME%}
-ItemDisplay[iwss]: %MAP-4A%%SOUNDID-4715%%GEN_ITEM_ALT_LEFT% %NAME% %GEN_ITEM_ALT_RIGHT%
-ItemDisplay[cm2f]: %MAP-4A%%GEN_ITEM_LEFT% %NAME% %GEN_ITEM_RIGHT%
+ItemDisplay[iwss]: %MAP-4A%%SOUNDID-4715%%GEN_ITEM_ALT_LEFT% %NAME% %GEN_ITEM_ALT_RIGHT%{%TAN%HR Estimated Value Each%WHITE%: 0.15%CL%%WHITE%HR Values Last updated January 6 2026%CL%%NAME%}
 ItemDisplay[rtp]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Town Portal
 ItemDisplay[rid]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ITEM_ALT_LEFT% %ORANGE%%NAME% %RARE_GG_ITEM_ALT_RIGHT% // Rathma Tome of Identify
 //-----------------------------------------------------------------------------------
@@ -495,11 +495,11 @@ ItemDisplay[rkey]: %RARE_GG_ITEM_ALT_LEFT%    %ORANGE%%NAME%   %RARE_GG_ITEM_ALT
 // Boss Mats
 //-----------------------------------------------------------------------------------
 // DClone mats
-ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%---------%CL%%ORANGE%Black Soulstone %WHITE%- drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%- drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%ORANGE%Pure Demonic Essence %WHITE%- drops from Map bosses%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
+ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%-----%CL%%ORANGE%Black Soulstone %WHITE%0.25 hr - drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%0.4 hr - drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%ORANGE%Pure Demonic Essence %WHITE%0.04 hr - drops from Map bosses%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
 // PD2 Items - Rathma mats
-ItemDisplay[(rtmo OR rtmv OR cm2f)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Res:%CL%%GOLD%Voidstone - Rathma boss fight}
+ItemDisplay[(rtmo OR rtmv OR cm2f)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%-----%CL%%ORANGE%Hellfire Torch(Ashes)%WHITE% 0.4 hr%CL%%ORANGE%Splinter of the Void %WHITE%0.5 hr - drops from Shadow of Mendeln map event%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%0.04 hr - drops from any undead%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Res:%CL%%GOLD%Voidstone - Rathma boss fight}
 // PD2 Items - lucion mats
-ItemDisplay[(lucb OR lucc OR lucd)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
+ItemDisplay[(lucb OR lucc OR lucd)]: %MAP-0A%%BOSS_MAT_LEFT%%SOUNDID-4721% %RED%%NAME% %BOSS_MAT_RIGHT%{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%-----%CL%%ORANGE%Flesh of Malic %WHITE%0.09 hr - drops from any demon%CL%%ORANGE%Talisman of Transgression %WHITE%0.2 hr - drops in corrupted zone%CL%%ORANGE%Demonic Insignia %WHITE%0.5 hr - drops in Act 5 red portal LOD zones%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
 // Boss Item Entry
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
@@ -912,18 +912,19 @@ ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM
 ItemDisplay[RARE rin !ID FILTLVL<8]: %NAME%
 
 // Jewel
-ItemDisplay[MAG jew !ID FILTLVL<8 ILVL>89]: %MAG_DBL_AFFIX_ITEM_LEFT%%BLUE%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
+ItemDisplay[MAG jew !ID FILTLVL<8 ILVL>84]: %MAG_DBL_AFFIX_ITEM_LEFT%%BLUE%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[MAG jew !ID FILTLVL<7]: %MAG_ITEM_LEFT%%TIER-6%     %NAME%     %MAG_ITEM_RIGHT%
 ItemDisplay[MAG jew !ID FILTLVL<8]: %MAG_ITEM_LEFT%%TIER-6% %NAME% %MAG_ITEM_RIGHT%
-ItemDisplay[MAG jew !ID FILTLVL=8 ILVL>89]: %MAG_DBL_AFFIX_ITEM_LEFT%%BLUE% %NAME% %MAG_DBL_AFFIX_ITEM_RIGHT%
+ItemDisplay[MAG jew !ID FILTLVL=8 ILVL>84]: %MAG_DBL_AFFIX_ITEM_LEFT%%BLUE% %NAME% %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM_LEFT%%YELLOW%     %NAME%     %RARE_GOOD_ITEM_RIGHT%
 ItemDisplay[RARE jew !ID]: %RARE_HIGH_ITEM_LEFT%    %NAME%    %RARE_HIGH_ITEM_RIGHT%
 
 // Circlets
 ItemDisplay[EQ7 RARE !ID]: %SOUNDID-4715%%RARE_RARE_ITEM_LEFT% %NAME% %RARE_RARE_ITEM_RIGHT%
-ItemDisplay[(ci2 OR ci3) MAG !ETH !ID ILVL>89 FILTLVL<8]: %MAG_DBL_AFFIX_ITEM_LEFT% %NAME% %MAG_DBL_AFFIX_ITEM_RIGHT%
+// 3os circ mag 2x affix
+ItemDisplay[(ci2 OR ci3) MAG !ETH !ID ILVL>84 FILTLVL<8]: %MAG_DBL_AFFIX_ITEM_LEFT% %NAME% %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID FILTLVL<7]: %MAG_ITEM_LEFT% %NAME% %MAG_ITEM_RIGHT%
-ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<7]: %NAME%
+ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<5]: %NAME%
 ItemDisplay[EQ7 MAG !ID FILTLVL<3]: %NAME%
 ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %YELLOW%imbue %WHITE%it using Charsi quest}
 //-----------------------------------------------------------------------------------
@@ -1332,7 +1333,7 @@ ItemDisplay[SET !ID rin FILTLVL<8]: %NAME%
 // Bul-Kathos Sacred Charge - Colossus Blade
 // Bul-Kathos Tribal Guardian - Colossus Sword
 
-ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb)]: %SET_GG_ITEM_LEFT%  %NAME%  %SET_GG_ITEM_RIGHT%
+ItemDisplay[SET !ID ETH (7m7 OR 7gd OR 7fb) FILTLVL<9]: %SET_GG_ITEM_LEFT%  %NAME%  %SET_GG_ITEM_RIGHT%
 
 // Set tier 3 Set Callouts
 //-----------------------------------------------------------------------------------
@@ -1498,8 +1499,12 @@ ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2
 ItemDisplay[(8cs OR 8bs OR wst OR 8ws) (SK46>2 OR SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0 FILTLVL<5]: %NAME% [LLD]{%GREEN%Must roll 4 open sockets for LLD%CL%%NAME%}
 
 // Hand of Justice/CTA Scepters
-ItemDisplay[7ws SK123>2 SK96>2 NMAG !INF !SUP (SOCK=0 OR SOCK=4) !RW (EDAM=15 OR FILTLVL<8)]: %NAME% %PURPLE%[HOJ]{%NAME%}
-ItemDisplay[7ws (SK123>2 OR SK96>2) NMAG !INF !SUP (SOCK=0 OR SOCK=4) !RW EDAM>4 (EDAM=15 OR FILTLVL<8)]: %NAME% %RW_BASE_GREEN_RIGHT%[HOJ]{%NAME%}
+ItemDisplay[7ws SK123>2 (SK96>2 OR SK107>2) NMAG !INF !ETH SOCK=4 !RW (EDAM=15 OR FILTLVL<9)]: %NAME% %PURPLE%[HOJ]{%NAME%}
+ItemDisplay[7ws SK123>2 (SK96>2 OR SK107>2) NMAG !INF !ETH SOCK=0 !RW (EDAM=15 OR FILTLVL<9)]: %NAME% %PURPLE%[HOJ]{%GREEN%Must roll 4 open sockets for HOJ%CL%%NAME%}
+ItemDisplay[7ws (SK123>2 OR SK96>2) NMAG !INF !ETH SOCK=4 !RW EDAM>4 (EDAM=15 OR FILTLVL<8)]: %NAME% %RW_BASE_GREEN_RIGHT%[HOJ]{%NAME%}
+ItemDisplay[7ws (SK123>2 OR SK96>2) NMAG !INF !ETH SOCK=0 !RW EDAM>4 (EDAM=15 OR FILTLVL<8)]: %NAME% %RW_BASE_GREEN_RIGHT%[HOJ]{%GREEN%Must roll 4 open sockets for HOJ%CL%%NAME%}
+ItemDisplay[7ws SK102>2 NMAG !INF SOCK=4 !ETH !RW FILTLVL<7]: %NAME% %RW_BASE_GREEN_RIGHT%[HOJ]{%NAME%}
+ItemDisplay[7ws SK102>2 NMAG !INF SOCK=0 !ETH !RW FILTLVL<7]: %NAME% %RW_BASE_GREEN_RIGHT%[HOJ]{%GREEN%Must roll 4 open sockets for HOJ%CL%%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL<8]: %NAME% %RW_BASE_GREEN_RIGHT%[CTA]{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL<5]: %NAME% %RW_BASE_GREEN_RIGHT%[CTA]{%NAME%}
 
