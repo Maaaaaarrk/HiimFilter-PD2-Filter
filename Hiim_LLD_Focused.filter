@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 14th%CL%Season 12 - build 104%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 14th%CL%Season 12 - build 105%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 
@@ -1157,8 +1157,8 @@ ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
 ItemDisplay[!UNI !SET jew]: %CONTINUE%Jewel
 
 // Select item name blanking
-ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>4]: %CONTINUE%Nec Head
-ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>4]: %CONTINUE%Sorc Orb
+ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>4 !(MAPID=83)]: %CONTINUE%Nec Head
+ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>4 !(MAPID=83)]: %CONTINUE%Sorc Orb
 
 // Quivers
 ItemDisplay[aqv (MAG OR RARE OR UNI) !ID]: Arrow%CONTINUE%
@@ -2150,6 +2150,9 @@ ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZER
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Catch all eth weapons when lower filter level
 ItemDisplay[RARE QUIVER !ID]: %NAME%%MAP-97%%TIER-2%
 ItemDisplay[!ID CLASS (MAG OR RARE)]: %NAME%
+
+ItemDisplay[SET !ID amu]: %SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
+ItemDisplay[SET !ID rin]: %SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
 
 ItemDisplay[MAG amu !ID FILTLVL<3]: %BLUE%Amu
 ItemDisplay[MAG amu !ID FILTLVL>2]:
