@@ -24,13 +24,13 @@ ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR
 ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Barb helms
 ItemDisplay[!ID (MAG OR RARE) ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // dudu helms
 //Id-ed
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //Sorc orbs
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (am1 OR am5 OR am6 OR ama)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} //Javs
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Nec heads
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // Barb helms
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%CORAL%LLD Crafting Base%CL%%NAME%} // dudu helms
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //Sorc orbs
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (am1 OR am5 OR am6 OR ama)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //Javs
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Nec heads
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Barb helms
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // dudu helms
 //cudgel alvl
 
 // Weapons
@@ -93,7 +93,7 @@ ItemDisplay[MAG amu !ID FILTLVL>2]:
 // True Silver - Maiden Javelin
 // Tearhaunch - Greaves
 
-ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt)]: %DOT-68%%GOLD%*  %NAME%  %GOLD%*
+ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt)]: %UNI_TIER1_ITEM_LEFT%  %NAME%  %UNI_TIER1_ITEM_RIGHT%
 
 
 // LLD  lld catch callouts
@@ -102,9 +102,11 @@ ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw
 // Sanders Taboo - Heavy Gloves
 // Deaths Hand - Leather Gloves
 // Deaths Guard - Sash
-// Tancreds Hobnails - Boots
 
-ItemDisplay[SET !ID (vbt OR vgl OR lgl OR lbl OR lbt)]: %DOT-84%%GREEN%*  %NAME%  %GREEN%*%TIER-6%
+ItemDisplay[SET !ID (vbt OR vgl OR lgl OR lbl)]: %SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%
+
+// Tancreds Hobnails - Boots
+ItemDisplay[SET !ID lbt]: %SOUNDID-4719%%SET_GG_ITEM_LEFT%  %NAME%  %SET_GG_ITEM_RIGHT%
 
 //-----------------------------------------------------------------------------------
 
