@@ -22,7 +22,9 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 27th%CL%Season 12 - build 108%CL%HiimFilter - Crafting - Paladin -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 27th%CL%Season 12 - build 108%CL%HiimFilter - LLD Hyper -}%CONTINUE%
+
+ItemDisplay[mp5 MAPID=83]:
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -107,154 +109,153 @@ ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 
 // General item
-Alias[GEN_ITEM_LEFT]: %ORANGE%O O O
-Alias[GEN_ITEM_RIGHT]: %ORANGE%O O O
+Alias[GEN_ITEM_LEFT]: %YELLOW%OO%BLUE%OO%ORANGE%OO
+Alias[GEN_ITEM_RIGHT]: %ORANGE%OO%BLUE%OO%YELLOW%OO
 
 // General item Alt
-Alias[GEN_ITEM_ALT_LEFT]: %PURPLE%O O O
-Alias[GEN_ITEM_ALT_RIGHT]: %PURPLE%O O O
+Alias[GEN_ITEM_ALT_LEFT]: %PURPLE%OO%RED%OO%CORAL%OO
+Alias[GEN_ITEM_ALT_RIGHT]: %CORAL%OO%RED%OO%PURPLE%OO
 
 // Token parts
-Alias[TOKEN_PARTS_LEFT]: %ORANGE%> >
-Alias[TOKEN_PARTS_RIGHT]: %ORANGE%< <
+Alias[TOKEN_PARTS_LEFT]: %GREEN%X%RED%><%BLUE%x%ORANGE%
+Alias[TOKEN_PARTS_RIGHT]: %BLUE%x%RED%><%GREEN%X
 
 // Uber Keys
-Alias[UBER_KEYS_LEFT]: %RED%>>  >
-Alias[UBER_KEYS_RIGHT]: %RED%<  <<
+Alias[UBER_KEYS_LEFT]: %ORANGE%X%RED%><%YELLOW%x
+Alias[UBER_KEYS_RIGHT]: %YELLOW%x%RED%><%ORANGE%X
 
 // Boss Mat Item
-Alias[BOSS_MAT_LEFT]: %YELLOW%<> <> <>
-Alias[BOSS_MAT_RIGHT]: %YELLOW%<> <> <>
+Alias[BOSS_MAT_LEFT]: %RED%XxXxX
+Alias[BOSS_MAT_RIGHT]: %RED%XxXxX
 
 // Boss Mat Item Alt
-Alias[BOSS_MAT_ALT_LEFT]: %YELLOW%X X X X
-Alias[BOSS_MAT_ALT_RIGHT]: %YELLOW%X X X X
+Alias[BOSS_MAT_ALT_LEFT]: %YELLOW%X%ORANGE%x%YELLOW%X%ORANGE%x%YELLOW%X
+Alias[BOSS_MAT_ALT_RIGHT]: %YELLOW%X%ORANGE%x%YELLOW%X%ORANGE%x%YELLOW%X
 
 // Boss Entry Item
-Alias[BOSS_ENTRY_LEFT]: %RED%* *
-Alias[BOSS_ENTRY_RIGHT]: %RED%* *
+Alias[BOSS_ENTRY_LEFT]: %RED%###
+Alias[BOSS_ENTRY_RIGHT]: %RED%###
 
 // Rare General Item
-Alias[GEN_RARE_ITEM_LEFT]: %ORANGE%<> <> <>
-Alias[GEN_RARE_ITEM_RIGHT]: %ORANGE%<> <> <>
+Alias[GEN_RARE_ITEM_LEFT]: %ORANGE%o%RED%@%ORANGE%oo%RED%@%ORANGE%oo%RED%@%ORANGE%o
+Alias[GEN_RARE_ITEM_RIGHT]: %ORANGE%o%RED%@%ORANGE%oo%RED%@%ORANGE%oo%RED%@%ORANGE%o
 
 // Rarer General Item
-Alias[GEN_RARER_ITEM_LEFT]: %DARK_GREEN%<> <> <>
-Alias[GEN_RARER_ITEM_RIGHT]: %DARK_GREEN%<> <> <>
+Alias[GEN_RARER_ITEM_LEFT]: %DARK_GREEN%O%BLUE%@%DARK_GREEN%OO%BLUE%@%DARK_GREEN%OO%BLUE%@%DARK_GREEN%O
+Alias[GEN_RARER_ITEM_RIGHT]: %DARK_GREEN%O%BLUE%@%DARK_GREEN%OO%BLUE%@%DARK_GREEN%OO%BLUE%@%DARK_GREEN%O
 
 // GG General Item Drop
-Alias[GEN_GG_ITEM_LEFT]: %PURPLE%<> <> <>
-Alias[GEN_GG_ITEM_RIGHT]: %PURPLE%<> <> <>
+Alias[GEN_GG_ITEM_LEFT]: %RED%O%ORANGE%O%YELLOW%O%GREEN%O%BLUE%O%PURPLE%O
+Alias[GEN_GG_ITEM_RIGHT]: %PURPLE%O%BLUE%O%GREEN%O%YELLOW%O%ORANGE%O%RED%O
 
 // Rare GG Item Drop
-Alias[RARE_GG_ITEM_LEFT]: %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%>
-Alias[RARE_GG_ITEM_RIGHT]: %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%>
+Alias[RARE_GG_ITEM_LEFT]: %RED%OO%ORANGE%OO%YELLOW%OO%GREEN%OO%BLUE%OO%PURPLE%OO
+Alias[RARE_GG_ITEM_RIGHT]: %PURPLE%OO%BLUE%OO%GREEN%OO%YELLOW%OO%ORANGE%OO%RED%OO
 
 // Unlimited Use items
-Alias[RARE_GG_ITEM_ALT_LEFT]: %RED%XxXxXxX
-Alias[RARE_GG_ITEM_ALT_RIGHT]: %RED%XxXxXxX
+Alias[RARE_GG_ITEM_ALT_LEFT]: %PURPLE%X%RED%#%PURPLE%X%RED%#%PURPLE%X%RED%#%PURPLE%X
+Alias[RARE_GG_ITEM_ALT_RIGHT]: %PURPLE%X%RED%#%PURPLE%X%RED%#%PURPLE%X%RED%#%PURPLE%X
 
 // Low rune
-Alias[RUNE_LOW_LEFT]: %PX-0B%%ORANGE%**
-Alias[RUNE_LOW_RIGHT]: %ORANGE%**
+Alias[RUNE_LOW_LEFT]: %PX-0B%%ORANGE%OO
+Alias[RUNE_LOW_RIGHT]: %ORANGE%OO
 
 // Craft rune
-Alias[RUNE_LOW_CRAFT_LEFT]: %DOT-0B%%ORANGE%****
-Alias[RUNE_LOW_CRAFT_RIGHT]: %ORANGE%****
+Alias[RUNE_LOW_CRAFT_LEFT]: %DOT-0B%%ORANGE%OOOO
+Alias[RUNE_LOW_CRAFT_RIGHT]: %ORANGE%OOOO
 
 // Mid rune
-Alias[RUNE_MID_LEFT]: %DOT-9B%%PX-0B%%PURPLE%<> <>
-Alias[RUNE_MID_RIGHT]: %PURPLE%<> <>
+Alias[RUNE_MID_LEFT]: %DOT-9B%%PX-0B%%DARK_GREEN%## %GREEN%##
+Alias[RUNE_MID_RIGHT]: %GREEN%## %DARK_GREEN%##
 
 // Mid rune Tier 2
-Alias[RUNE_MID_ALT_LEFT]: %BORDER-9B%%DOT-0B%%PURPLE%<> <> <>
-Alias[RUNE_MID_ALT_RIGHT]: %PURPLE%<> <> <>
+Alias[RUNE_MID_ALT_LEFT]: %BORDER-9B%%DOT-0B%%CORAL%## %SAGE%## %TEAL%##
+Alias[RUNE_MID_ALT_RIGHT]: %TEAL%## %SAGE%## %CORAL%##
 
 // High rune
-Alias[RUNE_HIGH_LEFT]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%>
-Alias[RUNE_HIGH_RIGHT]: %PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%>
+Alias[RUNE_HIGH_LEFT]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%O%ORANGE%O%YELLOW%O%GREEN%O%BLUE%O%PURPLE%O
+Alias[RUNE_HIGH_RIGHT]: %PURPLE%O%BLUE%O%GREEN%O%YELLOW%O%ORANGE%O%RED%O
 
 // High rune Tier 2
-Alias[RUNE_HIGH_ALT_LEFT]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>
-Alias[RUNE_HIGH_ALT_RIGHT]: %PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>
-
+Alias[RUNE_HIGH_ALT_LEFT]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%OO%ORANGE%OO%YELLOW%OO%GREEN%OO%BLUE%OO%PURPLE%OO
+Alias[RUNE_HIGH_ALT_RIGHT]: %PURPLE%OO%BLUE%OO%GREEN%OO%YELLOW%OO%ORANGE%OO%RED%OO
 
 // Magic Item 1 Affix
 Alias[MAG_ITEM_LEFT]: %MAP-6A%%DOT-94%%YELLOW%X
 Alias[MAG_ITEM_RIGHT]: %YELLOW%X
 
 // Magic Item 2 Affix
-Alias[MAG_DBL_AFFIX_ITEM_LEFT]: %BORDER-6A%%DOT-94%%YELLOW%XX
-Alias[MAG_DBL_AFFIX_ITEM_RIGHT]: %YELLOW%XX
+Alias[MAG_DBL_AFFIX_ITEM_LEFT]: %BORDER-6A%%DOT-94%%RED%X%YELLOW%X
+Alias[MAG_DBL_AFFIX_ITEM_RIGHT]: %YELLOW%X%RED%X
 
 // Rare Item basic
 Alias[RARE_ITEM_LEFT]: %MAP-0B%%DOT-6A%%ORANGE%X
 Alias[RARE_ITEM_RIGHT]: %ORANGE%X
 
 // Rare Item Extra
-Alias[RARE_ITEM_EXTRA_LEFT]: %DOT-6A%*
-Alias[RARE_ITEM_EXTRA_RIGHT]: *
+Alias[RARE_ITEM_EXTRA_LEFT]: %DOT-6A%O
+Alias[RARE_ITEM_EXTRA_RIGHT]: O
 
 // Rare Item High ilvl
-Alias[RARE_HIGH_ITEM_LEFT]: %MAP-0B%%DOT-6A%%ORANGE%X X
-Alias[RARE_HIGH_ITEM_RIGHT]: %ORANGE%X X
+Alias[RARE_HIGH_ITEM_LEFT]: %MAP-0B%%DOT-6A%%ORANGE%#%RED%X#
+Alias[RARE_HIGH_ITEM_RIGHT]: %ORANGE%#%RED%X#
 
 // Rare Item Good
-Alias[RARE_GOOD_ITEM_LEFT]: %MAP-9B%%DOT-6A%%PURPLE%X X X
-Alias[RARE_GOOD_ITEM_RIGHT]: %PURPLE%X X X
+Alias[RARE_GOOD_ITEM_LEFT]: %MAP-9B%%DOT-6A%%PURPLE%##%CORAL%##%RED%##
+Alias[RARE_GOOD_ITEM_RIGHT]: %RED%##%CORAL%##%PURPLE%##
 
 // Rare Item GG
-Alias[RARE_RARE_ITEM_LEFT]: %BORDER-9B%%DOT-6A%%PURPLE%X X X X X
-Alias[RARE_RARE_ITEM_RIGHT]: %PURPLE%X X X X X
+Alias[RARE_RARE_ITEM_LEFT]: %BORDER-9B%%DOT-6A%%RED%0%ORANGE%0%YELLOW%0%GREEN%0%BLUE%0%PURPLE%0
+Alias[RARE_RARE_ITEM_RIGHT]: %PURPLE%0%BLUE%0%GREEN%0%YELLOW%0%ORANGE%0%RED%0
 
 // Leveing Tag
-Alias[LEVELING_TAG]: %ORANGE%lvling%PX-62%
+Alias[LEVELING_TAG]: %SAGE%lvling%PX-62%
 
 
 // FACET Item
-Alias[FACET_ITEM_LEFT]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%*
-Alias[FACET_ITEM_RIGHT]: %PURPLE%*%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*
+Alias[FACET_ITEM_LEFT]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%O%ORANGE%O%YELLOW%O%GREEN%O%BLUE%O%PURPLE%O
+Alias[FACET_ITEM_RIGHT]: %PURPLE%O%BLUE%O%GREEN%O%YELLOW%O%ORANGE%O%RED%O
 
 // Unique Boss Item
 Alias[UNI_BOSS_ITEM_LEFT]: %BORDER-9B%%RED%X%ORANGE%X%YELLOW%X%GREEN%X%BLUE%X%PURPLE%X
 Alias[UNI_BOSS_ITEM_RIGHT]: %PURPLE%X%BLUE%X%GREEN%X%YELLOW%X%ORANGE%X%RED%X
 
 // Unique GG Item
-Alias[UNI_GG_ITEM_LEFT]: %BORDER-9B%%DOT-D3%%PURPLE%X X X
-Alias[UNI_GG_ITEM_RIGHT]: %PURPLE%X X X
+Alias[UNI_GG_ITEM_LEFT]: %BORDER-9B%%DOT-D3%%PURPLE%O%SAGE%O%TEAL%O%GREEN%O%SAGE%O%PURPLE%O
+Alias[UNI_GG_ITEM_RIGHT]: %PURPLE%O%SAGE%O%GREEN%O%TEAL%O%SAGE%O%PURPLE%O
 
 // Unique Tier3 Item
-Alias[UNI_TIER3_ITEM_LEFT]: %BORDER-D3%%GOLD%* * *
-Alias[UNI_TIER3_ITEM_RIGHT]: %GOLD%* * *
+Alias[UNI_TIER3_ITEM_LEFT]: %BORDER-D3%%GOLD%O O O
+Alias[UNI_TIER3_ITEM_RIGHT]: %GOLD%O O O
 
 // Unique Tier2 Item
-Alias[UNI_TIER2_ITEM_LEFT]: %MAP-D3%%GOLD%* *
-Alias[UNI_TIER2_ITEM_RIGHT]: %GOLD%* *
+Alias[UNI_TIER2_ITEM_LEFT]: %MAP-D3%%GOLD%O O
+Alias[UNI_TIER2_ITEM_RIGHT]: %GOLD%O O
 
 // Unique Tier1 Item
-Alias[UNI_TIER1_ITEM_LEFT]: %DOT-D3%%GOLD%*
-Alias[UNI_TIER1_ITEM_RIGHT]: %GOLD%*
+Alias[UNI_TIER1_ITEM_LEFT]: %DOT-D3%%GOLD%O
+Alias[UNI_TIER1_ITEM_RIGHT]: %GOLD%O
 
 // Unique Tier0 Item
-Alias[UNI_TIER0_ITEM_LEFT]: %DOT-D3%%GOLD%.
-Alias[UNI_TIER0_ITEM_RIGHT]: %GOLD%.
+Alias[UNI_TIER0_ITEM_LEFT]: %DOT-D3%%GOLD%o
+Alias[UNI_TIER0_ITEM_RIGHT]: %GOLD%o
 
 
 // SET GG Item
-Alias[SET_GG_ITEM_LEFT]: %BORDER-7D%%GREEN%* * * *
-Alias[SET_GG_ITEM_RIGHT]: %GREEN%* * * *
+Alias[SET_GG_ITEM_LEFT]: %BORDER-7D%%GREEN%O O O O
+Alias[SET_GG_ITEM_RIGHT]: %GREEN%O O O O
 
 // SET Tier3 Item
-Alias[SET_TIER3_ITEM_LEFT]: %MAP-7D%%GREEN%* * *
-Alias[SET_TIER3_ITEM_RIGHT]: %GREEN%* * *
+Alias[SET_TIER3_ITEM_LEFT]: %MAP-7D%%GREEN%O O O
+Alias[SET_TIER3_ITEM_RIGHT]: %GREEN%O O O
 
 // SET Tier2 Item
-Alias[SET_TIER2_ITEM_LEFT]: %DOT-7D%%GREEN%* *
-Alias[SET_TIER2_ITEM_RIGHT]: %GREEN%* *
+Alias[SET_TIER2_ITEM_LEFT]: %DOT-7D%%GREEN%O O
+Alias[SET_TIER2_ITEM_RIGHT]: %GREEN%O O
 
 // SET Tier1 Item
-Alias[SET_TIER1_ITEM_LEFT]: %DOT-7D%%GREEN%*
-Alias[SET_TIER1_ITEM_RIGHT]: %GREEN%*
+Alias[SET_TIER1_ITEM_LEFT]: %DOT-7D%%GREEN%O
+Alias[SET_TIER1_ITEM_RIGHT]: %GREEN%O
 
 // RW Bases GG
 Alias[RW_BASE_GG_LEFT]: %BORDER-9B%%DOT-0E%%SOUNDID-4719%
@@ -274,15 +275,15 @@ Alias[RW_BASE_GREEN_RIGHT]: %DOT-76%%DARK_GREEN%
 
 // RW Bases Lower Green Text
 Alias[RW_BASE_LOW_GREEN_LEFT]:
-Alias[RW_BASE_LOW_GREEN_RIGHT]: %DOT-7D%%GREEN%***
+Alias[RW_BASE_LOW_GREEN_RIGHT]: %DOT-7D%%GREEN%OOO
 
 // Craft 2 Item Base
-Alias[CRAFT_TWO_LEFT]: %GREEN%* *
-Alias[CRAFT_TWO_RIGHT]: %DOT-94%%GREEN%[Craft] * *
+Alias[CRAFT_TWO_LEFT]: %GREEN%O O
+Alias[CRAFT_TWO_RIGHT]: %DOT-94%%GREEN%[Craft] O O
 
 // Craft 1 Item Base
-Alias[CRAFT_ONE_LEFT]: %GREEN%*
-Alias[CRAFT_ONE_RIGHT]: %DOT-94%%GREEN%[Craft] *
+Alias[CRAFT_ONE_LEFT]: %GREEN%O
+Alias[CRAFT_ONE_RIGHT]: %DOT-94%%GREEN%[Craft] O
 
 // Craft Item Base
 Alias[CRAFT_ZERO_LEFT]:
@@ -292,14 +293,14 @@ Alias[CRAFT_ZERO_RIGHT]: %GREEN%[Craft]
 Alias[CRAFT_LLD_LEFT]:
 Alias[CRAFT_LLD_RIGHT]: %GREEN%[LLD Craft]
 
-
-
 //-----------------------------------------------------------------------------------
 // General Item re-names
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[wss]: %PURPLE%WORLDSTONE SHARD%CONTINUE%
-ItemDisplay[cwss]: %ORANGE%Tainted %PURPLE%WORLDSTONE SHARD%CONTINUE%
+ItemDisplay[wss]: %PURPLE%WORLDSTAR HIPHOP%CONTINUE%
+ItemDisplay[cwss]: %ORANGE%Tainted %PURPLE%WORLDSTAR HIPHOP%CONTINUE%
+ItemDisplay[lucb GROUND]: Dorito%CONTINUE%
+ItemDisplay[lucb QTY>1 GROUND]: %NAME% %QTY_TAG%%CONTINUE%
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%F. Amethyst%CONTINUE%
@@ -2088,25 +2089,129 @@ ItemDisplay[SET (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPI
 //-----------------------------------------------------------------------------------
 // CRAFTING
 //-----------------------------------------------------------------------------------
+// LLD craft tag in trav
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa1]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Targe
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa2]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Rondachesh
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa5]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Crown Shield
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa6]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%// Akaran Targe
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 pa7]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%// Akaran Rondache
+ItemDisplay[MAG ILVL>50 !ETH btl MAPID=83 FILTLVL<3]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%
+ItemDisplay[RARE ILVL>50 !ETH btl MAPID=83 FILTLVL<7]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8 OR ob9)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (am1 OR am5 OR am6 OR ama)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (ne5 OR ne4)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%
+ItemDisplay[(MAG OR RARE) ILVL>50 MAPID=83 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT%
 
-ItemDisplay[!ID (7cr OR 9cr OR crs) ETH RARE FILTLVL<11 ILVL>84]: %RARE_RARE_ITEM_LEFT% %NAME% %RARE_RARE_ITEM_RIGHT%//Phase Blade
-ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH RARE FILTLVL<11 ILVL>84]: %RARE_RARE_ITEM_LEFT% %NAME% %RARE_RARE_ITEM_RIGHT%//Colossus Blade
-ItemDisplay[!ID (7fb OR 9fb OR flb) ETH RARE FILTLVL<11 ILVL>84]: %RARE_RARE_ITEM_LEFT% %NAME% %RARE_RARE_ITEM_RIGHT%//Colossus Sword
+// LLD craft unid
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 btl FILTLVL<3]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% //blade talons (can shop)
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8 OR ob9)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% //Sorc orbs
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (am1 OR am5 OR am6 OR ama)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% //Javs
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Nec heads
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Barb helms
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // dudu helms
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 (9cl OR 9sp)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // club/cudgel
+ItemDisplay[!ID (MAG OR RARE) ILVL>50 STAFF !ELT]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // staff
+//Id-ed
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8 OR ob9)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //Sorc orbs
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (am1 OR am5 OR am6 OR ama)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //Javs
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR ne7)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Nec heads
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Barb helms
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // dudu helms
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (9cl OR 9sp)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // club/cudgel
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) STAFF !ELT]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // staff
+//cudgel alvl
 
-ItemDisplay[!ID (pab OR pa6 OR pa1) RARE FILTLVL<11 ILVL>84]: %RARE_HIGH_ITEM_LEFT% %NAME% %RARE_HIGH_ITEM_RIGHT% //pala shield
-ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<11 ILVL>84]: %RARE_HIGH_ITEM_LEFT% %NAME% %RARE_HIGH_ITEM_RIGHT% //4os able scepters
+// Weapons
+ItemDisplay[!ID (7gl OR 9gl OR glv) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Ghost Glaive
+ItemDisplay[!ID (7p7 OR 9p9 OR pik) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //War Pike
+ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% ///Ogre Maul
+ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //War Fist
+ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Champion Axe
+ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Hyperion spear
+ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Thunder Maul
+ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Phase Blade
+ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Berserker Axe
+ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Colossus Blade
+ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Colossus Sword
+ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Glorious Axe
+ItemDisplay[!ID (7wh OR 9wh OR whm) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Legendary Mallet
+ItemDisplay[!ID (7pi OR 9pi OR pil) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Stygian Pilum
+ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Balrog Spear
+ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Winged Harpoon
+ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Scourge
+ItemDisplay[!ID (lax OR 9la OR 7la) ETH MAG]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Feral Axe
 
-ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG FILTLVL<11 ILVL>84]: %CRAFT_ONE_LEFT% %NAME% %CRAFT_ONE_RIGHT%//Phase Blade
-ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG FILTLVL<11 ILVL>84]: %CRAFT_ONE_LEFT% %NAME% %CRAFT_ONE_RIGHT%//Colossus Blade
-ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG FILTLVL<11 ILVL>84]: %CRAFT_ONE_LEFT% %NAME% %CRAFT_ONE_RIGHT%//Colossus Sword
+// more claws
+ItemDisplay[!ID ETH (axf OR 9xf OR 7xf OR ktr OR 9ar OR 7ar OR skr OR 9qr OR 7qr) (MAG OR RARE) FILTLVL<9]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% 
+ItemDisplay[!ID ETH SIN (MAG OR RARE) FILTLVL<5]: %DOT-ED%%TIER-6%%CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT%  //eth sin claws
 
-ItemDisplay[!ID (pab OR pa6 OR pa1) MAG FILTLVL<11 ILVL>84]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //pala shield
-ItemDisplay[!ID (wsp OR 9ws OR 7ws) MAG FILTLVL<11 ILVL>84]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //4os able scepters
+// Generic
+ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Catch all throwing eth weapons
+ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %CRAFT_ZERO_LEFT% %NAME% %CRAFT_ZERO_RIGHT% //Catch all eth weapons when lower filter level
+ItemDisplay[RARE QUIVER !ID]: %NAME%%MAP-97%%TIER-2%
+ItemDisplay[!ID CLASS (MAG OR RARE)]: %NAME%
 
-ItemDisplay[MAG amu !ID FILTLVL<5]: %NAME%
-ItemDisplay[MAG amu !ID FILTLVL<7]: %BLUE%Amu
+ItemDisplay[SET !ID amu]: %SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
+ItemDisplay[SET !ID rin]: %SET_TIER3_ITEM_LEFT%  %NAME%  %SET_TIER3_ITEM_RIGHT%
+
+ItemDisplay[MAG amu !ID FILTLVL<3]: %BLUE%Amu
+ItemDisplay[MAG amu !ID FILTLVL>2]:
+
+//  lld catch callouts as Tier 1
+//-----------------------------------------------------------------------------------
+// Twitchthroe - Studded Leather
+// Rattlecage - Gothic Plate
+// Silks of the Victor - Ancient Armor
+// The Spirit Shroud - Ghost Armor
+// Bloodfist - Heavy Gloves
+// Peasant Crown - War Hat
+// Steelclash - Kite Shield
+// Rakescar - War Axe
+// Rogues Bow - Composite Bow
+// Bonesnap - Maul
+// Steeldriver - Great Maul
+// The Iron Jang Bong - War Staff
+// Ripsaw - Flamberge
+// The Patriarch - Great Sword
+// Goblin Toe - Light Plated Boots
+// String of Ears - Demonhide Sash
+// Quetzalcoatl - Hawk Helm
+// Magefist - Light Gauntlets
+// Rockfleece - Field Plate
+// True Silver - Maiden Javelin
+// Tearhaunch - Greaves
+
+ItemDisplay[UNI !ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt)]: %UNI_TIER1_ITEM_LEFT%  %NAME%  %UNI_TIER1_ITEM_RIGHT%
+
+
+// LLD  lld catch callouts
+//-----------------------------------------------------------------------------------
+// Cow King or Sander - Heavy Boots
+// Sanders Taboo - Heavy Gloves
+// Deaths Hand - Leather Gloves
+// Deaths Guard - Sash
+
+ItemDisplay[SET !ID (vbt OR vgl OR lgl OR lbl)]: %SET_TIER1_ITEM_LEFT%  %NAME%  %SET_TIER1_ITEM_RIGHT%
+
+// Tancreds Hobnails - Boots
+ItemDisplay[SET !ID lbt]: %SOUNDID-4719%%SET_GG_ITEM_LEFT%  %NAME%  %SET_GG_ITEM_RIGHT%
+
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// Shopping extra
+//-----------------------------------------------------------------------------------
+// LLD Staff
+ItemDisplay[ID SHOP (CHSK54>0) FCR>29 STAFF LVLREQ<31]: %PURPLE%* * *   LLD FCR Teleport Charges Staff [LLD]   * * *{%RED%***   %PURPLE%GG LLD FCR Teleport Charges Staff%RED%   ***} // GG Teleport charges FCR
+ItemDisplay[ID SHOP (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %ORANGE%* * *   LLD FCR Teleport Charges Staff [LLD]   * * *{%RED%***   %PURPLE%LLD FCR Teleport Charges Staff%RED%   ***}  // Teleport charges FCR
+ItemDisplay[ID SHOP STAFF]: {%NAME%} // Hide the rest
+// No longer possible because of automod ItemDisplay[ID (CHSK54>0) STAFF LVLREQ<31]: %GREEN%LLD FCR Teleport Charges Staff [LLD]{%GREEN%LLD Teleport Charges Staff} // Teleport charges
 
 ItemDisplay[GEM=5]: %NAME%
+ItemDisplay[GEM=4]: %NAME%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
