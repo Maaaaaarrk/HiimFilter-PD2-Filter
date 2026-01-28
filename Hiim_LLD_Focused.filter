@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 27th%CL%Season 12 - build 108%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 28th%CL%Season 12 - build 109%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 
@@ -2112,7 +2112,8 @@ ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ne1 OR ne2 OR ne3 OR ne5 OR ne4 OR ne6 OR
 ItemDisplay[!ID (MAG OR RARE) ILVL>50 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // Barb helms
 ItemDisplay[!ID (MAG OR RARE) ILVL>50 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // dudu helms
 ItemDisplay[!ID (MAG OR RARE) ILVL>50 (9cl OR 9sp)]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // club/cudgel
-ItemDisplay[!ID (MAG OR RARE) ILVL>50 STAFF !ELT]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // staff
+ItemDisplay[!ID RARE ILVL>50 STAFF !ELT]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // staff
+ItemDisplay[!ID MAG ILVL>50 STAFF !ELT FILTLVL<3]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // staff
 //Id-ed
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) btl]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} //blade talons (can shop)
@@ -2122,7 +2123,7 @@ ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ne1 OR ne2 OR ne3 OR ne
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // Barb helms
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // dudu helms
 ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) (9cl OR 9sp)]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // club/cudgel
-ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) STAFF !ELT]: %TIER-2%%CRAFT_LLD_LEFT% %NAME% %CRAFT_LLD_RIGHT% // staff
+ItemDisplay[ID !SHOP (MAG OR RARE) ILVL>50 !(STAT360>0) STAFF !ELT]: %NAME%%CONTINUE%{%GREEN%LLD Crafting Base%CL%%NAME%} // staff
 //cudgel alvl
 
 // Weapons
@@ -2298,7 +2299,8 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 // grand
 ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %YELLOW%HIGH LEVEL %NAME%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %BLUE%Mid Level %NAME%%CONTINUE%
-ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %MAG_DBL_AFFIX_ITEM_LEFT%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
+ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %TIER-8%%MAG_DBL_AFFIX_ITEM_LEFT%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
+ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%MAG_DBL_AFFIX_ITEM_LEFT% GC %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
 ItemDisplay[MAG cm3 CLVL<80 !ID FILTLVL<9]: %MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
