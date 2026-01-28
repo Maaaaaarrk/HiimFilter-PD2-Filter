@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 27th%CL%Season 12 - build 108%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated January 28th%CL%Season 12 - build 109%CL%HiimFilter - Crafting -}%CONTINUE%
 
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -1290,7 +1290,8 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 // grand
 ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %YELLOW%HIGH LEVEL %NAME%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %BLUE%Mid Level %NAME%%CONTINUE%
-ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %MAG_DBL_AFFIX_ITEM_LEFT%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
+ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %TIER-8%%MAG_DBL_AFFIX_ITEM_LEFT%     %NAME%     %MAG_DBL_AFFIX_ITEM_RIGHT%
+ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%MAG_DBL_AFFIX_ITEM_LEFT% GC %MAG_DBL_AFFIX_ITEM_RIGHT%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
 ItemDisplay[MAG cm3 CLVL<80 !ID FILTLVL<9]: %MAG_ITEM_LEFT%   %NAME%   %MAG_ITEM_RIGHT%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
