@@ -1,0 +1,25 @@
+
+//-----------------------------------------------------------------------------------
+// Base item names
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
+
+// Jewelry
+ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
+ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
+ItemDisplay[!UNI !SET jew]: %CONTINUE%Jewel
+
+// Select item name blanking
+ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>4 !(MAPID=83)]: %CONTINUE%Nec Head
+ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>4 !(MAPID=83)]: %CONTINUE%Sorc Orb
+
+// Quivers
+ItemDisplay[aqv (MAG OR RARE OR UNI) !ID]: Arrow%CONTINUE%
+ItemDisplay[aqv2 (MAG OR RARE OR UNI) !ID]: Exc Arrow%CONTINUE%
+ItemDisplay[aqv3 (MAG OR RARE OR UNI) !ID]: Elt Arrow%CONTINUE%
+ItemDisplay[cqv (MAG OR RARE OR UNI) !ID]: Bolt%CONTINUE%
+ItemDisplay[cqv2 (MAG OR RARE OR UNI) !ID]: Exc Bolt%CONTINUE%
+ItemDisplay[cqv3 (MAG OR RARE OR UNI) !ID]: Elt Bolt%CONTINUE%
+
+//-----------------------------------------------------------------------------------
