@@ -2,6 +2,8 @@ name: Build Filters
 
 on:
   push:
+    branches-ignore:
+      - main
     paths:
       - 'builder/**'
 
