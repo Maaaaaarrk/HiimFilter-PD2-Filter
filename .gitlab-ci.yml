@@ -1,0 +1,118 @@
+stages:
+  - build
+
+build-filters:
+  stage: build
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache git bash
+    - git config user.email "ci@gitlab.com"
+    - git config user.name "GitLab CI"
+    # Allow pushing back to the repo via the CI job token
+    - git remote set-url origin "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
+  script:
+    - cd builder
+
+    # ── Phase 1: Increment version and generate 01-Version.filter ──────────────
+    - |
+      VERSION=$(cat version.txt 2>/dev/null | tr -d '[:space:]')
+      if ! echo "$VERSION" | grep -qE '^[0-9]+$'; then VERSION=0; fi
+      VERSION=$((VERSION + 1))
+      echo "$VERSION" > version.txt
+
+    - |
+      MONTH=$(date +%-m)
+      DAY=$(date +%-d)
+      case $MONTH in
+        1)  MONTHNAME="January"   ;;
+        2)  MONTHNAME="February"  ;;
+        3)  MONTHNAME="March"     ;;
+        4)  MONTHNAME="April"     ;;
+        5)  MONTHNAME="May"       ;;
+        6)  MONTHNAME="June"      ;;
+        7)  MONTHNAME="July"      ;;
+        8)  MONTHNAME="August"    ;;
+        9)  MONTHNAME="September" ;;
+        10) MONTHNAME="October"   ;;
+        11) MONTHNAME="November"  ;;
+        12) MONTHNAME="December"  ;;
+      esac
+      case $DAY in
+        1|21|31) SUFFIX="st" ;;
+        2|22)    SUFFIX="nd" ;;
+        3|23)    SUFFIX="rd" ;;
+        *)       SUFFIX="th" ;;
+      esac
+      PRETTYDATE="${MONTHNAME} ${DAY}${SUFFIX}"
+      printf "Last updated %s%%CL%%Season 12 - build %s" "$PRETTYDATE" "$VERSION" > 01-Version.filter
+
+    # ── Phase 2: Concatenate filter parts into output filters ───────────────────
+    - |
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems.filter 07-Runes.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Hyper.filter 02-Hiim_Top-End.filter 03-alias-hyper.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems.filter 07-Runes.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 18-Unid_UniquesSet_Name_meme.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Hyper.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Grail.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems.filter 07-Runes.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Grail.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Grail.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid-Crafting.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Vanilla.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems.filter 07-Runes.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 14-RingAmuJewelPts.filter 16-Tags_All.filter 17-Tags_LLD.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Vanilla_Plus.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Mystery.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats-Mystery.filter 04-Ubermats.filter 05-Maps.filter 06-Gems.filter 07-Runes-Mystery.filter 07-Runes.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers-Mystery.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Mystery.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Amazon.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 23-Tags_Crafting_Unid_Amazon.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Amazon_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Assassin.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_Assassin.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Assassin_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Barbarian.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_Barbarian.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Barbarian_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Druid.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_Druid.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Druid_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Necromancer.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_Necromancer.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Necromancer_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Sorceress.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_Sorceress.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Sorceress_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Crafting-Paladin.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_Paladin.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_Crafting_Paladin_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-LLD.filter 02-Hiim_Top-End.filter 03-alias-general.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_LLD.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_LLD_Focused.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-TalRashas.filter 02-Hiim_Top-End.filter 03-alias-TalRashas.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems.filter 07-Runes.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 23-Tags_Crafting_Unid.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_TalRasha_Themed.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-LLD-Hyper.filter 02-Hiim_Top-End.filter 03-alias-hyper.filter 03-PD2_items.filter 04-Ubermats.filter 05-Maps.filter 06-Gems-Crafting.filter 07-Runes-Crafting.filter 07-Runes-ToolTip.filter 08-Potions.filter 09-QuestItems.filter 10-Formatted_MagRare_Names.filter 11-Formatted_MagRare_All.filter 18-Unid_UniquesSet_Name.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid_LLD.filter 12-Unid_MagRare.filter 13-Formatted_MagicRare.filter 14-RingAmuJewelPts.filter 15-Formatted_Charms.filter 16-Tags_All.filter 17-Tags_LLD.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 21-Tags_Weap_range.filter 22-Tags_Shopping.filter 24-Tags_Crafting_Id.filter 25-Nmag_TopFilter.filter 26-Nmag_Staffmod.filter 27-Tags_Nmag_Sockets.filter 28-Tags_Nmag_runewords.filter 29-Tags_Nmag_bases.filter 30-Tags_Sockets_Upgrading.filter 31-Leveling.filter 32-Footer.filter 33-Gambleing.filter > ../Hiim_LLD_Hyper.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top-Only-Filter.filter 02-Hiim_Top-End.filter 03-alias-onlyfilter.filter 03-PD2_items.filter 04-Ubermats.filter 06-Gems.filter 08-Potions.filter 09-QuestItems.filter 19-Tags_Unid_UniquesSet.filter 23-Tags_Crafting_Unid.filter 12-Unid_MagRare.filter 20-Unid_UniquesSet_Tiers.filter 20-Unid_UniquesSet_Tiers_Hides.filter 29-Tags_Nmag_bases.filter 31-Leveling.filter 32-Footer.filter > ../Hiim_Only_Filter.filter
+
+      cat 00-Hiim_Top.filter 01-Version.filter 02-Hiim_Top.filter 02-Hiim_Top-End.filter 03-closed-beta.filter > ../Hiim_Closed_Beta.filter
+
+    # ── Phase 3: Generate README ────────────────────────────────────────────────
+    - |
+      # Read version filter content, stripping %CL% color codes to a space
+      VERLINE=$(cat 01-Version.filter | sed 's/%CL%/ /g')
+      # Replace {{REPLACE_ME}} placeholder and &&& -> !
+      sed "s|{{REPLACE_ME}}|${VERLINE}|g; s|&&&||g" README.md | sed 's/\[\[/![/g' > ../README.md
+
+    # ── Phase 4: Commit and push generated files back ───────────────────────────
+    - |
+      cd ..
+      git add Hiim.filter Hiim_Hyper.filter Hiim_Grail.filter Hiim_Crafting.filter \
+              Hiim_Vanilla_Plus.filter Hiim_Mystery.filter \
+              Hiim_Crafting_Amazon_Focused.filter Hiim_Crafting_Assassin_Focused.filter \
+              Hiim_Crafting_Barbarian_Focused.filter Hiim_Crafting_Druid_Focused.filter \
+              Hiim_Crafting_Necromancer_Focused.filter Hiim_Crafting_Sorceress_Focused.filter \
+              Hiim_Crafting_Paladin_Focused.filter Hiim_LLD_Focused.filter \
+              Hiim_LLD_Hyper.filter Hiim_TalRasha_Themed.filter \
+              Hiim_Only_Filter.filter Hiim_Closed_Beta.filter \
+              README.md builder/version.txt builder/01-Version.filter
+      # Only commit if there are actual changes
+      if git diff --cached --quiet; then
+        echo "No changes to commit."
+      else
+        git commit -m "ci: build filters (version ${VERSION})"
+        git push origin HEAD:${CI_COMMIT_REF_NAME}
+      fi
+
+  # Skip this job if it was triggered by the CI commit itself (prevents infinite loop)
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /^ci: build filters/'
+      when: never
+    - when: always
