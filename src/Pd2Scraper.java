@@ -78,6 +78,10 @@ public class Pd2Scraper {
     }
 
     public static void main(String[] args) {
+        if(true){
+            // THIS IS CURRENTLY IN OP
+            return;
+        }
         String url = "https://pd2.tools/economy/runes";
         Map<String, Double> runeHRMap = new HashMap<>();
         Map<String, Double> pd2HRMAP = new HashMap<>();
