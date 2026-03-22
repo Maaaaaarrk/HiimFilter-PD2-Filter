@@ -1,0 +1,69 @@
+//-----------------------------------------------------------------------------------
+// CRAFTING
+//-----------------------------------------------------------------------------------
+
+// Weapons
+ItemDisplay[!ID (7gl OR 9gl OR glv) ETH (MAG OR RARE)]: %CRAFT_TWO%//Ghost Glaive
+ItemDisplay[!ID (7p7 OR 9p9 OR pik) ETH (MAG OR RARE)]: %CRAFT_TWO%//War Pike
+ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH (MAG OR RARE)]: %CRAFT_TWO%//Ogre Maul
+ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH (MAG OR RARE)]: %CRAFT_TWO%//War Fist
+ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH (MAG OR RARE)]: %CRAFT_TWO%//Champion Axe
+ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH (MAG OR RARE)]: %CRAFT_TWO%//Hyperion spear
+ItemDisplay[!ID (7gm OR 9gm OR gma) ETH (MAG OR RARE)]: %CRAFT_TWO%//Thunder Maul
+ItemDisplay[!ID (7cr OR 9cr OR crs) ETH (MAG OR RARE)]: %CRAFT_ONE%//Phase Blade
+ItemDisplay[!ID (7wa OR 9wa OR wax) ETH (MAG OR RARE)]: %CRAFT_ONE%//Berserker Axe
+ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH (MAG OR RARE)]: %CRAFT_ONE%//Colossus Blade
+ItemDisplay[!ID (7fb OR 9fb OR flb) ETH (MAG OR RARE)]: %CRAFT_ONE%//Colossus Sword
+ItemDisplay[!ID (7gi OR 9gi OR gix) ETH (MAG OR RARE)]: %CRAFT_ONE%//Glorious Axe
+ItemDisplay[!ID (7wh OR 9wh OR whm) ETH (MAG OR RARE)]: %CRAFT_ONE%//Legendary Mallet
+ItemDisplay[!ID (7pi OR 9pi OR pil) ETH (MAG OR RARE)]: %CRAFT_ONE%//Stygian Pilum
+ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH (MAG OR RARE)]: %CRAFT_ONE%//Balrog Spear
+ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH (MAG OR RARE)]: %CRAFT_ONE%//Winged Harpoon
+ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH (MAG OR RARE)]: %CRAFT_ONE%//Scourge
+ItemDisplay[!ID (lax OR 9la OR 7la) ETH (MAG OR RARE)]: %CRAFT_ONE%//Feral Axe
+
+// Elite non eth bases for crafters league
+ItemDisplay[!ID (7la OR 7fb OR 7gd OR 7m7 OR 7gm OR 7p7 OR 7gl OR 7xf) (MAG OR RARE) FILTLVL<3]: %NAME%
+
+// Armor
+ItemDisplay[!ID (GLOVES OR HELM OR BOOTS OR BELT) ETH (MAG OR RARE) FILTLVL<7 ILVL>84]:%CRAFT_ONE%{%RED% ETH Crafting Bases for Purgatory} //purgatory builds
+ItemDisplay[!ID GLOVES !(utg OR uhg) (MAG OR RARE) FILTLVL<3 ILVL>84]:%CRAFT_ONE% //gloves
+ItemDisplay[!ID (bhm OR xh9 OR uh9) (MAG OR RARE) FILTLVL<3 ILVL>84]:%CRAFT_ONE% //skull helm
+ItemDisplay[!ID (bsh OR xsh OR ush) (MAG OR RARE) FILTLVL<3 ILVL>84]:%CRAFT_ONE% //bone shield
+ItemDisplay[!ID (lbt OR xlb OR ulb) (MAG OR RARE) FILTLVL<3 ILVL>84]:%CRAFT_ONE% //boots
+ItemDisplay[!ID (vbt OR xvb OR uvb) (MAG OR RARE) FILTLVL<3 ILVL>84]:%CRAFT_ONE% //boots
+
+// Class specific show for all
+ItemDisplay[!ID (ob5 OR oba OR obf) (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //sorc orb
+ItemDisplay[!ID AMAZON (lwb OR 8lw OR 6lw) (MAG OR RARE) FILTLVL<5 ILVL>84]:%CRAFT_ONE% //long bow
+ItemDisplay[!ID (am3 OR am8 OR amd) (MAG OR RARE) ETH FILTLVL<9 ILVL>84]: %CRAFT_TWO% //zon spear
+ItemDisplay[!ID (am4 OR am9 OR ame) (MAG OR RARE) ETH FILTLVL<9 ILVL>84]: %CRAFT_TWO% //zon spear
+ItemDisplay[!ID (am5 OR ama OR amf) (MAG OR RARE) ETH FILTLVL<9 ILVL>84]: %CRAFT_TWO% //zon javs
+ItemDisplay[!ID (am5 OR ama OR amf) (MAG OR RARE) FILTLVL<5 ILVL>84]:%CRAFT_ONE% //zon javs
+ItemDisplay[!ID (am2 OR am7 OR amc) (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //Zon bow
+ItemDisplay[!ID (am1 OR am6 OR amb) (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //Zon bow
+ItemDisplay[!ID (pab OR pa6 OR pa1) (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //pala shield
+ItemDisplay[!ID (MAG OR RARE) (wsp OR 9ws OR 7ws) ILVL>84 FILTLVL<5]:%CRAFT_ONE% //4os able scepters
+ItemDisplay[!ID (MAG OR RARE) !ETH DRU ILVL>84]:%CRAFT_ONE% //dudu helms
+ItemDisplay[!ID (MAG OR RARE) (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5 ILVL>84]:%CRAFT_ONE% //clubs
+ItemDisplay[!ID (MAG OR RARE) NEC ILVL>84]:%CRAFT_ONE% //nec heads
+ItemDisplay[!ID ETH BAR (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //barb helm
+ItemDisplay[!ID BAR (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //barb helm
+//ItemDisplay[!ID ETH CHEST (MAG OR RARE) ILVL>84]:%CRAFT_ONE% //eth chest
+ItemDisplay[!ID ETH (axf OR 9xf OR 7xf OR ktr OR 9ar OR 7ar OR skr OR 9qr OR 7qr) (MAG OR RARE) FILTLVL<9 ILVL>84]: %CRAFT_TWO%
+ItemDisplay[!ID ETH SIN (MAG OR RARE) FILTLVL<7 ILVL>84]: %DOT-ED%%TIER-6%%NAME% %GREEN%[Craft] //eth sin claws
+ItemDisplay[!ID SIN !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) (MAG OR RARE) FILTLVL<5]:%CRAFT_ONE% // Claws for all
+ItemDisplay[!ID (MAG OR RARE) DAGGER ETH !THROWING !9kr !7kr FILTLVL<9 ILVL>84]: %DOT-ED%%BLUE%%NAME% %GREEN%[Craft]
+
+ItemDisplay[!ID (MAG OR RARE) (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3 ILVL>84]:%CRAFT_ONE% //all scepters
+ItemDisplay[!ID (MAG OR RARE) (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<5 ILVL>84]:%CRAFT_ONE% //clubs
+ItemDisplay[!ID RARE (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<7 ILVL>84]: %NAME% //clubs
+
+// Generic
+ItemDisplay[!ID THROWING (MAG OR RARE) ETH FILTLVL<5]:%CRAFT_ONE%//Catch all throwing eth weapons
+ItemDisplay[!ID WEAPON (MAG OR RARE) ETH FILTLVL<3]:%CRAFT_ONE%//Catch all eth weapons when lower filter level
+ItemDisplay[!ID CLASS RARE FILTLVL<7 ILVL>84]: %NAME%
+ItemDisplay[MAG amu !ID FILTLVL<5]: %NAME%
+ItemDisplay[MAG amu !ID FILTLVL<8]: %BLUE%Amu
+ItemDisplay[GEM=5]: %NAME%
+//-----------------------------------------------------------------------------------
