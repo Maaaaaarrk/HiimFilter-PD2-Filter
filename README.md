@@ -1,23 +1,30 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated March 22nd Season 12 - build 116
+## Last updated March 22nd Season 12 - build 117
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 * To confirm installation check tool tip on the Cube
 ![cube](examples/cube.png?raw=true)
 ## Filters
-* Hiim.filter - All in one filter
-* Hiim_Crafting.filter - Same as all in one filter, but good crafting bases are not limited to filter level 3/4
-* Hiim_Crafting_-Class Name-.filter - Will show items and crafting bases targeted to this class at higher filter levels
-* Hiim_Grail.filter - All in one filter & Always shows Uniques & Set items on level 1-8
-* Hiim_Hyper.filter - All in one filter - Hyper themed
-* Hiim_LLD_Focused.filter - Filter that will show LLD relevant items at higher filter levels
-* Hiim_Mystery.filter - Same as all in one filter, but Runes Pul(21)+ and GG uniques are renamed
-* Hiim_Only_Fitler.filter - All in one filter - No item display changes only filtering
-* Hiim_TalRasha_Themed.filter - All in one filter - TalRasha Color Themed
-* Hiim_Vanilla_Plus.filter - All in one filter - but without all of the item re-naming (example identified rares or unidentified uniques)
+* Hiim — Standard: All-in-one balanced filter. The standard recommendation for most players. [Hiim.filter]
+* Class — Amazon: Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Amazon_Focused.filter]
+* Class — Assassin: Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Assassin_Focused.filter]
+* Class — Barbarian: Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Barbarian_Focused.filter]
+* Class — Druid: Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Druid_Focused.filter]
+* Class — Necromancer: Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Necromancer_Focused.filter]
+* Class — Paladin: Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Paladin_Focused.filter]
+* Class — Sorceress: Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Sorceress_Focused.filter]
+* Crafting: Same as the standard filter, but good crafting bases are not limited in higher filter levels. [Hiim_Crafting.filter]
+* Grail Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Hiim_Grail.filter]
+* LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
+* LLD — Hyper: LLD Focused filter with a Hyper visual theme. [Hiim_LLD_Hyper.filter]
+* Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
+* Only A Filter: All-in-one filter with no item display changes — filtering only, no annotations or re-naming. [Hiim_Only_Filter.filter]
+* Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
+* Style — TalRasha: All-in-one filter with a TalRasha color theme. [Hiim_TalRasha_Themed.filter]
+* Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
 
