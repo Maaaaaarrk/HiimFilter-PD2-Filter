@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated March 17th Season 12 - build 110
+## Last updated March 18th Season 12 - build 111
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
@@ -19,19 +19,66 @@
 * Hiim_TalRasha_Themed.filter - All in one filter - TalRasha Color Themed
 * Hiim_Vanilla_Plus.filter - All in one filter - but without all of the item re-naming (example identified rares or unidentified uniques)
 ## Filter Levels
-Cube will state current filter version & choosen filter level information
-* 0: OFF
-* 1: Base (For Normal Difficulty or Speed runners)
-* 2: Semi-Strict (For NM & Hell New Character)
-* 3: Strict+Crafting (Mapping Grade Character, Shows good craft bases)
-* 4: Strict+Crafting NO HP/MP potions
-* 5: Stricter (Mapping Grade Character, Hides low value uniques & sets)
-* 6: Stricter NO HP/MP
-* 7: Extremely Strict (This is VERY restrictive, lots of items no longer chat notify)
-* 8: High Roller (Extremely restrictive, Only 3/4-Star items)
-* 9: 3 Minute Mapper & Rejuvs Only (For builds like p-nova)
-* 10: 3 Minute Mapper (For builds like p-nova)
-* 11: No Items Out of Town (Designed for group play where you aim to pick-up NOTHING)
+Cube will state current filter version & chosen filter level information.
+
+**This breakdown applies to the standard `Hiim.filter` only.** All variant filters (Crafting, class-specific, Grail, Hyper, LLD, etc.) show *more* than the baseline — never less. They are tuned to surface more of what their specific audience cares about at higher filter levels.
+
+**Always hidden regardless of level:** Inferior items, ears, small gold piles, junk 10s (after CLVL 80)
+
+* **0: Off** — Filter disabled, all items visible
+
+* **1: Base** — Minimal filtering. Recommended for Normal difficulty or new players getting started
+
+* **2: Semi-Strict**
+  * Scrolls hidden at high level
+  * Throwing potions hidden outside town
+  * Stamina, thawing, antidote, and oil potions hidden
+  * Staffmod annotations reduced
+
+* **3: Strict**
+  * HP pots 1–4 and MP pots 1–5 hidden
+  * Gems hidden
+  * Magic rings and amulets hidden
+  * Most unidentified rares hidden (characters CLVL 86+)
+  * Rune number labels removed from display
+
+* **4: Strict + No HP/MP** — Everything from level 3, plus HP5 and MP5 potions hidden
+
+* **5: Stricter**
+  * HP/MP potions restored
+  * Low-value unidentified uniques and sets hidden
+  * Class-specific rare item decorations end
+  * Eth magic crafting bases reduced
+  * Specific rare bows hidden
+
+* **6: Stricter + No HP/MP** — Everything from level 5, plus HP5 and MP5 potions hidden again
+
+* **7: Extremely Strict**
+  * Bad-rolled charms hidden on ground
+  * Most unidentified uniques and sets hidden
+  * Eth rare gloves, boots, belts, and chests(< ALVL 85) hidden
+  * Class-specific rares hidden (necro heads, sorc orbs, druid pelts, barb helms, paladin shields)
+  * Magic jewel decorations reduced
+  * Low rune decorations removed
+
+* **8: High Roller**
+  * Low runes (El through Amn) hidden outside town
+  * Small rejuvs hidden
+  * Rare rings hidden
+  * Flawless gem removed
+  * Magic jewels hidden
+
+* **9: 3 Minute Mapper & Rejuvs**
+  * Full rejuvs still shown
+  * Rare necro heads, rare boots, and rare chests hidden
+  * Grand charms heavily reduced
+
+* **10: 3 Minute Mapper**
+  * Full rejuvs hidden
+  * Rare quivers (Amazon and non-Amazon) hidden
+  * Grand charms show minimal label only
+
+* **11: No Items Out of Town** — Everything outside town hidden except desecrated items, slammed items, and runeword items
 ## Helper text
 * Check Tooltip on Boss mats for help on Uber Bosses
 * Check Tooltip on keys tooltip for pathing help
