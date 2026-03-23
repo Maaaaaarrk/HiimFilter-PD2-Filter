@@ -33,7 +33,7 @@ def update_version():
     today = datetime.date.today()
     date_str = f"{today.strftime('%B')} {_ordinal(today.day)}"
     with open(VERSION_FILTER, "w", encoding="utf-8") as f:
-        f.write(f"Last updated {date_str}%CL%{season} - build {version}\n")
+        f.write(f"Last updated {date_str}%CL%{season} - build {version}")
 
     print(f"Version: {season} - build {version} ({date_str})")
 
