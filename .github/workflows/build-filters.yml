@@ -4,10 +4,9 @@ on:
   push:
     branches-ignore:
       - main
-    paths:
-      - 'builderfilter/**'
-      - 'builderreadme/**'
-      - 'version.txt'
+    paths-ignore:
+      - '*.filter'   # root .filter files are auto-generated — edits here should not trigger a rebuild
+      - 'README.md'  # also auto-generated
 
 permissions:
   contents: write
@@ -33,21 +32,18 @@ jobs:
       - name: Generate README
         run: python builderreadme/create_readme.py
 
+      - name: Validate filters
+        run: python validate_filters.py --errors-only
+
       - name: Commit and push generated files
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add version.txt \
                   "builderfilter/01-header/01-Version[ALL].filter" \
-                  Hiim.filter Hiim_Hyper.filter Hiim_Grail.filter Hiim_Crafting.filter \
-                  Hiim_Vanilla_Plus.filter Hiim_Mystery.filter \
-                  Hiim_Crafting_Amazon_Focused.filter Hiim_Crafting_Assassin_Focused.filter \
-                  Hiim_Crafting_Barbarian_Focused.filter Hiim_Crafting_Druid_Focused.filter \
-                  Hiim_Crafting_Necromancer_Focused.filter Hiim_Crafting_Sorceress_Focused.filter \
-                  Hiim_Crafting_Paladin_Focused.filter Hiim_LLD_Focused.filter \
-                  Hiim_LLD_Hyper.filter Hiim_TalRasha_Themed.filter \
-                  Hiim_Only_Filter.filter Hiim_Closed_Beta.filter \
+                  filter_definitions.json \
                   README.md
+          git add *.filter 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
