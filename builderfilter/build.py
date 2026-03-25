@@ -37,10 +37,56 @@ def update_version():
 
     print(f"Version: {season} - build {version} ({date_str})")
 
+FILTER_DEFINITIONS = os.path.join(OUTPUT_DIR, "filter_definitions.json")
+
+
 def load_config():
     with open(os.path.join(SCRIPT_DIR, "filters.json"), encoding="utf-8") as f:
         data = json.load(f)
-    return data["filters"], data.get("groups", {})
+    return data["filters"], data.get("groups", {}), data.get("beta", False)
+
+
+def sync_definitions_beta(filters, beta):
+    """Add or remove file_name_beta in filter_definitions.json based on the beta flag."""
+    if not os.path.exists(FILTER_DEFINITIONS):
+        return
+    with open(FILTER_DEFINITIONS, encoding="utf-8") as f:
+        defs = json.load(f)
+
+    # Build a lookup: file_name -> definition entry
+    file_to_info = {info["file_name"]: info for info in defs.get("filter_info", {}).values()}
+
+    changed = False
+    for entry in filters:
+        info = file_to_info.get(entry["file"])
+        if info is None:
+            continue
+        if beta:
+            beta_name = entry["file"].replace(".filter", "_beta.filter")
+            if info.get("file_name_beta") != beta_name:
+                info["file_name_beta"] = beta_name
+                changed = True
+        else:
+            if "file_name_beta" in info:
+                del info["file_name_beta"]
+                changed = True
+
+    if changed:
+        with open(FILTER_DEFINITIONS, "w", encoding="utf-8") as f:
+            json.dump(defs, f, indent=2)
+            f.write("\n")
+        action = "added" if beta else "removed"
+        print(f"  {action} file_name_beta entries in filter_definitions.json")
+
+
+def cleanup_beta_files(filters):
+    """Delete root *_beta.filter files when beta is turned off."""
+    for entry in filters:
+        beta_file = entry["file"].replace(".filter", "_beta.filter")
+        path = os.path.join(OUTPUT_DIR, beta_file)
+        if os.path.exists(path):
+            os.remove(path)
+            print(f"  removed {beta_file}")
 
 
 def extract_bracket_tag(filename):
@@ -114,11 +160,17 @@ def build_filter(entry, groups):
 
 def main():
     update_version()
-    filters, groups = load_config()
+    filters, groups, beta = load_config()
+
+    sync_definitions_beta(filters, beta)
+    if not beta:
+        cleanup_beta_files(filters)
+
     for entry in filters:
-        print(f"Building {entry['file']} ...")
+        out_file = entry["file"].replace(".filter", "_beta.filter") if beta else entry["file"]
+        print(f"Building {out_file} ...")
         content = build_filter(entry, groups)
-        out_path = os.path.join(OUTPUT_DIR, entry["file"])
+        out_path = os.path.join(OUTPUT_DIR, out_file)
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"  wrote {len(content):,} chars -> {out_path}")

@@ -4,10 +4,9 @@ on:
   push:
     branches-ignore:
       - main
-    paths:
-      - 'builderfilter/**'
-      - 'builderreadme/**'
-      - 'version.txt'
+    paths-ignore:
+      - '*.filter'   # root .filter files are auto-generated — edits here should not trigger a rebuild
+      - 'README.md'  # also auto-generated
 
 permissions:
   contents: write
@@ -32,6 +31,9 @@ jobs:
 
       - name: Generate README
         run: python builderreadme/create_readme.py
+
+      - name: Validate filters
+        run: python validate_filters.py --errors-only
 
       - name: Commit and push generated files
         run: |
