@@ -29,9 +29,24 @@ COLOR_CODES = {
 
 VALUE_KEYWORDS = {
     # Standard display keywords
-    'NAME', 'ILVL', 'ALVL', 'PRICE', 'SOCKETS', 'DEF', 'ED', 'AR',
-    'RUNENAME', 'MAXSOCKETS', 'QTY', 'BASENAME',
+    'NAME', 'ILVL', 'ALVL', 'PRICE', 'SELLPRICE', 'BUYPRICE',
+    'SOCKETS', 'DEF', 'ED', 'AR',
+    'RUNENAME', 'MAXSOCKETS', 'QTY', 'BASENAME', 'CODE',
     'BASEMAXONEH', 'BASEMINONEH', 'BASEMAXTWOH', 'BASEMINTWOH',
+    'BASEMINTHROW', 'BASEMAXTHROW', 'BASEMINKICK', 'BASEMAXKICK',
+    'BASEMINSMITE', 'BASEMAXSMITE',
+    # Requirements
+    'REQDEX', 'REQSTR', 'REQLVL', 'LVLREQ',
+    'UPDEX', 'UPSTR', 'UPLVL',
+    # Inventory
+    'HEIGHT', 'WIDTH', 'AREA',
+    # Gem info
+    'GEMLEVEL', 'GEMTYPE',
+    # Stats
+    'MAXRES', 'ALLATTRIB', 'BASEBLOCK', 'MINDMG',
+    'STR', 'DEX', 'FBR',
+    # Resistances
+    'FRES', 'CRES', 'LRES', 'PRES',
     # PD2 stat display tokens (show the live value of the stat on ground/tooltip)
     'RES', 'EDAM', 'EDEF', 'RUNENUM', 'PLR',
     'FCR', 'FRW', 'FHR', 'IAS', 'MFIND', 'MANA', 'LIFE',
@@ -39,8 +54,8 @@ VALUE_KEYWORDS = {
 }
 
 SPECIAL_KEYWORDS = {
-    'CONTINUE', 'NL', 'CL',
-    'NOTIFY-DEAD',   # PD2 extension
+    'CONTINUE', 'NL', 'CL', 'CS',
+    'NOTIFY-DEAD',   # PD2 extension (also covered by _RE_NOTIFY below)
     'MAP',           # %MAP% shorthand (no color) — valid but unusual
 }
 
@@ -49,32 +64,58 @@ BOOL_CONDITIONS = {
     'NMAG', 'MAG', 'RARE', 'UNI', 'SET', 'CRAFT',
     'NORM', 'EXC', 'ELT',
     'ID', 'INF', 'SUP', 'ETH', 'RW', 'GEMMED',
+    # Armor slots
     'HELM', 'CHEST', 'SHIELD', 'GLOVES', 'BOOTS', 'BELT', 'CIRC', 'ARMOR', 'WEAPON',
+    # Item categories
+    'JEWELRY', 'CHARM', 'MISC', 'QUIVER',
+    # Weapon types
+    'AXE', 'MACE', 'SWORD', 'DAGGER', 'THROWING', 'JAV', 'SPEAR', 'POLEARM',
+    'BOW', 'XBOW', 'STAFF', 'WAND', 'SCEPTER',
+    'CLUB', 'TMACE', 'HAMMER',
+    '1H', '2H',
+    # Class-restricted items
+    'DRU', 'BAR', 'DIN', 'NEC', 'SIN', 'SOR', 'ZON', 'CLASS',
+    # Class names (full)
     'AMAZON', 'ASSASSIN', 'BARBARIAN', 'DRUID', 'NECROMANCER', 'PALADIN', 'SORCERESS',
+    # Location
     'SHOP', 'EQUIPPED', 'MERC', 'INVENTORY', 'CUBE', 'STASH', 'GROUND',
-    'QUIVER',
+    # Constants
+    'TRUE', 'FALSE',
 }
 
 # Value conditions (require an operator)
 VALUE_CONDITIONS = {
     # Economy / drops
-    'GOLD', 'ILVL', 'ALVL', 'CLVL', 'RUNE', 'GEMLEVEL', 'SOCKETS', 'SOCK',
-    'FILTLVL', 'DIFF', 'MAPID', 'MAPTIER', 'QTY', 'LVLREQ',
+    'GOLD', 'ILVL', 'ALVL', 'CLVL', 'RUNE', 'GEMLEVEL', 'GEM', 'GEMTYPE',
+    'SOCKETS', 'SOCK', 'FILTLVL', 'DIFF', 'MAPID', 'MAPTIER', 'QTY',
+    'LVLREQ', 'QLVL', 'AUTOMOD',
     # Resistances
     'FRES', 'CRES', 'LRES', 'PRES', 'RES',
     # Stats
-    'ED', 'AR', 'DEF', 'PRICE', 'EDAM', 'MAXDMG',
+    'ED', 'AR', 'DEF', 'PRICE', 'EDAM', 'EDEF', 'MAXDMG', 'MINDMG',
+    'MAXRES', 'ALLATTRIB', 'BASEBLOCK',
     # Character stats
     'DEX', 'STR', 'MANA', 'LIFE',
     # Rates
-    'FRW', 'FHR', 'IAS', 'FCR', 'MFIND',
+    'FRW', 'FHR', 'IAS', 'FCR', 'MFIND', 'FBR',
+    # Requirements
+    'REQDEX', 'REQSTR', 'REQLVL', 'UPDEX', 'UPSTR', 'UPLVL',
+    # Crafting/rerolling
+    'CRAFTALVL', 'REROLLALVL',
+    # Inventory
+    'HEIGHT', 'WIDTH', 'AREA',
+    # Base damage
+    'BASEMINTHROW', 'BASEMAXTHROW', 'BASEMINKICK', 'BASEMAXKICK',
+    'BASEMINSMITE', 'BASEMAXSMITE',
+    # Misc stats
+    'GFIND', 'MAEK', 'DTM', 'REPAIR', 'ARPER', 'FOOLS', 'MAXDUR',
     # Affix codes
     'PREFIX', 'SUFFIX',
     # Misc
     'STAT118',  # used directly sometimes
 }
 
-MAX_FILTER_LEVELS = 11   # Levels 1–11; 0 is always "Show All Items"
+MAX_FILTER_LEVELS = 12   # Levels 1–12; 0 is always "Show All Items"
 MAX_STAT_ID = 504
 
 # Compiled patterns
@@ -93,6 +134,7 @@ _RE_DOT       = re.compile(r'^DOT-(' + _HEX2 + r')$')
 _RE_BORDER    = re.compile(r'^BORDER-(' + _HEX2 + r')$')
 _RE_PX        = re.compile(r'^PX-(' + _HEX2 + r')$')
 _RE_SOUND     = re.compile(r'^SOUNDID-(\d+)$')
+_RE_NOTIFY    = re.compile(r'^NOTIFY-([0-9A-Fa-f]|DEAD)$')  # %NOTIFY-F% or %NOTIFY-DEAD%
 # Tokens that look like keyword attempts (all-caps + digits + hyphen/underscore)
 _RE_KEYWORD   = re.compile(r'^[A-Z][A-Z0-9_-]*$')
 
@@ -142,7 +184,13 @@ def is_valid_percent_token(token: str, defined_aliases: set) -> bool:
         return True
     if _RE_SOUND.match(token):
         return True
-    if _RE_TIER.match(token):
+    m = _RE_TIER.match(token)
+    if m:
+        tier_val = int(m.group(1))
+        if tier_val > MAX_FILTER_LEVELS:
+            return False  # out-of-range — let caller report unknown token
+        return True
+    if _RE_NOTIFY.match(token):
         return True
     # PD2 dynamic output tokens: display stat/skill values
     if _RE_STAT.match(token):
@@ -158,15 +206,34 @@ def is_valid_percent_token(token: str, defined_aliases: set) -> bool:
 
 def validate_output(output: str, filename, lineno, issues, defined_aliases):
     """Validate the output portion of an ItemDisplay or Alias rule."""
-    # --- Check %...% tokens ---
+    # --- Check %...% tokens with brace-depth tracking ---
     # Only validate tokens that look like keyword attempts (all-uppercase, no spaces).
     # Tokens with spaces / mixed case are literal '%' signs used in tooltip text.
-    for token in re.findall(r'%([^%\n]+)%', output):
-        if not _RE_KEYWORD.match(token):
-            continue   # literal % in text, not a keyword attempt
-        if not is_valid_percent_token(token, defined_aliases):
-            issues.append(Issue(filename, lineno, 'ERROR',
-                f"Unknown output token: %{token}%"))
+    brace_depth = 0
+    pos = 0
+    while pos < len(output):
+        ch = output[pos]
+        if ch == '{':
+            brace_depth += 1
+            pos += 1
+        elif ch == '}':
+            brace_depth -= 1
+            pos += 1
+        elif ch == '%':
+            end = output.find('%', pos + 1)
+            if end == -1:
+                break
+            token = output[pos + 1:end]
+            if _RE_KEYWORD.match(token):
+                if token == 'CONTINUE' and brace_depth > 0:
+                    issues.append(Issue(filename, lineno, 'ERROR',
+                        "%CONTINUE% must appear outside tooltip braces {}"))
+                elif not is_valid_percent_token(token, defined_aliases):
+                    issues.append(Issue(filename, lineno, 'ERROR',
+                        f"Unknown output token: %{token}%"))
+            pos = end + 1
+        else:
+            pos += 1
 
     # --- Check balanced tooltip braces ---
     opens  = output.count('{')
@@ -302,10 +369,27 @@ def validate_file(filepath: Path, errors_only: bool = False):
     except Exception as exc:
         return [Issue(fname, 0, 'ERROR', f"Cannot read file: {exc}")], 0
 
-    for raw in raw_lines:
+    alias_line_map: dict = {}   # name -> first lineno it was defined
+    for lineno_0, raw in enumerate(raw_lines, 1):
         m = re.match(r'^Alias\[([^\]]+)\]:', raw.strip())
         if m:
-            defined_aliases.add(m.group(1))
+            name = m.group(1)
+            defined_aliases.add(name)
+            if name not in alias_line_map:
+                alias_line_map[name] = lineno_0
+            else:
+                issues.append(Issue(fname, lineno_0, 'ERROR',
+                    f"Alias '{name}' is already defined at line {alias_line_map[name]}"))
+
+    # --- Alias substring conflict check ---
+    # Sort longest-first so we always report the *shorter* name as the problem
+    alias_names = sorted(alias_line_map.keys(), key=len, reverse=True)
+    for i, longer in enumerate(alias_names):
+        for shorter in alias_names[i + 1:]:
+            if shorter in longer:
+                issues.append(Issue(fname, alias_line_map[shorter], 'ERROR',
+                    f"Alias name '{shorter}' is a substring of alias '{longer}' — "
+                    f"this can cause ambiguous token matching"))
 
     # --- Pass 2: full validation ---
     for lineno, raw in enumerate(raw_lines, 1):
@@ -336,7 +420,19 @@ def validate_file(filepath: Path, errors_only: bool = False):
                 issues.append(Issue(fname, lineno, 'ERROR',
                     "Malformed Alias — expected: Alias[NAME]: value"))
             else:
-                validate_output(m.group(2), fname, lineno, issues, defined_aliases)
+                alias_val = m.group(2)
+                # Strip inline comment (outside braces) before validating
+                bd, cs = 0, -1
+                for i, ch in enumerate(alias_val):
+                    if ch == '{':
+                        bd += 1
+                    elif ch == '}':
+                        bd -= 1
+                    elif bd == 0 and alias_val[i:i+2] == '//':
+                        cs = i
+                        break
+                validate_output(alias_val[:cs].rstrip() if cs >= 0 else alias_val,
+                                fname, lineno, issues, defined_aliases)
             continue
 
         # ItemDisplay[CONDITIONS]: output

@@ -15,16 +15,16 @@ ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 
 // Low rune name decorations
 // Valuable Crafting rune callout TIR 3, ORT 6, RAL 8, AMN 11, SOL 12, ETH 5
-ItemDisplay[RUNE<21 FILTLVL<5 (RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %RUNE_LOW_CRAFT%%CONTINUE%
+ItemDisplay[RUNE<21 FILTLVL<5 (RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %RUNE_CRAFT%%CONTINUE%
 ItemDisplay[RUNE<21 FILTLVL<5 !(RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %RUNE_LOW%%CONTINUE%
 ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
 
 
 // Mid rune
 ItemDisplay[RUNE>20 AND RUNE<24]: %RUNE_MID%%CONTINUE%
-ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_MID_ALT%%CONTINUE%
+ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 // High rune
 ItemDisplay[RUNE>25 RUNE<30]: %RUNE_HIGH%%CONTINUE%
-ItemDisplay[RUNE>29]: %RUNE_HIGH_ALT%%CONTINUE%
+ItemDisplay[RUNE>29]: %RUNE_ALT_HIGH%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
