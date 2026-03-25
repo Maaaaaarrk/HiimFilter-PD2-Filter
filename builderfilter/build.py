@@ -73,7 +73,7 @@ def sync_definitions_beta(filters, beta):
 
     if changed:
         with open(FILTER_DEFINITIONS, "w", encoding="utf-8") as f:
-            json.dump(defs, f, indent=2)
+            json.dump(defs, f, indent=2, ensure_ascii=False)
             f.write("\n")
         action = "added" if beta else "removed"
         print(f"  {action} file_name_beta entries in filter_definitions.json")
