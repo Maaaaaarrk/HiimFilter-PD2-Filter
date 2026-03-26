@@ -51,6 +51,7 @@ VALUE_KEYWORDS = {
     'RES', 'EDAM', 'EDEF', 'RUNENUM', 'PLR',
     'FCR', 'FRW', 'FHR', 'IAS', 'MFIND', 'MANA', 'LIFE',
     'REPLIFE', 'WPNSPD', 'RANGE', 'REROLLALVL', 'CRAFTALVL',
+    'GFIND',
 }
 
 SPECIAL_KEYWORDS = {
@@ -87,6 +88,7 @@ BOOL_CONDITIONS = {
 VALUE_CONDITIONS = {
     # Economy / drops
     'GOLD', 'ILVL', 'ALVL', 'CLVL', 'RUNE', 'GEMLEVEL', 'GEM', 'GEMTYPE',
+    'GFIND',
     'SOCKETS', 'SOCK', 'FILTLVL', 'DIFF', 'MAPID', 'MAPTIER', 'QTY',
     'LVLREQ', 'QLVL', 'AUTOMOD',
     # Resistances
@@ -126,7 +128,7 @@ _RE_TABSK     = re.compile(r'^TABSK(\d+)$')       # tab skill bonuses
 _RE_CLSK      = re.compile(r'^CLSK(\d+)$')        # class skill bonuses
 _RE_SK        = re.compile(r'^SK(\d+)$')           # skill level conditions
 _RE_MULTI     = re.compile(                        # PD2 compound multi-stat conditions
-    r'^MULTI\d+,\d+(\+MULTI\d+,\d+)*(\+STAT\d+(=[0-9]+)?)?$'
+    r'^MULTI\d+,\d+([<>=~]\d+)?(\+MULTI\d+,\d+([<>=~]\d+)?)*(\+STAT\d+(=[0-9]+)?)?$'
 )
 _RE_TIER      = re.compile(r'^TIER-(\d+)$')
 _RE_MAP       = re.compile(r'^MAP-(' + _HEX2 + r')$')
@@ -200,6 +202,8 @@ def is_valid_percent_token(token: str, defined_aliases: set) -> bool:
     if _RE_TABSK.match(token):
         return True
     if _RE_CLSK.match(token):
+        return True
+    if _RE_SK.match(token):
         return True
     return False
 
@@ -401,10 +405,10 @@ def validate_file(filepath: Path, errors_only: bool = False):
 
         # ItemDisplayFilterName[]: Level Name
         if stripped.startswith('ItemDisplayFilterName'):
-            m = re.match(r'^ItemDisplayFilterName\[\s*\]:\s*(.+)$', stripped)
+            m = re.match(r'^ItemDisplayFilterName\[\s*\d*\s*\]:\s*(.+)$', stripped)
             if not m:
                 issues.append(Issue(fname, lineno, 'ERROR',
-                    "Malformed ItemDisplayFilterName — expected: ItemDisplayFilterName[]: Name"))
+                    "Malformed ItemDisplayFilterName — expected: ItemDisplayFilterName[N]: Name"))
             else:
                 filter_level_count += 1
                 if filter_level_count > MAX_FILTER_LEVELS:
