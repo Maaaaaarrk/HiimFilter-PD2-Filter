@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated March 26th%CL%Season 12 - build 128%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated March 28th%CL%Season 12 - build 128%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -86,9 +86,9 @@ ItemDisplay[STAT206>0]: %NAME%
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// In case you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// In case you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// In case you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
 //ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
 ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
@@ -181,7 +181,7 @@ Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%X X X %NAME% %PURPLE%X X X
 // Rare Item GG
 Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%PURPLE%X X X X X %NAME% %PURPLE%X X X X X
 
-// Leveing Tag
+// Leveling Tag
 Alias[LEVELING_TAG]: %ORANGE%lvling%PX-62%
 
 
@@ -969,7 +969,7 @@ ItemDisplay[UNI !ID xtb]: %CONTINUE%War Traveler - Battle Boots
 ItemDisplay[UNI !ID xhb]: %CONTINUE%Gore Rider - War Boots
 
 // Elite tier Boots
-ItemDisplay[UNI !ID ulb]: %CONTINUE%Merman's Spocket - Wyrmhide Boots
+ItemDisplay[UNI !ID ulb]: %CONTINUE%Merman's Sprocket - Wyrmhide Boots
 ItemDisplay[UNI !ID uvb]: %CONTINUE%Sandstorm Trek - Scarabshell Boots
 ItemDisplay[UNI !ID umb]: %CONTINUE%Marrowwalk - Boneweave Boots
 ItemDisplay[UNI !ID utb]: %CONTINUE%Itheraels Path// - Mirrored Boots
@@ -1037,7 +1037,7 @@ ItemDisplay[UNI !ID bsh]: %CONTINUE%Wall of the Eyeless - Bone Shield
 ItemDisplay[UNI !ID gts]: %CONTINUE%The Ward - Gothic Shield
 
 // Exceptional tier Shields
-ItemDisplay[UNI !ID xuc]: %CONTINUE%Visceratuant Defender - Defender
+ItemDisplay[UNI !ID xuc]: %CONTINUE%Viscerataunt Defender - Defender
 ItemDisplay[UNI !ID xml]: %CONTINUE%Mosers Blessed Circle - Round Shield
 ItemDisplay[UNI !ID xrg]: %CONTINUE%Stormchaser - Scutum
 ItemDisplay[UNI !ID xpk]: %CONTINUE%Lance Guard - Barbed Shield
@@ -1432,7 +1432,7 @@ ItemDisplay[SET !ID qui]: %CONTINUE%Arctic Furs - Quilted Armor
 ItemDisplay[SET !ID vbl]: %CONTINUE%Arctic Binding - Light Belt
 ItemDisplay[SET !ID swb]: %CONTINUE%Arctic Horn - Short War Bow
 
-// Berzerker's
+// Berserker's
 ItemDisplay[SET !ID hlm]: %CONTINUE%Berserker's Headgear - Helm
 ItemDisplay[SET !ID spl]: %CONTINUE%Berserker's Hauberk - Splint Mail
 ItemDisplay[SET !ID 2ax]: %CONTINUE%Berserker's Hatchet - Double Axe
@@ -1522,7 +1522,7 @@ ItemDisplay[SET !ID 7ws]: %CONTINUE%Griswold's Redemption - Caduceus
 ItemDisplay[SET !ID paf]: %CONTINUE%Griswold's Honor - Vortex Shield
 
 // Heaven's
-ItemDisplay[SET !ID xrs]: %CONTINUE%Haemosus Adament - Cuirass
+ItemDisplay[SET !ID xrs]: %CONTINUE%Haemosus Adamant - Cuirass
 ItemDisplay[SET !ID 7ma]: %CONTINUE%Dangoons Teaching - Reinforced Mace
 ItemDisplay[SET !ID uts]: %CONTINUE%Taebaeks Glory - Ward
 ItemDisplay[SET !ID uhm]: %CONTINUE%Ondals Almighty - Spired Helm
@@ -1708,7 +1708,7 @@ ItemDisplay[rid]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ALT% // Rathma Tome 
 ItemDisplay[(key OR rkey) MAPID=1]: %NAME%{%BLACK%-%CL%%GRAY%Town!%CL%%BLACK%-%CL%%GOLD%Rogue Encampment%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=2]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Blood Moor%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=3]: %NAME%{%BLACK%-%CL%%WHITE%No pathing hints for this zone%CL%%BLACK%-%CL%%GOLD%Cold Plains%CL%%NAME%}%CONTINUE%
-ItemDisplay[(key OR rkey) MAPID=4]: %NAME%{%BLACK%-%CL%%TAN%Stones near the %WHITE%Road%CL%%LIGHT_GRAY%To Tristam%CL%%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Stony Field%CL%%NAME%}%CONTINUE%
+ItemDisplay[(key OR rkey) MAPID=4]: %NAME%{%BLACK%-%CL%%TAN%Stones near the %WHITE%Road%CL%%LIGHT_GRAY%To Tristram%CL%%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Stony Field%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=5]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Dark Wood%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=6]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Black Marsh%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=7]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Tamoe Highland%CL%%NAME%}%CONTINUE%
@@ -1939,7 +1939,7 @@ ItemDisplay[pk3]: %MAP-62%%SOUNDID-4721%%UBER_KEYS%{%TAN%Key of Destruction %WHI
 
 // Organs
 ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%SOUNDID-4721%%UBER_KEYS%{%ORANGE%Uber Izual %WHITE%- Furnace of Pain - Mephisto's Brain%CL%%ORANGE%Uber Duriel %WHITE%- Forgotten Sands - Baal's Eye%CL%%ORANGE%Lilith %WHITE%- Matron's Den - Diablo's Horn%CL%%WHITE%to create %RED%Uber Tristram %WHITE%Entry%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the 3 Organs together}
-ItemDisplay[ubtm]: %MAP-A9%%SOUNDID-4721%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristam - Uber bosses fight}
+ItemDisplay[ubtm]: %MAP-A9%%SOUNDID-4721%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristram - Uber bosses fight}
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // MAPS
@@ -2024,10 +2024,10 @@ ItemDisplay[t56]: %NAME%{%CL%%RED%F 25% %YELLOW%L 100% %BLUE% C 75%%CL%%GRAY%Ph 
 // Item code no longer dictates map tier
 // Maps [T1X]
 ItemDisplay[t22]: %NAME%Torajan Jungle Map%CONTINUE%{%NAME%}
-ItemDisplay[t12]: %NAME%Horazons Memory Map%CONTINUE%{%NAME%}
+ItemDisplay[t12]: %NAME%Horazon's Memory Map%CONTINUE%{%NAME%}
 ItemDisplay[t13]: %NAME%Bastion Keep Map%CONTINUE%{%NAME%}
 ItemDisplay[t23]: %NAME%Arreat Battlefield Map%CONTINUE%{%NAME%}
-ItemDisplay[t21]: %NAME%Phlegathon Map%CONTINUE%{%NAME%}
+ItemDisplay[t21]: %NAME%Phlegethon Map%CONTINUE%{%NAME%}
 ItemDisplay[t16]: %NAME%Ruined Cistern Map%CONTINUE%{%NAME%}
 ItemDisplay[t33]: %NAME%Lost Temple Map%CONTINUE%{%NAME%}
 ItemDisplay[t17]: %NAME%Halls of Torture Map%CONTINUE%{%NAME%}
@@ -2036,7 +2036,7 @@ ItemDisplay[t19]: %NAME%T1-9 Map%CONTINUE%{%NAME%}
 
 // Maps [T2X]
 ItemDisplay[t15]: %NAME%Royal Crypts Map%CONTINUE%{%NAME%}
-ItemDisplay[t11]: %NAME%Ruins of Vizjun Map%CONTINUE%{%NAME%}
+ItemDisplay[t11]: %NAME%Ruins of Viz-jun Map%CONTINUE%{%NAME%}
 ItemDisplay[t14]: %NAME%Sanatorium Map%CONTINUE%{%NAME%}
 ItemDisplay[t34]: %NAME%Ancestral Trial Map%CONTINUE%{%NAME%}
 ItemDisplay[t36]: %NAME%Fall of Caldeum Map%CONTINUE%{%NAME%}
@@ -2049,7 +2049,7 @@ ItemDisplay[t29]: %NAME%T2-9 Map%CONTINUE%{%NAME%}
 ItemDisplay[t31]: %NAME%River of Blood Map%CONTINUE%{%NAME%}
 ItemDisplay[t32]: %NAME%Throne of Insanity Map%CONTINUE%{%NAME%}
 ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%CONTINUE%{%NAME%}
-ItemDisplay[t24]: %NAME%Tomb of Zultan Kulle Map%CONTINUE%{%NAME%}
+ItemDisplay[t24]: %NAME%Tomb of Zoltun Kulle Map%CONTINUE%{%NAME%}
 ItemDisplay[t35]: %NAME%Blood Moon Map%CONTINUE%{%NAME%}
 ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%CONTINUE%{%NAME%}
 ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%CONTINUE%{%NAME%}
@@ -2192,11 +2192,11 @@ ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 (STAT372+STAT372+STAT370>197)]: %
 ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 (STAT372+STAT372+STAT370>296)]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats < < <%CL%}
 
 // T3 Reroll note
-ItemDisplay[RARE MAPTIER=3 STAT360=0 !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>249)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=3 STAT360=0 !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>249)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T2 Reroll note
-ItemDisplay[RARE MAPTIER=2 STAT360=0 !(STAT372>74 AND STAT370>30) !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>199)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=2 STAT360=0 !(STAT372>74 AND STAT370>30) !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>199)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T1 Reroll note
-ItemDisplay[RARE MAPTIER=1 STAT360=0 !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>174)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadrim Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=1 STAT360=0 !(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373>174)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 
 
 // Tell the User to convert map to rare
@@ -2419,7 +2419,7 @@ ItemDisplay[mp5 (FILTLVL=3 OR FILTLVL=5)]: %BLUE%+ MP
 ItemDisplay[mp5]:
 
 // Other Potion Tooltips
-// Stanima
+// Stamina
 // %CL%%GRAY%--------
 // %CL%%WHITE%Recommended Resistance:
 // %CL%%GRAY%PDR 50% %YELLOW%Light 90%
@@ -2690,7 +2690,7 @@ ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %UNI_GG_ITEM%
 //-----------------------------------------------------------------------------------
 ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %UNI_GG_ITEM%
 
-// Jewerly
+// Jewelry
 //-----------------------------------------------------------------------------------
 // Amulet
 // Ring
@@ -3224,7 +3224,7 @@ ItemDisplay[amu !UNI !SET ID STR+DEX>29 (TABSK0>1 OR TABSK2>1 OR TABSK1>1 OR TAB
 ItemDisplay[amu !UNI !SET ID STR+DEX>29 (TABSK0>1 OR TABSK2>1 OR TABSK1>1 OR TABSK8>1 OR TABSK9>1 OR TABSK10>1 OR TABSK16>1 OR TABSK17>1 OR TABSK18>1 OR TABSK24>1 OR TABSK25>1 OR TABSK33>1 OR TABSK34>1 OR TABSK40>1 OR TABSK41>1 OR TABSK42>1 OR TABSK48>1 OR TABSK49>1 OR TABSK50>1 OR CLSK0>1 OR CLSK1>1 OR CLSK2>1 OR CLSK3>1 OR CLSK4>1 OR CLSK5>1 OR CLSK6>1)   (LIFE+LIFE+LIFE+STR+STR+STR+STR+STR+STR+DEX+DEX+DEX+DEX+DEX+DEX+DEX+DEX+DEX+CRES+CRES+CRES+FRES+FRES+FRES+LRES+LRES+LRES+PRES+PRES+PRES+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+FCR+STAT3+STAT3+STAT3+STAT3+STAT3+STAT3+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE+REPLIFE>719)]: %CONTINUE%%NAME% %PURPLE%6Pt{%PURPLE%6Pt HLD Caster Amulet%CL%%NAME%}
 
 // ------------------------------------------------------------------------------
-// Pts description Tooptip
+// Pts description Tooltip
 // ------------------------------------------------------------------------------
 
 // Ring Tooltip pt rating description
@@ -3304,7 +3304,7 @@ ItemDisplay[jew !UNI !SET ID LVLREQ<31 (STAT91=-15) (LIFE+LIFE+MANA+MANA+STR+STR
 ItemDisplay[jew !UNI !SET ID LVLREQ<31 (STAT91=-15) (LIFE+LIFE+MANA+MANA+STR+STR+STR+STR+STR+STR+STR+STR+STR+STR+DEX+DEX+DEX+DEX+DEX+DEX+DEX+DEX+CRES+FRES+LRES+PRES+MINDMG+MINDMG+MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG+MAXDMG+MAXDMG+MAXDMG+EDAM+EDAM+EDAM+EDAM+STAT122+STAT99+AR>124)]: %CONTINUE% %NAME% %PURPLE%4pt lld%BORDER-9B%{%PURPLE%4Pt LLD Jewel%CL%%NAME%}
 
 // ------------------------------------------------------------------------------
-// Jewel Pts description Tooptip
+// Jewel Pts description Tooltip
 // ------------------------------------------------------------------------------
 
 // Jewel Tooltip
@@ -4211,7 +4211,7 @@ ItemDisplay[(GLOVES OR HELM OR BOOTS OR BELT) !(utg OR uhg) !BAR ETH MAG ID FILT
 ItemDisplay[MAG ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
 ItemDisplay[MAG ILVL>50 STAT360=0 btl]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
 ItemDisplay[MAG ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
-ItemDisplay[MAG ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
+ItemDisplay[MAG ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //Javs
 ItemDisplay[MAG ILVL>50 STAT360=0 (ne5 OR ne4)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
 ItemDisplay[MAG ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
 ItemDisplay[MAG ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%%GREEN% [LLD Craft]{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
@@ -4221,7 +4221,7 @@ ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%NAME%%CL%%COR
 ItemDisplay[RARE ILVL>50 STAT360=0 (pa1 OR pa2 OR pa5 OR pa6 OR pa7)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Targe, Rondache, Crown Shield, Akaran Targe, Akaran Rondache
 ItemDisplay[RARE ILVL>50 STAT360=0 btl]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //blade talons
 ItemDisplay[RARE ILVL>50 STAT360=0 (ob1 OR ob2 OR ob3 OR ob4 OR ob5 OR ob6 OR ob7 OR ob8)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% //Sorc orbs
-ItemDisplay[RARE ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 41for LLD Crafting}%CONTINUE% //Javs
+ItemDisplay[RARE ILVL>50 STAT360=0 (am1 OR am5 OR am6 OR ama)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 41 for LLD Crafting}%CONTINUE% //Javs
 ItemDisplay[RARE ILVL>50 STAT360=0 (ne5 OR ne4)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 45 for LLD Crafting}%CONTINUE% // Nec heads
 ItemDisplay[RARE ILVL>50 STAT360=0 (ba1 OR ba2 OR ba3 OR ba4 OR ba5 OR ba6 OR ba7 OR ba8)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE% // Barb helms
 ItemDisplay[RARE ILVL>50 STAT360=0 (dr1 OR dr2 OR dr3 OR dr4 OR dr5 OR dr6 OR dr7 OR dr8)]: %NAME%{%NAME%%CL%%CORAL% Target ALVL 40 for LLD Crafting}%CONTINUE%  // dudu helms
@@ -4262,7 +4262,7 @@ ItemDisplay[MAG ID !ETH (DRU) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANG
 ItemDisplay[MAG ID !SHOP !MERC !EQUIPPED (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//clubs
 ItemDisplay[SIN MAG ID ETH STAT360=0]: %NAME% %GREEN%[Craft]{%NAME%%CL%%ORANGE%Good Craft Base}%CONTINUE%//all sin claws
 
-// Crafting Reciepe
+// Crafting Recipe
 ItemDisplay[HELM MAG ID !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: Emerald, Ith, Jewel%CL%%BLUE%HitPwr: Saph, Ith, Jewel%CL%%RED%Blood: Ruby, Ral, Jewel%CL%%PURPLE%* Caster: Ameth, Nef, Jewel *%CL%%YELLOW%MF: Topaz, Tir, Jewel%CL%%GRAY%* Vamp: Skull, Lum, Jewel *%CL%%wHITE%Brilliant: Diamond, Eld, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[BOOTS MAG ID !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%* Safety: Emerald, Ort, Jewel *%CL%%BLUE%HitPwr: Saph, Ral, Jewel%CL%%RED%Blood: Ruby, Eth, Jewel%CL%%PURPLE%Caster: Ameth, Thul, Jewel%CL%%YELLOW%* MF: Topaz, Io, Jewel *%CL%%GRAY%Vamp: Skull, El, Jewel%CL%%wHITE%Brilliant: Diamond, Ko, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[GLOVES MAG ID !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%Safety: Emerald, Ral, Jewel%CL%%BLUE%* HitPwr: Saph, Ort, Jewel *%CL%%RED%* Blood: Ruby, Nef, Jewel *%CL%%PURPLE%* Caster: Ameth, Ort, Jewel *%CL%%YELLOW%MF: Topaz, Hel, Jewel%CL%%GRAY%* Vamp: Skull, Io, Jewel *%CL%%wHITE%Brilliant: Diamond, Shael, Jewel%CL%%NAME%}%CONTINUE%
@@ -4289,7 +4289,7 @@ ItemDisplay[NMAG !RW TABSK2=1 FILTLVL<2]: %GREEN%+1 Java %NAME%{%NAME%}%CONTINUE
 ItemDisplay[NMAG !RW TABSK2=2 FILTLVL<2]: %GREEN%+2 Java %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW TABSK2=3]: %GREEN%+3 Java %NAME%{%NAME%}%CONTINUE%
 
-// Assasin
+// Assassin
 ItemDisplay[!UNI !SET !RW (SK251>0 OR SK252>0 OR SK253>0 OR SK254>0 OR SK255>0 OR SK256>0 OR SK257>0 OR SK258>0 OR SK259>0 OR SK260>0 OR SK261>0 OR SK262>0 OR SK263>0 OR SK264>0 OR SK265>0 OR SK266>0 OR SK267>0 OR SK268>0 OR SK269>0 OR SK270>0 OR SK271>0 OR SK272>0 OR SK273>0 OR SK274>0 OR SK275>0 OR SK276>0 OR SK277>0 OR SK278>0 OR SK279>0 OR SK280>0 OR SK366>0)]: %CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK251=1 FILTLVL<2]: +1 FireBlst %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!UNI !SET !RW SK251=2 FILTLVL<2]: +2 FireBlst %NAME%{%NAME%}%CONTINUE%
@@ -5051,8 +5051,8 @@ ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 dr5]: %NAME%{%TAN%Larzuk for 2 sockets%
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 dr5]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Spirit Mask, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 dr6]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Alpha Helm, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 dr6]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Alpha Helm, 0os, ilvl 26+
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 dr7]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Griffon Headress, 0os, ilvl 1-25
-ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 dr7]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Griffon Headress, 0os, ilvl 26+
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 dr7]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Griffon Headdress, 0os, ilvl 1-25
+ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 dr7]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Griffon Headdress, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 dr8]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Hunter's Guise, 0os, ilvl 1-25
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL>25 dr8]: %NAME%{%TAN%Larzuk for 3 sockets%CL%%NAME%}%CONTINUE% // All Hunter's Guise, 0os, ilvl 26+
 ItemDisplay[NMAG !INF !RW SOCK=0 ILVL<26 dr9]: %NAME%{%TAN%Larzuk for 2 sockets%CL%%NAME%}%CONTINUE% // All Sacred Feathers, 0os, ilvl 1-25

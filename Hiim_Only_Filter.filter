@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated March 26th%CL%Season 12 - build 128%CL%HiimFilter - Only Filter Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated March 28th%CL%Season 12 - build 128%CL%HiimFilter - Only Filter Mode -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -86,9 +86,9 @@ ItemDisplay[STAT206>0]: %NAME%
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// In case you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// In case you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// In case you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
 //ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
 ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
@@ -701,7 +701,7 @@ ItemDisplay[rid]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ALT% // Rathma Tome 
 ItemDisplay[(key OR rkey) MAPID=1]: %NAME%{%BLACK%-%CL%%GRAY%Town!%CL%%BLACK%-%CL%%GOLD%Rogue Encampment%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=2]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Blood Moor%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=3]: %NAME%{%BLACK%-%CL%%WHITE%No pathing hints for this zone%CL%%BLACK%-%CL%%GOLD%Cold Plains%CL%%NAME%}%CONTINUE%
-ItemDisplay[(key OR rkey) MAPID=4]: %NAME%{%BLACK%-%CL%%TAN%Stones near the %WHITE%Road%CL%%LIGHT_GRAY%To Tristam%CL%%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Stony Field%CL%%NAME%}%CONTINUE%
+ItemDisplay[(key OR rkey) MAPID=4]: %NAME%{%BLACK%-%CL%%TAN%Stones near the %WHITE%Road%CL%%LIGHT_GRAY%To Tristram%CL%%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Stony Field%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=5]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Dark Wood%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=6]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Black Marsh%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=7]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Tamoe Highland%CL%%NAME%}%CONTINUE%
@@ -932,7 +932,7 @@ ItemDisplay[pk3]: %MAP-62%%SOUNDID-4721%%UBER_KEYS%{%TAN%Key of Destruction %WHI
 
 // Organs
 ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%SOUNDID-4721%%UBER_KEYS%{%ORANGE%Uber Izual %WHITE%- Furnace of Pain - Mephisto's Brain%CL%%ORANGE%Uber Duriel %WHITE%- Forgotten Sands - Baal's Eye%CL%%ORANGE%Lilith %WHITE%- Matron's Den - Diablo's Horn%CL%%WHITE%to create %RED%Uber Tristram %WHITE%Entry%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the 3 Organs together}
-ItemDisplay[ubtm]: %MAP-A9%%SOUNDID-4721%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristam - Uber bosses fight}
+ItemDisplay[ubtm]: %MAP-A9%%SOUNDID-4721%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristram - Uber bosses fight}
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // GEMS
@@ -1051,7 +1051,7 @@ ItemDisplay[mp5 (FILTLVL=3 OR FILTLVL=5)]: %BLUE%+ MP
 ItemDisplay[mp5]:
 
 // Other Potion Tooltips
-// Stanima
+// Stamina
 // %CL%%GRAY%--------
 // %CL%%WHITE%Recommended Resistance:
 // %CL%%GRAY%PDR 50% %YELLOW%Light 90%
@@ -1322,7 +1322,7 @@ ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %UNI_GG_ITEM%
 //-----------------------------------------------------------------------------------
 ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %UNI_GG_ITEM%
 
-// Jewerly
+// Jewelry
 //-----------------------------------------------------------------------------------
 // Amulet
 // Ring
