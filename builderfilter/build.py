@@ -21,14 +21,7 @@ def update_version():
     with open(VERSION_TXT, encoding="utf-8") as f:
         version = int(f.read().strip())
 
-    # Preserve the season string from the existing filter line
     season = "Season 13"
-    if os.path.exists(VERSION_FILTER):
-        with open(VERSION_FILTER, encoding="utf-8") as f:
-            existing = f.read()
-        m = re.search(r'(Season\s+\d+)', existing)
-        if m:
-            season = m.group(1)
 
     today = datetime.date.today()
     date_str = f"{today.strftime('%B')} {_ordinal(today.day)}"
