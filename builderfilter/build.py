@@ -22,7 +22,7 @@ def update_version():
         version = int(f.read().strip())
 
     # Preserve the season string from the existing filter line
-    season = "Season 12"
+    season = "Season 13"
     if os.path.exists(VERSION_FILTER):
         with open(VERSION_FILTER, encoding="utf-8") as f:
             existing = f.read()
