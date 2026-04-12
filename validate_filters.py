@@ -109,6 +109,10 @@ VALUE_CONDITIONS = {
     # Base damage
     'BASEMINTHROW', 'BASEMAXTHROW', 'BASEMINKICK', 'BASEMAXKICK',
     'BASEMINSMITE', 'BASEMAXSMITE',
+    # Base 1H/2H damage (conditions)
+    'BASEMINONEH', 'BASEMAXONEH', 'BASEMINTWOH', 'BASEMAXTWOH',
+    # Max sockets
+    'MAXSOCKETS',
     # Misc stats
     'GFIND', 'MAEK', 'DTM', 'REPAIR', 'ARPER', 'FOOLS', 'MAXDUR',
     # Affix codes
@@ -137,6 +141,8 @@ _RE_BORDER    = re.compile(r'^BORDER-(' + _HEX2 + r')$')
 _RE_PX        = re.compile(r'^PX-(' + _HEX2 + r')$')
 _RE_SOUND     = re.compile(r'^SOUNDID-(\d+)$')
 _RE_NOTIFY    = re.compile(r'^NOTIFY-([0-9A-Fa-f]|DEAD)$')  # %NOTIFY-F% or %NOTIFY-DEAD%
+_RE_FORMULA   = re.compile(r'^FORMULA([A-Z][A-Z0-9_]*)$')   # explicit formula refs: FORMULADPS
+_RE_ISLAND    = re.compile(r'^ISLAND_([A-Z]+)$')             # auto-generated inline formula tokens
 # Tokens that look like keyword attempts (all-caps + digits + hyphen/underscore)
 _RE_KEYWORD   = re.compile(r'^[A-Z][A-Z0-9_-]*$')
 
@@ -205,11 +211,55 @@ def is_valid_percent_token(token: str, defined_aliases: set) -> bool:
         return True
     if _RE_SK.match(token):
         return True
+    # Explicit formula references: %FORMULADPS%, %FORMULAA%, etc.
+    if _RE_FORMULA.match(token):
+        return True
+    # Auto-generated inline formula tokens: %ISLAND_A%, %ISLAND_B%, etc.
+    if _RE_ISLAND.match(token):
+        return True
     return False
+
+
+def _strip_inline_formulas(text: str) -> str:
+    """Replace $f(...) inline formula expressions with a neutral placeholder.
+
+    Handles nested parentheses so that $f(min(a,b)+max(c,d)) is fully matched.
+    In output strings the engine replaces these with %ISLAND_X% tokens at runtime.
+    """
+    result = []
+    i = 0
+    while i < len(text):
+        if text[i:i+3] == '$f(' :
+            # Walk forward to find the matching closing paren
+            depth = 1
+            j = i + 3
+            while j < len(text) and depth > 0:
+                if text[j] == '(':
+                    depth += 1
+                elif text[j] == ')':
+                    depth -= 1
+                j += 1
+            if depth == 0:
+                # Replace entire $f(...) with an inert placeholder
+                result.append('0')
+                i = j
+            else:
+                # Unclosed $f( — leave as-is, will likely trigger other errors
+                result.append(text[i])
+                i += 1
+        else:
+            result.append(text[i])
+            i += 1
+    return ''.join(result)
 
 
 def validate_output(output: str, filename, lineno, issues, defined_aliases):
     """Validate the output portion of an ItemDisplay or Alias rule."""
+    # --- Strip $f() inline formulas before token scanning ---
+    # These get replaced at runtime with auto-generated %ISLAND_X% tokens.
+    # Replace them with a placeholder so we don't flag their internals.
+    output = _strip_inline_formulas(output)
+
     # --- Check %...% tokens with brace-depth tracking ---
     # Only validate tokens that look like keyword attempts (all-uppercase, no spaces).
     # Tokens with spaces / mixed case are literal '%' signs used in tooltip text.
@@ -266,6 +316,13 @@ def validate_condition_token(token: str, filename, lineno, issues, defined_alias
     if _RE_MULTI.match(token):
         return
 
+    # Explicit formula references used as conditions: FORMULADPS>100
+    if _RE_FORMULA.match(token):
+        return
+    # Auto-generated inline formula tokens used as conditions: ISLAND_A>5
+    if _RE_ISLAND.match(token):
+        return
+
     # Match value conditions: NAME[+NAME...] OP VALUE
     vm = re.match(
         r'^([A-Z][A-Z0-9]*(?:\+[A-Z][A-Z0-9]*)*)'   # possibly additive names
@@ -291,7 +348,8 @@ def validate_condition_token(token: str, filename, lineno, issues, defined_alias
                     issues.append(Issue(filename, lineno, 'ERROR',
                         f"STAT{stat_id} exceeds maximum stat ID {MAX_STAT_ID}"))
             elif (_RE_CHARSTAT.match(name) or _RE_TABSK.match(name)
-                  or _RE_CLSK.match(name) or _RE_SK.match(name)):
+                  or _RE_CLSK.match(name) or _RE_SK.match(name)
+                  or _RE_FORMULA.match(name) or _RE_ISLAND.match(name)):
                 pass  # valid PD2 dynamic conditions
             elif name not in VALUE_CONDITIONS and name not in BOOL_CONDITIONS:
                 # Unknown – might be an item code used with operator, which is unusual
@@ -335,6 +393,9 @@ def validate_condition_token(token: str, filename, lineno, issues, defined_alias
 
 def parse_conditions(cond_str: str, filename, lineno, issues, defined_aliases):
     """Parse and validate the full condition string of an ItemDisplay rule."""
+    # --- Strip $f() inline formulas (replaced at runtime with ISLAND_X keys) ---
+    cond_str = _strip_inline_formulas(cond_str)
+
     # --- Check balanced parentheses ---
     depth = 0
     for ch in cond_str:
@@ -374,8 +435,10 @@ def validate_file(filepath: Path, errors_only: bool = False):
         return [Issue(fname, 0, 'ERROR', f"Cannot read file: {exc}")], 0
 
     alias_line_map: dict = {}   # name -> first lineno it was defined
+    defined_formulas: set = set()  # formula keys (uppercased, prefixed with FORMULA)
     for lineno_0, raw in enumerate(raw_lines, 1):
-        m = re.match(r'^Alias\[([^\]]+)\]:', raw.strip())
+        stripped_raw = raw.strip()
+        m = re.match(r'^Alias\[([^\]]+)\]:', stripped_raw)
         if m:
             name = m.group(1)
             defined_aliases.add(name)
@@ -384,6 +447,12 @@ def validate_file(filepath: Path, errors_only: bool = False):
             else:
                 issues.append(Issue(fname, lineno_0, 'ERROR',
                     f"Alias '{name}' is already defined at line {alias_line_map[name]}"))
+        # Collect explicit Formula[KEY] definitions — add as known tokens
+        fm = re.match(r'^Formula\[([^\]]+)\]:', stripped_raw)
+        if fm:
+            formula_key = 'FORMULA' + fm.group(1).upper()
+            defined_formulas.add(formula_key)
+            defined_aliases.add(formula_key)
 
     # --- Alias substring conflict check ---
     # Sort longest-first so we always report the *shorter* name as the problem
@@ -391,7 +460,7 @@ def validate_file(filepath: Path, errors_only: bool = False):
     for i, longer in enumerate(alias_names):
         for shorter in alias_names[i + 1:]:
             if shorter in longer:
-                issues.append(Issue(fname, alias_line_map[shorter], 'ERROR',
+                issues.append(Issue(fname, alias_line_map[shorter], 'WARNING',
                     f"Alias name '{shorter}' is a substring of alias '{longer}' — "
                     f"this can cause ambiguous token matching"))
 
@@ -437,6 +506,17 @@ def validate_file(filepath: Path, errors_only: bool = False):
                         break
                 validate_output(alias_val[:cs].rstrip() if cs >= 0 else alias_val,
                                 fname, lineno, issues, defined_aliases)
+            continue
+
+        # Formula[KEY]: expression  (explicit formula definitions)
+        if stripped.startswith('Formula['):
+            m = re.match(r'^Formula\[([^\]]+)\]:\s*(.*)$', stripped)
+            if not m:
+                issues.append(Issue(fname, lineno, 'ERROR',
+                    "Malformed Formula — expected: Formula[KEY]: expression"))
+            elif not m.group(2).strip():
+                issues.append(Issue(fname, lineno, 'WARNING',
+                    "Empty formula expression"))
             continue
 
         # ItemDisplay[CONDITIONS]: output

@@ -129,6 +129,17 @@ ItemDisplay[(CHEST OR HELM OR CIRC OR SHIELD OR WEAPON OR QUIVER) (RARE OR CRAFT
 //-----------------------------------------------------------------------------------
 // TOOLTIPS - UPGRADING
 //-----------------------------------------------------------------------------------
+
+//Upgrade Requirements
+ItemDisplay[ID !NMAG !MAG !ELT $f(OR(UPLVL>0,UPSTR>0,UPDEX>0))]:%NAME%{%GRAY%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(UPDEX>0) !$f(UPDEX>CHARSTAT2-STAT2)]:%NAME%{%GRAY%, Dex %UPDEX%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(UPDEX>0) $f(UPDEX>CHARSTAT2-STAT2)]:%NAME%{%GRAY%, %RED%Dex %UPDEX%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(UPSTR>0) !$f(UPSTR>CHARSTAT0-STAT0)]:%NAME%{%GRAY% Str %UPSTR%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(UPSTR>0) $f(UPSTR>CHARSTAT0-STAT0)]:%NAME%{%RED% Str %UPSTR%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(UPLVL>0) !$f(UPLVL>CLVL)]:%NAME%{%GRAY% Lvl %UPLVL%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(UPLVL>0) $f(UPLVL>CLVL)]:%NAME%{%RED% Lvl %UPLVL%%NAME%}%CONTINUE%
+ItemDisplay[ID !NMAG !MAG !ELT $f(OR(UPSTR>0,UPDEX>0))]:%NAME%{%GRAY%(Requires:%NAME%}%CONTINUE%
+
 ItemDisplay[STAT486=0 (ARMOR OR CIRC OR QUIVER) NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ral %WHITE%+ %ORANGE%Thul %WHITE%+ Perf %PURPLE%O%CL%%TAN%Note%WHITE%: Upgrading Recipe:%CL%%NAME%}%CONTINUE%
 ItemDisplay[STAT486=0 (ARMOR OR CIRC OR QUIVER) EXC RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ko %WHITE%+ %ORANGE%Pul %WHITE%+ Perf %PURPLE%O%CL%%TAN%Note%WHITE%: Upgrading Recipe:%CL%%NAME%}%CONTINUE%
 ItemDisplay[STAT486=0 WEAPON NORM RARE ID]: %NAME%{%YELLOW%This Item %WHITE%+ %ORANGE%Ort %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %BLUE%O%CL%%TAN%Note%WHITE%: Upgrading Recipe:%CL%%NAME%}%CONTINUE%
