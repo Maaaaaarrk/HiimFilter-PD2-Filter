@@ -55,14 +55,12 @@ ItemDisplay[!SHOP !RW ID FILTLVL<5 FILTLVL>1 PRICE>34999 (WP12 OR WP4 OR WP13 OR
 ItemDisplay[GEM>0 QTY>0]:
 
 //hide most nmag non called out on middle filter levels
-//note: SOCK<2 excludes items with 2+ sockets (runeword bases) so their
-//tooltips from file 28 are preserved through the %CONTINUE% chain
-ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH SOCK<2]:%NOTIFY-DEAD%{%NAME%}
-ItemDisplay[!SHOP FILTLVL>2 NMAG !RW WEAPON SOCK<2]:%NOTIFY-DEAD%{%NAME%}
-ItemDisplay[!SHOP FILTLVL>1 NMAG !RW ARMOR !(CHEST AND ETH) SOCK<2]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>2 NMAG !RW WEAPON]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>1 NMAG !RW ARMOR !(CHEST AND ETH)]:%NOTIFY-DEAD%{%NAME%}
 
 //hide all remaining nmag
-ItemDisplay[!SHOP FILTLVL>4 NMAG !RW (WEAPON OR ARMOR) SOCK<2]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>4 NMAG !RW (WEAPON OR ARMOR)]:%NOTIFY-DEAD%{%NAME%}
 
 // Hide all remaining magic !eth on semi-strict on hell
 ItemDisplay[!SHOP MAG !ID !ETH FILTLVL>1 DIFF=2]:%NOTIFY-DEAD%{%NAME%}
