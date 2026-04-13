@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 13th%CL%Season 13 - build 4%CL%HiimFilter - Grail Hunt -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 13th%CL%Season 13 - build 5%CL%HiimFilter - Grail Hunt -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -5896,6 +5896,8 @@ ItemDisplay[!SHOP !RW ID FILTLVL<5 FILTLVL>1 PRICE>34999 (WP12 OR WP4 OR WP13 OR
 ItemDisplay[GEM>0 QTY>0]:
 
 //hide most nmag non called out on middle filter levels
+//note: SOCK<2 excludes items with 2+ sockets (runeword bases) so their
+//tooltips from file 28 are preserved through the %CONTINUE% chain
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH SOCK<2]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP FILTLVL>2 NMAG !RW WEAPON SOCK<2]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW ARMOR !(CHEST AND ETH) SOCK<2]:%NOTIFY-DEAD%{%NAME%}
