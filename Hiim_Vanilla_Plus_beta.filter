@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 12th%CL%Season 13 - build 3%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 13th%CL%Season 13 - build 4%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -3967,8 +3967,8 @@ ItemDisplay[(aqv3 OR cqv3) !RW SOCK=2 NMAG FILTLVL<3]: %NAME%{%NAME%}
 // Weapon range
 //-----------------------------------------------------------------------------------
 // Weapon Speed and Range
-ItemDisplay[FILTLVL<3 WEAPON !BOW !XBOW !WAND !SOR]: %NAME%{%CL%%WHITE%Base Speed: %WPNSPD% || Range: +%RANGE%}%CONTINUE%
-ItemDisplay[FILTLVL<3 WEAPON (BOW OR XBOW)]: %NAME%{%CL%%WHITE%Base Speed: %WPNSPD%}%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON !BOW !XBOW !WAND !SOR !STAFF]: %NAME%{%NAME%%CL%%WHITE%Base Speed: %WPNSPD% || Range: +%RANGE%}%CONTINUE%
+ItemDisplay[FILTLVL<3 WEAPON (BOW OR XBOW)]: %NAME%{%NAME%%CL%%WHITE%Base Speed: %WPNSPD%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 
