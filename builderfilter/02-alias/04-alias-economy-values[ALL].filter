@@ -27,6 +27,34 @@ Alias[DEMONIC_CUBE_VALUE]: 1.25
 Alias[CATALYST_SHARD_VALUE]: 0.2
 
 //-----------------------------------------------------------------------------------
+// Formula-based estimated stack values (per-unit value * QTY)
+// Used with $f() in tooltips to show total HR value of a stack
+//-----------------------------------------------------------------------------------
+
+// Rune stack value formulas
+Alias[PUL_STACK_HR]:(QTY*0.01)
+Alias[UM_STACK_HR]:(QTY*0.03)
+Alias[MAL_STACK_HR]:(QTY*0.05)
+Alias[IST_STACK_HR]:(QTY*0.1)
+Alias[GUL_STACK_HR]:(QTY*0.175)
+Alias[VEX_STACK_HR]:(QTY*0.25)
+Alias[HALFHR_STACK_HR]:(QTY*0.5)
+Alias[OHM_STACK_HR]:(QTY*%OHM_RUNE_VALUE%)
+Alias[LO_STACK_HR]:(QTY*%LO_RUNE_VALUE%)
+Alias[SUR_STACK_HR]:(QTY*%SUR_RUNE_VALUE%)
+Alias[BER_STACK_HR]:(QTY*%BER_RUNE_VALUE%)
+Alias[JAH_STACK_HR]:(QTY*%JAH_RUNE_VALUE%)
+Alias[CHAM_STACK_HR]:(QTY*%CHAM_RUNE_VALUE%)
+Alias[ZOD_STACK_HR]:(QTY*%ZOD_RUNE_VALUE%)
+
+// PD2 item stack value formulas
+Alias[CWSS_STACK_HR]:(QTY*%TAINTED_WORLDSTONE_SHARD_VALUE%)
+Alias[LBOX_STACK_HR]:(QTY*%LARZUK_PUZZLEBOX_VALUE%)
+Alias[LPP_STACK_HR]:(QTY*%LARZUK_PUZZLEPIECE_VALUE%)
+Alias[IMRN_STACK_HR]:(QTY*%DEMONIC_CUBE_VALUE%)
+Alias[IWSS_STACK_HR]:(QTY*%CATALYST_SHARD_VALUE%)
+
+//-----------------------------------------------------------------------------------
 // Boss Mat estimated values
 //-----------------------------------------------------------------------------------
 

@@ -21,6 +21,22 @@ ItemDisplay[RUNE=31]: %NAME%{%TAN%HR Estimated Value Each%WHITE%: %JAH_RUNE_VALU
 ItemDisplay[RUNE=32]: %NAME%{%TAN%HR Estimated Value Each%WHITE%: %CHAM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=33]: %NAME%{%TAN%HR Estimated Value Each%WHITE%: %ZOD_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 
+// Estimated stack value (qty * per-unit value)
+ItemDisplay[FORMULA RUNE=20 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%PUL_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=21 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%UM_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=22 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%MAL_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=23 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%IST_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=24 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%GUL_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=25 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%VEX_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=26 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%HALFHR_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=27 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%OHM_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=28 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%LO_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=29 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%SUR_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=30 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%BER_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=31 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%JAH_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=32 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%CHAM_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+ItemDisplay[FORMULA RUNE=33 QTY>1]: %NAME%{%GOLD%HR Estimated Stack Value%WHITE%: $f(ROUND(%ZOD_STACK_HR%*100)/100) hr%CL%%NAME%}%CONTINUE%
+
 // High roller
 ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
 
