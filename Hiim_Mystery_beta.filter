@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 17th%CL%Season 13 - build 7%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 16th%CL%Season 13 - build 7%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -296,6 +296,22 @@ Alias[BER_WSS_VALUE]: 300
 Alias[JAH_WSS_VALUE]: 200
 Alias[CHAM_WSS_VALUE]: 225
 Alias[ZOD_WSS_VALUE]: 450
+
+// Stack HR and WSS formulas for lower runes
+Alias[PUL_STACK_HR]: (QTY*0.01)
+Alias[UM_STACK_HR]: (QTY*0.03)
+Alias[MAL_STACK_HR]: (QTY*0.05)
+Alias[IST_STACK_HR]: (QTY*0.1)
+Alias[GUL_STACK_HR]: (QTY*0.175)
+Alias[VEX_STACK_HR]: (QTY*0.25)
+Alias[HALFHR_STACK_HR]: (QTY*0.5)
+Alias[PUL_STACK_WSS]: (QTY*1)
+Alias[UM_STACK_WSS]: (QTY*3)
+Alias[MAL_STACK_WSS]: (QTY*5)
+Alias[IST_STACK_WSS]: (QTY*10)
+Alias[GUL_STACK_WSS]: (QTY*17.5)
+Alias[VEX_STACK_WSS]: (QTY*25)
+Alias[HALFHR_STACK_WSS]: (QTY*50)
 
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.75)
@@ -5150,9 +5166,9 @@ ItemDisplay[NMAG !RW !SHOP SHIELD SOCK=2]: %NAME%{%GOLD%Splendor %GRAY%Eth + Lum
 ItemDisplay[NMAG !RW !SHOP SHIELD SOCK=3]: %NAME%{%GOLD%Sanctuary %GRAY%Ko + Ko + Mal%CL%%GOLD%Dream %GRAY%Io + Jah + Pul%CL%%GOLD%Dragon %GRAY%Sur + Lo + Sol%CL%%GOLD%Ancient's Pledge %GRAY%Ral + Ort + Tal%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																							// Shield 3s
 ItemDisplay[NMAG !RW !SHOP SHIELD !DIN SOCK=4]: %NAME%{%GOLD%Epiphany %GRAY%Lo + Ith + Lo + Ist%CL%%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Exile %GRAY%Vex + Ohm + Ist + Dol%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Shield 4s
 ItemDisplay[NMAG !RW !SHOP DIN SOCK=4]: %NAME%{%GOLD%Epiphany %GRAY%Lo + Ith + Lo + Ist%CL%%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Shattered Wall %GRAY%Zod + Jah + Ral + Cham%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Exile %GRAY%Vex + Ohm + Ist + Dol%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Paladin Shield 4s
-ItemDisplay[NMAG !RW !SHOP WAND SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%White %GRAY%Dol + Io%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Dominion %GRAY%Cham + Ohm%CL%%GOLD%X Runewords X}%CONTINUE%																																											// Wand
-ItemDisplay[NMAG !RW !SHOP SOR SOCK=2]: %NAME%{%GOLD%Neophyte %GRAY%Thul + Tir%CL%%GOLD%X Runewords X}%CONTINUE%																																																						// Orb 2s
-ItemDisplay[NMAG !RW !SHOP SOR SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%X Runewords X}%CONTINUE%																																																	// Orb 3s
+ItemDisplay[NMAG !RW !SHOP WAND SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%White %GRAY%Dol + Io%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Dominion %GRAY%Cham + Ohm%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																											// Wand
+ItemDisplay[NMAG !RW !SHOP SOR SOCK=2]: %NAME%{%GOLD%Neophyte %GRAY%Thul + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																						// Orb 2s
+ItemDisplay[NMAG !RW !SHOP SOR SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																																	// Orb 3s
 ItemDisplay[NMAG !RW !SHOP SIN SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Steel %GRAY%Tir + El%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																															// Claw 2s
 ItemDisplay[NMAG !RW !SHOP SIN SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Pattern %GRAY%Tal + Ort + Tir%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Lawbringer %GRAY%Amn + Lem + Ko%CL%%GOLD%King's Grace %GRAY%Amn + Ral + Thul%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%Crescent Moon %GRAY%Shael + Um + Tir%CL%%GOLD%Chaos %GRAY%Fal + Ohm + Um%CL%%GOLD%Black %GRAY%Thul + Io + Nef%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%														// Claw 3s
 ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Neophyte %GRAY%Thul + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%																																														// Scepter 2s
