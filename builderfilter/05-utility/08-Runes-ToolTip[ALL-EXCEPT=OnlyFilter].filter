@@ -21,20 +21,32 @@ ItemDisplay[RUNE=31]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %JAH_
 ItemDisplay[RUNE=32]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %CHAM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %CHAM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=33]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %ZOD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %ZOD_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 
-// Stack value formulas for runes (shown when QTY>1) - WSS shown only for items with WSS value <= 5
+// Stack value formulas for runes (shown when QTY>1)
+// WSS stack value shown only when calculated stack HR value <= 5
+// Low-value runes (stack HR practically never exceeds 5)
 ItemDisplay[RUNE=20 QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*1))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.01))%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21 QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*3))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.03))%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=22 QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*5))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.05))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.1))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=24 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=23 QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*10))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.1))%CL%%NAME%}%CONTINUE%
+// Mid-value runes (WSS shown when stack HR <= 5, HR-only when stack HR > 5)
+ItemDisplay[RUNE=24 QTY>1 QTY<29]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%GUL_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=24 QTY>28]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=25 QTY>1 QTY<21]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%VEX_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=25 QTY>20]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=26 QTY>1 QTY<11]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%HALFHR_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=26 QTY>10]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=27 QTY>1 QTY<7]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%OHM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=27 QTY>6]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=28 QTY>1 QTY<6]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LO_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=28 QTY>5]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=29 QTY>1 QTY<4]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%SUR_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=29 QTY>3]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
+// High-value runes (WSS only for smallest stacks or HR-only)
 ItemDisplay[RUNE=30 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%BER_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=31 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%JAH_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=31 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=32 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%CHAM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=32 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=33 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%ZOD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 // High roller
 ItemDisplay[RUNE<21 RUNE>0 FILTLVL>7 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
