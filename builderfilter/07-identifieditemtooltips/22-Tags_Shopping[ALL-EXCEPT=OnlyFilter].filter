@@ -79,7 +79,10 @@ ItemDisplay[!UNI ID (TABSK0=3 OR TABSK1=3 OR TABSK2=3 OR TABSK50=3) IAS>0 GLOVES
 ItemDisplay[(MAG OR RARE OR CRAFT) ID (SOCK>3 AND FBR>1) uit]: %NAME%{%NAME%%NL%%PURPLE%JMoD}// JMoD Monarch
 
 // Staves with charges
-ItemDisplay[ID CHSK54>0 STAFF]: %NAME% %SAGE%[TELE]{%ORANGE%Teleport Charges Staff}%CONTINUE% // Teleport charges
+// Staves have 10%/30%/50% Faster Cast Rate (normal/exceptional/elite) 40%+ automod+ 20 craft, 100+fcr for callout & allsk
+ItemDisplay[ID CHSK54>0 STAFF NORM FCR>59 ALLSK>0]: %NAME% %SAGE%[TELE]{%PURPLE%FCR & Teleport Charges Staff}
+ItemDisplay[ID CHSK54>0 STAFF EXC FCR>79 ALLSK>0]: %NAME% %SAGE%[TELE]{%PURPLE%FCR & Teleport Charges Staff}
+ItemDisplay[ID CHSK54>0 STAFF FCR>99 ALLSK>0]: %NAME% %SAGE%[TELE]{%PURPLE%FCR & Teleport Charges Staff}
 ItemDisplay[ID CHSK357>0 STAFF]: %NAME% {%ORANGE%(Blink)} // Blink charges
 
 // Wands with charges
