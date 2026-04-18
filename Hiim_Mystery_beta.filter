@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 18th%CL%Season 13 - build 16%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 18th%CL%Season 13 - build 17%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2318,10 +2318,6 @@ ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%OR
 //-----------------------------------------------------------------------------------
 // Hide low tier gems outside of normal or with filter strictness
 ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) (FILTLVL>2 OR DIFF>1)]:
-
-// Formatting for stacked vs unstacked with warning
-ItemDisplay[GEM>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
 
 // Flawless
 ItemDisplay[GEM=4 FILTLVL<8]: %%NAME%{%NAME%}
