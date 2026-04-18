@@ -15,14 +15,21 @@
 // Dark Abyss - Lacquered Plate
 // Band of Skulls - Troll Belt
 // Itheraels Path - Mirrored Boots
-// Overlords Helm
 // Hadriels Hand - Conquest Sword
 
-ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uh9 OR 7bs)]: %SOUNDID-4719%%UNI_BOSS_ITEM%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %SOUNDID-4719%%UNI_BOSS_ITEM%
+
+// Overlords Helm
+ItemDisplay[UNI !ID uh9 MAPID=137]: %SOUNDID-4719%%UNI_BOSS_ITEM%
 
 // 4 Star Unique Callouts
 //-----------------------------------------------------------------------------------
 ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
+
+// 4 Star Unique Callouts only when not ETH, 3 star when ETH
+//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
+ItemDisplay[UNI !ID FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
 
 // 4 Star Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -42,6 +49,12 @@ ItemDisplay[jew UNI !ID FILTLVL<11]: %SOUNDID-4719%%FACET_ITEM%
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
+
+
+// 3 Star Unique Callouts only when not ETH, 2 star when ETH
+//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %SOUNDID-4715%%UNI_STAR2_ITEM%
 
 // 2 Star Unique Callouts
 // Filter level 1-7
@@ -111,3 +124,13 @@ ItemDisplay[SET !ID FILTLVL<5 0_STAR_SET]: %GREEN%%NAME%
 ItemDisplay[SET !ID FILTLVL<7 LLD_SET]: %SET_TIER1_ITEM%%TIER-6%
 
 //-----------------------------------------------------------------------------------
+
+// Boss zone catch
+//-----------------------------------------------------------------------------------
+// Dclone
+ItemDisplay[UNI !ID MAPID=137]: %NAME%
+// Rathma
+ItemDisplay[UNI !ID (MAPID=161 OR MAPID=162 OR MAPID=163)]: %NAME%
+//-----------------------------------------------------------------------------------
+
+
