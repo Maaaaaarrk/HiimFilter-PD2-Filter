@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 19th%CL%Season 13 - build 29%CL%HiimFilter - Vanilla+ -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 19th%CL%Season 13 - build 30%CL%HiimFilter - Vanilla+ -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -102,38 +102,38 @@ ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
 ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
-// Alias for item ground annotations
+// Alias for item ground annotations Vanilla++
 //-----------------------------------------------------------------------------------
 
 // General item
-Alias[GEN_ITEM]: %ORANGE%O O O %NAME% %ORANGE%O O O
+Alias[GEN_ITEM]: %NAME%
 
 // General item Alt
-Alias[GEN_ALT]: %PURPLE%O O O %NAME% %PURPLE%O O O
+Alias[GEN_ALT]: %PURPLE%O %NAME% %PURPLE%O
 
 // Token parts
-Alias[TOKEN_PARTS]: %ORANGE%> > %NAME% %ORANGE%< <
+Alias[TOKEN_PARTS]: %ORANGE%> %NAME% %ORANGE%<
 
 // Uber Keys
-Alias[UBER_KEYS]: %RED%>>  > %NAME% %RED%<  <<
+Alias[UBER_KEYS]: %RED%> %NAME% %RED%<
 
 // Boss Mat Item
-Alias[BOSS_MAT]: %YELLOW%<> <> <> %NAME% %YELLOW%<> <> <>
+Alias[BOSS_MAT]: %YELLOW%<> %NAME% %YELLOW%<>
 
 // Boss Mat Item Alt
-Alias[BOSS_ALT]: %YELLOW%X X X X %NAME% %YELLOW%X X X X
+Alias[BOSS_ALT]: %YELLOW%<> %NAME% %YELLOW%<>
 
 // Boss Entry Item
 Alias[BOSS_ENTRY]: %RED%* * %NAME% %RED%* *
 
 // Rare General Item
-Alias[GEN_RARE]: %ORANGE%<> <> <> %NAME% %ORANGE%<> <> <>
+Alias[GEN_RARE]: %ORANGE%<> %NAME% %ORANGE%<>
 
 // Rarer General Item
-Alias[GEN_TOP_RARE]: %DARK_GREEN%<> <> <> %NAME% %DARK_GREEN%<> <> <>
+Alias[GEN_TOP_RARE]: %DARK_GREEN%<> %NAME% %DARK_GREEN%<>
 
 // GG General Item Drop
-Alias[GEN_GG_ITEM]: %PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>
+Alias[GEN_GG_ITEM]: %PURPLE%<> %NAME% %PURPLE%<>
 
 // Rare GG Item Drop
 Alias[RARE_GG_ITEM]: %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%> %PURPLE%<%GREEN%!%PURPLE%>
@@ -145,41 +145,41 @@ Alias[RARE_GG_ALT]: %RED%XxXxXxX %NAME% %RED%XxXxXxX
 Alias[RUNE_LOW]: %PX-0B%%ORANGE%** %NAME% %ORANGE%**
 
 // Craft rune
-Alias[RUNE_CRAFT]: %DOT-0B%%ORANGE%**** %NAME% %ORANGE%****
+Alias[RUNE_CRAFT]: %PX-0B%%ORANGE%** %NAME% %ORANGE%**
 
 // Mid rune
-Alias[RUNE_MID]: %DOT-9B%%PX-0B%%PURPLE%<> <> %NAME% %PURPLE%<> <>
+Alias[RUNE_MID]: %DOT-9B%%PX-0B%%ORANGE%<> %NAME% %ORANGE%<>
 
 // Mid rune Tier 2
-Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>
+Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%ORANGE%<> %NAME% %ORANGE%<>
 
 // High rune
-Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> %NAME% %PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%>
+Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%ORANGE%!%PURPLE%> %NAME% %PURPLE%<%ORANGE%!%PURPLE%>
 
 // High rune Tier 2
-Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>
+Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%>
 
 
 // Magic Item 1 Affix
-Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%YELLOW%X %NAME% %YELLOW%X
+Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%NAME%
 
 // Magic Item 2 Affix
-Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%YELLOW%XX %NAME% %YELLOW%XX
+Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%NAME%
 
 // Rare Item basic
-Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%X %NAME% %ORANGE%X
+Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%NAME%
 
 // Rare Item Extra
-Alias[RARE_PLUS]: %DOT-6A%* %NAME% *
+Alias[RARE_PLUS]: %DOT-6A%%NAME%
 
 // Rare Item High ilvl
-Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%X X %NAME% %ORANGE%X X
+Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%NAME%
 
 // Rare Item Good
-Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%X X X %NAME% %PURPLE%X X X
+Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%x %NAME% %PURPLE%x
 
 // Rare Item GG
-Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%PURPLE%X X X X X %NAME% %PURPLE%X X X X X
+Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%PURPLE%X %NAME% %PURPLE%X
 
 // Leveling Tag
 Alias[LEVELING_TAG]: %ORANGE%lvling%PX-62%
@@ -192,7 +192,7 @@ Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%*%ORANGE%*%YELLOW%*%GR
 Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%X%ORANGE%X%YELLOW%X%GREEN%X%BLUE%X%PURPLE%X %NAME% %PURPLE%X%BLUE%X%GREEN%X%YELLOW%X%ORANGE%X%RED%X
 
 // Unique GG Item
-Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%X X X %NAME% %PURPLE%X X X
+Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%GOLD%* * * * %NAME% %GOLD%* * * *
 
 // Unique Tier3 Item
 Alias[UNI_STAR3_ITEM]: %BORDER-D3%%GOLD%* * * %NAME% %GOLD%* * *
@@ -252,8 +252,8 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 // General Item re-names
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[wss]: %PURPLE%WORLDSTONE SHARD%CONTINUE%
-ItemDisplay[cwss]: %ORANGE%Tainted %PURPLE%WORLDSTONE SHARD%CONTINUE%
+ItemDisplay[wss]: %RED%WORLDSTONE SHARD%CONTINUE%
+ItemDisplay[cwss]: %ORANGE%Tainted %RED%WORLDSTONE SHARD%CONTINUE%remo
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%F. Amethyst%CONTINUE%
@@ -824,9 +824,20 @@ ItemDisplay[NMAG ETH !RW SOCK=0]:%NAME%%CONTINUE%{%RED%SLAM %WHITE%For chance of
 ItemDisplay[MAG !ID (ARMOR OR WEAPON OR rin OR amu OR QUIVER) (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
 ItemDisplay[RARE !ID (ARMOR OR WEAPON OR rin OR amu OR QUIVER) (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
 //-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// UNIQUES - UNID
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[UNI !ID]: %CONTINUE%%BASENAME%
+ItemDisplay[SET !ID]: %CONTINUE%%BASENAME%
+//-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // UNI/SET !ID Formatting
 //-----------------------------------------------------------------------------------
+
+ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%
+ItemDisplay[UNI !ID]: %GOLD%%NAME%%CONTINUE%
 
 // FORMATTING
 ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
