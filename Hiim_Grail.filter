@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 21st%CL%Season 13 - build 42%CL%HiimFilter - Grail Hunt -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 21st%CL%Season 13 - build 43%CL%HiimFilter - Grail Hunt -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2298,8 +2298,10 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t6
 //-----------------------------------------------------------------------------------
 // GEMS
 //-----------------------------------------------------------------------------------
+// leveling gems
+ItemDisplay[GEM~1-3 (FILTLVL=1 OR DIFF<2) FILTLVL<3]: %NAME%
 // Hide low tier gems outside of normal or with filter strictness
-ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) (FILTLVL>2 OR DIFF>1)]:
+ItemDisplay[GEM~1-3 (FILTLVL>2 OR DIFF>1)]:
 
 // Formatting for stacked vs unstacked with warning
 ItemDisplay[GEM>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
@@ -2355,8 +2357,6 @@ ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%OR
 //-----------------------------------------------------------------------------------
 // GEMS
 //-----------------------------------------------------------------------------------
-// Hide low tier gems outside of normal or with filter strictness
-ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) (FILTLVL>2 OR DIFF>1)]:
 
 // Flawless
 ItemDisplay[GEM=4 FILTLVL<8]: %NAME%{%NAME%}
