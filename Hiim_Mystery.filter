@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 20th%CL%Season 13 - build 36%CL%HiimFilter - Mystery Mode -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 21st%CL%Season 13 - build 38%CL%HiimFilter - Mystery Mode -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1980,9 +1980,9 @@ ItemDisplay[(rtma OR dcma OR luca)]: [Tier %STAT185%] %NAME% [Tier %STAT185%]%CO
 ItemDisplay[(rtma OR dcma) STAT185=0]: %DARK_GREEN%%NAME%%CONTINUE%{%RED%Tier 2 (Aura)%CL%%TAN%Tier 1 (Boss Item Chance 1:200)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (No Boss Item)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
 ItemDisplay[(rtma OR dcma) STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (Aura)%CL%%ORANGE%> > %TAN%Tier 1 (Boss Item Chance 1:200)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
 ItemDisplay[(rtma OR dcma) STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (Aura)%ORANGE% < <%CL%%TAN%Tier 1 (Boss Item Chance 1:200)%CL%%DARK_GREEN%Tier 0 (No Boss Item)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
-ItemDisplay[luca STAT185=0]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (60% Chance)%CL%%TAN%Tier 1 (55% Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (50% Chance)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
-ItemDisplay[luca STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (60% Chance)%CL%%ORANGE%> > %TAN%Tier 1 (55% Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (50% Chance)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
-ItemDisplay[luca STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (60% Chance)%ORANGE% < <%CL%%TAN%Tier 1 (55% Chance)%CL%%DARK_GREEN%Tier 0 (50% Chance)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
+ItemDisplay[luca STAT185=0]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (60% Chance)%CL%%TAN%Tier 1 (60% Chance)%CL%%ORANGE%> > %DARK_GREEN%Tier 0 (50% Chance)%ORANGE% < <%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 1}
+ItemDisplay[luca STAT185=1]: %TAN%%NAME%%CONTINUE%{%RED%Tier 2 (60% Chance)%CL%%ORANGE%> > %TAN%Tier 1 (60% Chance)%ORANGE% < <%CL%%DARK_GREEN%Tier 0 (50% Chance)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 2}
+ItemDisplay[luca STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (60% Chance)%ORANGE% < <%CL%%TAN%Tier 1 (60% Chance)%CL%%DARK_GREEN%Tier 0 (50% Chance)%CL%%GOLD%Cube%WHITE% to change the difficulty -> Tier 0}
 ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%CL%%RED%Diablo Clone Entry}
 ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%CL%%BLUE%Rathma Entry}
 ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%Lucion Boss Entry}
@@ -2046,6 +2046,9 @@ ItemDisplay[rrra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map -> %WHITE
 ItemDisplay[upmp]: %NAME% %ORANGE%*//{%WHITE%3 x Map + %GOLD%Orb%CL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
 ItemDisplay[scrb]: %MAP-4A%%BOSS_MAT%%CONTINUE%{%NAME%}
 ItemDisplay[std]: %DOT-9D%%GEN_TOP_RARE%{%NAME%}
+
+// EARS
+//Once patch is done un comment ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%BOSS_MAT%%CONTINUE%{%NAME%}
 
 // Map Tier Tags
 ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
@@ -2141,6 +2144,7 @@ ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%CONTINUE%{%NAME%}
 ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%CONTINUE%{%NAME%}
 ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%CONTINUE%{%NAME%}
 ItemDisplay[t3a]: %NAME%Ashen Plains Map%CONTINUE%{%NAME%}
+ItemDisplay[t3b]: %NAME%Kyovoshad%CONTINUE%{%NAME%}
 
 // Maps [T4X]
 ItemDisplay[t41]: %NAME%Cathedral of Light%CONTINUE%{%NAME%}
@@ -2174,11 +2178,6 @@ ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
 //ItemDisplay[t67]: %NAME%t6-7 Map%CONTINUE%{%NAME%}
 //ItemDisplay[t68]: %NAME%t6-8 Map%CONTINUE%{%NAME%}
 //ItemDisplay[t69]: %NAME%t6-9 Map%CONTINUE%{%NAME%}
-
-
-// Maps [T7] Standard maps
-ItemDisplay[t71]: %NAME%Kyovoshad%CONTINUE%{%NAME%}
-
 
 ItemDisplay[(MAPTIER>0 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
 
