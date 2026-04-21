@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 21st%CL%Season 13 - build 39%CL%HiimFilter - Crafting - Barbarian -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 21st%CL%Season 13 - build 40%CL%HiimFilter - Crafting - Barbarian -}%CONTINUE%
 %CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -4768,10 +4768,7 @@ ItemDisplay[(wsp OR 9ws OR 7ws) !INF NMAG !RW (SOCK=0 OR SOCK=4) FILTLVL<3]: %NA
 
 // Swords
 // Spirit Swords
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 (ILVL>25 AND ILVL<41) CLVL<85 FILTLVL<3]: %NAME% %DOT-76%%DARK_GREEN%[Larzuk 4os]{%NAME%}
-ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 CLVL<80 FILTLVL<3]: %NAME% %WHITE%[Roll for 4soc]{%NAME%}
 ItemDisplay[crs NMAG !INF !SUP SOCK=0 ILVL>40 FILTLVL<3]: %NAME%{%NAME%}
-ItemDisplay[(bsd OR lsd) NMAG !INF !SUP SOCK=0 ILVL>25 CLVL<80 FILTLVL<3]: %NAME% %DOT-76%%DARK_GREEN%[Larzuk 4os]{%NAME%}
 ItemDisplay[(crs OR bsd OR lsd) NMAG !INF !RW SOCK=4 FILTLVL<3]: %NAME% %DOT-76%%DARK_GREEN%[Spirit]{%NAME%}
 ItemDisplay[crs ILVL>25 NMAG !INF !RW !ETH SOCK>4 FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[(72h OR 7fb OR 7gd OR 7gs OR 7ls) ETH NMAG !RW !INF (SOCK=0 OR SOCK>2) FILTLVL<7]: %NAME%{%NAME%}
@@ -4813,6 +4810,7 @@ ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6) (EDAM>14 OR F
 ItemDisplay[(7p7 OR 7gm) NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<3]: %NAME%{%NAME%} // non eth thundermaul or war pike 0/5 socket
 ItemDisplay[ELT (POLEARM OR SPEAR OR 7m7) ETH NMAG !RW SOCK=5 FILTLVL<3]: %NAME%{%NAME%} // Eth pole arm or spear or ogre maul 5 soc
 ItemDisplay[ELT (7s8 OR 7pa OR 7m7) ETH NMAG !RW SOCK=0 FILTLVL<3]: %NAME%{%NAME%} // Eth laz for 5 socket or 90+ avrg damage base 0 soc
+ItemDisplay[pax NMAG !INF !RW SOCK=5 FILTLVL<3]: %NAME%{%NAME%} // 5os poleaxe
 
 // Staves
 // Infinity SK48 nova SK38 Charged Bolt SK53 Chain Lightning SK63 Lightning Mastery SK54 Teleport
