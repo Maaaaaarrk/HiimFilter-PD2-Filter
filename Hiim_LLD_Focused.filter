@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22nd%CL%Season 13 - build 44%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22nd%CL%Season 13 - build 45%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -4286,10 +4286,13 @@ ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BL
 ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BLACK%-%CL%%BLUE%HitPwr: Saph, Tir, Jewel%CL%%RED%Blood: Ruby, Ort, Jewel%CL%%PURPLE%Caster: Ameth, Tir, Jewel%CL%%YELLOW%MF: Topaz, Shael, Jewel%CL%%GRAY%Vamp: Skull, Shael, Jewel%CL%%wHITE%Brilliant: Diamond, Sol, Jewel%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
-// LLD-only: clvl targets to hit crafted ilvl 51 / 71 on ring & amulet bases
-// Game formula: crafted_ilvl = round(clvl/2) + round(ilvl/2)  =>  clvl = 2*target - ilvl
+// LLD-only: clvl targets for crafted ilvl 51/71 and alvl 40/45 on ring & amulet bases
+// Game stores these as ints (truncation), so:
+//   crafted_ilvl = ILVL/2 + CLVL/2            ->  clvl = 2*(target - ILVL/2)
+//   crafted_alvl = max(CI - QLVL/2, CI*2 - 99) where CI = crafted_ilvl
+//     -> min CI  = MIN(target_alvl + QLVL/2, (target_alvl + 100)/2)
 //-----------------------------------------------------------------------------------
-ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%CL%%NAME%%CORAL% Craft at clvl $f(102-ILVL) for ilvl 51%CL%%CORAL% Craft at clvl $f(142-ILVL) for ilvl 71}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%CL%%NAME%%CORAL% Craft at clvl $f(2*(51-ILVL/2)) for ilvl 51%CL%%CORAL% Craft at clvl $f(2*(71-ILVL/2)) for ilvl 71%CL%%CORAL% Craft at clvl $f(2*(MIN(40+QLVL/2,70)-ILVL/2)) for alvl 40%CL%%CORAL% Craft at clvl $f(2*(MIN(45+QLVL/2,72)-ILVL/2)) for alvl 45}%CONTINUE%
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC SKILLS NMAG
 //-----------------------------------------------------------------------------------
