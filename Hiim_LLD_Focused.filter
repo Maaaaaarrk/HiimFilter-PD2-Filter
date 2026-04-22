@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 21st%CL%Season 13 - build 43%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22nd%CL%Season 13 - build 44%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -4285,6 +4285,11 @@ ItemDisplay[(SIN) MAG !ETH ID !WAND !SOR !SHOP !MERC !EQUIPPED !(STAT360>0)]: %N
 ItemDisplay[(BOW OR XBOW) MAG ID !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BLACK%-%CL%%GREEN%* Safety: Emerald, Sol, Jewel *%CL%%BLUE%HitPwr: Saph, Tir, Jewel%CL%%RED%Blood: Ruby, Ort, Jewel%CL%%PURPLE%* Caster: Ameth, Tir, Jewel *%CL%%YELLOW%MF: Topaz, Shael, Jewel%CL%%GRAY%Vamp: Skull, Shael, Jewel%CL%%wHITE%Brilliant: Diamond, Sol, Jewel%CL%%NAME%}%CONTINUE%
 ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !MERC !EQUIPPED !(STAT360>0)]: %NAME%{%BLACK%-%CL%%BLUE%HitPwr: Saph, Tir, Jewel%CL%%RED%Blood: Ruby, Ort, Jewel%CL%%PURPLE%Caster: Ameth, Tir, Jewel%CL%%YELLOW%MF: Topaz, Shael, Jewel%CL%%GRAY%Vamp: Skull, Shael, Jewel%CL%%wHITE%Brilliant: Diamond, Sol, Jewel%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+// LLD-only: clvl targets to hit crafted ilvl 51 / 71 on ring & amulet bases
+// Game formula: crafted_ilvl = round(clvl/2) + round(ilvl/2)  =>  clvl = 2*target - ilvl
+//-----------------------------------------------------------------------------------
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%CL%%NAME%%CORAL% Craft at clvl $f(102-ILVL) for ilvl 51%CL%%CORAL% Craft at clvl $f(142-ILVL) for ilvl 71}%CONTINUE%
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC SKILLS NMAG
 //-----------------------------------------------------------------------------------
