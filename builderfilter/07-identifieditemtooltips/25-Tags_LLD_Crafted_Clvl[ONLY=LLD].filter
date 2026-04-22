@@ -1,0 +1,5 @@
+//-----------------------------------------------------------------------------------
+// LLD-only: clvl targets to hit crafted ilvl 51 / 71 on ring & amulet bases
+// Game formula: crafted_ilvl = round(clvl/2) + round(ilvl/2)  =>  clvl = 2*target - ilvl
+//-----------------------------------------------------------------------------------
+ItemDisplay[(MAG OR RARE) ILVL>50 STAT360=0 (rin OR amu)]: %NAME%{%CL%%NAME%%CORAL% Craft at clvl $f(102-ILVL) for ilvl 51%CL%%CORAL% Craft at clvl $f(142-ILVL) for ilvl 71}%CONTINUE%
