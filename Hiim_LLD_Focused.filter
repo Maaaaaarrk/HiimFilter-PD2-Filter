@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22nd%CL%Season 13 - build 46%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 22nd%CL%Season 13 - build 47%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -4293,7 +4293,7 @@ ItemDisplay[WEAPON !(BOW OR XBOW) MAG !ETH !SIN ID !WAND !SOR !SHOP !MERC !EQUIP
 //     -> min CI  = MIN(target_alvl + ROUND(QLVL/2), CEIL((target_alvl + 99)/2))
 //        precomputed: CEIL(139/2)=70 for alvl 40, CEIL(144/2)=72 for alvl 45
 //-----------------------------------------------------------------------------------
-ItemDisplay[(MAG OR RARE) ID ILVL>50 STAT360=0 !cm1 !cm2 !cm3 !jew !EQ7]: %NAME%{%CL%%NAME%%CORAL% Craft at clvl $f(2*(51-ROUND(ILVL/2))) for ilvl 51%CL%%CORAL% Craft at clvl $f(2*(71-ROUND(ILVL/2))) for ilvl 71%CL%%CORAL% Craft at clvl $f(2*(MIN(40+ROUND(QLVL/2),70)-ROUND(ILVL/2))) for alvl 40%CL%%CORAL% Craft at clvl $f(2*(MIN(45+ROUND(QLVL/2),72)-ROUND(ILVL/2))) for alvl 45}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID ILVL>50 STAT360=0 !cm1 !cm2 !cm3 !jew !EQ7]: %NAME%{%CL%%NAME%%CORAL% Craft at clvl $f(2*(51-ROUND(ILVL/2))) for ilvl 51 (alvl $f(MAX(51-ROUND(QLVL/2),3)))%CL%%CORAL% Craft at clvl $f(2*(71-ROUND(ILVL/2))) for ilvl 71 (alvl $f(MAX(71-ROUND(QLVL/2),43)))%CL%%CORAL% Craft at clvl $f(2*(MIN(40+ROUND(QLVL/2),70)-ROUND(ILVL/2))) for alvl 40%CL%%CORAL% Craft at clvl $f(2*(MIN(45+ROUND(QLVL/2),72)-ROUND(ILVL/2))) for alvl 45}%CONTINUE%
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC SKILLS NMAG
 //-----------------------------------------------------------------------------------
