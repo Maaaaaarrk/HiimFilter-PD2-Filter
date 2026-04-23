@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 23rd%CL%Season 13 - build 49%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 23rd%CL%Season 13 - build 50%CL%HiimFilter - LLD -}%CONTINUE%
 
 ItemDisplay[mp5 MAPID=83]:
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -4212,10 +4212,10 @@ ItemDisplay[!RW !UNI !SET ID SK272>0 (MULTI188,48+MULTI83,6+MULTI107,272+STAT127
 //     -> min CI  = MIN(target_alvl + ROUND(QLVL/2), CEIL((target_alvl + 99)/2))
 //        precomputed: CEIL(139/2)=70 for alvl 40, CEIL(144/2)=72 for alvl 45
 //-----------------------------------------------------------------------------------
-ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT206=0 !SHOP !EQUIPPED !MERC (NORM OR EXC) (ARMOR OR WEAPON) !SHIELD !CHEST !STAFF !WAND !SOR !(ba9 OR baa OR dr9 OR dra OR am7 OR am8 OR am9 OR 9lw OR 9tw OR 9qr)]: %NAME%{%GRAY%Craft at CLVL $f(2*(MIN(40+ROUND(QLVL/2),70)-ROUND(ILVL/2))) for ALVL 40%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL $f(MAX(71-ROUND(QLVL/2),43)))%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL $f(MAX(51-ROUND(QLVL/2),3)))%CL%%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT206=0 !SHOP !EQUIPPED !MERC (NORM OR EXC) (SHIELD OR CHEST) !(pa8 OR pa9 OR paa OR ne8 OR ne9 OR nea)]: %NAME%{%GRAY%Craft at CLVL $f(2*(MIN(45+ROUND(QLVL/2),72)-ROUND(ILVL/2))) for ALVL 45%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL $f(MAX(71-ROUND(QLVL/2),43)))%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL $f(MAX(51-ROUND(QLVL/2),3)))%CL%%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT206=0 !SHOP !EQUIPPED !MERC (NORM OR EXC) (STAFF OR WAND OR SOR) !(ob9 OR oba)]: %NAME%{%GRAY%Craft at CLVL $f(2*(39-ROUND(ILVL/2))) for ALVL 40%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL 72)%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL 52)%CL%%NAME%}%CONTINUE%
-ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT206=0 !SHOP !EQUIPPED !MERC (rin OR amu)]: %NAME%{%GRAY%Craft at CLVL $f(2*(40-ROUND(ILVL/2))) for ALVL 40%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL 71)%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL 51)%CL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT360=0 !SHOP !EQUIPPED !MERC (NORM OR EXC) (ARMOR OR WEAPON) !SHIELD !CHEST !STAFF !WAND !SOR !(ba9 OR baa OR dr9 OR dra OR am7 OR am8 OR am9 OR 9lw OR 9tw OR 9qr)]: %NAME%{%GRAY%Craft at CLVL $f(2*(MIN(40+ROUND(QLVL/2),70)-ROUND(ILVL/2))) for ALVL 40%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL $f(MAX(71-ROUND(QLVL/2),43)))%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL $f(MAX(51-ROUND(QLVL/2),3)))%CL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT360=0 !SHOP !EQUIPPED !MERC (NORM OR EXC) (SHIELD OR CHEST) !(pa8 OR pa9 OR paa OR ne8 OR ne9 OR nea)]: %NAME%{%GRAY%Craft at CLVL $f(2*(MIN(45+ROUND(QLVL/2),72)-ROUND(ILVL/2))) for ALVL 45%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL $f(MAX(71-ROUND(QLVL/2),43)))%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL $f(MAX(51-ROUND(QLVL/2),3)))%CL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT360=0 !SHOP !EQUIPPED !MERC (NORM OR EXC) (STAFF OR WAND OR SOR) !(ob9 OR oba)]: %NAME%{%GRAY%Craft at CLVL $f(2*(39-ROUND(ILVL/2))) for ALVL 40%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL 72)%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL 52)%CL%%NAME%}%CONTINUE%
+ItemDisplay[(MAG OR RARE) ID ILVL>0 STAT486=0 STAT360=0 !SHOP !EQUIPPED !MERC (rin OR amu)]: %NAME%{%GRAY%Craft at CLVL $f(2*(40-ROUND(ILVL/2))) for ALVL 40%CL%Craft at CLVL $f(2*(71-ROUND(ILVL/2))) for ILVL 71 (ALVL 71)%CL%Craft at CLVL $f(2*(51-ROUND(ILVL/2))) for ILVL 51 (ALVL 51)%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // CRAFTING - id
