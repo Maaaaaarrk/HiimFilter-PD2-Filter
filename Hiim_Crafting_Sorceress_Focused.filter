@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 24th%CL%Season 13 - build 53%CL%HiimFilter - Crafting - Sorceress -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 27th%CL%Season 13 - build 55%CL%HiimFilter - Crafting - Sorceress -}%CONTINUE%
 %CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -477,8 +477,6 @@ Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 
 // The Grandfather - Colossus Blade
 // Vortex Shield - Skywarden
 // Ribcracker - Quarterstaff
-// Cranebeak - War Spike
-// Hawkmaul - Scale Mail
 // Endlesshail - Double Bow
 // Earth Shifter or The Cranium Basher Thunder Maul
 // Doombringer - Champion Sword
@@ -488,7 +486,7 @@ Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 
 // Guardian Angel - Templar Coat
 // Skyfall - Vortex Orb
 
-Alias[3_STAR_UNIQUE]: (amf OR xhn OR zlb OR uvc OR uhg OR 9gm OR 7fl OR 7wc OR 9bw OR 9gw OR 6lw OR xtb OR 7cr OR uvg OR uow OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 8ls OR 7mp OR scl OR 8cb OR 7gm OR 7b7 OR 8rx OR aqv3 OR aqv2 OR xlt OR obe)
+Alias[3_STAR_UNIQUE]: (amf OR xhn OR zlb OR uvc OR uhg OR 9gm OR 7fl OR 7wc OR 9bw OR 9gw OR 6lw OR xtb OR 7cr OR uvg OR uow OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 8ls OR 8cb OR 7gm OR 7b7 OR 8rx OR aqv3 OR aqv2 OR xlt OR obe)
 
 // 3 Star Unique Callouts when not eth
 //-----------------------------------------------------------------------------------
@@ -686,9 +684,10 @@ Alias[LLD_UNIQUE]: (stu OR gth OR aar OR vgl OR xap OR kit OR wax OR cbw OR mau 
 // Griswolds Honor - Vortex Shield
 // Deaths Hand - Leather Glove
 // Magnus Skin - Sharkskin Gloves
+// Immortal Kings Soul Cage - Sacred Armor
 
 
-Alias[3_STAR_SET]: (ne9 OR utc OR xmg OR uhm OR xul OR 7ws OR paf OR lgl OR xvg)
+Alias[3_STAR_SET]: (ne9 OR utc OR xmg OR uhm OR xul OR 7ws OR paf OR lgl OR xvg OR uar)
 
 // Set 2 star Callouts
 //-----------------------------------------------------------------------------------
@@ -722,7 +721,6 @@ Alias[2_STAR_SET]: (xap OR stu OR uts OR xar OR urn OR dr8 OR ucl OR xh9 OR 7qr 
 // Tal Rashas Horadric Crest - Death Mask
 // Tal Rashas Fine-Spun Cloth - Mesh Belt
 // Trang-Ouls Guise - Bone Visage
-// Immortal Kings Soul Cage - Sacred Armor
 // Guillaumes Face - Winged Helm
 // Mavinas True Sight - Diadem
 // Mavinas Caster - Grand Matron Bow
@@ -732,7 +730,7 @@ Alias[2_STAR_SET]: (xap OR stu OR uts OR xar OR urn OR dr8 OR ucl OR xh9 OR 7qr 
 // Tal Rashas Guardianship - Lacquered Plate
 // Hsaru or Hwanin - Belt
 
-Alias[1_STAR_SET]: (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR uar OR xhm OR ci3 OR amc OR uld OR xtg OR zvb OR uth OR mbl)
+Alias[1_STAR_SET]: (ulg OR 6cs OR xtb OR uul OR ba5 OR 7m7 OR zhb OR xhg OR xhb OR xmb OR oba OR xsk OR zmb OR uh9 OR xhm OR ci3 OR amc OR uld OR xtg OR zvb OR uth OR mbl)
 
 // Set 0 star Callouts
 //-----------------------------------------------------------------------------------
@@ -2206,25 +2204,25 @@ ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 //Warnings 
 
 // Map Contains Cursing Mobs
-ItemDisplay[(t12 OR t13 OR t31 OR t37 OR t38 OR t41 OR t42 OR t43 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
+ItemDisplay[(t12 OR t13 OR t31 OR t37 OR t38 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
 
 // Map Contains SOULS
-ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
-ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) NMAG]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
+ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) NMAG MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
 
 // Map Contains Added PSN
-ItemDisplay[STAT435>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
+ItemDisplay[STAT435>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
 
 // Map Contains Projectile Pierce
-ItemDisplay[STAT406>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
+ItemDisplay[STAT406>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
 
 // Map Contains Fearing Mobs
-// No long in S11 ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
+// No long in S11 ItemDisplay[STAT499>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
 
 //Map contains minions
-ItemDisplay[STAT499>0]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Minions of Destruction%CL%%NAME%}
+ItemDisplay[STAT499>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Minions of Destruction%CL%%NAME%}
 
 // Buffs / Tags
 // Map Contains Ghosts
@@ -2250,7 +2248,7 @@ ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTI
 
 
 // Map Contains Dolls
-ItemDisplay[STAT437>0]: %RED% [DOLLS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Dolls %CL%%NAME%}
+ItemDisplay[STAT437>0 MAPTIER<4]: %RED% [DOLLS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Dolls %CL%%NAME%}
 
 // 2x Map Boss
 ItemDisplay[STAT498>0]: %BLUE% [2xBoss]%NAME%%CONTINUE%{%NAME%}
