@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated April 27th Season 13 - build 59
+## Last updated April 27th Season 13 - build 60
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -23,6 +23,7 @@
 * Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
 * Style — TalRasha: All-in-one filter with a TalRasha color theme. [Hiim_TalRasha_Themed.filter]
 * Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
+* Vanilla Plus — Crafting: Vanilla Plus (no item re-naming) combined with the Crafting filter — crafting bases stay visible at higher filter levels and gems/runes use the crafting variants. [Hiim_Vanilla_Plus_Crafting.filter]
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
 
