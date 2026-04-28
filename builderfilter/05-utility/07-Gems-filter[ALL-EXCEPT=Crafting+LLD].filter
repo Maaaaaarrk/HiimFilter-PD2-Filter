@@ -3,15 +3,19 @@
 //-----------------------------------------------------------------------------------
 
 // Flawless
+ItemDisplay[GEM=4 FILTLVL<8 QTY>1 QTY<51]: %NAME% %QTY_TAG%{%NAME%}
 ItemDisplay[GEM=4 FILTLVL<8]: %NAME%{%NAME%}
 
 //Perfect
+ItemDisplay[GEM>4 FILTLVL<9 QTY>1 QTY<51]: %NAME% %QTY_TAG%{%NAME%}
 ItemDisplay[GEM>4 FILTLVL<9]: %NAME%{%NAME%}
 //Pskull
+ItemDisplay[skzs FILTLVL<9 QTY>1 QTY<51]: %NAME% %QTY_TAG%{%NAME%}
 ItemDisplay[skzs FILTLVL<9]: %NAME%{%NAME%}
 
 
 // Hide/show gems otherwise
+ItemDisplay[GEM>0 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) QTY>1 QTY<51]: %NAME% %QTY_TAG%
 ItemDisplay[GEM>0 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%
 ItemDisplay[GEM>0 GROUND]:
 
