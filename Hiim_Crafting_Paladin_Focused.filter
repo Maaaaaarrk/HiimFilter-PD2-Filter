@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 28th%CL%Season 13 - build 62%CL%HiimFilter - Crafting - Paladin -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 28th%CL%Season 13 - build 63%CL%HiimFilter - Crafting - Paladin -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1838,6 +1838,9 @@ ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG FILTLVL<11 ILVL>84]: %CRAFT_ONE%//Co
 
 ItemDisplay[!ID (pab OR pa6 OR pa1) MAG FILTLVL<11 ILVL>84]: %CRAFT_ZERO% //pala shield
 ItemDisplay[!ID (wsp OR 9ws OR 7ws) MAG FILTLVL<11 ILVL>84]: %CRAFT_ZERO% //4os able scepters
+
+// 4os Natural Shield
+ItemDisplay[!ID DIN (MAG OR RARE) MAXSOCKETS>3 ILVL>84]:%CRAFT_ZERO%
 
 ItemDisplay[MAG amu !ID FILTLVL<5]: %NAME%
 ItemDisplay[MAG amu !ID FILTLVL<7]: %BLUE%Amu
