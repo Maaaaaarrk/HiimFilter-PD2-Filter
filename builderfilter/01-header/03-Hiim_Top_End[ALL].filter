@@ -28,7 +28,7 @@ Alias[QTY_TAG]: %TAN%x %QTY%
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
 
 // Lucion item in Lucion
-ItemDisplay[amu STAT206>0 (MAPID=188 OR MAPID=189)]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?
+ItemDisplay[amu STAT206>0 (MAPID=188 OR MAPID=189)]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?{%NAME%}
 //-----------------------------------------------------------------------------------
 
 
@@ -54,19 +54,19 @@ ItemDisplay[STAT206>0 MAG]: %BLUE%%NAME%%CONTINUE%
 ItemDisplay[STAT206>0 RARE]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[STAT206>0 CRAFT]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[STAT206>0 SET]: %GREEN%%NAME%%CONTINUE%
-ItemDisplay[STAT206>0 GROUND]: %BORDER-55%%MAP-58%%GOLD%Desecrated %NAME%
-ItemDisplay[STAT206>0]: %NAME%
+ItemDisplay[STAT206>0 GROUND]: %BORDER-55%%MAP-58%%GOLD%Desecrated %NAME%{%NAME%}
+ItemDisplay[STAT206>0]: %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// In case you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// In case you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// In case you drop a piece of gear on potions only show all runeword gear
+ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]{%NAME%}// In case you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]{%NAME%}// In case you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%{%NAME%}// In case you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
 //ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
-ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
+ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
