@@ -1,12 +1,8 @@
-# Project Diablo 2 (PD2) Hiim Loot Filters
-* by *Maaaark
-* by *Hiimdave
+# hiimhyper
 ## Last updated April 29th Season 13 - build 68
-## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
-## Put all feedback in the PD2 Discord #lootfilter channel
 
 ## Filters
-* Hiim — Standard: All-in-one balanced filter. The standard recommendation for most players. [Hiim.filter]
+* Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
 * Class — Amazon: Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Amazon_Focused.filter]
 * Class — Assassin: Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Assassin_Focused.filter]
 * Class — Barbarian: Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Barbarian_Focused.filter]
@@ -19,11 +15,7 @@
 * LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
 * LLD — Hyper: LLD Focused filter with a Hyper visual theme. [Hiim_LLD_Hyper.filter]
 * Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
-* Only A Filter: All-in-one filter with no item display changes — filtering only, no annotations or re-naming. [Hiim_Only_Filter.filter]
-* Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
-* Style — TalRasha: All-in-one filter with a TalRasha color theme. [Hiim_TalRasha_Themed.filter]
-* Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
-* Vanilla Plus — Crafting: Vanilla Plus (no item re-naming) combined with the Crafting filter — crafting bases stay visible at higher filter levels and gems/runes use the crafting variants. [Hiim_Vanilla_Plus_Crafting.filter]
+
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
 
@@ -92,71 +84,3 @@ Cube will state current filter version & chosen filter level information.
   * Only desecrated items, slammed items, and runeword bases visible outside town - in case of miss click
   * Tradeoff: you will miss nearly everything — intended for carry runs, group content, or testing
 
-## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
-To confirm installation check tool tip on the Cube
-![cube](examples/cube.png?raw=true)
-## Helper text
-* Check Tooltip on Boss mats for help on Uber Bosses
-* Check Tooltip on keys tooltip for pathing help
-* Many items have helper text, if you need any help just ask in the official discord loot filter channel
-## Charm Stats on Ground
-Charms on ground will show important stats
-![charms1](examples/charms1.PNG?raw=true)
-## Magic / Rare / Crafted items
-These items also show important stats on the ground. This applies to many gear slots not just the ones in the example.
-Rings & Amulets also have points implemented:
-* Range: 2pt, 3Pt, 4Pt, 5pt, 6pt
-* Evaluation includes crafts & a few slams
-* Each Pt of Value = high roll of a valuable stat
-* Evaluation takes into account partial rolls
-* Evaluation includes crafts & a few slams
-![magicrares1](examples/magicrares1.PNG?raw=true)
-![magicrares2](examples/magicrares2.PNG?raw=true)
-![magicrares3](examples/magicrares3.PNG?raw=true)
-![magicrares4](examples/magicrares4.PNG?raw=true)
-## LLD
-Set/Unique items that are valuable to LLD community carry the LLD tag
-LLD Jewels have points implemented:
-* Range: 2pt, 2.5 Pt, 3Pt, 3.3 Pt, 3.6 Pt, 4Pt
-* Each Pt of Value = high roll of a valuable stat
-* Evaluation takes into account partial rolls
-![lld1](examples/lld1.PNG?raw=true)
-![lld2](examples/lld2.png?raw=true)
-## UNIDS
-All UNID Set/Unique items show their identified name options
-![unid1](examples/unid1.PNG?raw=true)
-![unid2](examples/unid2.PNG?raw=true)
-## Map rolling
-* T1,T2,T3 Maps will tell you when the rolls are good
-* Both MF & XP focused calculations are made
-* Base mob immunites are shown for each map
-* Various warnings about map rolls, examples but not limited to: Dolls & Souls
-![maps1](examples/maps1.png?raw=true)
-![maps2](examples/maps2.png?raw=true)
-## Item hints
-* Utility items have useful notes tool tips for boss fights.
-* Runewords on item bases.
-* Advisement to upgrade an item for more sockets before slam
-* Gamble screens show what you can get
-![runewords1](examples/runewords1.png?raw=true)
-![hints1](examples/hints1.PNG?raw=true)
-![hints2](examples/hints2.PNG?raw=true)
-![hints3](examples/hints3.PNG?raw=true)
-![hints4](examples/hints4.PNG?raw=true)
-## Crafting help
-* Crafting in PD2 can create the most powerful items in the game.
-* Notes about crafting are on bases, infusions, and gems
-* Typical craft are denoted by *
-* Notes about Alvl are on the crafting bases
-![craft1](examples/craft1.PNG?raw=true)
-![craft2](examples/craft2.PNG?raw=true)
-![craft3](examples/craft3.PNG?raw=true)
-![craft4](examples/craft4.PNG?raw=true)
-## Disclaimer and Credits
-Use at your own risk - I don't promise there will not be bugs, or that you may miss drops you personally may have wanted if we hid or made it less obvious.
-There are no maliciously hidden items or drops.
-Based off parts of Kryszard's PD2 Loot Filter from PD2 Season 1 - twitch.tv/kryszard
-Based off parts of Wolfie's PD2 Loot Fitlers from PD2 Season 1 - github.com/WolfieeifloW/pd2filter
-Runeword Section from EQN - github.com/eqNj/eqN-PD2-Filter
-See install.png for picture manual install directions, please use in launcher for automated updates.
-For testing preview in launcher or: https://betweenwalls.github.io/filterbird/?v=PD2
