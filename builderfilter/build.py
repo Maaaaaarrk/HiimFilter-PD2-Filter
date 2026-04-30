@@ -30,53 +30,63 @@ def update_version():
 
     print(f"Version: {season} - build {version} ({date_str})")
 
-FILTER_DEFINITIONS = os.path.join(OUTPUT_DIR, "filter_definitions.json")
+_LINE_COMMENT = re.compile(r"//[^\n]*")
 
 
 def load_config():
+    """Read filters.json. Supports JSONC-style // line comments for section markers."""
     with open(os.path.join(SCRIPT_DIR, "filters.json"), encoding="utf-8") as f:
-        data = json.load(f)
+        text = f.read()
+    text = _LINE_COMMENT.sub("", text)
+    data = json.loads(text)
     return data["filters"], data.get("groups", {}), data.get("beta", False)
 
 
-def sync_definitions_beta(filters, beta):
-    """Add or remove file_name_beta in filter_definitions.json based on the beta flag."""
-    if not os.path.exists(FILTER_DEFINITIONS):
-        return
-    with open(FILTER_DEFINITIONS, encoding="utf-8") as f:
-        defs = json.load(f)
+def output_dir_for(entry):
+    """Return the directory the entry's filter (and its filter_definitions.json) is written to."""
+    if entry.get("filterdir"):
+        return os.path.join(OUTPUT_DIR, "filtergroups", entry["filterdir"])
+    return OUTPUT_DIR
 
-    # Build a lookup: file_name -> definition entry
-    file_to_info = {info["file_name"]: info for info in defs.get("filter_info", {}).values()}
 
-    changed = False
+def order_for_definitions(entries):
+    """Sort: entries with explicit 'order' first (ascending), then alphanumeric by display_name."""
+    pinned = sorted((e for e in entries if "order" in e), key=lambda e: e["order"])
+    rest = sorted((e for e in entries if "order" not in e), key=lambda e: e["display_name"])
+    return pinned + rest
+
+
+def generate_filter_definitions(filters, beta):
+    """Write filter_definitions.json into root and each filtergroups/<filterdir>."""
+    by_dir = {}
     for entry in filters:
-        info = file_to_info.get(entry["file"])
-        if info is None:
-            continue
-        if beta:
-            beta_name = entry["file"].replace(".filter", "_beta.filter")
-            if info.get("file_name_beta") != beta_name:
-                info["file_name_beta"] = beta_name
-                changed = True
-        else:
-            if "file_name_beta" in info:
-                del info["file_name_beta"]
-                changed = True
+        by_dir.setdefault(output_dir_for(entry), []).append(entry)
 
-    if changed:
-        with open(FILTER_DEFINITIONS, "w", encoding="utf-8") as f:
+    for out_dir, group_entries in by_dir.items():
+        defs = {"filter_info": {}}
+        for idx, entry in enumerate(order_for_definitions(group_entries), start=1):
+            info = {
+                "display_name": entry["display_name"],
+                "description": entry["description"],
+                "file_name": entry["file"],
+            }
+            if beta:
+                info["file_name_beta"] = entry["file"].replace(".filter", "_beta.filter")
+            defs["filter_info"][str(idx)] = info
+
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "filter_definitions.json")
+        with open(out_path, "w", encoding="utf-8") as f:
             json.dump(defs, f, indent=2, ensure_ascii=False)
             f.write("\n")
-        action = "added" if beta else "removed"
-        print(f"  {action} file_name_beta entries in filter_definitions.json")
+        print(f"  wrote {out_path}")
 
 
 def cleanup_beta_files(filters):
-    """Delete root *_beta.filter files when beta is turned off."""
+    """Delete leftover *_beta.filter files when beta is turned off."""
     for entry in filters:
         beta_file = entry["file"].replace(".filter", "_beta.filter")
-        path = os.path.join(OUTPUT_DIR, beta_file)
+        path = os.path.join(output_dir_for(entry), beta_file)
         if os.path.exists(path):
             os.remove(path)
             print(f"  removed {beta_file}")
@@ -155,7 +165,6 @@ def main():
     update_version()
     filters, groups, beta = load_config()
 
-    sync_definitions_beta(filters, beta)
     if not beta:
         cleanup_beta_files(filters)
 
@@ -163,10 +172,16 @@ def main():
         out_file = entry["file"].replace(".filter", "_beta.filter") if beta else entry["file"]
         print(f"Building {out_file} ...")
         content = build_filter(entry, groups)
-        out_path = os.path.join(OUTPUT_DIR, out_file)
+        out_dir = output_dir_for(entry)
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, out_file)
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"  wrote {len(content):,} chars -> {out_path}")
+
+    print("Generating filter_definitions.json ...")
+    generate_filter_definitions(filters, beta)
+
     print("All filters built.")
 
 

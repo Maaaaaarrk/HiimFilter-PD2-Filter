@@ -1,23 +1,454 @@
 {
   "filters": [
-    { "name": "Hiim",       "file": "Hiim.filter",                           "tags": ["Base"] },
-    { "name": "Hyper",      "file": "Hiim_Hyper.filter",                     "tags": ["Hyper"] },
-    { "name": "Grail",      "file": "Hiim_Grail.filter",                     "tags": ["Grail"] },
-    { "name": "VanillaGen",    "file": "Hiim_Vanilla_Plus.filter",              "tags": ["Vanilla"] },
-    { "name": "VanillaCrafting", "file": "Hiim_Vanilla_Plus_Crafting.filter", "tags": ["Vanilla", "Crafting"] },
-    { "name": "Mystery",    "file": "Hiim_Mystery.filter",                   "tags": ["Mystery"] },
-    { "name": "TalRasha",   "file": "Hiim_TalRasha_Themed.filter",           "tags": ["TalRasha"] },
-    { "name": "GenCrafting","file": "Hiim_Crafting.filter",                  "tags": ["GenCrafting","Crafting"] },
-    { "name": "Amazon",     "file": "Hiim_Crafting_Amazon_Focused.filter",   "tags": ["Amazon","Crafting"] },
-    { "name": "Assassin",   "file": "Hiim_Crafting_Assassin_Focused.filter", "tags": ["Assassin","Crafting"] },
-    { "name": "Barb",       "file": "Hiim_Crafting_Barbarian_Focused.filter","tags": ["Barb","Crafting"] },
-    { "name": "Druid",      "file": "Hiim_Crafting_Druid_Focused.filter",    "tags": ["Druid","Crafting"] },
-    { "name": "Necro",      "file": "Hiim_Crafting_Necromancer_Focused.filter","tags": ["Necro","Crafting"] },
-    { "name": "Paladin",    "file": "Hiim_Crafting_Paladin_Focused.filter",  "tags": ["Paladin","Crafting"] },
-    { "name": "Sorc",       "file": "Hiim_Crafting_Sorceress_Focused.filter","tags": ["Sorc","Crafting"] },
-    { "name": "LLD",        "file": "Hiim_LLD_Focused.filter",               "tags": ["LLD"] },
-    { "name": "LLD-Hyper",  "file": "Hiim_LLD_Hyper.filter",                "tags": ["Hyper", "LLD"] },
-    { "name": "OnlyFilter", "file": "Hiim_Only_Filter.filter",               "tags": ["OnlyFilter"] }
+    // ==========================================================================
+    // Root — built to repo root for backwards compatibility
+    // ==========================================================================
+    {
+      "name": "Hiim",
+      "file": "Hiim.filter",
+      "tags": ["Base"],
+      "order": 1,
+      "display_name": "Hiim — Standard",
+      "description": "All-in-one balanced filter. The standard recommendation for most players."
+    },
+    {
+      "name": "Hyper",
+      "file": "Hiim_Hyper.filter",
+      "tags": ["Hyper"],
+      "display_name": "Style — Hyper",
+      "description": "All-in-one filter with a Hyper visual theme."
+    },
+    {
+      "name": "Grail",
+      "file": "Hiim_Grail.filter",
+      "tags": ["Grail"],
+      "display_name": "Grail Friendly",
+      "description": "All-in-one filter that always shows Uniques and Set items on filter levels 1–8."
+    },
+    {
+      "name": "VanillaGen",
+      "file": "Hiim_Vanilla_Plus.filter",
+      "tags": ["Vanilla"],
+      "display_name": "Vanilla Plus",
+      "description": "All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names)."
+    },
+    {
+      "name": "VanillaCrafting",
+      "file": "Hiim_Vanilla_Plus_Crafting.filter",
+      "tags": ["Vanilla", "Crafting"],
+      "display_name": "Vanilla Plus — Crafting",
+      "description": "Vanilla Plus (no item re-naming) combined with the Crafting filter — crafting bases stay visible at higher filter levels and gems/runes use the crafting variants."
+    },
+    {
+      "name": "Mystery",
+      "file": "Hiim_Mystery.filter",
+      "tags": ["Mystery"],
+      "display_name": "Mystery",
+      "description": "All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity."
+    },
+    {
+      "name": "TalRasha",
+      "file": "Hiim_TalRasha_Themed.filter",
+      "tags": ["TalRasha"],
+      "display_name": "Style — TalRasha",
+      "description": "All-in-one filter with a TalRasha color theme."
+    },
+    {
+      "name": "GenCrafting",
+      "file": "Hiim_Crafting.filter",
+      "tags": ["GenCrafting", "Crafting"],
+      "display_name": "Crafting",
+      "description": "Same as the standard filter, but good crafting bases are not limited in higher filter levels."
+    },
+    {
+      "name": "Amazon",
+      "file": "Hiim_Crafting_Amazon_Focused.filter",
+      "tags": ["Amazon", "Crafting"],
+      "display_name": "Class — Amazon",
+      "description": "Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Assassin",
+      "file": "Hiim_Crafting_Assassin_Focused.filter",
+      "tags": ["Assassin", "Crafting"],
+      "display_name": "Class — Assassin",
+      "description": "Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Barb",
+      "file": "Hiim_Crafting_Barbarian_Focused.filter",
+      "tags": ["Barb", "Crafting"],
+      "display_name": "Class — Barbarian",
+      "description": "Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Druid",
+      "file": "Hiim_Crafting_Druid_Focused.filter",
+      "tags": ["Druid", "Crafting"],
+      "display_name": "Class — Druid",
+      "description": "Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Necro",
+      "file": "Hiim_Crafting_Necromancer_Focused.filter",
+      "tags": ["Necro", "Crafting"],
+      "display_name": "Class — Necromancer",
+      "description": "Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Paladin",
+      "file": "Hiim_Crafting_Paladin_Focused.filter",
+      "tags": ["Paladin", "Crafting"],
+      "display_name": "Class — Paladin",
+      "description": "Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Sorc",
+      "file": "Hiim_Crafting_Sorceress_Focused.filter",
+      "tags": ["Sorc", "Crafting"],
+      "display_name": "Class — Sorceress",
+      "description": "Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "LLD",
+      "file": "Hiim_LLD_Focused.filter",
+      "tags": ["LLD"],
+      "display_name": "LLD",
+      "description": "Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items."
+    },
+    {
+      "name": "LLD-Hyper",
+      "file": "Hiim_LLD_Hyper.filter",
+      "tags": ["Hyper", "LLD"],
+      "display_name": "LLD — Hyper",
+      "description": "LLD Focused filter with a Hyper visual theme."
+    },
+    {
+      "name": "OnlyFilter",
+      "file": "Hiim_Only_Filter.filter",
+      "tags": ["OnlyFilter"],
+      "display_name": "Only A Filter",
+      "description": "All-in-one filter with no item display changes — filtering only, no annotations or re-naming."
+    },
+
+    // ==========================================================================
+    // Bucket: hiimvanillaplus
+    // ==========================================================================
+    {
+      "name": "VanillaGen-HiimVanillaPlus",
+      "file": "Hiim_Vanilla_Plus.filter",
+      "order": 1,
+      "tags": ["Vanilla"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Vanilla Plus",
+      "description": "All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names)."
+    },
+    {
+      "name": "VanillaCrafting-HiimVanillaPlus",
+      "file": "Hiim_Vanilla_Plus_Crafting.filter",
+      "tags": ["Vanilla", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Vanilla Plus — Crafting",
+      "description": "Vanilla Plus (no item re-naming) combined with the Crafting filter — crafting bases stay visible at higher filter levels and gems/runes use the crafting variants."
+    },
+    {
+      "name": "Grail-HiimVanillaPlus",
+      "file": "Hiim_Grail.filter",
+      "tags": ["Grail"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Grail Friendly",
+      "description": "All-in-one filter that always shows Uniques and Set items on filter levels 1–8."
+    },
+    {
+      "name": "GenCrafting-HiimVanillaPlus",
+      "file": "Hiim_Crafting.filter",
+      "tags": ["GenCrafting", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Crafting",
+      "description": "Same as the standard filter, but good crafting bases are not limited in higher filter levels."
+    },
+    {
+      "name": "Amazon-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Amazon_Focused.filter",
+      "tags": ["Amazon", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Amazon",
+      "description": "Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Assassin-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Assassin_Focused.filter",
+      "tags": ["Assassin", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Assassin",
+      "description": "Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Barb-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Barbarian_Focused.filter",
+      "tags": ["Barb", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Barbarian",
+      "description": "Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Druid-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Druid_Focused.filter",
+      "tags": ["Druid", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Druid",
+      "description": "Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Necro-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Necromancer_Focused.filter",
+      "tags": ["Necro", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Necromancer",
+      "description": "Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Paladin-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Paladin_Focused.filter",
+      "tags": ["Paladin", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Paladin",
+      "description": "Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Sorc-HiimVanillaPlus",
+      "file": "Hiim_Crafting_Sorceress_Focused.filter",
+      "tags": ["Sorc", "Crafting"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Class — Sorceress",
+      "description": "Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "LLD-HiimVanillaPlus",
+      "file": "Hiim_LLD_Focused.filter",
+      "tags": ["LLD"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "LLD",
+      "description": "Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items."
+    },
+    {
+      "name": "Mystery-HiimVanillaPlus",
+      "file": "Hiim_Mystery.filter",
+      "tags": ["Mystery"],
+      "filterdir": "hiimvanillaplus",
+      "display_name": "Mystery",
+      "description": "All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity."
+    },
+
+    // ==========================================================================
+    // Bucket: hiimhyper
+    // ==========================================================================
+    {
+      "name": "Hyper-HiimHyper",
+      "file": "Hiim_Hyper.filter",
+      "order": 1,
+      "tags": ["Hyper"],
+      "filterdir": "hiimhyper",
+      "display_name": "Style — Hyper",
+      "description": "All-in-one filter with a Hyper visual theme."
+    },
+    {
+      "name": "LLD-Hyper-HiimHyper",
+      "file": "Hiim_LLD_Hyper.filter",
+      "tags": ["Hyper", "LLD"],
+      "filterdir": "hiimhyper",
+      "display_name": "LLD — Hyper",
+      "description": "LLD Focused filter with a Hyper visual theme."
+    },
+    {
+      "name": "Grail-HiimHyper",
+      "file": "Hiim_Grail.filter",
+      "tags": ["Grail"],
+      "filterdir": "hiimhyper",
+      "display_name": "Grail Friendly",
+      "description": "All-in-one filter that always shows Uniques and Set items on filter levels 1–8."
+    },
+    {
+      "name": "GenCrafting-HiimHyper",
+      "file": "Hiim_Crafting.filter",
+      "tags": ["GenCrafting", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Crafting",
+      "description": "Same as the standard filter, but good crafting bases are not limited in higher filter levels."
+    },
+    {
+      "name": "Amazon-HiimHyper",
+      "file": "Hiim_Crafting_Amazon_Focused.filter",
+      "tags": ["Amazon", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Amazon",
+      "description": "Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Assassin-HiimHyper",
+      "file": "Hiim_Crafting_Assassin_Focused.filter",
+      "tags": ["Assassin", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Assassin",
+      "description": "Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Barb-HiimHyper",
+      "file": "Hiim_Crafting_Barbarian_Focused.filter",
+      "tags": ["Barb", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Barbarian",
+      "description": "Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Druid-HiimHyper",
+      "file": "Hiim_Crafting_Druid_Focused.filter",
+      "tags": ["Druid", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Druid",
+      "description": "Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Necro-HiimHyper",
+      "file": "Hiim_Crafting_Necromancer_Focused.filter",
+      "tags": ["Necro", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Necromancer",
+      "description": "Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Paladin-HiimHyper",
+      "file": "Hiim_Crafting_Paladin_Focused.filter",
+      "tags": ["Paladin", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Paladin",
+      "description": "Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Sorc-HiimHyper",
+      "file": "Hiim_Crafting_Sorceress_Focused.filter",
+      "tags": ["Sorc", "Crafting"],
+      "filterdir": "hiimhyper",
+      "display_name": "Class — Sorceress",
+      "description": "Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "LLD-HiimHyper",
+      "file": "Hiim_LLD_Focused.filter",
+      "tags": ["LLD"],
+      "filterdir": "hiimhyper",
+      "display_name": "LLD",
+      "description": "Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items."
+    },
+    {
+      "name": "Mystery-HiimHyper",
+      "file": "Hiim_Mystery.filter",
+      "tags": ["Mystery"],
+      "filterdir": "hiimhyper",
+      "display_name": "Mystery",
+      "description": "All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity."
+    },
+
+    // ==========================================================================
+    // Bucket: hiimtalrasha
+    // ==========================================================================
+    {
+      "name": "TalRasha-HiimTalRasha",
+      "file": "Hiim_TalRasha_Themed.filter",
+      "order": 1,
+      "tags": ["TalRasha"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Style — TalRasha",
+      "description": "All-in-one filter with a TalRasha color theme."
+    },
+    {
+      "name": "Grail-HiimTalRasha",
+      "file": "Hiim_Grail.filter",
+      "tags": ["Grail"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Grail Friendly",
+      "description": "All-in-one filter that always shows Uniques and Set items on filter levels 1–8."
+    },
+    {
+      "name": "GenCrafting-HiimTalRasha",
+      "file": "Hiim_Crafting.filter",
+      "tags": ["GenCrafting", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Crafting",
+      "description": "Same as the standard filter, but good crafting bases are not limited in higher filter levels."
+    },
+    {
+      "name": "Amazon-HiimTalRasha",
+      "file": "Hiim_Crafting_Amazon_Focused.filter",
+      "tags": ["Amazon", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Amazon",
+      "description": "Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Assassin-HiimTalRasha",
+      "file": "Hiim_Crafting_Assassin_Focused.filter",
+      "tags": ["Assassin", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Assassin",
+      "description": "Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Barb-HiimTalRasha",
+      "file": "Hiim_Crafting_Barbarian_Focused.filter",
+      "tags": ["Barb", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Barbarian",
+      "description": "Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Druid-HiimTalRasha",
+      "file": "Hiim_Crafting_Druid_Focused.filter",
+      "tags": ["Druid", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Druid",
+      "description": "Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Necro-HiimTalRasha",
+      "file": "Hiim_Crafting_Necromancer_Focused.filter",
+      "tags": ["Necro", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Necromancer",
+      "description": "Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Paladin-HiimTalRasha",
+      "file": "Hiim_Crafting_Paladin_Focused.filter",
+      "tags": ["Paladin", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Paladin",
+      "description": "Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "Sorc-HiimTalRasha",
+      "file": "Hiim_Crafting_Sorceress_Focused.filter",
+      "tags": ["Sorc", "Crafting"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Class — Sorceress",
+      "description": "Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels."
+    },
+    {
+      "name": "LLD-HiimTalRasha",
+      "file": "Hiim_LLD_Focused.filter",
+      "tags": ["LLD"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "LLD",
+      "description": "Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items."
+    },
+    {
+      "name": "Mystery-HiimTalRasha",
+      "file": "Hiim_Mystery.filter",
+      "tags": ["Mystery"],
+      "filterdir": "hiimtalrasha",
+      "display_name": "Mystery",
+      "description": "All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity."
+    }
   ],
   "beta": false
 }

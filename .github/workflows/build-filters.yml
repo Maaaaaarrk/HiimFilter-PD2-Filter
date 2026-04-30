@@ -5,8 +5,10 @@ on:
     branches-ignore:
       - main
     paths-ignore:
-      - '*.filter'   # root .filter files are auto-generated — edits here should not trigger a rebuild
-      - 'README.md'  # also auto-generated
+      - '*.filter'                  # root .filter files are auto-generated — edits here should not trigger a rebuild
+      - 'filtergroups/**/*.filter'  # bucketed .filter outputs are also auto-generated
+      - 'README.md'                 # also auto-generated
+      - 'filtergroups/**/README.md' # per-bucket README files are also auto-generated
 
 permissions:
   contents: write
@@ -44,6 +46,7 @@ jobs:
                   filter_definitions.json \
                   README.md
           git add *.filter 2>/dev/null || true
+          git add filtergroups 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
