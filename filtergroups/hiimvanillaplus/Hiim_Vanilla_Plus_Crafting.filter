@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 29th%CL%Season 13 - build 68ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated April 30th%CL%Season 13 - build 70ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
 ItemDisplay[box FILTLVL=3]: %NAME%{%NAME% Strict (3)}%CONTINUE%
@@ -370,19 +370,19 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*20)
 //-----------------------------------------------------------------------------------
 
 // DClone mats
-Alias[BLACK_SOULSTONE_VALUE]: 0.35
-Alias[PRIME_EVIL_SOUL_VALUE]: 0.45
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.04
+Alias[BLACK_SOULSTONE_VALUE]: 0.25
+Alias[PRIME_EVIL_SOUL_VALUE]: 0.25
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.1
 
 // Rathma mats
-Alias[HELLFIRE_ASHES_VALUE]: 0.45
-Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.5
+Alias[HELLFIRE_ASHES_VALUE]: 0.6
+Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.25
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.05
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.1
-Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.25
-Alias[DEMONIC_INSIGNIA_VALUE]: 0.5
+Alias[FLESH_OF_MALIC_VALUE]: 0.05
+Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.05
+Alias[DEMONIC_INSIGNIA_VALUE]: 0.15
 //-----------------------------------------------------------------------------------
 // Star Ratings
 //-----------------------------------------------------------------------------------
@@ -3829,7 +3829,7 @@ ItemDisplay[(7fb OR 7wa OR 7gd) ETH !INF (SOCK=0 OR SOCK=5) NMAG EDAM>19 FILTLVL
 // Breath of the Dying/Last Wish
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH !RW (SOCK=0 OR SOCK=6) !INF NMAG !RW EDAM>0 (EDAM>9 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>17 FILTLVL<8]: %NAME%{%NAME%}
-ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>19 FILTLVL<9]: %NAME%{%NAME%}
+ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>19 FILTLVL<9]: %NAME%{%NAME%}
 
 // Chaos
 ItemDisplay[7xf !RW SK263>2 SK252>2 ETH !INF SOCK=3 NMAG]: %RW_BASE_GG%GG [Chaos]{%NAME%%CL%%PURPLE%GG Chaos base}
