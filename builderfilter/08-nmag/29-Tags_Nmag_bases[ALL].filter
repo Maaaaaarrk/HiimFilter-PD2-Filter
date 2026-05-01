@@ -48,6 +48,7 @@ ItemDisplay[(wsp OR 9ws) !INF !ETH NMAG !RW (SOCK=5 OR SOCK=0) SK378>0 (SK118>2 
 // LLD Staff base
 // SK46	Blaze
 // SK60	Chilling Armor
+// SK60	Chilling Armor
 // SK50	Shiver Armor
 ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=4]: %NAME% %PURPLE%[LLD]{%PURPLE%GG LLD Insight Base%CL%%NAME%}
 ItemDisplay[(cst OR 8cs OR bst OR 8bs OR wst OR 8ws) SK46>2 (SK60>2 OR SK50>2) !INF !ETH NMAG !RW SOCK=0 FILTLVL<7]: %NAME% %DOT-0B%%ORANGE%[LLD]{%PURPLE%Must roll 4 open sockets for LLD%CL%%NAME%}
@@ -188,8 +189,10 @@ ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTL
 
 // Paladin Shields
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDAM>54]: %NAME%{%NAME%}
-ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>24]: %NAME%{%NAME%}
-ItemDisplay[DIN (EXC OR ELT) !INF !ETH NMAG !RW !SOCK=1 RES>19 FILTLVL<5]: %NAME%{%NAME%}
+ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>19]: %NAME%{%NAME%}
+ItemDisplay[DIN ELT !INF NMAG !RW !SOCK=1 RES>24 FILTLVL<9]: %NAME%{%NAME%}
+ItemDisplay[DIN (EXC OR ELT) !INF NMAG !RW !SOCK=1 RES>24 FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[DIN (EXC OR ELT) !INF NMAG !RW !SOCK=1 RES>19 FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80 FILTLVL<5]: %NAME%{%NAME%}
 // Shield
 ItemDisplay[(uit OR uow OR uts OR ush) !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDEF>4 (EDEF>14 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
