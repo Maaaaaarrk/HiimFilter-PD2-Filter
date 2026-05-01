@@ -411,6 +411,23 @@ def parse_conditions(cond_str: str, filename, lineno, issues, defined_aliases):
         issues.append(Issue(filename, lineno, 'ERROR',
             f"Unclosed '(' in conditions ({depth} unclosed)"))
 
+    # --- Check for stray commas in the condition list (issue #778 class) ---
+    # ItemDisplay[...] uses whitespace to separate tokens, never commas.
+    # Common typo: "FHR>0, OR LIFE>0" — a stray ',' before OR/AND.
+    # Also flag a trailing ',' just before a closing ')' inside a group:
+    # e.g. "(A>0 OR B>0,)". Both are the same root cause.
+    # Note: commas *inside* tokens (e.g. MULTI79,1>0) are legitimate, so we
+    # only flag commas that are followed by whitespace + OR/AND, or by
+    # optional whitespace + ')'.
+    for m in re.finditer(r',\s*(OR|AND)\b', cond_str):
+        issues.append(Issue(filename, lineno, 'ERROR',
+            f"Stray ',' before '{m.group(1)}' in ItemDisplay condition list "
+            f"(conditions are whitespace-separated, not comma-separated)"))
+    for _ in re.finditer(r',\s*\)', cond_str):
+        issues.append(Issue(filename, lineno, 'ERROR',
+            "Stray trailing ',' before ')' in ItemDisplay condition group "
+            "(conditions are whitespace-separated, not comma-separated)"))
+
     # Flatten and tokenise for individual token validation
     flat = re.sub(r'[()]', ' ', cond_str)
     for token in re.split(r'\s+', flat.strip()):
