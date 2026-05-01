@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 1st Season 13 - build 72
+## Last updated May 1st Season 13 - build 73
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -17,13 +17,8 @@
 * Crafting: Same as the standard filter, but good crafting bases are not limited in higher filter levels. [Hiim_Crafting.filter]
 * Grail Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Hiim_Grail.filter]
 * LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
-* LLD — Hyper: LLD Focused filter with a Hyper visual theme. [Hiim_LLD_Hyper.filter]
 * Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
 * Only A Filter: All-in-one filter with no item display changes — filtering only, no annotations or re-naming. [Hiim_Only_Filter.filter]
-* Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
-* Style — TalRasha: All-in-one filter with a TalRasha color theme. [Hiim_TalRasha_Themed.filter]
-* Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
-* Vanilla Plus — Crafting: Vanilla Plus (no item re-naming) combined with the Crafting filter — crafting bases stay visible at higher filter levels and gems/runes use the crafting variants. [Hiim_Vanilla_Plus_Crafting.filter]
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
 
