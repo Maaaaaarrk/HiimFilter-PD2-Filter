@@ -60,6 +60,8 @@ def generate_filter_definitions(filters, beta):
     """Write filter_definitions.json into root and each filtergroups/<filterdir>."""
     by_dir = {}
     for entry in filters:
+        if entry.get("hidden"):
+            continue
         by_dir.setdefault(output_dir_for(entry), []).append(entry)
 
     for out_dir, group_entries in by_dir.items():
@@ -98,6 +100,16 @@ def extract_bracket_tag(filename):
     return m.group(1) if m else None
 
 
+AUTO_HEADER_TAG = "AUTO_HEADER"
+
+
+def auto_header_line(entry):
+    """Auto-generated header line: %CL%HiimFilter - TAG1 - TAG2 - ... -}%CONTINUE%"""
+    tag_str = " - ".join(entry["tags"])
+    suffix = f" - {tag_str}" if tag_str else ""
+    return f"%CL%HiimFilter{suffix} -}}%CONTINUE%\n"
+
+
 def token_matches_filter(token, entry, groups):
     """Return True if a single tag token applies to the given filter entry."""
     # Expand group name to its member list
@@ -110,7 +122,7 @@ def token_matches_filter(token, entry, groups):
 
 def source_included(bracket_tag, entry, groups):
     """Decide whether a source file should be concatenated into the given filter."""
-    if bracket_tag == "ALL":
+    if bracket_tag == "ALL" or bracket_tag == AUTO_HEADER_TAG:
         return True
 
     if bracket_tag.startswith("ONLY="):
@@ -155,7 +167,11 @@ def build_filter(entry, groups):
             tag = extract_bracket_tag(os.path.basename(filepath))
             if tag is None:
                 continue  # template / untagged file — skip
-            if source_included(tag, entry, groups):
+            if not source_included(tag, entry, groups):
+                continue
+            if tag == AUTO_HEADER_TAG:
+                parts.append(auto_header_line(entry))
+            else:
                 with open(filepath, encoding="utf-8") as f:
                     parts.append(f.read())
     return "".join(parts)

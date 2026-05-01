@@ -1,5 +1,5 @@
 # hiimvanillaplus
-## Last updated May 1st Season 13 - build 72
+## Last updated May 1st Season 13 - build 73
 
 ## Filters
 * Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
@@ -14,7 +14,6 @@
 * Grail Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Hiim_Grail.filter]
 * LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
 * Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
-* Vanilla Plus — Crafting: Vanilla Plus (no item re-naming) combined with the Crafting filter — crafting bases stay visible at higher filter levels and gems/runes use the crafting variants. [Hiim_Vanilla_Plus_Crafting.filter]
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
