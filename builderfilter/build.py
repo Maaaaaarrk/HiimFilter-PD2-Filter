@@ -103,11 +103,31 @@ def extract_bracket_tag(filename):
 AUTO_HEADER_TAG = "AUTO_HEADER"
 
 
+FAMILY_TAGS = ("Hiim", "Kassahi")
+
+
 def auto_header_line(entry):
-    """Auto-generated header line: %CL%HiimFilter - TAG1 - TAG2 - ... -}%CONTINUE%"""
-    tag_str = " - ".join(entry["tags"])
+    """Auto-generated header line: %CL%<Brand> - TAG1 - TAG2 - ... -}%CONTINUE%
+
+    The brand prefix is chosen by which family tag is present:
+      - "HiimFilter" for entries tagged "Hiim"
+      - "Kassahi"    for entries tagged "Kassahi"
+    Family tags themselves are dropped from the displayed list (implied by the
+    prefix), and a leading "Kassahi" is stripped from disambiguated tag names so
+    "KassahiHyper" / "KassahiMystery" display as "Hyper" / "Mystery".
+    """
+    tags = entry["tags"]
+    brand = "Kassahi" if "Kassahi" in tags else "HiimFilter"
+
+    def _display(tag):
+        if tag.startswith("Kassahi") and tag != "Kassahi":
+            return tag[len("Kassahi"):]
+        return tag
+
+    visible_tags = [_display(t) for t in tags if t not in FAMILY_TAGS]
+    tag_str = " - ".join(visible_tags)
     suffix = f" - {tag_str}" if tag_str else ""
-    return f"%CL%HiimFilter{suffix} -}}%CONTINUE%\n"
+    return f"%CL%{brand}{suffix} -}}%CONTINUE%\n"
 
 
 def token_matches_filter(token, entry, groups):
@@ -120,22 +140,33 @@ def token_matches_filter(token, entry, groups):
     return token == entry["name"] or token in entry["tags"]
 
 
-def source_included(bracket_tag, entry, groups):
-    """Decide whether a source file should be concatenated into the given filter."""
-    if bracket_tag == "ALL" or bracket_tag == AUTO_HEADER_TAG:
+def _clause_matches(clause, entry, groups):
+    """Evaluate a single bracket-tag clause against a filter entry."""
+    if clause == "ALL" or clause == AUTO_HEADER_TAG:
         return True
 
-    if bracket_tag.startswith("ONLY="):
-        tokens = bracket_tag[5:].split("+")
+    if clause.startswith("ONLY="):
+        tokens = clause[5:].split("+")
         return any(token_matches_filter(t, entry, groups) for t in tokens)
 
-    if bracket_tag.startswith("ALL-EXCEPT="):
-        tokens = bracket_tag[11:].split("+")
+    if clause.startswith("ALL-EXCEPT="):
+        tokens = clause[11:].split("+")
         return not any(token_matches_filter(t, entry, groups) for t in tokens)
 
     # No keyword prefix — treat as implicit ONLY (e.g. [CRAFTING+LLD])
-    tokens = bracket_tag.split("+")
+    tokens = clause.split("+")
     return any(token_matches_filter(t, entry, groups) for t in tokens)
+
+
+def source_included(bracket_tag, entry, groups):
+    """Decide whether a source file should be concatenated into the given filter.
+
+    A bracket tag may be a single clause or a comma-separated AND of clauses, e.g.
+    [Hiim,ALL-EXCEPT=OnlyFilter] requires both the Hiim tag AND the not-OnlyFilter
+    condition. Inside a clause, '+' remains the OR separator.
+    """
+    clauses = [c.strip() for c in bracket_tag.split(",")]
+    return all(_clause_matches(c, entry, groups) for c in clauses)
 
 
 def sorted_walk(root):

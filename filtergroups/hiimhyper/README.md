@@ -1,5 +1,5 @@
 # hiimhyper
-## Last updated May 5th Season 13 - build 81
+## Last updated May 5th Season 13 - build 82
 
 ## Filters
 * Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
