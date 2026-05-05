@@ -1,19 +1,15 @@
-# hiimvanillaplus
+# kassahi
 ## Last updated May 5th Season 13 - build 82
 
 ## Filters
-* Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
-* Class — Amazon: Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Amazon_Focused.filter]
-* Class — Assassin: Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Assassin_Focused.filter]
-* Class — Barbarian: Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Barbarian_Focused.filter]
-* Class — Druid: Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Druid_Focused.filter]
-* Class — Necromancer: Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Necromancer_Focused.filter]
-* Class — Paladin: Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Paladin_Focused.filter]
-* Class — Sorceress: Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Sorceress_Focused.filter]
-* Crafting: Same as the standard filter, but good crafting bases are not limited in higher filter levels. [Hiim_Crafting.filter]
-* Grail Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Hiim_Grail.filter]
-* LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
-* Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
+* Regular — Standard: Kassahi's all-in-one balanced filter. The standard recommendation for most players. [Kassahi.filter]
+* Meme — Hyper: Meme filter with a Hyper visual theme. [Kassahi_Meme_Hyper.filter]
+* Meme — Standard: Standard filter with meme item names for a humorous experience. [Kassahi_Meme.filter]
+* Mystery — Hyper: Mystery filter with a Hyper visual theme. [Kassahi_Mystery_Hyper.filter]
+* Mystery — Standard: Filter where high-value items are renamed to hide their identity. [Kassahi_Mystery.filter]
+* Mystery — philanthropy777: Mystery filter with a philanthropy777 visual theme. [Kassahi_Mystery_Phil777.filter]
+* Regular — Hyper: Standard filter with a Hyper visual theme. [Kassahi_Hyper.filter]
+* Regular — philanthropy777: Standard filter with a philanthropy777 visual theme. [Kassahi_Phil777.filter]
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
