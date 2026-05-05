@@ -7,7 +7,7 @@ Reference: https://wiki.projectdiablo2.com/wiki/Item_Filtering
 Usage:
     python validate_filters.py                  # checks all *.filter in script dir
     python validate_filters.py Hiim.filter      # check specific files
-    python validate_filters.py --all            # check builderfilter/ subdirs too
+    python validate_filters.py --all            # also check filtergroups/ outputs
     python validate_filters.py --errors-only    # suppress warnings
 """
 
@@ -598,7 +598,12 @@ def main():
     if args:
         filter_files = [Path(a) for a in args]
     elif include_all:
-        filter_files = sorted(script_dir.rglob('*.filter'))
+        # Root output filters + filtergroups/ outputs (skip builderfilter source
+        # fragments and any cloned upstream repos under temp/).
+        filter_files = sorted(script_dir.glob('*.filter'))
+        fg = script_dir / 'filtergroups'
+        if fg.is_dir():
+            filter_files += sorted(fg.rglob('*.filter'))
     else:
         filter_files = sorted(script_dir.glob('*.filter'))
 
