@@ -1,0 +1,63 @@
+
+
+
+
+
+//------------------------------GEMS------------------------------
+
+
+
+
+
+// Flawless Gem Filter Lvls
+Alias[FLAWGEMLVLS]: (FILTLVL=1 OR FILTLVL=3 OR FILTLVL=5 OR FILTLVL=7 OR FILTLVL=9 OR FILTLVL=11)
+// Flawless Skull Filter Lvls
+Alias[FLAWSKULLLVLS]: (FILTLVL=2 OR FILTLVL=4 OR FILTLVL=6 OR FILTLVL=8 OR FILTLVL=10 OR FILTLVL=12)
+
+// GEMS
+ItemDisplay[GEM=1 CLVL<24]: %WHITE%Chip-%GEMTYPE%%CONTINUE%
+ItemDisplay[GEM=2 CLVL<24]: %WHITE%Fla-%GEMTYPE%%CONTINUE%
+ItemDisplay[GEM=3 CLVL<24]: %WHITE%%GEMTYPE%%CONTINUE%
+ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) CLVL>23]:
+ItemDisplay[FLAWGEMLVLS GEM=4]: %DOT-20%%WHITE%Flawless%CONTINUE%
+ItemDisplay[GEM=5]: %MAP-20%%WHITE%Perfect%CONTINUE%
+ItemDisplay[FLAWSKULLLVLS GEM=4 GEMTYPE=7]: %DOT-20%%ORANGE%• %LIGHT_GRAY%o %ORANGE%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %NAME% %PURPLE%o%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %NAME% %WHITE%o%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %NAME% %GREEN%o%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %NAME% %RED%o%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %NAME% %BLUE%o%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %NAME% %YELLOW%o%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %NAME% %LIGHT_GRAY%o%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=1]: %NAME% %PURPLE%O%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=2]: %NAME% %WHITE%O%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=3]: %NAME% %GREEN%O%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=4]: %NAME% %RED%O%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=5]: %NAME% %BLUE%O%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=6]: %NAME% %YELLOW%O%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=7]: %NAME% %LIGHT_GRAY%O%CONTINUE%
+ItemDisplay[(GEM=4 OR GEM=5) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %PURPLE%• %NAME% %PURPLE%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %WHITE%• %NAME% %WHITE%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %GREEN%• %NAME% %GREEN%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %RED%• %NAME% %RED%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %BLUE%• %NAME% %BLUE%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %YELLOW%• %NAME% %YELLOW%•%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %ORANGE%• %NAME% %ORANGE%•%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=1]: %PURPLE%••  %NAME%  %PURPLE%••%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=2]: %WHITE%••  %NAME%  %WHITE%••%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=3]: %GREEN%••  %NAME%  %GREEN%••%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=4]: %RED%••  %NAME%  %RED%••%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=5]: %BLUE%••  %NAME%  %BLUE%••%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=6]: %YELLOW%••  %NAME%  %YELLOW%••%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=7]: %ORANGE%••  %NAME%  %ORANGE%••%CONTINUE%
+ItemDisplay[FLAWSKULLLVLS !GEMTYPE=7 GEM=4]:
+ItemDisplay[gprs]: %NAME%{%WHITE%amulet, %ORANGE%Amn: %BLUE%10frw, 3-6lpk%CL%%WHITE%ring, %ORANGE%Sol: %BLUE%5-10str, 1-3ll%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-20ow, 3-6ll%CL%%WHITE%gloves, %ORANGE%Nef: %BLUE%5-10cb, 2-4ll%CL%%WHITE%boots, %ORANGE%Eth: %BLUE%15-30repl, 2-4ll%CL%%WHITE%helm, %ORANGE%Ral: %BLUE%10-20cb, 2-4ll%CL%%WHITE%chest, %ORANGE%Thul: %BLUE%3-6lpk, 3-6ll, 20-40life%CL%%WHITE%shield, %ORANGE%Ith: %BLUE%10-20block, 3-6ll%CL%%WHITE%weapon, %ORANGE%Ort: %BLUE%50-80edmg, 3-6ll%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %RED%blood O%NL%}
+ItemDisplay[gpvs]: %NAME%{%WHITE%amulet, %ORANGE%Ral: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10ene, 1-2mpk%CL%%WHITE%belt, %ORANGE%Ith: %BLUE%10fcr, 4-10rm%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%5-10fcr, 1-3mpk%CL%%WHITE%boots, %ORANGE%Thul: %BLUE%10-150imm, 4-10rm%CL%%WHITE%helm, %ORANGE%Nef: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%chest, %ORANGE%Tal: %BLUE%5-10fcr, 3-6mpk%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 5-10fcr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%1all, 10-20fcr%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %PURPLE%cast O%NL%}
+ItemDisplay[gpbs]: %NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%150-250ar, 10-20fhr%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10dex, 2-4max%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%5-10dmgtomana, 10-20fhr%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%kb, -10-20%td%CL%%WHITE%boots, %ORANGE%Ral: %BLUE%60-120defvsmelee, 10-20fhr%CL%%WHITE%helm, %ORANGE%Ith: %BLUE%100-200ar, 10-20fhr%CL%%WHITE%chest, %ORANGE%Nef: %BLUE%25-50edef, 30-40fhr%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 20-30fbr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%50-80edmg, -10-20%td%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %BLUE%hit O%NL%}
+ItemDisplay[gpgs]: %NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%10block%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10vit%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-30edef, 10-20pres%CL%%WHITE%gloves, %ORANGE%Ral: %BLUE%10-30edef, 10-20cres%CL%%WHITE%boots, %ORANGE%Ort: %BLUE%20-60edef, 10-20fres%CL%%WHITE%helm, %ORANGE%Ith: %BLUE%10-20lres, 5-10%pdr %CL%%WHITE%chest, %ORANGE%Eth: %BLUE%20-60edef, 5-10%pdr%CL%%WHITE%shield, %ORANGE%Nef: %BLUE%20-60edef, 5-10%pdr %CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%50-80edmg, kb%CL%%WHITE%cube:%BLUE% magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GREEN%safe O%NL%}
+ItemDisplay[gpys]: %NAME%{%WHITE%amulet, %ORANGE%Ko: %BLUE%10-20vit, 20-30mf%CL%%WHITE%ring, %ORANGE%Lum: %BLUE%5-10vit, 10-20mf%CL%%WHITE%belt, %ORANGE%El: %BLUE%25-50edef, 20-30mf%CL%%WHITE%gloves, %ORANGE%Hel: %BLUE%25-50edef, 15-25mf%CL%%WHITE%boots, %ORANGE%Io: %BLUE%25-50edef, 15-25mf%CL%%WHITE%helm, %ORANGE%Tir: %BLUE%25-50edef, 20-30mf%CL%%WHITE%chest, %ORANGE%Eld: %BLUE%25-50edef, 20-30mf%CL%%WHITE%shield, %ORANGE%Dol: %BLUE%10-20block, 20-30mf%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%1all, 20-30mf%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %YELLOW%bount O%NL%}
+ItemDisplay[gpws]: %NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%3-5ares, hfd%CL%%WHITE%belt, %ORANGE%Io: %BLUE%5-10ias, hfd%CL%%WHITE%gloves, %ORANGE%Shael: %BLUE%5-10ias, 10-20ar%CL%%WHITE%boots, %ORANGE%Ko: %BLUE%10ms, hfd%CL%%WHITE%helm, %ORANGE%Eld: %BLUE%5-10ias, hfd%CL%%WHITE%chest, %ORANGE%El: %BLUE%5-10ares, 10-20block%CL%%WHITE%shield, %ORANGE%Ort: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%20-40edmg, 20ias%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %WHITE%brill O%NL%}
+ItemDisplay[skzs]: %NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
+ItemDisplay[(GEM=4 OR GEM=5)]: %NAME%
+
