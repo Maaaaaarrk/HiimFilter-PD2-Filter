@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 6th%CL%Season 13 - build 86%CL%HiimFilter - Hyper - Barb - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 6th%CL%Season 13 - build 87%CL%HiimFilter - Hyper - Barb - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -4712,8 +4712,9 @@ ItemDisplay[7ws SK102>2 NMAG !INF SOCK=0 !ETH !RW FILTLVL<7]: %NAME% %DOT-76%%DA
 ItemDisplay[(wsp OR 9ws OR 7ws) SK117>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL<8]: %NAME% %DOT-76%%DARK_GREEN%[CTA]{%NAME%}
 ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL<5]: %NAME% %DOT-76%%DARK_GREEN%[CTA]{%NAME%}
 
-// ETH Caduceus (HoJ base)
-ItemDisplay[7ws ETH !INF NMAG !RW (SOCK=0 OR SOCK=5) (EDAM>14 OR FILTLVL<7)]: %NAME%{%NAME%}
+// ETH Caduceus (Beast base)
+ItemDisplay[7ws ETH !INF NMAG !RW (SOCK=0 OR SOCK=5) (EDAM>14 OR FILTLVL<8)]: %NAME%{%NAME%}
+ItemDisplay[7ws !INF NMAG !RW (SOCK=0 OR SOCK=5) (EDAM>19 OR FILTLVL<7)]: %NAME%{%NAME%}
 
 // Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(SPEAR OR POLEARM) ELT ETH !INF SOCK=0 NMAG !RW EDAM>0 (EDAM>9 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
@@ -4840,7 +4841,7 @@ ItemDisplay[BAR (SK149>2 OR SK154>2) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) FILTL
 // Paladin Shields
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) EDAM>54]: %NAME%{%NAME%}
 ItemDisplay[DIN (ELT OR paa) !INF ETH NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3) RES>19]: %NAME%{%NAME%}
-ItemDisplay[DIN ELT !INF NMAG !RW !SOCK=1 RES>24 FILTLVL<9]: %NAME%{%NAME%}
+ItemDisplay[DIN ELT !INF NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=3)  RES>19 FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[DIN (EXC OR ELT) !INF NMAG !RW !SOCK=1 RES>24 FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[DIN (EXC OR ELT) !INF NMAG !RW !SOCK=1 RES>19 FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[DIN !INF !ETH NMAG !RW !SOCK=1 RES>19 CLVL<80 FILTLVL<5]: %NAME%{%NAME%}
