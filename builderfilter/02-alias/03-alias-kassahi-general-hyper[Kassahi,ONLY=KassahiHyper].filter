@@ -1,119 +1,123 @@
 //-----------------------------------------------------------------------------------
-// Kassahi Hyper — item ground annotations (parity with Hiim's 03-alias-general)
+// Kassahi Hyper — item ground annotations
+// Mirrors upstream Kassahi-Hyper's visual grammar: PURPLE/GREEN @@ doublets separated
+// by %BLACK%@ for runes/general; xX doublets for unique tiers; x for set tiers.
+// Tier scaling = number of doublets flanking the name.
 //-----------------------------------------------------------------------------------
 
-// General item
-Alias[GEN_ITEM]: %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@
+// General item — orange @@ triplet
+Alias[GEN_ITEM]: %ORANGE%@@%BLACK%@ %ORANGE%@@%BLACK%@ %NAME% %BLACK%@%ORANGE%@@ %BLACK%@%ORANGE%@@
 
 // General item Alt
-Alias[GEN_ALT]: %PURPLE%@@%BLACK%@ %RED%@@%BLACK%@ %NAME% %BLACK%@%RED%@@ %BLACK%@%PURPLE%@@
+Alias[GEN_ALT]: %PURPLE%@@%BLACK%@ %PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@ %BLACK%@%PURPLE%@@
 
 // Token parts
-Alias[TOKEN_PARTS]: %GREEN%xX%RED%»%ORANGE% %NAME% %ORANGE%«%RED%xX%GREEN%
+Alias[TOKEN_PARTS]: %ORANGE%@%BLACK%@ %NAME% %BLACK%@%ORANGE%@
 
 // Uber Keys
-Alias[UBER_KEYS]: %ORANGE%xX%RED%»%YELLOW%xX %NAME% %YELLOW%Xx%RED%«%ORANGE%Xx
+Alias[UBER_KEYS]: %RED%@@%ORANGE%@@%RED%@@   %NAME%   %RED%@@%ORANGE%@@%RED%@@
 
 // Boss Mat Item
-Alias[BOSS_MAT]: %RED%xXxXx %NAME% %RED%xXxXx
+Alias[BOSS_MAT]: %YELLOW%@%ORANGE%@%YELLOW%@%ORANGE%@%YELLOW%@ %NAME% %YELLOW%@%ORANGE%@%YELLOW%@%ORANGE%@%YELLOW%@
 
 // Boss Mat Item Alt
-Alias[BOSS_ALT]: %YELLOW%X%ORANGE%x%YELLOW%X%ORANGE%x%YELLOW%X %NAME% %YELLOW%X%ORANGE%x%YELLOW%X%ORANGE%x%YELLOW%X
+Alias[BOSS_ALT]: %YELLOW%@@@@ %NAME% %YELLOW%@@@@
 
 // Boss Entry Item
 Alias[BOSS_ENTRY]: %RED%@@@ %NAME% %RED%@@@
 
-// Rare General Item
-Alias[GEN_RARE]: %ORANGE%@%RED%@%ORANGE%@@%RED%@%ORANGE%@@%RED%@%ORANGE%@ %NAME% %ORANGE%@%RED%@%ORANGE%@@%RED%@%ORANGE%@@%RED%@%ORANGE%@
+// Rare General Item — orange-red doublet pattern
+Alias[GEN_RARE]: %ORANGE%@%RED%@%ORANGE%@   %NAME%   %ORANGE%@%RED%@%ORANGE%@
 
-// Rarer General Item
-Alias[GEN_TOP_RARE]: %DARK_GREEN%@%BLUE%@%DARK_GREEN%@@%BLUE%@%DARK_GREEN%@@%BLUE%@%DARK_GREEN%@ %NAME% %DARK_GREEN%@%BLUE%@%DARK_GREEN%@@%BLUE%@%DARK_GREEN%@@%BLUE%@%DARK_GREEN%@
+// Rarer General Item — dark green emphasis
+Alias[GEN_TOP_RARE]: %DARK_GREEN%@%GREEN%@%DARK_GREEN%@   %NAME%   %DARK_GREEN%@%GREEN%@%DARK_GREEN%@
 
-// GG General Item Drop
-Alias[GEN_GG_ITEM]: %RED%@%ORANGE%@%YELLOW%@%GREEN%@%BLUE%@%PURPLE%@ %NAME% %PURPLE%@%BLUE%@%GREEN%@%YELLOW%@%ORANGE%@%RED%@
+// GG General Item Drop — full warm gradient
+Alias[GEN_GG_ITEM]: %PURPLE%@%RED%@%ORANGE%@%YELLOW%@   %NAME%   %YELLOW%@%ORANGE%@%RED%@%PURPLE%@
 
-// Rare GG Item Drop
-Alias[RARE_GG_ITEM]: %RED%@@%ORANGE%@@%YELLOW%@@%GREEN%@@%BLUE%@@%PURPLE%@@ %NAME% %PURPLE%@@%BLUE%@@%GREEN%@@%YELLOW%@@%ORANGE%@@%RED%@@
+// Rare GG Item Drop — gradient with white accent
+Alias[RARE_GG_ITEM]: %PURPLE%@@%RED%@@%ORANGE%@@%YELLOW%@@ %WHITE%•   %NAME%   %WHITE%• %YELLOW%@@%ORANGE%@@%RED%@@%PURPLE%@@
 
 // Unlimited Use items
-Alias[RARE_GG_ALT]: %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X %NAME% %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X
+Alias[RARE_GG_ALT]: %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X %NAME% %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X
 
-// Low rune
-Alias[RUNE_LOW]: %PX-0B%%ORANGE%@@ %NAME% %ORANGE%@@
+// Low rune — single red @ pair (matches upstream RUNE 20-21 hyper styling)
+Alias[RUNE_LOW]: %PX-0B%%PURPLE%@%BLACK%@ %NAME% %BLACK%@%PURPLE%@
 
 // Craft rune
-Alias[RUNE_CRAFT]: %DOT-0B%%ORANGE%@@@@ %NAME% %ORANGE%@@@@
+Alias[RUNE_CRAFT]: %DOT-0B%%PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@
 
-// Mid rune
-Alias[RUNE_MID]: %DOT-9B%%PX-0B%%DARK_GREEN%@@ %GREEN%@@ %NAME% %GREEN%@@ %DARK_GREEN%@@
+// Mid rune — 2-doublet PURPLE/GREEN alternation
+Alias[RUNE_MID]: %DOT-9B%%PX-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %NAME% %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
 
-// Mid rune Tier 2
-Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%CORAL%@@ %SAGE%@@ %TEAL%@@ %NAME% %TEAL%@@ %SAGE%@@ %CORAL%@@
+// Mid rune Tier 2 — 3-doublet
+Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
 
-// High rune
-Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%@%ORANGE%@%YELLOW%@%GREEN%@%BLUE%@%PURPLE%@ %NAME% %PURPLE%@%BLUE%@%GREEN%@%YELLOW%@%ORANGE%@%RED%@
+// High rune — full triple PURPLE/GREEN with map+border (matches upstream RUNE 26-28 hyper)
+Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
 
-// High rune Tier 2
-Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%@@%ORANGE%@@%YELLOW%@@%GREEN%@@%BLUE%@@%PURPLE%@@ %NAME% %PURPLE%@@%BLUE%@@%GREEN%@@%YELLOW%@@%ORANGE%@@%RED%@@
+// High rune Tier 2 — wider spacing (matches upstream RUNE 30, 33 hyper)
+Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
+
 
 // Magic Item 1 Affix
-Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%YELLOW%x %NAME% %YELLOW%x
+Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%PURPLE%x %NAME% %PURPLE%x
 
 // Magic Item 2 Affix
-Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%RED%x%YELLOW%x %NAME% %YELLOW%x%RED%x
+Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%PURPLE%x%WHITE%x %NAME% %WHITE%x%PURPLE%x
 
 // Rare Item basic
-Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%x %NAME% %ORANGE%x
+Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%SAGE%x %NAME% %SAGE%x
 
 // Rare Item Extra
 Alias[RARE_PLUS]: %DOT-6A%@ %NAME% @
 
 // Rare Item High ilvl
-Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%@%RED%x@ %NAME% %ORANGE%@%RED%x@
+Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%SAGE%x%YELLOW%x %NAME% %YELLOW%x%SAGE%x
 
 // Rare Item Good
-Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%@@%CORAL%@@%RED%@@ %NAME% %RED%@@%CORAL%@@%PURPLE%@@
+Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%SAGE%xX%YELLOW%xX%WHITE%xX %NAME% %WHITE%Xx%YELLOW%Xx%SAGE%Xx
 
 // Rare Item GG
-Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%RED%0%ORANGE%0%YELLOW%0%GREEN%0%BLUE%0%PURPLE%0 %NAME% %PURPLE%0%BLUE%0%GREEN%0%YELLOW%0%ORANGE%0%RED%0
+Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%SAGE%xX%YELLOW%xX%WHITE%xX %NAME% %WHITE%Xx%YELLOW%Xx%SAGE%Xx
 
 // Leveling Tag
 Alias[LEVELING_TAG]: %SAGE%lvling%PX-62%
 
 
-// FACET Item
-Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%@%ORANGE%@%YELLOW%@%GREEN%@%BLUE%@%PURPLE%@ %NAME% %PURPLE%@%BLUE%@%GREEN%@%YELLOW%@%ORANGE%@%RED%@
+// FACET Item — full rainbow + gold name
+Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%@%ORANGE%@%YELLOW%@%GREEN%@%BLUE%@%PURPLE%@ %GOLD%%NAME% %PURPLE%@%BLUE%@%GREEN%@%YELLOW%@%ORANGE%@%RED%@
 
-// Unique Boss Item
-Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%X%ORANGE%X%YELLOW%X%GREEN%X%BLUE%X%PURPLE%X %NAME% %PURPLE%X%BLUE%X%GREEN%X%YELLOW%X%ORANGE%X%RED%X
+// Unique Boss Item — full rainbow + gold name
+Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%X%ORANGE%X%YELLOW%X%GREEN%X%BLUE%X%PURPLE%X %GOLD%%NAME% %PURPLE%X%BLUE%X%GREEN%X%YELLOW%X%ORANGE%X%RED%X
 
-// Unique GG Item
-Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%@%SAGE%@%TEAL%@%GREEN%@%SAGE%@%PURPLE%@ %NAME% %PURPLE%@%SAGE%@%GREEN%@%TEAL%@%SAGE%@%PURPLE%@
+// Unique GG Item — Kassahi-Hyper GG (xX gradient + WHITE accent + PURPLE name) — matches UNID_GG
+Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%xX%RED%xX%ORANGE%xX%YELLOW%xX   %WHITE%• %PURPLE%%NAME%%WHITE% •   %YELLOW%Xx%ORANGE%Xx%RED%Xx%PURPLE%Xx
 
-// Unique Tier3 Item
-Alias[UNI_STAR3_ITEM]: %BORDER-D3%%GOLD%@ @ @ %NAME% %GOLD%@ @ @
+// Unique Tier3 Item — 3-doublet PURPLE-RED-ORANGE + GOLD name (matches UNID_T3)
+Alias[UNI_STAR3_ITEM]: %BORDER-D3%%PURPLE%xX%RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx%PURPLE%Xx
 
-// Unique Tier2 Item
-Alias[UNI_STAR2_ITEM]: %MAP-D3%%GOLD%@ @ %NAME% %GOLD%@ @
+// Unique Tier2 Item — 2-doublet RED-ORANGE + GOLD name (matches UNID_T2)
+Alias[UNI_STAR2_ITEM]: %MAP-D3%%RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx
 
-// Unique Tier1 Item
-Alias[UNI_STAR1_ITEM]: %DOT-D3%%GOLD%@ %NAME% %GOLD%@
+// Unique Tier1 Item — 1-doublet RED + GOLD name (matches UNID_T1)
+Alias[UNI_STAR1_ITEM]: %DOT-D3%%RED%xX %GOLD%%NAME%%RED% Xx
 
-// Unique Tier0 Item
-Alias[UNI_STAR0_ITEM]: %DOT-D3%%GOLD%· %NAME% %GOLD%·
+// Unique Tier0 Item — single LIGHT_GRAY x + GOLD name (matches UNID_T0)
+Alias[UNI_STAR0_ITEM]: %DOT-D3%%LIGHT_GRAY%x %GOLD%%NAME%%LIGHT_GRAY% x
 
 
-// SET GG Item
-Alias[SET_GG_ITEM]: %BORDER-7D%%GREEN%@ @ @ @ %NAME% %GREEN%@ @ @ @
+// SET GG Item — 3 single x PURPLE-RED-DARK_GREEN + GREEN name (matches UNID_SET_GG)
+Alias[SET_GG_ITEM]: %BORDER-7D%%PURPLE%x%RED%x%DARK_GREEN%x   %GREEN%%NAME%%DARK_GREEN%   x%RED%x%PURPLE%x
 
-// SET Tier3 Item
-Alias[SET_TIER3_ITEM]: %MAP-7D%%GREEN%@ @ @ %NAME% %GREEN%@ @ @
+// SET Tier3 Item — 2 single x RED-DARK_GREEN + GREEN name (matches UNID_SET_T3)
+Alias[SET_TIER3_ITEM]: %MAP-7D%%RED%x%DARK_GREEN%x  %GREEN%%NAME%%DARK_GREEN%  x%RED%x
 
-// SET Tier2 Item
-Alias[SET_TIER2_ITEM]: %DOT-7D%%GREEN%@ @ %NAME% %GREEN%@ @
+// SET Tier2 Item — 1 single x RED + GREEN name (matches UNID_SET_T2)
+Alias[SET_TIER2_ITEM]: %DOT-7D%%RED%x %GREEN%%NAME%%RED% x
 
-// SET Tier1 Item
-Alias[SET_TIER1_ITEM]: %DOT-7D%%GREEN%@ %NAME% %GREEN%@
+// SET Tier1 Item — 1 single x LIGHT_GRAY + GREEN name (matches UNID_SET_T1)
+Alias[SET_TIER1_ITEM]: %DOT-7D%%LIGHT_GRAY%x %GREEN%%NAME%%LIGHT_GRAY% x
 
 // RW Bases GG
 Alias[RW_BASE_GG]: %BORDER-9B%%DOT-0E%%SOUNDID-4719% %NAME% %PURPLE%
