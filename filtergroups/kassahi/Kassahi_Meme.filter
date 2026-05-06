@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 6th%CL%Season 13 - build 91%CL%Kassahi - Meme -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 6th%CL%Season 13 - build 92%CL%Kassahi - Meme -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -4183,6 +4183,18 @@ ItemDisplay[!ID CLASS RARE FILTLVL<3 ILVL>84]: %NAME%
 ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %CRAFT_ZERO%//Catch all throwing eth weapons
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %CRAFT_ZERO%//Catch all eth weapons when lower filter level
 //-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+// Kassahi - restore type color for identified UNI/SET items
+//
+// Prepends gold to identified unique items and green to identified set items.
+// Runs BEFORE the stat-info chain in 25-29 so the type color survives the
+// chain — when later rules prepend "stat-info%CL%%NAME%", the running
+// %NAME% already starts with %ORANGE%/%GREEN%, keeping the item name in
+// its expected colour.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[UNI ID]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[SET ID]: %GREEN%%NAME%%CONTINUE%
 //------------------------------DESCRIPTION_INFORMATION------------------------------
 
 
