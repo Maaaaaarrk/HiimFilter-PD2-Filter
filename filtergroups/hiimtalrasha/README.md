@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated May 7th Season 13 - build 95
+## Last updated May 7th Season 13 - build 96
 
 ## Filters
 * Style — TalRasha: All-in-one filter with a TalRasha color theme. [Hiim_TalRasha_Themed.filter]
