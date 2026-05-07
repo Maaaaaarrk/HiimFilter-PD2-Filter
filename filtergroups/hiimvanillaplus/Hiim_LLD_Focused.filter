@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 7th%CL%Season 13 - build 93%CL%HiimFilter - Vanilla - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 7th%CL%Season 13 - build 94%CL%HiimFilter - Vanilla - LLD -}%CONTINUE%
 ItemDisplay[mp5 MAPID=83]:
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -391,7 +391,6 @@ Alias[DEMONIC_INSIGNIA_VALUE]: 0.2
 
 // 4 Star Unique Callouts
 //-----------------------------------------------------------------------------------
-// Deaths Fathom - Dimensional Shard
 // Templars Might or Tyraels Might - Sacred Armor
 // Veil of Steel or Nightwings Veil - Spired Helm
 // Andariels Visage - Demonhead
@@ -408,25 +407,21 @@ Alias[DEMONIC_INSIGNIA_VALUE]: 0.2
 // Spirit Keeper - Earth Spirit
 // Verdungos Hearty Cord - Mithril Coil
 // Soul Drainer - Vambraces
-// Waterwalk - Sharkskin Boots
 
-Alias[4_STAR_UNIQUE]: (obf OR uar OR uhm OR usk OR urn OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR uul OR 7pa OR drd OR umc OR umg OR xvb)
+Alias[4_STAR_UNIQUE]: (uar OR uhm OR usk OR urn OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR uul OR 7pa OR drd OR umc OR umg)
 
 // 4 Star Unique Callouts only when not ETH
 //-----------------------------------------------------------------------------------
 // Griffons Eye - Diadem
 // Herald of Zakarum - Gilded Shield
-// Darkforce - Spawn Bloodlord Skull
 // Ravenlore - Sky Spirit
 // Arachnid Mesh - Spiderweb Sash
-// SHAKO - Harlequin Crest Shako
-// Stormshield - Monarch
 // Spirit Ward - Ward
 // Kiras Guardian - Tiara
 // Arkaines Valor - Balrog Skin
-// Snowclash - Battle Belt
+// Steel Shade - Armet
 
-Alias[4_STAR_NO_ETH_UNIQUE]: (ci3 OR pa9 OR nef OR dre OR ulc OR uap OR uit OR uts OR ci2 OR upl OR ztb)
+Alias[4_STAR_NO_ETH_UNIQUE]: (ci3 OR pa9 OR dre OR ulc OR uts OR ci2 OR upl OR ulm)
 
 // 4 Star Unique Callouts only when ETH
 //-----------------------------------------------------------------------------------
@@ -457,16 +452,11 @@ Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 
 // String of Ears - Demonhide Sash
 // Nosferatus Coil - Vampirefang Belt
 // Steelrend - Ogre Gauntlets
-// The Gavel Of Pain - Martel de Fer
-// Horizons Tornado or Stormlash - Scourge
 // Stormspire - Giant Thresher
-// Arm of King Leoric - Tomb Wand
 // Blackhand Key - Grave Wand
-// Windforce - Hydra Bow
 // War Traveler - Battle Boots
 // Lightsabre or Azurewrath - Phase Blade
 // Draculs Grasp - Vampirebone Gloves
-// Medusas Gaze - Aegis
 // Steel Pillar - War Pike
 // War Fist - Whispering Mirage
 // Vampire Gaze - Grim Helm
@@ -477,24 +467,23 @@ Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 
 // Doombringer - Champion Sword
 // Guardian Angel - Templar Coat
 // Skyfall - Vortex Orb
-// Occultist - Crusader Gauntlets
 // Elite Bolts
 // Bloodtree Stump - War Club (non-ETH)
+// Waterwalk - Sharkskin Boots
 
-Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR uhg OR 9gm OR 7fl OR 7wc OR 9bw OR 9gw OR 6lw OR xtb OR 7cr OR uvg OR uow OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 7gm OR 7b7 OR xlt OR obe OR utg OR cqv3 OR 9m9)
+Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR uhg OR 7wc OR 9gw OR xtb OR 7cr OR uvg OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 7gm OR 7b7 OR xlt OR obe OR cqv3 OR 9m9 OR xvb)
 
 // 3 Star Unique Callouts when not eth
 //-----------------------------------------------------------------------------------
 // Thundergods Vigor - War Belt
-// Razortail - Sharkskin Belt
-// Steel Shade - Armet
-// Giant Skull - Bone Visage
 // Halaberds Reign - Conqueror Crown
-// Boneflame - Succubus Skull
 // Martyrdom - Overseer Skull
-// Denmother - Sun Spirit
+// SHAKO - Harlequin Crest Shako
+// Stormshield - Monarch
+// Darkforce - Spawn Bloodlord Skull
+// Snowclash - Battle Belt
 
-Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR zvb OR ulm OR uh9 OR bae OR nee OR ned OR drc)
+Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR bae OR ned OR uap OR uit OR nef OR ztb)
 
 // 2 Star Unique Callouts
 //-----------------------------------------------------------------------------------
@@ -535,8 +524,19 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR zvb OR ulm OR uh9 OR bae OR nee OR ned OR d
 // Thunderstroke - Matriarchal Javelin (non-ETH)
 // Elite Arrows
 // Exceptional Arrows
+// Deaths Fathom - Dimensional Shard
+// Medusas Gaze - Aegis
+// The Gavel Of Pain - Martel de Fer (non-ETH)
+// Horizons Tornado or Stormlash - Scourge
+// Arm of King Leoric - Tomb Wand
+// Windforce - Hydra Bow
+// Occultist - Crusader Gauntlets
+// Boneflame - Succubus Skull
+// Razortail - Sharkskin Belt
+// Giant Skull - Bone Visage
+// Denmother - Sun Spirit
 
-Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR xmb OR tgl OR xvg OR 7bl OR 9wn OR 7bw OR xld OR umb OR 7bt OR pae OR xtg OR 7wa OR 8ws OR obc OR uhb OR bad OR 9s8 OR dra OR 7ls OR pac OR 7s8 OR neg OR pab OR uui OR xsh OR 9wc OR ung OR 8ls OR 8cb OR 8rx OR 8mx OR amf OR aqv3 OR aqv2)
+Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR xmb OR tgl OR xvg OR 7bl OR 9wn OR 7bw OR xld OR umb OR 7bt OR pae OR xtg OR 7wa OR 8ws OR obc OR uhb OR bad OR 9s8 OR dra OR 7ls OR pac OR 7s8 OR neg OR pab OR uui OR xsh OR 9wc OR ung OR 8ls OR 8cb OR 8rx OR 8mx OR amf OR aqv3 OR aqv2 OR obf OR uow OR 9gm OR 7fl OR 9bw OR 6lw OR utg OR nee OR zvb OR uh9 OR drc)
 
 // 1 Star Unique Callouts
 //-----------------------------------------------------------------------------------
