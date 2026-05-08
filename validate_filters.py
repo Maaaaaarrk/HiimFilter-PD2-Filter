@@ -263,8 +263,12 @@ def validate_output(output: str, filename, lineno, issues, defined_aliases):
     # --- Check %...% tokens with brace-depth tracking ---
     # Only validate tokens that look like keyword attempts (all-uppercase, no spaces).
     # Tokens with spaces / mixed case are literal '%' signs used in tooltip text.
-    brace_depth = 0
-    pos = 0
+    # Also count %NAME% per bucket (main output vs. tooltip {}) — duplicates in
+    # either bucket are almost always a copy-paste bug.
+    brace_depth      = 0
+    pos              = 0
+    name_count_main  = 0   # %NAME% occurrences outside tooltip braces
+    name_count_tip   = 0   # %NAME% occurrences inside tooltip braces
     while pos < len(output):
         ch = output[pos]
         if ch == '{':
@@ -279,6 +283,11 @@ def validate_output(output: str, filename, lineno, issues, defined_aliases):
                 break
             token = output[pos + 1:end]
             if _RE_KEYWORD.match(token):
+                if token == 'NAME':
+                    if brace_depth > 0:
+                        name_count_tip += 1
+                    else:
+                        name_count_main += 1
                 if token == 'CONTINUE' and brace_depth > 0:
                     issues.append(Issue(filename, lineno, 'ERROR',
                         "%CONTINUE% must appear outside tooltip braces {}"))
@@ -288,6 +297,16 @@ def validate_output(output: str, filename, lineno, issues, defined_aliases):
             pos = end + 1
         else:
             pos += 1
+
+    # --- Flag duplicate %NAME% per bucket ---
+    if name_count_main > 1:
+        issues.append(Issue(filename, lineno, 'WARNING',
+            f"%NAME% appears {name_count_main}x in the main output "
+            f"(outside tooltip braces) — likely a copy-paste bug"))
+    if name_count_tip > 1:
+        issues.append(Issue(filename, lineno, 'WARNING',
+            f"%NAME% appears {name_count_tip}x inside the tooltip {{}} "
+            f"— likely a copy-paste bug"))
 
     # --- Check balanced tooltip braces ---
     opens  = output.count('{')
