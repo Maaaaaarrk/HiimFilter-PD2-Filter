@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 104%CL%HiimFilter - Hyper - Necro - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 105%CL%HiimFilter - Hyper - Necro - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -3914,13 +3914,9 @@ ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>169 STAT360=0) OR (S
 ItemDisplay[SHOP MAG BUYPRICE<60000 FILTLVL>2 FILTLVL<8 (CHEST OR STAFF OR SCEPTER OR WAND OR SIN OR CLUB OR bhm OR xh9 OR bsh OR xsh OR lbt OR xlb OR vbt OR xvb)]: %NAME%%SAGE%{%SAGE%Affordable Crafting Base%CL%%NAME%}%CONTINUE%
 
 // LLD - Wands
-ItemDisplay[WAND TABSK17>1 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD WAND%RED%   ***}
-ItemDisplay[WAND CLSK2>0 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
-ItemDisplay[WAND TABSK17>0 FCR>10 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
-ItemDisplay[WAND TABSK17>1 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: *   %NAME% [LLD]   *{%GREEN%Cheap LLD WAND}
-ItemDisplay[WAND SHOP CLSK2>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
-ItemDisplay[WAND SHOP TABSK17>0 (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
-ItemDisplay[WAND SHOP TABSK17>1 (SK83>1 OR SK84>1 OR SK92>1 OR SK93>1 OR SK74>1) LVLREQ<31]: %NAME% [LLD]{%GREEN%Cheap LLD WAND}%CONTINUE%
+ItemDisplay[WAND TABSK17>1 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD WAND%RED%   ***}
+ItemDisplay[WAND CLSK2>0 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
+ItemDisplay[WAND TABSK17>0 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}
 
 //ItemDisplay[(WAND OR CL4) TABSK18>1 FCR>10 (SK85>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD Gol%RED%   ***}
 //ItemDisplay[(WAND OR CL4) TABSK18>1 SK66>0 SK367>0 SK85>2 LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD Gol%RED%   ***}
