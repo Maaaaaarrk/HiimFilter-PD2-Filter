@@ -1,9 +1,15 @@
 //-----------------------------------------------------------------------------------
-// Kassahi Normal — item ground annotations
-// Mirrors upstream Kassahi's visual grammar: filled • dots, warm PURPLE→RED→ORANGE→YELLOW
-// gradient for uniques/runes, RED→DARK_GREEN for sets, SAGE→YELLOW→WHITE for rares,
-// PURPLE/WHITE for magic. Tier scaling = number of dots flanking the name.
+// Kassahi normal — full alias set (covers Regular-Normal, Meme, Mystery-Normal)
+//
+// Merged from the legacy two-file layout:
+//   * `03-alias-kassahi-general-normal` (GEN_*, BOSS_*, RUNE_*, MAG_*, RARE_*,
+//     UNI_*, SET_*, FACET_*, RW_BASE_*, CRAFT_*, etc. — visuals shared by this
+//     variant's family)
+//   * `03-alias-kassahi-normal` (GG_* item-specific aliases, MAIN_DOT,
+//     PD2_MATS, plus the rvl rename and gem name re-formatting)
 //-----------------------------------------------------------------------------------
+
+// === Set 2: shared visual-family aliases (general) ===
 
 // General item — orange triplet
 Alias[GEN_ITEM]: %ORANGE%••• %NAME% %ORANGE%•••
@@ -170,3 +176,62 @@ ItemDisplay[gly OR glys]: %YELLOW%F. Topaz%CONTINUE%
 ItemDisplay[gpy OR gpys]: %YELLOW%• P. Topaz •%CONTINUE%
 ItemDisplay[skl OR skls]: %CORAL%· %LIGHT_GRAY%F. Skull %CORAL%·%CONTINUE%
 ItemDisplay[skz OR skzs]: %CORAL%• • %LIGHT_GRAY%P. Skull %CORAL%• •%CONTINUE%
+
+
+// === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
+
+// imrn
+Alias[GG_IMRN]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%PURPLE%••%RED%•  %RED%%NAME%%RED%  •%PURPLE%••
+// lbox
+Alias[GG_LBOX]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%RED%•%ORANGE%•%YELLOW%•     %RED%%NAME%%YELLOW%     •%ORANGE%•%RED%•
+// lsvl llmr
+Alias[GG_GG]: %DOT-0D%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PURPLE%•%RED%•%ORANGE%•%YELLOW%•%WHITE%•               %RED%%NAME%%WHITE%               •%YELLOW%•%ORANGE%•%RED%•%PURPLE%•
+// rkey
+Alias[GG_RKEY]: %DOT-0D%%MAP-21%%BORDER-0A%%SOUNDID-4719%%RED%•%ORANGE%•%YELLOW%•     %RED%%NAME%%YELLOW%     •%ORANGE%•%RED%•
+// rtp
+Alias[GG_RTP]: %MAP-0A%%SOUNDID-4719%%RED%•%ORANGE%•%YELLOW%•     %RED%%NAME%%YELLOW%     •%ORANGE%•%RED%•
+// rid
+Alias[GG_RID]: %MAP-0A%%SOUNDID-4719%%RED%•%ORANGE%•%YELLOW%•          %RED%%NAME%%YELLOW%          •%ORANGE%•%RED%•
+// PD2 Shards
+
+Alias[MAIN_DOT]: •
+Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
+
+// Rejuves
+ItemDisplay[rvl]: %PURPLE%° %WHITE%Juice %PURPLE%°%CONTINUE%
+
+
+// === Merged from 03-alias-kassahi-unid-normal ===
+// (UNID-tier display aliases for unidentified uniques/sets)
+
+
+
+
+//------------------------------UNID_ITEM_ALIAS_HYPER------------------------------
+
+
+
+
+// UNIQUES
+// CHARMS
+Alias[UNICHARM]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
+// GG
+Alias[UNID_GG]: %PURPLE%•%RED%•%ORANGE%•%YELLOW%•     %WHITE%• %PURPLE%%NAME%%WHITE% •     %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
+// TIER 3
+Alias[UNID_T3]: %PURPLE%•%RED%•%ORANGE%•   %GOLD%%NAME%%ORANGE%   •%RED%•%PURPLE%•
+// TIER 2
+Alias[UNID_T2]: %RED%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%RED%•
+// TIER 1
+Alias[UNID_T1]: %RED%• %GOLD%%NAME%%RED% •
+// TIER 0
+Alias[UNID_T0]: %LIGHT_GRAY%• %GOLD%%NAME%%LIGHT_GRAY% •
+
+// SETS
+// GG
+Alias[UNID_SET_GG]: %PURPLE%•%RED%•%DARK_GREEN%•   %GREEN%%NAME%%DARK_GREEN%   •%RED%•%PURPLE%•
+// TIER 3
+Alias[UNID_SET_T3]: %RED%•%DARK_GREEN%•  %GREEN%%NAME%%DARK_GREEN%  •%RED%•
+// TIER 2
+Alias[UNID_SET_T2]: %RED%• %GREEN%%NAME%%RED% •
+// TIER 1
+Alias[UNID_SET_T1]: %LIGHT_GRAY%• %GREEN%%NAME%%LIGHT_GRAY% •

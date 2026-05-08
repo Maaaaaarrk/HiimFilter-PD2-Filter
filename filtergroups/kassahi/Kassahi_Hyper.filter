@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 106%CL%Kassahi - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 113%CL%Kassahi - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -89,9 +89,8 @@ ItemDisplay[STAT206>0]: %NAME%{%NAME%}
 ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]{%NAME%}// In case you drop a piece of gear on potions only show all desc slammed gear
 ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]{%NAME%}// In case you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%{%NAME%}// In case you drop a piece of gear on potions only show all runeword gear
-// Hide EVERYTHING ELSE
-//ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
-ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
+// Hide EVERYTHING ELSE — explicit include list (rvl/rvs/runes/gems/gold/potions/etc. excluded by NOT being in the list)
+ItemDisplay[FILTLVL>10 (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR jew OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -102,11 +101,17 @@ ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
 ItemDisplay[GOLD<5000 CLVL>79]:
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
-// Kassahi Hyper — item ground annotations
-// Mirrors upstream Kassahi-Hyper's visual grammar: PURPLE/GREEN @@ doublets separated
-// by %BLACK%@ for runes/general; xX doublets for unique tiers; x for set tiers.
-// Tier scaling = number of doublets flanking the name.
+// Kassahi hyper — full alias set (covers Regular-Hyper, Meme-Hyper, Mystery-Hyper)
+//
+// Merged from the legacy two-file layout:
+//   * `03-alias-kassahi-general-hyper` (GEN_*, BOSS_*, RUNE_*, MAG_*, RARE_*,
+//     UNI_*, SET_*, FACET_*, RW_BASE_*, CRAFT_*, etc. — visuals shared by this
+//     variant's family)
+//   * `03-alias-kassahi-hyper` (GG_* item-specific aliases, MAIN_DOT,
+//     PD2_MATS, plus the rvl rename and gem name re-formatting)
 //-----------------------------------------------------------------------------------
+
+// === Set 2: shared visual-family aliases (general) ===
 
 // General item — orange @@ triplet
 Alias[GEN_ITEM]: %ORANGE%@@%BLACK%@ %ORANGE%@@%BLACK%@ %NAME% %BLACK%@%ORANGE%@@ %BLACK%@%ORANGE%@@
@@ -275,7 +280,7 @@ ItemDisplay[skl OR skls]: %CORAL%· %LIGHT_GRAY%F. Skull %CORAL%·%CONTINUE%
 ItemDisplay[skz OR skzs]: %CORAL%@ @ %LIGHT_GRAY%P. Skull %CORAL%@ @%CONTINUE%
 
 
-//------------------------------ALIAS NORMAL------------------------------
+// === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
 
 // imrn
 Alias[GG_IMRN]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%GREEN%@@%BLACK%@ %PURPLE%@%BLACK%@  %RED%%NAME%%BLACK%  @%PURPLE%@ %BLACK%@%GREEN%@@
@@ -290,13 +295,48 @@ Alias[GG_RTP]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%GREEN%OO%BLACK%O %PURPL
 // rid
 Alias[GG_RID]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PURPLE%OO%BLACK%O %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO %BLACK%O%PURPLE%OO
 // PD2 Shards
-Alias[WSS_SHARD]: %PURPLE%•%RED%•%CORAL%•   %CORAL% %NAME% %CORAL%   •%RED%•%PURPLE%•
 
 Alias[MAIN_DOT]: •
 Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 
 // Rejuves
 ItemDisplay[rvl]: %PURPLE%° %WHITE%Juice %PURPLE%°%CONTINUE%
+
+
+// === Merged from 03-alias-kassahi-unid-hyper ===
+// (UNID-tier display aliases for unidentified uniques/sets)
+
+
+
+
+//------------------------------UNID_ITEM_ALIAS_HYPER------------------------------
+
+
+
+
+// UNIQUES
+// CHARMS
+Alias[UNICHARM]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
+// GG
+Alias[UNID_GG]: %PURPLE%xX%RED%xX%ORANGE%xX%YELLOW%xX   %WHITE%• %PURPLE%%NAME%%WHITE% •   %YELLOW%Xx%ORANGE%Xx%RED%Xx%PURPLE%Xx
+// TIER 3
+Alias[UNID_T3]: %PURPLE%xX%RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx%PURPLE%Xx
+// TIER 2
+Alias[UNID_T2]: %RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx
+// TIER 1
+Alias[UNID_T1]: %RED%xX %GOLD%%NAME%%RED% Xx
+// TIER 0
+Alias[UNID_T0]: %LIGHT_GRAY%x %GOLD%%NAME%%LIGHT_GRAY% x
+
+// SETS
+// GG
+Alias[UNID_SET_GG]: %PURPLE%x%RED%x%DARK_GREEN%x   %GREEN%%NAME%%DARK_GREEN%   x%RED%x%PURPLE%x
+// TIER 3
+Alias[UNID_SET_T3]: %RED%x%DARK_GREEN%x  %GREEN%%NAME%%DARK_GREEN%  x%RED%x
+// TIER 2
+Alias[UNID_SET_T2]: %RED%x %GREEN%%NAME%%RED% x
+// TIER 1
+Alias[UNID_SET_T1]: %LIGHT_GRAY%x %GREEN%%NAME%%LIGHT_GRAY% x
 
 
 
@@ -336,38 +376,6 @@ Alias[FMT_TAG_ORG_SM]: %NAME% %ORANGE%·
 
 // Blame Onion flavor-text callout (issue #55)
 Alias[BLAME_ONION]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e     %GOLD%%NAME%%PURPLE%     O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
-
-
-
-
-//------------------------------UNID_ITEM_ALIAS_HYPER------------------------------
-
-
-
-
-// UNIQUES
-// CHARMS
-Alias[UNICHARM]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
-// GG
-Alias[UNID_GG]: %PURPLE%xX%RED%xX%ORANGE%xX%YELLOW%xX   %WHITE%• %PURPLE%%NAME%%WHITE% •   %YELLOW%Xx%ORANGE%Xx%RED%Xx%PURPLE%Xx
-// TIER 3
-Alias[UNID_T3]: %PURPLE%xX%RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx%PURPLE%Xx
-// TIER 2
-Alias[UNID_T2]: %RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx
-// TIER 1
-Alias[UNID_T1]: %RED%xX %GOLD%%NAME%%RED% Xx
-// TIER 0
-Alias[UNID_T0]: %LIGHT_GRAY%x %GOLD%%NAME%%LIGHT_GRAY% x
-
-// SETS
-// GG
-Alias[UNID_SET_GG]: %PURPLE%x%RED%x%DARK_GREEN%x   %GREEN%%NAME%%DARK_GREEN%   x%RED%x%PURPLE%x
-// TIER 3
-Alias[UNID_SET_T3]: %RED%x%DARK_GREEN%x  %GREEN%%NAME%%DARK_GREEN%  x%RED%x
-// TIER 2
-Alias[UNID_SET_T2]: %RED%x %GREEN%%NAME%%RED% x
-// TIER 1
-Alias[UNID_SET_T1]: %LIGHT_GRAY%x %GREEN%%NAME%%LIGHT_GRAY% x
 
 //-----------------------------------------------------------------------------------
 // Economy estimated values — update these when economy shifts
@@ -483,6 +491,39 @@ Alias[TRANG_OUL_JAWBONE_VALUE]: 0.05
 Alias[FLESH_OF_MALIC_VALUE]: 0.3
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.05
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.2
+//-----------------------------------------------------------------------------------
+// Kassahi PD2-item display aliases (Kassahi-only items not in Hiim's shared rules).
+//
+// Each alias references %MAIN_DOT%, which is defined per Kassahi variant in the
+// 03-alias-kassahi-{normal,hyper,luxe,mystery-*}.filter files (• for normal/hyper/
+// mystery, O for Luxe). That gives variant-specific decoration without duplicating
+// the alias body across five files.
+//
+// Used by `05-utility/02-Kassahi_pd2items[Kassahi].filter`.
+//-----------------------------------------------------------------------------------
+
+
+// Token of Absolution — literal "Token" label, no %NAME% (boss-room entry)
+Alias[TOKEN_DISPLAY]: %RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%
+
+// Horadrim Scarab — group-content material
+Alias[HORADRIC_SCARAB]: %GOLD% %NAME%
+
+// Craft Infusions — one alias per recipe (each is a Pre-made craft recipe with a color motif)
+//   crfb = Blood       (red/coral)        — life leech, raw HP, edmg
+//   crfc = Caster      (blue/purple)      — fcr, mana, mpk
+//   crfs = Safety      (dark/light green) — pdr, edef, resist
+//   crfh = Hitpower    (teal/blue)        — fhr, fbr, ctc fnova
+//   crfv = Vampiric    (gold/orange)      — ml, plr, dem/und
+//   crfu = Bountiful   (sage/yellow)      — mf, lr
+//   crfp = Brilliant   (light gray/white) — astat, ias, ares
+Alias[CRAFT_BLOOD]:     %CORAL%%MAIN_DOT%%RED%%MAIN_DOT%%MAIN_DOT%   %NAME%   %RED%%MAIN_DOT%%MAIN_DOT%%CORAL%%MAIN_DOT%
+Alias[CRAFT_CASTER]:    %BLUE%%MAIN_DOT%%PURPLE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %PURPLE%%MAIN_DOT%%MAIN_DOT%%BLUE%%MAIN_DOT%
+Alias[CRAFT_SAFETY]:    %DARK_GREEN%%MAIN_DOT%%GREEN%%MAIN_DOT%%MAIN_DOT%   %NAME%   %GREEN%%MAIN_DOT%%MAIN_DOT%%DARK_GREEN%%MAIN_DOT%
+Alias[CRAFT_HITPOWER]:  %TEAL%%MAIN_DOT%%BLUE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %BLUE%%MAIN_DOT%%MAIN_DOT%%TEAL%%MAIN_DOT%
+Alias[CRAFT_VAMPIRIC]:  %GOLD%%MAIN_DOT%%ORANGE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %ORANGE%%MAIN_DOT%%MAIN_DOT%%GOLD%%MAIN_DOT%
+Alias[CRAFT_BOUNTIFUL]: %SAGE%%MAIN_DOT%%YELLOW%%MAIN_DOT%%MAIN_DOT%   %NAME%   %YELLOW%%MAIN_DOT%%MAIN_DOT%%SAGE%%MAIN_DOT%
+Alias[CRAFT_BRILLIANT]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %WHITE%%MAIN_DOT%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%
 //-----------------------------------------------------------------------------------
 // Star Ratings
 //-----------------------------------------------------------------------------------
@@ -2654,73 +2695,42 @@ ItemDisplay[gpws]: %NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%C
 ItemDisplay[skzs]: %NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
 ItemDisplay[(GEM=4 OR GEM=5)]: %NAME%
 
+//-----------------------------------------------------------------------------------
+// Kassahi-only PD2 items
+//
+// Items also covered by Hiim's `03-PD2_items[ALL]` / `04-Ubermats[ALL]` (which use
+// alias-driven decoration like %GEN_ITEM%, %BOSS_MAT%, %BOSS_ENTRY%, %TOKEN_PARTS%,
+// %UBER_KEYS%) are NOT redefined here — they render with Kassahi-variant styling
+// because each Kassahi variant's `03-alias-kassahi-general-*.filter` defines those
+// aliases with Kassahi visuals.
+//
+// Display aliases for the items below (TOKEN_DISPLAY, HORADRIC_SCARAB, CATALYST_*)
+// are defined in `02-alias/04-alias-kassahi-pd2items[Kassahi].filter`.
+//-----------------------------------------------------------------------------------
 
 
+// Token of Absolution — literal "Token" label, no %NAME%
+ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%TOKEN_DISPLAY%{%GOLD%Wherever You Are is The Entry Point.%NL%}
 
-
-
-//------------------------------PROJECT_DIABLO_2_ULTRA_RARE------------------------------
-
-
-
-
-
-ItemDisplay[lbox]: %GG_LBOX%{%NAME%}%CONTINUE%
-ItemDisplay[imrn]: %GG_IMRN%{%NAME%}%CONTINUE%
-ItemDisplay[lsvl]: %GG_GG%{%GRAY%%TAN%Cube: %ORANGE%VoL, Bis Item %WHITE%to Make it Eth%NL%%TAN%Drops From: %RED%Anywhere}
-ItemDisplay[llmr]: %GG_GG%{%GRAY%(Mirrored Items Can Never be Modified Again)%NL%%TAN%Cube: %ORANGE%LM, Bis Item %WHITE%to Make a Duplicate Item%NL%%TAN%Drops From: %RED%Anywhere}
-ItemDisplay[rkey]: %GG_RKEY%{%NAME%}
-ItemDisplay[rtp]: %GG_RTP%{%WHITE%Gives You Infinite %BLUE%TPs}
-ItemDisplay[rid]: %GG_RID%{%WHITE%Gives You Infinite %RED%IDs}
-
-
-//------------------------------PROJECT_DIABLO_2_&_END_GAME_ITEMS------------------------------
-
-
-
-// ESSENCES & TOKEN
-ItemDisplay[fed]: %DOT-0A%%SOUNDID-4714%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[(tes OR ceh OR bet OR fed)]: %DOT-0A%%PD2_MATS%{%NAME%}%CONTINUE%
-ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%{%GOLD%Wherever You Are is The Entry Point.%NL%}
-// MINI UBER KEYS
-ItemDisplay[(pk1 OR pk2 OR pk3)]: %DOT-0A%%SOUNDID-4715%%PD2_MATS%{%NAME%}%CONTINUE%
-// ORGAN & UBER ITEMS
-ItemDisplay[(mbr OR dhn OR bey OR std)]: %DOT-0A%%SOUNDID-4715%%PD2_MATS%{%NAME%}%CONTINUE%
-// EARS
+// Ears
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
-ItemDisplay[ubtm]: %MAP-0A%%SOUNDID-4715%%LIGHT_GRAY%%MAIN_DOT%%RED%%MAIN_DOT%  %NAME%  %RED%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%LIGHT_GRAY%(You Get 3 Tps in Town Once u Enter Ubers)%CL%%NL%%RED%fres, %BLUE%cres:%WHITE%150, %YELLOW%lres:%WHITE%125%CL%%DARK_GREEN%Recommended Stats:%NL%}
+
+// Hellfire Torch — Annihilus → Torch tooltip
 ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: %WHITE%Torch, Key, to}
-// UBER ANCIENTS
-ItemDisplay[(ubaa OR ubab OR ubac)]: %PX-60%%SOUNDID-4715%%PD2_MATS%{%NAME%}%CONTINUE%
-ItemDisplay[uba]: %MAP-0A%%SOUNDID-4715%%LIGHT_GRAY%%MAIN_DOT%%RED%%MAIN_DOT%  %NAME%  %RED%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%LIGHT_GRAY%(You Cannot Make TPs Once You're Inside)}
-// DCLONE ITEMS
-ItemDisplay[(dcho OR dcso OR dcbl)]: %PX-60%%MAP-0A%%SOUNDID-4715%%PD2_MATS%{%NAME%}%CONTINUE%
-ItemDisplay[dcma]: %MAP-0A%%SOUNDID-4715%%LIGHT_GRAY%%MAIN_DOT%%RED%%MAIN_DOT%  %NAME%  %RED%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%LIGHT_GRAY%(+Minions & Mercs Die on Entering)%NL%(You Cannot Make TPs Once You're Inside)%CL%%NL%%ORANGE%T0:%WHITE%50%%GOLD%pdr, %WHITE%90%RED%mfr, %WHITE%2%GOLD%Dwarf %CL%%DARK_GREEN%Recommended Stats:%NL%}
-// RATHMA ITEMS
-ItemDisplay[(rtmo OR rtmv OR cm2f)]: %PX-60%%MAP-0A%%SOUNDID-4715%%PD2_MATS%{%NAME%}%CONTINUE%
-ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
-ItemDisplay[rtma]: %MAP-0A%%SOUNDID-4715%%LIGHT_GRAY%%MAIN_DOT%%RED%%MAIN_DOT%  %NAME%  %RED%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%LIGHT_GRAY%(+Minions & Mercs Die on Entering)%NL%(You Cannot Make TPs Once You're Inside)%CL%%NL%%ORANGE%T1:%WHITE%119, %ORANGE%T2:%WHITE%123%CL%%WHITE%175%GREEN%plr, %WHITE%90%GREEN%mpr, %WHITE%85+%BLUE%mcr, %WHITE%85+%RED%mfr%CL%%ORANGE%T0:%RED%fres, %BLUE%cres, %GREEN%pres:%WHITE%115%CL%%DARK_GREEN%Recommended Stats:%NL%}
-// LUCION ITEMS
-ItemDisplay[(lucb OR lucc OR lucd)]: %PX-60%%MAP-0A%%SOUNDID-4715%%PD2_MATS%{%NAME%}%CONTINUE%
-ItemDisplay[luca]: %MAP-0A%%SOUNDID-4715%%LIGHT_GRAY%%MAIN_DOT%%RED%%MAIN_DOT%  %NAME%  %RED%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%LIGHT_GRAY%(+Minions & Mercs Die on Entering)%NL%(You Cannot Make TPs Once You're Inside)%CL%%NL%%GOLD%High %WHITE%Def, %GOLD%Max %WHITE%Block%CL%%ORANGE%T0:%WHITE%50%%GOLD%pdr, %WHITE%90%YELLOW%mlr, %GOLD%Wisp %CL%%DARK_GREEN%Recommended Stats:%NL%}
-// PROJECT DIABLO 2 ITEMS
-ItemDisplay[wss]: %WSS_SHARD%{%NAME%}%CONTINUE%
-ItemDisplay[iwss]: %WSS_SHARD%{%NAME%}%CONTINUE%
-ItemDisplay[lbox]: %DOT-0D%%MAP-21%%BORDER-0A%%SOUNDID-4719%%RED%%NAME%{%WHITE%Armor: 1-2, 1h Weapon: 1-2, 2h Weapon: 2-4%NL%%WHITE%Possible Sockets:}%CONTINUE%
-ItemDisplay[lpp]: %MAP-0A%%SOUNDID-4715%%GOLD%%NAME%{%GRAY%(Gray/White/Magic/Rare/Crafted)%NL%%WHITE%Armor: 1-2, 1h Weapon: 1-2, 2h Weapon: 2-4%NL%%WHITE%Possible Sockets:}%CONTINUE%
-ItemDisplay[lpp]: %PD2_MATS%{%NAME%}%CONTINUE%
-ItemDisplay[imrn]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%%NAME%{%RED%IT WILL GET RID OF ANNIVERSARY SKIN%CL%DO NOT USE Demonic Cube ON THE ANNIVERSARY ITEMS%CL%%NAME%}%CONTINUE%
-ItemDisplay[(jewf OR imra OR rera OR scou OR upma OR upmp OR fort OR irma OR irra OR rrra OR urma)]: %MAP-68%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%GOLD%%NAME%{%GRAY%(These Are Intended For Groups)%NL%}%CONTINUE%
+
+// Horadrim Scarabs
+ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+// Craft Infusions (pre-made craft recipes)
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-68%%SOUNDID-4715%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[crfb]: %CORAL%%MAIN_DOT%%RED%%MAIN_DOT%%MAIN_DOT%   %NAME%   %RED%%MAIN_DOT%%MAIN_DOT%%CORAL%%MAIN_DOT%{%NAME%}%CONTINUE%
-ItemDisplay[crfc]: %BLUE%%MAIN_DOT%%PURPLE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %PURPLE%%MAIN_DOT%%MAIN_DOT%%BLUE%%MAIN_DOT%{%NAME%}%CONTINUE%
-ItemDisplay[crfs]: %DARK_GREEN%%MAIN_DOT%%GREEN%%MAIN_DOT%%MAIN_DOT%   %NAME%   %GREEN%%MAIN_DOT%%MAIN_DOT%%DARK_GREEN%%MAIN_DOT%{%NAME%}%CONTINUE%
-ItemDisplay[crfh]: %TEAL%%MAIN_DOT%%BLUE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %BLUE%%MAIN_DOT%%MAIN_DOT%%TEAL%%MAIN_DOT%{%NAME%}%CONTINUE%
-ItemDisplay[crfv]: %GOLD%%MAIN_DOT%%ORANGE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %ORANGE%%MAIN_DOT%%MAIN_DOT%%GOLD%%MAIN_DOT%{%NAME%}%CONTINUE%
-ItemDisplay[crfu]: %SAGE%%MAIN_DOT%%YELLOW%%MAIN_DOT%%MAIN_DOT%   %NAME%   %YELLOW%%MAIN_DOT%%MAIN_DOT%%SAGE%%MAIN_DOT%{%NAME%}%CONTINUE%
-ItemDisplay[crfp]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %WHITE%%MAIN_DOT%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%NAME%}%CONTINUE%
+ItemDisplay[crfb]: %CRAFT_BLOOD%{%NAME%}%CONTINUE%      // Blood — life leech / edmg
+ItemDisplay[crfc]: %CRAFT_CASTER%{%NAME%}%CONTINUE%     // Caster — fcr / mana
+ItemDisplay[crfs]: %CRAFT_SAFETY%{%NAME%}%CONTINUE%     // Safety — pdr / resist
+ItemDisplay[crfh]: %CRAFT_HITPOWER%{%NAME%}%CONTINUE%   // Hitpower — fhr / ctc fnova
+ItemDisplay[crfv]: %CRAFT_VAMPIRIC%{%NAME%}%CONTINUE%   // Vampiric — ml / plr
+ItemDisplay[crfu]: %CRAFT_BOUNTIFUL%{%NAME%}%CONTINUE%  // Bountiful — mf / lr
+ItemDisplay[crfp]: %CRAFT_BRILLIANT%{%NAME%}%CONTINUE%  // Brilliant — astat / ias
 
 
 
@@ -3136,282 +3146,320 @@ ItemDisplay[pk3]: %MAP-62%%SOUNDID-4721%%UBER_KEYS%{%TAN%Key of Destruction %WHI
 ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%SOUNDID-4721%%UBER_KEYS%{%ORANGE%Uber Izual %WHITE%- Furnace of Pain - Mephisto's Brain%CL%%ORANGE%Uber Duriel %WHITE%- Forgotten Sands - Baal's Eye%CL%%ORANGE%Lilith %WHITE%- Matron's Den - Diablo's Horn%CL%%WHITE%to create %RED%Uber Tristram %WHITE%Entry%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the 3 Organs together}
 ItemDisplay[ubtm]: %MAP-A9%%SOUNDID-4721%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristram - Uber bosses fight}
 //-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
-// MAPS
-//-----------------------------------------------------------------------------------
-// Map Rolling Items
-ItemDisplay[fort]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a %GOLD%Fortified %WHITE%Map}
-ItemDisplay[imma]://Angelic useless Normal -> Blue map
-ItemDisplay[imra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Jewel %WHITE%+ %ORANGE%Thul [10]+ %WHITE%to make a %YELLOW%Rare Map}
-ItemDisplay[rera]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
-ItemDisplay[scou]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Any Map to make a White Map}
-ItemDisplay[upma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Gem to make a %YELLOW%Rare Map}
-ItemDisplay[irma FILTLVL>6]://Angelic useless Normal -> Blue map
-ItemDisplay[irma FILTLVL<5]: %MAP-4A%%NAME%//Infused Arcane Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %BLUE%Magic Map}
-ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O{%NAME%}
-ItemDisplay[irra]: %MAP-4A%%NAME%//Infused Zakarum Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map}
-ItemDisplay[urma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Angelic Orb
-ItemDisplay[rrra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map -> %WHITE%to make a new %YELLOW%Rare Map} //Infused Horadric Orb
-ItemDisplay[upmp]: %NAME% %ORANGE%*//{%WHITE%3 x Map + %GOLD%Orb%CL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
-ItemDisplay[scrb]: %MAP-4A%%BOSS_MAT%%CONTINUE%{%NAME%}
-ItemDisplay[std]: %DOT-9D%%GEN_TOP_RARE%{%NAME%}
-
-// EARS
-ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%BOSS_MAT%{%NAME%}
-
-// Map Tier Tags
-ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
-ItemDisplay[MAPTIER=2]: %YELLOW%* [T2] %CONTINUE%
-ItemDisplay[MAPTIER=3]: %ORANGE%* [T3] %CONTINUE%
-ItemDisplay[MAPTIER=4]: %RED%* [T4] %CONTINUE%
-ItemDisplay[(MAPTIER=5) !ID]: %GOLD%* * * * [U] %CONTINUE%
-ItemDisplay[(MAPTIER=5) ID]: %GOLD%* [U] %CONTINUE%
-ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%
-
-// Map Color Fixing
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
-
-// Map Immunities
-ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) NMAG]: %NAME%%CONTINUE%{%TAN%Immunities (Updated Apr 27th 2026):%CL%%NAME%}
-ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) !NMAG]: %NAME%%CONTINUE%{%TAN%Immunities:%CL%%NAME%}
-
-ItemDisplay[t23]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Arreat Battlefield Level id 139 Updated: Apr 23rd 2026
-ItemDisplay[t25]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Sewers of Harrogath Level id 141 Updated: Apr 23rd 2026
-ItemDisplay[t12]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Horazon's Memory Level id 142 Updated: Apr 23rd 2026
-ItemDisplay[t11]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Ruins of Viz-jun Level id 143 Updated: Apr 23rd 2026
-ItemDisplay[t31]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 66% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // River of Blood Level id 144 Updated: Apr 23rd 2026
-ItemDisplay[t21]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Phlegethon Level id 145 Updated: Apr 23rd 2026
-ItemDisplay[t34]: %NAME%{%CL%%RED%F 120% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ancestral Trial Level id 146 Updated: Apr 23rd 2026
-ItemDisplay[t39]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace Level id 147 Updated: Apr 23rd 2026
-ItemDisplay[t22]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Torajan Jungle Level id 148 Updated: Apr 23rd 2026
-ItemDisplay[t13]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 115% %ORANGE%M 105% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep Level id 149 Updated: Apr 23rd 2026
-ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 75% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: Apr 23rd 2026
-ItemDisplay[t24]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle Level id 151 Updated: Apr 23rd 2026
-ItemDisplay[t35]: %PX-62%%SOUNDID-4715%%NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: Apr 23rd 2026
-ItemDisplay[t36]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 105% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fall of Caldeum Level id 155 Updated: Apr 23rd 2026
-ItemDisplay[t37]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Pandemonium Citadel Level id 156 Updated: Apr 23rd 2026
-ItemDisplay[t33]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 120%%CL%%GRAY%Ph 55% %ORANGE%M 105% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Lost Temple Level id 158 Updated: Apr 23rd 2026
-ItemDisplay[t38]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 115% %ORANGE%M 55% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Canyon of Sescheron Level id 160 Updated: Apr 23rd 2026
-ItemDisplay[t14]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Sanatorium Level id 167 Updated: Apr 27th 2026
-ItemDisplay[t26]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Shadows of Westmarch Level id 169 Updated: Apr 27th 2026
-ItemDisplay[t15]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 45% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Royal Crypts Level id 170 Updated: Apr 23rd 2026
-ItemDisplay[t16]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Ruined Cistern Level id 174 Updated: Apr 23rd 2026
-ItemDisplay[t3a]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ashen Plains Level id 175 Updated: Apr 23rd 2026
-ItemDisplay[t28]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 55% %ORANGE%M 40% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Skovos Stronghold Map Level id 190 Updated: Apr 23rd 2026
-ItemDisplay[t27]: %NAME%{%CL%%RED%F 120% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 40% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Demon Road Map Level id 191 Updated: Apr 23rd 2026
-ItemDisplay[t17]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 35% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Halls of Torture Level id 193 Updated: Apr 23rd 2026
-ItemDisplay[t3b]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Kyovoshad Level id 201 Updated: Apr 23rd 2026
-// Dungeon
-//ItemDisplay[t41]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Cathedral of Light Level id 152 Updated: Apr 23rd 2026
-//ItemDisplay[t42]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Plains of Torment Level id 164 Updated: Apr 23rd 2026
-//ItemDisplay[t43]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Sanctuary of Sin Level id 171 Updated: Apr 23rd 2026
-//ItemDisplay[t44]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Steppes of Daken-Shar Level id 186 Updated: Apr 23rd 2026
-// Unique maps
-//ItemDisplay[t51]: %NAME%{%CL%%RED%F 80% %YELLOW%L 80% %BLUE% C 80%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Rivers Level id 177 Updated: Apr 23rd 2026
-//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 40% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Ice Level id 178 Updated: Apr 23rd 2026
-//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 80%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar Kurast Level id 179 Updated: Apr 23rd 2026
-ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 85%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar Level id 177 178 179 Updated: Apr 23rd 2026
-ItemDisplay[t52]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Hellcaves Level id 181 Updated: Apr 23rd 2026
-ItemDisplay[t53]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 75%%CL%%GRAY%Ph 65% %ORANGE%M 80% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fallen Gardens Level id 183 Updated: Apr 23rd 2026
-ItemDisplay[t54]: %NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 20% %ORANGE%M 20% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Imperial Palace Level id 192 Updated: Apr 23rd 2026
-ItemDisplay[t55]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 50%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 30%%CL%%NAME%}%CONTINUE% // Outer Void Level id 180 Updated: Apr 23rd 2026
-ItemDisplay[t56]: %NAME%{%CL%%RED%F 85% %YELLOW%L 100% %BLUE% C 80%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // City of Ureh Level id 195 Updated: Apr 23rd 2026
-ItemDisplay[t57]: %NAME%{%CL%%RED%F 110% %YELLOW%L 120% %BLUE% C 145%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Djinn's Domain Level id 197 198 199 Updated: Apr 23rd 2026
-ItemDisplay[t58]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Na-Krul's Abyss Level id 200 Updated: Apr 23rd 2026
 
 
-// Item code no longer dictates map tier
-// Maps [T1X]
-ItemDisplay[t22]: %NAME%Torajan Jungle Map%CONTINUE%{%NAME%}
-ItemDisplay[t12]: %NAME%Horazon's Memory Map%CONTINUE%{%NAME%}
-ItemDisplay[t13]: %NAME%Bastion Keep Map%CONTINUE%{%NAME%}
-ItemDisplay[t23]: %NAME%Arreat Battlefield Map%CONTINUE%{%NAME%}
-ItemDisplay[t21]: %NAME%Phlegethon Map%CONTINUE%{%NAME%}
-ItemDisplay[t16]: %NAME%Ruined Cistern Map%CONTINUE%{%NAME%}
-ItemDisplay[t33]: %NAME%Lost Temple Map%CONTINUE%{%NAME%}
-ItemDisplay[t17]: %NAME%Halls of Torture Map%CONTINUE%{%NAME%}
-ItemDisplay[t18]: %NAME%T1-8 Map%CONTINUE%{%NAME%}
-ItemDisplay[t19]: %NAME%T1-9 Map%CONTINUE%{%NAME%}
-
-// Maps [T2X]
-ItemDisplay[t15]: %NAME%Royal Crypts Map%CONTINUE%{%NAME%}
-ItemDisplay[t11]: %NAME%Ruins of Viz-jun Map%CONTINUE%{%NAME%}
-ItemDisplay[t14]: %NAME%Sanatorium Map%CONTINUE%{%NAME%}
-ItemDisplay[t34]: %NAME%Ancestral Trial Map%CONTINUE%{%NAME%}
-ItemDisplay[t36]: %NAME%Fall of Caldeum Map%CONTINUE%{%NAME%}
-ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%CONTINUE%{%NAME%}
-ItemDisplay[t27]: %NAME%Demon Road Map%CONTINUE%{%NAME%}
-ItemDisplay[t28]: %NAME%Skovos Stronghold Map%CONTINUE%{%NAME%}
-ItemDisplay[t29]: %NAME%T2-9 Map%CONTINUE%{%NAME%}
-
-// Maps [T3X]
-ItemDisplay[t31]: %NAME%River of Blood Map%CONTINUE%{%NAME%}
-ItemDisplay[t32]: %NAME%Throne of Insanity Map%CONTINUE%{%NAME%}
-ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%CONTINUE%{%NAME%}
-ItemDisplay[t24]: %NAME%Tomb of Zoltun Kulle Map%CONTINUE%{%NAME%}
-ItemDisplay[t35]: %NAME%Blood Moon Map%CONTINUE%{%NAME%}
-ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%CONTINUE%{%NAME%}
-ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%CONTINUE%{%NAME%}
-ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%CONTINUE%{%NAME%}
-ItemDisplay[t3a]: %NAME%Ashen Plains Map%CONTINUE%{%NAME%}
-ItemDisplay[t3b]: %NAME%Kyovoshad Map%CONTINUE%{%NAME%}
-
-// Maps [T4X]
-ItemDisplay[t41]: %NAME%Cathedral of Light%CONTINUE%{%NAME%}
-ItemDisplay[t42]: %NAME%Plains of Torment%CONTINUE%{%NAME%}
-ItemDisplay[t43]: %NAME%Sanctuary of Sin%CONTINUE%{%NAME%}
-ItemDisplay[t44]: %NAME%Steppes of Daken-Shar%CONTINUE%{%NAME%}
-//ItemDisplay[t45]: %NAME%T4-5 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t46]: %NAME%T4-6 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t47]: %NAME%T4-7 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t48]: %NAME%T4-8 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t49]: %NAME%T4-9 Map%CONTINUE%{%NAME%}
-
-// Maps [T5X] Unique
-ItemDisplay[t51]: %NAME%Zhar's Sanctum (Charm)%CONTINUE%{%NAME%}
-ItemDisplay[t52]: %NAME%Stygian Caverns (Slammed)%CONTINUE%{%NAME%}
-ItemDisplay[t53]: %NAME%Fallen Gardens (Facet)%CONTINUE%{%NAME%}
-ItemDisplay[t54]: %NAME%Imperial Palace (PBox)%CONTINUE%{%NAME%}
-ItemDisplay[t55]: %NAME%Outer Void (Boss Mat)%CONTINUE%{%NAME%}
-ItemDisplay[t56]: %NAME%City of Ureh (Socketed)%CONTINUE%{%NAME%}
-ItemDisplay[t57]: %NAME%Djinn's Domain%CONTINUE%{%NAME%}
-ItemDisplay[t58]: %NAME%Na-Krul's Abyss (Eth)%CONTINUE%{%NAME%}
-//ItemDisplay[t59]: %NAME%T5-9 Map%CONTINUE%{%NAME%}
-
-// Maps [T6] PVP
-ItemDisplay[t61]: %NAME%PvP Map 1 (Desert)%CONTINUE%{%NAME%}
-ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
-//ItemDisplay[t63]: %NAME%t6-3 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t64]: %NAME%t6-4 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t65]: %NAME%t6-5 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t66]: %NAME%t6-6 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t67]: %NAME%t6-7 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t68]: %NAME%t6-8 Map%CONTINUE%{%NAME%}
-//ItemDisplay[t69]: %NAME%t6-9 Map%CONTINUE%{%NAME%}
-
-ItemDisplay[(MAPTIER>0 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
-
-// Map End Wrapper by Tier
-ItemDisplay[MAPTIER=1]: %MAP-62%%TIER-8%%NAME% %GREEN%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=2]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=3]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=4]: %MAP-62%%TIER-8%%NAME% %RED%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=5 !ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=5 ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%*{%NAME%}%CONTINUE%
-ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
-
-ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
-//Warnings 
-
-// Map Contains Cursing Mobs
-ItemDisplay[(t12 OR t13 OR t31 OR t37 OR t38 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
-
-// Map Contains SOULS
-ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
-ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) NMAG MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-
-// Map Contains Added PSN
-ItemDisplay[STAT435>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
-
-// Map Contains Projectile Pierce
-ItemDisplay[STAT406>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
-
-// Map Contains Fearing Mobs
-// No long in S11 ItemDisplay[STAT499>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
-
-//Map contains minions
-ItemDisplay[STAT499>0 MAPTIER<4]: %ORANGE% [Minion]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Minions of Destruction%CL%%NAME%}
-
-// Buffs / Tags
-// Map Contains Ghosts
-ItemDisplay[(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
-ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-
-// Map has Standard of Heroes applied
-ItemDisplay[STAT458>0]: %GREEN% [H]%NAME%%CONTINUE%{%NAME%}
-
-// Map has bonus crafting mats
-ItemDisplay[STAT497>0]: %TEAL% [Craft]%NAME%%CONTINUE%{%TEAL%Extra Crafting Mats%CL%%NAME%}
-
-// Map has Orb of Fortification applied
-ItemDisplay[STAT493>0]: %ORANGE% [F]%NAME%%CONTINUE%{%NAME%}
-
-// Map has EVENT applied
-ItemDisplay[STAT500>0]: %CORAL% [E]%NAME%%CONTINUE%{%PURPLE%Catalyzed%CL%%NAME%}
-
-// Slammed
-ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %RED% [C]%NAME%%CONTINUE%{%NAME%}
 
 
-// Map Contains Dolls
-ItemDisplay[STAT437>0 MAPTIER<4]: %RED% [DOLLS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Dolls %CL%%NAME%}
 
-// 2x Map Boss
-ItemDisplay[STAT498>0]: %BLUE% [2xBoss]%NAME%%CONTINUE%{%NAME%}
+//------------------------------MAPS------------------------------
 
-// +Area Level
-ItemDisplay[STAT374>0 STAT374<2]: %PURPLE% [+1]%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[STAT374>1 STAT374<3]: %PURPLE% [+2]%NAME%%CONTINUE%{%NAME%}
 
-//Map EXPERIMENTAL
-// Not ready yet ItemDisplay[!GROUND ID !NMAG MAPTIER>0]:%NAME%{%WHITE%Experience Rating: $f(ROUND((1+STAT373/100)*((1+STAT372/100)*%NORM_XP%+(1+MIN(STAT375/100,MAX(STAT372/100,STAT375/200)))*%ELITE_XP%)/2*100))%%CL%%NAME%}%CONTINUE%
-// BUGGED ItemDisplay[!GROUND ID !NMAG MAPTIER>0 STAT370>0]:%NAME%{%WHITE%Magic Find: $f(ROUND((%MAP_MAGICFIND%/%CHAR_MAGICFIND%)*((1+STAT372/100)*0.55+(1+MIN(STAT375,MAX(STAT372,STAT375/2))/100)*0.45)*100))%%CL%%NAME%}%CONTINUE%
 
-// Tier 4
-ItemDisplay[MAPTIER=4 STAT360=0]: %NAME%%CONTINUE%{%NAME%%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%))%CL%}
-ItemDisplay[MAPTIER=4 STAT360>0]: %NAME%%CONTINUE%{%NAME%%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%))%CL%}
 
-// Tier 3 Good Maps
-ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%)) < < <%CL%}
-// Slammed
-ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T3_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%)) < < <%CL%}
+
+// Map Immunes/Highest Res (Updated: Apr 27th 2026)
+ItemDisplay[t11]: %NAME%{%WHITE%Immunes: %BLUE%C:120, %GOLD%Ph:115%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %GREEN%P:80, %ORANGE%M:50%NAME%}%CONTINUE% // Ruins of Viz-jun 143
+ItemDisplay[t12]: %NAME%{%WHITE%Immunes: %YELLOW%L:120, %GOLD%Ph:115, Spire:1000%NL%%WHITE%Highest Res: %RED%F:75, %BLUE%C:75, %GREEN%P:75, %ORANGE%M:50%NAME%}%CONTINUE% // Horazon's Memory 142
+ItemDisplay[t13]: %NAME%{%WHITE%Immunes: %BLUE%C:120, %ORANGE%M:105, %GOLD%Ph:115%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %GREEN%P:85%NAME%}%CONTINUE% // Bastion Keep 149
+ItemDisplay[t14]: %NAME%{%WHITE%Immunes: %YELLOW%L:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %RED%F:75, %BLUE%C:75, %GREEN%P:75, %GOLD%Ph:60%NAME%}%CONTINUE% // Sanatorium 167
+ItemDisplay[t15]: %NAME%{%WHITE%Immunes: %RED%F:120, %BLUE%C:120%NL%%WHITE%Highest Res: %YELLOW%L:80, %GREEN%P:75, %ORANGE%M:45, %GOLD%Ph:50%NAME%}%CONTINUE% // Royal Crypts 170
+ItemDisplay[t16]: %NAME%{%WHITE%Immunes: %GREEN%P:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %BLUE%C:75, %GOLD%Ph:60%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t17]: %NAME%{%WHITE%Immunes: %YELLOW%L:120, %BLUE%C:120%NL%%WHITE%Highest Res: %RED%F:75, %GREEN%P:85, %ORANGE%M:35, %GOLD%Ph:50%NAME%}%CONTINUE% // Halls of Torture 193
+ItemDisplay[t21]: %NAME%{%WHITE%Immunes: %RED%F:120, %GREEN%P:120%NL%%WHITE%Highest Res: %YELLOW%L:80, %BLUE%C:75, %ORANGE%M:50, %GOLD%Ph:50%NAME%}%CONTINUE% // Phlegethon 145
+ItemDisplay[t22]: %NAME%{%WHITE%Immunes: %BLUE%C:120, %GREEN%P:120%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %ORANGE%M:50, %GOLD%Ph:50%NAME%}%CONTINUE% // Torajan Jungle 148
+ItemDisplay[t23]: %NAME%{%WHITE%Immunes: %YELLOW%L:120, %GREEN%P:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %RED%F:75, %BLUE%C:75, %GOLD%Ph:50%NAME%}%CONTINUE% // Arreat Battlefield 139
+ItemDisplay[t24]: %NAME%{%WHITE%Immunes: %GREEN%P:120, %GOLD%Ph:115%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %BLUE%C:75, %ORANGE%M:50%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
+ItemDisplay[t25]: %NAME%{%WHITE%Immunes: %RED%F:120, %GREEN%P:120%NL%%WHITE%Highest Res: %YELLOW%L:75, %BLUE%C:80, %ORANGE%M:50, %GOLD%Ph:66%NAME%}%CONTINUE% // Sewers of Harrogath 141
+ItemDisplay[t26]: %NAME%{%WHITE%Immunes: %RED%F:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %YELLOW%L:75, %BLUE%C:85, %GREEN%P:75, %GOLD%Ph:50%NAME%}%CONTINUE% // Shadows of Westmarch 169
+ItemDisplay[t27]: %NAME%{%WHITE%Immunes: %RED%F:120, %YELLOW%L:120, %GOLD%Ph:115%NL%%WHITE%Highest Res: %BLUE%C:75, %GREEN%P:75, %ORANGE%M:40%NAME%}%CONTINUE% // Demon Road 191
+ItemDisplay[t28]: %NAME%{%WHITE%Immunes: %BLUE%C:120, %GREEN%P:120%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %ORANGE%M:40, %GOLD%Ph:55%NAME%}%CONTINUE% // Skovos Stronghold 190
+ItemDisplay[t31]: %NAME%{%WHITE%Immunes: %YELLOW%L:120, %GREEN%P:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %RED%F:75, %BLUE%C:75, %GOLD%Ph:66%NAME%}%CONTINUE% // River of Blood 144
+ItemDisplay[t32]: %NAME%{%WHITE%Immunes: %GREEN%P:120, %GOLD%Ph:115%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %BLUE%C:75, %ORANGE%M:75%NAME%}%CONTINUE% // Throne of Insanity 150
+ItemDisplay[t33]: %NAME%{%WHITE%Immunes: %BLUE%C:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:80, %GREEN%P:80, %GOLD%Ph:55%NAME%}%CONTINUE% // Lost Temple 158
+ItemDisplay[t34]: %NAME%{%WHITE%Immunes: %RED%F:120, %YELLOW%L:120%NL%%WHITE%Highest Res: %BLUE%C:75, %GREEN%P:75, %ORANGE%M:50, %GOLD%Ph:50%NAME%}%CONTINUE% // Ancestral Trial 146
+ItemDisplay[t35]: %NAME%{%WHITE%Highest Res: %RED%F:65, %YELLOW%L:65, %BLUE%C:65, %GREEN%P:65, %ORANGE%M:33, %GOLD%Ph:50%NAME%}%CONTINUE% // Blood Moon 154
+ItemDisplay[t36]: %NAME%{%WHITE%Immunes: %YELLOW%L:120, %ORANGE%M:105, %GOLD%Ph:115%NL%%WHITE%Highest Res: %RED%F:75, %BLUE%C:75, %GREEN%P:80%NAME%}%CONTINUE% // Fall of Caldeum 155
+ItemDisplay[t37]: %NAME%{%WHITE%Immunes: %BLUE%C:120, %ORANGE%M:105%NL%%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %GREEN%P:80, %GOLD%Ph:50%NAME%}%CONTINUE% // Pandemonium Citadel 156
+ItemDisplay[t38]: %NAME%{%WHITE%Immunes: %RED%F:120, %GOLD%Ph:115%NL%%WHITE%Highest Res: %YELLOW%L:75, %BLUE%C:80, %GREEN%P:75, %ORANGE%M:55%NAME%}%CONTINUE% // Canyon of Sescheron 160
+ItemDisplay[t39]: %NAME%{%WHITE%Immunes: %RED%F:120, %GOLD%Ph:115, %GREEN%Tower:1000%NL%%WHITE%Highest Res: %YELLOW%L:75, %BLUE%C:75, %GREEN%P:75, %ORANGE%M:50%NAME%}%CONTINUE% // Kehjistan Marketplace 147
+ItemDisplay[t3a]: %NAME%{%WHITE%Immunes: %RED%F:120, %BLUE%C:130%NL%%WHITE%Highest Res: %YELLOW%L:75, %GREEN%P:75, %ORANGE%M:50, %GOLD%Ph:50%NAME%}%CONTINUE% // Ashen Plains 175
+ItemDisplay[t3b]: %NAME%{%WHITE%Highest Res: %RED%F:75, %YELLOW%L:75, %BLUE%C:75, %GREEN%P:75, %ORANGE%M:50, %GOLD%Ph:66%NAME%}%CONTINUE% // Kyovoshad 201
+ItemDisplay[t41]: %NAME%{%WHITE%Immunes: %RED%F:145 %YELLOW%L:145 %BLUE%C:145 %GREEN%P:145 %ORANGE%M:145 %GOLD%Ph:120}%CONTINUE% // Cathedral of Light 152
+ItemDisplay[t42]: %NAME%{%WHITE%Immunes: %RED%F:145 %YELLOW%L:145 %BLUE%C:145 %GREEN%P:145 %ORANGE%M:145 %GOLD%Ph:120}%CONTINUE% // Plains of Torment 164
+ItemDisplay[t43]: %NAME%{%WHITE%Immunes: %RED%F:145 %YELLOW%L:145 %BLUE%C:145 %GREEN%P:145 %ORANGE%M:145 %GOLD%Ph:120}%CONTINUE% // Sanctuary of Sin 171
+ItemDisplay[t44]: %NAME%{%WHITE%Immunes: %RED%F:145 %YELLOW%L:145 %BLUE%C:145 %GREEN%P:145 %ORANGE%M:145 %GOLD%Ph:120}%CONTINUE% // Steppes of Daken-Shar 186
+ItemDisplay[t51]: %NAME%{%WHITE%Highest Res: %RED%F:85 %YELLOW%L:85 %BLUE%C:85 %GREEN%P:95 %ORANGE%M:50 %GOLD%Ph:65}%CONTINUE% // Zhar 177 178 179
+ItemDisplay[t52]: %NAME%{%WHITE%Highest Res: %RED%F:70 %YELLOW%L:65 %BLUE%C:65 %GREEN%P:65 %ORANGE%M:50 %GOLD%Ph:55}%CONTINUE% // Hellcaves 181
+ItemDisplay[t53]: %NAME%{%WHITE%Highest Res: %RED%F:70 %YELLOW%L:65 %BLUE%C:75 %GREEN%P:80 %ORANGE%M:80 %GOLD%Ph:65}%CONTINUE% // Fallen Gardens 183
+ItemDisplay[t54]: %NAME%{%WHITE%Highest Res: %RED%F:65 %YELLOW%L:65 %BLUE%C:65 %GREEN%P:65 %ORANGE%M:20 %GOLD%Ph:20}%CONTINUE% // Imperial Palace 192
+ItemDisplay[t55]: %NAME%{%WHITE%Highest Res: %RED%F:75 %YELLOW%L:75 %BLUE%C:50 %GREEN%P:30 %ORANGE%M:50 %GOLD%Ph:50}%CONTINUE% // Outer Void 180
+ItemDisplay[t56]: %NAME%{%WHITE%Immunes: %YELLOW%L:100%NL%%WHITE%Highest Res: %RED%F:85 %BLUE%C:80 %GREEN%P:75 %ORANGE%M:50 %GOLD%Ph:65}%CONTINUE% // City of Ureh 195
+ItemDisplay[t57]: %NAME%{%WHITE%Immunes: %RED%F:110 %YELLOW%L:120 %BLUE%C:145 %GREEN%P:110 %GOLD%Ph:100%NL%%WHITE%Highest Res: %ORANGE%M:50}%CONTINUE% // Djinn's Domain 197 198 199
+ItemDisplay[t58]: %NAME%{%WHITE%Highest Res: %RED%F:75 %YELLOW%L:80 %BLUE%C:85 %GREEN%P:75 %ORANGE%M:50 %GOLD%Ph:50}%CONTINUE% // Na-Krul's Abyss 200
+
+// Map Monster Types
+ItemDisplay[(t13 OR t14 OR t16 OR t26 OR t36 OR t37 OR t3a) OR (STAT437>0 OR STAT438>0 OR STAT439>0 OR STAT441>0 OR STAT470>0 OR STAT499>0)]: %NAME%{%CL%%NAME%}%CONTINUE%
+ItemDisplay[t13]: %NAME%{witches%NAME%}%CONTINUE% // Bastion Keep 149
+ItemDisplay[t14]: %NAME%{souls%NAME%}%CONTINUE% // Sanatorium 167
+ItemDisplay[t16]: %NAME%{hydra Boss%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t26]: %NAME%{witches%NAME%}%CONTINUE% // Shadows of Westmarch 169
+ItemDisplay[t36]: %NAME%{blizzard%NAME%}%CONTINUE% // Fall of Caldeum 155
+ItemDisplay[t37]: %NAME%{witches%NAME%}%CONTINUE% // Pandemonium Citadel 156
+ItemDisplay[t3a]: %NAME%{souls%NAME%}%CONTINUE% // Ashen Plains 175
+ItemDisplay[(t13 OR t14 OR t16 OR t26 OR t36 OR t37 OR t3a) (STAT437>0 OR STAT438>0 OR STAT439>0 OR STAT441>0 OR STAT470>0 OR STAT499>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT437>0]: %NAME%{dolls%NAME%}%CONTINUE%
+ItemDisplay[STAT438>0]: %NAME%{witches%NAME%}%CONTINUE%
+ItemDisplay[STAT439>0]: %NAME%{vamp lords%NAME%}%CONTINUE%
+ItemDisplay[STAT441>0]: %NAME%{reanimated%NAME%}%CONTINUE%
+ItemDisplay[STAT470>0]: %NAME%{souls%NAME%}%CONTINUE%
+ItemDisplay[STAT499>0]: %NAME%{minions%NAME%}%CONTINUE%
+ItemDisplay[(t13 OR t14 OR t16 OR t26 OR t36 OR t37 OR t3a) OR (STAT437>0 OR STAT438>0 OR STAT439>0 OR STAT441>0 OR STAT470>0 OR STAT499>0)]: %NAME%{%RED%%NAME%}%CONTINUE%
+
+// Map Exp, Mf, Dens, Ra
+ItemDisplay[(STAT370>0 OR STAT372>0 OR STAT375>0 OR STAT373>0)]: %NAME%{%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT370>0]: %NAME%{%TEAL%mf:%WHITE%%STAT370%%%NAME%}%CONTINUE%
+ItemDisplay[STAT370>0 (STAT372>0 OR STAT375>0 OR STAT373>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT372>0]: %NAME%{%TEAL%dens:%WHITE%%STAT372%%%NAME%}%CONTINUE%
+ItemDisplay[STAT372>0 (STAT375>0 OR STAT373>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT375>0]: %NAME%{%TEAL%ra:%WHITE%%STAT375%%%NAME%}%CONTINUE%
+ItemDisplay[STAT375>0 STAT373>0]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT373>0]: %NAME%{%TEAL%xp:%WHITE%%STAT373%%%NAME%}%CONTINUE%
+
+// Tier 1 Good Maps (XP) & Tier 1 MF Maps
+ItemDisplay[(MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0) OR (MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS)]: %NAME%{  %PURPLE%··%YELLOW%··%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0]: %NAME%{%GREEN%mf%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0) (MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS]: %NAME%{%GREEN%xp%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0) OR (MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS)]: %NAME%{%YELLOW%··%PURPLE%··  %NAME%}%CONTINUE%
+// Tier 1 Slammed xp & mf (MAP_XP_SCORE folds STAT374 in, so slammed+1 is covered)
+ItemDisplay[(MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM STAT360>0) OR (MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM)]: %NAME%{  %PURPLE%••%YELLOW%••%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM STAT360>0]: %NAME%{%GREEN%mf%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM STAT360>0) (MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM]: %NAME%{%GREEN%xp%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=1 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM STAT360>0) OR (MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM)]: %NAME%{%YELLOW%••%PURPLE%••  %NAME%}%CONTINUE%
+// Tier 1 Juicer tag
+ItemDisplay[MAPTIER=1 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%{%YELLOW%•••%PURPLE%•••  %GREEN%juicy  %PURPLE%•••%YELLOW%•••%CL%%NAME%}%CONTINUE%
+// Tier 1 Rating tooltips
+ItemDisplay[MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_SLAM%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 STAT360=0 STAT370>0]: %NAME%{%BLUE%MF Map Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 STAT360>0 STAT370>0]: %NAME%{%BLUE%MF Map Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%%NAME%}%CONTINUE%
+// Tier 1 Reroll note
+ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS) !($f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%{%RED%reroll this map%CL%%NAME%}%CONTINUE%
+
+// Tier 2 Good Maps (XP) & Tier 2 MF Maps
+ItemDisplay[(MAPTIER=2 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0) OR (MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS)]: %NAME%{  %PURPLE%··%YELLOW%··%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0]: %NAME%{%GREEN%mf%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=2 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0) (MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS]: %NAME%{%GREEN%xp%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=2 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS STAT360=0) OR (MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS)]: %NAME%{%YELLOW%··%PURPLE%··  %NAME%}%CONTINUE%
+// Tier 2 Slammed xp (covers slammed+1 via MAP_XP_SCORE)
+ItemDisplay[MAPTIER=2 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T2_SLAM]: %NAME%{%YELLOW%••%PURPLE%••  %GREEN%xp  %PURPLE%••%YELLOW%••%CL%%NAME%}%CONTINUE%
+// Tier 2 Juicer tag
+ItemDisplay[MAPTIER=2 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%{%YELLOW%•••%PURPLE%•••  %GREEN%juicy  %PURPLE%•••%YELLOW%•••%CL%%NAME%}%CONTINUE%
+// Tier 2 Rating tooltips
+ItemDisplay[MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2 STAT360>0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_SLAM%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2 STAT360=0 STAT370>0]: %NAME%{%BLUE%MF Map Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2 STAT360>0 STAT370>0]: %NAME%{%BLUE%MF Map Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%%NAME%}%CONTINUE%
+// Tier 2 Reroll note
+ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS) !($f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%{%RED%reroll this map%CL%%NAME%}%CONTINUE%
+
+// Tier 3 Good Maps (XP) & Tier 3 MF Maps
+ItemDisplay[(MAPTIER=3 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS STAT360=0) OR (MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS)]: %NAME%{  %PURPLE%··%YELLOW%··%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS STAT360=0]: %NAME%{%GREEN%mf%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=3 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS STAT360=0) (MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%{%GREEN%juicy%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=3 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS STAT360=0) OR (MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS)]: %NAME%{%YELLOW%··%PURPLE%··  %NAME%}%CONTINUE%
+// Tier 3 Slammed (covers slammed+1 via MAP_XP_SCORE)
+ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T3_SLAM]: %NAME%{%YELLOW%••%PURPLE%••  %GREEN%juicy  %PURPLE%••%YELLOW%••%CL%%NAME%}%CONTINUE%
 // Tier 3 Juicer tag
-ItemDisplay[MAPTIER=3 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%%CONTINUE%{%NAME%%ORANGE%> > > XP & Density & Rarity < < <%CL%}
-
-// Tier 2 Good Maps
-ItemDisplay[MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_ROLLS%)) < < <%CL%}
-// Slammed
-ItemDisplay[MAPTIER=2 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T2_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_SLAM%)) < < <%CL%}
-
-// Tier 1 Good Maps
-ItemDisplay[MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_ROLLS%)) < < <%CL%}
-// Slammed
-ItemDisplay[MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_SLAM%)) < < <%CL%}
-
-
-// Tier 3 MF Maps
-ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS]: %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_ROLLS%)) < < <%CL%}
-// Slammed
-ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T3_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_SLAM%)) < < <%CL%}
-// Tier 2/1 MF Maps
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS]: %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_ROLLS%)) < < <%CL%}
-// Slammed
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%)) < < <%CL%}
-
+ItemDisplay[MAPTIER=3 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%{%YELLOW%•••%PURPLE%•••  %GREEN%juicy  %PURPLE%•••%YELLOW%•••%CL%%NAME%}%CONTINUE%
+// Tier 3 Rating tooltips
+ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 STAT360=0 STAT370>0]: %NAME%{%BLUE%MF Map Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 STAT360>0 STAT370>0]: %NAME%{%BLUE%MF Map Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_SLAM%))%CL%%NAME%}%CONTINUE%
 // T3 Reroll note
-ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
-// T2 Reroll note
-ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
-// T1 Reroll note
-ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS) !($f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%{%RED%reroll this map%CL%%NAME%}%CONTINUE%
 
+// Tier 4 XP Map Rating tooltip (uses T3 thresholds)
+ItemDisplay[MAPTIER=4 STAT360=0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%))%CL%%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=4 STAT360>0 $f(MAP_XP_SCORE)>0]: %NAME%{%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%))%CL%%NAME%}%CONTINUE%
 
-// Tell the User to convert map to rare
-ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%BLUE%This Map %WHITE%+ %GOLD%Angelic Orb %WHITE%+ %WHITE%Any PGem %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%CL%%PURPLE%Convert to %WHITE%Stackable %PURPLE%Map%CL%%NAME%}
-ItemDisplay[NMAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%WHITE%This Map + %GOLD%Zakarum Orb + %BLUE%Jewel %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%NAME%}
+// Callouts for good affixes on maps
+ItemDisplay[(STAT374>0 OR STAT452>0 OR STAT457>0 OR STAT494>0 OR STAT495>0 OR STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT374>0]: %NAME%{alvl:+%STAT374%%NAME%}%CONTINUE%
+ItemDisplay[STAT374>0 (STAT452>0 OR STAT457>0 OR STAT494>0 OR STAT495>0 OR STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT452>0]: %NAME%{ias/fcr:%STAT452%%%NAME%}%CONTINUE%
+ItemDisplay[STAT452>0 (STAT457>0 OR STAT494>0 OR STAT495>0 OR STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT457>0]: %NAME%{velocity:%STAT457%%%NAME%}%CONTINUE%
+ItemDisplay[STAT457>0 (STAT494>0 OR STAT495>0 OR STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT494>0]: %NAME%{jewel:%STAT494%%%NAME%}%CONTINUE%
+ItemDisplay[STAT494>0 (STAT495>0 OR STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT495>0]: %NAME%{weapon:%STAT495%%%NAME%}%CONTINUE%
+ItemDisplay[STAT495>0 (STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT496>0]: %NAME%{armor:%STAT496%%%NAME%}%CONTINUE%
+ItemDisplay[STAT496>0 (STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT497>0]: %NAME%{mats:%STAT497%%%NAME%}%CONTINUE%
+ItemDisplay[STAT497>0 (STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT502>0]: %NAME%{charm:%STAT502%%%NAME%}%CONTINUE%
+ItemDisplay[STAT502>0 (STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT498>0]: %NAME%{2xboss%NAME%}%CONTINUE%
+ItemDisplay[STAT498>0 (STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT440>0]: %NAME%{cows%NAME%}%CONTINUE%
+ItemDisplay[STAT440>0 (STAT442>0 OR STAT471>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT442>0]: %NAME%{ghosts%NAME%}%CONTINUE%
+ItemDisplay[STAT442>0 STAT471>0]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT471>0]: %NAME%{fetishes%NAME%}%CONTINUE%
+ItemDisplay[(STAT374>0 OR STAT452>0 OR STAT457>0 OR STAT494>0 OR STAT495>0 OR STAT496>0 OR STAT497>0 OR STAT502>0 OR STAT498>0 OR STAT440>0 OR STAT442>0 OR STAT471>0)]: %NAME%{%GREEN%%NAME%}%CONTINUE%
 
-// Inform how to clear the map
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Fast Map Clear Guides Visit:%NL%%CL%%NAME%}%CONTINUE%
+// Callouts for bad affixes on maps
+ItemDisplay[(((STAT434>0 STAT432>0 STAT433>0) OR (STAT434>0 STAT432>0 STAT435>0) OR STAT435>0 OR (STAT434>0 STAT433>0 STAT435>0) OR (STAT432>0 STAT433>0 STAT435>0)) OR (STAT388>0 STAT434>0) OR (STAT389>0 STAT432>0) OR (STAT390>0 STAT433>0) OR (STAT391>0 STAT435>0) OR STAT435>0 OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{%CL%%NAME%}%CONTINUE%
+ItemDisplay[((STAT434>0 STAT432>0 STAT433>0) OR (STAT434>0 STAT432>0 STAT435>0) OR STAT435>0 OR (STAT434>0 STAT433>0 STAT435>0) OR (STAT432>0 STAT433>0 STAT435>0))]: %NAME%{Triple Ele%NAME%}%CONTINUE%
+ItemDisplay[((STAT434>0 STAT432>0 STAT433>0) OR (STAT434>0 STAT432>0 STAT435>0) OR STAT435>0 OR (STAT434>0 STAT433>0 STAT435>0) OR (STAT432>0 STAT433>0 STAT435>0)) ((STAT388>0 STAT434>0) OR (STAT389>0 STAT432>0) OR (STAT390>0 STAT433>0) OR (STAT391>0 STAT435>0) OR STAT435>0 OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[(STAT388>0 STAT434>0)]: %NAME%{fire%NAME%}%CONTINUE%
+ItemDisplay[(STAT388>0 STAT434>0) ((STAT389>0 STAT432>0) OR (STAT390>0 STAT433>0) OR (STAT391>0 STAT435>0) OR STAT435>0 OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[(STAT389>0 STAT432>0)]: %NAME%{light%NAME%}%CONTINUE%
+ItemDisplay[(STAT389>0 STAT432>0) ((STAT390>0 STAT433>0) OR (STAT391>0 STAT435>0) OR STAT435>0 OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[(STAT390>0 STAT433>0)]: %NAME%{cold%NAME%}%CONTINUE%
+ItemDisplay[(STAT390>0 STAT433>0) ((STAT391>0 STAT435>0) OR STAT435>0 OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[(STAT391>0 STAT435>0)]: %NAME%{poison%NAME%}%CONTINUE%
+ItemDisplay[(STAT391>0 STAT435>0) (STAT435>0 OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT435>0]: %NAME%{psn:5sec%NAME%}%CONTINUE%
+ItemDisplay[STAT435>0 ((STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[(STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0)]: %NAME%{abs%NAME%}%CONTINUE%
+ItemDisplay[(STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) (STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT393>0]: %NAME%{ias/fcr:%STAT393%%%NAME%}%CONTINUE%
+ItemDisplay[STAT393>0 (STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT405>0]: %NAME%{hp:%STAT405%%%NAME%}%CONTINUE%
+ItemDisplay[STAT405>0 (STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT406>0]: %NAME%{pic:%STAT406%%%NAME%}%CONTINUE%
+ItemDisplay[STAT406>0 (STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT449>0]: %NAME%{ds:%STAT449%%%NAME%}%CONTINUE%
+ItemDisplay[STAT449>0 (STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT407>0]: %NAME%{ow:%STAT407%%%NAME%}%CONTINUE%
+ItemDisplay[STAT407>0 (STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT408>0]: %NAME%{cb:%STAT408%%%NAME%}%CONTINUE%
+ItemDisplay[STAT408>0 (STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT409>0]: %NAME%{cdr:%STAT409%%%NAME%}%CONTINUE%
+ItemDisplay[STAT409>0 (STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT411<0]: %NAME%{fhr:%STAT411%%%NAME%}%CONTINUE%
+ItemDisplay[STAT411<0 (STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT412<0]: %NAME%{ctb:%STAT412%%%NAME%}%CONTINUE%
+ItemDisplay[STAT412<0 (STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT431<0]: %NAME%{res:%STAT431%%%NAME%}%CONTINUE%
+ItemDisplay[STAT431<0 (STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT452<0]: %NAME%{ias/fcr:%STAT452%%%NAME%}%CONTINUE%
+ItemDisplay[STAT452<0 (MULTI427,22913=100 OR STAT450>0)]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[MULTI427,22913=100]: %NAME%{splash%NAME%}%CONTINUE%
+ItemDisplay[MULTI427,22913=100 STAT450>0]: %NAME%{, %NAME%}%CONTINUE%
+ItemDisplay[STAT450>0]: %NAME%{cbf%NAME%}%CONTINUE%
+ItemDisplay[(((STAT434>0 STAT432>0 STAT433>0) OR (STAT434>0 STAT432>0 STAT435>0) OR STAT435>0 OR (STAT434>0 STAT433>0 STAT435>0) OR (STAT432>0 STAT433>0 STAT435>0)) OR (STAT388>0 STAT434>0) OR (STAT389>0 STAT432>0) OR (STAT390>0 STAT433>0) OR (STAT391>0 STAT435>0) OR (STAT399>0 OR STAT398>0 OR STAT396>0 OR STAT397>0) OR STAT393>0 OR STAT405>0 OR STAT406>0 OR STAT449>0 OR STAT407>0 OR STAT408>0 OR STAT409>0 OR STAT411<0 OR STAT412<0 OR STAT431<0 OR STAT452<0 OR MULTI427,22913=100 OR STAT450>0)]: %NAME%{%CORAL%%NAME%}%CONTINUE%
 
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %NAME%{%NAME%}
-
-//-----------------------------------------------------------------------------------
+// DUEL ARENAS (INFO)
+ItemDisplay[NMAG MAPTIER=0]: %NAME%{%WHITE%Without Result in Perma Death%NL%%RED%HC %WHITE%Can PVP in Duel Arenas}%CONTINUE%
+// MAP'S NAME
+ItemDisplay[t11]: Viz-Jun Map{%NAME%}%CONTINUE%
+ItemDisplay[t12]: Horazon Map{%NAME%}%CONTINUE%
+ItemDisplay[t13]: Bastion Map{%NAME%}%CONTINUE%
+ItemDisplay[t14]: Sanatorium Map{%NAME%}%CONTINUE%
+ItemDisplay[t15]: Royal Map{%NAME%}%CONTINUE%
+ItemDisplay[t16]: Ruined Map{%NAME%}%CONTINUE%
+ItemDisplay[t17]: Halls of Torture Map{%NAME%}%CONTINUE%
+ItemDisplay[t21]: Phlegethon Map{%NAME%}%CONTINUE%
+ItemDisplay[t22]: Jungle Map{%NAME%}%CONTINUE%
+ItemDisplay[t23]: Battlefield Map{%NAME%}%CONTINUE%
+ItemDisplay[t24]: Zoltun Map{%NAME%}%CONTINUE%
+ItemDisplay[t25]: Sewers Map{%NAME%}%CONTINUE%
+ItemDisplay[t26]: Westmarch Map{%NAME%}%CONTINUE%
+ItemDisplay[t27]: Demon Road Map{%NAME%}%CONTINUE%
+ItemDisplay[t28]: Skovos Map{%NAME%}%CONTINUE%
+ItemDisplay[t31]: River Map{%NAME%}%CONTINUE%
+ItemDisplay[t32]: Throne Map{%NAME%}%CONTINUE%
+ItemDisplay[t33]: Lost Map{%NAME%}%CONTINUE%
+ItemDisplay[t34]: Ancestral Map{%NAME%}%CONTINUE%
+ItemDisplay[t35]: Blood Moon Map{%NAME%}%CONTINUE%
+ItemDisplay[t36]: Caldeum Map{%NAME%}%CONTINUE%
+ItemDisplay[t37]: Pandemonium Map{%NAME%}%CONTINUE%
+ItemDisplay[t38]: Canyon Map{%NAME%}%CONTINUE%
+ItemDisplay[t39]: Market Map{%NAME%}%CONTINUE%
+ItemDisplay[t3a]: Ashen Map{%NAME%}%CONTINUE%
+ItemDisplay[t41]: Cathedral of Light Dungeon{%NAME%}%CONTINUE%
+ItemDisplay[t42]: Plains of Torment Dungeon{%NAME%}%CONTINUE%
+ItemDisplay[t43]: Sanctuary of Sin Dungeon{%NAME%}%CONTINUE%
+ItemDisplay[t44]: Steppes of Daken-Shar Dungeon{%NAME%}%CONTINUE%
+ItemDisplay[t51]: Zhar's Sanctum Map{%NAME%}%CONTINUE%
+ItemDisplay[t52]: Warlord of Blood Map{%NAME%}%CONTINUE%
+ItemDisplay[t53]: Fallen Gardens Map{%NAME%}%CONTINUE%
+ItemDisplay[t54]: Imperial Palace Map{%NAME%}%CONTINUE%
+ItemDisplay[t55]: Outer Void Map{%NAME%}%CONTINUE%
+ItemDisplay[t56]: City of Ureh Map{%NAME%}%CONTINUE%
+ItemDisplay[t57]: Djinn's Domain{%NAME%}%CONTINUE%
+ItemDisplay[t58]: Na-Krul's Abyss{%NAME%}%CONTINUE%
+// DUEL ARENAS
+ItemDisplay[t61]: Desert Duel Arena{%NAME%}%CONTINUE%
+ItemDisplay[t62]: Moor Duel Arena{%NAME%}%CONTINUE%
+// COLORS FOR MAPS
+ItemDisplay[NMAG MAPTIER>0]: %WHITE%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[MAG MAPTIER>0]: %BLUE%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[RARE MAPTIER>0]: %YELLOW%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[UNI MAPTIER>0]: %GOLD%%NAME%{%NAME%}%CONTINUE%
+// TIERS FOR MAPS
+ItemDisplay[t35]: %MAP-80%%SOUNDID-4717%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[NMAG MAPTIER>0]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER>0 QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=0]: %DOT-80%%NAME% %TAN%•{%NAME%}
+ItemDisplay[MAPTIER=1]: %MAP-80%%TEAL%T1 %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2]: %MAP-80%%TEAL%T2 %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3]: %MAP-80%%TEAL%T3 %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=4]: %MAP-80%%ORANGE%T4 %NAME% %ORANGE%•{%NAME%}
+ItemDisplay[(t51)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %RED%T1 %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
+ItemDisplay[(t53)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %RED%T2 %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
+ItemDisplay[(t52 OR t54 OR t55 OR t56)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %RED%T3 %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
+// MAPS NAME IMMUNITIES
+ItemDisplay[t11]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GOLD%•{%NAME%}%CONTINUE% // Ruins of Viz-jun 143
+ItemDisplay[t12]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Horazon's Memory 142
+ItemDisplay[t13]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Bastion Keep 149
+ItemDisplay[t14]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Sanatorium 167
+ItemDisplay[t15]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Royal Crypts 170
+ItemDisplay[t16]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t17]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%BLUE%•{%NAME%}%CONTINUE% // Halls of Torture 193
+ItemDisplay[t21]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Phlegethon 145
+ItemDisplay[t22]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Torajan Jungle 148
+ItemDisplay[t23]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Arreat Battlefield 139
+ItemDisplay[t24]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
+ItemDisplay[t25]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Sewers of Harrogath 141
+ItemDisplay[t26]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Shadows of Westmarch 169
+ItemDisplay[t27]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Demon Road 191
+ItemDisplay[t28]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Skovos Stronghold 190
+ItemDisplay[t31]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // River of Blood 144
+ItemDisplay[t32]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Throne of Insanity 150
+ItemDisplay[t33]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Lost Temple 158
+ItemDisplay[t34]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•{%NAME%}%CONTINUE% // Ancestral Trial 146
+ItemDisplay[t35]: %PURPLE%•%RED%•  %NAME%  %RED%•%PURPLE%•{%NAME%}%CONTINUE% // Blood Moon 154
+ItemDisplay[t36]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Fall of Caldeum 155
+ItemDisplay[t37]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Pandemonium Citadel 156
+ItemDisplay[t38]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Canyon of Sescheron 160
+ItemDisplay[t39]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Kehjistan Marketplace 147
+ItemDisplay[t3a]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Ashen Plains 175
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t51 OR t52 OR t53 OR t54 OR t55)]: %CL%%NAME%{%NAME%}%CONTINUE%
+// MAPS NAME TAG'S
+ItemDisplay[STAT360=78]: %RED%M.Ds*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=79]: %RED%M.Imf/Cbf*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=80]: %RED%P.-A/Cs*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=81]: %RED%M.Ra/De*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=82]: %RED%P.A/Cs/Vel*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=83]: %RED%P.Mf/Gf, M.Ra*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=84]: %RED%M.De*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=85]: %RED%A.+1 Lvl*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=86]: %RED%M.Ra*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=87]: %RED%P.-Amr*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT360=88]: %RED%A.J/C*%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT458>0]: %GREEN%H, %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT493>0]: %ORANGE%F, %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[STAT500>0]: %BLUE%E, %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t51 OR t52 OR t53 OR t54 OR t55)]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 // GEMS
 //-----------------------------------------------------------------------------------
@@ -3628,20 +3676,9 @@ ItemDisplay[(tbk OR ibk) QTY<6]: %RED%LOW QTY %NAME%%CONTINUE%
 ItemDisplay[ibk]: %RED%+%WHITE%ID Tome
 ItemDisplay[tbk]: %BLUE%+%WHITE%TP Tome
 
-// Juvs
-ItemDisplay[rvl]: %PURPLE%big%WHITE%Rejuv{Heals 65% of Life & Mana up to a limit}%CONTINUE%
-ItemDisplay[rvl FILTLVL<3]: %PURPLE%*  %NAME%  %PURPLE%*{%NAME%}
-ItemDisplay[rvl FILTLVL<7]: %PURPLE%*    %NAME%    %PURPLE%*{%NAME%}
-ItemDisplay[rvl FILTLVL<9]: %NAME%{%NAME%}
-ItemDisplay[rvl FILTLVL=9]: %PURPLE%GATORADE{%NAME%}
-ItemDisplay[rvl (MAPID=161 OR MAPID=162 OR MAPID=163)]: %NAME%{Good Luck on Rathma}
-ItemDisplay[rvl]:
-ItemDisplay[rvs]: %WHITE%rejuv{Heals 35% of Life & Mana up to a limit}%CONTINUE%
-ItemDisplay[rvs FILTLVL<3]: %PURPLE%* %NAME% %PURPLE%35% %PURPLE%*{%NAME%}
-ItemDisplay[rvs FILTLVL<7]: %NAME%%PURPLE%35%{%NAME%}
-ItemDisplay[rvs FILTLVL<8]: %NAME%{%NAME%}
-ItemDisplay[rvs FILTLVL=11]: %PURPLE%powerade{%NAME%}
-ItemDisplay[rvs]:
+// Juvs — Hiim/Kassahi handle rvl/rvs separately
+//   Hiim    → 10-Potions-rejuvs[Hiim,ALL-EXCEPT=...]
+//   Kassahi → 12-Kassahi_potions-rejuvs[Kassahi]
 
 // Hide bad pots when appropriate based on filter level
 ItemDisplay[(hp1 OR hp2 OR hp3 OR hp4) FILTLVL>2]:
@@ -3757,6 +3794,35 @@ ItemDisplay[hfh]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Hellforg
 ItemDisplay[ice]: %GOLD%Malahs Potion%MAP-58%%SOUNDID-4721%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
 ItemDisplay[tr2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
 //-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+// Kassahi rejuv display rules (rvl/rvs)
+// Mirrors upstream Kassahi `01-utility-items[ALL]:14-17`. The variant alias files
+// (`02-alias/03-alias-kassahi-{normal,hyper,luxe,mystery-*}.filter`) rename rvl
+// upstream of this file (with %CONTINUE%) to "° Juice °" / "+ Full +" — this file
+// is the terminal display so the renamed value actually renders.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[((FILTLVL~1-6) OR (FILTLVL~9-10)) rvs]: %PURPLE%° %WHITE%35%
+ItemDisplay[rvs]:
+ItemDisplay[rvl]: %NAME%
+
+
+
+
+
+//------------------------------PROJECT_DIABLO_2_ULTRA_RARE------------------------------
+
+
+
+
+
+ItemDisplay[lbox]: %GG_LBOX%{%NAME%}%CONTINUE%
+ItemDisplay[imrn]: %GG_IMRN%{%NAME%}%CONTINUE%
+ItemDisplay[lsvl]: %GG_GG%{%GRAY%%TAN%Cube: %ORANGE%VoL, Bis Item %WHITE%to Make it Eth%NL%%TAN%Drops From: %RED%Anywhere}
+ItemDisplay[llmr]: %GG_GG%{%GRAY%(Mirrored Items Can Never be Modified Again)%NL%%TAN%Cube: %ORANGE%LM, Bis Item %WHITE%to Make a Duplicate Item%NL%%TAN%Drops From: %RED%Anywhere}
+ItemDisplay[rkey]: %GG_RKEY%{%NAME%}
+ItemDisplay[rtp]: %GG_RTP%{%WHITE%Gives You Infinite %BLUE%TPs}
+ItemDisplay[rid]: %GG_RID%{%WHITE%Gives You Infinite %RED%IDs}
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
 //-----------------------------------------------------------------------------------
