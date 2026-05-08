@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 113%CL%Kassahi - Meme -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 114%CL%Kassahi - Meme -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1617,51 +1617,37 @@ ItemDisplay[tes]: %TEAL%Essence of Suffering{%TAN%Cube: %WHITE%1 of Each %ORANGE
 ItemDisplay[ceh]: %TEAL%Essence of Hatred{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Mephisto}%CONTINUE%
 ItemDisplay[bet]: %TEAL%Essence of Terror{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Diablo}%CONTINUE%
 ItemDisplay[fed]: %TEAL%Essence of Destruction{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Baal}%CONTINUE%
-ItemDisplay[(tes OR ceh OR bet OR fed) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // MINI UBER KEYS
 ItemDisplay[pk1]: %ORANGE%Key of Terror{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Countess%WHITE%/%RED%Blood Raven}%CONTINUE%
 ItemDisplay[pk2]: %ORANGE%Key of Hate{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Summoner%WHITE%/%RED%Bloodwitch the Wild}%CONTINUE%
 ItemDisplay[pk3]: %ORANGE%Key of Destruction{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Nihlathak%WHITE%/%RED%Izual}%CONTINUE%
-ItemDisplay[(pk1 OR pk2 OR pk3) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // ORGAN & UBER ITEMS
 ItemDisplay[mbr]: %ORANGE%Mephisto's Brain{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Izual %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[dhn]: %ORANGE%Diablo's Horn{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Lilith %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[bey]: %ORANGE%Baal's Eye{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Duriel %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[std]: %ORANGE%%NAME%{%TAN%Drops From: %RED%Hell Ubers}%CONTINUE%
-ItemDisplay[(mbr OR dhn OR bey OR std) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // EARS
-ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // UBER ANCIENTS
 ItemDisplay[ubaa]: %ORANGE%Sigil of Madawc{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T1}%CONTINUE%
 ItemDisplay[ubab]: %ORANGE%Sigil of Talic{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T2}%CONTINUE%
 ItemDisplay[ubac]: %ORANGE%Sigil of Korlic{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T3}%CONTINUE%
-ItemDisplay[(ubaa OR ubab OR ubac) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // DCLONE ITEMS
 ItemDisplay[dcho]: %ORANGE%Black Soulstone{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Uber Tristram}%CONTINUE%
 ItemDisplay[dcso]: %ORANGE%%NAME%{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Mephisto%WHITE%/%RED%Diablo%WHITE%/%RED%Baal}%CONTINUE%
 ItemDisplay[dcbl]: %ORANGE%%NAME%{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Map Bosses}%CONTINUE%
-ItemDisplay[(dcho OR dcso OR dcbl) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // RATHMA ITEMS
 ItemDisplay[rtmo]: %ORANGE%Trang-Oul's Jawbone{%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Drops From: %RED%Undead Enemies}%CONTINUE%
 ItemDisplay[rtmv]: %ORANGE%Splinter of the Void{%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Drops From: %RED%Mendeln Map Events}%CONTINUE%
 ItemDisplay[cm2f]: %ORANGE%%NAME%{%GRAY%(Before Dying Twice in a Row)%NL%(u May Now Spend Your Souls,)%NL%%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Made From: %RED%Torches}%CONTINUE%
-ItemDisplay[(rtmo OR rtmv OR cm2f) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[cwss]: %RED%Tainted{%TAN%Anni: %WHITE%80% %BLUE%Mod %WHITE%20% %BLUE%Brick%NL%%WHITE%Possible Corruptions:}%CONTINUE%
-ItemDisplay[cwss QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // LUCION ITEMS
 ItemDisplay[lucb]: %ORANGE%Demonic Insignia{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%RED%(Abaddon, Pit of Acheron & Infernal Pit)%CL%%TAN%Drops From: %RED%A5 Red Portals}%CONTINUE%
 ItemDisplay[lucc]: %ORANGE%Talisman of Transgression{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%TAN%Drops From: %RED%Corrupted Zones}%CONTINUE%
 ItemDisplay[lucd]: %ORANGE%Flesh of Malic{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%TAN%Drops From: %RED%Demon Enemy}%CONTINUE%
-ItemDisplay[(lucb OR lucc OR lucd) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // PROJECT DIABLO 2 ITEMS
 ItemDisplay[(rid OR rtp OR rkey) INVENTORY]: %RED%%NAME%{%RED%Highlight disabled in inventory%NAME%}%CONTINUE%
 ItemDisplay[wss]: %MAP-0A%%SOUNDID-4715%%RED%Worldstone{%TAN%Maps: %WHITE%100% %BLUE%Mod %NL% %TAN%Sock Item: %WHITE%75% %BLUE%Mod %WHITE%25% %BLUE%Brick %NL% %TAN%Unsock Item: %WHITE%50% %BLUE%Mod %WHITE%25%%BLUE% Brick%WHITE%/%BLUE%Sockets %NL%%WHITE%Armor: 1-3, 1h Weapon: 2-4, 2h Weapon: 3-6%NL%%WHITE%Possible Corruptions:}%CONTINUE%
-ItemDisplay[wss QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[iwss]: %PX-60%%MAP-0A%%SOUNDID-4715%%RED%Catalyst{%TAN%Ads: %WHITE%Area Contains a Random Event to Maps%NL%%TAN%Drops From: %RED%An Altar of the Catalyst Event}%CONTINUE%
-ItemDisplay[iwss QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
-ItemDisplay[lbox QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
-ItemDisplay[lpp QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
-ItemDisplay[imrn QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[lmal]: %WHITE%Larzuk's Malus{%WHITE%All Sockets: 1%NL%%WHITE%Possible Sockets:}
 ItemDisplay[jewf]: %WHITE%Jewel Fragments %GOLD%O%GOLD%{%WHITE%Crafting As a Regular Jewel%NL%Can Be Used For}%CONTINUE%
 ItemDisplay[imma]: {}
@@ -1675,8 +1661,6 @@ ItemDisplay[irma]: %GOLD%Infused Arcane%ORANGE%{}%CONTINUE%
 ItemDisplay[irra]: %GOLD%Infused Zakarum%ORANGE%{}%CONTINUE%
 ItemDisplay[rrra]: %GOLD%Infused Horadrim%ORANGE%{}%CONTINUE%
 ItemDisplay[urma]: %GOLD%Infused Angelic%ORANGE%{}%CONTINUE%
-ItemDisplay[(jewf OR imra OR rera OR scou OR upma OR upmp OR fort OR irma OR irra OR rrra OR urma) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
-ItemDisplay[scrb QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[crfb]: %GOLD%Infusion %RED%@{%WHITE%amulet: %BLUE%10frw, 3-6lpk, 10-20life%CL%%WHITE%ring: %BLUE%5-10str, 1-3ll, 10-20life%CL%%WHITE%belt: %BLUE%10-20ow, 3-6ll, 10-20life%CL%%WHITE%gloves: %BLUE%5-10cb, 2-4ll, 10-20life%CL%%WHITE%boots: %BLUE%15-30repl, 2-4ll, 10-20life%CL%%WHITE%helm: %BLUE%10-20cb, 2-4ll, 10-20life%CL%%WHITE%chest: %BLUE%3-6lpk, 3-6ll, 20-40life%CL%%WHITE%shield: %BLUE%10-20block, 3-6ll, 10-20life%CL%%WHITE%weapon: %BLUE%50-80edmg, 3-6ll, 10-20life%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %RED%blood @}%CONTINUE%
 ItemDisplay[crfc]: %GOLD%Infusion %PURPLE%@{%WHITE%amulet: %BLUE%5-10fcr, 4-10rm, 10-20mn%CL%%WHITE%ring: %BLUE%5-10ene, 1-2mpk, 10-20mn%CL%%WHITE%belt: %BLUE%10fcr, 4-10rm, 10-20mn%CL%%WHITE%gloves: %BLUE%5-10fcr, 1-3mpk, 10-20mn%CL%%WHITE%boots: %BLUE%10-150imm, 4-10rm, 10-20mn%CL%%WHITE%helm: %BLUE%5-10fcr, 4-10rm, 10-20mn%CL%%WHITE%chest: %BLUE%5-10fcr, 3-6mpk, 20-30mn%CL%%WHITE%shield: %BLUE%10-20block, 5-10fcr, 20-30mn%CL%%WHITE%weapon: %BLUE%1all, 10-20fcr, 10-20mn%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %PURPLE%cast @}%CONTINUE%
 ItemDisplay[crfh]: %GOLD%Infusion %BLUE%@{%WHITE%amulet: %BLUE%150-250ar, 10-20fhr, 5%ctc fnova%CL%%WHITE%ring: %BLUE%5-10dex, 2-4max, 5%ctc fnova%CL%%WHITE%belt: %BLUE%5-10dmgtomana, 10-20fhr, 5%ctc fnova%CL%%WHITE%gloves: %BLUE%kb, -10-20%td, 5%ctc fnova%CL%%WHITE%boots: %BLUE%60-120defvsmelee, 10-20fhr, 5%ctc fnova%CL%%WHITE%helm: %BLUE%100-200ar, 10-20fhr, 5%ctc fnova%CL%%WHITE%chest: %BLUE%25-50edef, 30-40fhr, 5%ctc fnova%CL%%WHITE%shield: %BLUE%10-20block, 20-30fbr, 5%ctc fnova%CL%%WHITE%weapon: %BLUE%50-80edmg, -10-20%td, 5%ctc fnova%NL%%WHITE%cube: %BLUE% magic%GOLD%/%YELLOW%rare %WHITE%item, %BLUE%hit @}%CONTINUE%
@@ -1684,7 +1668,6 @@ ItemDisplay[crfs]: %GOLD%Infusion %GREEN%@{%WHITE%amulet: %BLUE%10block, 4-7mdr/
 ItemDisplay[crfu]: %GOLD%Infusion %YELLOW%@{%WHITE%amulet: %BLUE%10-20vit, 20-30mf, 1-3lr%CL%%WHITE%ring: %BLUE%5-10vit, 10-20mf, 1-3lr%CL%%WHITE%belt: %BLUE%25-50edef, 20-30mf, 1-3lr%CL%%WHITE%gloves: %BLUE%25-50edef, 15-25mf, 1-3lr%CL%%WHITE%boots: %BLUE%25-50edef, 15-25mf, 1-3lr%CL%%WHITE%helm: %BLUE%25-50edef, 20-30mf, 1-3lr%CL%%WHITE%chest: %BLUE%25-50edef, 20-30mf, 1-3lr%CL%%WHITE%shield: %BLUE%10-20block, 20-30mf, 1-3lr%CL%%WHITE%weapon: %BLUE%1all, 20-30mf, 1-3lr%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %YELLOW%bount @}%CONTINUE%
 ItemDisplay[crfp]: %GOLD%Infusion %WHITE%@{%WHITE%amulet: %BLUE%5-10ares, 100-150dvsm, 4-8astat%CL%%WHITE%ring: %BLUE%3-5ares, 50-100dvsm, hfd%CL%%WHITE%belt: %BLUE%5-10ias, 5-50edef, hfd%CL%%WHITE%gloves: %BLUE%5-10ias, 10-20ar, 25-50edef%CL%%WHITE%boots: %BLUE%10ms, 100-150dvsm, hfd%CL%%WHITE%helm: %BLUE%5-10ias, 25-50edef, hfd%CL%%WHITE%chest: %BLUE%5-10ares, 25-50edef, 10-20block%CL%%WHITE%shield: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon: %BLUE%20-40edmg, 20ias, 50-100ar%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, brill @}%CONTINUE%
 ItemDisplay[crfv]: %GOLD%Infusion %LIGHT_GRAY%@{%WHITE%amulet: %BLUE%10-20cdr, 3-6ml, 5-10rel%CL%%WHITE%ring: %BLUE%10-20plr, 1-3ml, 5-10rel%CL%%WHITE%belt: %BLUE%10-20plr, 3-6ml, 5-10rel%CL%%WHITE%gloves: %BLUE%5-10ds, 2-4ml, 5-10rel%CL%%WHITE%boots: %BLUE%10-20plr, 2-4ml, 5-10rel%CL%%WHITE%helm: %BLUE%10-20ds, 2-4ml, 5-10rel%CL%%WHITE%chest: %BLUE%3-6ml, 5-10rel, 20-30plr%CL%%WHITE%shield: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon: %BLUE%100-140dem/und, 3-6ml, 10-15rel%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %LIGHT_GRAY%vamp @}%CONTINUE%
-ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 
 
 
@@ -3600,100 +3583,6 @@ ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 // High rune
 ItemDisplay[RUNE>25 RUNE<30]: %RUNE_HIGH%%CONTINUE%
 ItemDisplay[RUNE>29]: %RUNE_ALT_HIGH%%CONTINUE%
-
-//-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
-// Runes Tooltip
-//-----------------------------------------------------------------------------------
-//Runes Notes Un-Stacked
-ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %NAME%%CONTINUE%
-
-// Estimated HR value notes
-ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 1%CL%%TAN%HR Estimated Value Each%WHITE%: 0.01%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 3%CL%%TAN%HR Estimated Value Each%WHITE%: 0.03%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=22]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 5%CL%%TAN%HR Estimated Value Each%WHITE%: 0.05%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 10%CL%%TAN%HR Estimated Value Each%WHITE%: 0.1%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=24]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 15%CL%%TAN%HR Estimated Value Each%WHITE%: 0.175%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 25%CL%%TAN%HR Estimated Value Each%WHITE%: 0.25%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 50%CL%%TAN%HR Estimated Value Each%WHITE%: 0.5%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %OHM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %OHM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LO_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LO_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %SUR_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %SUR_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=30]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %BER_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %BER_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %JAH_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %JAH_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %CHAM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %CHAM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=33]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %ZOD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %ZOD_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-
-// Stack value formulas for runes (shown when QTY>1)
-// WSS stack value shown only when calculated stack HR value <= 5
-// Low-value runes (WSS shown when stack HR <= 5)
-ItemDisplay[RUNE=20 QTY>1 QTY<501]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*1))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.01))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=20 QTY>500]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.01))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=21 QTY>1 QTY<167]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*3))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.03))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=21 QTY>166]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.03))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=22 QTY>1 QTY<101]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*5))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.05))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=22 QTY>100]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.05))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23 QTY>1 QTY<51]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*10))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.1))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23 QTY>50]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.1))%CL%%NAME%}%CONTINUE%
-// Mid-value runes (WSS shown when stack HR <= 5, HR-only when stack HR > 5)
-ItemDisplay[RUNE=24 QTY>1 QTY<29]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%GUL_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=24 QTY>28]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25 QTY>1 QTY<21]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%VEX_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25 QTY>20]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26 QTY>1 QTY<11]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%HALFHR_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26 QTY>10]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27 QTY>1 QTY<7]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%OHM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27 QTY>6]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28 QTY>1 QTY<6]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LO_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28 QTY>5]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29 QTY>1 QTY<4]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%SUR_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29 QTY>3]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
-// High-value runes (WSS only for smallest stacks or HR-only)
-ItemDisplay[RUNE=30 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%BER_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%JAH_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%CHAM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=33 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%ZOD_STACK_HR%)%CL%%NAME%}%CONTINUE%
-// High roller
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
-ItemDisplay[RUNE<21 RUNE>0 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%{%NAME%}
-
-// Tooltip notes & show runes
-ItemDisplay[r01s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld}
-ItemDisplay[r02s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEld + %GRAY%key %WHITE%= Tir}
-ItemDisplay[r03s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xTir + %GRAY%key %WHITE%= Nef}
-ItemDisplay[r04s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xNef + %GRAY%key %WHITE%= Eth}
-ItemDisplay[r05s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEth + %GRAY%key %WHITE%= Ith}
-ItemDisplay[r06s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xIth + %GRAY%key %WHITE%= Tal}
-ItemDisplay[r07s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xTal + %GRAY%key %WHITE%= Ral}
-ItemDisplay[r08s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xRal + %GRAY%key %WHITE%= Ort}
-ItemDisplay[r09s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xOrt + %GRAY%key %WHITE%= Thul}
-ItemDisplay[r10s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xThul + %GRAY%key %WHITE%= Amn}
-ItemDisplay[r11s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xAmn + %GRAY%key %WHITE%= Sol}
-ItemDisplay[r12s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xSol + %GRAY%key %WHITE%= Shael}
-ItemDisplay[r13s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xShael + %GRAY%key %WHITE%= Dol}
-ItemDisplay[r14s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xDol + %GRAY%key %WHITE%= Hel}
-ItemDisplay[r15s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xHel + %GRAY%key %WHITE%= Io}
-ItemDisplay[r16s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xIo + %GRAY%key %WHITE%= Lum}
-ItemDisplay[r17s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xLum + %GRAY%key %WHITE%= Ko}
-ItemDisplay[r18s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xKo + %GRAY%key %WHITE%= Fal}
-ItemDisplay[r19s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xFal + %GRAY%key %WHITE%= Lem}
-ItemDisplay[r20s]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xLem + %GRAY%key %WHITE%= Pul}
-ItemDisplay[r21s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xPul + %GRAY%key %WHITE%= Um}
-ItemDisplay[r22s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xUm + %GRAY%key %WHITE%= Mal}
-ItemDisplay[r23s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xMal + %GRAY%key %WHITE%= Ist}
-ItemDisplay[r24s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xIst + %GRAY%key %WHITE%= Gul}
-ItemDisplay[r25s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xGul + %GRAY%key %WHITE%= Vex}
-ItemDisplay[r26s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xVex + %GRAY%key %WHITE%= Ohm}
-ItemDisplay[r27s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xOhm + %GRAY%key %WHITE%= Lo}
-ItemDisplay[r28s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xLo + %GRAY%key %WHITE%= Sur}
-ItemDisplay[r29s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xSur + %GRAY%key %WHITE%= Ber}
-ItemDisplay[r30s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xBer + %GRAY%key %WHITE%= Jah}
-ItemDisplay[r31s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xJah + %GRAY%key %WHITE%= Cham}
-ItemDisplay[r32s]: %NAME%{%NAME%%TAN%Note%WHITE%: 2xCham + %GRAY%key %WHITE%= Zod}
-ItemDisplay[r33s]: %NAME%{%NAME%%TAN%Note%WHITE%: Zod + Perf %GRAY%O %WHITE%= Repair any Item}
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
