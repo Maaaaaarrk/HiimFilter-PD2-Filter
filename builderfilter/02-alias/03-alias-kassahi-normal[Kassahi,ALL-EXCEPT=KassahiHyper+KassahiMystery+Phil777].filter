@@ -1,6 +1,184 @@
+//-----------------------------------------------------------------------------------
+// Kassahi normal — full alias set (consolidated)
+//
+// Merged from the legacy two-file layout:
+//   * `03-alias-kassahi-general-normal` (GEN_*, BOSS_*, RUNE_*, MAG_*, RARE_*,
+//     UNI_*, SET_*, FACET_*, RW_BASE_*, CRAFT_*, etc. — visuals shared by this
+//     variant's family)
+//   * `03-alias-kassahi-normal` (GG_* item-specific aliases, MAIN_DOT,
+//     PD2_MATS, plus the rvl rename and gem name re-formatting)
+//-----------------------------------------------------------------------------------
+
+// === Set 2: shared visual-family aliases (general) ===
+
+// General item — orange triplet
+Alias[GEN_ITEM]: %ORANGE%••• %NAME% %ORANGE%•••
+
+// General item Alt
+Alias[GEN_ALT]: %PURPLE%••• %NAME% %PURPLE%•••
+
+// Token parts
+Alias[TOKEN_PARTS]: %ORANGE%·· %NAME% %ORANGE%··
+
+// Uber Keys
+Alias[UBER_KEYS]: %RED%•%ORANGE%•%RED%•   %NAME%   %RED%•%ORANGE%•%RED%•
+
+// Boss Mat Item
+Alias[BOSS_MAT]: %YELLOW%•%ORANGE%•%YELLOW%•%ORANGE%•%YELLOW%• %NAME% %YELLOW%•%ORANGE%•%YELLOW%•%ORANGE%•%YELLOW%•
+
+// Boss Mat Item Alt
+Alias[BOSS_ALT]: %YELLOW%•••• %NAME% %YELLOW%••••
+
+// Boss Entry Item
+Alias[BOSS_ENTRY]: %RED%••• %NAME% %RED%•••
+
+// Rare General Item — orange-red dot pattern
+Alias[GEN_RARE]: %ORANGE%•%RED%•%ORANGE%•   %NAME%   %ORANGE%•%RED%•%ORANGE%•
+
+// Rarer General Item — dark green emphasis
+Alias[GEN_TOP_RARE]: %DARK_GREEN%•%GREEN%•%DARK_GREEN%•   %NAME%   %DARK_GREEN%•%GREEN%•%DARK_GREEN%•
+
+// GG General Item Drop — full warm gradient
+Alias[GEN_GG_ITEM]: %PURPLE%•%RED%•%ORANGE%•%YELLOW%•   %NAME%   %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
+
+// Rare GG Item Drop — gradient with white accent
+Alias[RARE_GG_ITEM]: %PURPLE%•%RED%•%ORANGE%•%YELLOW%• %WHITE%•   %NAME%   %WHITE%• %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
+
+// Unlimited Use items
+Alias[RARE_GG_ALT]: %RED%•·•·•·•·• %NAME% %RED%•·•·•·•·•
+
+// Low rune — single red dot (matches upstream RUNE 20-21 styling)
+Alias[RUNE_LOW]: %PX-0B%%RED%• %NAME% %RED%•
+
+// Craft rune — 2 red dots
+Alias[RUNE_CRAFT]: %DOT-0B%%RED%•• %NAME% %RED%••
+
+// Mid rune — 2-dot RED-ORANGE gradient
+Alias[RUNE_MID]: %DOT-9B%%PX-0B%%RED%•%ORANGE%• %NAME% %ORANGE%•%RED%•
+
+// Mid rune Tier 2 — 3-dot RED-ORANGE-YELLOW gradient
+Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%RED%•%ORANGE%•%YELLOW%• %NAME% %YELLOW%•%ORANGE%•%RED%•
+
+// High rune — full triple gradient + map+border (matches upstream RUNE 26-28)
+Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%•%ORANGE%•%YELLOW%•   %NAME%   %YELLOW%•%ORANGE%•%RED%•
+
+// High rune Tier 2 — wider spacing (matches upstream RUNE 30, 33)
+Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%•%ORANGE%•%YELLOW%•          %NAME%          %YELLOW%•%ORANGE%•%RED%•
 
 
-//------------------------------ALIAS NORMAL------------------------------
+// Magic Item 1 Affix
+Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%PURPLE%· %NAME% %PURPLE%·
+
+// Magic Item 2 Affix
+Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%PURPLE%•%WHITE%• %NAME% %WHITE%•%PURPLE%•
+
+// Rare Item basic — sage minor
+Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%SAGE%· %NAME% %SAGE%·
+
+// Rare Item Extra
+Alias[RARE_PLUS]: %DOT-6A%· %NAME% ·
+
+// Rare Item High ilvl — sage+yellow
+Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%SAGE%·%YELLOW%· %NAME% %YELLOW%·%SAGE%·
+
+// Rare Item Good — sage+yellow+white
+Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%SAGE%•%YELLOW%•%WHITE%• %NAME% %WHITE%•%YELLOW%•%SAGE%•
+
+// Rare Item GG — full pattern (matches FMT_RARE_GG)
+Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%SAGE%••%YELLOW%••%WHITE%• %NAME% %WHITE%•%YELLOW%••%SAGE%••
+
+// Leveling Tag
+Alias[LEVELING_TAG]: %ORANGE%lvling%PX-62%
+
+
+// FACET Item — full rainbow + gold name
+Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%•%ORANGE%•%YELLOW%•%GREEN%•%BLUE%•%PURPLE%• %GOLD%%NAME% %PURPLE%•%BLUE%•%GREEN%•%YELLOW%•%ORANGE%•%RED%•
+
+// Unique Boss Item — full rainbow + gold name
+Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%•%ORANGE%•%YELLOW%•%GREEN%•%BLUE%•%PURPLE%• %GOLD%%NAME% %PURPLE%•%BLUE%•%GREEN%•%YELLOW%•%ORANGE%•%RED%•
+
+// Unique GG Item — Kassahi GG (4 dots warm + WHITE accent + PURPLE name) — matches UNID_GG
+Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%•%RED%•%ORANGE%•%YELLOW%• %WHITE%• %PURPLE%%NAME%%WHITE% • %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
+
+// Unique Tier3 Item — 3-dot PURPLE-RED-ORANGE + GOLD name (matches UNID_T3)
+Alias[UNI_STAR3_ITEM]: %BORDER-D3%%PURPLE%•%RED%•%ORANGE%•   %GOLD%%NAME%%ORANGE%   •%RED%•%PURPLE%•
+
+// Unique Tier2 Item — 2-dot RED-ORANGE + GOLD name (matches UNID_T2)
+Alias[UNI_STAR2_ITEM]: %MAP-D3%%RED%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%RED%•
+
+// Unique Tier1 Item — 1-dot RED + GOLD name (matches UNID_T1)
+Alias[UNI_STAR1_ITEM]: %DOT-D3%%RED%• %GOLD%%NAME%%RED% •
+
+// Unique Tier0 Item — 1-dot LIGHT_GRAY + GOLD name (matches UNID_T0)
+Alias[UNI_STAR0_ITEM]: %DOT-D3%%LIGHT_GRAY%• %GOLD%%NAME%%LIGHT_GRAY% •
+
+
+// SET GG Item — 3-dot PURPLE-RED-DARK_GREEN + GREEN name (matches UNID_SET_GG)
+Alias[SET_GG_ITEM]: %BORDER-7D%%PURPLE%•%RED%•%DARK_GREEN%•   %GREEN%%NAME%%DARK_GREEN%   •%RED%•%PURPLE%•
+
+// SET Tier3 Item — 2-dot RED-DARK_GREEN + GREEN name (matches UNID_SET_T3)
+Alias[SET_TIER3_ITEM]: %MAP-7D%%RED%•%DARK_GREEN%•  %GREEN%%NAME%%DARK_GREEN%  •%RED%•
+
+// SET Tier2 Item — 1-dot RED + GREEN name (matches UNID_SET_T2)
+Alias[SET_TIER2_ITEM]: %DOT-7D%%RED%• %GREEN%%NAME%%RED% •
+
+// SET Tier1 Item — 1-dot LIGHT_GRAY + GREEN name (matches UNID_SET_T1)
+Alias[SET_TIER1_ITEM]: %DOT-7D%%LIGHT_GRAY%• %GREEN%%NAME%%LIGHT_GRAY% •
+
+// RW Bases GG
+Alias[RW_BASE_GG]: %BORDER-9B%%DOT-0E%%SOUNDID-4719% %NAME% %PURPLE%
+
+// RW Bases Orange Alt Text
+Alias[RW_BASE_ALT_ORANGE]: %NAME% %DOT-0B%%ORANGE%
+
+// RW Bases Orange Text
+Alias[RW_BASE_ORANGE]: %NAME% %DOT-0B%%ORANGE%•••
+
+// RW Bases Green Text
+Alias[RW_BASE_GREEN]: %NAME% %DOT-76%%DARK_GREEN%
+
+// RW Bases Lower Green Text
+Alias[RW_BASE_LOW_GREEN]: %NAME% %DOT-7D%%GREEN%•••
+
+// Craft 2 Item Base
+Alias[CRAFT_TWO]: %GREEN%•• %NAME% %DOT-94%%GREEN%[Craft] ••
+
+// Craft 1 Item Base
+Alias[CRAFT_ONE]: %GREEN%• %NAME% %DOT-94%%GREEN%[Craft] •
+
+// Craft Item Base
+Alias[CRAFT_ZERO]: %NAME% %GREEN%[Craft]
+
+// LLD Craft Item Base
+Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
+
+
+
+//-----------------------------------------------------------------------------------
+// General Item re-names
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[wss]: %PURPLE%WORLDSTONE SHARD%CONTINUE%
+ItemDisplay[cwss]: %ORANGE%Tainted %PURPLE%WORLDSTONE SHARD%CONTINUE%
+
+// Formating for names
+ItemDisplay[gzv OR gzvs]: %PURPLE%F. Amethyst%CONTINUE%
+ItemDisplay[gpv OR gpvs]: %PURPLE%• P. Amethyst •%CONTINUE%
+ItemDisplay[glw OR glws]: %WHITE%F. Diamond%CONTINUE%
+ItemDisplay[gpw OR gpws]: %PURPLE%• %WHITE%P. Diamond %PURPLE%•%CONTINUE%
+ItemDisplay[glg OR glgs]: %GREEN%F. Emerald%CONTINUE%
+ItemDisplay[gpg OR gpgs]: %GREEN%• P. Emerald •%CONTINUE%
+ItemDisplay[glr OR glrs]: %RED%F. Ruby%CONTINUE%
+ItemDisplay[gpr OR gprs]: %RED%• P. Ruby •%CONTINUE%
+ItemDisplay[glb OR glbs]: %BLUE%F. Sapphire%CONTINUE%
+ItemDisplay[gpb OR gpbs]: %BLUE%• P. Sapphire •%CONTINUE%
+ItemDisplay[gly OR glys]: %YELLOW%F. Topaz%CONTINUE%
+ItemDisplay[gpy OR gpys]: %YELLOW%• P. Topaz •%CONTINUE%
+ItemDisplay[skl OR skls]: %CORAL%· %LIGHT_GRAY%F. Skull %CORAL%·%CONTINUE%
+ItemDisplay[skz OR skzs]: %CORAL%• • %LIGHT_GRAY%P. Skull %CORAL%• •%CONTINUE%
+
+
+// === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
 
 // imrn
 Alias[GG_IMRN]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%PURPLE%••%RED%•  %RED%%NAME%%RED%  •%PURPLE%••
