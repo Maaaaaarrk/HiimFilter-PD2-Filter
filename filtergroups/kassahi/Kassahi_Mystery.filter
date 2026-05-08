@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 107%CL%Kassahi - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 110%CL%Kassahi - Mystery -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -304,6 +304,42 @@ Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 ItemDisplay[rvl]: %PURPLE%° %WHITE%Juice %PURPLE%°%CONTINUE%
 
 
+// === Merged from 03-alias-kassahi-unid-normal ===
+// (UNID-tier display aliases for unidentified uniques/sets)
+
+
+
+
+//------------------------------UNID_ITEM_ALIAS_HYPER------------------------------
+
+
+
+
+// UNIQUES
+// CHARMS
+Alias[UNICHARM]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
+// GG
+Alias[UNID_GG]: %PURPLE%•%RED%•%ORANGE%•%YELLOW%•     %WHITE%• %PURPLE%%NAME%%WHITE% •     %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
+// TIER 3
+Alias[UNID_T3]: %PURPLE%•%RED%•%ORANGE%•   %GOLD%%NAME%%ORANGE%   •%RED%•%PURPLE%•
+// TIER 2
+Alias[UNID_T2]: %RED%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%RED%•
+// TIER 1
+Alias[UNID_T1]: %RED%• %GOLD%%NAME%%RED% •
+// TIER 0
+Alias[UNID_T0]: %LIGHT_GRAY%• %GOLD%%NAME%%LIGHT_GRAY% •
+
+// SETS
+// GG
+Alias[UNID_SET_GG]: %PURPLE%•%RED%•%DARK_GREEN%•   %GREEN%%NAME%%DARK_GREEN%   •%RED%•%PURPLE%•
+// TIER 3
+Alias[UNID_SET_T3]: %RED%•%DARK_GREEN%•  %GREEN%%NAME%%DARK_GREEN%  •%RED%•
+// TIER 2
+Alias[UNID_SET_T2]: %RED%• %GREEN%%NAME%%RED% •
+// TIER 1
+Alias[UNID_SET_T1]: %LIGHT_GRAY%• %GREEN%%NAME%%LIGHT_GRAY% •
+
+
 
 //------------------------------UNID FORMAT ALIASES------------------------------
 
@@ -341,38 +377,6 @@ Alias[FMT_TAG_ORG_SM]: %NAME% %ORANGE%·
 
 // Blame Onion flavor-text callout (issue #55)
 Alias[BLAME_ONION]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e     %GOLD%%NAME%%PURPLE%     O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
-
-
-
-
-//------------------------------UNID_ITEM_ALIAS_HYPER------------------------------
-
-
-
-
-// UNIQUES
-// CHARMS
-Alias[UNICHARM]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
-// GG
-Alias[UNID_GG]: %PURPLE%•%RED%•%ORANGE%•%YELLOW%•     %WHITE%• %PURPLE%%NAME%%WHITE% •     %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
-// TIER 3
-Alias[UNID_T3]: %PURPLE%•%RED%•%ORANGE%•   %GOLD%%NAME%%ORANGE%   •%RED%•%PURPLE%•
-// TIER 2
-Alias[UNID_T2]: %RED%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%RED%•
-// TIER 1
-Alias[UNID_T1]: %RED%• %GOLD%%NAME%%RED% •
-// TIER 0
-Alias[UNID_T0]: %LIGHT_GRAY%• %GOLD%%NAME%%LIGHT_GRAY% •
-
-// SETS
-// GG
-Alias[UNID_SET_GG]: %PURPLE%•%RED%•%DARK_GREEN%•   %GREEN%%NAME%%DARK_GREEN%   •%RED%•%PURPLE%•
-// TIER 3
-Alias[UNID_SET_T3]: %RED%•%DARK_GREEN%•  %GREEN%%NAME%%DARK_GREEN%  •%RED%•
-// TIER 2
-Alias[UNID_SET_T2]: %RED%• %GREEN%%NAME%%RED% •
-// TIER 1
-Alias[UNID_SET_T1]: %LIGHT_GRAY%• %GREEN%%NAME%%LIGHT_GRAY% •
 
 //-----------------------------------------------------------------------------------
 // Economy estimated values — update these when economy shifts
