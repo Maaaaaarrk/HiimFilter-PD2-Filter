@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 114%CL%Kassahi - Meme - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 115%CL%Kassahi - Meme - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1617,37 +1617,51 @@ ItemDisplay[tes]: %TEAL%Essence of Suffering{%TAN%Cube: %WHITE%1 of Each %ORANGE
 ItemDisplay[ceh]: %TEAL%Essence of Hatred{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Mephisto}%CONTINUE%
 ItemDisplay[bet]: %TEAL%Essence of Terror{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Diablo}%CONTINUE%
 ItemDisplay[fed]: %TEAL%Essence of Destruction{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Baal}%CONTINUE%
+ItemDisplay[(tes OR ceh OR bet OR fed) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // MINI UBER KEYS
 ItemDisplay[pk1]: %ORANGE%Key of Terror{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Countess%WHITE%/%RED%Blood Raven}%CONTINUE%
 ItemDisplay[pk2]: %ORANGE%Key of Hate{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Summoner%WHITE%/%RED%Bloodwitch the Wild}%CONTINUE%
 ItemDisplay[pk3]: %ORANGE%Key of Destruction{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Nihlathak%WHITE%/%RED%Izual}%CONTINUE%
+ItemDisplay[(pk1 OR pk2 OR pk3) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // ORGAN & UBER ITEMS
 ItemDisplay[mbr]: %ORANGE%Mephisto's Brain{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Izual %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[dhn]: %ORANGE%Diablo's Horn{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Lilith %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[bey]: %ORANGE%Baal's Eye{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Duriel %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[std]: %ORANGE%%NAME%{%TAN%Drops From: %RED%Hell Ubers}%CONTINUE%
+ItemDisplay[(mbr OR dhn OR bey OR std) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // EARS
+ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // UBER ANCIENTS
 ItemDisplay[ubaa]: %ORANGE%Sigil of Madawc{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T1}%CONTINUE%
 ItemDisplay[ubab]: %ORANGE%Sigil of Talic{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T2}%CONTINUE%
 ItemDisplay[ubac]: %ORANGE%Sigil of Korlic{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T3}%CONTINUE%
+ItemDisplay[(ubaa OR ubab OR ubac) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // DCLONE ITEMS
 ItemDisplay[dcho]: %ORANGE%Black Soulstone{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Uber Tristram}%CONTINUE%
 ItemDisplay[dcso]: %ORANGE%%NAME%{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Mephisto%WHITE%/%RED%Diablo%WHITE%/%RED%Baal}%CONTINUE%
 ItemDisplay[dcbl]: %ORANGE%%NAME%{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Map Bosses}%CONTINUE%
+ItemDisplay[(dcho OR dcso OR dcbl) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // RATHMA ITEMS
 ItemDisplay[rtmo]: %ORANGE%Trang-Oul's Jawbone{%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Drops From: %RED%Undead Enemies}%CONTINUE%
 ItemDisplay[rtmv]: %ORANGE%Splinter of the Void{%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Drops From: %RED%Mendeln Map Events}%CONTINUE%
 ItemDisplay[cm2f]: %ORANGE%%NAME%{%GRAY%(Before Dying Twice in a Row)%NL%(u May Now Spend Your Souls,)%NL%%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Made From: %RED%Torches}%CONTINUE%
+ItemDisplay[(rtmo OR rtmv OR cm2f) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[cwss]: %RED%Tainted{%TAN%Anni: %WHITE%80% %BLUE%Mod %WHITE%20% %BLUE%Brick%NL%%WHITE%Possible Corruptions:}%CONTINUE%
+ItemDisplay[cwss QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // LUCION ITEMS
 ItemDisplay[lucb]: %ORANGE%Demonic Insignia{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%RED%(Abaddon, Pit of Acheron & Infernal Pit)%CL%%TAN%Drops From: %RED%A5 Red Portals}%CONTINUE%
 ItemDisplay[lucc]: %ORANGE%Talisman of Transgression{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%TAN%Drops From: %RED%Corrupted Zones}%CONTINUE%
 ItemDisplay[lucd]: %ORANGE%Flesh of Malic{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%TAN%Drops From: %RED%Demon Enemy}%CONTINUE%
+ItemDisplay[(lucb OR lucc OR lucd) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 // PROJECT DIABLO 2 ITEMS
 ItemDisplay[(rid OR rtp OR rkey) INVENTORY]: %RED%%NAME%{%RED%Highlight disabled in inventory%NAME%}%CONTINUE%
 ItemDisplay[wss]: %MAP-0A%%SOUNDID-4715%%RED%Worldstone{%TAN%Maps: %WHITE%100% %BLUE%Mod %NL% %TAN%Sock Item: %WHITE%75% %BLUE%Mod %WHITE%25% %BLUE%Brick %NL% %TAN%Unsock Item: %WHITE%50% %BLUE%Mod %WHITE%25%%BLUE% Brick%WHITE%/%BLUE%Sockets %NL%%WHITE%Armor: 1-3, 1h Weapon: 2-4, 2h Weapon: 3-6%NL%%WHITE%Possible Corruptions:}%CONTINUE%
+ItemDisplay[wss QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[iwss]: %PX-60%%MAP-0A%%SOUNDID-4715%%RED%Catalyst{%TAN%Ads: %WHITE%Area Contains a Random Event to Maps%NL%%TAN%Drops From: %RED%An Altar of the Catalyst Event}%CONTINUE%
+ItemDisplay[iwss QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+ItemDisplay[lbox QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+ItemDisplay[lpp QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+ItemDisplay[imrn QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[lmal]: %WHITE%Larzuk's Malus{%WHITE%All Sockets: 1%NL%%WHITE%Possible Sockets:}
 ItemDisplay[jewf]: %WHITE%Jewel Fragments %GOLD%O%GOLD%{%WHITE%Crafting As a Regular Jewel%NL%Can Be Used For}%CONTINUE%
 ItemDisplay[imma]: {}
@@ -1661,6 +1675,8 @@ ItemDisplay[irma]: %GOLD%Infused Arcane%ORANGE%{}%CONTINUE%
 ItemDisplay[irra]: %GOLD%Infused Zakarum%ORANGE%{}%CONTINUE%
 ItemDisplay[rrra]: %GOLD%Infused Horadrim%ORANGE%{}%CONTINUE%
 ItemDisplay[urma]: %GOLD%Infused Angelic%ORANGE%{}%CONTINUE%
+ItemDisplay[(jewf OR imra OR rera OR scou OR upma OR upmp OR fort OR irma OR irra OR rrra OR urma) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+ItemDisplay[scrb QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 ItemDisplay[crfb]: %GOLD%Infusion %RED%@{%WHITE%amulet: %BLUE%10frw, 3-6lpk, 10-20life%CL%%WHITE%ring: %BLUE%5-10str, 1-3ll, 10-20life%CL%%WHITE%belt: %BLUE%10-20ow, 3-6ll, 10-20life%CL%%WHITE%gloves: %BLUE%5-10cb, 2-4ll, 10-20life%CL%%WHITE%boots: %BLUE%15-30repl, 2-4ll, 10-20life%CL%%WHITE%helm: %BLUE%10-20cb, 2-4ll, 10-20life%CL%%WHITE%chest: %BLUE%3-6lpk, 3-6ll, 20-40life%CL%%WHITE%shield: %BLUE%10-20block, 3-6ll, 10-20life%CL%%WHITE%weapon: %BLUE%50-80edmg, 3-6ll, 10-20life%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %RED%blood @}%CONTINUE%
 ItemDisplay[crfc]: %GOLD%Infusion %PURPLE%@{%WHITE%amulet: %BLUE%5-10fcr, 4-10rm, 10-20mn%CL%%WHITE%ring: %BLUE%5-10ene, 1-2mpk, 10-20mn%CL%%WHITE%belt: %BLUE%10fcr, 4-10rm, 10-20mn%CL%%WHITE%gloves: %BLUE%5-10fcr, 1-3mpk, 10-20mn%CL%%WHITE%boots: %BLUE%10-150imm, 4-10rm, 10-20mn%CL%%WHITE%helm: %BLUE%5-10fcr, 4-10rm, 10-20mn%CL%%WHITE%chest: %BLUE%5-10fcr, 3-6mpk, 20-30mn%CL%%WHITE%shield: %BLUE%10-20block, 5-10fcr, 20-30mn%CL%%WHITE%weapon: %BLUE%1all, 10-20fcr, 10-20mn%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %PURPLE%cast @}%CONTINUE%
 ItemDisplay[crfh]: %GOLD%Infusion %BLUE%@{%WHITE%amulet: %BLUE%150-250ar, 10-20fhr, 5%ctc fnova%CL%%WHITE%ring: %BLUE%5-10dex, 2-4max, 5%ctc fnova%CL%%WHITE%belt: %BLUE%5-10dmgtomana, 10-20fhr, 5%ctc fnova%CL%%WHITE%gloves: %BLUE%kb, -10-20%td, 5%ctc fnova%CL%%WHITE%boots: %BLUE%60-120defvsmelee, 10-20fhr, 5%ctc fnova%CL%%WHITE%helm: %BLUE%100-200ar, 10-20fhr, 5%ctc fnova%CL%%WHITE%chest: %BLUE%25-50edef, 30-40fhr, 5%ctc fnova%CL%%WHITE%shield: %BLUE%10-20block, 20-30fbr, 5%ctc fnova%CL%%WHITE%weapon: %BLUE%50-80edmg, -10-20%td, 5%ctc fnova%NL%%WHITE%cube: %BLUE% magic%GOLD%/%YELLOW%rare %WHITE%item, %BLUE%hit @}%CONTINUE%
@@ -1668,6 +1684,7 @@ ItemDisplay[crfs]: %GOLD%Infusion %GREEN%@{%WHITE%amulet: %BLUE%10block, 4-7mdr/
 ItemDisplay[crfu]: %GOLD%Infusion %YELLOW%@{%WHITE%amulet: %BLUE%10-20vit, 20-30mf, 1-3lr%CL%%WHITE%ring: %BLUE%5-10vit, 10-20mf, 1-3lr%CL%%WHITE%belt: %BLUE%25-50edef, 20-30mf, 1-3lr%CL%%WHITE%gloves: %BLUE%25-50edef, 15-25mf, 1-3lr%CL%%WHITE%boots: %BLUE%25-50edef, 15-25mf, 1-3lr%CL%%WHITE%helm: %BLUE%25-50edef, 20-30mf, 1-3lr%CL%%WHITE%chest: %BLUE%25-50edef, 20-30mf, 1-3lr%CL%%WHITE%shield: %BLUE%10-20block, 20-30mf, 1-3lr%CL%%WHITE%weapon: %BLUE%1all, 20-30mf, 1-3lr%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %YELLOW%bount @}%CONTINUE%
 ItemDisplay[crfp]: %GOLD%Infusion %WHITE%@{%WHITE%amulet: %BLUE%5-10ares, 100-150dvsm, 4-8astat%CL%%WHITE%ring: %BLUE%3-5ares, 50-100dvsm, hfd%CL%%WHITE%belt: %BLUE%5-10ias, 5-50edef, hfd%CL%%WHITE%gloves: %BLUE%5-10ias, 10-20ar, 25-50edef%CL%%WHITE%boots: %BLUE%10ms, 100-150dvsm, hfd%CL%%WHITE%helm: %BLUE%5-10ias, 25-50edef, hfd%CL%%WHITE%chest: %BLUE%5-10ares, 25-50edef, 10-20block%CL%%WHITE%shield: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon: %BLUE%20-40edmg, 20ias, 50-100ar%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, brill @}%CONTINUE%
 ItemDisplay[crfv]: %GOLD%Infusion %LIGHT_GRAY%@{%WHITE%amulet: %BLUE%10-20cdr, 3-6ml, 5-10rel%CL%%WHITE%ring: %BLUE%10-20plr, 1-3ml, 5-10rel%CL%%WHITE%belt: %BLUE%10-20plr, 3-6ml, 5-10rel%CL%%WHITE%gloves: %BLUE%5-10ds, 2-4ml, 5-10rel%CL%%WHITE%boots: %BLUE%10-20plr, 2-4ml, 5-10rel%CL%%WHITE%helm: %BLUE%10-20ds, 2-4ml, 5-10rel%CL%%WHITE%chest: %BLUE%3-6ml, 5-10rel, 20-30plr%CL%%WHITE%shield: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon: %BLUE%100-140dem/und, 3-6ml, 10-15rel%NL%%WHITE%cube: %BLUE%magic%GOLD%/%YELLOW%rare %WHITE%item, %LIGHT_GRAY%vamp @}%CONTINUE%
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
 
 
 
