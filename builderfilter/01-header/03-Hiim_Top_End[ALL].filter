@@ -66,7 +66,7 @@ ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPI
 ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%{%NAME%}// In case you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
 //ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
-ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[FILTLVL>10 !rvl !rvs !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
