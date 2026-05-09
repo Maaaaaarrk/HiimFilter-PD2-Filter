@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 9th Season 13 - build 115
+## Last updated May 9th Season 13 - build 116
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
