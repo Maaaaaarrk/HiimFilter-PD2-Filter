@@ -1,0 +1,95 @@
+name: Update PD2 Trader Rune Values
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-pd2trader-rune-values-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update-rune-values:
+    # Skip PRs from forks: GITHUB_TOKEN is read-only there, so we couldn't push back.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || 'main' }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update rune values from PD2 Trader
+        run: node scripts/update-pd2trader-runes.mjs
+        env:
+          PD2TRADER_LADDER: 'true'
+          PD2TRADER_HARDCORE: 'false'
+
+      - name: Check if alias file changed
+        id: check
+        run: |
+          if git diff --quiet -- "builderfilter/02-alias/04-alias-economy-values[ALL].filter"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Increment version
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          VERSION=$(cat version.txt | tr -d '[:space:]')
+          if ! echo "$VERSION" | grep -qE '^[0-9]+$'; then VERSION=0; fi
+          VERSION=$((VERSION + 1))
+          echo "$VERSION" > version.txt
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Build filters
+        if: steps.check.outputs.changed == 'true'
+        run: python builderfilter/build.py
+
+      - name: Generate README
+        if: steps.check.outputs.changed == 'true'
+        run: python builderreadme/create_readme.py
+
+      - name: Validate filters
+        if: steps.check.outputs.changed == 'true'
+        run: python validate_filters.py --errors-only
+
+      - name: Commit and push
+        if: steps.check.outputs.changed == 'true'
+        env:
+          TARGET_REF: ${{ github.event.pull_request.head.ref || 'main' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "builderfilter/02-alias/04-alias-economy-values[ALL].filter" \
+                  version.txt \
+                  "builderfilter/01-header/01-Version[ALL].filter" \
+                  filter_definitions.json \
+                  README.md
+          git add *.filter 2>/dev/null || true
+          git add filtergroups 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update PD2 Trader rune values (version ${{ env.VERSION }})"
+          git pull --rebase origin "$TARGET_REF"
+          git push origin "HEAD:$TARGET_REF"
