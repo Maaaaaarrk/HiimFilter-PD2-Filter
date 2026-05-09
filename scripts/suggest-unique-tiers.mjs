@@ -53,6 +53,14 @@ const throttleMs = Number(args['throttle-ms']) || 200;
 // cutoff-percentile: lower = more conservative tier promotion (item must clear higher
 // portion of target tier). 0.5 = median (loose), 0.25 = p25 (strict).
 const cutoffPercentile = Number(args['cutoff-percentile']) || 0.33;
+// top-percentile: per-name, only the top X% of listings by price contribute to the
+// per-name median. Default 0.25 = "median of the top 25% priced listings". Captures
+// the upside of finding a good (often corrupted) copy rather than the typical drop.
+const topPercentile = Number(args['top-percentile']) || 0.25;
+// excludeCorrupted: by default we include corrupted listings (top-priced copies are
+// typically corrupted, and the filter highlights upside potential). Pass
+// --exclude-corrupted=true to revert to clean-only listings.
+const excludeCorrupted = args['exclude-corrupted'] === 'true';
 const pageSize = 200;
 const maxPagesPerBase = 5;
 const maxConcurrent = 4;
@@ -109,7 +117,7 @@ async function fetchListingsForBase(baseCode, isEth) {
   const updatedAfter = new Date(Date.now() - windowHours * 3600 * 1000).toISOString();
   const all = [];
   for (let page = 0; page < maxPagesPerBase; page++) {
-    const params = new URLSearchParams({
+    const baseParams = {
       type: 'item',
       $limit: String(pageSize),
       $skip: String(page * pageSize),
@@ -120,8 +128,9 @@ async function fetchListingsForBase(baseCode, isEth) {
       'item.base_code': baseCode,
       'item.quality.name': 'Unique',
       'item.is_ethereal': String(isEth),
-      'item.corrupted': 'false',
-    });
+    };
+    if (excludeCorrupted) baseParams['item.corrupted'] = 'false';
+    const params = new URLSearchParams(baseParams);
     const res = await fetch(`${MARKET_URL}?${params}`);
     if (!res.ok) {
       throw new Error(`market API ${res.status} for ${baseCode} eth=${isEth}`);
@@ -166,9 +175,14 @@ function aggregateListings(listings) {
   const medians = [];
   for (const [name, prices] of byName) {
     if (prices.length < minSamples) continue;
-    const sorted = [...prices].sort((a, b) => a - b);
-    const median = sorted[Math.floor(sorted.length / 2)];
-    medians.push({ name, median, count: prices.length });
+    // Top X% of listings by price (descending), floored at minSamples so we never
+    // collapse to a single outlier when a name has few listings.
+    const sortedDesc = [...prices].sort((a, b) => b - a);
+    const topCount = Math.max(minSamples, Math.ceil(sortedDesc.length * topPercentile));
+    const top = sortedDesc.slice(0, topCount);
+    const sortedAsc = [...top].sort((a, b) => a - b);
+    const median = sortedAsc[Math.floor(sortedAsc.length / 2)];
+    medians.push({ name, median, count: prices.length, topCount });
   }
   medians.sort((a, b) => b.median - a.median);
   return {
@@ -275,7 +289,9 @@ const tierShort = {
 
 async function main() {
   console.error(`fetching uniques from PD2 market API`);
-  console.error(`  window: ${windowHours}h, min-samples: ${minSamples}, ladder=${isLadder} hardcore=${isHardcore}`);
+  console.error(
+    `  window: ${windowHours}h, min-samples: ${minSamples}, top-pct: ${topPercentile}, ladder=${isLadder} hardcore=${isHardcore}, corrupted=${excludeCorrupted ? 'excluded' : 'included'}`,
+  );
 
   const aliasText = await readFile(ALIAS_FILE, 'utf8');
   const tiersByBase = parseAliases(aliasText);
@@ -399,7 +415,7 @@ async function main() {
 
   const diff = {
     generatedAt: new Date().toISOString(),
-    params: { windowHours, minSamples, isLadder, isHardcore, cutoffPercentile },
+    params: { windowHours, minSamples, isLadder, isHardcore, cutoffPercentile, topPercentile, excludeCorrupted },
     calibration: {
       tierStats: Object.fromEntries(calibration.tierStats),
       cutoffs: calibration.cutoffs,
