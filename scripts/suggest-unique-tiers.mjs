@@ -23,6 +23,7 @@ import { dirname } from 'node:path';
 const ALIAS_FILE = 'builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter';
 const REPORT_FILE = 'temp/unique-tier-report.txt';
 const DIFF_FILE = 'temp/unique-tier-diff.json';
+const MOVES_FILE = 'temp/unique-tier-moves.txt';
 const MARKET_URL = 'https://api.projectdiablo2.com/market/listing';
 
 // Tiers in *display priority* order: highest to lowest.
@@ -407,6 +408,34 @@ async function main() {
   };
   await writeFile(DIFF_FILE, JSON.stringify(diff, null, 2), 'utf8');
   console.error(`wrote ${DIFF_FILE} (${moves.length} suggested moves)`);
+
+  // Moves-only text file, sorted by delta magnitude then median desc
+  const sortedMoves = [...moves].sort(
+    (a, b) => Math.abs(b.delta ?? 0) - Math.abs(a.delta ?? 0) || (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0),
+  );
+  const movesLines = [];
+  movesLines.push(`Unique tier suggested moves — ${diff.generatedAt}`);
+  movesLines.push(
+    `Window ${windowHours}h, min ${minSamples} samples, cutoff-pct ${cutoffPercentile}, ladder=${isLadder} hardcore=${isHardcore}`,
+  );
+  movesLines.push('');
+  movesLines.push('Sorted by delta magnitude (biggest moves first), then median price.');
+  movesLines.push('Δ > 0 = promote (move up tiers); Δ < 0 = demote (move down).');
+  movesLines.push('');
+  movesLines.push('base    var   cur → sug   Δ    median       listings  top name (samples)');
+  movesLines.push('-'.repeat(90));
+  for (const m of sortedMoves) {
+    const cur = tierShort[m.currentEffectiveTier] || '?';
+    const sug = tierShort[m.suggestedTier] || '?';
+    const v = m.variant === 'eth' ? 'ETH ' : 'norm';
+    const d = (m.delta ?? 0) > 0 ? `+${m.delta}` : `${m.delta}`;
+    const med = fmtHR(m.maxMedianHR).padStart(8);
+    movesLines.push(
+      `${m.base.padEnd(6)} ${v}  ${cur} → ${sug}   ${d.padStart(3)}  ${med}    ${String(m.totalListings).padStart(5)}  ${m.topName || ''} (${m.sampleCount})`,
+    );
+  }
+  await writeFile(MOVES_FILE, movesLines.join('\n') + '\n', 'utf8');
+  console.error(`wrote ${MOVES_FILE} (${sortedMoves.length} moves, sorted by Δ)`);
 }
 
 main().catch((err) => {
