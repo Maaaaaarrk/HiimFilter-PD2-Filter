@@ -4,12 +4,6 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - automate-rune-value-updates
-    paths:
-      - 'scripts/update-pd2trader-runes.mjs'
-      - '.github/workflows/update-pd2trader-rune-values.yml'
 
 permissions:
   contents: write
@@ -24,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -88,5 +84,5 @@ jobs:
             exit 0
           fi
           git commit -m "Update PD2 Trader rune values (version ${{ env.VERSION }})"
-          git pull --rebase origin ${{ github.ref_name }}
-          git push origin HEAD:${{ github.ref_name }}
+          git pull --rebase origin main
+          git push origin HEAD:main
