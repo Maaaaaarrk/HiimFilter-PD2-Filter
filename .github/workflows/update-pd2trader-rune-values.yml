@@ -18,8 +18,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -84,5 +82,5 @@ jobs:
             exit 0
           fi
           git commit -m "Update PD2 Trader rune values (version ${{ env.VERSION }})"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git pull --rebase origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
