@@ -409,33 +409,51 @@ async function main() {
   await writeFile(DIFF_FILE, JSON.stringify(diff, null, 2), 'utf8');
   console.error(`wrote ${DIFF_FILE} (${moves.length} suggested moves)`);
 
-  // Moves-only text file, sorted by delta magnitude then median desc
-  const sortedMoves = [...moves].sort(
-    (a, b) => Math.abs(b.delta ?? 0) - Math.abs(a.delta ?? 0) || (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0),
-  );
+  // Moves-only text file split by direction (upgrades vs downgrades)
+  const upgrades = moves
+    .filter((m) => (m.delta ?? 0) > 0)
+    .sort((a, b) => (b.delta ?? 0) - (a.delta ?? 0) || (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0));
+  const downgrades = moves
+    .filter((m) => (m.delta ?? 0) < 0)
+    .sort((a, b) => (a.delta ?? 0) - (b.delta ?? 0) || (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0));
+
   const movesLines = [];
   movesLines.push(`Unique tier suggested moves — ${diff.generatedAt}`);
   movesLines.push(
     `Window ${windowHours}h, min ${minSamples} samples, cutoff-pct ${cutoffPercentile}, ladder=${isLadder} hardcore=${isHardcore}`,
   );
   movesLines.push('');
-  movesLines.push('Sorted by delta magnitude (biggest moves first), then median price.');
-  movesLines.push('Δ > 0 = promote (move up tiers); Δ < 0 = demote (move down).');
+  movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);
   movesLines.push('');
-  movesLines.push('base    var   cur → sug   Δ    median       listings  top name (samples)');
-  movesLines.push('-'.repeat(90));
-  for (const m of sortedMoves) {
-    const cur = tierShort[m.currentEffectiveTier] || '?';
-    const sug = tierShort[m.suggestedTier] || '?';
-    const v = m.variant === 'eth' ? 'ETH ' : 'norm';
-    const d = (m.delta ?? 0) > 0 ? `+${m.delta}` : `${m.delta}`;
-    const med = fmtHR(m.maxMedianHR).padStart(8);
-    movesLines.push(
-      `${m.base.padEnd(6)} ${v}  ${cur} → ${sug}   ${d.padStart(3)}  ${med}    ${String(m.totalListings).padStart(5)}  ${m.topName || ''} (${m.sampleCount})`,
-    );
-  }
+  const header = 'base    var   cur → sug   Δ    median       listings  top name (samples)';
+  const sep = '-'.repeat(90);
+
+  movesLines.push(`UPGRADES (${upgrades.length}) — promote to a higher tier, sorted by Δ desc`);
+  movesLines.push(sep);
+  movesLines.push(header);
+  movesLines.push(sep);
+  for (const m of upgrades) movesLines.push(formatMoveLine(m));
+
+  movesLines.push('');
+  movesLines.push(`DOWNGRADES (${downgrades.length}) — demote to a lower tier, sorted by Δ asc`);
+  movesLines.push(sep);
+  movesLines.push(header);
+  movesLines.push(sep);
+  for (const m of downgrades) movesLines.push(formatMoveLine(m));
+
   await writeFile(MOVES_FILE, movesLines.join('\n') + '\n', 'utf8');
-  console.error(`wrote ${MOVES_FILE} (${sortedMoves.length} moves, sorted by Δ)`);
+  console.error(
+    `wrote ${MOVES_FILE} (${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s))`,
+  );
+}
+
+function formatMoveLine(m) {
+  const cur = tierShort[m.currentEffectiveTier] || '?';
+  const sug = tierShort[m.suggestedTier] || '?';
+  const v = m.variant === 'eth' ? 'ETH ' : 'norm';
+  const d = (m.delta ?? 0) > 0 ? `+${m.delta}` : `${m.delta}`;
+  const med = fmtHR(m.maxMedianHR).padStart(8);
+  return `${m.base.padEnd(6)} ${v}  ${cur} → ${sug}   ${d.padStart(3)}  ${med}    ${String(m.totalListings).padStart(5)}  ${m.topName || ''} (${m.sampleCount})`;
 }
 
 main().catch((err) => {
