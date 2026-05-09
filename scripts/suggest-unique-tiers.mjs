@@ -50,9 +50,17 @@ const isHardcore = args.hardcore === 'true';
 const minSamples = Number(args['min-samples']) || 5;
 const windowHours = Number(args['window-hours']) || 168;
 const throttleMs = Number(args['throttle-ms']) || 200;
-// cutoff-percentile: lower = more conservative tier promotion (item must clear higher
-// portion of target tier). 0.5 = median (loose), 0.25 = p25 (strict).
-const cutoffPercentile = Number(args['cutoff-percentile']) || 0.33;
+// Manual tier cutoffs in HR (top-down, first match wins). Override via CLI:
+//   --cutoff-4=2.0 --cutoff-3=1.0 --cutoff-2=0.5 --cutoff-1=0.25 --cutoff-0=0.15 --cutoff-no=0.1
+// Note: 100 WSS = 1 HR. Item-name medians are converted to HR before comparison.
+const CUTOFFS_HR = [
+  { tier: '4_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-4']  ?? 2.0) },
+  { tier: '3_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-3']  ?? 1.0) },
+  { tier: '2_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-2']  ?? 0.5) },
+  { tier: '1_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-1']  ?? 0.25) },
+  { tier: '0_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-0']  ?? 0.15) },
+  { tier: 'NO_STAR_UNIQUE', cutoffHR: Number(args['cutoff-no'] ?? 0.10) },
+];
 // top-percentile: per-name, only the top X% of listings by price contribute to the
 // per-name median. Default 0.25 = "median of the top 25% priced listings". Captures
 // the upside of finding a good (often corrupted) copy rather than the typical drop.
@@ -206,9 +214,9 @@ function percentile(values, p) {
   return sorted[idx];
 }
 
-function calibrateThresholds(itemRows, cutoffPercentile) {
-  // For each VALUE_TIER, gather the maxMedian of every (base, eth) row whose
-  // currentTier resolves to that value tier. Tier stats = distribution of those.
+function tierStatsFromRows(itemRows) {
+  // Diagnostic-only: per-tier price distribution from current memberships.
+  // Cutoffs themselves are manual (CUTOFFS_HR), independent of these stats.
   const pricesByTier = new Map();
   for (const tier of VALUE_TIERS) pricesByTier.set(tier, []);
   for (const row of itemRows) {
@@ -225,24 +233,15 @@ function calibrateThresholds(itemRows, cutoffPercentile) {
       p90: percentile(prices, 0.9),
     });
   }
-  // Cutoff for entering tier_high = cutoffPercentile of tier_high prices.
-  // Default 0.5 = median, more conservative values (e.g. 0.33) require items
-  // to be in the upper portion of the tier's distribution to qualify.
-  const ordered = VALUE_TIERS.filter((t) => Number.isFinite(tierStats.get(t)?.p50));
-  const cutoffs = [];
-  for (const tier of ordered) {
-    const prices = pricesByTier.get(tier);
-    cutoffs.push({ tier, cutoffHR: percentile(prices, cutoffPercentile) });
-  }
-  return { tierStats, cutoffs, ordered };
+  return tierStats;
 }
 
-function suggestTier(maxMedianHR, calibration) {
+function suggestTier(maxMedianHR) {
   if (!Number.isFinite(maxMedianHR)) return null;
-  for (const c of calibration.cutoffs) {
+  for (const c of CUTOFFS_HR) {
     if (maxMedianHR >= c.cutoffHR) return c.tier;
   }
-  return calibration.ordered[calibration.ordered.length - 1] || null;
+  return null; // below the lowest cutoff — too cheap to even register
 }
 
 async function fetchAllConcurrent(jobs, concurrency, onProgress) {
@@ -337,21 +336,22 @@ async function main() {
     });
   }
 
-  const calibration = calibrateThresholds(itemRows, cutoffPercentile);
-  console.error(`tier price distribution (n / p10 / p50 / p90, HR):`);
-  for (const t of calibration.ordered) {
-    const s = calibration.tierStats.get(t);
+  const tierStats = tierStatsFromRows(itemRows);
+  console.error(`tier price distribution (n / p10 / p50 / p90, HR) — diagnostic:`);
+  for (const t of VALUE_TIERS) {
+    const s = tierStats.get(t);
+    if (!s) continue;
     console.error(
       `  ${t.padEnd(20)} n=${String(s.count).padStart(3)}  p10=${(s.p10 ?? 0).toFixed(3)}  p50=${(s.p50 ?? 0).toFixed(3)}  p90=${(s.p90 ?? 0).toFixed(3)}`,
     );
   }
-  console.error(`cutoffs (≥ X HR → tier, percentile=${cutoffPercentile}):`);
-  for (const c of calibration.cutoffs) {
+  console.error(`manual cutoffs (≥ X HR → tier):`);
+  for (const c of CUTOFFS_HR) {
     console.error(`  ≥ ${c.cutoffHR.toFixed(3)} HR → ${c.tier}`);
   }
 
   for (const row of itemRows) {
-    row.suggestedTier = suggestTier(row.maxMedian, calibration);
+    row.suggestedTier = suggestTier(row.maxMedian);
     row.delta =
       row.suggestedTier && row.currentTier
         ? VALUE_TIERS.indexOf(row.currentTier) - VALUE_TIERS.indexOf(row.suggestedTier)
@@ -365,16 +365,17 @@ async function main() {
   lines.push(`Unique tier suggestions — generated ${new Date().toISOString()}`);
   lines.push(`Window ${windowHours}h, min ${minSamples} samples, ladder=${isLadder} hardcore=${isHardcore}`);
   lines.push('');
-  lines.push('Tier price distribution (n / p10 / p50 / p90, HR):');
-  for (const t of calibration.ordered) {
-    const s = calibration.tierStats.get(t);
+  lines.push('Tier price distribution (n / p10 / p50 / p90, HR) — diagnostic:');
+  for (const t of VALUE_TIERS) {
+    const s = tierStats.get(t);
+    if (!s) continue;
     lines.push(
       `  ${t.padEnd(20)} n=${String(s.count).padStart(3)}  p10=${(s.p10 ?? 0).toFixed(3).padStart(7)}  p50=${(s.p50 ?? 0).toFixed(3).padStart(7)}  p90=${(s.p90 ?? 0).toFixed(3).padStart(7)}`,
     );
   }
   lines.push('');
-  lines.push(`Cutoffs (≥ X HR → tier, cutoff-percentile=${cutoffPercentile}):`);
-  for (const c of calibration.cutoffs) {
+  lines.push('Manual cutoffs (≥ X HR → tier):');
+  for (const c of CUTOFFS_HR) {
     lines.push(`  ≥ ${c.cutoffHR.toFixed(3).padStart(8)} HR → ${c.tier}`);
   }
   lines.push('');
@@ -415,11 +416,9 @@ async function main() {
 
   const diff = {
     generatedAt: new Date().toISOString(),
-    params: { windowHours, minSamples, isLadder, isHardcore, cutoffPercentile, topPercentile, excludeCorrupted },
-    calibration: {
-      tierStats: Object.fromEntries(calibration.tierStats),
-      cutoffs: calibration.cutoffs,
-    },
+    params: { windowHours, minSamples, isLadder, isHardcore, topPercentile, excludeCorrupted },
+    cutoffs: CUTOFFS_HR,
+    tierStats: Object.fromEntries(tierStats),
     moves,
   };
   await writeFile(DIFF_FILE, JSON.stringify(diff, null, 2), 'utf8');
@@ -436,7 +435,7 @@ async function main() {
   const movesLines = [];
   movesLines.push(`Unique tier suggested moves — ${diff.generatedAt}`);
   movesLines.push(
-    `Window ${windowHours}h, min ${minSamples} samples, cutoff-pct ${cutoffPercentile}, ladder=${isLadder} hardcore=${isHardcore}`,
+    `Window ${windowHours}h, min ${minSamples} samples, top-pct ${topPercentile}, ladder=${isLadder} hardcore=${isHardcore}, corrupted=${excludeCorrupted ? 'excluded' : 'included'}`,
   );
   movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);
