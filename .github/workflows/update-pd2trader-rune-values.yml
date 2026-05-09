@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - automate-rune-value-updates
+    paths:
+      - 'scripts/update-pd2trader-runes.mjs'
+      - '.github/workflows/update-pd2trader-rune-values.yml'
 
 permissions:
   contents: write
