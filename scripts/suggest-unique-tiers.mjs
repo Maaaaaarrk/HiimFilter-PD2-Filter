@@ -416,9 +416,13 @@ async function main() {
     const ethSug = ethRow?.suggestedTier ?? null;
     const nonethSug = nonethRow?.suggestedTier ?? null;
     const higherSugIdx = Math.min(tierIdx(ethSug), tierIdx(nonethSug));
-    const isBelowThreeStar = higherSugIdx > THREE_STAR_IDX;
+    const lowerSugIdx = Math.max(tierIdx(ethSug), tierIdx(nonethSug));
+    // Differentiate eth vs non-eth only when BOTH variants suggest 3★ or higher
+    // (our alias system only has *_NO_ETH_UNIQUE / *_ETH_UNIQUE at 3★/4★).
+    // If either variant is below 3★, collapse to a combined row at the higher tier.
+    const eitherBelowThreeStar = lowerSugIdx > THREE_STAR_IDX;
 
-    if (ethSug === nonethSug || isBelowThreeStar) {
+    if (ethSug === nonethSug || eitherBelowThreeStar) {
       // Combined row using the higher of the two as the suggestion
       const combinedSug = VALUE_TIERS[higherSugIdx] ?? null;
       // Pick whichever variant has more listings to drive the displayed data
@@ -531,13 +535,14 @@ async function main() {
   await writeFile(DIFF_FILE, JSON.stringify(diff, null, 2), 'utf8');
   console.error(`wrote ${DIFF_FILE} (${moves.length} suggested moves)`);
 
-  // Moves-only text file split by direction (upgrades vs downgrades)
-  const upgrades = moves
-    .filter((m) => (m.delta ?? 0) > 0)
-    .sort((a, b) => (b.delta ?? 0) - (a.delta ?? 0) || (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0));
-  const downgrades = moves
-    .filter((m) => (m.delta ?? 0) < 0)
-    .sort((a, b) => (a.delta ?? 0) - (b.delta ?? 0) || (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0));
+  // Moves-only text file split by direction (upgrades vs downgrades).
+  // Within each section, sort by NEW (suggested) tier — highest first — then by
+  // estimated value desc so the most valuable items per tier surface first.
+  const byTierThenValue = (a, b) =>
+    tierIdx(a.suggestedTier) - tierIdx(b.suggestedTier) ||
+    (b.maxMedianHR ?? 0) - (a.maxMedianHR ?? 0);
+  const upgrades = moves.filter((m) => (m.delta ?? 0) > 0).sort(byTierThenValue);
+  const downgrades = moves.filter((m) => (m.delta ?? 0) < 0).sort(byTierThenValue);
 
   const movesLines = [];
   movesLines.push(`Unique tier suggested moves — ${diff.generatedAt}`);
@@ -545,16 +550,18 @@ async function main() {
     `Window ${windowHours}h, min ${minSamples} samples, top-pct ${topPercentile}, ladder=${isLadder} hardcore=${isHardcore}, corrupted=${excludeCorrupted ? 'excluded' : 'included'}`,
   );
   movesLines.push('');
-  movesLines.push('Estimated value = median of the top X% (or top 5, whichever is more) of listings,');
-  movesLines.push('per item-name. ≥cutoff column = how many of those listings clear the relevant cutoff:');
-  movesLines.push('  - upgrades: cutoff for the suggested (new) tier');
-  movesLines.push('  - downgrades: cutoff for the tier just above the demotion target');
+  movesLines.push('est val   = median of the top X% (or top 5, whichever is more) of listings, per item-name.');
+  movesLines.push('qualify(n)= count of listings that clear the named tier (i.e. how many of the upper-quartile');
+  movesLines.push('            listings sit at that tier or above).');
+  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (must be ≥5 for the move).');
+  movesLines.push('  - downgrades: ≥(tier just above the demotion target) — i.e. how many listings still');
+  movesLines.push('                merit a tier above where we are demoting to.');
   movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);
   movesLines.push('');
-  // Column widths: base(5) | var(4) | cur(2)+arrow+sug(2)=7 | est(8) | cutoff(14) | total(5) | top
-  const header = `${'base'.padEnd(5)}  ${'var '.padEnd(4)}   ${'move   '.padEnd(7)}   ${'est val '.padEnd(8)}   ${'≥cutoff (n)  '.padEnd(14)}  total  top name (top of total)`;
-  const sep = '-'.repeat(115);
+  // Column widths: base(5) | var(4) | cur(2)+arrow+sug(2)=7 | est(8) | qualify(11) | total(5) | top
+  const header = `${'base'.padEnd(5)}  ${'var '.padEnd(4)}   ${'move   '.padEnd(7)}   ${'est val '.padEnd(8)}   ${'qualify(n)'.padEnd(11)}  total  top name (top of total)`;
+  const sep = '-'.repeat(112);
 
   movesLines.push(`UPGRADES (${upgrades.length}) — promote to a higher tier`);
   movesLines.push(sep);
@@ -585,19 +592,11 @@ function formatMoveLine(m) {
   const sug = (tierShort[m.suggestedTier] || '? ').padEnd(2);
   const move = `${cur} → ${sug}`; // 7 chars
   const med = fmtHR(m.maxMedianHR); // 8 chars
-  const cutoffStr = Number.isFinite(m.cutoffHR)
-    ? `≥${fmtHRTight(m.cutoffHR)} (${m.cutoffCount})`
-    : '';
-  const cutoffPadded = cutoffStr.padEnd(14);
+  const qualifyStr = m.cutoffTier ? `≥${tierShort[m.cutoffTier]} (${m.cutoffCount})` : '';
+  const qualifyPadded = qualifyStr.padEnd(11);
   const total = String(m.totalListings).padStart(5);
   const topStr = `${m.topName || ''} (top ${m.topUsedForMedian} of ${m.topNameTotal})`;
-  return `${base}  ${v}   ${move}   ${med}   ${cutoffPadded}  ${total}  ${topStr}`;
-}
-
-function fmtHRTight(v) {
-  if (!Number.isFinite(v)) return '?';
-  if (v >= 1) return v.toFixed(2).replace(/\.?0+$/, '') + 'HR';
-  return (v * 100).toFixed(0) + 'WS';
+  return `${base}  ${v}   ${move}   ${med}   ${qualifyPadded}  ${total}  ${topStr}`;
 }
 
 main().catch((err) => {
