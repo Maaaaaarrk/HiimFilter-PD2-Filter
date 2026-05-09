@@ -190,16 +190,45 @@ function aggregateListings(listings) {
     const top = sortedDesc.slice(0, topCount);
     const sortedAsc = [...top].sort((a, b) => a - b);
     const median = sortedAsc[Math.floor(sortedAsc.length / 2)];
-    medians.push({ name, median, count: prices.length, topCount });
+    medians.push({ name, median, count: prices.length, topCount, sortedDesc });
   }
   medians.sort((a, b) => b.median - a.median);
+  const top = medians[0];
   return {
     medians,
-    maxMedian: medians[0]?.median,
-    maxName: medians[0]?.name,
+    maxMedian: top?.median,
+    maxName: top?.name,
+    maxNameTopCount: top?.topCount,
+    maxNameCount: top?.count,
+    maxNamePrices: top?.sortedDesc, // descending
     totalListings: listings.length,
     distinctNames: byName.size,
   };
+}
+
+function countAtOrAbove(sortedDescPrices, threshold) {
+  if (!Array.isArray(sortedDescPrices) || !Number.isFinite(threshold)) return 0;
+  let n = 0;
+  for (const p of sortedDescPrices) {
+    if (p >= threshold) n++;
+    else break; // sorted desc — we can stop
+  }
+  return n;
+}
+
+function relevantCutoffForMove(currentTier, suggestedTier) {
+  const curIdx = VALUE_TIERS.indexOf(currentTier);
+  const sugIdx = VALUE_TIERS.indexOf(suggestedTier);
+  if (curIdx < 0 || sugIdx < 0) return null;
+  // Upgrade (sugIdx < curIdx): how many listings clear the cutoff for the new tier?
+  if (sugIdx < curIdx) {
+    return CUTOFFS_HR.find((c) => c.tier === suggestedTier) ?? null;
+  }
+  // Downgrade (sugIdx > curIdx): how many listings clear the cutoff for the tier
+  // immediately above the demotion target? (i.e. how much "value" is being left
+  // on the table by demoting?)
+  const aboveTier = VALUE_TIERS[sugIdx - 1];
+  return CUTOFFS_HR.find((c) => c.tier === aboveTier) ?? null;
 }
 
 function median(values) {
@@ -330,6 +359,9 @@ async function main() {
       sourceTiers: [...tiers],
       maxMedian: r.maxMedian,
       maxName: r.maxName,
+      maxNameTopCount: r.maxNameTopCount,
+      maxNameCount: r.maxNameCount,
+      maxNamePrices: r.maxNamePrices,
       medians: r.medians,
       totalListings: r.totalListings,
       distinctNames: r.distinctNames,
@@ -401,18 +433,26 @@ async function main() {
   // Diff JSON: only items where suggested differs from current
   const moves = itemRows
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
-    .map((r) => ({
-      base: r.base,
-      variant: r.isEth ? 'eth' : 'noneth',
-      sourceTiers: r.sourceTiers,
-      currentEffectiveTier: r.currentTier,
-      suggestedTier: r.suggestedTier,
-      delta: r.delta,
-      maxMedianHR: r.maxMedian,
-      topName: r.maxName,
-      sampleCount: r.medians[0]?.count ?? 0,
-      totalListings: r.totalListings,
-    }));
+    .map((r) => {
+      const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
+      const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
+      return {
+        base: r.base,
+        variant: r.isEth ? 'eth' : 'noneth',
+        sourceTiers: r.sourceTiers,
+        currentEffectiveTier: r.currentTier,
+        suggestedTier: r.suggestedTier,
+        delta: r.delta,
+        maxMedianHR: r.maxMedian,
+        topName: r.maxName,
+        topUsedForMedian: r.maxNameTopCount ?? 0,
+        topNameTotal: r.maxNameCount ?? 0,
+        totalListings: r.totalListings,
+        cutoffTier: cutoff?.tier ?? null,
+        cutoffHR: cutoff?.cutoffHR ?? null,
+        cutoffCount,
+      };
+    });
 
   const diff = {
     generatedAt: new Date().toISOString(),
@@ -438,19 +478,25 @@ async function main() {
     `Window ${windowHours}h, min ${minSamples} samples, top-pct ${topPercentile}, ladder=${isLadder} hardcore=${isHardcore}, corrupted=${excludeCorrupted ? 'excluded' : 'included'}`,
   );
   movesLines.push('');
+  movesLines.push('Estimated value = median of the top X% (or top 5, whichever is more) of listings,');
+  movesLines.push('per item-name. ≥cutoff column = how many of those listings clear the relevant cutoff:');
+  movesLines.push('  - upgrades: cutoff for the suggested (new) tier');
+  movesLines.push('  - downgrades: cutoff for the tier just above the demotion target');
+  movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);
   movesLines.push('');
-  const header = 'base    var   cur → sug   Δ    median       listings  top name (samples)';
-  const sep = '-'.repeat(90);
+  const header =
+    'base    var   cur → sug   est. value    ≥cutoff (n)   total  top name (top of total)';
+  const sep = '-'.repeat(110);
 
-  movesLines.push(`UPGRADES (${upgrades.length}) — promote to a higher tier, sorted by Δ desc`);
+  movesLines.push(`UPGRADES (${upgrades.length}) — promote to a higher tier`);
   movesLines.push(sep);
   movesLines.push(header);
   movesLines.push(sep);
   for (const m of upgrades) movesLines.push(formatMoveLine(m));
 
   movesLines.push('');
-  movesLines.push(`DOWNGRADES (${downgrades.length}) — demote to a lower tier, sorted by Δ asc`);
+  movesLines.push(`DOWNGRADES (${downgrades.length}) — demote to a lower tier`);
   movesLines.push(sep);
   movesLines.push(header);
   movesLines.push(sep);
@@ -466,9 +512,18 @@ function formatMoveLine(m) {
   const cur = tierShort[m.currentEffectiveTier] || '?';
   const sug = tierShort[m.suggestedTier] || '?';
   const v = m.variant === 'eth' ? 'ETH ' : 'norm';
-  const d = (m.delta ?? 0) > 0 ? `+${m.delta}` : `${m.delta}`;
   const med = fmtHR(m.maxMedianHR).padStart(8);
-  return `${m.base.padEnd(6)} ${v}  ${cur} → ${sug}   ${d.padStart(3)}  ${med}    ${String(m.totalListings).padStart(5)}  ${m.topName || ''} (${m.sampleCount})`;
+  const cutoffStr = Number.isFinite(m.cutoffHR)
+    ? `≥${fmtHRTight(m.cutoffHR)} (${m.cutoffCount})`
+    : '';
+  const topStr = `${m.topName || ''} (top ${m.topUsedForMedian} of ${m.topNameTotal})`;
+  return `${m.base.padEnd(6)} ${v}  ${cur} → ${sug}    ${med}    ${cutoffStr.padEnd(13)} ${String(m.totalListings).padStart(5)}  ${topStr}`;
+}
+
+function fmtHRTight(v) {
+  if (!Number.isFinite(v)) return '?';
+  if (v >= 1) return v.toFixed(2).replace(/\.?0+$/, '') + 'HR';
+  return (v * 100).toFixed(0) + 'WS';
 }
 
 main().catch((err) => {
