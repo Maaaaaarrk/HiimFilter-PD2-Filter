@@ -265,12 +265,22 @@ function tierStatsFromRows(itemRows) {
   return tierStats;
 }
 
-function suggestTier(maxMedianHR) {
-  if (!Number.isFinite(maxMedianHR)) return null;
+// Walks down VALUE_TIERS top-first; returns the first tier where at least
+// MIN_LISTINGS_FOR_TIER prices clear the cutoff. Replaces the old median-based
+// classification — now an item is in a tier only if there's real liquidity at
+// that price, not just one outlier dragging the median up.
+const MIN_LISTINGS_FOR_TIER = 5;
+function suggestTierFromPrices(sortedDescPrices) {
+  if (!Array.isArray(sortedDescPrices) || sortedDescPrices.length === 0) return null;
   for (const c of CUTOFFS_HR) {
-    if (maxMedianHR >= c.cutoffHR) return c.tier;
+    if (countAtOrAbove(sortedDescPrices, c.cutoffHR) >= MIN_LISTINGS_FOR_TIER) return c.tier;
   }
-  return null; // below the lowest cutoff — too cheap to even register
+  return null; // doesn't clear even NO★ with the required listing count
+}
+
+function tierIdx(tier) {
+  const i = VALUE_TIERS.indexOf(tier);
+  return i < 0 ? VALUE_TIERS.length : i;
 }
 
 async function fetchAllConcurrent(jobs, concurrency, onProgress) {
@@ -299,11 +309,12 @@ function sleep(ms) {
 }
 
 function fmtHR(v) {
-  if (!Number.isFinite(v)) return '   ?  ';
-  if (v >= 100) return v.toFixed(0).padStart(4) + ' HR';
-  if (v >= 10) return v.toFixed(1).padStart(4) + ' HR';
-  if (v >= 1) return v.toFixed(2).padStart(4) + ' HR';
-  return (v * 100).toFixed(1).padStart(4) + ' WS';
+  // Always returns exactly 8 chars (right-aligned number + " HR" or " WS")
+  if (!Number.isFinite(v)) return '       ?';
+  if (v >= 100) return `${v.toFixed(0).padStart(5)} HR`;
+  if (v >= 10) return `${v.toFixed(1).padStart(5)} HR`;
+  if (v >= 1) return `${v.toFixed(2).padStart(5)} HR`;
+  return `${(v * 100).toFixed(1).padStart(5)} WS`;
 }
 
 const tierShort = {
@@ -383,13 +394,63 @@ async function main() {
   }
 
   for (const row of itemRows) {
-    row.suggestedTier = suggestTier(row.maxMedian);
-    row.delta =
-      row.suggestedTier && row.currentTier
-        ? VALUE_TIERS.indexOf(row.currentTier) - VALUE_TIERS.indexOf(row.suggestedTier)
-        : null;
+    row.suggestedTier = suggestTierFromPrices(row.maxNamePrices);
   }
 
+  // Group by base, decide per-base whether to combine ETH and non-ETH into a
+  // single suggestion row or keep them split. Rules:
+  //  - If both variants suggest the same tier: combine.
+  //  - If the higher of the two suggestions is below 3★ (i.e., 2★ or lower):
+  //    don't differentiate — force both to the higher tier, single combined row.
+  //  - Else: keep split (eth row + non-eth row).
+  const THREE_STAR_IDX = VALUE_TIERS.indexOf('3_STAR_UNIQUE');
+  const baseGroups = new Map();
+  for (const row of itemRows) {
+    if (!baseGroups.has(row.base)) baseGroups.set(row.base, {});
+    baseGroups.get(row.base)[row.isEth ? 'eth' : 'noneth'] = row;
+  }
+  const moveCandidates = [];
+  for (const [base, group] of baseGroups) {
+    const ethRow = group.eth;
+    const nonethRow = group.noneth;
+    const ethSug = ethRow?.suggestedTier ?? null;
+    const nonethSug = nonethRow?.suggestedTier ?? null;
+    const higherSugIdx = Math.min(tierIdx(ethSug), tierIdx(nonethSug));
+    const isBelowThreeStar = higherSugIdx > THREE_STAR_IDX;
+
+    if (ethSug === nonethSug || isBelowThreeStar) {
+      // Combined row using the higher of the two as the suggestion
+      const combinedSug = VALUE_TIERS[higherSugIdx] ?? null;
+      // Pick whichever variant has more listings to drive the displayed data
+      const dataRow =
+        (ethRow?.totalListings ?? 0) >= (nonethRow?.totalListings ?? 0) ? ethRow : nonethRow;
+      if (!dataRow) continue;
+      // For "current", use the higher of the two effective tiers (most-aggressive
+      // current classification — if base sits in eth-conditional alias, that wins).
+      const ethCurIdx = tierIdx(ethRow?.currentTier);
+      const nonethCurIdx = tierIdx(nonethRow?.currentTier);
+      const combinedCurIdx = Math.min(ethCurIdx, nonethCurIdx);
+      const combinedCur = VALUE_TIERS[combinedCurIdx] ?? null;
+      moveCandidates.push({
+        ...dataRow,
+        variantLabel: 'both',
+        currentTier: combinedCur,
+        suggestedTier: combinedSug,
+      });
+    } else {
+      // Split: emit per-variant
+      if (ethRow) {
+        moveCandidates.push({ ...ethRow, variantLabel: 'eth', suggestedTier: ethSug });
+      }
+      if (nonethRow) {
+        moveCandidates.push({ ...nonethRow, variantLabel: 'noneth', suggestedTier: nonethSug });
+      }
+    }
+  }
+
+  // Sort by max median desc for stable display
+  moveCandidates.sort((a, b) => (b.maxMedian ?? -1) - (a.maxMedian ?? -1));
+  // Re-bind itemRows for downstream report generation (full table needs all rows)
   itemRows.sort((a, b) => (b.maxMedian ?? -1) - (a.maxMedian ?? -1));
 
   // Report
@@ -430,19 +491,25 @@ async function main() {
   await writeFile(REPORT_FILE, lines.join('\n') + '\n', 'utf8');
   console.error(`wrote ${REPORT_FILE} (${itemRows.length} rows)`);
 
-  // Diff JSON: only items where suggested differs from current
-  const moves = itemRows
+  // Diff JSON: only items where suggested differs from current. Skip rows
+  // where the suggestion is null (no qualifying tier with ≥5 listings); those
+  // are typically thin-data items that we don't want to act on.
+  const moves = moveCandidates
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
       const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
+      const delta =
+        r.suggestedTier && r.currentTier
+          ? tierIdx(r.currentTier) - tierIdx(r.suggestedTier)
+          : null;
       return {
         base: r.base,
-        variant: r.isEth ? 'eth' : 'noneth',
+        variant: r.variantLabel,
         sourceTiers: r.sourceTiers,
         currentEffectiveTier: r.currentTier,
         suggestedTier: r.suggestedTier,
-        delta: r.delta,
+        delta,
         maxMedianHR: r.maxMedian,
         topName: r.maxName,
         topUsedForMedian: r.maxNameTopCount ?? 0,
@@ -485,9 +552,9 @@ async function main() {
   movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);
   movesLines.push('');
-  const header =
-    'base    var   cur → sug   est. value    ≥cutoff (n)   total  top name (top of total)';
-  const sep = '-'.repeat(110);
+  // Column widths: base(5) | var(4) | cur(2)+arrow+sug(2)=7 | est(8) | cutoff(14) | total(5) | top
+  const header = `${'base'.padEnd(5)}  ${'var '.padEnd(4)}   ${'move   '.padEnd(7)}   ${'est val '.padEnd(8)}   ${'≥cutoff (n)  '.padEnd(14)}  total  top name (top of total)`;
+  const sep = '-'.repeat(115);
 
   movesLines.push(`UPGRADES (${upgrades.length}) — promote to a higher tier`);
   movesLines.push(sep);
@@ -509,15 +576,22 @@ async function main() {
 }
 
 function formatMoveLine(m) {
-  const cur = tierShort[m.currentEffectiveTier] || '?';
-  const sug = tierShort[m.suggestedTier] || '?';
-  const v = m.variant === 'eth' ? 'ETH ' : 'norm';
-  const med = fmtHR(m.maxMedianHR).padStart(8);
+  const base = m.base.padEnd(5);
+  const v =
+    m.variant === 'eth' ? 'ETH '   :
+    m.variant === 'both' ? 'both' :
+    'norm';
+  const cur = (tierShort[m.currentEffectiveTier] || '? ').padStart(2);
+  const sug = (tierShort[m.suggestedTier] || '? ').padEnd(2);
+  const move = `${cur} → ${sug}`; // 7 chars
+  const med = fmtHR(m.maxMedianHR); // 8 chars
   const cutoffStr = Number.isFinite(m.cutoffHR)
     ? `≥${fmtHRTight(m.cutoffHR)} (${m.cutoffCount})`
     : '';
+  const cutoffPadded = cutoffStr.padEnd(14);
+  const total = String(m.totalListings).padStart(5);
   const topStr = `${m.topName || ''} (top ${m.topUsedForMedian} of ${m.topNameTotal})`;
-  return `${m.base.padEnd(6)} ${v}  ${cur} → ${sug}    ${med}    ${cutoffStr.padEnd(13)} ${String(m.totalListings).padStart(5)}  ${topStr}`;
+  return `${base}  ${v}   ${move}   ${med}   ${cutoffPadded}  ${total}  ${topStr}`;
 }
 
 function fmtHRTight(v) {
