@@ -104,6 +104,9 @@ def build_uniques_by_level_section():
     four_all  = sorted(four_any + four_eth + four_noeth, key=str.lower)
     three_all = sorted(three_any + three_noeth, key=str.lower)
 
+    def bullets(items):
+        return "\n".join(f"- {item}" for item in items) if items else "*(none defined)*"
+
     lines = []
     lines.append("## Uniques Shown by Filter Level")
     lines.append("")
@@ -117,28 +120,38 @@ def build_uniques_by_level_section():
     lines.append("")
     lines.append("*None.* All unidentified uniques outside town are hidden.")
     lines.append("")
-    lines.append("### Level 10–9 — 4-star uniques")
+    lines.append("### Level 10-9 — 4-star uniques")
     lines.append("")
-    lines.append(", ".join(four_all) if four_all else "*(none defined)*")
+    lines.append(bullets(four_all))
     lines.append("")
     lines.append("### Level 8 — adds 3-star uniques")
     lines.append("")
-    lines.append(", ".join(three_all) if three_all else "*(none defined)*")
+    lines.append(bullets(three_all))
     lines.append("")
-    lines.append("### Level 7 — adds 2-star, 1-star, and 0-star uniques")
+    lines.append("### Level 7 — adds 2-star uniques")
     lines.append("")
-    if two_star:
-        lines.append("**2-star:** " + ", ".join(two_star))
-        lines.append("")
+    lines.append(bullets(two_star))
+    lines.append("")
+    lines.append("### Level 6-5 — adds 1-star, 0-star, and NO-star uniques")
+    lines.append("")
     if one_star:
-        lines.append("**1-star:** " + ", ".join(one_star))
+        lines.append("**1-star:**")
+        lines.append("")
+        lines.append(bullets(one_star))
         lines.append("")
     if zero_star:
-        lines.append("**0-star:** " + ", ".join(zero_star))
+        lines.append("**0-star:**")
         lines.append("")
-    lines.append("### Level 6 and below — adds NO-star uniques")
+        lines.append(bullets(zero_star))
+        lines.append("")
+    if no_star:
+        lines.append("**NO-star:**")
+        lines.append("")
+        lines.append(bullets(no_star))
+        lines.append("")
+    lines.append("### Level 1-4 — most permissive")
     lines.append("")
-    lines.append(", ".join(no_star) if no_star else "*(none defined)*")
+    lines.append("*All uniques are shown.*")
     lines.append("")
     return "\n".join(lines)
 
