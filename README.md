@@ -87,6 +87,34 @@ Cube will state current filter version & chosen filter level information.
   * Only desecrated items, slammed items, and runeword bases visible outside town - in case of miss click
   * Tradeoff: you will miss nearly everything — intended for carry runs, group content, or testing
 
+## Uniques Shown by Filter Level
+
+Cumulative list of unidentified uniques visible at each filter level. Higher (stricter) levels show fewer items; each block below adds **new** items not already listed in the level above.
+
+### Level 11 — most strict
+
+*None.* All unidentified uniques outside town are hidden.
+
+### Level 10–9 — 4-star uniques
+
+Alma Negra, Andariels Visage, Arachnid Mesh (non-ETH only), Arkaines Valor (non-ETH only), Astreons Iron Ward, Bloodtree Stump (ETH only), Brimstone Rain, Crown of Ages, Death Cleaver (ETH only), Deaths Web, Doombringer (ETH only), Earth Shifter or The Cranium Basher (ETH only), Executioners Justice, Ghostflame, Gore Rider, Griffons Eye (non-ETH only), Guardian Angel (ETH only), Halaberds Reign, Herald of Zakarum (non-ETH only), Kiras Guardian (non-ETH only), Lacerator (ETH only), Lightsabre or Azurewrath, Mang Songs Lesson, Purgatory (ETH only), Ravenlore (non-ETH only), Ribcracker (ETH only), Siggard's Staunch, Silks of the Victor (ETH only), Skyfall, Soul Drainer, Spirit Keeper, Spirit Ward (non-ETH only), Steel Carapace, Steel Pillar (ETH only), Steel Shade (non-ETH only), Steelrend, Stone Crusher or Schaefers Hammer, Stoneraven (ETH only), Templars Might or Tyraels Might, The Gavel Of Pain (ETH only), The Grandfather (ETH only), The Reapers Toll (ETH only), Thunderstroke (ETH only), Titans Revenge (ETH only), Tomb Reaver, Tomb Reaver (ETH only), Veil of Steel or Nightwings Veil, Verdungos Hearty Cord, War Fist (ETH only), Warlords Trust (ETH only)
+
+### Level 8 — adds 3-star uniques
+
+Ariocs Needle, Arreats Face, Bloodtree Stump, Death Cleaver, Doombringer, Draculs Grasp, Earth Shifter or The Cranium Basher, Elite Bolts, Giant Skull, Guardian Angel, Lava Gout, Martyrdom (non-ETH only), Nosferatus Coil, Ormus Robes (non-ETH only), Raekor's Virtue, Shaftstop, SHAKO (non-ETH only), Snowclash (non-ETH only), Stalker's Cull, Steel Pillar, Stoneraven, Stormshield (non-ETH only), Stormspire, String of Ears, The Grandfather, Thundergods Vigor (non-ETH only), Vampire Gaze, Vortex Shield, War Fist, War Traveler, Waterwalk, Widowmaker, Wraithskin
+
+### Level 7 — adds 2-star, 1-star, and 0-star uniques
+
+**2-star:** Arm of King Leoric, Athenas Wrath, Atmas Wail, Blackhand Key, Blackoak Shield, Bloodravens Charge, Boneflame, Boneshade, Cerebus Bite, Corpsemourn, Cyclopean Roar, Darkforce, Deaths Fathom, Demon Machine, Demonhorns Edge, Denmother, Dragonscale, Ebonbane, Elite Arrows, Embersworn, Ephemeral, Eschutas Temper, Exceptional Arrows, Firelizards Talons, Frostwind, Gargoyles Bite, Ghoulhide, Giant Maimer, Gravepalm, Grim's Burning Dead, Hellmouth, Hellslayer, Horizons Tornado or Stormlash, Humongous, Jade Talon, Jalals Mane, Leviathan, Lidless Wall, Magefist, Marrowwalk, Medusas Gaze, Merman's Sprocket, Occultist, Odium, Peasant Crown, Plague Bearer, Pus Spitter, Razortail, Ribcracker, Sacred Totem, Sage's Defiance, Sandstorm Trek, Shadow Dancer, Silkweave, Skin of the Vipermagi, Skull Collector, Skullders Ire, Suicide Branch, The Gavel Of Pain, The Oculus, The Patriarch, The Reapers Toll, Thunderstroke, Titans Grip, Titans Revenge, Toothrow, Treads of Cthon, Twilights Reflection, Venom Grip, Windforce
+
+**1-star:** Bartucs Cut-Throat, Black Hades, Blade of Ali Baba, Buriza-Do Kyanon, Chance Guards, Chromatic Ire, Crown of Thieves, Eaglehorn, Endlesshail, Exceptional Bolts, Fenris, Flamebellow, Frostburn, Gerkes Sanctuary, Goldwrap, Head Hunters Glory, Heavenly Garb, Homunculus, Infernostride, Lacerator, Nethercrux, Ondals Wisdom, Rune Master, Shatterblade, Silks of the Victor, Spike Thorn, Swordguard, The Gladiator's Bane, Ursa's Nightmare, Valkyrie Wing, Venom Ward, Viperfork, Warlords Trust, Wildspeaker, Windhammer, Witchwild String, Wizardspike, Wolfhowl, Zerae's Resolve
+
+**0-star:** Bloodfist, Gimmershred, Heart Carver, Purgatory, Que-Hegans Wisdom, Rockstopper, Wizendraw
+
+### Level 6 and below — adds NO-star uniques
+
+Baezils Vortex, Biggins Bonnet, Blackbogs Sharp, Cloudcrack, Crow Caw, Djinn Slayer, Duskdeep, Gorefoot, Gull Dagger, Kuko Shakaku, Magewrath, Radaments Sphere, The Hand of Broc, The Impaler, The Jade Tan Do, The Spirit Shroud
+
 ## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 To confirm installation check tool tip on the Cube
 ![cube](examples/cube.png?raw=true)

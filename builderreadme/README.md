@@ -8,6 +8,7 @@
 ## Filters
 {{REPLACE_FILTERS}}
 {{REPLACE_FILTER_LEVELS}}
+{{REPLACE_UNIQUES_BY_LEVEL}}
 ## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 To confirm installation check tool tip on the Cube
 ![cube](examples/cube.png?raw=true)
