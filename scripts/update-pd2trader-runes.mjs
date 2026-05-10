@@ -11,7 +11,7 @@ const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
 const isLadder = process.env.PD2TRADER_LADDER !== 'false';
 const isHardcore = process.env.PD2TRADER_HARDCORE === 'true';
 const windowHours = Number(process.env.PD2TRADER_WINDOW_HOURS) || 24;
-const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 2;
+const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
 
 const runes = [
   { code: 'r27', name: 'Ohm',  alias: 'OHM' },
