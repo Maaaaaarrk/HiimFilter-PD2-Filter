@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 10th Season 13 - build 130
+## Last updated May 10th Season 13 - build 131
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -168,7 +168,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Shaftstop
 - SHAKO (non-ETH only)
 - Snowclash (non-ETH only)
-- Stalker's Cull
 - Steel Pillar
 - Stoneraven
 - Stormshield (non-ETH only)
@@ -243,6 +242,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skin of the Vipermagi
 - Skull Collector
 - Skullders Ire
+- Stalker's Cull
 - Suicide Branch
 - The Gavel Of Pain
 - The Oculus
