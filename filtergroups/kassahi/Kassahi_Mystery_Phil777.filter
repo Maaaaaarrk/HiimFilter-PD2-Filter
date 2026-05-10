@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 10th%CL%Season 13 - build 122%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 10th%CL%Season 13 - build 123%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -3623,6 +3623,9 @@ ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
+
+//Larger box for old hands
+ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%
 
 // Low rune name decorations
 // Valuable Crafting rune callout TIR 3, ORT 6, RAL 8, AMN 11, SOL 12, ETH 5
