@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: update-pd2trader-rune-values-${{ github.ref }}
@@ -75,7 +76,10 @@ jobs:
       - name: Commit and push
         if: steps.check.outputs.changed == 'true'
         env:
-          TARGET_REF: ${{ github.event.pull_request.head.ref || 'main' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          BOT_BRANCH: bot/update-rune-values
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -91,5 +95,20 @@ jobs:
             exit 0
           fi
           git commit -m "Update PD2 Trader rune values (version ${{ env.VERSION }})"
-          git pull --rebase origin "$TARGET_REF"
-          git push origin "HEAD:$TARGET_REF"
+
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            git pull --rebase origin "$PR_HEAD_REF"
+            git push origin "HEAD:$PR_HEAD_REF"
+          else
+            git push --force origin "HEAD:$BOT_BRANCH"
+            existing_pr=$(gh pr list --head "$BOT_BRANCH" --base main --state open --json number -q '.[0].number')
+            if [ -z "$existing_pr" ]; then
+              gh pr create \
+                --base main \
+                --head "$BOT_BRANCH" \
+                --title "Update PD2 Trader rune values (version ${{ env.VERSION }})" \
+                --body "Automated rune-value refresh from pd2.tools. Version bumped to ${{ env.VERSION }}."
+            else
+              echo "Existing PR #$existing_pr was updated by force-push."
+            fi
+          fi
