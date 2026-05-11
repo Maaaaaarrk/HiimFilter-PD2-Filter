@@ -8,10 +8,10 @@
 // Filter Levels (0 = No Filter)
 ItemDisplayFilterName[]: ÿc:Base ÿc5(Norm Campaign)
 ItemDisplayFilterName[]: ÿc2Semi-Strict ÿc5(NM,Hell Campaign)
-ItemDisplayFilterName[]: ÿc4Strict
-ItemDisplayFilterName[]: ÿc4Strict ÿc5(NO HP/MP)
-ItemDisplayFilterName[]: ÿc9Stricter
-ItemDisplayFilterName[]: ÿc9Stricter ÿc5(NO HP/MP)
+ItemDisplayFilterName[]: ÿc4Strict ÿc5(ÿc1HP ÿc5/ÿc3MP ÿc5)
+ItemDisplayFilterName[]: ÿc4Strict ÿc5(No HP/MP)
+ItemDisplayFilterName[]: ÿc9Stricter ÿc5(ÿc1HP ÿc5/ÿc3MP ÿc5)
+ItemDisplayFilterName[]: ÿc9Stricter ÿc5(No HP/MP)
 ItemDisplayFilterName[]: ÿc8Extremely Strict
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc;(Rejuves)
@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc;(Rejuves)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 11th%CL%Season 13 - build 138%CL%HiimFilter - Vanilla - Barb - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 11th%CL%Season 13 - build 139%CL%HiimFilter - Vanilla - Barb - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -94,11 +94,15 @@ ItemDisplay[FILTLVL>10 (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR je
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// GOLD
+// GOLD — scaled by filter level (aggressive); never hides in Travincal (MAPID=83)
 //-----------------------------------------------------------------------------------
-ItemDisplay[GOLD<100 CLVL<18]:
-ItemDisplay[GOLD<1000 (CLVL>17 AND CLVL<80)]:
-ItemDisplay[GOLD<5000 CLVL>79]:
+// Filter-level scaling
+ItemDisplay[GOLD<500 FILTLVL~1-2 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<5000 FILTLVL~3-4 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<7500 FILTLVL~5-6 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<10000 FILTLVL~7-8 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<25000 FILTLVL~9-10 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<999999 FILTLVL>10 CLVL>79 !MAPID=83]:
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // Alias for item ground annotations Vanilla++
@@ -180,6 +184,23 @@ Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%x %NAME% %PURPLE%x
 // Rare Item GG
 Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%PURPLE%X %NAME% %PURPLE%X
 
+// Amazon quiver UNID annotations
+Alias[QUIVER_MAG_AMA]: %NAME%
+Alias[QUIVER_RARE_AMA]: %NAME%
+Alias[QUIVER_RARE_AMA_TIGHT]: %NAME%
+
+// Grand-charm callouts (prefixes use %CONTINUE% so they stack with the alias below)
+Alias[CHARM_HIGH_LVL]: %NAME%
+Alias[CHARM_MID_LVL]: %NAME%
+Alias[CHARM_GC_TAG]: %NAME%
+Alias[CHARM_SC_TAG]: %NAME%
+Alias[CHARM_LC_TAG]: %NAME%
+
+// Unidentified unique charms (Hellfire Torch / Annihilus / Gheeds Fortune)
+Alias[UNI_UNID_TORCH]: %NAME%
+Alias[UNI_UNID_ANNI]: %NAME%
+Alias[UNI_UNID_GHEEDS]: %NAME%
+
 // Leveling Tag
 Alias[LEVELING_TAG]: %ORANGE%lvling%PX-62%
 
@@ -253,6 +274,16 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 
 ItemDisplay[wss]: %RED%WORLDSTONE SHARD%CONTINUE%
 ItemDisplay[cwss]: %ORANGE%Tainted %RED%WORLDSTONE SHARD%CONTINUE%remo
+
+// Craft Infusion renames — set the name here so 05-utility/06-Gems tooltips
+// don't override formatting with hardcoded text.
+ItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfc]: %PURPLE%Caster %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfs]: %GREEN%Safety %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfh]: %BLUE%Hitpower %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfv]: %GRAY%Vampiric %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfu]: %YELLOW%Bountiful %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfp]: %WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%F. Amethyst%CONTINUE%
@@ -1031,8 +1062,8 @@ ItemDisplay[imrn QTY>1 QTY<5]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHI
 ItemDisplay[imrn QTY>4]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[imrn]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %DEMONIC_CUBE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %DEMONIC_CUBE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
 ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
-ItemDisplay[llmr]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%RARE_GG_ITEM%{%NAME%}
-ItemDisplay[lsvl]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%RARE_GG_ITEM%{%NAME%}
+ItemDisplay[llmr]: %BORDER-4A%%DOT-55%%SOUNDID-4733%%RARE_GG_ITEM%{%NAME%}
+ItemDisplay[lsvl]: %BORDER-4A%%DOT-55%%SOUNDID-4733%%RARE_GG_ITEM%{%NAME%}
 ItemDisplay[iwss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%CATALYST_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%CATALYST_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[iwss]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %CATALYST_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %CATALYST_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%NAME%}
 ItemDisplay[rtp]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ALT%{%NAME%} // Rathma Tome of Town Portal
@@ -1589,21 +1620,22 @@ ItemDisplay[gpws]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Tal, +[5-10]%
 ItemDisplay[skzs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%{Amulet Dol, [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring Hel,[15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt Eld, [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots El, [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm Lum, [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest Tir, [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield Sol, [10-20]% Block [3-6]%ML [30-50] PLR%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
 
 
-// Crafting orb formatting
+// Crafting orb formatting — name comes from 03-Alias files (per filter family);
+// these rules add per-base stat tooltips only, so they don't override the name.
 // crfb (blood craft)
-ItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%{Amulet 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfb]: %NAME%%CONTINUE%{Amulet 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfc (caster craft)
-ItemDisplay[crfc]: %PURPLE%Caster %GOLD%Craft Infusion%CONTINUE%{Amulet +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Max Mana [10-150]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfc]: %NAME%%CONTINUE%{Amulet +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Max Mana [10-150]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfs (safety craft)
-ItemDisplay[crfs]: %GREEN%Safety %GOLD%Craft Infusion%CONTINUE%{Amulet 10% Block [4-7] MDR & PDR%CL%Ring +[5-10] to Vit [2-5] MDR [2-5] PDR%CL%Belt +[10-30]% EDef +[10-20]% Psn Res [2-5] MDR [2-5] PDR%CL%Gloves +[10-30]% Edef +[10-20]% Cold Res [2-5] MDR [2-5] PDR%CL%Boots +[20-60]% EDef +[10-20]% Fire Res [2-5] MDR [2-5] PDR%CL%Helm +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield +[50-75]% EDef [4-6]% PDR%CL%Weapon +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfs]: %NAME%%CONTINUE%{Amulet 10% Block [4-7] MDR & PDR%CL%Ring +[5-10] to Vit [2-5] MDR [2-5] PDR%CL%Belt +[10-30]% EDef +[10-20]% Psn Res [2-5] MDR [2-5] PDR%CL%Gloves +[10-30]% Edef +[10-20]% Cold Res [2-5] MDR [2-5] PDR%CL%Boots +[20-60]% EDef +[10-20]% Fire Res [2-5] MDR [2-5] PDR%CL%Helm +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield +[50-75]% EDef [4-6]% PDR%CL%Weapon +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfh (hitpower craft)
-ItemDisplay[crfh]: %BLUE%Hitpower %GOLD%Craft Infusion%CONTINUE%{Amulet +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt 10% FBR +[10-20]% FHR 5%CTC FNova%CL%Gloves Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots +[60-120]DefvMelee +[10-20]% FHR 5%CTC FNova%CL%Helm +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest +[75-100]%EDef +[30-40]% FHR 8%CTC FNova%CL%Shield [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfh]: %NAME%%CONTINUE%{Amulet +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt 10% FBR +[10-20]% FHR 5%CTC FNova%CL%Gloves Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots +[60-120]DefvMelee +[10-20]% FHR 5%CTC FNova%CL%Helm +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest +[75-100]%EDef +[30-40]% FHR 8%CTC FNova%CL%Shield [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfv (vampiric craft)
-ItemDisplay[crfv]: %GRAY%Vampiric %GOLD%Craft Infusion%CONTINUE%{Amulet [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring [15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield [10-20]% Block [3-6]%ML [30-50]%PLR%CL%Weapon +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfv]: %NAME%%CONTINUE%{Amulet [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring [15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield [10-20]% Block [3-6]%ML [30-50]%PLR%CL%Weapon +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfu (bountiful craft)
-ItemDisplay[crfu]: %YELLOW%Bountiful %GOLD%Craft Infusion%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfu]: %NAME%%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 // crfp (Brilliant craft)
-ItemDisplay[crfp]: %WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%{Amulet +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
+ItemDisplay[crfp]: %NAME%%CONTINUE%{Amulet +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 
 
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
@@ -1931,9 +1963,9 @@ ItemDisplay[AMAZON CL7 FILTLVL<5 RARE !ID]: %TIER-2%%MAG_DBL_AFFIX_ITEM%%CONTINU
 ItemDisplay[(MAG OR RARE) CL4 MAPID=83 FILTLVL<8]: %NAME%%TIER-2%
 
 // Arrows and Bolts - Amazon View
-ItemDisplay[QUIVER MAG !ID AMAZON FILTLVL<3]: %BLUE%*    %NAME%    *
-ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<5]: %YELLOW%*     %NAME%     *
-ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<7]: %YELLOW%*   %NAME%   *
+ItemDisplay[QUIVER MAG !ID AMAZON FILTLVL<3]: %QUIVER_MAG_AMA%
+ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<5]: %QUIVER_RARE_AMA%
+ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<7]: %QUIVER_RARE_AMA_TIGHT%
 
 // Arrows and Bolts - Non zon
 ItemDisplay[QUIVER NMAG]:
@@ -1982,27 +2014,27 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 //-----------------------------------------------------------------------------------
 // Charms - UNID
 // grand
-ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %YELLOW%HIGH LEVEL %NAME%%CONTINUE%
-ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %BLUE%Mid Level %NAME%%CONTINUE%
+ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %CHARM_HIGH_LVL%%CONTINUE%
+ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %CHARM_MID_LVL%%CONTINUE%
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
-ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%BORDER-6A%%DOT-94%%BLUE%*** GC %BLUE%***
+ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%CHARM_GC_TAG%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm3 CLVL<80 !ID FILTLVL<9]: %MAG_ITEM%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
 // small
-ItemDisplay[MAG cm1 !ID FILTLVL>6]: %BLUE%SC%CONTINUE%
+ItemDisplay[MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
 ItemDisplay[MAG cm1 !ID ILVL>89 FILTLVL>6 FILTLVL<9]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm1 !ID ILVL>89 FILTLVL<9]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm1 !ID FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm1 !ID FILTLVL<9]: %NAME%
 // large
-ItemDisplay[MAG cm2 !ID FILTLVL>6]: %BLUE%LC%CONTINUE%
+ItemDisplay[MAG cm2 !ID FILTLVL>6]: %CHARM_LC_TAG%%CONTINUE%
 ItemDisplay[MAG cm2 !ID ILVL>89 FILTLVL<9]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm2 !ID FILTLVL<7]: %NAME%
 // Unique Charms - UNID
-ItemDisplay[cm2 UNI !ID]: %RED%o %PURPLE%%GOLD%  Unidentified Hellfire Torch  %RED%o
-ItemDisplay[cm1 UNI !ID]: %RED%o %PURPLE%%GOLD%  Unidentified Annihilus  %RED%o
-ItemDisplay[cm3 UNI !ID FILTLVL<8]: %RED%o %PURPLE%%GOLD%  Unidentified Gheeds Fortune  %RED%o
+ItemDisplay[cm2 UNI !ID]: %UNI_UNID_TORCH%
+ItemDisplay[cm1 UNI !ID]: %UNI_UNID_ANNI%
+ItemDisplay[cm3 UNI !ID FILTLVL<8]: %UNI_UNID_GHEEDS%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
