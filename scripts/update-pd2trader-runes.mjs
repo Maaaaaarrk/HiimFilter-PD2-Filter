@@ -16,8 +16,8 @@ const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
 const runes = [
   { code: 'r27', name: 'Ohm',  alias: 'OHM' },
   { code: 'r28', name: 'Lo',   alias: 'LO' },
-  { code: 'r29', name: 'Sur',  alias: 'SUR' },
-  { code: 'r30', name: 'Ber',  alias: 'BER' },
+  { code: 'r29', name: 'Sur',  alias: 'SUR',  floor: 1.5 },
+  { code: 'r30', name: 'Ber',  alias: 'BER',  floor: 3 },
   { code: 'r31', name: 'Jah',  alias: 'JAH' },
   { code: 'r32', name: 'Cham', alias: 'CHAM' },
   { code: 'r33', name: 'Zod',  alias: 'ZOD' },
@@ -109,11 +109,16 @@ async function main() {
 
   for (const rune of runes) {
     const price = pricesByCode.get(rune.code);
-    const hrValue = roundToFiveHundredths(valueFromPrice(price));
+    let hrValue = roundToFiveHundredths(valueFromPrice(price));
 
     if (!Number.isFinite(hrValue) || hrValue <= 0) {
       console.log(`${rune.name} (${rune.code}): no usable price data, skipping`);
       continue;
+    }
+
+    if (rune.floor !== undefined && hrValue < rune.floor) {
+      console.log(`${rune.name} (${rune.code}): scraped ${hrValue}HR below floor ${rune.floor}HR, clamping up`);
+      hrValue = rune.floor;
     }
 
     const wssValue = Math.round(hrValue * 100);
