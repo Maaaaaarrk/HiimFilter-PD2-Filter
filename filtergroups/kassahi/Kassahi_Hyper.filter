@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 11th%CL%Season 13 - build 134%CL%Kassahi - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 11th%CL%Season 13 - build 135%CL%Kassahi - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2816,64 +2816,11 @@ ItemDisplay[r16s]: %NAME%{%WHITE%Brilliant Belt: O%NL%%YELLOW%Bountiful %WHITE%B
 ItemDisplay[r17s]: %NAME%{%YELLOW%Bountiful %WHITE%Ring: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Helm: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Lum, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
 ItemDisplay[r18s]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
 
-//------------------------------HR-Value-Tooltips------------------------------
-
-
-
-
-// Warning for un-stacked high runes (will socket into an item instead of stacking)
-ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %NAME%%CONTINUE%
-
-// HR value timestamp shown on Pul+ runes
-ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
-
-// Estimated HR and WSS value per rune
-ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 1%CL%%TAN%HR Estimated Value Each%WHITE%: 0.01%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 3%CL%%TAN%HR Estimated Value Each%WHITE%: 0.03%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=22]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 5%CL%%TAN%HR Estimated Value Each%WHITE%: 0.05%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 10%CL%%TAN%HR Estimated Value Each%WHITE%: 0.1%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=24]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 15%CL%%TAN%HR Estimated Value Each%WHITE%: 0.175%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 25%CL%%TAN%HR Estimated Value Each%WHITE%: 0.25%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 50%CL%%TAN%HR Estimated Value Each%WHITE%: 0.5%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %OHM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %OHM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LO_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LO_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %SUR_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %SUR_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=30]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %BER_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %BER_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %JAH_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %JAH_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %CHAM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %CHAM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=33]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %ZOD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %ZOD_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
-
-// Estimated HR and WSS value for stacked runes (QTY>1)
-// Low-value runes: WSS shown when stack HR <= 5
-ItemDisplay[RUNE=20 QTY>1 QTY<501]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*1))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.01))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=20 QTY>500]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.01))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=21 QTY>1 QTY<167]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*3))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.03))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=21 QTY>166]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.03))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=22 QTY>1 QTY<101]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*5))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.05))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=22 QTY>100]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.05))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23 QTY>1 QTY<51]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f((QTY*10))%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.1))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=23 QTY>50]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.1))%CL%%NAME%}%CONTINUE%
-// Mid-value runes: WSS shown for smaller stacks, HR-only for larger
-ItemDisplay[RUNE=24 QTY>1 QTY<29]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%GUL_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=24 QTY>28]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.175))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25 QTY>1 QTY<21]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%VEX_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=25 QTY>20]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.25))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26 QTY>1 QTY<11]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%HALFHR_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=26 QTY>10]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f((QTY*0.5))%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27 QTY>1 QTY<7]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%OHM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=27 QTY>6]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%OHM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28 QTY>1 QTY<6]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LO_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=28 QTY>5]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LO_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29 QTY>1 QTY<4]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%SUR_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=29 QTY>3]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%SUR_STACK_HR%)%CL%%NAME%}%CONTINUE%
-// High-value runes: HR-only (or WSS only for smallest stacks)
-ItemDisplay[RUNE=30 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%BER_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%JAH_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=31 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%CHAM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=32 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE=33 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%ZOD_STACK_HR%)%CL%%NAME%}%CONTINUE%
-
+// HR/WSS rune-value tooltips and stack-value tooltips are now provided by
+// `09-Runes-ToolTip[ALL-EXCEPT=OnlyFilter].filter` (the canonical Hiim file,
+// which loads in both Hiim and Kassahi). This Kassahi-port file only owns the
+// r01s-r18s rune-stack crafting-recipe tooltips that don't exist in the Hiim
+// file.
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS
 //-----------------------------------------------------------------------------------
@@ -3461,6 +3408,282 @@ ItemDisplay[STAT458>0]: %GREEN%H, %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[STAT493>0]: %ORANGE%F, %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[STAT500>0]: %BLUE%E, %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t51 OR t52 OR t53 OR t54 OR t55)]: %NAME%{%NAME%}
+//-----------------------------------------------------------------------------------
+// MAPS
+//-----------------------------------------------------------------------------------
+// Map Rolling Items
+ItemDisplay[fort]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a %GOLD%Fortified %WHITE%Map}
+ItemDisplay[imma]://Angelic useless Normal -> Blue map
+ItemDisplay[imra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Normal Map + %BLUE%Jewel %WHITE%+ %ORANGE%Thul [10]+ %WHITE%to make a %YELLOW%Rare Map}
+ItemDisplay[rera]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map + %WHITE%Perfect Gem + %ORANGE%Thul [10]+ %WHITE%to re-roll a %YELLOW%Rare Map}
+ItemDisplay[scou]: %MAP-4A%%NAME%//{%WHITE%Cube with: %WHITE%Any Map to make a White Map}
+ItemDisplay[upma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map + %ORANGE%Thul [10]+  + %WHITE%Perfect Gem to make a %YELLOW%Rare Map}
+ItemDisplay[irma FILTLVL>6]://Angelic useless Normal -> Blue map
+ItemDisplay[irma FILTLVL<5]: %MAP-4A%%NAME%//Infused Arcane Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %BLUE%Magic Map}
+ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O{%NAME%}
+ItemDisplay[irra]: %MAP-4A%%NAME%//Infused Zakarum Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map}
+ItemDisplay[urma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Angelic Orb
+ItemDisplay[rrra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map -> %WHITE%to make a new %YELLOW%Rare Map} //Infused Horadric Orb
+ItemDisplay[upmp]: %NAME% %ORANGE%*//{%WHITE%3 x Map + %GOLD%Orb%CL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
+ItemDisplay[scrb]: %MAP-4A%%BOSS_MAT%%CONTINUE%{%NAME%}
+ItemDisplay[std]: %DOT-9D%%GEN_TOP_RARE%{%NAME%}
+
+// EARS
+ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%BOSS_MAT%{%NAME%}
+
+// Map Tier Tags
+ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
+ItemDisplay[MAPTIER=2]: %YELLOW%* [T2] %CONTINUE%
+ItemDisplay[MAPTIER=3]: %ORANGE%* [T3] %CONTINUE%
+ItemDisplay[MAPTIER=4]: %RED%* [T4] %CONTINUE%
+ItemDisplay[(MAPTIER=5) !ID]: %GOLD%* * * * [U] %CONTINUE%
+ItemDisplay[(MAPTIER=5) ID]: %GOLD%* [U] %CONTINUE%
+ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%
+
+// Map Color Fixing
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) MAG]: %NAME%%BLUE%%CONTINUE%{%NAME%}
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) RARE]: %NAME%%YELLOW%%CONTINUE%{%NAME%}
+
+// Map Immunities
+ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) NMAG]: %NAME%%CONTINUE%{%TAN%Immunities (Updated Apr 27th 2026):%CL%%NAME%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) !NMAG]: %NAME%%CONTINUE%{%TAN%Immunities:%CL%%NAME%}
+
+ItemDisplay[t23]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Arreat Battlefield Level id 139 Updated: Apr 23rd 2026
+ItemDisplay[t25]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Sewers of Harrogath Level id 141 Updated: Apr 23rd 2026
+ItemDisplay[t12]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Horazon's Memory Level id 142 Updated: Apr 23rd 2026
+ItemDisplay[t11]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Ruins of Viz-jun Level id 143 Updated: Apr 23rd 2026
+ItemDisplay[t31]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 66% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // River of Blood Level id 144 Updated: Apr 23rd 2026
+ItemDisplay[t21]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Phlegethon Level id 145 Updated: Apr 23rd 2026
+ItemDisplay[t34]: %NAME%{%CL%%RED%F 120% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ancestral Trial Level id 146 Updated: Apr 23rd 2026
+ItemDisplay[t39]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Kehjistan Marketplace Level id 147 Updated: Apr 23rd 2026
+ItemDisplay[t22]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Torajan Jungle Level id 148 Updated: Apr 23rd 2026
+ItemDisplay[t13]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 115% %ORANGE%M 105% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Bastion Keep Level id 149 Updated: Apr 23rd 2026
+ItemDisplay[t32]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 75% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Throne of Insanity Level id 150 Updated: Apr 23rd 2026
+ItemDisplay[t24]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Tomb of Zoltun Kulle Level id 151 Updated: Apr 23rd 2026
+ItemDisplay[t35]: %PX-62%%SOUNDID-4715%%NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Blood Moon Level id 154 Updated: Apr 23rd 2026
+ItemDisplay[t36]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 105% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fall of Caldeum Level id 155 Updated: Apr 23rd 2026
+ItemDisplay[t37]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Pandemonium Citadel Level id 156 Updated: Apr 23rd 2026
+ItemDisplay[t33]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 120%%CL%%GRAY%Ph 55% %ORANGE%M 105% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Lost Temple Level id 158 Updated: Apr 23rd 2026
+ItemDisplay[t38]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 115% %ORANGE%M 55% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Canyon of Sescheron Level id 160 Updated: Apr 23rd 2026
+ItemDisplay[t14]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Sanatorium Level id 167 Updated: Apr 27th 2026
+ItemDisplay[t26]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Shadows of Westmarch Level id 169 Updated: Apr 27th 2026
+ItemDisplay[t15]: %NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 45% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Royal Crypts Level id 170 Updated: Apr 23rd 2026
+ItemDisplay[t16]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Ruined Cistern Level id 174 Updated: Apr 23rd 2026
+ItemDisplay[t3a]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Ashen Plains Level id 175 Updated: Apr 23rd 2026
+ItemDisplay[t28]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 55% %ORANGE%M 40% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Skovos Stronghold Map Level id 190 Updated: Apr 23rd 2026
+ItemDisplay[t27]: %NAME%{%CL%%RED%F 120% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 40% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Demon Road Map Level id 191 Updated: Apr 23rd 2026
+ItemDisplay[t17]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 35% %GREEN%P 85%%CL%%NAME%}%CONTINUE% // Halls of Torture Level id 193 Updated: Apr 23rd 2026
+ItemDisplay[t3b]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Kyovoshad Level id 201 Updated: Apr 23rd 2026
+// Dungeon
+//ItemDisplay[t41]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Cathedral of Light Level id 152 Updated: Apr 23rd 2026
+//ItemDisplay[t42]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Plains of Torment Level id 164 Updated: Apr 23rd 2026
+//ItemDisplay[t43]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Sanctuary of Sin Level id 171 Updated: Apr 23rd 2026
+//ItemDisplay[t44]: %NAME%{%CL%%RED%F 145% %YELLOW%L 145% %BLUE% C 145%%CL%%GRAY%Ph 120% %ORANGE%M 145% %GREEN%P 145%%CL%%NAME%}%CONTINUE% // Steppes of Daken-Shar Level id 186 Updated: Apr 23rd 2026
+// Unique maps
+//ItemDisplay[t51]: %NAME%{%CL%%RED%F 80% %YELLOW%L 80% %BLUE% C 80%%CL%%GRAY%Ph 60% %ORANGE%M 35% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Rivers Level id 177 Updated: Apr 23rd 2026
+//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 75% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 40% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Zhar Ice Level id 178 Updated: Apr 23rd 2026
+//ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 80%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar Kurast Level id 179 Updated: Apr 23rd 2026
+ItemDisplay[t51]: %NAME%{%CL%%RED%F 85% %YELLOW%L 85% %BLUE% C 85%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 95%%CL%%NAME%}%CONTINUE% // Zhar Level id 177 178 179 Updated: Apr 23rd 2026
+ItemDisplay[t52]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 55% %ORANGE%M 50% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Hellcaves Level id 181 Updated: Apr 23rd 2026
+ItemDisplay[t53]: %NAME%{%CL%%RED%F 70% %YELLOW%L 65% %BLUE% C 75%%CL%%GRAY%Ph 65% %ORANGE%M 80% %GREEN%P 80%%CL%%NAME%}%CONTINUE% // Fallen Gardens Level id 183 Updated: Apr 23rd 2026
+ItemDisplay[t54]: %NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 20% %ORANGE%M 20% %GREEN%P 65%%CL%%NAME%}%CONTINUE% // Imperial Palace Level id 192 Updated: Apr 23rd 2026
+ItemDisplay[t55]: %NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 50%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 30%%CL%%NAME%}%CONTINUE% // Outer Void Level id 180 Updated: Apr 23rd 2026
+ItemDisplay[t56]: %NAME%{%CL%%RED%F 85% %YELLOW%L 100% %BLUE% C 80%%CL%%GRAY%Ph 65% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // City of Ureh Level id 195 Updated: Apr 23rd 2026
+ItemDisplay[t57]: %NAME%{%CL%%RED%F 110% %YELLOW%L 120% %BLUE% C 145%%CL%%GRAY%Ph 100% %ORANGE%M 50% %GREEN%P 110%%CL%%NAME%}%CONTINUE% // Djinn's Domain Level id 197 198 199 Updated: Apr 23rd 2026
+ItemDisplay[t58]: %NAME%{%CL%%RED%F 75% %YELLOW%L 80% %BLUE% C 85%%CL%%GRAY%Ph 50% %ORANGE%M 50% %GREEN%P 75%%CL%%NAME%}%CONTINUE% // Na-Krul's Abyss Level id 200 Updated: Apr 23rd 2026
+
+
+// Item code no longer dictates map tier
+// Maps [T1X]
+ItemDisplay[t22]: %NAME%Torajan Jungle Map%CONTINUE%{%NAME%}
+ItemDisplay[t12]: %NAME%Horazon's Memory Map%CONTINUE%{%NAME%}
+ItemDisplay[t13]: %NAME%Bastion Keep Map%CONTINUE%{%NAME%}
+ItemDisplay[t23]: %NAME%Arreat Battlefield Map%CONTINUE%{%NAME%}
+ItemDisplay[t21]: %NAME%Phlegethon Map%CONTINUE%{%NAME%}
+ItemDisplay[t16]: %NAME%Ruined Cistern Map%CONTINUE%{%NAME%}
+ItemDisplay[t33]: %NAME%Lost Temple Map%CONTINUE%{%NAME%}
+ItemDisplay[t17]: %NAME%Halls of Torture Map%CONTINUE%{%NAME%}
+ItemDisplay[t18]: %NAME%T1-8 Map%CONTINUE%{%NAME%}
+ItemDisplay[t19]: %NAME%T1-9 Map%CONTINUE%{%NAME%}
+
+// Maps [T2X]
+ItemDisplay[t15]: %NAME%Royal Crypts Map%CONTINUE%{%NAME%}
+ItemDisplay[t11]: %NAME%Ruins of Viz-jun Map%CONTINUE%{%NAME%}
+ItemDisplay[t14]: %NAME%Sanatorium Map%CONTINUE%{%NAME%}
+ItemDisplay[t34]: %NAME%Ancestral Trial Map%CONTINUE%{%NAME%}
+ItemDisplay[t36]: %NAME%Fall of Caldeum Map%CONTINUE%{%NAME%}
+ItemDisplay[t26]: %NAME%Shadows of Westmarch Map%CONTINUE%{%NAME%}
+ItemDisplay[t27]: %NAME%Demon Road Map%CONTINUE%{%NAME%}
+ItemDisplay[t28]: %NAME%Skovos Stronghold Map%CONTINUE%{%NAME%}
+ItemDisplay[t29]: %NAME%T2-9 Map%CONTINUE%{%NAME%}
+
+// Maps [T3X]
+ItemDisplay[t31]: %NAME%River of Blood Map%CONTINUE%{%NAME%}
+ItemDisplay[t32]: %NAME%Throne of Insanity Map%CONTINUE%{%NAME%}
+ItemDisplay[t25]: %NAME%Sewers of Harrogath Map%CONTINUE%{%NAME%}
+ItemDisplay[t24]: %NAME%Tomb of Zoltun Kulle Map%CONTINUE%{%NAME%}
+ItemDisplay[t35]: %NAME%Blood Moon Map%CONTINUE%{%NAME%}
+ItemDisplay[t37]: %NAME%Pandemonium Citadel Map%CONTINUE%{%NAME%}
+ItemDisplay[t38]: %NAME%Canyon of Sescheron Map%CONTINUE%{%NAME%}
+ItemDisplay[t39]: %NAME%Kehjistan Marketplace Map%CONTINUE%{%NAME%}
+ItemDisplay[t3a]: %NAME%Ashen Plains Map%CONTINUE%{%NAME%}
+ItemDisplay[t3b]: %NAME%Kyovoshad Map%CONTINUE%{%NAME%}
+
+// Maps [T4X]
+ItemDisplay[t41]: %NAME%Cathedral of Light%CONTINUE%{%NAME%}
+ItemDisplay[t42]: %NAME%Plains of Torment%CONTINUE%{%NAME%}
+ItemDisplay[t43]: %NAME%Sanctuary of Sin%CONTINUE%{%NAME%}
+ItemDisplay[t44]: %NAME%Steppes of Daken-Shar%CONTINUE%{%NAME%}
+//ItemDisplay[t45]: %NAME%T4-5 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t46]: %NAME%T4-6 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t47]: %NAME%T4-7 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t48]: %NAME%T4-8 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t49]: %NAME%T4-9 Map%CONTINUE%{%NAME%}
+
+// Maps [T5X] Unique
+ItemDisplay[t51]: %NAME%Zhar's Sanctum (Charm)%CONTINUE%{%NAME%}
+ItemDisplay[t52]: %NAME%Stygian Caverns (Slammed)%CONTINUE%{%NAME%}
+ItemDisplay[t53]: %NAME%Fallen Gardens (Facet)%CONTINUE%{%NAME%}
+ItemDisplay[t54]: %NAME%Imperial Palace (PBox)%CONTINUE%{%NAME%}
+ItemDisplay[t55]: %NAME%Outer Void (Boss Mat)%CONTINUE%{%NAME%}
+ItemDisplay[t56]: %NAME%City of Ureh (Socketed)%CONTINUE%{%NAME%}
+ItemDisplay[t57]: %NAME%Djinn's Domain%CONTINUE%{%NAME%}
+ItemDisplay[t58]: %NAME%Na-Krul's Abyss (Eth)%CONTINUE%{%NAME%}
+//ItemDisplay[t59]: %NAME%T5-9 Map%CONTINUE%{%NAME%}
+
+// Maps [T6] PVP
+ItemDisplay[t61]: %NAME%PvP Map 1 (Desert)%CONTINUE%{%NAME%}
+ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
+//ItemDisplay[t63]: %NAME%t6-3 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t64]: %NAME%t6-4 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t65]: %NAME%t6-5 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t66]: %NAME%t6-6 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t67]: %NAME%t6-7 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t68]: %NAME%t6-8 Map%CONTINUE%{%NAME%}
+//ItemDisplay[t69]: %NAME%t6-9 Map%CONTINUE%{%NAME%}
+
+ItemDisplay[(MAPTIER>0 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
+
+// Map End Wrapper by Tier
+ItemDisplay[MAPTIER=1]: %MAP-62%%TIER-8%%NAME% %GREEN%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=4]: %MAP-62%%TIER-8%%NAME% %RED%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=5 !ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=5 ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%*{%NAME%}%CONTINUE%
+ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
+
+ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
+//Warnings 
+
+// Map Contains Cursing Mobs
+ItemDisplay[(t12 OR t13 OR t31 OR t37 OR t38 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
+
+// Map Contains SOULS
+ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
+ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+ItemDisplay[(t14 OR t3a) NMAG MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+
+// Map Contains Added PSN
+ItemDisplay[STAT435>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
+
+// Map Contains Projectile Pierce
+ItemDisplay[STAT406>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
+
+// Map Contains Fearing Mobs
+// No long in S11 ItemDisplay[STAT499>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
+
+//Map contains minions
+ItemDisplay[STAT499>0 MAPTIER<4]: %ORANGE% [Minion]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Minions of Destruction%CL%%NAME%}
+
+// Buffs / Tags
+// Map Contains Ghosts
+ItemDisplay[(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
+ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+
+// Map has Standard of Heroes applied
+ItemDisplay[STAT458>0]: %GREEN% [H]%NAME%%CONTINUE%{%NAME%}
+
+// Map has bonus crafting mats
+ItemDisplay[STAT497>0]: %TEAL% [Craft]%NAME%%CONTINUE%{%TEAL%Extra Crafting Mats%CL%%NAME%}
+
+// Map has Orb of Fortification applied
+ItemDisplay[STAT493>0]: %ORANGE% [F]%NAME%%CONTINUE%{%NAME%}
+
+// Map has EVENT applied
+ItemDisplay[STAT500>0]: %CORAL% [E]%NAME%%CONTINUE%{%PURPLE%Catalyzed%CL%%NAME%}
+
+// Slammed
+ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %RED% [C]%NAME%%CONTINUE%{%NAME%}
+
+
+// Map Contains Dolls
+ItemDisplay[STAT437>0 MAPTIER<4]: %RED% [DOLLS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Dolls %CL%%NAME%}
+
+// 2x Map Boss
+ItemDisplay[STAT498>0]: %BLUE% [2xBoss]%NAME%%CONTINUE%{%NAME%}
+
+// +Area Level
+ItemDisplay[STAT374>0 STAT374<2]: %PURPLE% [+1]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT374>1 STAT374<3]: %PURPLE% [+2]%NAME%%CONTINUE%{%NAME%}
+
+//Map EXPERIMENTAL
+// Not ready yet ItemDisplay[!GROUND ID !NMAG MAPTIER>0]:%NAME%{%WHITE%Experience Rating: $f(ROUND((1+STAT373/100)*((1+STAT372/100)*%NORM_XP%+(1+MIN(STAT375/100,MAX(STAT372/100,STAT375/200)))*%ELITE_XP%)/2*100))%%CL%%NAME%}%CONTINUE%
+// BUGGED ItemDisplay[!GROUND ID !NMAG MAPTIER>0 STAT370>0]:%NAME%{%WHITE%Magic Find: $f(ROUND((%MAP_MAGICFIND%/%CHAR_MAGICFIND%)*((1+STAT372/100)*0.55+(1+MIN(STAT375,MAX(STAT372,STAT375/2))/100)*0.45)*100))%%CL%%NAME%}%CONTINUE%
+
+// Tier 4
+ItemDisplay[MAPTIER=4 STAT360=0]: %NAME%%CONTINUE%{%NAME%%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%))%CL%}
+ItemDisplay[MAPTIER=4 STAT360>0]: %NAME%%CONTINUE%{%NAME%%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%))%CL%}
+
+// Tier 3 Good Maps
+ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T3_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%)) < < <%CL%}
+// Tier 3 Juicer tag
+ItemDisplay[MAPTIER=3 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%%CONTINUE%{%NAME%%ORANGE%> > > XP & Density & Rarity < < <%CL%}
+
+// Tier 2 Good Maps
+ItemDisplay[MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[MAPTIER=2 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T2_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_SLAM%)) < < <%CL%}
+
+// Tier 1 Good Maps
+ItemDisplay[MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_SLAM%)) < < <%CL%}
+
+
+// Tier 3 MF Maps
+ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS]: %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T3_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_SLAM%)) < < <%CL%}
+// Tier 2/1 MF Maps
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS]: %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%)) < < <%CL%}
+
+// T3 Reroll note
+ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+// T2 Reroll note
+ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+// T1 Reroll note
+ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+
+
+// Tell the User to convert map to rare
+ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%BLUE%This Map %WHITE%+ %GOLD%Angelic Orb %WHITE%+ %WHITE%Any PGem %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%CL%%PURPLE%Convert to %WHITE%Stackable %PURPLE%Map%CL%%NAME%}
+ItemDisplay[NMAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%WHITE%This Map + %GOLD%Zakarum Orb + %BLUE%Jewel %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%NAME%}
+
+// Inform how to clear the map
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Fast Map Clear Guides Visit:%NL%%CL%%NAME%}%CONTINUE%
+
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %NAME%{%NAME%}
+
+//-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // GEMS
 //-----------------------------------------------------------------------------------
@@ -4236,6 +4459,72 @@ ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %CRAFT_ZERO%//Catch all eth weapons w
 
 ItemDisplay[UNI ID]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[SET ID]: %GREEN%%NAME%%CONTINUE%
+
+// ------------------------------------------------------------------------------
+// Tool-tip Pts AMU / RING / JEWEL — raw weighted score as "NNN%" (centipoints)
+// ------------------------------------------------------------------------------
+// Color: ORANGE normally, PURPLE at 6Pt+ (rings/amulets) or 4Pt+ (jewels).
+// Divisors live in 06-hiim_pts_formula: PTS_RING_DIV / PTS_AMU_DIV / PTS_MELEEJEW_DIV / PTS_CASTERJEW_DIV / PTS_LLDJEW_DIV
+// ------------------------------------------------------------------------------
+
+// PVM Melee Ring
+ItemDisplay[rin !UNI !SET ID MINDMG+MAXDMG>9 $f(ROUND(PTSRING_MELEE*100/PTS_RING_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100) pt PVM Melee Ring%CL%%NAME%}
+ItemDisplay[rin !UNI !SET ID MINDMG+MAXDMG>9 $f(ROUND(PTSRING_MELEE*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100) pt PVM Melee Ring%CL%%NAME%}
+
+// PVM Caster Ring (STAT86 and STAT138 weights live in the alias — each value of 2 = 1Pt)
+ItemDisplay[rin !UNI !SET ID FCR>0 $f(ROUND(PTSRING_CASTER*100/PTS_RING_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100) pt PVM Caster Ring%CL%%NAME%}
+ItemDisplay[rin !UNI !SET ID FCR>0 $f(ROUND(PTSRING_CASTER*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100) pt PVM Caster Ring%CL%%NAME%}
+
+// LLD Melee Ring
+ItemDisplay[rin !UNI !SET ID LVLREQ<31 STR>14 $f(ROUND(PTSRING_LLDMELEE*100/PTS_RING_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100) pt LLD Melee Ring%CL%%NAME%}
+ItemDisplay[rin !UNI !SET ID LVLREQ<31 STR>14 $f(ROUND(PTSRING_LLDMELEE*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100) pt LLD Melee Ring%CL%%NAME%}
+
+// LLD Caster Ring
+ItemDisplay[rin !UNI !SET ID LVLREQ<31 FCR>0 $f(ROUND(PTSRING_LLDCASTER*100/PTS_RING_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100) pt LLD Caster Ring%CL%%NAME%}
+ItemDisplay[rin !UNI !SET ID LVLREQ<31 FCR>0 $f(ROUND(PTSRING_LLDCASTER*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100) pt LLD Caster Ring%CL%%NAME%}
+
+// HLD Caster Ring
+ItemDisplay[rin !UNI !SET ID STR+DEX>29 FCR>0 $f(ROUND(PTSRING_HLDCASTER*100/PTS_RING_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100) pt HLD Caster Ring%CL%%NAME%}
+ItemDisplay[rin !UNI !SET ID STR+DEX>29 FCR>0 $f(ROUND(PTSRING_HLDCASTER*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100) pt HLD Caster Ring%CL%%NAME%}
+
+// LLD Melee Amulet
+ItemDisplay[amu !UNI !SET ID LVLREQ<31 LIFE>19 AMU_WITH_ANY_CLASS $f(ROUND(PTSAMU_LLDMELEE*100/PTS_AMU_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100) pt LLD Melee Amulet%CL%%NAME%}
+ItemDisplay[amu !UNI !SET ID LVLREQ<31 LIFE>19 AMU_WITH_ANY_CLASS $f(ROUND(PTSAMU_LLDMELEE*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100) pt LLD Melee Amulet%CL%%NAME%}
+
+// LLD Caster Amulet
+ItemDisplay[amu !UNI !SET ID LVLREQ<31 FCR>0 AMU_TREE_ONLY $f(ROUND(PTSAMU_LLDCASTER*100/PTS_AMU_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100) pt LLD Caster Amulet%CL%%NAME%}
+ItemDisplay[amu !UNI !SET ID LVLREQ<31 FCR>0 AMU_TREE_ONLY $f(ROUND(PTSAMU_LLDCASTER*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100) pt LLD Caster Amulet%CL%%NAME%}
+
+// PVM Amulet (STAT86 and STAT80 weights live in the alias — STAT86 of 2 = 1Pt, STAT80 of 16 = 1Pt)
+ItemDisplay[amu !UNI !SET ID AMU_WITH_2CLASS $f(ROUND(PTSAMU_PVM*100/PTS_AMU_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100) pt PVM Amulet%CL%%NAME%}
+ItemDisplay[amu !UNI !SET ID AMU_WITH_2CLASS $f(ROUND(PTSAMU_PVM*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100) pt PVM Amulet%CL%%NAME%}
+
+// HLD Caster Amulet
+ItemDisplay[amu !UNI !SET ID STR+DEX>29 AMU_WITH_2CLASS $f(ROUND(PTSAMU_HLDCASTER*100/PTS_AMU_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100) pt HLD Caster Amulet%CL%%NAME%}
+ItemDisplay[amu !UNI !SET ID STR+DEX>29 AMU_WITH_2CLASS $f(ROUND(PTSAMU_HLDCASTER*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100) pt HLD Caster Amulet%CL%%NAME%}
+
+// ------------------------------------------------------------------------------
+
+// LLD Item tags Jewelry
+ItemDisplay[(amu OR rin) !UNI !SET ID LVLREQ<31]: %NAME% LLD{%NAME%}%CONTINUE%
+
+// ------------------------------------------------------------------------------
+// Jewel Pts — purple at old 4Pt threshold
+// ------------------------------------------------------------------------------
+
+// Melee Jewel (STAT91 -req weight lives in the alias — value of -15 = 1Pt)
+ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_MELEE*100/PTS_MELEEJEW_DIV/100))=3]: %CONTINUE% %NAME% %ORANGE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100) pt Melee Jewel%CL%%NAME%}
+ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_MELEE*100/PTS_MELEEJEW_DIV/100))>3]: %CONTINUE% %NAME% %PURPLE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100) pt Melee Jewel%CL%%NAME%}
+
+// Caster Jewel
+ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_CASTER*100/PTS_CASTERJEW_DIV/100))=3]: %CONTINUE% %NAME% %ORANGE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100) pt Caster Jewel%CL%%NAME%}
+ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_CASTER*100/PTS_CASTERJEW_DIV/100))>3]: %CONTINUE% %NAME% %PURPLE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100) pt Caster Jewel%CL%%NAME%}
+
+// LLD Jewel
+ItemDisplay[jew !UNI !SET ID LVLREQ<31 $f(ROUND(PTSJEW_LLD*100/PTS_LLDJEW_DIV/100))=3]: %CONTINUE% %NAME% %ORANGE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100) pt LLD Jewel%CL%%NAME%}
+ItemDisplay[jew !UNI !SET ID LVLREQ<31 $f(ROUND(PTSJEW_LLD*100/PTS_LLDJEW_DIV/100))>3]: %CONTINUE% %NAME% %PURPLE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100) pt LLD Jewel%CL%%NAME%}
+
+// ------------------------------------------------------------------------------
 //------------------------------DESCRIPTION_INFORMATION------------------------------
 
 
