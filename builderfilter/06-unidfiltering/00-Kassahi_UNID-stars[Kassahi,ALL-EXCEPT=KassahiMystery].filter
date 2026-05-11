@@ -1,0 +1,26 @@
+//-----------------------------------------------------------------------------------
+// Kassahi 3-star / 4-star unique decoration rules
+//
+// Restores the upstream Kassahi project's icon/sound prefix on top of the alias
+// references. Hiim's shared 20-Unid_UniquesSet_Tiers[ALL].filter drops the
+// %DOT-0D%%MAP-21%%BORDER-0A% / %PX-0D%%DOT-21%%MAP-0A% decoration and uses a
+// different 3-star sound (4726 vs upstream 4714); for ETH versions of NO_ETH_UNIQUE
+// items it tiers down instead of using %BLAME_ONION%.
+//
+// FILTLVL gating preserved (per project policy). Numbered 00- to fire before the
+// shared 20- rules.
+//-----------------------------------------------------------------------------------
+
+// 4-star unique (always shows)
+ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %DOT-0D%%MAP-21%%BORDER-0A%%UNI_GG_ITEM%%SOUNDID-4719%
+
+// 4-star NO_ETH unique: blame onion on eth, full decoration on non-eth
+ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %BLAME_ONION%
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %DOT-0D%%MAP-21%%BORDER-0A%%UNI_GG_ITEM%%SOUNDID-4719%
+
+// 3-star unique (always shows)
+ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %PX-0D%%DOT-21%%MAP-0A%%UNI_STAR3_ITEM%%SOUNDID-4714%
+
+// 3-star NO_ETH unique: blame onion on eth, full decoration on non-eth
+ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %BLAME_ONION%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %PX-0D%%DOT-21%%MAP-0A%%UNI_STAR3_ITEM%%SOUNDID-4714%
