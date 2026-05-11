@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: No Items Out of Town
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 8th%CL%Season 13 - build 118%CL%HiimFilter - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 11th%CL%Season 13 - build 134%CL%HiimFilter - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -273,7 +273,7 @@ ItemDisplay[skz OR skzs]: %CORAL%O O  %LIGHT_GRAY%P. Skull  %CORAL%O O%CONTINUE%
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 7 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 11 2026
 
 //-----------------------------------------------------------------------------------
 // HR Rune estimated values
@@ -281,20 +281,20 @@ Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 7 2026
 
 Alias[OHM_RUNE_VALUE]: 0.85
 Alias[LO_RUNE_VALUE]: 1
-Alias[SUR_RUNE_VALUE]: 1.6
-Alias[BER_RUNE_VALUE]: 3.25
-Alias[JAH_RUNE_VALUE]: 1.65
-Alias[CHAM_RUNE_VALUE]: 2.3
-Alias[ZOD_RUNE_VALUE]: 5.75
+Alias[SUR_RUNE_VALUE]: 1.5
+Alias[BER_RUNE_VALUE]: 3
+Alias[JAH_RUNE_VALUE]: 1.75
+Alias[CHAM_RUNE_VALUE]: 3
+Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 85
 Alias[LO_WSS_VALUE]: 100
-Alias[SUR_WSS_VALUE]: 160
-Alias[BER_WSS_VALUE]: 325
-Alias[JAH_WSS_VALUE]: 165
-Alias[CHAM_WSS_VALUE]: 230
-Alias[ZOD_WSS_VALUE]: 575
+Alias[SUR_WSS_VALUE]: 150
+Alias[BER_WSS_VALUE]: 300
+Alias[JAH_WSS_VALUE]: 175
+Alias[CHAM_WSS_VALUE]: 300
+Alias[ZOD_WSS_VALUE]: 600
 
 // Stack HR and WSS formulas for lower runes
 Alias[PUL_STACK_HR]: (QTY*0.01)
@@ -315,20 +315,20 @@ Alias[HALFHR_STACK_WSS]: (QTY*50)
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.85)
 Alias[LO_STACK_HR]: (QTY*1)
-Alias[SUR_STACK_HR]: (QTY*1.6)
-Alias[BER_STACK_HR]: (QTY*3.25)
-Alias[JAH_STACK_HR]: (QTY*1.65)
-Alias[CHAM_STACK_HR]: (QTY*2.3)
-Alias[ZOD_STACK_HR]: (QTY*5.75)
+Alias[SUR_STACK_HR]: (QTY*1.5)
+Alias[BER_STACK_HR]: (QTY*3)
+Alias[JAH_STACK_HR]: (QTY*1.75)
+Alias[CHAM_STACK_HR]: (QTY*3)
+Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*85)
 Alias[LO_STACK_WSS]: (QTY*100)
-Alias[SUR_STACK_WSS]: (QTY*160)
-Alias[BER_STACK_WSS]: (QTY*325)
-Alias[JAH_STACK_WSS]: (QTY*165)
-Alias[CHAM_STACK_WSS]: (QTY*230)
-Alias[ZOD_STACK_WSS]: (QTY*575)
+Alias[SUR_STACK_WSS]: (QTY*150)
+Alias[BER_STACK_WSS]: (QTY*300)
+Alias[JAH_STACK_WSS]: (QTY*175)
+Alias[CHAM_STACK_WSS]: (QTY*300)
+Alias[ZOD_STACK_WSS]: (QTY*600)
 
 //-----------------------------------------------------------------------------------
 // PD2 Item estimated values
@@ -406,7 +406,7 @@ Alias[DEMONIC_INSIGNIA_VALUE]: 0.2
 // Verdungos Hearty Cord - Mithril Coil
 // Soul Drainer - Vambraces
 
-Alias[4_STAR_UNIQUE]: (uar OR uhm OR usk OR urn OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR uul OR 7pa OR drd OR umc OR umg)
+Alias[4_STAR_UNIQUE]: (uar OR uhm OR usk OR urn OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR uul OR 7pa OR drd OR umc OR umg OR uhg OR 7cr OR obe OR 7bl OR pac OR 7gi OR bae)
 
 // 4 Star Unique Callouts only when not ETH
 //-----------------------------------------------------------------------------------
@@ -441,8 +441,9 @@ Alias[4_STAR_NO_ETH_UNIQUE]: (ci3 OR pa9 OR dre OR ulc OR uts OR ci2 OR upl OR u
 // Earth Shifter or The Cranium Basher - Thunder Maul
 // Gargoyles Bite - Winged Harpoon
 // Bloodtree Stump - War Club
+// Stoneraven - Matriarchal Spear
 
-Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls OR 7gm OR 7ts OR 9m9)
+Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls OR 7gm OR 9m9 OR amd OR 7wa)
 
 // 3 Star Unique Callouts
 //-----------------------------------------------------------------------------------
@@ -468,8 +469,9 @@ Alias[4_STAR_ETH_UNIQUE]: (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 
 // Elite Bolts
 // Bloodtree Stump - War Club (non-ETH)
 // Waterwalk - Sharkskin Boots
+// Stoneraven - Matriarchal Spear (non-ETH)
 
-Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR uhg OR 7wc OR 9gw OR xtb OR 7cr OR uvg OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 7gm OR 7b7 OR xlt OR obe OR cqv3 OR 9m9 OR xvb)
+Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR 7wc OR xtb OR uvg OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 7gm OR 7b7 OR xlt OR cqv3 OR 9m9 OR xvb OR amd OR xtg OR 7wa OR ung OR uh9 OR baf OR baa OR 7sr)
 
 // 3 Star Unique Callouts when not eth
 //-----------------------------------------------------------------------------------
@@ -481,7 +483,7 @@ Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR uhg OR 7wc OR 9gw OR xtb OR 7cr OR u
 // Darkforce - Spawn Bloodlord Skull
 // Snowclash - Battle Belt
 
-Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR bae OR ned OR uap OR uit OR nef OR ztb)
+Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR ned OR uap OR uit OR ztb OR uui)
 
 // 2 Star Unique Callouts
 //-----------------------------------------------------------------------------------
@@ -533,8 +535,9 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR bae OR ned OR uap OR uit OR nef OR ztb)
 // Razortail - Sharkskin Belt
 // Giant Skull - Bone Visage
 // Denmother - Sun Spirit
+// Stalker's Cull - Runic Talons
 
-Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR xmb OR tgl OR xvg OR 7bl OR 9wn OR 7bw OR xld OR umb OR 7bt OR pae OR xtg OR 7wa OR 8ws OR obc OR uhb OR bad OR 9s8 OR dra OR 7ls OR pac OR 7s8 OR neg OR pab OR uui OR xsh OR 9wc OR ung OR 8ls OR 8cb OR 8rx OR 8mx OR amf OR aqv3 OR aqv2 OR obf OR uow OR 9gm OR 7fl OR 9bw OR 6lw OR utg OR nee OR zvb OR uh9 OR drc)
+Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR xmb OR tgl OR xvg OR 9wn OR 7bw OR xld OR umb OR 7bt OR pae OR 8ws OR obc OR uhb OR bad OR 9s8 OR dra OR 7ls OR 7s8 OR neg OR pab OR xsh OR 9wc OR 8ls OR 8rx OR 8mx OR amf OR aqv3 OR aqv2 OR obf OR uow OR 9gm OR 7fl OR 9bw OR 6lw OR utg OR nee OR zvb OR drc OR 9gw OR uml OR xar OR ulg OR urg OR amc OR xap OR gsd OR uld OR 9ls OR xth OR xpl OR mbt OR obd OR ulb OR ba6 OR xlg OR xmg OR xhg OR uvb OR amb OR 7wb OR 7lw OR uhl OR 7vo OR gix OR ama OR 7fb OR 7ts OR nef OR 7tw)
 
 // 1 Star Unique Callouts
 //-----------------------------------------------------------------------------------
@@ -558,7 +561,7 @@ Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR xmb OR tgl OR xvg OR 7bl OR 9wn OR 7
 // Merman's Sprocket - Wyrmhide Boots
 // Cyclopean Roar - Jawbone Visor
 
-Alias[1_STAR_UNIQUE]: (uml OR xar OR ulg OR urg OR amc OR xap OR gsd OR aar OR uld OR 9ls OR ba7 OR dr6 OR xth OR xpl OR mbt OR obd OR 9la OR ulb OR ba6)
+Alias[1_STAR_UNIQUE]: (aar OR ba7 OR dr6 OR 9la OR 8cb OR xul OR tbl OR xlb OR 72a OR 7br OR 8cs OR 7b8 OR 9tw OR 6cs OR brs OR xhm OR 7m7 OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 9fc OR 9gd OR ame OR upk OR 7gs OR xow OR ush OR bac OR ltp OR 7di OR hgl OR drf OR 8hx OR cqv2 OR 7yw OR utu)
 
 
 // 0 Star Unique Callouts
@@ -570,18 +573,16 @@ Alias[1_STAR_UNIQUE]: (uml OR xar OR ulg OR urg OR amc OR xap OR gsd OR aar OR u
 // Purgatory - Archon Plate (non-ETH)
 // Sandstorm Trek - Scarabshell Boots
 // Bloodravens Charge - Matriarchal Bow
-// Stoneraven - Matriarchal Spear
 // Heart Carver - Rondel
 // Bloodfist - Heavy Gloves
 // Jade Talon - Wrist Sword
 // Firelizards Talons - Feral Claws
-// Stalker's Cull - Runic Talons
 // Sage's Defiance - Giant Conch
 // Giant Maimer - Colossus Voulge
 // Que-Hegans Wisdom - Mage Plate
 // Humongous - Giant Axe
 
-Alias[0_STAR_UNIQUE]: (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9di OR vgl OR 7wb OR 7lw OR 7tw OR uhl OR 7vo OR xtp OR gix)
+Alias[0_STAR_UNIQUE]: (utp OR 9di OR vgl OR xtp OR xkp OR 7ta OR lbb)
 
 
 // NO Star Unique Callouts
@@ -645,7 +646,7 @@ Alias[0_STAR_UNIQUE]: (xlg OR xmg OR xhg OR baf OR utp OR uvb OR amb OR amd OR 9
 // The Gladiators Bane - Wire Fleece
 // The Spirit Shroud - Ghost Armor
 
-Alias[NO_STAR_UNIQUE]: (xul OR tbl OR vbt OR xlb OR lgl OR cap OR xkp OR xts OR 72a OR 8lb OR dgr OR 7br OR 8cs OR 7sm OR 7ta OR 7b8 OR 9tw OR 6cs OR kri OR brs OR xhm OR 7m7 OR ama OR baa OR nea OR mgl OR xrn OR 8s8 OR 6l7 OR 7dg OR 7sr OR 9fc OR 7fb OR 9b9 OR 9gd OR ame OR upk OR 7gs OR xow OR ush OR bac OR lbb OR 8sw OR ltp OR 7di OR 9fl OR 7gi OR hgl OR 9kr OR drf OR 8hx OR fhl OR 9sr OR cqv2 OR xcl OR 7yw OR utu OR xui)
+Alias[NO_STAR_UNIQUE]: (vbt OR lgl OR cap OR xts OR 8lb OR dgr OR 7sm OR kri OR 9b9 OR 8sw OR 9fl OR 9kr OR fhl OR 9sr OR xcl OR xui)
 
 //  lld
 //-----------------------------------------------------------------------------------
@@ -2391,17 +2392,17 @@ ItemDisplay[skls]: %CONTINUE%%DOT-70%%NAME%%TIER-4%{%TAN%Note%WHITE%: 3xFlawless
 
 //Perfect
 // Ame
-ItemDisplay[gpvs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-7%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest Tal, +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield Eth, [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
+ItemDisplay[gpvs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest Tal, +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield Eth, [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
 // Topaz
-ItemDisplay[gpys]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-7%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring Lum, +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest Eld, +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield Dol, [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon Shael, +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft}
+ItemDisplay[gpys]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring Lum, +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest Eld, +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield Dol, [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon Shael, +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft}
 // Saph
-ItemDisplay[gpbs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-7%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring Amn, +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt Tal, 10% FBR +[10-20]% FHR 5%CTC FNova%CL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots Ral, +[60-120]DefvMelee [10-20]% FHR 5%CTC FNova%CL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest Nef, +[75-100]%EDef +[30-40]% FHR 8%CTC FNova%CL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft}
+ItemDisplay[gpbs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring Amn, +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt Tal, 10% FBR +[10-20]% FHR 5%CTC FNova%CL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots Ral, +[60-120]DefvMelee [10-20]% FHR 5%CTC FNova%CL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest Nef, +[75-100]%EDef +[30-40]% FHR 8%CTC FNova%CL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft}
 // Emerald
-ItemDisplay[gpgs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-7%{Amulet Thul, 10% Block [4-7]MDR & PDR%CL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%CL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%CL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%CL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%CL%Helm Ith, +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest Eth, +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield Nef, +[50-75]% EDef [4-6]% PDR  +[100-150]DefvMelee%CL%Weapon Sol, +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft}
+ItemDisplay[gpgs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Thul, 10% Block [4-7]MDR & PDR%CL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%CL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%CL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%CL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%CL%Helm Ith, +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest Eth, +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield Nef, +[50-75]% EDef [4-6]% PDR  +[100-150]DefvMelee%CL%Weapon Sol, +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft}
 // Ruby
-ItemDisplay[gprs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-7%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring Sol, +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots Eth, [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm Ral, [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest Thul, +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield Ith, [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft}
+ItemDisplay[gprs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring Sol, +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots Eth, [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm Ral, [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest Thul, +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield Ith, [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft}
 //Diamond
-ItemDisplay[gpws]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-7%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
+ItemDisplay[gpws]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
 // Skull
 ItemDisplay[skzs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%{Amulet Dol, [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring Hel,[15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt Eld, [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots El, [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm Lum, [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest Tir, [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield Sol, [10-20]% Block [3-6]%ML [30-50] PLR%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
 
@@ -2956,12 +2957,12 @@ ItemDisplay[UNI !ID FILTLVL<8 2_STAR_UNIQUE]: %UNI_STAR2_ITEM%
 // 1 Star Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID FILTLVL<8 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
+ItemDisplay[UNI !ID FILTLVL<7 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
 
 // 0 Star Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID FILTLVL<8 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID FILTLVL<7 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
 
 // 00 Star Unique Callouts
 // Filter level 1-6
@@ -3232,7 +3233,7 @@ ItemDisplay[EQUIPPED PALADIN SHIELD]:%NAME% {%WHITE%Max Block Dex: $f(CEIL(CHARS
 ItemDisplay[EQUIPPED (AMAZON OR ASSASSIN OR BARBARIAN) SHIELD]:%NAME% {%WHITE%Max Block Dex: $f(CEIL(CHARSTAT12*150/(CHARSTAT20+25)+15))%CL%%NAME%}%CONTINUE%
 ItemDisplay[EQUIPPED (DRUID OR NECROMANCER OR SORCERESS) SHIELD]:%NAME% {%WHITE%Max Block Dex: $f(CEIL(CHARSTAT12*150/(CHARSTAT20+20)+15))%CL%%NAME%}%CONTINUE%
 
-ItemDisplay[ID (ARMOR OR WEAPON OR rin OR amu) CHSK54>0]: %NAME% %SAGE%[TELE]{%ORANGE%Teleport Charges Staff}%CONTINUE% // Teleport charges
+ItemDisplay[ID (ARMOR OR WEAPON OR rin OR amu) CHSK54>0]: %NAME% %SAGE%[TELE]{%NAME%}%CONTINUE% // Teleport charges
 
 // Leech
 //ItemDisplay[(ARMOR OR WEAPON OR rin OR amu OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) (MAG OR RARE OR CRAFT) STAT60>0]: %RED%%STAT60%%LL %NAME%%CONTINUE%{%NAME%}
@@ -3916,7 +3917,7 @@ ItemDisplay[SCEPTER SHOP TABSK25>0 (STAT93>0 OR STAT105>0) LVLREQ<31]: %NAME% [L
 // LLD Staff
 ItemDisplay[ID (CHSK54>0) FCR>29 STAFF LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD FCR Teleport Charges Staff%RED%   ***} // GG Teleport charges FCR
 ItemDisplay[ID (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %ORANGE%* * *   %NAME% %ORANGE%[LLD]   * * *{%RED%***   %PURPLE%LLD FCR Teleport Charges Staff%RED%   ***}  // Teleport charges FCR
-ItemDisplay[ID (CHSK54>0) STAFF LVLREQ<31]: %NAME% [LLD]{%GREEN%LLD Teleport Charges Staff} // Teleport charges
+ItemDisplay[ID (CHSK54>0) STAFF LVLREQ<31]: %NAME% [LLD]{%NAME%} // Teleport charges
 
 
 ------------------------------------------------------------------------------
@@ -4180,6 +4181,7 @@ ItemDisplay[!RW !UNI !SET ID SK272>0 (MULTI188,48+MULTI83,6+MULTI107,272+STAT127
 // CRAFTING - id
 //-----------------------------------------------------------------------------------
 // Crafting notes
+ItemDisplay[MAG ID STAT360=0 CHEST CRAFTALVL>54 (ELT OR gth OR xth OR ful OR xul OR aar OR xar)]: %NAME%{%CORAL%Can craft for 4os%CL%%NAME%}%CONTINUE%
 ItemDisplay[MAG ID STAT360=0 !cm1 !cm2 !cm3 !jew !EQ7]: %NAME%{%CORAL%Crafted Alvl: %CRAFTALVL%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RARE ID STAT360=0 !cm1 !cm2 !cm3 !jew !EQ7 FILTLVL<5]: %NAME%{%CORAL%Crafted Alvl: %CRAFTALVL%%CL%%NAME%}%CONTINUE%
 ItemDisplay[CHEST MAG ID !(STAT360>0)]: %NAME%{%CORAL%Alvl 85+ for 200% EDAM & 20% PDR Chance%CL%%NAME%}%CONTINUE%
@@ -5165,9 +5167,12 @@ ItemDisplay[ID !NMAG !MAG !ELT $f(UPLVL>0) $f(UPLVL>CLVL)]:%NAME%{%RED%Lvl %UPLV
 ItemDisplay[ID !NMAG !MAG !ELT $f(OR(UPLVL>0,UPSTR>0,UPDEX>0))]:%NAME%{%GRAY%( Requires: %NAME%}%CONTINUE%
 
 //Upgrades That Give +1 Socket on slam / box
-ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR scp OR (ILVL>25 AND (ne2 OR ne1 OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 bhm))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
-ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ<31 (xui OR xea OR xla OR xtu OR xpk OR xsh OR 9wn OR tkf OR tax OR jav OR (ILVL>25 AND (NEC NORM)) OR (ILVL>40 (xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%Warning: May increase level requirement over LLD%CL%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
-ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 STAT486=0 !SHOP !EQUIPPED LVLREQ>30 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu OR buc OR xuc OR bsh OR hax OR clb OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR wnd OR ywn OR 9wn OR tkf OR tax OR jav OR scp OR (ILVL>25 ((NEC NORM) OR lax OR bar OR sbw OR lxb OR ktr OR wrb OR axf OR ces)) OR (ILVL>40 (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 !SHOP !EQUIPPED (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR bsh OR hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR lst OR 8ls OR wnd OR ywn OR scp OR xui OR xea OR xla OR xtu OR 9wn OR tkf OR tax OR jav OR (ILVL>25 AND (ne1 OR ne2 OR ne3 OR ne4 OR ne5 OR lax OR bar OR sbw OR lxb OR lbw OR 8lb OR spr OR 9sr OR ktr OR wrb OR axf OR ces OR (NEC NORM))) OR (ILVL>40 AND (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 !SHOP !EQUIPPED UPLVL>30 LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR buc OR xuc OR bsh OR hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR lst OR 8ls OR wnd OR ywn OR scp OR xui OR xea OR xla OR xtu OR 9wn OR tkf OR tax OR jav OR (ILVL>25 AND (ne1 OR ne2 OR ne3 OR ne4 OR ne5 OR lax OR bar OR sbw OR lxb OR lbw OR 8lb OR spr OR 9sr OR ktr OR wrb OR axf OR ces OR (NEC NORM))) OR (ILVL>40 AND (bhm OR xh9 OR ci0 OR ci1)))]: %NAME%{%GREEN%Warning: WILL increase level requirement over LLD%CL%%NAME%}%CONTINUE%
+
+//Upgrades That Give +1 Max Socket via Puzzle Box (slammed items)
+ItemDisplay[STAT486=0 !NMAG !MAG ID STAT360>0 !SHOP !EQUIPPED SOCK=0 (wnd OR 9wn OR ywn OR dgr OR dir OR tkf OR tax OR jav OR sst OR lst OR 8ls OR sbw OR lxb OR spr OR bar)]: %NAME%{%GREEN%(Upgrade before Puzzle Box For +1 Max Socket)%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED UPLVL>30 LVLREQ<31 (wnd OR 9wn OR ywn OR dgr OR dir OR tkf OR tax OR jav OR sst OR lst OR 8ls OR sbw OR lxb OR spr OR bar)]: %NAME%{%GREEN%Warning: WILL increase level requirement over LLD%CL%%NAME%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
