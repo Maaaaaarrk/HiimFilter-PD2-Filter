@@ -45,7 +45,7 @@ ItemDisplay[GEM=5 AND GEMTYPE=5 OR gpb OR gpbs]: %White%P %Blue%Sapphire%MAP-20%
 ItemDisplay[GEM=5 AND GEMTYPE=6 OR gpy OR gpys]: %White%P %Yellow%Topaz%MAP-20%%CONTINUE%
 ItemDisplay[GEM=5 AND GEMTYPE=7 OR skz OR skzs]: %White%P %Gray%Skull%MAP-20%%CONTINUE%
 ItemDisplay[(GEM=4 AND GEMTYPE=7) OR skl OR skls]: %White%F %Gray%Skull%MAP-20%%CONTINUE%
-ItemDisplay[(GEM=4 OR GEM=5) QTY>1]: %NAME% %TAN%x%WHITE%%QTY%{%NAME%}%CONTINUE%
+// QTY rule removed — handled by Hiim shared 06-Gems to avoid double display
 ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %PURPLE%+ %NAME% %PURPLE%+%CONTINUE%
 ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %WHITE%+ %NAME% %WHITE%+%CONTINUE%
 ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %GREEN%+ %NAME% %GREEN%+%CONTINUE%

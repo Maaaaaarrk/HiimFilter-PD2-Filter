@@ -77,6 +77,23 @@ Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%##%CORAL%##%RED%## %NAME% %RED%##
 // Rare Item GG
 Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%RED%0%ORANGE%0%YELLOW%0%GREEN%0%BLUE%0%PURPLE%0 %NAME% %PURPLE%0%BLUE%0%GREEN%0%YELLOW%0%ORANGE%0%RED%0
 
+// Amazon quiver UNID annotations
+Alias[QUIVER_MAG_AMA]: %BLUE%*    %NAME%    *
+Alias[QUIVER_RARE_AMA]: %YELLOW%*     %NAME%     *
+Alias[QUIVER_RARE_AMA_TIGHT]: %YELLOW%*   %NAME%   *
+
+// Grand-charm callouts (prefixes use %CONTINUE% so they stack with the alias below)
+Alias[CHARM_HIGH_LVL]: %YELLOW%HIGH LEVEL %NAME%
+Alias[CHARM_MID_LVL]: %BLUE%Mid Level %NAME%
+Alias[CHARM_GC_TAG]: %BORDER-6A%%DOT-94%%BLUE%*** GC %BLUE%***
+Alias[CHARM_SC_TAG]: %BLUE%SC
+Alias[CHARM_LC_TAG]: %BLUE%LC
+
+// Unidentified unique charms (Hellfire Torch / Annihilus / Gheeds Fortune)
+Alias[UNI_UNID_TORCH]: %RED%o %PURPLE%%GOLD%  Unidentified Hellfire Torch  %RED%o
+Alias[UNI_UNID_ANNI]: %RED%o %PURPLE%%GOLD%  Unidentified Annihilus  %RED%o
+Alias[UNI_UNID_GHEEDS]: %RED%o %PURPLE%%GOLD%  Unidentified Gheeds Fortune  %RED%o
+
 // Leveling Tag
 Alias[LEVELING_TAG]: %SAGE%lvling%PX-62%
 
@@ -150,6 +167,16 @@ ItemDisplay[wss]: %PURPLE%WORLDSTAR HIPHOP%CONTINUE%
 ItemDisplay[cwss]: %ORANGE%Tainted %PURPLE%WORLDSTAR HIPHOP%CONTINUE%
 ItemDisplay[lucb GROUND]: Dorito%CONTINUE%
 ItemDisplay[lucb QTY>1 GROUND]: %NAME% %QTY_TAG%%CONTINUE%
+
+// Craft Infusion renames — set the name here so 05-utility/06-Gems tooltips
+// don't override formatting with hardcoded text.
+ItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfc]: %PURPLE%Caster %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfs]: %GREEN%Safety %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfh]: %BLUE%Hitpower %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfv]: %GRAY%Vampiric %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfu]: %YELLOW%Bountiful %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfp]: %WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%F. Amethyst%CONTINUE%

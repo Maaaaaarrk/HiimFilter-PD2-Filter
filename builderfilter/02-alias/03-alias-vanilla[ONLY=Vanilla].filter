@@ -78,6 +78,23 @@ Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%x %NAME% %PURPLE%x
 // Rare Item GG
 Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%PURPLE%X %NAME% %PURPLE%X
 
+// Amazon quiver UNID annotations
+Alias[QUIVER_MAG_AMA]: %NAME%
+Alias[QUIVER_RARE_AMA]: %NAME%
+Alias[QUIVER_RARE_AMA_TIGHT]: %NAME%
+
+// Grand-charm callouts (prefixes use %CONTINUE% so they stack with the alias below)
+Alias[CHARM_HIGH_LVL]: %NAME%
+Alias[CHARM_MID_LVL]: %NAME%
+Alias[CHARM_GC_TAG]: %NAME%
+Alias[CHARM_SC_TAG]: %NAME%
+Alias[CHARM_LC_TAG]: %NAME%
+
+// Unidentified unique charms (Hellfire Torch / Annihilus / Gheeds Fortune)
+Alias[UNI_UNID_TORCH]: %NAME%
+Alias[UNI_UNID_ANNI]: %NAME%
+Alias[UNI_UNID_GHEEDS]: %NAME%
+
 // Leveling Tag
 Alias[LEVELING_TAG]: %ORANGE%lvling%PX-62%
 
@@ -151,6 +168,16 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 
 ItemDisplay[wss]: %RED%WORLDSTONE SHARD%CONTINUE%
 ItemDisplay[cwss]: %ORANGE%Tainted %RED%WORLDSTONE SHARD%CONTINUE%remo
+
+// Craft Infusion renames — set the name here so 05-utility/06-Gems tooltips
+// don't override formatting with hardcoded text.
+ItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfc]: %PURPLE%Caster %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfs]: %GREEN%Safety %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfh]: %BLUE%Hitpower %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfv]: %GRAY%Vampiric %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfu]: %YELLOW%Bountiful %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfp]: %WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%F. Amethyst%CONTINUE%
