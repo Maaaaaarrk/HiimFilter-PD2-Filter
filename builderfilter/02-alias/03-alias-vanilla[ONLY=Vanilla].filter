@@ -5,6 +5,9 @@
 // General item
 Alias[GEN_ITEM]: %NAME%
 
+// Worldstone Shard — mirrors GEN_ITEM (inlined; PD2 doesn't resolve aliases inside Alias[] bodies)
+Alias[WSS_SHARD]: %NAME%
+
 // General item Alt
 Alias[GEN_ALT]: %PURPLE%O %NAME% %PURPLE%O
 
@@ -194,3 +197,5 @@ ItemDisplay[gly OR glys]: %YELLOW%F. Topaz%CONTINUE%
 ItemDisplay[gpy OR gpys]: %YELLOW%O  P. Topaz  O%CONTINUE%
 ItemDisplay[skl OR skls]: %CORAL%. %LIGHT_GRAY%F. Skull %CORAL%.%CONTINUE%
 ItemDisplay[skz OR skzs]: %CORAL%O O  %LIGHT_GRAY%P. Skull  %CORAL%O O%CONTINUE%
+
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}

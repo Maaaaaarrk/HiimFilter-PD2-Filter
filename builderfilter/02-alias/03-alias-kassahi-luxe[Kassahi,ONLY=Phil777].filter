@@ -175,6 +175,11 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 // General Item re-names
 //-----------------------------------------------------------------------------------
 
+ItemDisplay[RUNE>0]: %RUNENAME%%CONTINUE%
+ItemDisplay[RUNE<20]: %ORANGE%%RUNENAME%%CONTINUE%
+ItemDisplay[RUNE>19 RUNE<26]: %GREEN%%NAME%%CONTINUE%
+ItemDisplay[RUNE>25]: %PURPLE%%NAME%%CONTINUE%
+
 Alias[WSS_SHARD]: %RED%«%BLACK%·%RED%» %RED% %NAME% %RED% «%BLACK%·%RED%»
 
 

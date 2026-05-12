@@ -7,16 +7,21 @@
 // because each Kassahi variant's `03-alias-kassahi-general-*.filter` defines those
 // aliases with Kassahi visuals.
 //
-// Display aliases for the items below (TOKEN_DISPLAY, HORADRIC_SCARAB, CATALYST_*)
-// are defined in `02-alias/04-alias-kassahi-pd2items[Kassahi].filter`.
+// %MAIN_DOT% (defined per-variant in 03-alias-kassahi-{normal,hyper,luxe}.filter)
+// is used inline below for variant-specific dot decoration. It is NOT wrapped in
+// another alias body — PD2 only resolves aliases one level deep at ItemDisplay
+// substitution time, so nesting %MAIN_DOT% inside another Alias[] body causes
+// the engine to emit the literal token. HORADRIC_SCARAB and BLAME_ONION (which
+// don't reference MAIN_DOT) remain in `02-alias/04-alias-kassahi-displays`.
 //-----------------------------------------------------------------------------------
 
 
 // Token of Absolution — literal "Token" label, no %NAME%
-ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%TOKEN_DISPLAY%{%GOLD%Wherever You Are is The Entry Point.%NL%}
+ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%{%GOLD%Wherever You Are is The Entry Point.%NL%}
 
-// Worldstone Shards — purple/red/coral dot decoration via WSS_SHARD alias (Kassahi upstream)
-ItemDisplay[wss]: %WSS_SHARD%{%NAME%}%CONTINUE%
+// Worldstone Shards — wss rule moved to common 05-utility/02-wss-display[ALL]
+// so Hiim filters route through %WSS_SHARD% too. iwss/cwss stay Kassahi-only
+// because Hiim handles those differently in 03-PD2_items[ALL].
 ItemDisplay[iwss]: %WSS_SHARD%{%NAME%}%CONTINUE%
 ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
 
@@ -30,12 +35,13 @@ ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: 
 ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
 
-// Craft Infusions (pre-made craft recipes)
+// Craft Infusions (pre-made craft recipes) — dot decoration inlined per the
+// MAIN_DOT note above. Each rule: outer color → mid color → MAIN_DOTs → NAME → mirror.
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-68%%SOUNDID-4715%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[crfb]: %CRAFT_BLOOD%{%NAME%}%CONTINUE%      // Blood — life leech / edmg
-ItemDisplay[crfc]: %CRAFT_CASTER%{%NAME%}%CONTINUE%     // Caster — fcr / mana
-ItemDisplay[crfs]: %CRAFT_SAFETY%{%NAME%}%CONTINUE%     // Safety — pdr / resist
-ItemDisplay[crfh]: %CRAFT_HITPOWER%{%NAME%}%CONTINUE%   // Hitpower — fhr / ctc fnova
-ItemDisplay[crfv]: %CRAFT_VAMPIRIC%{%NAME%}%CONTINUE%   // Vampiric — ml / plr
-ItemDisplay[crfu]: %CRAFT_BOUNTIFUL%{%NAME%}%CONTINUE%  // Bountiful — mf / lr
-ItemDisplay[crfp]: %CRAFT_BRILLIANT%{%NAME%}%CONTINUE%  // Brilliant — astat / ias
+ItemDisplay[crfb]: %CORAL%%MAIN_DOT%%RED%%MAIN_DOT%%MAIN_DOT%   %NAME%   %RED%%MAIN_DOT%%MAIN_DOT%%CORAL%%MAIN_DOT%{%NAME%}%CONTINUE%               // Blood — life leech / edmg
+ItemDisplay[crfc]: %BLUE%%MAIN_DOT%%PURPLE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %PURPLE%%MAIN_DOT%%MAIN_DOT%%BLUE%%MAIN_DOT%{%NAME%}%CONTINUE%            // Caster — fcr / mana
+ItemDisplay[crfs]: %DARK_GREEN%%MAIN_DOT%%GREEN%%MAIN_DOT%%MAIN_DOT%   %NAME%   %GREEN%%MAIN_DOT%%MAIN_DOT%%DARK_GREEN%%MAIN_DOT%{%NAME%}%CONTINUE%  // Safety — pdr / resist
+ItemDisplay[crfh]: %TEAL%%MAIN_DOT%%BLUE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %BLUE%%MAIN_DOT%%MAIN_DOT%%TEAL%%MAIN_DOT%{%NAME%}%CONTINUE%               // Hitpower — fhr / ctc fnova
+ItemDisplay[crfv]: %GOLD%%MAIN_DOT%%ORANGE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %ORANGE%%MAIN_DOT%%MAIN_DOT%%GOLD%%MAIN_DOT%{%NAME%}%CONTINUE%           // Vampiric — ml / plr
+ItemDisplay[crfu]: %SAGE%%MAIN_DOT%%YELLOW%%MAIN_DOT%%MAIN_DOT%   %NAME%   %YELLOW%%MAIN_DOT%%MAIN_DOT%%SAGE%%MAIN_DOT%{%NAME%}%CONTINUE%           // Bountiful — mf / lr
+ItemDisplay[crfp]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %WHITE%%MAIN_DOT%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%NAME%}%CONTINUE%  // Brilliant — astat / ias
