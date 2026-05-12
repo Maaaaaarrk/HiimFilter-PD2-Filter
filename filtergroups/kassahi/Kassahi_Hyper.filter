@@ -8,21 +8,21 @@
 // Filter Levels (0 = No Filter)
 ItemDisplayFilterName[]: ÿc:Base ÿc5(Norm Campaign)
 ItemDisplayFilterName[]: ÿc2Semi-Strict ÿc5(NM,Hell Campaign)
-ItemDisplayFilterName[]: ÿc4Strict ÿc5(ÿc1HP ÿc5/ÿc3MP ÿc5)
-ItemDisplayFilterName[]: ÿc4Strict ÿc5(No HP/MP)
-ItemDisplayFilterName[]: ÿc9Stricter ÿc5(ÿc1HP ÿc5/ÿc3MP ÿc5)
-ItemDisplayFilterName[]: ÿc9Stricter ÿc5(No HP/MP)
-ItemDisplayFilterName[]: ÿc8Extremely Strict
-ItemDisplayFilterName[]: ÿc1High roller
-ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc;(Rejuves)
+ItemDisplayFilterName[]: ÿc4Strict ÿc5(ÿc;Rejuvesÿc5/ÿc1HPÿc5/ÿc3MPÿc5)
+ItemDisplayFilterName[]: ÿc4Strict ÿc5(ÿc;Rejuvesÿc5,No HP/MP)
+ItemDisplayFilterName[]: ÿc9Stricter ÿc5(ÿc;Rejuvesÿc5/ÿc1HPÿc5/ÿc3MPÿc5)
+ItemDisplayFilterName[]: ÿc9Stricter ÿc5(ÿc;Rejuvesÿc5, No HP/MP)
+ItemDisplayFilterName[]: ÿc8Extremely Strict ÿc5(ÿc;Rejuvesÿc5)
+ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
+ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
-ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc;(Rejuves)
+ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12th%CL%Season 13 - build 144%CL%Kassahi - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 12th%CL%Season 13 - build 145%CL%Kassahi - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -281,6 +281,9 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 // General Item re-names
 //-----------------------------------------------------------------------------------
 
+ItemDisplay[RUNE>0]: %RUNENAME%%CONTINUE%
+ItemDisplay[RUNE>0]: %ORANGE%%NAME%%CONTINUE%
+
 Alias[WSS_SHARD]: %PURPLE%•%RED%•%CORAL%•   %CORAL% %NAME% %CORAL%   •%RED%•%PURPLE%•
 
 
@@ -341,46 +344,6 @@ Alias[UNID_SET_T3]: %RED%x%DARK_GREEN%x  %GREEN%%NAME%%DARK_GREEN%  x%RED%x
 Alias[UNID_SET_T2]: %RED%x %GREEN%%NAME%%RED% x
 // TIER 1
 Alias[UNID_SET_T1]: %LIGHT_GRAY%x %GREEN%%NAME%%LIGHT_GRAY% x
-
-
-
-//------------------------------UNID FORMAT ALIASES------------------------------
-
-
-
-// Rare item display formats (sage/yellow/white theme)
-Alias[FMT_RARE_JEWEL]: %SAGE%•••%YELLOW%•••%WHITE%••   %NAME%   %WHITE%••%YELLOW%•••%SAGE%•••
-Alias[FMT_RARE_GG]: %SAGE%••%YELLOW%••%WHITE%•   %NAME%   %WHITE%•%YELLOW%••%SAGE%••
-Alias[FMT_RARE_T3]: %SAGE%•%YELLOW%•%WHITE%•   %NAME%   %WHITE%•%YELLOW%•%SAGE%•
-
-// Magic item display formats (purple/white theme)
-Alias[FMT_MAG_GG]: %PURPLE%•%WHITE%•  %NAME%  %WHITE%•%PURPLE%•
-Alias[FMT_MAG_T3]: %PURPLE%•  %NAME%  %PURPLE%•
-Alias[FMT_MAG_T2]: %WHITE%· %NAME% %WHITE%·
-Alias[FMT_MAG_T1]: %PURPLE%· %NAME% %PURPLE%·
-Alias[FMT_MAG_CIRC]: %BLUE%·%WHITE%·  %NAME%  %WHITE%·%BLUE%·
-
-// Weapon display formats (red/orange theme)
-Alias[FMT_WPN_ETH_GG]: %RED%•%ORANGE%•  %NAME%  %ORANGE%•%RED%•
-Alias[FMT_WPN_GG]: %RED%• %NAME% %RED%•
-Alias[FMT_WPN_ETH_T3]: %ORANGE%• %NAME% %ORANGE%•
-Alias[FMT_WPN_ETH_T2]: %RED%·%ORANGE%·  %NAME%  %ORANGE%·%RED%·
-Alias[FMT_WPN_T2]: %RED%· %NAME% %RED%·
-Alias[FMT_WPN_ETH_T1]: %ORANGE%· %NAME% %ORANGE%·
-
-// Armor display formats (sage/white theme)
-Alias[FMT_ARM_GG]: %SAGE%•%WHITE%•  %NAME%  %WHITE%•%SAGE%•
-Alias[FMT_ARM_T3]: %SAGE%• %NAME% %SAGE%•
-Alias[FMT_ARM_T2]: %SAGE%·%WHITE%·  %NAME%  %WHITE%·%SAGE%·
-Alias[FMT_ARM_T1]: %SAGE%· %NAME% %SAGE%·
-
-// Trailing tag formats
-Alias[FMT_TAG_ORG_LG]: %NAME% %ORANGE%•
-Alias[FMT_TAG_ORG_SM]: %NAME% %ORANGE%·
-
-// Blame Onion flavor-text callout (issue #55)
-Alias[BLAME_ONION]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e     %GOLD%%NAME%%PURPLE%     O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
-
 //-----------------------------------------------------------------------------------
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
@@ -395,7 +358,7 @@ Alias[OHM_RUNE_VALUE]: 0.85
 Alias[LO_RUNE_VALUE]: 1
 Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
-Alias[JAH_RUNE_VALUE]: 1.75
+Alias[JAH_RUNE_VALUE]: 1.7
 Alias[CHAM_RUNE_VALUE]: 3
 Alias[ZOD_RUNE_VALUE]: 6
 
@@ -404,7 +367,7 @@ Alias[OHM_WSS_VALUE]: 85
 Alias[LO_WSS_VALUE]: 100
 Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
-Alias[JAH_WSS_VALUE]: 175
+Alias[JAH_WSS_VALUE]: 170
 Alias[CHAM_WSS_VALUE]: 300
 Alias[ZOD_WSS_VALUE]: 600
 
@@ -429,7 +392,7 @@ Alias[OHM_STACK_HR]: (QTY*0.85)
 Alias[LO_STACK_HR]: (QTY*1)
 Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
-Alias[JAH_STACK_HR]: (QTY*1.75)
+Alias[JAH_STACK_HR]: (QTY*1.7)
 Alias[CHAM_STACK_HR]: (QTY*3)
 Alias[ZOD_STACK_HR]: (QTY*6)
 
@@ -438,7 +401,7 @@ Alias[OHM_STACK_WSS]: (QTY*85)
 Alias[LO_STACK_WSS]: (QTY*100)
 Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
-Alias[JAH_STACK_WSS]: (QTY*175)
+Alias[JAH_STACK_WSS]: (QTY*170)
 Alias[CHAM_STACK_WSS]: (QTY*300)
 Alias[ZOD_STACK_WSS]: (QTY*600)
 
@@ -496,38 +459,18 @@ Alias[FLESH_OF_MALIC_VALUE]: 0.3
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.05
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.2
 //-----------------------------------------------------------------------------------
-// Kassahi PD2-item display aliases (Kassahi-only items not in Hiim's shared rules).
-//
-// Each alias references %MAIN_DOT%, which is defined per Kassahi variant in the
-// 03-alias-kassahi-{normal,hyper,luxe,mystery-*}.filter files (• for normal/hyper/
-// mystery, O for Luxe). That gives variant-specific decoration without duplicating
-// the alias body across five files.
-//
-// Used by `05-utility/02-Kassahi_pd2items[Kassahi].filter`.
+// Kassahi display aliases — UNID format callouts + simple PD2-item aliases.
+// UNID format callouts
 //-----------------------------------------------------------------------------------
 
+// Blame Onion flavor-text callout (issue #55)
+Alias[BLAME_ONION]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e     %GOLD%%NAME%%PURPLE%     O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
 
-// Token of Absolution — literal "Token" label, no %NAME% (boss-room entry)
-Alias[TOKEN_DISPLAY]: %RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%
+// PD2-item display aliases (Kassahi-only items not in Hiim's shared rules)
+//-----------------------------------------------------------------------------------
 
 // Horadrim Scarab — group-content material
 Alias[HORADRIC_SCARAB]: %GOLD% %NAME%
-
-// Craft Infusions — one alias per recipe (each is a Pre-made craft recipe with a color motif)
-//   crfb = Blood       (red/coral)        — life leech, raw HP, edmg
-//   crfc = Caster      (blue/purple)      — fcr, mana, mpk
-//   crfs = Safety      (dark/light green) — pdr, edef, resist
-//   crfh = Hitpower    (teal/blue)        — fhr, fbr, ctc fnova
-//   crfv = Vampiric    (gold/orange)      — ml, plr, dem/und
-//   crfu = Bountiful   (sage/yellow)      — mf, lr
-//   crfp = Brilliant   (light gray/white) — astat, ias, ares
-Alias[CRAFT_BLOOD]:     %CORAL%%MAIN_DOT%%RED%%MAIN_DOT%%MAIN_DOT%   %NAME%   %RED%%MAIN_DOT%%MAIN_DOT%%CORAL%%MAIN_DOT%
-Alias[CRAFT_CASTER]:    %BLUE%%MAIN_DOT%%PURPLE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %PURPLE%%MAIN_DOT%%MAIN_DOT%%BLUE%%MAIN_DOT%
-Alias[CRAFT_SAFETY]:    %DARK_GREEN%%MAIN_DOT%%GREEN%%MAIN_DOT%%MAIN_DOT%   %NAME%   %GREEN%%MAIN_DOT%%MAIN_DOT%%DARK_GREEN%%MAIN_DOT%
-Alias[CRAFT_HITPOWER]:  %TEAL%%MAIN_DOT%%BLUE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %BLUE%%MAIN_DOT%%MAIN_DOT%%TEAL%%MAIN_DOT%
-Alias[CRAFT_VAMPIRIC]:  %GOLD%%MAIN_DOT%%ORANGE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %ORANGE%%MAIN_DOT%%MAIN_DOT%%GOLD%%MAIN_DOT%
-Alias[CRAFT_BOUNTIFUL]: %SAGE%%MAIN_DOT%%YELLOW%%MAIN_DOT%%MAIN_DOT%   %NAME%   %YELLOW%%MAIN_DOT%%MAIN_DOT%%SAGE%%MAIN_DOT%
-Alias[CRAFT_BRILLIANT]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %WHITE%%MAIN_DOT%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%
 //-----------------------------------------------------------------------------------
 // Star Ratings
 //-----------------------------------------------------------------------------------
@@ -967,7 +910,7 @@ Alias[PTS_LLDJEW_DIV]:48
 
 // ITEM'S NAME (BASE)
 ItemDisplay[(SET OR UNI) !ID !jew]: %BASENAME%%CONTINUE%
-ItemDisplay[(NMAG OR MAG OR RARE OR CRAFT) !RW !rvl !(MAG (cm1 OR cm2 OR cm3))]: %BASENAME%%CONTINUE%
+ItemDisplay[(NMAG OR MAG OR RARE OR CRAFT) ID !RW !rvl (rin OR amu OR jew OR ARMOR OR WEAPON)]: %BASENAME%%CONTINUE%
 ItemDisplay[MAG (cm1 OR cm2 OR cm3) !STASH !INVENTORY]: %BASENAME%%CONTINUE%
 
 // GG Charms
@@ -1702,8 +1645,8 @@ ItemDisplay[SET ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[RARE ID]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[CRAFT ID]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[MAG ID]: %ORANGE%%NAME%%CONTINUE%
-ItemDisplay[NMAG ID]: %WHITE%%NAME%%CONTINUE%
-
+ItemDisplay[NMAG ID SOCK=0 !ETH !MISC]: %WHITE%%NAME%%CONTINUE%
+ItemDisplay[NMAG ID (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
 //-----------------------------------------------------------------------------------
 // Base item names
 //-----------------------------------------------------------------------------------
@@ -2722,16 +2665,21 @@ ItemDisplay[(GEM=4 OR GEM=5)]: %NAME%
 // because each Kassahi variant's `03-alias-kassahi-general-*.filter` defines those
 // aliases with Kassahi visuals.
 //
-// Display aliases for the items below (TOKEN_DISPLAY, HORADRIC_SCARAB, CATALYST_*)
-// are defined in `02-alias/04-alias-kassahi-pd2items[Kassahi].filter`.
+// %MAIN_DOT% (defined per-variant in 03-alias-kassahi-{normal,hyper,luxe}.filter)
+// is used inline below for variant-specific dot decoration. It is NOT wrapped in
+// another alias body — PD2 only resolves aliases one level deep at ItemDisplay
+// substitution time, so nesting %MAIN_DOT% inside another Alias[] body causes
+// the engine to emit the literal token. HORADRIC_SCARAB and BLAME_ONION (which
+// don't reference MAIN_DOT) remain in `02-alias/04-alias-kassahi-displays`.
 //-----------------------------------------------------------------------------------
 
 
 // Token of Absolution — literal "Token" label, no %NAME%
-ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%TOKEN_DISPLAY%{%GOLD%Wherever You Are is The Entry Point.%NL%}
+ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%{%GOLD%Wherever You Are is The Entry Point.%NL%}
 
-// Worldstone Shards — purple/red/coral dot decoration via WSS_SHARD alias (Kassahi upstream)
-ItemDisplay[wss]: %WSS_SHARD%{%NAME%}%CONTINUE%
+// Worldstone Shards — wss rule moved to common 05-utility/02-wss-display[ALL]
+// so Hiim filters route through %WSS_SHARD% too. iwss/cwss stay Kassahi-only
+// because Hiim handles those differently in 03-PD2_items[ALL].
 ItemDisplay[iwss]: %WSS_SHARD%{%NAME%}%CONTINUE%
 ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
 
@@ -2745,69 +2693,16 @@ ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: 
 ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
 
-// Craft Infusions (pre-made craft recipes)
+// Craft Infusions (pre-made craft recipes) — dot decoration inlined per the
+// MAIN_DOT note above. Each rule: outer color → mid color → MAIN_DOTs → NAME → mirror.
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-68%%SOUNDID-4715%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[crfb]: %CRAFT_BLOOD%{%NAME%}%CONTINUE%      // Blood — life leech / edmg
-ItemDisplay[crfc]: %CRAFT_CASTER%{%NAME%}%CONTINUE%     // Caster — fcr / mana
-ItemDisplay[crfs]: %CRAFT_SAFETY%{%NAME%}%CONTINUE%     // Safety — pdr / resist
-ItemDisplay[crfh]: %CRAFT_HITPOWER%{%NAME%}%CONTINUE%   // Hitpower — fhr / ctc fnova
-ItemDisplay[crfv]: %CRAFT_VAMPIRIC%{%NAME%}%CONTINUE%   // Vampiric — ml / plr
-ItemDisplay[crfu]: %CRAFT_BOUNTIFUL%{%NAME%}%CONTINUE%  // Bountiful — mf / lr
-ItemDisplay[crfp]: %CRAFT_BRILLIANT%{%NAME%}%CONTINUE%  // Brilliant — astat / ias
-
-
-
-
-
-//------------------------------Rune-Name------------------------------
-
-
-
-
-
-ItemDisplay[RUNE=26]: Vex%CONTINUE%
-ItemDisplay[RUNE=27]: Ohm%CONTINUE%
-ItemDisplay[RUNE=28]: Lo%CONTINUE%
-ItemDisplay[RUNE=29]: Sur%CONTINUE%
-ItemDisplay[RUNE=30]: Ber%CONTINUE%
-ItemDisplay[RUNE=31]: Jah%CONTINUE%
-ItemDisplay[RUNE=32]: Cham%CONTINUE%
-ItemDisplay[RUNE=33]: Zod%CONTINUE%
-
-ItemDisplay[RUNE>0 RUNE<26]: %RUNENAME% %GREEN%%RUNENUM%%CONTINUE%
-ItemDisplay[RUNE>0 RUNE<20 FILTLVL~9-12 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GREEN% %RUNENUM% %CONTINUE%
-ItemDisplay[(RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=17)]: %RUNENAME% %GREEN%%RUNENUM%%CONTINUE%
-ItemDisplay[RUNE>25]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
-
-
-
-
-
-//------------------------------Runes-Hyper------------------------------
-
-
-
-
-
-// RUNES
-// QTY rule removed — handled by Hiim shared 09-Runes-ToolTip to avoid double display
-ItemDisplay[RUNE>25]: %RED%%NAME%%CONTINUE%
-
-// Rune sounds
-ItemDisplay[RUNE>19 RUNE<22]: %DOT-0A%%SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>21 RUNE<26]: %DOT-0A%%SOUNDID-4714%%NAME%%CONTINUE%
-ItemDisplay[RUNE>25 RUNE<30]: %DOT-0A%%SOUNDID-4719%%NAME%%CONTINUE%
-ItemDisplay[RUNE>29 RUNE<34]: %DOT-0A%%SOUNDID-4719%%NAME%%CONTINUE%
-
-ItemDisplay[FILTLVL~1-8 (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=17)]: %DOT-0A%%DARK_GREEN%•%GREEN%•  %NAME%  %GREEN%•%DARK_GREEN%•%CONTINUE%
-ItemDisplay[FILTLVL~1-8 RUNE<20 !(RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=17)]: %DOT-0A%%GREEN%• %NAME% %GREEN%•%CONTINUE%
-ItemDisplay[FILTLVL~9-12 (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=17)]: %DARK_GREEN%•%GREEN%•  %NAME%  %GREEN%•%DARK_GREEN%•%CONTINUE%
-ItemDisplay[(RUNE=20 OR RUNE=21)]: %DOT-0A%%PURPLE%@%BLACK%@ %NAME% %BLACK%@%PURPLE%@%CONTINUE%
-ItemDisplay[(RUNE=22 OR RUNE=23)]: %MAP-0A%%PURPLE%@@%BLACK%@  %NAME%  %BLACK%@%PURPLE%@@%CONTINUE%
-ItemDisplay[(RUNE=24 OR RUNE=25)]: %PX-60%%DOT-21%%MAP-0A%%GREEN%@@%BLACK%@ %PURPLE%@%BLACK%@  %NAME%  %BLACK%@%PURPLE%@ %BLACK%@%GREEN%@@%CONTINUE%
-ItemDisplay[(RUNE=26 OR RUNE=27 OR RUNE=28)]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@%CONTINUE%
-ItemDisplay[(RUNE=29 OR RUNE=31 OR RUNE=32)]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@%CONTINUE%
-ItemDisplay[(RUNE=30 OR RUNE=33)]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@%CONTINUE%
+ItemDisplay[crfb]: %CORAL%%MAIN_DOT%%RED%%MAIN_DOT%%MAIN_DOT%   %NAME%   %RED%%MAIN_DOT%%MAIN_DOT%%CORAL%%MAIN_DOT%{%NAME%}%CONTINUE%               // Blood — life leech / edmg
+ItemDisplay[crfc]: %BLUE%%MAIN_DOT%%PURPLE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %PURPLE%%MAIN_DOT%%MAIN_DOT%%BLUE%%MAIN_DOT%{%NAME%}%CONTINUE%            // Caster — fcr / mana
+ItemDisplay[crfs]: %DARK_GREEN%%MAIN_DOT%%GREEN%%MAIN_DOT%%MAIN_DOT%   %NAME%   %GREEN%%MAIN_DOT%%MAIN_DOT%%DARK_GREEN%%MAIN_DOT%{%NAME%}%CONTINUE%  // Safety — pdr / resist
+ItemDisplay[crfh]: %TEAL%%MAIN_DOT%%BLUE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %BLUE%%MAIN_DOT%%MAIN_DOT%%TEAL%%MAIN_DOT%{%NAME%}%CONTINUE%               // Hitpower — fhr / ctc fnova
+ItemDisplay[crfv]: %GOLD%%MAIN_DOT%%ORANGE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %ORANGE%%MAIN_DOT%%MAIN_DOT%%GOLD%%MAIN_DOT%{%NAME%}%CONTINUE%           // Vampiric — ml / plr
+ItemDisplay[crfu]: %SAGE%%MAIN_DOT%%YELLOW%%MAIN_DOT%%MAIN_DOT%   %NAME%   %YELLOW%%MAIN_DOT%%MAIN_DOT%%SAGE%%MAIN_DOT%{%NAME%}%CONTINUE%           // Bountiful — mf / lr
+ItemDisplay[crfp]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %WHITE%%MAIN_DOT%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%NAME%}%CONTINUE%  // Brilliant — astat / ias
  
 
 
@@ -2815,34 +2710,25 @@ ItemDisplay[(RUNE=30 OR RUNE=33)]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PUR
 
 //------------------------------Runes-tooltip------------------------------
 
+ItemDisplay[r01s]: %NAME%{%LIGHT_GRAY%Vampiric %WHITE%Boots: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%El, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r02s]: %NAME%{%WHITE%Brilliant Helm: O%NL%%YELLOW%Bountiful %WHITE%Chest: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Belt: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eld, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r03s]: %NAME%{%YELLOW%Bountiful %WHITE%Helm: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Chest: %LIGHT_GRAY%O%NL%%BLUE%Hitpower %WHITE%Weapon: %BLUE%O%NL%%PURPLE%Caster %WHITE%Weapon: %PURPLE%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tir, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r04s]: %NAME%{%GREEN%Safety %WHITE%Shield: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Chest: %BLUE%O%NL%%PURPLE%Caster %WHITE%Helm: %PURPLE%O%NL%%RED%Blood %WHITE%Gloves: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Nef, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r05s]: %NAME%{%GREEN%Safety %WHITE%Chest: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Shield: %BLUE%O%NL%%PURPLE%Caster %WHITE%Shield: %PURPLE%O%NL%%RED%Blood %WHITE%Boots: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eth, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r06s]: %NAME%{%GREEN%Safety %WHITE%Helm: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Helm: %BLUE%O%NL%%PURPLE%Caster %WHITE%Belt: %PURPLE%O%NL%%RED%Blood %WHITE%Shield: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ith, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r07s]: %NAME%{%WHITE%Brilliant Amulet: O%NL%%GREEN%Safety %WHITE%Belt: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Belt: %BLUE%O%NL%%PURPLE%Caster %WHITE%Chest: %PURPLE%O%NL%%RED%Blood %WHITE%Belt: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tal, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r08s]: %NAME%{%GREEN%Safety %WHITE%Gloves: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Boots: %BLUE%O%NL%%PURPLE%Caster %WHITE%Amulet: %PURPLE%O%NL%%RED%Blood %WHITE%Helm: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ral, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r09s]: %NAME%{%WHITE%Brilliant Shield: O%NL%%GREEN%Safety %WHITE%Boots: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Gloves: %BLUE%O%NL%%PURPLE%Caster %WHITE%Gloves: %PURPLE%O%NL%%RED%Blood %WHITE%Weapon: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ort, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r10s]: %NAME%{%GREEN%Safety %WHITE%Amulet: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Amulet: %BLUE%O%NL%%PURPLE%Caster %WHITE%Boots: %PURPLE%O%NL%%RED%Blood %WHITE%Chest: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Thul, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r11s]: %NAME%{%GREEN%Safety %WHITE%Ring: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Ring: %BLUE%O%NL%%PURPLE%Caster %WHITE%Ring: %PURPLE%O%NL%%RED%Blood %WHITE%Amulet: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Amn, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r12s]: %NAME%{%WHITE%Brilliant Weapon: O%NL%%LIGHT_GRAY%Vampiric %WHITE%Shield: %LIGHT_GRAY%O%NL%%GREEN%Safety %WHITE%Weapon: %GREEN%O%NL%%RED%Blood %WHITE%Ring: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Sol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r13s]: %NAME%{%WHITE%Brilliant Gloves: O%NL%%YELLOW%Bountiful %WHITE%Weapon: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Weapon: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Shael, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r14s]: %NAME%{%YELLOW%Bountiful %WHITE%Shield: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Amulet: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Dol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r15s]: %NAME%{%WHITE%Brilliant Ring: O%NL%%YELLOW%Bountiful %WHITE%Gloves: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Ring: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Hel, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r16s]: %NAME%{%WHITE%Brilliant Belt: O%NL%%YELLOW%Bountiful %WHITE%Boots: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Gloves: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Io, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r17s]: %NAME%{%YELLOW%Bountiful %WHITE%Ring: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Helm: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Lum, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r18s]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
 
-
-
-
-ItemDisplay[r01s]: %NAME%{%LIGHT_GRAY%Vampiric %WHITE%Boots: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%El, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r02s]: %NAME%{%WHITE%Brilliant Helm: O%NL%%YELLOW%Bountiful %WHITE%Chest: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Belt: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eld, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r03s]: %NAME%{%YELLOW%Bountiful %WHITE%Helm: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Chest: %LIGHT_GRAY%O%NL%%BLUE%Hitpower %WHITE%Weapon: %BLUE%O%NL%%PURPLE%Caster %WHITE%Weapon: %PURPLE%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tir, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r04s]: %NAME%{%GREEN%Safety %WHITE%Shield: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Chest: %BLUE%O%NL%%PURPLE%Caster %WHITE%Helm: %PURPLE%O%NL%%RED%Blood %WHITE%Gloves: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Nef, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r05s]: %NAME%{%GREEN%Safety %WHITE%Chest: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Shield: %BLUE%O%NL%%PURPLE%Caster %WHITE%Shield: %PURPLE%O%NL%%RED%Blood %WHITE%Boots: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eth, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r06s]: %NAME%{%GREEN%Safety %WHITE%Helm: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Helm: %BLUE%O%NL%%PURPLE%Caster %WHITE%Belt: %PURPLE%O%NL%%RED%Blood %WHITE%Shield: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ith, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r07s]: %NAME%{%WHITE%Brilliant Amulet: O%NL%%GREEN%Safety %WHITE%Belt: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Belt: %BLUE%O%NL%%PURPLE%Caster %WHITE%Chest: %PURPLE%O%NL%%RED%Blood %WHITE%Belt: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tal, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r08s]: %NAME%{%GREEN%Safety %WHITE%Gloves: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Boots: %BLUE%O%NL%%PURPLE%Caster %WHITE%Amulet: %PURPLE%O%NL%%RED%Blood %WHITE%Helm: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ral, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r09s]: %NAME%{%WHITE%Brilliant Shield: O%NL%%GREEN%Safety %WHITE%Boots: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Gloves: %BLUE%O%NL%%PURPLE%Caster %WHITE%Gloves: %PURPLE%O%NL%%RED%Blood %WHITE%Weapon: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ort, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r10s]: %NAME%{%GREEN%Safety %WHITE%Amulet: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Amulet: %BLUE%O%NL%%PURPLE%Caster %WHITE%Boots: %PURPLE%O%NL%%RED%Blood %WHITE%Chest: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Thul, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r11s]: %NAME%{%GREEN%Safety %WHITE%Ring: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Ring: %BLUE%O%NL%%PURPLE%Caster %WHITE%Ring: %PURPLE%O%NL%%RED%Blood %WHITE%Amulet: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Amn, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r12s]: %NAME%{%WHITE%Brilliant Weapon: O%NL%%LIGHT_GRAY%Vampiric %WHITE%Shield: %LIGHT_GRAY%O%NL%%GREEN%Safety %WHITE%Weapon: %GREEN%O%NL%%RED%Blood %WHITE%Ring: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Sol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r13s]: %NAME%{%WHITE%Brilliant Gloves: O%NL%%YELLOW%Bountiful %WHITE%Weapon: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Weapon: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Shael, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r14s]: %NAME%{%YELLOW%Bountiful %WHITE%Shield: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Amulet: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Dol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r15s]: %NAME%{%WHITE%Brilliant Ring: O%NL%%YELLOW%Bountiful %WHITE%Gloves: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Ring: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Hel, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r16s]: %NAME%{%WHITE%Brilliant Belt: O%NL%%YELLOW%Bountiful %WHITE%Boots: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Gloves: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Io, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r17s]: %NAME%{%YELLOW%Bountiful %WHITE%Ring: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Helm: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Lum, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-ItemDisplay[r18s]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}
-
-// HR/WSS rune-value tooltips and stack-value tooltips are now provided by
-// `09-Runes-ToolTip[ALL-EXCEPT=OnlyFilter].filter` (the canonical Hiim file,
-// which loads in both Hiim and Kassahi). This Kassahi-port file only owns the
-// r01s-r18s rune-stack crafting-recipe tooltips that don't exist in the Hiim
-// file.
 //-----------------------------------------------------------------------------------
 // PD2 ITEMS
 //-----------------------------------------------------------------------------------
@@ -2856,7 +2742,7 @@ ItemDisplay[STAT477>0 !jew]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
 ItemDisplay[wss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[wss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[wss]: %CONTINUE%%TIER-8%%MAP-62%%SOUNDID-4715%%NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %WSS_ITEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %WSS_ITEM_HR_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt}
-ItemDisplay[wss FILTLVL<9]: %GEN_ITEM%{%NAME%}
+ItemDisplay[wss FILTLVL<9]: %WSS_SHARD%{%NAME%}
 ItemDisplay[wss]: %NAME%{%NAME%}
 ItemDisplay[cwss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[cwss QTY>1 QTY<8]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
@@ -3483,9 +3369,7 @@ ItemDisplay[crfu]: %NAME%%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radi
 // crfp (Brilliant craft)
 ItemDisplay[crfp]: %NAME%%CONTINUE%{Amulet +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 
-
-ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%ORANGE%O O O %NAME% %ORANGE%O O O{%NAME%}
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -3519,7 +3403,7 @@ ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
 ItemDisplay[RUNE>21 RUNE<26]: %SOUNDID-4715%%NAME%%CONTINUE%
 ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
-ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%(%RUNENUM%)%CONTINUE%
+ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
@@ -3597,7 +3481,7 @@ ItemDisplay[RUNE=32 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%
 ItemDisplay[RUNE=32 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=33 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%ZOD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 // High roller
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:
+ItemDisplay[RUNE<21 RUNE>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]:{%NAME%}
 ItemDisplay[RUNE<21 RUNE>0 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%{%NAME%}
 
 // Tooltip notes & show runes
@@ -4216,72 +4100,6 @@ ItemDisplay[!ID CLASS RARE FILTLVL<3 ILVL>84]: %NAME%
 ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %CRAFT_ZERO%//Catch all throwing eth weapons
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %CRAFT_ZERO%//Catch all eth weapons when lower filter level
 //-----------------------------------------------------------------------------------
-
-// ------------------------------------------------------------------------------
-// Tool-tip Pts AMU / RING / JEWEL — raw weighted score as "NNN%" (centipoints)
-// ------------------------------------------------------------------------------
-// Color: ORANGE normally, PURPLE at 6Pt+ (rings/amulets) or 4Pt+ (jewels).
-// Divisors live in 06-hiim_pts_formula: PTS_RING_DIV / PTS_AMU_DIV / PTS_MELEEJEW_DIV / PTS_CASTERJEW_DIV / PTS_LLDJEW_DIV
-// ------------------------------------------------------------------------------
-
-// PVM Melee Ring
-ItemDisplay[rin !UNI !SET ID MINDMG+MAXDMG>9 $f(ROUND(PTSRING_MELEE*100/PTS_RING_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100) pt PVM Melee Ring%CL%%NAME%}
-ItemDisplay[rin !UNI !SET ID MINDMG+MAXDMG>9 $f(ROUND(PTSRING_MELEE*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_MELEE%*100/%PTS_RING_DIV%)/100) pt PVM Melee Ring%CL%%NAME%}
-
-// PVM Caster Ring (STAT86 and STAT138 weights live in the alias — each value of 2 = 1Pt)
-ItemDisplay[rin !UNI !SET ID FCR>0 $f(ROUND(PTSRING_CASTER*100/PTS_RING_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100) pt PVM Caster Ring%CL%%NAME%}
-ItemDisplay[rin !UNI !SET ID FCR>0 $f(ROUND(PTSRING_CASTER*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_CASTER%*100/%PTS_RING_DIV%)/100) pt PVM Caster Ring%CL%%NAME%}
-
-// LLD Melee Ring
-ItemDisplay[rin !UNI !SET ID LVLREQ<31 STR>14 $f(ROUND(PTSRING_LLDMELEE*100/PTS_RING_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100) pt LLD Melee Ring%CL%%NAME%}
-ItemDisplay[rin !UNI !SET ID LVLREQ<31 STR>14 $f(ROUND(PTSRING_LLDMELEE*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_LLDMELEE%*100/%PTS_RING_DIV%)/100) pt LLD Melee Ring%CL%%NAME%}
-
-// LLD Caster Ring
-ItemDisplay[rin !UNI !SET ID LVLREQ<31 FCR>0 $f(ROUND(PTSRING_LLDCASTER*100/PTS_RING_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100) pt LLD Caster Ring%CL%%NAME%}
-ItemDisplay[rin !UNI !SET ID LVLREQ<31 FCR>0 $f(ROUND(PTSRING_LLDCASTER*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_LLDCASTER%*100/%PTS_RING_DIV%)/100) pt LLD Caster Ring%CL%%NAME%}
-
-// HLD Caster Ring
-ItemDisplay[rin !UNI !SET ID STR+DEX>29 FCR>0 $f(ROUND(PTSRING_HLDCASTER*100/PTS_RING_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100) pt HLD Caster Ring%CL%%NAME%}
-ItemDisplay[rin !UNI !SET ID STR+DEX>29 FCR>0 $f(ROUND(PTSRING_HLDCASTER*100/PTS_RING_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSRING_HLDCASTER%*100/%PTS_RING_DIV%)/100) pt HLD Caster Ring%CL%%NAME%}
-
-// LLD Melee Amulet
-ItemDisplay[amu !UNI !SET ID LVLREQ<31 LIFE>19 AMU_WITH_ANY_CLASS $f(ROUND(PTSAMU_LLDMELEE*100/PTS_AMU_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100) pt LLD Melee Amulet%CL%%NAME%}
-ItemDisplay[amu !UNI !SET ID LVLREQ<31 LIFE>19 AMU_WITH_ANY_CLASS $f(ROUND(PTSAMU_LLDMELEE*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_LLDMELEE%*100/%PTS_AMU_DIV%)/100) pt LLD Melee Amulet%CL%%NAME%}
-
-// LLD Caster Amulet
-ItemDisplay[amu !UNI !SET ID LVLREQ<31 FCR>0 AMU_TREE_ONLY $f(ROUND(PTSAMU_LLDCASTER*100/PTS_AMU_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100) pt LLD Caster Amulet%CL%%NAME%}
-ItemDisplay[amu !UNI !SET ID LVLREQ<31 FCR>0 AMU_TREE_ONLY $f(ROUND(PTSAMU_LLDCASTER*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_LLDCASTER%*100/%PTS_AMU_DIV%)/100) pt LLD Caster Amulet%CL%%NAME%}
-
-// PVM Amulet (STAT86 and STAT80 weights live in the alias — STAT86 of 2 = 1Pt, STAT80 of 16 = 1Pt)
-ItemDisplay[amu !UNI !SET ID AMU_WITH_2CLASS $f(ROUND(PTSAMU_PVM*100/PTS_AMU_DIV/100))~3-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100) pt PVM Amulet%CL%%NAME%}
-ItemDisplay[amu !UNI !SET ID AMU_WITH_2CLASS $f(ROUND(PTSAMU_PVM*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_PVM%*100/%PTS_AMU_DIV%)/100) pt PVM Amulet%CL%%NAME%}
-
-// HLD Caster Amulet
-ItemDisplay[amu !UNI !SET ID STR+DEX>29 AMU_WITH_2CLASS $f(ROUND(PTSAMU_HLDCASTER*100/PTS_AMU_DIV/100))~4-5]: %CONTINUE%%NAME% %ORANGE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100) pt HLD Caster Amulet%CL%%NAME%}
-ItemDisplay[amu !UNI !SET ID STR+DEX>29 AMU_WITH_2CLASS $f(ROUND(PTSAMU_HLDCASTER*100/PTS_AMU_DIV/100))>5]: %CONTINUE%%NAME% %PURPLE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSAMU_HLDCASTER%*100/%PTS_AMU_DIV%)/100) pt HLD Caster Amulet%CL%%NAME%}
-
-// ------------------------------------------------------------------------------
-
-// LLD Item tags Jewelry
-ItemDisplay[(amu OR rin) !UNI !SET ID LVLREQ<31]: %NAME% LLD{%NAME%}%CONTINUE%
-
-// ------------------------------------------------------------------------------
-// Jewel Pts — purple at old 4Pt threshold
-// ------------------------------------------------------------------------------
-
-// Melee Jewel (STAT91 -req weight lives in the alias — value of -15 = 1Pt)
-ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_MELEE*100/PTS_MELEEJEW_DIV/100))=3]: %CONTINUE% %NAME% %ORANGE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100) pt Melee Jewel%CL%%NAME%}
-ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_MELEE*100/PTS_MELEEJEW_DIV/100))>3]: %CONTINUE% %NAME% %PURPLE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSJEW_MELEE%*100/%PTS_MELEEJEW_DIV%)/100) pt Melee Jewel%CL%%NAME%}
-
-// Caster Jewel
-ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_CASTER*100/PTS_CASTERJEW_DIV/100))=3]: %CONTINUE% %NAME% %ORANGE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100) pt Caster Jewel%CL%%NAME%}
-ItemDisplay[jew !UNI !SET ID $f(ROUND(PTSJEW_CASTER*100/PTS_CASTERJEW_DIV/100))>3]: %CONTINUE% %NAME% %PURPLE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSJEW_CASTER%*100/%PTS_CASTERJEW_DIV%)/100) pt Caster Jewel%CL%%NAME%}
-
-// LLD Jewel
-ItemDisplay[jew !UNI !SET ID LVLREQ<31 $f(ROUND(PTSJEW_LLD*100/PTS_LLDJEW_DIV/100))=3]: %CONTINUE% %NAME% %ORANGE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100)pt{%ORANGE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100) pt LLD Jewel%CL%%NAME%}
-ItemDisplay[jew !UNI !SET ID LVLREQ<31 $f(ROUND(PTSJEW_LLD*100/PTS_LLDJEW_DIV/100))>3]: %CONTINUE% %NAME% %PURPLE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100)pt{%PURPLE%$f(ROUND(%PTSJEW_LLD%*100/%PTS_LLDJEW_DIV%)/100) pt LLD Jewel%CL%%NAME%}
-
-// ------------------------------------------------------------------------------
 //------------------------------DESCRIPTION_INFORMATION------------------------------
 
 
