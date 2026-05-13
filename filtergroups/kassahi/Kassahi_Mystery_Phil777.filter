@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 13th%CL%Season 13 - build 150%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 13th%CL%Season 13 - build 151%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -172,26 +172,26 @@ Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%P
 Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 
 
-// Magic Item 1 Affix
-Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%PURPLE%· %NAME% %PURPLE%·
+// Magic Item 1 Affix — matches upstream FMT_MAG_T3 body
+Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%PURPLE%•  %NAME%  %PURPLE%•
 
-// Magic Item 2 Affix
-Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%PURPLE%O%WHITE%O %NAME% %WHITE%O%PURPLE%O
+// Magic Item 2 Affix — matches upstream FMT_MAG_GG body
+Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%PURPLE%•%WHITE%•  %NAME%  %WHITE%•%PURPLE%•
 
-// Rare Item basic
-Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%SAGE%· %NAME% %SAGE%·
+// Rare Item basic — matches upstream FMT_RARE_T3 body
+Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%SAGE%•%YELLOW%•%WHITE%•   %NAME%   %WHITE%•%YELLOW%•%SAGE%•
 
 // Rare Item Extra
 Alias[RARE_PLUS]: %DOT-6A%· %NAME% ·
 
-// Rare Item High ilvl
-Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%SAGE%·%YELLOW%· %NAME% %YELLOW%·%SAGE%·
+// Rare Item High ilvl — matches upstream FMT_RARE_T3 body
+Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%SAGE%•%YELLOW%•%WHITE%•   %NAME%   %WHITE%•%YELLOW%•%SAGE%•
 
-// Rare Item Good
-Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%SAGE%O%YELLOW%O%WHITE%O %NAME% %WHITE%O%YELLOW%O%SAGE%O
+// Rare Item Good — matches upstream FMT_RARE_GG body
+Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%SAGE%••%YELLOW%••%WHITE%•   %NAME%   %WHITE%•%YELLOW%••%SAGE%••
 
-// Rare Item GG
-Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%SAGE%OO%YELLOW%OO%WHITE%O %NAME% %WHITE%O%YELLOW%OO%SAGE%OO
+// Rare Item GG — matches upstream FMT_RARE_JEWEL body
+Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%SAGE%•••%YELLOW%•••%WHITE%••   %NAME%   %WHITE%••%YELLOW%•••%SAGE%•••
 
 // Amazon quiver UNID annotations — Kassahi-luxe O style
 Alias[QUIVER_MAG_AMA]: %BLUE%O  %NAME%  O
@@ -281,8 +281,20 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 // General Item re-names
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[RUNE>0]: %RUNENAME%%CONTINUE%
 ItemDisplay[RUNE<20]: %ORANGE%%RUNENAME%%CONTINUE%
+ItemDisplay[RUNE=21]: Pul%CONTINUE%
+ItemDisplay[RUNE=22]: Um%CONTINUE%
+ItemDisplay[RUNE=23]: Mal%CONTINUE%
+ItemDisplay[RUNE=24]: Ist%CONTINUE%
+ItemDisplay[RUNE=25]: Gul%CONTINUE%
+ItemDisplay[RUNE=26]: Vex%CONTINUE%
+ItemDisplay[RUNE=27]: Ohm%CONTINUE%
+ItemDisplay[RUNE=28]: Lo%CONTINUE%
+ItemDisplay[RUNE=29]: Sur%CONTINUE%
+ItemDisplay[RUNE=30]: Ber%CONTINUE%
+ItemDisplay[RUNE=31]: Jah%CONTINUE%
+ItemDisplay[RUNE=32]: Cham%CONTINUE%
+ItemDisplay[RUNE=33]: Zod%CONTINUE%
 ItemDisplay[RUNE>19 RUNE<26]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[RUNE>25]: %PURPLE%%NAME%%CONTINUE%
 
@@ -1693,10 +1705,10 @@ ItemDisplay[MAG !ID jew]: %BLUE%Jewel%CONTINUE%
 
 // Out of Town
 // Low PD2 Items
-ItemDisplay[(lbox) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Lil Mystery%CONTINUE%
+ItemDisplay[(lbox) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Lil Mystery%CONTINUE%
 
 // High PD2 Items
-ItemDisplay[(lsvl OR llmr OR rkey OR rtp OR rid) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Big Mystery%CONTINUE%
+ItemDisplay[(lsvl OR llmr OR rkey OR rtp OR rid) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Big Mystery%CONTINUE%
 //-----------------------------------------------------------------------------------
 // Base item names
 //-----------------------------------------------------------------------------------
@@ -3458,17 +3470,16 @@ ItemDisplay[GEM>0 GROUND]:
 
 // Out of Town
 // Low High runes
-ItemDisplay[(RUNE=26 OR RUNE=27 OR RUNE=28) QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Lil Mystery%CONTINUE%
+ItemDisplay[(RUNE=26 OR RUNE=27 OR RUNE=28) QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Lil Mystery%CONTINUE%
 
 // High High runes
-ItemDisplay[(RUNE=29 OR RUNE=30 OR RUNE=31 OR RUNE=32 OR RUNE=33) QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Big Mystery%CONTINUE%
+ItemDisplay[(RUNE=29 OR RUNE=30 OR RUNE=31 OR RUNE=32 OR RUNE=33) QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Big Mystery%CONTINUE%
 //-----------------------------------------------------------------------------------
 // Runes
 //-----------------------------------------------------------------------------------
 // Basic Formatting
 // Make sure HR's notify
 
-ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %RUNENAME%{%NAME%}%CONTINUE%
 ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%TIER-8%%CONTINUE%
 
 ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
