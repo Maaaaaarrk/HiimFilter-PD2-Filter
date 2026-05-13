@@ -51,16 +51,32 @@ const minSamples = Number(args['min-samples']) || 5;
 const windowHours = Number(args['window-hours']) || 168;
 const throttleMs = Number(args['throttle-ms']) || 200;
 // Manual tier cutoffs in HR (top-down, first match wins). Override via CLI:
-//   --cutoff-4=2.0 --cutoff-3=1.0 --cutoff-2=0.5 --cutoff-1=0.25 --cutoff-0=0.15 --cutoff-no=0.1
+//   --cutoff-4=4.0 --cutoff-3=2.0 --cutoff-2=0.5 --cutoff-1=0.25 --cutoff-0=0.15 --cutoff-no=0.1
 // Note: 100 WSS = 1 HR. Item-name medians are converted to HR before comparison.
 const CUTOFFS_HR = [
-  { tier: '4_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-4']  ?? 2.0) },
-  { tier: '3_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-3']  ?? 1.0) },
-  { tier: '2_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-2']  ?? 0.5) },
-  { tier: '1_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-1']  ?? 0.25) },
-  { tier: '0_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-0']  ?? 0.15) },
-  { tier: 'NO_STAR_UNIQUE', cutoffHR: Number(args['cutoff-no'] ?? 0.10) },
+  { tier: '4_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-4']  ?? 6.0) },
+  { tier: '3_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-3']  ?? 3.0) },
+  { tier: '2_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-2']  ?? 1) },
+  { tier: '1_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-1']  ?? 0.5) },
+  { tier: '0_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-0']  ?? 0.25) },
+  { tier: 'NO_STAR_UNIQUE', cutoffHR: Number(args['cutoff-no'] ?? 0.15) },
 ];
+
+// Items to skip when emitting move suggestions. Matched case-insensitively against
+// the item's display name (substring match). Optional `variant` restricts the
+// skip to a specific row variant: 'eth' | 'noneth' | 'both'. Omit to ignore all variants.
+const IGNORE_MOVES = [
+  { name: 'Silks of the Victor' }, // eth-only unique; market data isn't useful for tiering
+];
+
+function isMoveIgnored(name, variant) {
+  const n = (name || '').toLowerCase();
+  return IGNORE_MOVES.some((rule) => {
+    if (rule.name && !n.includes(rule.name.toLowerCase())) return false;
+    if (rule.variant && rule.variant !== variant) return false;
+    return true;
+  });
+}
 // top-percentile: per-name, only the top X% of listings by price contribute to the
 // per-name median. Default 0.25 = "median of the top 25% priced listings". Captures
 // the upside of finding a good (often corrupted) copy rather than the typical drop.
@@ -177,12 +193,25 @@ function parsePriceString(s) {
   return undefined;
 }
 
+// Sockets filled with runes or jewels inflate the listed price (the filler itself
+// has independent value). Gems are cheap and pass through. Filter at listing level
+// so per-name medians reflect the item, not the filler.
+function hasRuneOrJewelSocketed(listing) {
+  const arr = listing?.item?.socketed;
+  if (!Array.isArray(arr) || arr.length === 0) return false;
+  return arr.some((s) => {
+    const tc = s?.base?.type_code || s?.type_code;
+    return tc === 'rune' || tc === 'jewel';
+  });
+}
+
 function aggregateListings(listings) {
   const byName = new Map();
   for (const l of listings) {
     const name = l?.item?.name;
     const hr = priceToHR(l);
     if (!name || !Number.isFinite(hr)) continue;
+    if (hasRuneOrJewelSocketed(l)) continue;
     if (!byName.has(name)) byName.set(name, []);
     byName.get(name).push(hr);
   }
@@ -558,6 +587,7 @@ async function main() {
   // are typically thin-data items that we don't want to act on.
   const moves = moveCandidates
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
+    .filter((r) => !isMoveIgnored(r.maxName, r.variantLabel))
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
       const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
