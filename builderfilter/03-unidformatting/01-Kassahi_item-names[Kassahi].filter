@@ -746,5 +746,8 @@ ItemDisplay[SET ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[RARE ID]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[CRAFT ID]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[MAG ID]: %ORANGE%%NAME%%CONTINUE%
-ItemDisplay[NMAG ID SOCK=0 !ETH !MISC]: %WHITE%%NAME%%CONTINUE%
-ItemDisplay[NMAG ID (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
+// Match upstream Kassahi `04-statdecorators/01-item-stat-decorators[ALL]` lines 28-29:
+//   (ARMOR OR WEAPON) NMAG !ETH SOCK=0 → WHITE; (ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH) → GRAY.
+// Apply to both ID and !ID NMAG (no ID restriction).
+ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%

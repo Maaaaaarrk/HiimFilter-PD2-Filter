@@ -28,6 +28,11 @@ ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
 // Ears
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
 
+// Larzuk's Puzzle Piece — mirrors upstream `05-utility/15-pd2items[ALL]:41-42`
+// Terminates (no %CONTINUE%) so the shared `03-PD2_items[ALL]` rule below
+// doesn't overwrite the Kassahi-styled output.
+ItemDisplay[lpp]: %MAP-0A%%SOUNDID-4715%%PD2_MATS%{%GRAY%(Gray/White/Magic/Rare/Crafted)%NL%%WHITE%Armor: 1-2, 1h Weapon: 1-2, 2h Weapon: 2-4%NL%%WHITE%Possible Sockets:%NL%%NAME%}
+
 // Hellfire Torch — Annihilus → Torch tooltip
 ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: %WHITE%Torch, Key, to}
 
