@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 13th%CL%Season 13 - build 148%CL%HiimFilter - Vanilla - Necro - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 13th%CL%Season 13 - build 149%CL%HiimFilter - Vanilla - Necro - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1034,7 +1034,7 @@ ItemDisplay[MAG amu !ID FILTLVL<7]: %BLUE%Amu
 
 //-----------------------------------------------------------------------------------
 // Mirrored Items
-ItemDisplay[STAT477>0 !jew]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
+ItemDisplay[STAT477>0 (ARMOR OR WEAPON OR amu OR rin)]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 // General
@@ -3925,10 +3925,19 @@ ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH !INF (SOCK=0 OR 
 ItemDisplay[(7ar OR 7tw OR 7qr OR 9tw) (SK275>0 OR SK252>0) ETH (SOCK=0 OR SOCK=3) SUP NMAG FILTLVL<5]: %NAME%{%NAME%}
 
 // Plague
-ItemDisplay[!RW (SCEPTER !(scp OR 9sc OR 7sc)) (SK101>2 OR SK112>2 OR SK121>2) !INF (SOCK=0 OR SOCK=3) NMAG FILTLVL<5]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
-ItemDisplay[!RW (SCEPTER !(scp OR 9sc OR 7sc OR wsp OR 9ws OR 7ws)) (SK101>2 OR SK112>2 OR SK121>2) (SOCK=0 OR SOCK=3) !INF NMAG FILTLVL<5]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
-ItemDisplay[!RW NMAG (9cl OR 9sp OR 7cl OR 7sp) (SK229>2 OR SK234>2 OR SK244>2) (SOCK=0 OR SOCK=3) !INF (FILTLVL<5 OR SK226>0) FILTLVL<7]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
+ItemDisplay[!RW NMAG !INF SCEPTER !(scp) (SK101>2 OR SK112>2 OR SK121>2) (SOCK=0 OR SOCK=3) FILTLVL<5]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
+ItemDisplay[!RW NMAG !INF (9cl OR 9sp OR 7cl OR 7sp) (SK229>2 OR SK234>2 OR SK244>2) (SOCK=0 OR SOCK=3) (FILTLVL<5 OR SK226>0) FILTLVL<7]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
 ItemDisplay[!RW SK222>2 NMAG FILTLVL<7 (9cl OR 9sp OR 7cl OR 7sp) (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) (SOCK=0 OR SOCK=3)]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
+
+// A3 Merc plague
+ItemDisplay[!RW NMAG !INF (wsp OR 9ws OR 7ws) SOCK=0 SK118>2 SK99>2 FILTLVL<9]: %NAME% %DOT-76%%DARK_GREEN%[Merc]{%NAME%%CL%%GREEN% 3os for Plague Base%CL%%GREEN% 5os for Beast Base}
+ItemDisplay[!RW NMAG !INF (wsp OR 9ws OR 7ws) SOCK=0 (SK118>2 OR SK99>2) FILTLVL<7]: %NAME% %DOT-76%%DARK_GREEN%[Merc]{%NAME%%CL%%GREEN% 3os for Plague Base%CL%%GREEN% 5os for Beast Base}
+ItemDisplay[!RW NMAG !INF SCEPTER !(scp) SOCK=0 SK118>2 SK99>2 FILTLVL<9]: %NAME% %DOT-76%%DARK_GREEN%[Merc]{%NAME%%CL%%GREEN% 3os for Plague Base}
+ItemDisplay[!RW NMAG !INF SCEPTER !(scp) SOCK=0 (SK118>2 OR SK99>2) FILTLVL<7]: %NAME% %DOT-76%%DARK_GREEN%[Merc]{%NAME%%CL%%GREEN% 3os for Plague Base}
+ItemDisplay[!RW NMAG !INF SCEPTER SOCK=3 SK118>2 SK99>2 FILTLVL<9]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
+ItemDisplay[!RW NMAG !INF SCEPTER SOCK=3 (SK118>2 OR SK99>2) FILTLVL<7]: %NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN% Plague Base}
+ItemDisplay[!RW NMAG !INF SCEPTER SOCK=5 SK118>2 SK99>2 FILTLVL<9]: %NAME% %DOT-76%%DARK_GREEN%[Beast]{%NAME%%CL%%GREEN% Beast Base}
+ItemDisplay[!RW NMAG !INF SCEPTER SOCK=5 (SK118>2 OR SK99>2) FILTLVL<7]: %NAME% %DOT-76%%DARK_GREEN%[Beast]{%NAME%%CL%%GREEN% Beast Base}
 
 //Creeper Druid items
 ItemDisplay[!RW SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG FILTLVL<9]:%NAME% %PURPLE%[Plague]{%NAME%%CL%%PURPLE%Plague base}
