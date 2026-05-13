@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 13th Season 13 - build 149
+## Last updated May 13th Season 13 - build 150
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -112,10 +112,8 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Executioners Justice
 - Ghostflame
 - Gore Rider
-- Griffons Eye (non-ETH only)
 - Guardian Angel (ETH only)
 - Halaberds Reign
-- Herald of Zakarum (non-ETH only)
 - Kiras Guardian (non-ETH only)
 - Lacerator (ETH only)
 - Lightsabre or Azurewrath
@@ -147,6 +145,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Verdungos Hearty Cord
 - War Fist (ETH only)
 - Warlords Trust (ETH only)
+- Windhammer (ETH only)
 
 ### Level 8 — adds 3-star uniques
 
@@ -159,12 +158,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Earth Shifter or The Cranium Basher
 - Elite Bolts
 - Giant Skull
+- Griffons Eye
 - Guardian Angel
+- Herald of Zakarum
 - Lava Gout
 - Martyrdom (non-ETH only)
 - Nosferatus Coil
 - Ormus Robes (non-ETH only)
-- Raekor's Virtue
 - Shaftstop
 - SHAKO (non-ETH only)
 - Snowclash (non-ETH only)
@@ -181,6 +181,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - War Traveler
 - Waterwalk
 - Widowmaker
+- Windhammer
 - Wraithskin
 
 ### Level 7 — adds 2-star uniques
@@ -188,14 +189,16 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Arm of King Leoric
 - Athenas Wrath
 - Atmas Wail
+- Bartucs Cut-Throat
 - Blackhand Key
 - Blackoak Shield
+- Blade of Ali Baba
 - Bloodravens Charge
 - Boneflame
 - Boneshade
 - Cerebus Bite
+- Chance Guards
 - Corpsemourn
-- Cyclopean Roar
 - Darkforce
 - Deaths Fathom
 - Demon Machine
@@ -208,17 +211,24 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Ephemeral
 - Eschutas Temper
 - Exceptional Arrows
+- Fenris
 - Firelizards Talons
+- Flamebellow
 - Frostwind
 - Gargoyles Bite
+- Gerkes Sanctuary
 - Ghoulhide
 - Giant Maimer
+- Goldwrap
 - Gravepalm
 - Grim's Burning Dead
+- Head Hunters Glory
+- Heavenly Garb
 - Hellmouth
 - Hellslayer
+- Homunculus
 - Horizons Tornado or Stormlash
-- Humongous
+- Infernostride
 - Jade Talon
 - Jalals Mane
 - Leviathan
@@ -229,11 +239,14 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Merman's Sprocket
 - Occultist
 - Odium
+- Ondals Wisdom
 - Peasant Crown
 - Plague Bearer
 - Pus Spitter
+- Raekor's Virtue
 - Razortail
 - Ribcracker
+- Rune Master
 - Sacred Totem
 - Sage's Defiance
 - Sandstorm Trek
@@ -242,9 +255,12 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skin of the Vipermagi
 - Skull Collector
 - Skullders Ire
+- Spike Thorn
 - Stalker's Cull
+- Steelclash
 - Suicide Branch
 - The Gavel Of Pain
+- The Gladiator's Bane
 - The Oculus
 - The Patriarch
 - The Reapers Toll
@@ -252,8 +268,8 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Titans Grip
 - Titans Revenge
 - Toothrow
-- Treads of Cthon
 - Twilights Reflection
+- Valkyrie Wing
 - Venom Grip
 - Windforce
 
@@ -261,41 +277,27 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 **1-star:**
 
-- Bartucs Cut-Throat
 - Black Hades
-- Blade of Ali Baba
+- Blackbogs Sharp
 - Buriza-Do Kyanon
-- Chance Guards
 - Chromatic Ire
 - Crown of Thieves
+- Cyclopean Roar
 - Eaglehorn
-- Endlesshail
 - Exceptional Bolts
-- Fenris
-- Flamebellow
 - Frostburn
-- Gerkes Sanctuary
-- Goldwrap
-- Head Hunters Glory
-- Heavenly Garb
-- Homunculus
-- Infernostride
+- Humongous
 - Lacerator
 - Nethercrux
-- Ondals Wisdom
-- Rune Master
 - Shatterblade
 - Silks of the Victor
-- Spike Thorn
 - Swordguard
-- The Gladiator's Bane
+- Treads of Cthon
 - Ursa's Nightmare
-- Valkyrie Wing
 - Venom Ward
 - Viperfork
 - Warlords Trust
 - Wildspeaker
-- Windhammer
 - Witchwild String
 - Wizardspike
 - Wolfhowl
@@ -304,30 +306,30 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 **0-star:**
 
 - Bloodfist
-- Gimmershred
+- Gorefoot
 - Heart Carver
 - Purgatory
 - Que-Hegans Wisdom
 - Rockstopper
+- The Jade Tan Do
 - Wizendraw
 
 **NO-star:**
 
 - Baezils Vortex
 - Biggins Bonnet
-- Blackbogs Sharp
 - Cloudcrack
 - Crow Caw
 - Djinn Slayer
 - Duskdeep
-- Gorefoot
+- Endlesshail
+- Gimmershred
 - Gull Dagger
 - Kuko Shakaku
 - Magewrath
 - Radaments Sphere
 - The Hand of Broc
 - The Impaler
-- The Jade Tan Do
 - The Spirit Shroud
 
 ### Level 1-4 — most permissive
