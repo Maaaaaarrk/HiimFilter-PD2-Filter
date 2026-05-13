@@ -43,12 +43,23 @@ const throttleMs = Number(args['throttle-ms']) || 200;
 // Manual tier cutoffs in HR (top-down, first match wins). Override via CLI:
 //   --cutoff-4=2.0 --cutoff-3=1.0 --cutoff-2=0.5 --cutoff-1=0.25 --cutoff-0=0.10
 const CUTOFFS_HR = [
-  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 2.0) },
-  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 1.0) },
-  { tier: '2_STAR_SET', cutoffHR: Number(args['cutoff-2'] ?? 0.5) },
+  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 6.0) },
+  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 3.0) },
+  { tier: '2_STAR_SET', cutoffHR: Number(args['cutoff-2'] ?? 1.0) },
   { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.25) },
   { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.10) },
 ];
+
+// Items to skip when emitting move suggestions. Matched case-insensitively against
+// the item's display name (substring match).
+const IGNORE_MOVES = [
+  { name: "Tancred's Hobnails" }, // odd-priced set boots; we don't want auto-retiering
+];
+
+function isMoveIgnored(name) {
+  const n = (name || '').toLowerCase();
+  return IGNORE_MOVES.some((rule) => rule.name && n.includes(rule.name.toLowerCase()));
+}
 const topPercentile = Number(args['top-percentile']) || 0.25;
 const excludeCorrupted = args['exclude-corrupted'] === 'true';
 // changeMultiplier: hysteresis. A tier change (upgrade or downgrade) is only
@@ -435,6 +446,7 @@ async function main() {
   // Diff JSON
   const moves = itemRows
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
+    .filter((r) => !isMoveIgnored(r.maxName))
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
       const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
