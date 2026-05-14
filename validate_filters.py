@@ -140,6 +140,7 @@ _RE_DOT       = re.compile(r'^DOT-(' + _HEX2 + r')$')
 _RE_BORDER    = re.compile(r'^BORDER-(' + _HEX2 + r')$')
 _RE_PX        = re.compile(r'^PX-(' + _HEX2 + r')$')
 _RE_SOUND     = re.compile(r'^SOUNDID-(\d+)$')
+_RE_SOUND_TAG = re.compile(r'%SOUNDID-\d+%')   # for counting %SOUNDID-N% tags in expanded output
 _RE_NOTIFY    = re.compile(r'^NOTIFY-([0-9A-Fa-f]|DEAD)$')  # %NOTIFY-F% or %NOTIFY-DEAD%
 _RE_FORMULA   = re.compile(r'^FORMULA([A-Z][A-Z0-9_]*)$')   # explicit formula refs: FORMULADPS
 _RE_ISLAND    = re.compile(r'^ISLAND_([A-Z]+)$')             # auto-generated inline formula tokens
@@ -218,6 +219,36 @@ def is_valid_percent_token(token: str, defined_aliases: set) -> bool:
     if _RE_ISLAND.match(token):
         return True
     return False
+
+
+def _strip_inline_comment(text: str) -> str:
+    """Strip a trailing // comment that sits outside any tooltip braces."""
+    bd = 0
+    for i, ch in enumerate(text):
+        if ch == '{':
+            bd += 1
+        elif ch == '}':
+            bd -= 1
+        elif bd == 0 and text[i:i+2] == '//':
+            return text[:i].rstrip()
+    return text
+
+
+_RE_ALIAS_REF = re.compile(r'%([A-Za-z][A-Za-z0-9_-]*)%')
+
+
+def _expand_aliases(text: str, alias_values: dict, _visited=frozenset()) -> str:
+    """Recursively expand %aliasname% references using alias_values map.
+
+    Tokens that aren't defined aliases (e.g. %NAME%, %SOUNDID-X%, %WHITE%) are
+    left untouched. Cycles are guarded via _visited.
+    """
+    def repl(m):
+        name = m.group(1)
+        if name in _visited or name not in alias_values:
+            return m.group(0)
+        return _expand_aliases(alias_values[name], alias_values, _visited | {name})
+    return _RE_ALIAS_REF.sub(repl, text)
 
 
 def _strip_inline_formulas(text: str) -> str:
@@ -471,15 +502,17 @@ def validate_file(filepath: Path, errors_only: bool = False):
         return [Issue(fname, 0, 'ERROR', f"Cannot read file: {exc}")], 0
 
     alias_line_map: dict = {}   # name -> first lineno it was defined
+    alias_values:   dict = {}   # name -> raw value (comment-stripped) for expansion
     defined_formulas: set = set()  # formula keys (uppercased, prefixed with FORMULA)
     for lineno_0, raw in enumerate(raw_lines, 1):
         stripped_raw = raw.strip()
-        m = re.match(r'^Alias\[([^\]]+)\]:', stripped_raw)
+        m = re.match(r'^Alias\[([^\]]+)\]:\s*(.*)$', stripped_raw)
         if m:
             name = m.group(1)
             defined_aliases.add(name)
             if name not in alias_line_map:
                 alias_line_map[name] = lineno_0
+                alias_values[name] = _strip_inline_comment(m.group(2))
             else:
                 issues.append(Issue(fname, lineno_0, 'ERROR',
                     f"Alias '{name}' is already defined at line {alias_line_map[name]}"))
@@ -584,6 +617,16 @@ def validate_file(filepath: Path, errors_only: bool = False):
 
             if output.strip():
                 validate_output(output, fname, lineno, issues, defined_aliases)
+                # After expanding aliases, the rendered line must have at most one
+                # %SOUNDID-N% tag — the game only plays one sound per match, and
+                # stacking them (often via overlapping aliases) is always a bug.
+                expanded = _expand_aliases(output, alias_values)
+                sound_tags = _RE_SOUND_TAG.findall(expanded)
+                if len(sound_tags) > 1:
+                    issues.append(Issue(fname, lineno, 'ERROR',
+                        f"Line has {len(sound_tags)} %SOUNDID-N% tags after "
+                        f"alias expansion ({', '.join(sound_tags)}) — only one "
+                        f"is allowed per rendered line"))
             continue
 
         # Anything else that looks like it starts a rule is suspicious
