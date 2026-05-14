@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 13th Season 13 - build 153
+## Last updated May 14th Season 13 - build 153
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -136,8 +136,8 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Templars Might or Tyraels Might
 - The Gavel Of Pain (ETH only)
 - The Grandfather (ETH only)
-- The Reapers Toll (ETH only)
-- Thunderstroke (ETH only)
+- The Reapers Toll
+- Thunderstroke
 - Titans Revenge (ETH only)
 - Tomb Reaver
 - Tomb Reaver (ETH only)
@@ -145,7 +145,10 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Verdungos Hearty Cord
 - War Fist (ETH only)
 - Warlords Trust (ETH only)
+- Waterwalk
 - Windhammer (ETH only)
+- Wraithskin
+- Zerae's Resolve (ETH only)
 
 ### Level 8 — adds 3-star uniques
 
@@ -162,11 +165,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Guardian Angel
 - Herald of Zakarum
 - Lava Gout
+- Lidless Wall
 - Martyrdom (non-ETH only)
 - Nosferatus Coil
 - Ormus Robes (non-ETH only)
 - Shaftstop
 - SHAKO (non-ETH only)
+- Silkweave
 - Snowclash (non-ETH only)
 - Steel Pillar
 - Stoneraven
@@ -179,10 +184,9 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Vortex Shield
 - War Fist
 - War Traveler
-- Waterwalk
 - Widowmaker
 - Windhammer
-- Wraithskin
+- Zerae's Resolve
 
 ### Level 7 — adds 2-star uniques
 
@@ -232,7 +236,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Jade Talon
 - Jalals Mane
 - Leviathan
-- Lidless Wall
 - Magefist
 - Marrowwalk
 - Medusas Gaze
@@ -251,7 +254,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Sage's Defiance
 - Sandstorm Trek
 - Shadow Dancer
-- Silkweave
 - Skin of the Vipermagi
 - Skull Collector
 - Skullders Ire
@@ -263,8 +265,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Gladiator's Bane
 - The Oculus
 - The Patriarch
-- The Reapers Toll
-- Thunderstroke
 - Titans Grip
 - Titans Revenge
 - Toothrow
@@ -301,7 +301,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Witchwild String
 - Wizardspike
 - Wolfhowl
-- Zerae's Resolve
 
 **0-star:**
 
