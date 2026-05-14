@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 157%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 159%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -282,6 +282,9 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[RUNE<20]: %ORANGE%%RUNENAME%%CONTINUE%
+// Runes 1-20: keep the rune-name annotation tooltip at higher filter levels
+// (Hiim suppresses these above FILTLVL 7; Kassahi keeps them visible).
+ItemDisplay[RUNE>0 RUNE<21]: %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: Pul%CONTINUE%
 ItemDisplay[RUNE=22]: Um%CONTINUE%
 ItemDisplay[RUNE=23]: Mal%CONTINUE%
@@ -321,7 +324,7 @@ Alias[MAIN_DOT]: O
 Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 
 // Rejuves
-ItemDisplay[rvl]: %WHITE%+ %PURPLE%Full %WHITE%+%CONTINUE%
+ItemDisplay[rvl]: %GREEN%+ FULL +%CONTINUE%
 
 
 // === Merged from 03-alias-kassahi-unid-luxe ===
@@ -1671,29 +1674,44 @@ ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
 
 
 
-// ESSENCES & TOKEN
-ItemDisplay[(tes OR ceh OR bet OR fed)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// MINI UBER KEYS
-ItemDisplay[(pk1 OR pk2 OR pk3)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// ORGAN & UBER ITEMS
-ItemDisplay[(mbr OR dhn OR bey OR std)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
+// ESSENCES — <<.>> wrapper, default name color
+ItemDisplay[(tes OR ceh OR bet OR fed)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %NAME% O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// MINI UBER KEYS — <<.>> wrapper, default name color
+ItemDisplay[(pk1 OR pk2 OR pk3)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %NAME% O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// SIGILS (Mephisto's Brain / Diablo's Horn / Baal's Eye) — <<.>> wrapper
+ItemDisplay[(mbr OR dhn OR bey)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %NAME% O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// STANDARD OF HEROES — <<.>> wrapper
+ItemDisplay[std]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %NAME% O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
 // UBER ANCIENTS
 ItemDisplay[(ubaa OR ubab OR ubac)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// DCLONE ITEMS
-ItemDisplay[(dcho OR dcso OR dcbl)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// RATHMA ITEMS
-ItemDisplay[(rtmo OR rtmv OR cm2f)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-//ItemDisplay[cwss]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// LUCION ITEMS
-ItemDisplay[(lucb OR lucc OR lucd)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// PROJECT DIABLO 2 ITEMS
-//ItemDisplay[wss]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-//ItemDisplay[iwss]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-//ItemDisplay[lbox]: %BLACK%O %GOLD%%NAME% %BLACK%O{%NAME%}%CONTINUE%
-ItemDisplay[lpp]: %BLACK%O %GOLD%%NAME% %BLACK%O{%NAME%}%CONTINUE%
+// UBER MATERIALS — DClone, Rathma, Lucion — <<.>> wrapper
+ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %NAME% O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// WORLDSTONE SHARD — <<.>> wrapper, RED name
+ItemDisplay[wss]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %RED%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// CATALYST SHARD — <<.>> wrapper, RED name
+ItemDisplay[iwss]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %RED%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// PUZZLE PIECE — <<.>> wrapper, ORANGE name
+ItemDisplay[lpp]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// DEMONIC CUBE (imrn) — unchanged from prior style
 ItemDisplay[imrn]: %BLACK%O %GOLD%%NAME% %BLACK%O{%NAME%}%CONTINUE%
-ItemDisplay[(jewf OR imra OR rera OR scou OR upma OR upmp OR fort OR irma OR irra OR rrra OR urma)]: %BLACK%O %NAME% %BLACK%O%WHITE%{%NAME%}%CONTINUE%
-ItemDisplay[scrb]: %BLACK%O %GOLD%%NAME% %BLACK%O{%NAME%}%CONTINUE%
+// JEWEL FRAGMENTS — <<.>> wrapper, ORANGE name
+ItemDisplay[jewf]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// ZAKARUM + INFUSED ZAKARUM — <<.>> wrapper, ORANGE name
+ItemDisplay[(imra OR irra)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// HORADRIM + INFUSED HORADRIM — <<.>> wrapper, ORANGE name
+ItemDisplay[(rera OR rrra)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// ANGELIC + INFUSED ANGELIC — <<.>> wrapper, ORANGE name
+ItemDisplay[(upma OR urma)]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// CARTOGRAPHER — <<.>> wrapper, ORANGE name
+ItemDisplay[upmp]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// FORTIFICATION — <<.>> wrapper, ORANGE name
+ItemDisplay[fort]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// INFUSED ARCANE — <<.>> wrapper, ORANGE name (paired-infusion style)
+ItemDisplay[irma]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
+// scou (Destruction) — kept previous black-O style (not in feedback scope)
+ItemDisplay[scou]: %BLACK%O %NAME% %BLACK%O%WHITE%{%NAME%}%CONTINUE%
+// HORADRIM SCARAB — <<.>> wrapper, ORANGE name
+ItemDisplay[scrb]: %PURPLE%<<%BLACK%.%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%.%PURPLE%>>{%NAME%}%CONTINUE%
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
 
 ItemDisplay[MAG !ID cm1]: %BLUE%Small%CONTINUE%
@@ -2883,13 +2901,13 @@ ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %RED%+ %NAME% %RED%+%CONTINUE%
 ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %BLUE%+ %NAME% %BLUE%+%CONTINUE%
 ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %YELLOW%+ %NAME% %YELLOW%+%CONTINUE%
 ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %LIGHT_GRAY%+ %NAME% %LIGHT_GRAY%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=1]: %PURPLE%+ %NAME% %PURPLE%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=2]: %WHITE%+ %NAME% %WHITE%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=3]: %GREEN%+ %NAME% %GREEN%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=4]: %RED%+ %NAME% %RED%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=5]: %BLUE%+ %NAME% %BLUE%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=6]: %YELLOW%+ %NAME% %YELLOW%+%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE=7]: %LIGHT_GRAY%+ %NAME% %LIGHT_GRAY%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=1]: %PURPLE%+ %BLACK%O %PURPLE%%NAME% %BLACK%O %PURPLE%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=2]: %WHITE%+ %BLACK%O %WHITE%%NAME% %BLACK%O %WHITE%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=3]: %GREEN%+ %BLACK%O %GREEN%%NAME% %BLACK%O %GREEN%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=4]: %RED%+ %BLACK%O %RED%%NAME% %BLACK%O %RED%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=5]: %BLUE%+ %BLACK%O %BLUE%%NAME% %BLACK%O %BLUE%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=6]: %YELLOW%+ %BLACK%O %YELLOW%%NAME% %BLACK%O %YELLOW%+%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE=7]: %LIGHT_GRAY%+ %BLACK%O %LIGHT_GRAY%%NAME% %BLACK%O %LIGHT_GRAY%+%CONTINUE%
 ItemDisplay[FLAWSKULLLVLS !GEMTYPE=7 GEM=4]:
 ItemDisplay[gprs]: %NAME%{%WHITE%amulet, %ORANGE%Amn: %BLUE%10frw, 3-6lpk%CL%%WHITE%ring, %ORANGE%Sol: %BLUE%5-10str, 1-3ll%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-20ow, 3-6ll%CL%%WHITE%gloves, %ORANGE%Nef: %BLUE%5-10cb, 2-4ll%CL%%WHITE%boots, %ORANGE%Eth: %BLUE%15-30repl, 2-4ll%CL%%WHITE%helm, %ORANGE%Ral: %BLUE%10-20cb, 2-4ll%CL%%WHITE%chest, %ORANGE%Thul: %BLUE%3-6lpk, 3-6ll, 20-40life%CL%%WHITE%shield, %ORANGE%Ith: %BLUE%10-20block, 3-6ll%CL%%WHITE%weapon, %ORANGE%Ort: %BLUE%50-80edmg, 3-6ll%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %RED%blood O%NL%}
 ItemDisplay[gpvs]: %NAME%{%WHITE%amulet, %ORANGE%Ral: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10ene, 1-2mpk%CL%%WHITE%belt, %ORANGE%Ith: %BLUE%10fcr, 4-10rm%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%5-10fcr, 1-3mpk%CL%%WHITE%boots, %ORANGE%Thul: %BLUE%10-150imm, 4-10rm%CL%%WHITE%helm, %ORANGE%Nef: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%chest, %ORANGE%Tal: %BLUE%5-10fcr, 3-6mpk%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 5-10fcr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%1all, 10-20fcr%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %PURPLE%cast O%NL%}
@@ -2930,6 +2948,11 @@ ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
 
 // Ears
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
+
+// Infusion stack QTY annotation — show total count when 2+ infusions stack
+// (the Hiim filter only annotated single drops with the 'O O' wrap; here we
+// surface the running total for Kassahi).
+ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %TAN%QTY %QTY%{%NAME%}%CONTINUE%
 
 // Larzuk's Puzzle Piece — mirrors upstream `05-utility/15-pd2items[ALL]:41-42`
 // Terminates (no %CONTINUE%) so the shared `03-PD2_items[ALL]` rule below
@@ -3951,6 +3974,37 @@ ItemDisplay[UNI !ID 4_STAR_UNIQUE !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103
 // 4-star uniques only when NOT eth (Shako, Griffon's, HoZ, etc.) — issue #83
 ItemDisplay[UNI !ID !ETH 4_STAR_NO_ETH_UNIQUE !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Mystery%CONTINUE%
 ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: Mystery%CONTINUE%
+//-----------------------------------------------------------------------------------
+// Phil777 + Mystery overrides
+//
+// Purple-name twins of the luxe RUNE_HIGH / RUNE_ALT_HIGH aliases, used by:
+//   rtp (Navigator), rid (Almanac), rkey (Skeleton Key) — BIG MYSTERY frame
+//   lbox (PBOX / Puzzle Box)                            — LIL MYSTERY frame
+// Both styles run silent (no SOUNDID-4719) so the "tink" doesn't fire on these
+// mystery-renamed items.
+//-----------------------------------------------------------------------------------
+
+// Big Mystery (wide @-frame) — matches RUNE_ALT_HIGH but with PURPLE name and no sound
+Alias[MYSTERY_BIG_PURPLE]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %PURPLE%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+
+// Lil Mystery (narrow @-frame) — matches RUNE_HIGH but with PURPLE name and no sound
+Alias[MYSTERY_LIL_PURPLE]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@  %BLACK%O%PURPLE%%NAME%%BLACK%O  %BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@
+
+ItemDisplay[(rtp OR rid OR rkey)]: %MYSTERY_BIG_PURPLE%{%NAME%}
+ItemDisplay[lbox]: %MYSTERY_LIL_PURPLE%{%NAME%}
+//-----------------------------------------------------------------------------------
+// Kassahi: hide Arcane / Angelic / Destruction orbs at every filter level.
+//
+//   irma — Infused Arcane Orb
+//   upma — Angelic Orb        (base)
+//   urma — Infused Angelic Orb
+//   scou — Orb of Destruction
+//
+// Placed after the styling rules so the empty output wins regardless of the
+// prior %CONTINUE% chain.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[(irma OR upma OR urma OR scou)]:
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
 //-----------------------------------------------------------------------------------
