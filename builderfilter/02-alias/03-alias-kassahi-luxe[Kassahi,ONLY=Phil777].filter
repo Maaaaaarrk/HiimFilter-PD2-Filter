@@ -176,6 +176,9 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[RUNE<20]: %ORANGE%%RUNENAME%%CONTINUE%
+// Runes 1-20: keep the rune-name annotation tooltip at higher filter levels
+// (Hiim suppresses these above FILTLVL 7; Kassahi keeps them visible).
+ItemDisplay[RUNE>0 RUNE<21]: %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: Pul%CONTINUE%
 ItemDisplay[RUNE=22]: Um%CONTINUE%
 ItemDisplay[RUNE=23]: Mal%CONTINUE%
@@ -215,7 +218,7 @@ Alias[MAIN_DOT]: O
 Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 
 // Rejuves
-ItemDisplay[rvl]: %WHITE%+ %PURPLE%Full %WHITE%+%CONTINUE%
+ItemDisplay[rvl]: %GREEN%+ FULL +%CONTINUE%
 
 
 // === Merged from 03-alias-kassahi-unid-luxe ===

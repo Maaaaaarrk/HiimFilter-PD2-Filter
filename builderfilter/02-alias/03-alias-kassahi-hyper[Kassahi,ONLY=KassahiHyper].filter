@@ -177,6 +177,9 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 
 ItemDisplay[RUNE>0]: %RUNENAME%%CONTINUE%
 ItemDisplay[RUNE>0]: %ORANGE%%NAME%%CONTINUE%
+// Runes 1-20: keep the rune-name annotation tooltip at higher filter levels
+// (Hiim suppresses these above FILTLVL 7; Kassahi keeps them visible).
+ItemDisplay[RUNE>0 RUNE<21]: %NAME%{%NAME%}%CONTINUE%
 
 Alias[WSS_SHARD]: %PURPLE%•%RED%•%CORAL%•   %CORAL% %NAME% %CORAL%   •%RED%•%PURPLE%•
 
