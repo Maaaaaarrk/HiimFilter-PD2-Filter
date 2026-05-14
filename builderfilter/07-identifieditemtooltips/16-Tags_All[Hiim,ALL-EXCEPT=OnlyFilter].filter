@@ -2,25 +2,27 @@
 // ITEM TAGS
 //-----------------------------------------------------------------------------------
 // ITEM TAGS - ETH
-ItemDisplay[ETH UNI ID !(REPAIR>0)]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH SET ID !(REPAIR>0)]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH UNI ID !(REPAIR>0)]: %GRAY%eth %GOLD%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH SET ID !(REPAIR>0)]: %GRAY%eth %GREEN%%NAME%%CONTINUE%{%NAME%}
 
 // ETH Rep
-ItemDisplay[ETH UNI ID (REPAIR>0)]: %GRAY%[eth-rep] %GOLD%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH SET ID (REPAIR>0)]: %GRAY%[eth-rep] %GREEN%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH UNI ID (REPAIR>0)]: %GRAY%eth-rep %GOLD%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH SET ID (REPAIR>0)]: %GRAY%eth-rep %GREEN%%NAME%%CONTINUE%{%NAME%}
 
 // Vial candidate
-ItemDisplay[!ETH !UNI (REPAIR>0)]: %NAME% %GRAY%[rep]%CONTINUE%{%NAME%}
+ItemDisplay[!ETH !UNI (REPAIR>0)]: %NAME% %GRAY%rep%CONTINUE%{%NAME%}
 
 // ITEM TAGS- SOCKETS
 ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK=0]: %WHITE%%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK>0]: %GRAY%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[SOCK>0]: %NAME% %GRAY%[%SOCKETS%]%CONTINUE%{%NAME%}
+ItemDisplay[SOCK>0 !RW]: %NAME% %GRAY%[%SOCKETS%]%CONTINUE%{%NAME%}
 
-// ITEM TAGS - Corrupted [C] - NOTE indexes are off by 1 from wiki
+// ITEM TAGS - Corrupted  - NOTE indexes are off by 1 from wiki
 // corrupted	360
 // corruptor	361
 ItemDisplay[STAT360>0]: %NAME%%RED%%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=48 ETH]: %NAME% Indes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=44]: %NAME% FRW%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=45]: %NAME% CBF%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=16]: %NAME% FCR%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=42]: %NAME% FCR%CONTINUE%{%NAME%}
