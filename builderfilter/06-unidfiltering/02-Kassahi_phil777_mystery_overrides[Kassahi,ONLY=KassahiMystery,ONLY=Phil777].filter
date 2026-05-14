@@ -1,13 +1,18 @@
 //-----------------------------------------------------------------------------------
 // Phil777 + Mystery overrides
 //
-// rtp (Navigator), rid (Almanac), rkey (Skeleton Key): show in BIG MYSTERY style
-//   (matching SUR/BER/JAH/CHAM/ZOD RUNE_ALT_HIGH visual) but with PURPLE name and
-//   NO SOUNDID-4719 ("tink" suppressed).
-// lbox (PBOX / Puzzle Box): show in LIL MYSTERY style (matching VEX/OHM/LO
-//   RUNE_HIGH visual) with PURPLE name and no SOUNDID.
+// Purple-name twins of the luxe RUNE_HIGH / RUNE_ALT_HIGH aliases, used by:
+//   rtp (Navigator), rid (Almanac), rkey (Skeleton Key) — BIG MYSTERY frame
+//   lbox (PBOX / Puzzle Box)                            — LIL MYSTERY frame
+// Both styles run silent (no SOUNDID-4719) so the "tink" doesn't fire on these
+// mystery-renamed items.
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[(rtp OR rid OR rkey)]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %PURPLE%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@{%NAME%}
+// Big Mystery (wide @-frame) — matches RUNE_ALT_HIGH but with PURPLE name and no sound
+Alias[MYSTERY_BIG_PURPLE]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %PURPLE%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 
-ItemDisplay[lbox]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@  %BLACK%O%PURPLE%%NAME%%BLACK%O  %BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@{%NAME%}
+// Lil Mystery (narrow @-frame) — matches RUNE_HIGH but with PURPLE name and no sound
+Alias[MYSTERY_LIL_PURPLE]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@  %BLACK%O%PURPLE%%NAME%%BLACK%O  %BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@
+
+ItemDisplay[(rtp OR rid OR rkey)]: %MYSTERY_BIG_PURPLE%{%NAME%}
+ItemDisplay[lbox]: %MYSTERY_LIL_PURPLE%{%NAME%}
