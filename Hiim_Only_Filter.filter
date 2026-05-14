@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 156%CL%HiimFilter - OnlyFilter -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 157%CL%HiimFilter - OnlyFilter -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -825,8 +825,8 @@ ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID]: %GOLD%%NAME%%CONTINUE%
 
 // FORMATTING
-ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
 
 // Eth add on callout
 ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
