@@ -63,17 +63,38 @@ const CUTOFFS_HR = [
 ];
 
 // Items to skip when emitting move suggestions. Matched case-insensitively against
-// the item's display name (substring match). Optional `variant` restricts the
-// skip to a specific row variant: 'eth' | 'noneth' | 'both'. Omit to ignore all variants.
+// the item's display name (substring match). Optional fields:
+//   variant   — single row variant to match: 'eth' | 'noneth' | 'both'
+//   variants  — array of row variants to match (use instead of variant when more than one)
+//   direction — 'upgrade' or 'downgrade'; omit to match either
+// Omit all of the above to ignore every move for the matched name.
 const IGNORE_MOVES = [
   { name: 'Silks of the Victor' }, // eth-only unique; market data isn't useful for tiering
+  // Eth-protected: ignore demotions when the eth version is part of the move.
+  // The eth-rolled copy of these weapons holds its tier even if non-eth softens.
+  // Non-eth-only demotions (variant === 'noneth') are still allowed through.
+  { name: 'Stoneraven',         variants: ['eth'], direction: 'downgrade' },
+  { name: 'The Cranium Basher', variants: ['eth'], direction: 'downgrade' },
+  { name: 'Bloodtree Stump',    variants: ['eth'], direction: 'downgrade' },
+  { name: 'Steel Pillar',       variants: ['eth'], direction: 'downgrade' },
+  { name: 'The Grandfather',    variants: ['eth'], direction: 'downgrade' },
+  { name: 'Death Cleaver',      variants: ['eth'], direction: 'downgrade' },
+  { name: 'Lacerator',          variants: ['eth'], direction: 'downgrade' },
+  { name: "Titan's Revenge",    variants: ['eth'], direction: 'downgrade' },
+  { name: 'Purgatory',          variants: ['eth'], direction: 'downgrade' },
+  { name: 'The Gavel of Pain',  variants: ['eth'], direction: 'downgrade' },
+  { name: "Warlord's Trust",    variants: ['eth'], direction: 'downgrade' },
+  { name: 'Ribcracker',         variants: ['eth'], direction: 'downgrade' },
+  { name: "Zerae's Resolve",    variants: ['eth'], direction: 'downgrade' },
 ];
 
-function isMoveIgnored(name, variant) {
+function isMoveIgnored(name, variant, direction) {
   const n = (name || '').toLowerCase();
   return IGNORE_MOVES.some((rule) => {
     if (rule.name && !n.includes(rule.name.toLowerCase())) return false;
     if (rule.variant && rule.variant !== variant) return false;
+    if (rule.variants && !rule.variants.includes(variant)) return false;
+    if (rule.direction && rule.direction !== direction) return false;
     return true;
   });
 }
@@ -587,7 +608,10 @@ async function main() {
   // are typically thin-data items that we don't want to act on.
   const moves = moveCandidates
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
-    .filter((r) => !isMoveIgnored(r.maxName, r.variantLabel))
+    .filter((r) => {
+      const direction = tierIdx(r.currentTier) > tierIdx(r.suggestedTier) ? 'upgrade' : 'downgrade';
+      return !isMoveIgnored(r.maxName, r.variantLabel, direction);
+    })
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
       const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;

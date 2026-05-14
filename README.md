@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 14th Season 13 - build 163
+## Last updated May 14th Season 13 - build 165
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -103,7 +103,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Arkaines Valor (non-ETH only)
 - Astreons Iron Ward
 - Bloodtree Stump (ETH only)
-- Brimstone Rain
 - Crown of Ages
 - Death Cleaver (ETH only)
 - Deaths Web
@@ -112,6 +111,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Executioners Justice
 - Ghostflame
 - Gore Rider
+- Griffons Eye
 - Guardian Angel (ETH only)
 - Halaberds Reign
 - Kiras Guardian (non-ETH only)
@@ -161,7 +161,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Earth Shifter or The Cranium Basher
 - Elite Bolts
 - Giant Skull
-- Griffons Eye
 - Guardian Angel
 - Herald of Zakarum
 - Lava Gout
@@ -200,6 +199,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Bloodravens Charge
 - Boneflame
 - Boneshade
+- Brimstone Rain
 - Cerebus Bite
 - Chance Guards
 - Corpsemourn
@@ -259,7 +259,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skullders Ire
 - Spike Thorn
 - Stalker's Cull
-- Steelclash
 - Suicide Branch
 - The Gavel Of Pain
 - The Gladiator's Bane
@@ -269,6 +268,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Titans Revenge
 - Toothrow
 - Twilights Reflection
+- Ursa's Nightmare
 - Valkyrie Wing
 - Venom Grip
 - Windforce
@@ -293,7 +293,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Silks of the Victor
 - Swordguard
 - Treads of Cthon
-- Ursa's Nightmare
 - Venom Ward
 - Viperfork
 - Warlords Trust
