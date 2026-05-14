@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 156%CL%Kassahi - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 157%CL%Kassahi - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1734,16 +1734,16 @@ ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
 
 // ITEM TAGS - ETH
-ItemDisplay[ETH RARE !(REPAIR>0)]: %GRAY%[eth] %YELLOW%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH MAG !(REPAIR>0)]: %GRAY%[eth] %BLUE%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH NMAG !(REPAIR>0)]: %GRAY%[eth] %GRAY%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH CRAFT !(REPAIR>0)]: %GRAY%[eth] %ORANGE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH RARE !(REPAIR>0)]: %GRAY%eth %YELLOW%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH MAG !(REPAIR>0)]: %GRAY%eth %BLUE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH NMAG !(REPAIR>0)]: %GRAY%eth %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH CRAFT !(REPAIR>0)]: %GRAY%eth %ORANGE%%NAME%%CONTINUE%{%NAME%}
 
 // ETH Rep
-ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%[eth-rep] %YELLOW%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%[eth-rep] %BLUE%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%[eth-rep] %GRAY%%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%[eth-rep] %ORANGE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH RARE (REPAIR>0)]: %GRAY%eth-rep %YELLOW%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH MAG (REPAIR>0)]: %GRAY%eth-rep %BLUE%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH NMAG (REPAIR>0)]: %GRAY%eth-rep %GRAY%%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[ETH CRAFT (REPAIR>0)]: %GRAY%eth-rep %ORANGE%%NAME%%CONTINUE%{%NAME%}
 
 // stats
 ItemDisplay[(MAG OR RARE OR CRAFT) ID]: %CL%%NAME%%CONTINUE%
@@ -2798,8 +2798,8 @@ ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID]: %GOLD%%NAME%%CONTINUE%
 
 // FORMATTING
-ItemDisplay[ETH UNI !ID]: %GRAY%[eth] %GOLD%%NAME%%CONTINUE%
-ItemDisplay[ETH SET !ID]: %GRAY%[eth] %GREEN%%NAME%%CONTINUE%
+ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
 
 // Eth add on callout
 ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
@@ -9199,19 +9199,19 @@ ItemDisplay[(MAG OR RARE OR CRAFT OR (UNI (cm1 OR cm2 OR cm3 OR jew))) (REPAIR>0
 // ITEM TAGS - PART 2
 //-----------------------------------------------------------------------------------
 // RES value on PALADIN shields
-ItemDisplay[!INF !RW NMAG RES>0]: %GREEN%[%RES%r] %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG RES>0]: %GREEN%%RES%r %NAME%{%NAME%}%CONTINUE%
 //ItemDisplay[!INF !RW NMAG RES>29]: %GREEN%* * %NAME% %GREEN%* *{%NAME%}%CONTINUE%
 
 // ITEM TAGS - DEF on Chest
-ItemDisplay[CHEST !INF !RW NMAG DEF>400]: %TAN%[%DEF% Def] %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[CHEST !INF !RW NMAG DEF>400]: %TAN%%DEF% Def %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[CHEST !INF !RW NMAG DEF>799]: %DOT-D6%%NAME%{%NAME%}%CONTINUE%
 
 // ITEM TAGS - EDEF
-ItemDisplay[!INF !RW NMAG EDEF>0]: %BLUE%[%EDEF%%] %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG EDEF>0]: %BLUE%%EDEF%% %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG EDEF=20]: %BLUE%* * %NAME% %BLUE%* *{%NAME%}%CONTINUE%
 
 // ITEM TAGS - EDAM
-ItemDisplay[!INF !RW NMAG EDAM>0]: %RED%[%EDAM%%] %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG EDAM>0]: %RED%%EDAM%% %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[!INF !RW NMAG EDAM=20 !DIN]: %RED%* * %NAME% %RED%* *{%NAME%}%CONTINUE%
 
 // ITEM TAGS - LARZUK FOR SOCKETS
