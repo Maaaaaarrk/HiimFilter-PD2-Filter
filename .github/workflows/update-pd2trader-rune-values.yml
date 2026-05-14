@@ -1,4 +1,4 @@
-name: Update PD2 Trader Rune Values
+name: Update PD2 Trader Economy Values
 
 on:
   schedule:
@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Update rune values from PD2 Trader
+      - name: Update economy values from PD2 Trader
         run: node scripts/update-pd2trader-runes.mjs
         env:
           PD2TRADER_LADDER: 'true'
@@ -94,7 +94,7 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Update PD2 Trader rune values (version ${{ env.VERSION }})"
+          git commit -m "Update PD2 Trader economy values (version ${{ env.VERSION }})"
 
           if [ "$EVENT_NAME" = "pull_request" ]; then
             git pull --rebase origin "$PR_HEAD_REF"
@@ -106,8 +106,8 @@ jobs:
               gh pr create \
                 --base main \
                 --head "$BOT_BRANCH" \
-                --title "Update PD2 Trader rune values (version ${{ env.VERSION }})" \
-                --body "Automated rune-value refresh from pd2.tools. Version bumped to ${{ env.VERSION }}."
+                --title "Update PD2 Trader economy values (version ${{ env.VERSION }})" \
+                --body "Automated economy refresh from PD2 Trader (runes + uber mats + PD2 items). Version bumped to ${{ env.VERSION }}."
             else
               echo "Existing PR #$existing_pr was updated by force-push."
             fi

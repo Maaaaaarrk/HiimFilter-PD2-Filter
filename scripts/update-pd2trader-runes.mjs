@@ -1,7 +1,10 @@
-// Updates rune economy aliases in builderfilter/02-alias/04-alias-economy-values[ALL].filter
-// using median prices from the PD2 Trader API. Ported with permission from Roofoo's filter
-// (https://github.com/RoofooEvazan/Roofoo-s-PD2-Loot-Filter), trimmed to runes only and
-// to a single latest-prices window.
+// Updates rune and uber-material economy aliases in
+// builderfilter/02-alias/04-alias-economy-values[ALL].filter using median prices from the
+// PD2 Trader API. Ported with permission from Roofoo's filter
+// (https://github.com/RoofooEvazan/Roofoo-s-PD2-Loot-Filter), trimmed to a single
+// latest-prices window. Filename kept for CI compatibility — also updates DClone /
+// Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS, Puzzlebox/Piece,
+// Demonic Cube, Catalyst Shard).
 
 import { readFile, writeFile } from 'node:fs/promises';
 
@@ -21,6 +24,33 @@ const runes = [
   { code: 'r31', name: 'Jah',  alias: 'JAH' },
   { code: 'r32', name: 'Cham', alias: 'CHAM' },
   { code: 'r33', name: 'Zod',  alias: 'ZOD' },
+];
+
+// Uber materials and PD2 utility items.
+//   set:'single' updates only `${alias}${valueSuffix}` (boss mats — no WSS/STACK siblings)
+//   set:'full'   updates four aliases: `${alias}${valueSuffix}`, `${alias}_WSS_VALUE`,
+//                `${alias}_STACK_HR`, `${alias}_STACK_WSS` (PD2 items)
+// valueSuffix defaults to '_VALUE'; WSS_ITEM uses '_HR_VALUE' instead.
+const ubermats = [
+  // DClone mats
+  { code: 'dcho', name: 'Black Soulstone',           alias: 'BLACK_SOULSTONE',           set: 'single' },
+  { code: 'dcso', name: 'Prime Evil Soul',           alias: 'PRIME_EVIL_SOUL',           set: 'single' },
+  { code: 'dcbl', name: 'Pure Demonic Essence',      alias: 'PURE_DEMONIC_ESSENCE',      set: 'single' },
+  // Rathma mats
+  { code: 'cm2f', name: 'Hellfire Ashes',            alias: 'HELLFIRE_ASHES',            set: 'single' },
+  { code: 'rtmv', name: 'Splinter of the Void',      alias: 'SPLINTER_OF_THE_VOID',      set: 'single' },
+  { code: 'rtmo', name: "Trang-Oul's Jawbone",       alias: 'TRANG_OUL_JAWBONE',         set: 'single' },
+  // Lucion mats
+  { code: 'lucb', name: 'Demonic Insignia',          alias: 'DEMONIC_INSIGNIA',          set: 'single' },
+  { code: 'lucc', name: 'Talisman of Transgression', alias: 'TALISMAN_OF_TRANSGRESSION', set: 'single' },
+  { code: 'lucd', name: 'Flesh of Malic',            alias: 'FLESH_OF_MALIC',            set: 'single' },
+  // PD2 utility items (full alias set: VALUE / WSS_VALUE / STACK_HR / STACK_WSS)
+  { code: 'wss',  name: 'Worldstone Shard',          alias: 'WSS_ITEM',                  set: 'full', valueSuffix: '_HR_VALUE' },
+  { code: 'cwss', name: 'Tainted Worldstone Shard',  alias: 'TAINTED_WORLDSTONE_SHARD',  set: 'full' },
+  { code: 'iwss', name: 'Catalyst Shard',            alias: 'CATALYST_SHARD',            set: 'full' },
+  { code: 'lbox', name: 'Larzuk Puzzlebox',          alias: 'LARZUK_PUZZLEBOX',          set: 'full' },
+  { code: 'lpp',  name: 'Larzuk Puzzlepiece',        alias: 'LARZUK_PUZZLEPIECE',        set: 'full' },
+  { code: 'imrn', name: 'Demonic Cube',              alias: 'DEMONIC_CUBE',              set: 'full' },
 ];
 
 function normalizePriceValue(value) {
@@ -51,6 +81,17 @@ function roundToFiveHundredths(value) {
   return value > 0 && rounded === 0 ? 0.05 : rounded;
 }
 
+// Mats span a wider price range than runes — under 0.1 HR a 0.05 step rounds away most
+// of the signal, so use 0.01 steps there and switch to 0.05 once it's worth at least 0.1.
+function roundMatValue(value) {
+  if (!Number.isFinite(value)) return value;
+  if (value < 0.1) {
+    const rounded = Math.round(value * 100) / 100;
+    return value > 0 && rounded === 0 ? 0.01 : rounded;
+  }
+  return Math.round(value * 20) / 20;
+}
+
 function formatHr(value) {
   if (!Number.isFinite(value)) return '0';
   return value.toFixed(2).replace(/\.?0+$/, '');
@@ -58,7 +99,7 @@ function formatHr(value) {
 
 async function fetchPrices() {
   const body = {
-    baseCodes: runes.map((r) => r.code),
+    baseCodes: [...runes.map((r) => r.code), ...ubermats.map((m) => m.code)],
     isLadder,
     isHardcore,
     hours: windowHours,
@@ -132,14 +173,42 @@ async function main() {
     updates.push(`${rune.name}=${hrStr}HR/${wssStr}WSS`);
   }
 
+  for (const mat of ubermats) {
+    const price = pricesByCode.get(mat.code);
+    let hrValue = roundMatValue(valueFromPrice(price));
+
+    if (!Number.isFinite(hrValue) || hrValue <= 0) {
+      console.log(`${mat.name} (${mat.code}): no usable price data, skipping`);
+      continue;
+    }
+
+    if (mat.floor !== undefined && hrValue < mat.floor) {
+      console.log(`${mat.name} (${mat.code}): scraped ${hrValue}HR below floor ${mat.floor}HR, clamping up`);
+      hrValue = mat.floor;
+    }
+
+    const wssValue = Math.round(hrValue * 100);
+    const hrStr = formatHr(hrValue);
+    const wssStr = String(wssValue);
+    const valueSuffix = mat.valueSuffix ?? '_VALUE';
+
+    text = replaceAlias(text, `${mat.alias}${valueSuffix}`, hrStr);
+    if (mat.set === 'full') {
+      text = replaceAlias(text, `${mat.alias}_WSS_VALUE`, wssStr);
+      text = replaceAlias(text, `${mat.alias}_STACK_HR`, `(QTY*${hrStr})`);
+      text = replaceAlias(text, `${mat.alias}_STACK_WSS`, `(QTY*${wssStr})`);
+    }
+    updates.push(`${mat.name}=${hrStr}HR/${wssStr}WSS`);
+  }
+
   if (text === original) {
-    console.log('No rune value changes needed.');
+    console.log('No economy value changes needed.');
     return;
   }
 
   text = text.replace(/^Alias\[CURRENCY_TIMESTAMP\]:.*$/m, timestampLine());
   await writeFile(ALIAS_FILE, text, 'utf8');
-  console.log(`Updated rune values: ${updates.join(', ')}`);
+  console.log(`Updated economy values: ${updates.join(', ')}`);
 }
 
 main().catch((err) => {
