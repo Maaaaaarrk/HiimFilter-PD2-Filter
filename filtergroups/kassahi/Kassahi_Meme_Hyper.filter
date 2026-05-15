@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 176%CL%Kassahi - Meme - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 177%CL%Kassahi - Meme - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -154,23 +154,23 @@ Alias[RARE_GG_ITEM]: %PURPLE%@@%RED%@@%ORANGE%@@%YELLOW%@@ %WHITE%•   %NAME%  
 Alias[RARE_GG_ALT]: %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X %NAME% %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X
 
 // Low rune — single red @ pair (matches upstream RUNE 20-21 hyper styling)
-Alias[RUNE_LOW]: %PX-0B%%PURPLE%@%BLACK%@ %NAME% %BLACK%@%PURPLE%@
+Alias[RUNE_LOW]: %PX-0B%%GREEN%•  %ORANGE%%NAME%  %GREEN%•
 
 // Craft rune
-Alias[RUNE_CRAFT]: %DOT-0B%%PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@
+Alias[RUNE_CRAFT]: %DOT-0B%%GREEN%••  %ORANGE%%NAME%  %GREEN%••
 
 // Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID); 2-doublet PURPLE/GREEN alternation
-Alias[RUNE_MID]: %DOT-9B%%PX-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %NAME% %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
-Alias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %NAME% %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
+Alias[RUNE_MID]: %DOT-9B%%PX-0B%%GREEN%@%BLACK%@  %ORANGE%%NAME%  %BLACK%@%GREEN%@
+Alias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%PURPLE%@%BLACK%@ %GREEN%@%BLACK%@  %ORANGE%%NAME%  %BLACK%@%GREEN%@ %BLACK%@%PURPLE%@
 
 // Mid rune Tier 2 — 3-doublet
 Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
 
 // High rune — full triple PURPLE/GREEN with map+border (matches upstream RUNE 26-28 hyper)
-Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
+Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@@%BLACK%@ %GREEN%@@@%BLACK%@  %WHITE%• %RED%%NAME% %WHITE%•  %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@@
 
 // High rune Tier 2 — wider spacing (matches upstream RUNE 30, 33 hyper)
-Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@ %GREEN%@@%BLACK%@   %WHITE%• %NAME% %WHITE% •   %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@ %BLACK%@%PURPLE%@@
+Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@@%BLACK%@ %PURPLE%@@@%BLACK%@ %GREEN%@@@%BLACK%@  %WHITE%• %RED%%NAME% %WHITE%•  %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@@ %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@
 
 
 // Magic Item 1 Affix — matches upstream FMT_MAG_T3 body
