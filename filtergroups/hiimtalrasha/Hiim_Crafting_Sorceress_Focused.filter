@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 165%CL%HiimFilter - TalRasha - Sorc - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 165%CL%HiimFilter - TalRasha - Sorc - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2532,9 +2532,10 @@ ItemDisplay[RUNE<21 !(RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5
 // Mid rune
 ItemDisplay[RUNE>20 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
-// High rune
-ItemDisplay[RUNE>25 RUNE<30]: %RUNE_HIGH%%CONTINUE%
-ItemDisplay[RUNE>29]: %RUNE_ALT_HIGH%%CONTINUE%
+// High rune — Vex/Ohm/Lo (26-28)
+ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
+// High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
+ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
 
 // force show lower runes
 ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10]: %NAME%{%NAME%}

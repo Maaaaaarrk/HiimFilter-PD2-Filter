@@ -1,0 +1,32 @@
+//-----------------------------------------------------------------------------------
+// Phil777 (luxe) per-rune visual overrides — lower runes 1-19
+//
+// Fires AFTER 05-utility/09-Runes so it overrides the RUNE_LOW / RUNE_CRAFT
+// alias wrap with per-rune frames (CORAL «·» style).
+//
+// Group A (EL/ELD/ITH/THUL/SOL/SHAEL/DOL): plain "« »" frame
+// Group B (TIR/NEF/ETH/TAL/RAL/ORT/AMN/HEL/IO/LUM/KO/FAL): framed "«·»" frame
+//-----------------------------------------------------------------------------------
+
+// Group A — plain «...» frame
+ItemDisplay[RUNE=1]:  %CORAL%« %ORANGE%EL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=2]:  %CORAL%« %ORANGE%ELD %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=6]:  %CORAL%« %ORANGE%ITH %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=10]: %CORAL%« %ORANGE%THUL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=12]: %CORAL%« %ORANGE%SOL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=13]: %CORAL%« %ORANGE%SHAEL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=14]: %CORAL%« %ORANGE%DOL %CORAL%»{%NAME%}%CONTINUE%
+
+// Group B — framed «·» «·» frame
+ItemDisplay[RUNE=3]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%TIR %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=4]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%NEF %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=5]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%ETH %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=7]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%TAL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=8]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%RAL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=9]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%ORT %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=11]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%AMN %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=15]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%HEL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=16]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%IO %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=17]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%LUM %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=18]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%KO %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=19]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%FAL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%

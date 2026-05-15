@@ -12,9 +12,8 @@
 //   lbox (PBOX / Puzzle Box)                                    — LIL MYSTERY frame
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[RUNE>28 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Big Mystery%CONTINUE%
-ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%{%NAME%}
+ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr)]: %PURPLE%Big Mystery%CONTINUE%
+ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr)]: %RUNE_ALT_HIGH%{%NAME%}
 
-ItemDisplay[RUNE>25 RUNE<29 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Lil Mystery%CONTINUE%
-ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%{%NAME%}
-
+ItemDisplay[lbox]: %PURPLE%Lil Mystery%CONTINUE%
+ItemDisplay[lbox]: %RUNE_HIGH%{%NAME%}
