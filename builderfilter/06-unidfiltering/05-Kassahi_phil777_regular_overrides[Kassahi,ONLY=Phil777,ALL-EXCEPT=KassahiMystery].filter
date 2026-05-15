@@ -3,9 +3,10 @@
 //
 // LEM/PUL/UM/MAL/IST/GUL — per-rune @-frames (replace RUNE_MID / RUNE_ALT_MID)
 // PUZZLE BOX (lbox)       — use RUNE_HIGH frame to match VEX/OHM/LO
-// rtp/rid/rkey/lsvl/llmr  — use RUNE_ALT_HIGH frame to match SUR-ZOD
-//                          (Navigator, Almanac, Skeleton Key, Vial of Lightsong,
-//                           Lilith's Mirror)
+//
+// rtp/rid/rkey/lsvl/llmr (Navigator/Almanac/Skeleton Key/Vial of Lightsong/
+// Lilith's Mirror) match SUR-ZOD via Phil777-Luxe's RARE_GG_ITEM/RARE_GG_ALT
+// aliases sharing the RUNE_ALT_HIGH body — handled in 02-alias/03-alias-kassahi-luxe.
 //
 // Excluded from Phil777-Mystery via ALL-EXCEPT=KassahiMystery (Phil777-Mystery
 // keeps its own mystery-renamed display for these items).
@@ -25,7 +26,3 @@ ItemDisplay[RUNE=25]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %B
 
 // PUZZLE BOX (lbox) — use RUNE_HIGH frame (matches VEX/OHM/LO in Phil777-Regular)
 ItemDisplay[lbox]: %SOUNDID-4719%%RUNE_HIGH%{%NAME%}
-
-// Navigator / Almanac / Skeleton Key / Vial of Lightsong / Lilith's Mirror
-// — use RUNE_ALT_HIGH frame (matches SUR through ZOD in Phil777-Regular)
-ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr)]: %SOUNDID-4719%%RUNE_ALT_HIGH%{%NAME%}
