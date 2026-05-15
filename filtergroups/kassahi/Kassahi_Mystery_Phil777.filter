@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 169%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 171%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -154,16 +154,17 @@ Alias[RARE_GG_ITEM]: %PURPLE%«·»%RED%«·»%ORANGE%«·»%YELLOW%«·» %BLAC
 Alias[RARE_GG_ALT]: %RED%OoOoOoO %NAME% %RED%OoOoOoO
 
 // Low rune
-Alias[RUNE_LOW]: %PX-0B%%BLACK%@%PURPLE%@%BLACK%@ %NAME% %BLACK%@%PURPLE%@%BLACK%@
+Alias[RUNE_LOW]: %PX-0B%%CORAL%« %NAME% %CORAL%»
 
 // Craft rune
-Alias[RUNE_CRAFT]: %DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@%BLACK%@
+Alias[RUNE_CRAFT]: %DOT-0B%%CORAL%«%BLACK%·%CORAL%» %NAME% %CORAL%«%BLACK%·%CORAL%»
 
-// Mid rune — 2 doublet alternation
-Alias[RUNE_MID]: %DOT-9B%%PX-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@ %NAME% %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+// Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID); 2 doublet alternation
+Alias[RUNE_MID]: %DOT-9B%%PX-0B%%BLACK%@%PURPLE%@%BLACK%@ %BLACK%O%NAME%%BLACK%O %BLACK%@%PURPLE%@%BLACK%@
+Alias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%PURPLE%@ %BLACK%O%NAME%%BLACK%O %PURPLE%@
 
 // Mid rune Tier 2 — 3 doublet alternation
-Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %BLACK%O%NAME%%BLACK%O %BLACK%@%PURPLE%@%BLACK%@
 
 // High rune — full ornate (matches upstream RUNE 26-28 luxe)
 Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@  %BLACK%O%RED%%NAME%%BLACK%O  %BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@
@@ -284,7 +285,8 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 ItemDisplay[RUNE<20]: %ORANGE%%RUNENAME%%CONTINUE%
 // Runes 1-20: keep the rune-name annotation tooltip at higher filter levels
 // (Hiim suppresses these above FILTLVL 7; Kassahi keeps them visible).
-ItemDisplay[RUNE>0 RUNE<21]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[RUNE>0 RUNE<20]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=20]: Lem%CONTINUE%
 ItemDisplay[RUNE=21]: Pul%CONTINUE%
 ItemDisplay[RUNE=22]: Um%CONTINUE%
 ItemDisplay[RUNE=23]: Mal%CONTINUE%
@@ -370,12 +372,15 @@ Alias[UNID_SET_T1]: %LIGHT_GRAY%O %GREEN%%NAME%%LIGHT_GRAY% O
 
 Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 15 2026
 
+// Valuable crafting runes — TIR(3), NEF(4), ETH(5), TAL(7), RAL(8), ORT(9), AMN(11), SOL(12), HEL(15), IO(16), LUM(17), KO(18), FAL(19)
+Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18 OR RUNE=19)
+
 //-----------------------------------------------------------------------------------
 // HR Rune estimated values
 //-----------------------------------------------------------------------------------
 
 Alias[OHM_RUNE_VALUE]: 0.85
-Alias[LO_RUNE_VALUE]: 0.95
+Alias[LO_RUNE_VALUE]: 0.9
 Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
 Alias[JAH_RUNE_VALUE]: 1.6
@@ -384,7 +389,7 @@ Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 85
-Alias[LO_WSS_VALUE]: 95
+Alias[LO_WSS_VALUE]: 90
 Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
 Alias[JAH_WSS_VALUE]: 160
@@ -409,7 +414,7 @@ Alias[HALFHR_STACK_WSS]: (QTY*50)
 
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.85)
-Alias[LO_STACK_HR]: (QTY*0.95)
+Alias[LO_STACK_HR]: (QTY*0.9)
 Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
 Alias[JAH_STACK_HR]: (QTY*1.6)
@@ -418,7 +423,7 @@ Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*85)
-Alias[LO_STACK_WSS]: (QTY*95)
+Alias[LO_STACK_WSS]: (QTY*90)
 Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
 Alias[JAH_STACK_WSS]: (QTY*160)
@@ -430,33 +435,33 @@ Alias[ZOD_STACK_WSS]: (QTY*600)
 //-----------------------------------------------------------------------------------
 
 Alias[WSS_ITEM_HR_VALUE]: 0.01
-Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
+Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.2
 Alias[LARZUK_PUZZLEBOX_VALUE]: 0.6
-Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.1
+Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.08
 Alias[DEMONIC_CUBE_VALUE]: 0.75
 Alias[CATALYST_SHARD_VALUE]: 0.1
 
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
-Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
+Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 120
 Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 60
-Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 10
+Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 8
 Alias[DEMONIC_CUBE_WSS_VALUE]: 75
 Alias[CATALYST_SHARD_WSS_VALUE]: 10
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
-Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
+Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.2)
 Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.6)
-Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.1)
+Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.08)
 Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.75)
 Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.1)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
-Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
+Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*120)
 Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*60)
-Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*10)
+Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*8)
 Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*75)
 Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
 
@@ -467,15 +472,15 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
 // DClone mats
 Alias[BLACK_SOULSTONE_VALUE]: 0.25
 Alias[PRIME_EVIL_SOUL_VALUE]: 0.5
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.05
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.04
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.5
-Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.25
+Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.2
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.2
+Alias[FLESH_OF_MALIC_VALUE]: 0.15
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.25
 //-----------------------------------------------------------------------------------
@@ -1594,51 +1599,51 @@ ItemDisplay[tes]: %TEAL%Essence of Suffering{%TAN%Cube: %WHITE%1 of Each %ORANGE
 ItemDisplay[ceh]: %TEAL%Essence of Hatred{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Mephisto}%CONTINUE%
 ItemDisplay[bet]: %TEAL%Essence of Terror{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Diablo}%CONTINUE%
 ItemDisplay[fed]: %TEAL%Essence of Destruction{%TAN%Cube: %WHITE%1 of Each %ORANGE%Essences %WHITE%to Make a %ORANGE%Token%NL%%TAN%Drops From: %RED%Nm%WHITE%/%RED%Hell Baal}%CONTINUE%
-// QTY rule removed — handled by Hiim shared 03-Hiim_Top_End general QTY rule
+
 // MINI UBER KEYS
 ItemDisplay[pk1]: %ORANGE%Key of Terror{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Countess%WHITE%/%RED%Blood Raven}%CONTINUE%
 ItemDisplay[pk2]: %ORANGE%Key of Hate{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Summoner%WHITE%/%RED%Bloodwitch the Wild}%CONTINUE%
 ItemDisplay[pk3]: %ORANGE%Key of Destruction{%TAN%Cube: %WHITE%1 of Each %ORANGE%Keys %WHITE%to Open %ORANGE%Mini Ubers%NL%%TAN%Drops From: %RED%Hell Nihlathak%WHITE%/%RED%Izual}%CONTINUE%
-// QTY rule removed
+
 // ORGAN & UBER ITEMS
 ItemDisplay[mbr]: %ORANGE%Mephisto's Brain{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Izual %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[dhn]: %ORANGE%Diablo's Horn{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Lilith %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[bey]: %ORANGE%Baal's Eye{%ORANGE%Pandemonium Talisman%NL%%TAN%Cube: %WHITE%1 of each %ORANGE%Organs, %GRAY%Key %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Duriel %GRAY%(%RED%Mini Uber%GRAY%)}%CONTINUE%
 ItemDisplay[std]: %ORANGE%%NAME%{%TAN%Drops From: %RED%Hell Ubers}%CONTINUE%
-// QTY rule removed
+
 // EARS
-// QTY rule removed
+
 // UBER ANCIENTS
 ItemDisplay[ubaa]: %ORANGE%Sigil of Madawc{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T1}%CONTINUE%
 ItemDisplay[ubab]: %ORANGE%Sigil of Talic{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T2}%CONTINUE%
 ItemDisplay[ubac]: %ORANGE%Sigil of Korlic{%ORANGE%Relic of The Ancients%NL%%TAN%Cube: %ORANGE%SoM, SoT, SoK %WHITE%to Make a%NL%%TAN%Drops From: %TEAL%T3}%CONTINUE%
-// QTY rule removed
+
 // DCLONE ITEMS
 ItemDisplay[dcho]: %ORANGE%Black Soulstone{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Uber Tristram}%CONTINUE%
 ItemDisplay[dcso]: %ORANGE%%NAME%{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Mephisto%WHITE%/%RED%Diablo%WHITE%/%RED%Baal}%CONTINUE%
 ItemDisplay[dcbl]: %ORANGE%%NAME%{%ORANGE%Vision of Terror%NL%%TAN%Cube: %ORANGE%PES, PDE, BS %WHITE%to Make%NL%%TAN%Drops From: %RED%Hell Map Bosses}%CONTINUE%
-// QTY rule removed
+
 // RATHMA ITEMS
 ItemDisplay[rtmo]: %ORANGE%Trang-Oul's Jawbone{%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Drops From: %RED%Undead Enemies}%CONTINUE%
 ItemDisplay[rtmv]: %ORANGE%Splinter of the Void{%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Drops From: %RED%Mendeln Map Events}%CONTINUE%
 ItemDisplay[cm2f]: %ORANGE%%NAME%{%GRAY%(Before Dying Twice in a Row)%NL%(u May Now Spend Your Souls,)%NL%%WHITE%to Make %ORANGE%Voidstone%NL%%TAN%Cube: %ORANGE%TOJ, SOTV, (Torch or Hellfire Ashes)%NL%%TAN%Made From: %RED%Torches}%CONTINUE%
-// QTY rule removed
+
 ItemDisplay[cwss]: %RED%Tainted{%TAN%Anni: %WHITE%80% %BLUE%Mod %WHITE%20% %BLUE%Brick%NL%%WHITE%Possible Corruptions:}%CONTINUE%
-// QTY rule removed
+
 // LUCION ITEMS
 ItemDisplay[lucb]: %ORANGE%Demonic Insignia{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%RED%(Abaddon, Pit of Acheron & Infernal Pit)%CL%%TAN%Drops From: %RED%A5 Red Portals}%CONTINUE%
 ItemDisplay[lucc]: %ORANGE%Talisman of Transgression{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%TAN%Drops From: %RED%Corrupted Zones}%CONTINUE%
 ItemDisplay[lucd]: %ORANGE%Flesh of Malic{%WHITE%to Make %ORANGE%Shadow of Hatred%NL%%TAN%Cube: %ORANGE%DI, TOT, FOM%NL%%TAN%Drops From: %RED%Demon Enemy}%CONTINUE%
-// QTY rule removed
+
 // PROJECT DIABLO 2 ITEMS
 ItemDisplay[(rid OR rtp OR rkey) INVENTORY]: %RED%%NAME%{%RED%Highlight disabled in inventory%NAME%}%CONTINUE%
 ItemDisplay[wss]: %MAP-0A%%SOUNDID-4715%%RED%Worldstone{%TAN%Maps: %WHITE%100% %BLUE%Mod %NL% %TAN%Sock Item: %WHITE%75% %BLUE%Mod %WHITE%25% %BLUE%Brick %NL% %TAN%Unsock Item: %WHITE%50% %BLUE%Mod %WHITE%25%%BLUE% Brick%WHITE%/%BLUE%Sockets %NL%%WHITE%Armor: 1-3, 1h Weapon: 2-4, 2h Weapon: 3-6%NL%%WHITE%Possible Corruptions:}%CONTINUE%
-// QTY rule removed
+
 ItemDisplay[iwss]: %PX-60%%MAP-0A%%SOUNDID-4715%%RED%Catalyst{%TAN%Ads: %WHITE%Area Contains a Random Event to Maps%NL%%TAN%Drops From: %RED%An Altar of the Catalyst Event}%CONTINUE%
-// QTY rule removed
-// QTY rule removed
-// QTY rule removed
-// QTY rule removed
+
+
+
+
 ItemDisplay[lmal]: %WHITE%Larzuk's Malus{%WHITE%All Sockets: 1%NL%%WHITE%Possible Sockets:}
 ItemDisplay[jewf]: %WHITE%Jewel Fragments %GOLD%O%GOLD%{%WHITE%Crafting As a Regular Jewel%NL%Can Be Used For}%CONTINUE%
 ItemDisplay[imma]: {}
@@ -1652,8 +1657,8 @@ ItemDisplay[irma]: %GOLD%Infused Arcane%ORANGE%{}%CONTINUE%
 ItemDisplay[irra]: %GOLD%Infused Zakarum%ORANGE%{}%CONTINUE%
 ItemDisplay[rrra]: %GOLD%Infused Horadrim%ORANGE%{}%CONTINUE%
 ItemDisplay[urma]: %GOLD%Infused Angelic%ORANGE%{}%CONTINUE%
-// QTY rule removed
-// QTY rule removed
+
+
 ItemDisplay[crfb]: %GOLD%Infusion %RED%@{%NAME%}%CONTINUE%
 ItemDisplay[crfc]: %GOLD%Infusion %PURPLE%@{%NAME%}%CONTINUE%
 ItemDisplay[crfh]: %GOLD%Infusion %BLUE%@{%NAME%}%CONTINUE%
@@ -1661,7 +1666,12 @@ ItemDisplay[crfs]: %GOLD%Infusion %GREEN%@{%NAME%}%CONTINUE%
 ItemDisplay[crfu]: %GOLD%Infusion %YELLOW%@{%NAME%}%CONTINUE%
 ItemDisplay[crfp]: %GOLD%Infusion %WHITE%@{%NAME%}%CONTINUE%
 ItemDisplay[crfv]: %GOLD%Infusion %LIGHT_GRAY%@{%NAME%}%CONTINUE%
-// QTY rule removed
+
+// Infusion stack QTY annotation — since it was re-named we need to add it back
+ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
+
+// Renamed-item QTY annotation since it was re-named we need to add it back
+ItemDisplay[(tes OR ceh OR bet OR fed OR pk1 OR pk2 OR pk3 OR mbr OR dhn OR bey OR ubaa OR ubab OR ubac OR dcho OR rtmo OR rtmv OR cwss OR lucb OR lucc OR lucd OR wss OR iwss OR lmal OR jewf) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
 ItemDisplay[UNI ID]: %GOLD%%NAME%%CONTINUE%
 ItemDisplay[SET ID]: %GREEN%%NAME%%CONTINUE%
@@ -1706,32 +1716,37 @@ ItemDisplay[(ubaa OR ubab OR ubac)]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %ORANGE%%NAME%%CONTINUE%
 
 // Worldstone Shard — ORANGE  (wrapped by WSS_SHARD in 03-PD2_items)
-ItemDisplay[wss]: %ORANGE%WORLDSTONE%CONTINUE%
+ItemDisplay[wss]: %ORANGE%Worldstone%CONTINUE%
 
 // Catalyst Shard — RED  (wrapped by WSS_SHARD in 02-Kassahi_pd2items)
-ItemDisplay[iwss]: %RED%CATALYST%CONTINUE%
+ItemDisplay[iwss]: %RED%Catalyst%CONTINUE%
 
 // Larzuk's Puzzle Piece — ORANGE literal  (wrapped by GEN_RARE in 03-PD2_items)
-ItemDisplay[lpp]: %ORANGE%PUZZLE PIECE%CONTINUE%
+ItemDisplay[lpp]: %ORANGE%Puzzle Piece%CONTINUE%
 
 // Horadrim Scarab — ORANGE  (wrapped by PD2_MATS in 02-Kassahi_pd2items)
-ItemDisplay[scrb]: %ORANGE%HORADRIM SCARAB%CONTINUE%
+ItemDisplay[scrb]: %ORANGE%Horadrim Scarab%CONTINUE%
 
 // --- Group B: rename + apply PD2_MATS wrap here ---------------------------------
 
-ItemDisplay[jewf]: %ORANGE%JEWEL FRAGMENTS%CONTINUE%
-ItemDisplay[std]: %ORANGE%STANDARD OF HEROES%CONTINUE%
-ItemDisplay[imra]: %GOLD%ZAKARUM%CONTINUE%
-ItemDisplay[irra]: %GOLD%INFUSED ZAKARUM%CONTINUE%
-ItemDisplay[rera]: %GOLD%HORADRIM%CONTINUE%
-ItemDisplay[rrra]: %GOLD%INFUSED HORADRIM%CONTINUE%
-ItemDisplay[upma]: %GOLD%ANGELIC%CONTINUE%
-ItemDisplay[urma]: %GOLD%INFUSED ANGELIC%CONTINUE%
-ItemDisplay[upmp]: %GOLD%CARTOGRAPHER%CONTINUE%
-ItemDisplay[fort]: %GOLD%FORTIFICATION%CONTINUE%
+ItemDisplay[jewf]: %ORANGE%Jewel Fragments%CONTINUE%
+ItemDisplay[std]: %ORANGE%Standard of Heroes%CONTINUE%
+ItemDisplay[imra]: %GOLD%Zakarum%CONTINUE%
+ItemDisplay[irra]: %GOLD%Infused Zakarum%CONTINUE%
+ItemDisplay[rera]: %GOLD%Horadrim%CONTINUE%
+ItemDisplay[rrra]: %GOLD%Infused Horadrim%CONTINUE%
+ItemDisplay[upma]: %GOLD%Angelic%CONTINUE%
+ItemDisplay[urma]: %GOLD%Infused Angelic%CONTINUE%
+ItemDisplay[upmp]: %GOLD%Cartographer%CONTINUE%
+ItemDisplay[fort]: %GOLD%Fortification%CONTINUE%
 ItemDisplay[irma]: %ORANGE%%NAME%%CONTINUE%
 
+// Restore QTY counter for the literal-renamed items above (rename drops %NAME%, so the
+// stack count is lost). Fires only on stacks of 2+.
+ItemDisplay[(wss OR iwss OR lpp OR scrb OR jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort) QTY>1]: %NAME% %TAN%QTY %QTY%{%NAME%}%CONTINUE%
+
 ItemDisplay[(jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
+
 
 // --- Items that bypass the «·» frame (different style) ---------------------------
 
@@ -2982,10 +2997,6 @@ ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
 // Ears
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
 
-// Infusion stack QTY annotation — show total count when 2+ infusions stack
-// (the Hiim filter only annotated single drops with the 'O O' wrap; here we
-// surface the running total for Kassahi).
-ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %TAN%QTY %QTY%{%NAME%}%CONTINUE%
 
 // Larzuk's Puzzle Piece — mirrors upstream `05-utility/15-pd2items[ALL]:41-42`
 // Terminates (no %CONTINUE%) so the shared `03-PD2_items[ALL]` rule below
@@ -3023,11 +3034,11 @@ ItemDisplay[crfp]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   
 //   lbox (PBOX / Puzzle Box)                                    — LIL MYSTERY frame
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr)]: %PURPLE%Big Mystery%CONTINUE%
-ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr)]: %RUNE_ALT_HIGH%{%NAME%}
+ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Big Mystery%CONTINUE%
+ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RUNE_ALT_HIGH%{%NAME%}
 
-ItemDisplay[lbox]: %PURPLE%Lil Mystery%CONTINUE%
-ItemDisplay[lbox]: %RUNE_HIGH%{%NAME%}
+ItemDisplay[lbox !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Lil Mystery%CONTINUE%
+ItemDisplay[lbox !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RUNE_HIGH%{%NAME%}
  
 
 
@@ -3733,34 +3744,34 @@ ItemDisplay[(RUNE=29 OR RUNE=30 OR RUNE=31 OR RUNE=32 OR RUNE=33) QTY=1 !(MAPID=
 // Basic Formatting
 // Make sure HR's notify
 
-ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%TIER-8%%CONTINUE%
+ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%CONTINUE%
 
 ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>21 RUNE<26]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9]: %SOUNDID-4715%%NAME%%CONTINUE%
+
 ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
-ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 
-//Larger box for old hands
-ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%
-
 // Low rune name decorations
-// Valuable Crafting rune callout TIR 3, ORT 6, RAL 8, AMN 11, SOL 12, ETH 5
-ItemDisplay[RUNE<21 FILTLVL<5 (RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %RUNE_CRAFT%%CONTINUE%
-ItemDisplay[RUNE<21 FILTLVL<5 !(RUNE=3 OR RUNE=9 OR RUNE=8 OR RUNE=11 OR RUNE=12 OR RUNE=5)]: %RUNE_LOW%%CONTINUE%
-ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
+// Valuable Crafting rune callout — set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
+ItemDisplay[RUNE<21 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE<21 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
 
 
-// Mid rune
-ItemDisplay[RUNE>20 AND RUNE<24]: %RUNE_MID%%CONTINUE%
+// Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID), IST GUL (RUNE_ALT_MID)
+ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
+ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 // High rune — Vex/Ohm/Lo (26-28)
 ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
 // High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
 ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
+
+// force show lower runes
+ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10]: %NAME%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -4042,10 +4053,10 @@ ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !(MAPID=1 OR MAPID=40 OR MAPID=75 OR M
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[RUNE>28 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Big Mystery%CONTINUE%
-ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%{%NAME%}
+ItemDisplay[RUNE>28 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RUNE_ALT_HIGH%{%NAME%}
 
 ItemDisplay[RUNE>25 RUNE<29 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %PURPLE%Lil Mystery%CONTINUE%
-ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%{%NAME%}
+ItemDisplay[RUNE>25 RUNE<29 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RUNE_HIGH%{%NAME%}
 
 //-----------------------------------------------------------------------------------
 // Kassahi: hide Arcane / Angelic / Destruction orbs at every filter level.

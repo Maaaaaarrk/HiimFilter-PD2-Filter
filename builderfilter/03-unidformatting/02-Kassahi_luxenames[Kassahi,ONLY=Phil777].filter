@@ -31,32 +31,37 @@ ItemDisplay[(ubaa OR ubab OR ubac)]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %ORANGE%%NAME%%CONTINUE%
 
 // Worldstone Shard — ORANGE  (wrapped by WSS_SHARD in 03-PD2_items)
-ItemDisplay[wss]: %ORANGE%WORLDSTONE%CONTINUE%
+ItemDisplay[wss]: %ORANGE%Worldstone%CONTINUE%
 
 // Catalyst Shard — RED  (wrapped by WSS_SHARD in 02-Kassahi_pd2items)
-ItemDisplay[iwss]: %RED%CATALYST%CONTINUE%
+ItemDisplay[iwss]: %RED%Catalyst%CONTINUE%
 
 // Larzuk's Puzzle Piece — ORANGE literal  (wrapped by GEN_RARE in 03-PD2_items)
-ItemDisplay[lpp]: %ORANGE%PUZZLE PIECE%CONTINUE%
+ItemDisplay[lpp]: %ORANGE%Puzzle Piece%CONTINUE%
 
 // Horadrim Scarab — ORANGE  (wrapped by PD2_MATS in 02-Kassahi_pd2items)
-ItemDisplay[scrb]: %ORANGE%HORADRIM SCARAB%CONTINUE%
+ItemDisplay[scrb]: %ORANGE%Horadrim Scarab%CONTINUE%
 
 // --- Group B: rename + apply PD2_MATS wrap here ---------------------------------
 
-ItemDisplay[jewf]: %ORANGE%JEWEL FRAGMENTS%CONTINUE%
-ItemDisplay[std]: %ORANGE%STANDARD OF HEROES%CONTINUE%
-ItemDisplay[imra]: %GOLD%ZAKARUM%CONTINUE%
-ItemDisplay[irra]: %GOLD%INFUSED ZAKARUM%CONTINUE%
-ItemDisplay[rera]: %GOLD%HORADRIM%CONTINUE%
-ItemDisplay[rrra]: %GOLD%INFUSED HORADRIM%CONTINUE%
-ItemDisplay[upma]: %GOLD%ANGELIC%CONTINUE%
-ItemDisplay[urma]: %GOLD%INFUSED ANGELIC%CONTINUE%
-ItemDisplay[upmp]: %GOLD%CARTOGRAPHER%CONTINUE%
-ItemDisplay[fort]: %GOLD%FORTIFICATION%CONTINUE%
+ItemDisplay[jewf]: %ORANGE%Jewel Fragments%CONTINUE%
+ItemDisplay[std]: %ORANGE%Standard of Heroes%CONTINUE%
+ItemDisplay[imra]: %GOLD%Zakarum%CONTINUE%
+ItemDisplay[irra]: %GOLD%Infused Zakarum%CONTINUE%
+ItemDisplay[rera]: %GOLD%Horadrim%CONTINUE%
+ItemDisplay[rrra]: %GOLD%Infused Horadrim%CONTINUE%
+ItemDisplay[upma]: %GOLD%Angelic%CONTINUE%
+ItemDisplay[urma]: %GOLD%Infused Angelic%CONTINUE%
+ItemDisplay[upmp]: %GOLD%Cartographer%CONTINUE%
+ItemDisplay[fort]: %GOLD%Fortification%CONTINUE%
 ItemDisplay[irma]: %ORANGE%%NAME%%CONTINUE%
 
+// Restore QTY counter for the literal-renamed items above (rename drops %NAME%, so the
+// stack count is lost). Fires only on stacks of 2+.
+ItemDisplay[(wss OR iwss OR lpp OR scrb OR jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort) QTY>1]: %NAME% %TAN%QTY %QTY%{%NAME%}%CONTINUE%
+
 ItemDisplay[(jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
+
 
 // --- Items that bypass the «·» frame (different style) ---------------------------
 

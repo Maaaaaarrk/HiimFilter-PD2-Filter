@@ -1,0 +1,37 @@
+//-----------------------------------------------------------------------------------
+// Runes
+//-----------------------------------------------------------------------------------
+// Basic Formatting
+// Make sure HR's notify
+
+ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%TIER-8%%CONTINUE%
+
+ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<26]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
+
+// Show Quantity
+ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
+
+//Larger box for old hands
+ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%
+
+// Low rune name decorations
+// Valuable Crafting rune callout — set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
+ItemDisplay[RUNE<21 FILTLVL<5 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE<21 FILTLVL<5 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
+
+
+// Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID), IST GUL (RUNE_ALT_MID)
+ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
+ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
+ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
+// High rune — Vex/Ohm/Lo (26-28)
+ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
+// High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
+ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
+
+//-----------------------------------------------------------------------------------

@@ -28,10 +28,6 @@ ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
 // Ears
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
 
-// Infusion stack QTY annotation — show total count when 2+ infusions stack
-// (the Hiim filter only annotated single drops with the 'O O' wrap; here we
-// surface the running total for Kassahi).
-ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %TAN%QTY %QTY%{%NAME%}%CONTINUE%
 
 // Larzuk's Puzzle Piece — mirrors upstream `05-utility/15-pd2items[ALL]:41-42`
 // Terminates (no %CONTINUE%) so the shared `03-PD2_items[ALL]` rule below
