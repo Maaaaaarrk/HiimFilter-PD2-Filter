@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 176%CL%HiimFilter - TalRasha - Assassin - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 177%CL%HiimFilter - TalRasha - Assassin - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -330,19 +330,19 @@ Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RU
 //-----------------------------------------------------------------------------------
 
 Alias[OHM_RUNE_VALUE]: 0.85
-Alias[LO_RUNE_VALUE]: 0.9
+Alias[LO_RUNE_VALUE]: 0.85
 Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
-Alias[JAH_RUNE_VALUE]: 1.6
+Alias[JAH_RUNE_VALUE]: 1.55
 Alias[CHAM_RUNE_VALUE]: 3
 Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 85
-Alias[LO_WSS_VALUE]: 90
+Alias[LO_WSS_VALUE]: 85
 Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
-Alias[JAH_WSS_VALUE]: 160
+Alias[JAH_WSS_VALUE]: 155
 Alias[CHAM_WSS_VALUE]: 300
 Alias[ZOD_WSS_VALUE]: 600
 
@@ -364,19 +364,19 @@ Alias[HALFHR_STACK_WSS]: (QTY*50)
 
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.85)
-Alias[LO_STACK_HR]: (QTY*0.9)
+Alias[LO_STACK_HR]: (QTY*0.85)
 Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
-Alias[JAH_STACK_HR]: (QTY*1.6)
+Alias[JAH_STACK_HR]: (QTY*1.55)
 Alias[CHAM_STACK_HR]: (QTY*3)
 Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*85)
-Alias[LO_STACK_WSS]: (QTY*90)
+Alias[LO_STACK_WSS]: (QTY*85)
 Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
-Alias[JAH_STACK_WSS]: (QTY*160)
+Alias[JAH_STACK_WSS]: (QTY*155)
 Alias[CHAM_STACK_WSS]: (QTY*300)
 Alias[ZOD_STACK_WSS]: (QTY*600)
 
@@ -387,32 +387,32 @@ Alias[ZOD_STACK_WSS]: (QTY*600)
 Alias[WSS_ITEM_HR_VALUE]: 0.01
 Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.2
 Alias[LARZUK_PUZZLEBOX_VALUE]: 0.6
-Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.08
-Alias[DEMONIC_CUBE_VALUE]: 0.75
+Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.07
+Alias[DEMONIC_CUBE_VALUE]: 0.8
 Alias[CATALYST_SHARD_VALUE]: 0.1
 
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
 Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 120
 Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 60
-Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 8
-Alias[DEMONIC_CUBE_WSS_VALUE]: 75
+Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 7
+Alias[DEMONIC_CUBE_WSS_VALUE]: 80
 Alias[CATALYST_SHARD_WSS_VALUE]: 10
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.2)
 Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.6)
-Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.08)
-Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.75)
+Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.07)
+Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.8)
 Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.1)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*120)
 Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*60)
-Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*8)
-Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*75)
+Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*7)
+Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*80)
 Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
 
 //-----------------------------------------------------------------------------------
@@ -426,7 +426,7 @@ Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.04
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.5
-Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.2
+Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.25
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 
 // Lucion mats
