@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 172%CL%Kassahi - Meme - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 173%CL%Kassahi - Meme - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2889,6 +2889,10 @@ ItemDisplay[gpgs]: %NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%10block%CL%%WHITE%r
 ItemDisplay[gpys]: %NAME%{%WHITE%amulet, %ORANGE%Ko: %BLUE%10-20vit, 20-30mf%CL%%WHITE%ring, %ORANGE%Lum: %BLUE%5-10vit, 10-20mf%CL%%WHITE%belt, %ORANGE%El: %BLUE%25-50edef, 20-30mf%CL%%WHITE%gloves, %ORANGE%Hel: %BLUE%25-50edef, 15-25mf%CL%%WHITE%boots, %ORANGE%Io: %BLUE%25-50edef, 15-25mf%CL%%WHITE%helm, %ORANGE%Tir: %BLUE%25-50edef, 20-30mf%CL%%WHITE%chest, %ORANGE%Eld: %BLUE%25-50edef, 20-30mf%CL%%WHITE%shield, %ORANGE%Dol: %BLUE%10-20block, 20-30mf%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%1all, 20-30mf%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %YELLOW%bount O%NL%}
 ItemDisplay[gpws]: %NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%3-5ares, hfd%CL%%WHITE%belt, %ORANGE%Io: %BLUE%5-10ias, hfd%CL%%WHITE%gloves, %ORANGE%Shael: %BLUE%5-10ias, 10-20ar%CL%%WHITE%boots, %ORANGE%Ko: %BLUE%10ms, hfd%CL%%WHITE%helm, %ORANGE%Eld: %BLUE%5-10ias, hfd%CL%%WHITE%chest, %ORANGE%El: %BLUE%5-10ares, 10-20block%CL%%WHITE%shield, %ORANGE%Ort: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%20-40edmg, 20ias%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %WHITE%brill O%NL%}
 ItemDisplay[skzs]: %NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
+
+// Restore QTY annotation for stacked flawless/perfect gems before the terminating
+// rule below (otherwise the universal 06-Gems[ALL] QTY rule never fires).
+ItemDisplay[(GEM=4 OR GEM=5) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[(GEM=4 OR GEM=5)]: %NAME%
 
 //-----------------------------------------------------------------------------------
