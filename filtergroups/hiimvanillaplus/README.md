@@ -1,5 +1,5 @@
 # hiimvanillaplus
-## Last updated May 15th Season 13 - build 171
+## Last updated May 15th Season 13 - build 175
 
 ## Filters
 * Vanilla Plus: All-in-one filter without item re-naming (e.g. identified rares and unidentified uniques show their original names). [Hiim_Vanilla_Plus.filter]
