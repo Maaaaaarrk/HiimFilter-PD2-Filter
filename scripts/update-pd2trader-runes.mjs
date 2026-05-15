@@ -1,10 +1,11 @@
 // Updates rune and uber-material economy aliases in
 // builderfilter/02-alias/04-alias-economy-values[ALL].filter using median prices from the
 // PD2 Trader API. Ported with permission from Roofoo's filter
-// (https://github.com/RoofooEvazan/Roofoo-s-PD2-Loot-Filter), trimmed to a single
-// latest-prices window. Filename kept for CI compatibility — also updates DClone /
-// Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS, Puzzlebox/Piece,
-// Demonic Cube, Catalyst Shard).
+// (https://github.com/RoofooEvazan/Roofoo-s-PD2-Loot-Filter). Primary window is 24h, but
+// when a scraped value would lower the current alias the longer 3-day window is used
+// instead to smooth short-term dips. Filename kept for CI compatibility — also updates
+// DClone / Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS,
+// Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
 
 import { readFile, writeFile } from 'node:fs/promises';
 
@@ -14,6 +15,7 @@ const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
 const isLadder = process.env.PD2TRADER_LADDER !== 'false';
 const isHardcore = process.env.PD2TRADER_HARDCORE === 'true';
 const windowHours = Number(process.env.PD2TRADER_WINDOW_HOURS) || 24;
+const decreaseWindowHours = Number(process.env.PD2TRADER_DECREASE_WINDOW_HOURS) || 72;
 const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
 
 const runes = [
@@ -97,12 +99,12 @@ function formatHr(value) {
   return value.toFixed(2).replace(/\.?0+$/, '');
 }
 
-async function fetchPrices() {
+async function fetchPrices(hours) {
   const body = {
     baseCodes: [...runes.map((r) => r.code), ...ubermats.map((m) => m.code)],
     isLadder,
     isHardcore,
-    hours: windowHours,
+    hours,
   };
 
   const response = await fetch(API_URL, {
@@ -124,6 +126,21 @@ async function fetchPrices() {
   return new Map(payload.data.map((p) => [p.baseCode, p]));
 }
 
+function getCurrentAliasNumber(text, aliasName) {
+  const re = new RegExp(`^Alias\\[${aliasName}\\]:\\s*(.+)$`, 'm');
+  const match = text.match(re);
+  if (!match) return undefined;
+  const v = Number(match[1].trim());
+  return Number.isFinite(v) ? v : undefined;
+}
+
+function computeHrValue(price, floor, round) {
+  let hrValue = round(valueFromPrice(price));
+  if (!Number.isFinite(hrValue) || hrValue <= 0) return undefined;
+  if (floor !== undefined && hrValue < floor) hrValue = floor;
+  return hrValue;
+}
+
 function replaceAlias(text, aliasName, newValue) {
   const re = new RegExp(`^(Alias\\[${aliasName}\\]:\\s*).+$`, 'm');
   if (!re.test(text)) {
@@ -143,30 +160,37 @@ function timestampLine() {
 }
 
 async function main() {
-  const pricesByCode = await fetchPrices();
+  const [pricesPrimary, pricesDecrease] = await Promise.all([
+    fetchPrices(windowHours),
+    fetchPrices(decreaseWindowHours),
+  ]);
   const original = await readFile(ALIAS_FILE, 'utf8');
   let text = original;
   const updates = [];
 
   for (const rune of runes) {
-    const price = pricesByCode.get(rune.code);
-    let hrValue = roundToFiveHundredths(valueFromPrice(price));
+    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, roundToFiveHundredths);
 
-    if (!Number.isFinite(hrValue) || hrValue <= 0) {
+    if (hrValue === undefined) {
       console.log(`${rune.name} (${rune.code}): no usable price data, skipping`);
       continue;
     }
 
-    if (rune.floor !== undefined && hrValue < rune.floor) {
-      console.log(`${rune.name} (${rune.code}): scraped ${hrValue}HR below floor ${rune.floor}HR, clamping up`);
-      hrValue = rune.floor;
+    const currentAlias = `${rune.alias}_RUNE_VALUE`;
+    const current = getCurrentAliasNumber(text, currentAlias);
+    if (Number.isFinite(current) && hrValue < current) {
+      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, roundToFiveHundredths);
+      if (altValue !== undefined) {
+        console.log(`${rune.name} (${rune.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
+        hrValue = altValue;
+      }
     }
 
     const wssValue = Math.round(hrValue * 100);
     const hrStr = formatHr(hrValue);
     const wssStr = String(wssValue);
 
-    text = replaceAlias(text, `${rune.alias}_RUNE_VALUE`, hrStr);
+    text = replaceAlias(text, currentAlias, hrStr);
     text = replaceAlias(text, `${rune.alias}_WSS_VALUE`, wssStr);
     text = replaceAlias(text, `${rune.alias}_STACK_HR`, `(QTY*${hrStr})`);
     text = replaceAlias(text, `${rune.alias}_STACK_WSS`, `(QTY*${wssStr})`);
@@ -174,25 +198,29 @@ async function main() {
   }
 
   for (const mat of ubermats) {
-    const price = pricesByCode.get(mat.code);
-    let hrValue = roundMatValue(valueFromPrice(price));
+    let hrValue = computeHrValue(pricesPrimary.get(mat.code), mat.floor, roundMatValue);
 
-    if (!Number.isFinite(hrValue) || hrValue <= 0) {
+    if (hrValue === undefined) {
       console.log(`${mat.name} (${mat.code}): no usable price data, skipping`);
       continue;
     }
 
-    if (mat.floor !== undefined && hrValue < mat.floor) {
-      console.log(`${mat.name} (${mat.code}): scraped ${hrValue}HR below floor ${mat.floor}HR, clamping up`);
-      hrValue = mat.floor;
+    const valueSuffix = mat.valueSuffix ?? '_VALUE';
+    const valueAlias = `${mat.alias}${valueSuffix}`;
+    const current = getCurrentAliasNumber(text, valueAlias);
+    if (Number.isFinite(current) && hrValue < current) {
+      const altValue = computeHrValue(pricesDecrease.get(mat.code), mat.floor, roundMatValue);
+      if (altValue !== undefined) {
+        console.log(`${mat.name} (${mat.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
+        hrValue = altValue;
+      }
     }
 
     const wssValue = Math.round(hrValue * 100);
     const hrStr = formatHr(hrValue);
     const wssStr = String(wssValue);
-    const valueSuffix = mat.valueSuffix ?? '_VALUE';
 
-    text = replaceAlias(text, `${mat.alias}${valueSuffix}`, hrStr);
+    text = replaceAlias(text, valueAlias, hrStr);
     if (mat.set === 'full') {
       text = replaceAlias(text, `${mat.alias}_WSS_VALUE`, wssStr);
       text = replaceAlias(text, `${mat.alias}_STACK_HR`, `(QTY*${hrStr})`);
