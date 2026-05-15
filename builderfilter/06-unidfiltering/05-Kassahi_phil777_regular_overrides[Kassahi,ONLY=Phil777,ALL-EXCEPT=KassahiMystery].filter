@@ -1,0 +1,24 @@
+//-----------------------------------------------------------------------------------
+// Phil777-Regular only overrides
+//
+// LEM/PUL/UM/MAL/IST/GUL — per-rune @-frames (replace RUNE_MID / RUNE_ALT_MID)
+// PUZZLE BOX (lbox)       — use RUNE_HIGH frame to match VEX/OHM/LO
+//
+// Excluded from Phil777-Mystery via ALL-EXCEPT=KassahiMystery (Phil777-Mystery
+// keeps its own mystery-renamed display for these items).
+//-----------------------------------------------------------------------------------
+
+// LEM (20) / PUL (21) — single @ each side (preserve SOUNDID-4715 at FILTLVL<8)
+ItemDisplay[RUNE=20]: %SOUNDID-4715%%PURPLE%@ %BLACK%O%GREEN%LEM%BLACK%O %PURPLE%@{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=21]: %SOUNDID-4715%%PURPLE%@ %BLACK%O%GREEN%PUL%BLACK%O %PURPLE%@{%NAME%}%CONTINUE%
+
+// UM (22) / MAL (23) — 3-char @-frame
+ItemDisplay[RUNE=22]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@ %BLACK%O%GREEN%UM%BLACK%O %BLACK%@%PURPLE%@%BLACK%@{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=23]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@ %BLACK%O%GREEN%MAL%BLACK%O %BLACK%@%PURPLE%@%BLACK%@{%NAME%}%CONTINUE%
+
+// IST (24) / GUL (25) — 5-char @-frame
+ItemDisplay[RUNE=24]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %BLACK%O%GREEN%IST%BLACK%O %BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=25]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %BLACK%O%GREEN%GUL%BLACK%O %BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@{%NAME%}%CONTINUE%
+
+// PUZZLE BOX (lbox) — use RUNE_HIGH frame (matches VEX/OHM/LO in Phil777-Regular)
+ItemDisplay[lbox]: %SOUNDID-4719%%RUNE_HIGH%{%NAME%}

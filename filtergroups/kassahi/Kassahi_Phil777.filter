@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 165%CL%Kassahi - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 168%CL%Kassahi - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -123,14 +123,14 @@ Alias[GEN_ITEM]: %BLACK%@%PURPLE%@%GREEN%@%BLACK%@ %NAME% %BLACK%@%GREEN%@%PURPL
 // General item Alt
 Alias[GEN_ALT]: %BLACK%@%PURPLE%@%RED%@%BLACK%@ %NAME% %BLACK%@%RED%@%PURPLE%@%BLACK%@
 
-// Token parts
-Alias[TOKEN_PARTS]: %ORANGE%«·»  %NAME%  %ORANGE%«·»
+// Token parts — unified «·» frame (matches PD2_MATS); name colour set upstream
+Alias[TOKEN_PARTS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
-// Uber Keys
-Alias[UBER_KEYS]: %RED%«·»%ORANGE%«·»%RED%«·»  %NAME%  %RED%«·»%ORANGE%«·»%RED%«·»
+// Uber Keys — unified «·» frame; name colour set upstream
+Alias[UBER_KEYS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
-// Boss Mat Item
-Alias[BOSS_MAT]: %YELLOW%«·»%ORANGE%«·»%YELLOW%«·» %NAME% %YELLOW%«·»%ORANGE%«·»%YELLOW%«·»
+// Boss Mat Item — unified «·» frame; name colour set upstream
+Alias[BOSS_MAT]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // Boss Mat Item Alt
 Alias[BOSS_ALT]: %YELLOW%O O O O %NAME% %YELLOW%O O O O
@@ -138,8 +138,8 @@ Alias[BOSS_ALT]: %YELLOW%O O O O %NAME% %YELLOW%O O O O
 // Boss Entry Item
 Alias[BOSS_ENTRY]: %RED%«·» «·» %NAME% %RED%«·» «·»
 
-// Rare General Item
-Alias[GEN_RARE]: %ORANGE%«·»%RED%«·»%ORANGE%«·»  %NAME%  %ORANGE%«·»%RED%«·»%ORANGE%«·»
+// Rare General Item — unified «·» frame; name colour set upstream
+Alias[GEN_RARE]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // Rarer General Item
 Alias[GEN_TOP_RARE]: %DARK_GREEN%«·»%GREEN%«·»%DARK_GREEN%«·»  %NAME%  %DARK_GREEN%«·»%GREEN%«·»%DARK_GREEN%«·»
@@ -301,7 +301,7 @@ ItemDisplay[RUNE=33]: Zod%CONTINUE%
 ItemDisplay[RUNE>19 RUNE<26]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[RUNE>25]: %PURPLE%%NAME%%CONTINUE%
 
-Alias[WSS_SHARD]: %RED%«%BLACK%·%RED%» %RED% %NAME% %RED% «%BLACK%·%RED%»
+Alias[WSS_SHARD]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 
 // === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
@@ -313,18 +313,21 @@ Alias[GG_LBOX]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%GREEN%@%PURPLE
 // lsvl llmr
 Alias[GG_GG]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %PURPLE%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // rkey
-Alias[GG_RKEY]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[GG_RKEY]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // rtp
-Alias[GG_RTP]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[GG_RTP]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // rid
-Alias[GG_RID]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[GG_RID]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // PD2 Shards
 
 Alias[MAIN_DOT]: O
-Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
+// PD2 mats frame — used by the Phil777 luxenames rename block. Wraps the
+// upstream %NAME% (already coloured by the rename rules in luxenames) in
+// the «·» bracket pair with a BLACK O on each side of the name.
+Alias[PD2_MATS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // Rejuves
-ItemDisplay[rvl]: %GREEN%+ FULL +%CONTINUE%
+ItemDisplay[rvl]: %GREEN%+ %PURPLE%FULL %GREEN%+%CONTINUE%
 
 
 // === Merged from 03-alias-kassahi-unid-luxe ===
@@ -365,7 +368,7 @@ Alias[UNID_SET_T1]: %LIGHT_GRAY%O %GREEN%%NAME%%LIGHT_GRAY% O
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 14 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 15 2026
 
 //-----------------------------------------------------------------------------------
 // HR Rune estimated values
@@ -463,8 +466,8 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
 
 // DClone mats
 Alias[BLACK_SOULSTONE_VALUE]: 0.25
-Alias[PRIME_EVIL_SOUL_VALUE]: 0.5
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.03
+Alias[PRIME_EVIL_SOUL_VALUE]: 0.4
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.05
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.35
@@ -472,7 +475,7 @@ Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.2
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.1
+Alias[FLESH_OF_MALIC_VALUE]: 0.15
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.25
 //-----------------------------------------------------------------------------------
@@ -1670,52 +1673,80 @@ ItemDisplay[MAG ID]: %ORANGE%%NAME%%CONTINUE%
 // Apply to both ID and !ID NMAG (no ID restriction).
 ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
 ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
+//-----------------------------------------------------------------------------------
+// Phil777 (luxe) renames + frame application
+//
+// Two groups:
+//   A. Items wrapped in folder 05 (PD2_items / Kassahi_pd2items / Ubermats) via
+//      %TOKEN_PARTS% / %UBER_KEYS% / %BOSS_MAT% / %WSS_SHARD% / %GEN_RARE% /
+//      %PD2_MATS% — all unified to the same «·» frame in 02-alias/03-alias-kassahi-luxe.
+//      For these we only set the name colour here; the folder-05 rule provides the wrap.
+//   B. Items NOT wrapped in folder 05 — luxenames sets the name and applies %PD2_MATS%
+//      itself.
+//
+// Items with their own non-«·» style (imrn, scou, crf*, MAG charms) bypass entirely.
+//
+// Note: the shared HORADRIC_SCARAB alias prepends %GOLD%<space> before %NAME%, but
+// it only colours the leading space — the %ORANGE% from this file's rename applies
+// to the actual name text, so scrb still renders with ORANGE inside the PD2_MATS frame.
+//-----------------------------------------------------------------------------------
 
+// --- Group A: rename-only (wrap happens in folder 05) ---------------------------
 
-//------------------------------LUXE Names------------------------------
+// Essences — TEAL  (wrapped by TOKEN_PARTS in 04-Ubermats)
+ItemDisplay[(tes OR ceh OR bet OR fed)]: %TEAL%%NAME%%CONTINUE%
 
+// Mini uber keys + organs + ubtm — ORANGE  (wrapped by UBER_KEYS in 04-Ubermats)
+ItemDisplay[(pk1 OR pk2 OR pk3 OR mbr OR dhn OR bey)]: %ORANGE%%NAME%%CONTINUE%
 
+// Uber Ancients (sigils) — ORANGE  (wrapped by PD2_MATS in 04-Ubermats)
+ItemDisplay[(ubaa OR ubab OR ubac)]: %ORANGE%%NAME%%CONTINUE%
 
-// ESSENCES — <<.>> wrapper, default name color
-ItemDisplay[(tes OR ceh OR bet OR fed)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// MINI UBER KEYS — <<.>> wrapper, default name color
-ItemDisplay[(pk1 OR pk2 OR pk3)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// SIGILS (Mephisto's Brain / Diablo's Horn / Baal's Eye) — <<.>> wrapper
-ItemDisplay[(mbr OR dhn OR bey)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// STANDARD OF HEROES — <<.>> wrapper
-ItemDisplay[std]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// UBER ANCIENTS
-ItemDisplay[(ubaa OR ubab OR ubac)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
-// UBER MATERIALS — DClone, Rathma, Lucion — <<.>> wrapper
-ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// WORLDSTONE SHARD — <<.>> wrapper, RED name
-ItemDisplay[wss]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %RED%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// CATALYST SHARD — <<.>> wrapper, RED name
-ItemDisplay[iwss]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %RED%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// PUZZLE PIECE — <<.>> wrapper, ORANGE name
-ItemDisplay[lpp]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// DEMONIC CUBE (imrn) — unchanged from prior style
+// Uber materials — ORANGE  (wrapped by BOSS_MAT in 04-Ubermats)
+ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %ORANGE%%NAME%%CONTINUE%
+
+// Worldstone Shard — ORANGE  (wrapped by WSS_SHARD in 03-PD2_items)
+ItemDisplay[wss]: %ORANGE%WORLDSTONE%CONTINUE%
+
+// Catalyst Shard — RED  (wrapped by WSS_SHARD in 02-Kassahi_pd2items)
+ItemDisplay[iwss]: %RED%CATALYST%CONTINUE%
+
+// Larzuk's Puzzle Piece — ORANGE literal  (wrapped by GEN_RARE in 03-PD2_items)
+ItemDisplay[lpp]: %ORANGE%PUZZLE PIECE%CONTINUE%
+
+// Horadrim Scarab — ORANGE  (wrapped by PD2_MATS in 02-Kassahi_pd2items)
+ItemDisplay[scrb]: %ORANGE%HORADRIM SCARAB%CONTINUE%
+
+// --- Group B: rename + apply PD2_MATS wrap here ---------------------------------
+
+ItemDisplay[jewf]: %ORANGE%JEWEL FRAGMENTS%CONTINUE%
+ItemDisplay[std]: %ORANGE%STANDARD OF HEROES%CONTINUE%
+ItemDisplay[imra]: %GOLD%ZAKARUM%CONTINUE%
+ItemDisplay[irra]: %GOLD%INFUSED ZAKARUM%CONTINUE%
+ItemDisplay[rera]: %GOLD%HORADRIM%CONTINUE%
+ItemDisplay[rrra]: %GOLD%INFUSED HORADRIM%CONTINUE%
+ItemDisplay[upma]: %GOLD%ANGELIC%CONTINUE%
+ItemDisplay[urma]: %GOLD%INFUSED ANGELIC%CONTINUE%
+ItemDisplay[upmp]: %GOLD%CARTOGRAPHER%CONTINUE%
+ItemDisplay[fort]: %GOLD%FORTIFICATION%CONTINUE%
+ItemDisplay[irma]: %ORANGE%%NAME%%CONTINUE%
+
+ItemDisplay[(jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+// --- Items that bypass the «·» frame (different style) ---------------------------
+
+// DEMONIC CUBE (imrn) — own style
 ItemDisplay[imrn]: %BLACK%O %GOLD%%NAME% %BLACK%O{%NAME%}%CONTINUE%
-// JEWEL FRAGMENTS — <<.>> wrapper, ORANGE name
-ItemDisplay[jewf]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// ZAKARUM + INFUSED ZAKARUM — <<.>> wrapper, ORANGE name
-ItemDisplay[(imra OR irra)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// HORADRIM + INFUSED HORADRIM — <<.>> wrapper, ORANGE name
-ItemDisplay[(rera OR rrra)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// ANGELIC + INFUSED ANGELIC — <<.>> wrapper, ORANGE name
-ItemDisplay[(upma OR urma)]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// CARTOGRAPHER — <<.>> wrapper, ORANGE name
-ItemDisplay[upmp]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// FORTIFICATION — <<.>> wrapper, ORANGE name
-ItemDisplay[fort]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// INFUSED ARCANE — <<.>> wrapper, ORANGE name (paired-infusion style)
-ItemDisplay[irma]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
-// scou (Destruction) — kept previous black-O style (not in feedback scope)
+
+// scou (Destruction) — plain black-O wrap
 ItemDisplay[scou]: %BLACK%O %NAME% %BLACK%O%WHITE%{%NAME%}%CONTINUE%
-// HORADRIM SCARAB — <<.>> wrapper, ORANGE name
-ItemDisplay[scrb]: %PURPLE%<<%BLACK%•%GREEN%>> %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%<<%BLACK%•%PURPLE%>>{%NAME%}%CONTINUE%
+
+// Craft infusions — strip the upstream "%GOLD%Infusion (colored)@" label and
+// reset to plain GOLD Infusion before the BLACK O wrap.
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %GOLD%Infusion%CONTINUE%
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
 
+// MAG charm size labels
 ItemDisplay[MAG !ID cm1]: %BLUE%Small%CONTINUE%
 ItemDisplay[MAG !ID cm2]: %BLUE%Large%CONTINUE%
 ItemDisplay[MAG !ID cm3]: %BLUE%Grand%CONTINUE%
@@ -2884,13 +2915,13 @@ ItemDisplay[GEM=5 AND GEMTYPE=6 OR gpy OR gpys]: %White%P %Yellow%Topaz%MAP-20%%
 ItemDisplay[GEM=5 AND GEMTYPE=7 OR skz OR skzs]: %White%P %Gray%Skull%MAP-20%%CONTINUE%
 ItemDisplay[(GEM=4 AND GEMTYPE=7) OR skl OR skls]: %White%F %Gray%Skull%MAP-20%%CONTINUE%
 // QTY rule removed — handled by Hiim shared 06-Gems to avoid double display
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %PURPLE%+ %NAME% %PURPLE%+%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %WHITE%+ %NAME% %WHITE%+%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %GREEN%+ %NAME% %GREEN%+%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %RED%+ %NAME% %RED%+%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %BLUE%+ %NAME% %BLUE%+%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %YELLOW%+ %NAME% %YELLOW%+%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %LIGHT_GRAY%+ %NAME% %LIGHT_GRAY%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %PURPLE%+ %BLACK%O %NAME% %BLACK%O %PURPLE%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %WHITE%+ %BLACK%O %NAME% %BLACK%O %WHITE%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %GREEN%+ %BLACK%O %NAME% %BLACK%O %GREEN%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %RED%+ %BLACK%O %NAME% %BLACK%O %RED%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %BLUE%+ %BLACK%O %NAME% %BLACK%O %BLUE%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %YELLOW%+ %BLACK%O %NAME% %BLACK%O %YELLOW%+%CONTINUE%
+ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %LIGHT_GRAY%+ %BLACK%O %NAME% %BLACK%O %LIGHT_GRAY%+%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=1]: %PURPLE%+ %BLACK%O %PURPLE%%NAME% %BLACK%O %PURPLE%+%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=2]: %WHITE%+ %BLACK%O %WHITE%%NAME% %BLACK%O %WHITE%+%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=3]: %GREEN%+ %BLACK%O %GREEN%%NAME% %BLACK%O %GREEN%+%CONTINUE%
@@ -3683,9 +3714,10 @@ ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
 // Mid rune
 ItemDisplay[RUNE>20 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
-// High rune
-ItemDisplay[RUNE>25 RUNE<30]: %RUNE_HIGH%%CONTINUE%
-ItemDisplay[RUNE>29]: %RUNE_ALT_HIGH%%CONTINUE%
+// High rune — Vex/Ohm/Lo (26-28)
+ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
+// High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
+ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -3980,6 +4012,62 @@ ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %PX-0D%%DOT-21%%MAP-0A
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[(irma OR upma OR urma OR scou)]:
+//-----------------------------------------------------------------------------------
+// Phil777 (luxe) per-rune visual overrides — lower runes 1-19
+//
+// Fires AFTER 05-utility/09-Runes so it overrides the RUNE_LOW / RUNE_CRAFT
+// alias wrap with per-rune frames (CORAL «·» style).
+//
+// Group A (EL/ELD/ITH/THUL/SOL/SHAEL/DOL): plain "« »" frame
+// Group B (TIR/NEF/ETH/TAL/RAL/ORT/AMN/HEL/IO/LUM/KO/FAL): framed "«·»" frame
+//-----------------------------------------------------------------------------------
+
+// Group A — plain «...» frame
+ItemDisplay[RUNE=1]:  %CORAL%« %ORANGE%EL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=2]:  %CORAL%« %ORANGE%ELD %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=6]:  %CORAL%« %ORANGE%ITH %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=10]: %CORAL%« %ORANGE%THUL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=12]: %CORAL%« %ORANGE%SOL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=13]: %CORAL%« %ORANGE%SHAEL %CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=14]: %CORAL%« %ORANGE%DOL %CORAL%»{%NAME%}%CONTINUE%
+
+// Group B — framed «·» «·» frame
+ItemDisplay[RUNE=3]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%TIR %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=4]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%NEF %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=5]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%ETH %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=7]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%TAL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=8]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%RAL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=9]:  %CORAL%«%BLACK%·%CORAL%» %ORANGE%ORT %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=11]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%AMN %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=15]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%HEL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=16]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%IO %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=17]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%LUM %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=18]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%KO %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=19]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%FAL %CORAL%«%BLACK%·%CORAL%»{%NAME%}%CONTINUE%
+//-----------------------------------------------------------------------------------
+// Phil777-Regular only overrides
+//
+// LEM/PUL/UM/MAL/IST/GUL — per-rune @-frames (replace RUNE_MID / RUNE_ALT_MID)
+// PUZZLE BOX (lbox)       — use RUNE_HIGH frame to match VEX/OHM/LO
+//
+// Excluded from Phil777-Mystery via ALL-EXCEPT=KassahiMystery (Phil777-Mystery
+// keeps its own mystery-renamed display for these items).
+//-----------------------------------------------------------------------------------
+
+// LEM (20) / PUL (21) — single @ each side (preserve SOUNDID-4715 at FILTLVL<8)
+ItemDisplay[RUNE=20]: %SOUNDID-4715%%PURPLE%@ %BLACK%O%GREEN%LEM%BLACK%O %PURPLE%@{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=21]: %SOUNDID-4715%%PURPLE%@ %BLACK%O%GREEN%PUL%BLACK%O %PURPLE%@{%NAME%}%CONTINUE%
+
+// UM (22) / MAL (23) — 3-char @-frame
+ItemDisplay[RUNE=22]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@ %BLACK%O%GREEN%UM%BLACK%O %BLACK%@%PURPLE%@%BLACK%@{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=23]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@ %BLACK%O%GREEN%MAL%BLACK%O %BLACK%@%PURPLE%@%BLACK%@{%NAME%}%CONTINUE%
+
+// IST (24) / GUL (25) — 5-char @-frame
+ItemDisplay[RUNE=24]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %BLACK%O%GREEN%IST%BLACK%O %BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@{%NAME%}%CONTINUE%
+ItemDisplay[RUNE=25]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %BLACK%O%GREEN%GUL%BLACK%O %BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@{%NAME%}%CONTINUE%
+
+// PUZZLE BOX (lbox) — use RUNE_HIGH frame (matches VEX/OHM/LO in Phil777-Regular)
+ItemDisplay[lbox]: %SOUNDID-4719%%RUNE_HIGH%{%NAME%}
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
 //-----------------------------------------------------------------------------------

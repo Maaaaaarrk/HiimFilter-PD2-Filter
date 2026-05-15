@@ -17,14 +17,14 @@ Alias[GEN_ITEM]: %BLACK%@%PURPLE%@%GREEN%@%BLACK%@ %NAME% %BLACK%@%GREEN%@%PURPL
 // General item Alt
 Alias[GEN_ALT]: %BLACK%@%PURPLE%@%RED%@%BLACK%@ %NAME% %BLACK%@%RED%@%PURPLE%@%BLACK%@
 
-// Token parts
-Alias[TOKEN_PARTS]: %ORANGE%«·»  %NAME%  %ORANGE%«·»
+// Token parts — unified «·» frame (matches PD2_MATS); name colour set upstream
+Alias[TOKEN_PARTS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
-// Uber Keys
-Alias[UBER_KEYS]: %RED%«·»%ORANGE%«·»%RED%«·»  %NAME%  %RED%«·»%ORANGE%«·»%RED%«·»
+// Uber Keys — unified «·» frame; name colour set upstream
+Alias[UBER_KEYS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
-// Boss Mat Item
-Alias[BOSS_MAT]: %YELLOW%«·»%ORANGE%«·»%YELLOW%«·» %NAME% %YELLOW%«·»%ORANGE%«·»%YELLOW%«·»
+// Boss Mat Item — unified «·» frame; name colour set upstream
+Alias[BOSS_MAT]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // Boss Mat Item Alt
 Alias[BOSS_ALT]: %YELLOW%O O O O %NAME% %YELLOW%O O O O
@@ -32,8 +32,8 @@ Alias[BOSS_ALT]: %YELLOW%O O O O %NAME% %YELLOW%O O O O
 // Boss Entry Item
 Alias[BOSS_ENTRY]: %RED%«·» «·» %NAME% %RED%«·» «·»
 
-// Rare General Item
-Alias[GEN_RARE]: %ORANGE%«·»%RED%«·»%ORANGE%«·»  %NAME%  %ORANGE%«·»%RED%«·»%ORANGE%«·»
+// Rare General Item — unified «·» frame; name colour set upstream
+Alias[GEN_RARE]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // Rarer General Item
 Alias[GEN_TOP_RARE]: %DARK_GREEN%«·»%GREEN%«·»%DARK_GREEN%«·»  %NAME%  %DARK_GREEN%«·»%GREEN%«·»%DARK_GREEN%«·»
@@ -195,7 +195,7 @@ ItemDisplay[RUNE=33]: Zod%CONTINUE%
 ItemDisplay[RUNE>19 RUNE<26]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[RUNE>25]: %PURPLE%%NAME%%CONTINUE%
 
-Alias[WSS_SHARD]: %RED%«%BLACK%·%RED%» %RED% %NAME% %RED% «%BLACK%·%RED%»
+Alias[WSS_SHARD]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 
 // === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
@@ -207,18 +207,21 @@ Alias[GG_LBOX]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%GREEN%@%PURPLE
 // lsvl llmr
 Alias[GG_GG]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %PURPLE%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // rkey
-Alias[GG_RKEY]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[GG_RKEY]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // rtp
-Alias[GG_RTP]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[GG_RTP]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // rid
-Alias[GG_RID]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
+Alias[GG_RID]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 // PD2 Shards
 
 Alias[MAIN_DOT]: O
-Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
+// PD2 mats frame — used by the Phil777 luxenames rename block. Wraps the
+// upstream %NAME% (already coloured by the rename rules in luxenames) in
+// the «·» bracket pair with a BLACK O on each side of the name.
+Alias[PD2_MATS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // Rejuves
-ItemDisplay[rvl]: %GREEN%+ FULL +%CONTINUE%
+ItemDisplay[rvl]: %GREEN%+ %PURPLE%FULL %GREEN%+%CONTINUE%
 
 
 // === Merged from 03-alias-kassahi-unid-luxe ===

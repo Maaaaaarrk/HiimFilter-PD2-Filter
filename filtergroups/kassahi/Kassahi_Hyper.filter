@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 14th%CL%Season 13 - build 165%CL%Kassahi - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 168%CL%Kassahi - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -299,11 +299,11 @@ Alias[GG_LBOX]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%GREEN%@@%BLACK%@ %PURP
 // lsvl llmr
 Alias[GG_GG]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
 // rkey
-Alias[GG_RKEY]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
+Alias[GG_RKEY]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
 // rtp
-Alias[GG_RTP]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
+Alias[GG_RTP]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
 // rid
-Alias[GG_RID]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PURPLE%OO%BLACK%O %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO %BLACK%O%PURPLE%OO
+Alias[GG_RID]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%PURPLE%OO%BLACK%O %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO %BLACK%O%PURPLE%OO
 // PD2 Shards
 
 Alias[MAIN_DOT]: •
@@ -351,7 +351,7 @@ Alias[UNID_SET_T1]: %LIGHT_GRAY%x %GREEN%%NAME%%LIGHT_GRAY% x
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 14 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 15 2026
 
 //-----------------------------------------------------------------------------------
 // HR Rune estimated values
@@ -449,8 +449,8 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
 
 // DClone mats
 Alias[BLACK_SOULSTONE_VALUE]: 0.25
-Alias[PRIME_EVIL_SOUL_VALUE]: 0.5
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.03
+Alias[PRIME_EVIL_SOUL_VALUE]: 0.4
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.05
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.35
@@ -458,7 +458,7 @@ Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.2
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.1
+Alias[FLESH_OF_MALIC_VALUE]: 0.15
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.25
 //-----------------------------------------------------------------------------------
@@ -3609,9 +3609,10 @@ ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
 // Mid rune
 ItemDisplay[RUNE>20 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
-// High rune
-ItemDisplay[RUNE>25 RUNE<30]: %RUNE_HIGH%%CONTINUE%
-ItemDisplay[RUNE>29]: %RUNE_ALT_HIGH%%CONTINUE%
+// High rune — Vex/Ohm/Lo (26-28)
+ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
+// High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
+ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
