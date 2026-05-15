@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 174%CL%Kassahi - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 175%CL%Kassahi - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -147,11 +147,13 @@ Alias[GEN_TOP_RARE]: %DARK_GREEN%«·»%GREEN%«·»%DARK_GREEN%«·»  %NAME%  
 // GG General Item Drop
 Alias[GEN_GG_ITEM]: %PURPLE%«·»%RED%«·»%ORANGE%«·»%YELLOW%«·»  %NAME%  %YELLOW%«·»%ORANGE%«·»%RED%«·»%PURPLE%«·»
 
-// Rare GG Item Drop
-Alias[RARE_GG_ITEM]: %PURPLE%«·»%RED%«·»%ORANGE%«·»%YELLOW%«·» %BLACK%O %NAME% %BLACK%O %YELLOW%«·»%ORANGE%«·»%RED%«·»%PURPLE%«·»
+// Rare GG Item Drop — shares RUNE_ALT_HIGH body so lsvl/llmr render in the
+// SUR-ZOD frame in Phil777-Regular.
+Alias[RARE_GG_ITEM]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 
-// Unlimited Use items
-Alias[RARE_GG_ALT]: %RED%OoOoOoO %NAME% %RED%OoOoOoO
+// Unlimited Use items — shares RUNE_ALT_HIGH body so rtp/rid/rkey render in
+// the SUR-ZOD frame in Phil777-Regular.
+Alias[RARE_GG_ALT]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 
 // Low rune
 Alias[RUNE_LOW]: %PX-0B%%CORAL%« %NAME% %CORAL%»
@@ -4064,9 +4066,10 @@ ItemDisplay[RUNE=19]: %CORAL%«%BLACK%·%CORAL%» %ORANGE%FAL %CORAL%«%BLACK%·
 //
 // LEM/PUL/UM/MAL/IST/GUL — per-rune @-frames (replace RUNE_MID / RUNE_ALT_MID)
 // PUZZLE BOX (lbox)       — use RUNE_HIGH frame to match VEX/OHM/LO
-// rtp/rid/rkey/lsvl/llmr  — use RUNE_ALT_HIGH frame to match SUR-ZOD
-//                          (Navigator, Almanac, Skeleton Key, Vial of Lightsong,
-//                           Lilith's Mirror)
+//
+// rtp/rid/rkey/lsvl/llmr (Navigator/Almanac/Skeleton Key/Vial of Lightsong/
+// Lilith's Mirror) match SUR-ZOD via Phil777-Luxe's RARE_GG_ITEM/RARE_GG_ALT
+// aliases sharing the RUNE_ALT_HIGH body — handled in 02-alias/03-alias-kassahi-luxe.
 //
 // Excluded from Phil777-Mystery via ALL-EXCEPT=KassahiMystery (Phil777-Mystery
 // keeps its own mystery-renamed display for these items).
@@ -4086,10 +4089,6 @@ ItemDisplay[RUNE=25]: %SOUNDID-4715%%BLACK%@%PURPLE%@%BLACK%@%GREEN%@%BLACK%@ %B
 
 // PUZZLE BOX (lbox) — use RUNE_HIGH frame (matches VEX/OHM/LO in Phil777-Regular)
 ItemDisplay[lbox]: %SOUNDID-4719%%RUNE_HIGH%{%NAME%}
-
-// Navigator / Almanac / Skeleton Key / Vial of Lightsong / Lilith's Mirror
-// — use RUNE_ALT_HIGH frame (matches SUR through ZOD in Phil777-Regular)
-ItemDisplay[(rtp OR rid OR rkey OR lsvl OR llmr)]: %SOUNDID-4719%%RUNE_ALT_HIGH%{%NAME%}
 //-----------------------------------------------------------------------------------
 // CLASS SPECIFIC Items UNID
 //-----------------------------------------------------------------------------------
