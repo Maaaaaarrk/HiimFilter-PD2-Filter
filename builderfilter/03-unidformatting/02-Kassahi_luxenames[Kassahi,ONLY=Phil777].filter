@@ -1,52 +1,77 @@
+//-----------------------------------------------------------------------------------
+// Phil777 (luxe) renames + frame application
+//
+// Two groups:
+//   A. Items wrapped in folder 05 (PD2_items / Kassahi_pd2items / Ubermats) via
+//      %TOKEN_PARTS% / %UBER_KEYS% / %BOSS_MAT% / %WSS_SHARD% / %GEN_RARE% /
+//      %PD2_MATS% — all unified to the same «·» frame in 02-alias/03-alias-kassahi-luxe.
+//      For these we only set the name colour here; the folder-05 rule provides the wrap.
+//   B. Items NOT wrapped in folder 05 — luxenames sets the name and applies %PD2_MATS%
+//      itself.
+//
+// Items with their own non-«·» style (imrn, scou, crf*, MAG charms) bypass entirely.
+//
+// Note: the shared HORADRIC_SCARAB alias prepends %GOLD%<space> before %NAME%, but
+// it only colours the leading space — the %ORANGE% from this file's rename applies
+// to the actual name text, so scrb still renders with ORANGE inside the PD2_MATS frame.
+//-----------------------------------------------------------------------------------
 
+// --- Group A: rename-only (wrap happens in folder 05) ---------------------------
 
-//------------------------------LUXE Names------------------------------
+// Essences — TEAL  (wrapped by TOKEN_PARTS in 04-Ubermats)
+ItemDisplay[(tes OR ceh OR bet OR fed)]: %TEAL%%NAME%%CONTINUE%
 
+// Mini uber keys + organs + ubtm — ORANGE  (wrapped by UBER_KEYS in 04-Ubermats)
+ItemDisplay[(pk1 OR pk2 OR pk3 OR mbr OR dhn OR bey)]: %ORANGE%%NAME%%CONTINUE%
 
+// Uber Ancients (sigils) — ORANGE  (wrapped by PD2_MATS in 04-Ubermats)
+ItemDisplay[(ubaa OR ubab OR ubac)]: %ORANGE%%NAME%%CONTINUE%
 
-// ESSENCES — «·» wrapper, TEAL "ALL ESSENCES"
-ItemDisplay[(tes OR ceh OR bet OR fed)]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %TEAL%ALL ESSENCES %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// MINI UBER KEYS — «·» wrapper, ORANGE "ALL KEYS"
-ItemDisplay[(pk1 OR pk2 OR pk3)]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%ALL KEYS %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// SIGILS (Mephisto's Brain / Diablo's Horn / Baal's Eye) — «·» wrapper
-ItemDisplay[(mbr OR dhn OR bey)]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%ALL SIGILS %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// STANDARD OF HEROES — «·» wrapper, ORANGE
-ItemDisplay[std]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%STANDARD OF HEROES %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// UBER ANCIENTS — Sigils of Madawc / Talic / Korlic
-ItemDisplay[(ubaa OR ubab OR ubac)]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%ALL SIGILS %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// UBER MATERIALS — DClone, Rathma, Lucion — «·» wrapper, ORANGE
-ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%ALL UBER MATERIALS %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// WORLDSTONE SHARD — «·» wrapper, ORANGE
-ItemDisplay[wss]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%WORLDSTONE %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// CATALYST SHARD — «·» wrapper, RED
-ItemDisplay[iwss]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %RED%CATALYST %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// PUZZLE PIECE — «·» wrapper, ORANGE
-ItemDisplay[lpp]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%PUZZLE PIECE %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// DEMONIC CUBE (imrn) — unchanged from prior style
+// Uber materials — ORANGE  (wrapped by BOSS_MAT in 04-Ubermats)
+ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %ORANGE%%NAME%%CONTINUE%
+
+// Worldstone Shard — ORANGE  (wrapped by WSS_SHARD in 03-PD2_items)
+ItemDisplay[wss]: %ORANGE%WORLDSTONE%CONTINUE%
+
+// Catalyst Shard — RED  (wrapped by WSS_SHARD in 02-Kassahi_pd2items)
+ItemDisplay[iwss]: %RED%CATALYST%CONTINUE%
+
+// Larzuk's Puzzle Piece — ORANGE literal  (wrapped by GEN_RARE in 03-PD2_items)
+ItemDisplay[lpp]: %ORANGE%PUZZLE PIECE%CONTINUE%
+
+// Horadrim Scarab — ORANGE  (wrapped by PD2_MATS in 02-Kassahi_pd2items)
+ItemDisplay[scrb]: %ORANGE%HORADRIM SCARAB%CONTINUE%
+
+// --- Group B: rename + apply PD2_MATS wrap here ---------------------------------
+
+ItemDisplay[jewf]: %ORANGE%JEWEL FRAGMENTS%CONTINUE%
+ItemDisplay[std]: %ORANGE%STANDARD OF HEROES%CONTINUE%
+ItemDisplay[imra]: %GOLD%ZAKARUM%CONTINUE%
+ItemDisplay[irra]: %GOLD%INFUSED ZAKARUM%CONTINUE%
+ItemDisplay[rera]: %GOLD%HORADRIM%CONTINUE%
+ItemDisplay[rrra]: %GOLD%INFUSED HORADRIM%CONTINUE%
+ItemDisplay[upma]: %GOLD%ANGELIC%CONTINUE%
+ItemDisplay[urma]: %GOLD%INFUSED ANGELIC%CONTINUE%
+ItemDisplay[upmp]: %GOLD%CARTOGRAPHER%CONTINUE%
+ItemDisplay[fort]: %GOLD%FORTIFICATION%CONTINUE%
+ItemDisplay[irma]: %ORANGE%%NAME%%CONTINUE%
+
+ItemDisplay[(jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+// --- Items that bypass the «·» frame (different style) ---------------------------
+
+// DEMONIC CUBE (imrn) — own style
 ItemDisplay[imrn]: %BLACK%O %GOLD%%NAME% %BLACK%O{%NAME%}%CONTINUE%
-// JEWEL FRAGMENTS — «·» wrapper, ORANGE
-ItemDisplay[jewf]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%JEWEL FRAGMENTS %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// ZAKARUM + INFUSED ZAKARUM — «·» wrapper, GOLD
-ItemDisplay[imra]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%ZAKARUM %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-ItemDisplay[irra]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%INFUSED ZAKARUM %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// HORADRIM + INFUSED HORADRIM — «·» wrapper, GOLD
-ItemDisplay[rera]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%HORADRIM %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-ItemDisplay[rrra]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%INFUSED HORADRIM %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// ANGELIC + INFUSED ANGELIC — «·» wrapper, GOLD
-ItemDisplay[upma]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%ANGELIC %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-ItemDisplay[urma]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%INFUSED ANGELIC %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// CARTOGRAPHER — «·» wrapper, GOLD
-ItemDisplay[upmp]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%CARTOGRAPHER %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// FORTIFICATION — «·» wrapper, GOLD
-ItemDisplay[fort]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%FORTIFICATION %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// INFUSED ARCANE — «·» wrapper, ORANGE (paired-infusion style; not in user feedback scope)
-ItemDisplay[irma]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%%NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
-// scou (Destruction) — kept previous black-O style (not in feedback scope)
+
+// scou (Destruction) — plain black-O wrap
 ItemDisplay[scou]: %BLACK%O %NAME% %BLACK%O%WHITE%{%NAME%}%CONTINUE%
-// HORADRIM SCARAB — «·» wrapper, ORANGE
-ItemDisplay[scrb]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%HORADRIM SCARAB %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}%CONTINUE%
+
+// Craft infusions — strip the upstream "%GOLD%Infusion (colored)@" label and
+// reset to plain GOLD Infusion before the BLACK O wrap.
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %GOLD%Infusion%CONTINUE%
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
 
+// MAG charm size labels
 ItemDisplay[MAG !ID cm1]: %BLUE%Small%CONTINUE%
 ItemDisplay[MAG !ID cm2]: %BLUE%Large%CONTINUE%
 ItemDisplay[MAG !ID cm3]: %BLUE%Grand%CONTINUE%
