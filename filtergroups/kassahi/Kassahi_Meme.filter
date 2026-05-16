@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16th%CL%Season 13 - build 180%CL%Kassahi - Meme -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16th%CL%Season 13 - build 181%CL%Kassahi - Meme -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -289,24 +289,6 @@ ItemDisplay[RUNE>0]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0 RUNE<21]: %NAME%{%NAME%}%CONTINUE%
 
 Alias[WSS_SHARD]: %PURPLE%•%RED%•%CORAL%•   %CORAL% %NAME% %CORAL%   •%RED%•%PURPLE%•
-
-
-
-// === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
-
-// imrn
-Alias[GG_IMRN]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%PURPLE%••%RED%•  %RED%%NAME%%RED%  •%PURPLE%••
-// lbox
-Alias[GG_LBOX]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%RED%•%ORANGE%•%YELLOW%•     %RED%%NAME%%YELLOW%     •%ORANGE%•%RED%•
-// lsvl llmr
-Alias[GG_GG]: %DOT-0D%%MAP-21%%BORDER-0A%%SOUNDID-4719%%PURPLE%•%RED%•%ORANGE%•%YELLOW%•%WHITE%•               %RED%%NAME%%WHITE%               •%YELLOW%•%ORANGE%•%RED%•%PURPLE%•
-// rkey
-Alias[GG_RKEY]: %SOUNDID-4719%%DOT-0D%%MAP-21%%BORDER-0A%%RED%•%ORANGE%•%YELLOW%•     %RED%%NAME%%YELLOW%     •%ORANGE%•%RED%•
-// rtp
-Alias[GG_RTP]: %SOUNDID-4719%%MAP-0A%%RED%•%ORANGE%•%YELLOW%•     %RED%%NAME%%YELLOW%     •%ORANGE%•%RED%•
-// rid
-Alias[GG_RID]: %SOUNDID-4719%%MAP-0A%%RED%•%ORANGE%•%YELLOW%•          %RED%%NAME%%YELLOW%          •%ORANGE%•%RED%•
-// PD2 Shards
 
 Alias[MAIN_DOT]: •
 Alias[PD2_MATS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
@@ -1662,6 +1644,7 @@ ItemDisplay[crfp]: %GOLD%Infusion %WHITE%@{%NAME%}%CONTINUE%
 ItemDisplay[crfv]: %GOLD%Infusion %LIGHT_GRAY%@{%NAME%}%CONTINUE%
 
 // Infusion stack QTY annotation — since it was re-named we need to add it back
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
 // Renamed-item QTY annotation since it was re-named we need to add it back
@@ -2836,30 +2819,21 @@ ItemDisplay[SET (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPI
 
 //------------------------------GEMS------------------------------
 
-
-
-
-
-// Flawless Gem Filter Lvls
-Alias[FLAWGEMLVLS]: (FILTLVL=1 OR FILTLVL=3 OR FILTLVL=5 OR FILTLVL=7 OR FILTLVL=9 OR FILTLVL=11)
-// Flawless Skull Filter Lvls
-Alias[FLAWSKULLLVLS]: (FILTLVL=2 OR FILTLVL=4 OR FILTLVL=6 OR FILTLVL=8 OR FILTLVL=10 OR FILTLVL=12)
-
 // GEMS
 ItemDisplay[GEM=1 CLVL<24]: %WHITE%Chip-%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=2 CLVL<24]: %WHITE%Fla-%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=3 CLVL<24]: %WHITE%%GEMTYPE%%CONTINUE%
 ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) CLVL>23]:
-ItemDisplay[FLAWGEMLVLS GEM=4]: %DOT-20%%WHITE%Flawless%CONTINUE%
+ItemDisplay[GEM=4]: %DOT-20%%WHITE%Flawless%CONTINUE%
 ItemDisplay[GEM=5]: %MAP-20%%WHITE%Perfect%CONTINUE%
-ItemDisplay[FLAWSKULLLVLS GEM=4 GEMTYPE=7]: %DOT-20%%ORANGE%• %LIGHT_GRAY%o %ORANGE%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %NAME% %PURPLE%o%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %NAME% %WHITE%o%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %NAME% %GREEN%o%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %NAME% %RED%o%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %NAME% %BLUE%o%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %NAME% %YELLOW%o%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %NAME% %LIGHT_GRAY%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=7]: %DOT-20%%ORANGE%• %LIGHT_GRAY%o %ORANGE%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=1]: %NAME% %PURPLE%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=2]: %NAME% %WHITE%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=3]: %NAME% %GREEN%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=4]: %NAME% %RED%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=5]: %NAME% %BLUE%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=6]: %NAME% %YELLOW%o%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=7]: %NAME% %LIGHT_GRAY%o%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=1]: %NAME% %PURPLE%O%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=2]: %NAME% %WHITE%O%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=3]: %NAME% %GREEN%O%CONTINUE%
@@ -2868,13 +2842,13 @@ ItemDisplay[GEM=5 GEMTYPE=5]: %NAME% %BLUE%O%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=6]: %NAME% %YELLOW%O%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=7]: %NAME% %LIGHT_GRAY%O%CONTINUE%
 // QTY rule removed — handled by Hiim shared 06-Gems to avoid double display
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=1]: %PURPLE%• %NAME% %PURPLE%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=2]: %WHITE%• %NAME% %WHITE%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=3]: %GREEN%• %NAME% %GREEN%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=4]: %RED%• %NAME% %RED%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=5]: %BLUE%• %NAME% %BLUE%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=6]: %YELLOW%• %NAME% %YELLOW%•%CONTINUE%
-ItemDisplay[FLAWGEMLVLS GEM=4 GEMTYPE=7]: %ORANGE%• %NAME% %ORANGE%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=1]: %PURPLE%• %NAME% %PURPLE%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=2]: %WHITE%• %NAME% %WHITE%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=3]: %GREEN%• %NAME% %GREEN%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=4]: %RED%• %NAME% %RED%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=5]: %BLUE%• %NAME% %BLUE%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=6]: %YELLOW%• %NAME% %YELLOW%•%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE=7]: %ORANGE%• %NAME% %ORANGE%•%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=1]: %PURPLE%••  %NAME%  %PURPLE%••%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=2]: %WHITE%••  %NAME%  %WHITE%••%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=3]: %GREEN%••  %NAME%  %GREEN%••%CONTINUE%
@@ -2882,20 +2856,23 @@ ItemDisplay[GEM=5 GEMTYPE=4]: %RED%••  %NAME%  %RED%••%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=5]: %BLUE%••  %NAME%  %BLUE%••%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=6]: %YELLOW%••  %NAME%  %YELLOW%••%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE=7]: %ORANGE%••  %NAME%  %ORANGE%••%CONTINUE%
+
+ItemDisplay[gprs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Amn: %BLUE%10frw, 3-6lpk%CL%%WHITE%ring, %ORANGE%Sol: %BLUE%5-10str, 1-3ll%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-20ow, 3-6ll%CL%%WHITE%gloves, %ORANGE%Nef: %BLUE%5-10cb, 2-4ll%CL%%WHITE%boots, %ORANGE%Eth: %BLUE%15-30repl, 2-4ll%CL%%WHITE%helm, %ORANGE%Ral: %BLUE%10-20cb, 2-4ll%CL%%WHITE%chest, %ORANGE%Thul: %BLUE%3-6lpk, 3-6ll, 20-40life%CL%%WHITE%shield, %ORANGE%Ith: %BLUE%10-20block, 3-6ll%CL%%WHITE%weapon, %ORANGE%Ort: %BLUE%50-80edmg, 3-6ll%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %RED%blood O%NL%}
+ItemDisplay[gpvs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Ral: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10ene, 1-2mpk%CL%%WHITE%belt, %ORANGE%Ith: %BLUE%10fcr, 4-10rm%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%5-10fcr, 1-3mpk%CL%%WHITE%boots, %ORANGE%Thul: %BLUE%10-150imm, 4-10rm%CL%%WHITE%helm, %ORANGE%Nef: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%chest, %ORANGE%Tal: %BLUE%5-10fcr, 3-6mpk%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 5-10fcr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%1all, 10-20fcr%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %PURPLE%cast O%NL%}
+ItemDisplay[gpbs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%150-250ar, 10-20fhr%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10dex, 2-4max%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%5-10dmgtomana, 10-20fhr%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%kb, -10-20%td%CL%%WHITE%boots, %ORANGE%Ral: %BLUE%60-120defvsmelee, 10-20fhr%CL%%WHITE%helm, %ORANGE%Ith: %BLUE%100-200ar, 10-20fhr%CL%%WHITE%chest, %ORANGE%Nef: %BLUE%25-50edef, 30-40fhr%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 20-30fbr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%50-80edmg, -10-20%td%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %BLUE%hit O%NL%}
+ItemDisplay[gpgs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%10block%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10vit%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-30edef, 10-20pres%CL%%WHITE%gloves, %ORANGE%Ral: %BLUE%10-30edef, 10-20cres%CL%%WHITE%boots, %ORANGE%Ort: %BLUE%20-60edef, 10-20fres%CL%%WHITE%helm, %ORANGE%Ith: %BLUE%10-20lres, 5-10%pdr %CL%%WHITE%chest, %ORANGE%Eth: %BLUE%20-60edef, 5-10%pdr%CL%%WHITE%shield, %ORANGE%Nef: %BLUE%20-60edef, 5-10%pdr %CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%50-80edmg, kb%CL%%WHITE%cube:%BLUE% magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GREEN%safe O%NL%}
+ItemDisplay[gpys]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Ko: %BLUE%10-20vit, 20-30mf%CL%%WHITE%ring, %ORANGE%Lum: %BLUE%5-10vit, 10-20mf%CL%%WHITE%belt, %ORANGE%El: %BLUE%25-50edef, 20-30mf%CL%%WHITE%gloves, %ORANGE%Hel: %BLUE%25-50edef, 15-25mf%CL%%WHITE%boots, %ORANGE%Io: %BLUE%25-50edef, 15-25mf%CL%%WHITE%helm, %ORANGE%Tir: %BLUE%25-50edef, 20-30mf%CL%%WHITE%chest, %ORANGE%Eld: %BLUE%25-50edef, 20-30mf%CL%%WHITE%shield, %ORANGE%Dol: %BLUE%10-20block, 20-30mf%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%1all, 20-30mf%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %YELLOW%bount O%NL%}
+ItemDisplay[gpws]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%3-5ares, hfd%CL%%WHITE%belt, %ORANGE%Io: %BLUE%5-10ias, hfd%CL%%WHITE%gloves, %ORANGE%Shael: %BLUE%5-10ias, 10-20ar%CL%%WHITE%boots, %ORANGE%Ko: %BLUE%10ms, hfd%CL%%WHITE%helm, %ORANGE%Eld: %BLUE%5-10ias, hfd%CL%%WHITE%chest, %ORANGE%El: %BLUE%5-10ares, 10-20block%CL%%WHITE%shield, %ORANGE%Ort: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%20-40edmg, 20ias%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %WHITE%brill O%NL%}
+ItemDisplay[skzs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
+
 // Restore QTY annotation for stacked flawless/perfect gems before the terminating
 // rule below (otherwise the universal 06-Gems[ALL] QTY rule never fires).
 ItemDisplay[(GEM=4 OR GEM=5) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%
-ItemDisplay[(GEM=4 OR GEM=5)]: %NAME%
+ItemDisplay[GEM=5]: %NAME%
+ItemDisplay[GEM=4 FILTLVL<9]: %NAME%
+ItemDisplay[GEMTYPE=7 GEM=4]: %NAME%
 
-ItemDisplay[FLAWSKULLLVLS !GEMTYPE=7 GEM=4]:
-ItemDisplay[gprs]: %NAME%{%WHITE%amulet, %ORANGE%Amn: %BLUE%10frw, 3-6lpk%CL%%WHITE%ring, %ORANGE%Sol: %BLUE%5-10str, 1-3ll%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-20ow, 3-6ll%CL%%WHITE%gloves, %ORANGE%Nef: %BLUE%5-10cb, 2-4ll%CL%%WHITE%boots, %ORANGE%Eth: %BLUE%15-30repl, 2-4ll%CL%%WHITE%helm, %ORANGE%Ral: %BLUE%10-20cb, 2-4ll%CL%%WHITE%chest, %ORANGE%Thul: %BLUE%3-6lpk, 3-6ll, 20-40life%CL%%WHITE%shield, %ORANGE%Ith: %BLUE%10-20block, 3-6ll%CL%%WHITE%weapon, %ORANGE%Ort: %BLUE%50-80edmg, 3-6ll%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %RED%blood O%NL%}
-ItemDisplay[gpvs]: %NAME%{%WHITE%amulet, %ORANGE%Ral: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10ene, 1-2mpk%CL%%WHITE%belt, %ORANGE%Ith: %BLUE%10fcr, 4-10rm%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%5-10fcr, 1-3mpk%CL%%WHITE%boots, %ORANGE%Thul: %BLUE%10-150imm, 4-10rm%CL%%WHITE%helm, %ORANGE%Nef: %BLUE%5-10fcr, 4-10rm%CL%%WHITE%chest, %ORANGE%Tal: %BLUE%5-10fcr, 3-6mpk%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 5-10fcr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%1all, 10-20fcr%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %PURPLE%cast O%NL%}
-ItemDisplay[gpbs]: %NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%150-250ar, 10-20fhr%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10dex, 2-4max%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%5-10dmgtomana, 10-20fhr%CL%%WHITE%gloves, %ORANGE%Ort: %BLUE%kb, -10-20%td%CL%%WHITE%boots, %ORANGE%Ral: %BLUE%60-120defvsmelee, 10-20fhr%CL%%WHITE%helm, %ORANGE%Ith: %BLUE%100-200ar, 10-20fhr%CL%%WHITE%chest, %ORANGE%Nef: %BLUE%25-50edef, 30-40fhr%CL%%WHITE%shield, %ORANGE%Eth: %BLUE%10-20block, 20-30fbr%CL%%WHITE%weapon, %ORANGE%Tir: %BLUE%50-80edmg, -10-20%td%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %BLUE%hit O%NL%}
-ItemDisplay[gpgs]: %NAME%{%WHITE%amulet, %ORANGE%Thul: %BLUE%10block%CL%%WHITE%ring, %ORANGE%Amn: %BLUE%5-10vit%CL%%WHITE%belt, %ORANGE%Tal: %BLUE%10-30edef, 10-20pres%CL%%WHITE%gloves, %ORANGE%Ral: %BLUE%10-30edef, 10-20cres%CL%%WHITE%boots, %ORANGE%Ort: %BLUE%20-60edef, 10-20fres%CL%%WHITE%helm, %ORANGE%Ith: %BLUE%10-20lres, 5-10%pdr %CL%%WHITE%chest, %ORANGE%Eth: %BLUE%20-60edef, 5-10%pdr%CL%%WHITE%shield, %ORANGE%Nef: %BLUE%20-60edef, 5-10%pdr %CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%50-80edmg, kb%CL%%WHITE%cube:%BLUE% magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GREEN%safe O%NL%}
-ItemDisplay[gpys]: %NAME%{%WHITE%amulet, %ORANGE%Ko: %BLUE%10-20vit, 20-30mf%CL%%WHITE%ring, %ORANGE%Lum: %BLUE%5-10vit, 10-20mf%CL%%WHITE%belt, %ORANGE%El: %BLUE%25-50edef, 20-30mf%CL%%WHITE%gloves, %ORANGE%Hel: %BLUE%25-50edef, 15-25mf%CL%%WHITE%boots, %ORANGE%Io: %BLUE%25-50edef, 15-25mf%CL%%WHITE%helm, %ORANGE%Tir: %BLUE%25-50edef, 20-30mf%CL%%WHITE%chest, %ORANGE%Eld: %BLUE%25-50edef, 20-30mf%CL%%WHITE%shield, %ORANGE%Dol: %BLUE%10-20block, 20-30mf%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%1all, 20-30mf%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %YELLOW%bount O%NL%}
-ItemDisplay[gpws]: %NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%3-5ares, hfd%CL%%WHITE%belt, %ORANGE%Io: %BLUE%5-10ias, hfd%CL%%WHITE%gloves, %ORANGE%Shael: %BLUE%5-10ias, 10-20ar%CL%%WHITE%boots, %ORANGE%Ko: %BLUE%10ms, hfd%CL%%WHITE%helm, %ORANGE%Eld: %BLUE%5-10ias, hfd%CL%%WHITE%chest, %ORANGE%El: %BLUE%5-10ares, 10-20block%CL%%WHITE%shield, %ORANGE%Ort: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%20-40edmg, 20ias%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %WHITE%brill O%NL%}
-ItemDisplay[skzs]: %NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
-
+ItemDisplay[GEM=4 FILTLVL>8]:
 //-----------------------------------------------------------------------------------
 // Kassahi-only PD2 items
 //
@@ -3870,6 +3847,17 @@ ItemDisplay[tpll]: %YELLOW%-%WHITE%Lrg Light%YELLOW%-{%NAME%%BLUE%Deals Lightnin
 ItemDisplay[(wms OR gpl OR gpm OR gps OR opl OR opm OR ops) (FILTLVL>1 OR CLVL>23)]:
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
+// Kassahi rejuv display rules (rvl/rvs)
+// Mirrors upstream Kassahi `01-utility-items[ALL]:14-17`. The variant alias files
+// (`02-alias/03-alias-kassahi-{normal,hyper,luxe,mystery-*}.filter`) rename rvl
+// upstream of this file (with %CONTINUE%) to "° Juice °" / "+ Full +" — this file
+// is the terminal display so the renamed value actually renders.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[((FILTLVL~1-6) OR (FILTLVL~9-10)) rvs]: %PURPLE%° %WHITE%35%
+ItemDisplay[rvs]:
+ItemDisplay[rvl]: %NAME%
+//-----------------------------------------------------------------------------------
 // QUEST ITEMS
 //-----------------------------------------------------------------------------------
 ItemDisplay[bks]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 1%CL%Talk to Akara%CL%}
@@ -3896,35 +3884,6 @@ ItemDisplay[hfh]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Hellforg
 ItemDisplay[ice]: %GOLD%Malahs Potion%MAP-58%%SOUNDID-4721%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
 ItemDisplay[tr2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
 //-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
-// Kassahi rejuv display rules (rvl/rvs)
-// Mirrors upstream Kassahi `01-utility-items[ALL]:14-17`. The variant alias files
-// (`02-alias/03-alias-kassahi-{normal,hyper,luxe,mystery-*}.filter`) rename rvl
-// upstream of this file (with %CONTINUE%) to "° Juice °" / "+ Full +" — this file
-// is the terminal display so the renamed value actually renders.
-//-----------------------------------------------------------------------------------
-
-ItemDisplay[((FILTLVL~1-6) OR (FILTLVL~9-10)) rvs]: %PURPLE%° %WHITE%35%
-ItemDisplay[rvs]:
-ItemDisplay[rvl]: %NAME%
-
-
-
-
-
-//------------------------------PROJECT_DIABLO_2_ULTRA_RARE------------------------------
-
-
-
-
-
-ItemDisplay[lbox]: %GG_LBOX%{%NAME%}%CONTINUE%
-ItemDisplay[imrn]: %GG_IMRN%{%NAME%}%CONTINUE%
-ItemDisplay[lsvl]: %GG_GG%{%GRAY%%TAN%Cube: %ORANGE%VoL, Bis Item %WHITE%to Make it Eth%NL%%TAN%Drops From: %RED%Anywhere}
-ItemDisplay[llmr]: %GG_GG%{%GRAY%(Mirrored Items Can Never be Modified Again)%NL%%TAN%Cube: %ORANGE%LM, Bis Item %WHITE%to Make a Duplicate Item%NL%%TAN%Drops From: %RED%Anywhere}
-ItemDisplay[rkey]: %GG_RKEY%{%NAME%}
-ItemDisplay[rtp]: %GG_RTP%{%WHITE%Gives You Infinite %BLUE%TPs}
-ItemDisplay[rid]: %GG_RID%{%WHITE%Gives You Infinite %RED%IDs}
 //-----------------------------------------------------------------------------------
 // Kassahi 3-star / 4-star unique decoration rules
 //
