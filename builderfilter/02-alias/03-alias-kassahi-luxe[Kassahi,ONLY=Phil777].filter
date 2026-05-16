@@ -69,26 +69,26 @@ Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%P
 Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
 
 
-// Magic Item 1 Affix — matches upstream FMT_MAG_T3 body
-Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%PURPLE%•  %NAME%  %PURPLE%•
+// Magic Item 1 Affix
+Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%BLUE%«%WHITE%«%BLUE%« %BLACK%O%BLUE%%NAME%%BLACK%O %BLUE%»%WHITE%»%BLUE%»
 
-// Magic Item 2 Affix — matches upstream FMT_MAG_GG body
-Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%PURPLE%•%WHITE%•  %NAME%  %WHITE%•%PURPLE%•
+// Magic Item 2 Affix
+Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%BLUE%«%WHITE%«%BLUE%« %BLACK%O%BLUE%%NAME%%BLACK%O %BLUE%»%WHITE%»%BLUE%»
 
 // Rare Item basic — upstream FMT_RARE_T3 body + upstream basic-rare icon prefix
-Alias[RARE_ITEM]: %PX-20%%DOT-21%%MAP-6D%%SAGE%•%YELLOW%•%WHITE%•   %NAME%   %WHITE%•%YELLOW%•%SAGE%•
+Alias[RARE_ITEM]: %PX-20%%DOT-21%%MAP-6D%%YELLOW%«%WHITE%«%YELLOW%«%WHITE%«%YELLOW%« %BLACK%O%YELLOW%%NAME%%BLACK%O %YELLOW%»%WHITE%»%YELLOW%»%WHITE%»%YELLOW%»
 
 // Rare Item Extra
-Alias[RARE_PLUS]: %DOT-6A%· %NAME% ·
+Alias[RARE_PLUS]: %DOT-6A%%YELLOW%«%WHITE%«%YELLOW%«%WHITE%«%YELLOW%« %BLACK%O%YELLOW%%NAME%%BLACK%O %YELLOW%»%WHITE%»%YELLOW%»%WHITE%»%YELLOW%»
 
 // Rare Item High ilvl — upstream FMT_RARE_T3 body + upstream basic-rare icon prefix
-Alias[RARE_HIGH_ITEM]: %PX-20%%DOT-21%%MAP-6D%%SAGE%•%YELLOW%•%WHITE%•   %NAME%   %WHITE%•%YELLOW%•%SAGE%•
+Alias[RARE_HIGH_ITEM]: %PX-20%%DOT-21%%MAP-6D%%YELLOW%«%WHITE%«%YELLOW%«%WHITE%«%YELLOW%« %BLACK%O%YELLOW%%NAME%%BLACK%O %YELLOW%»%WHITE%»%YELLOW%»%WHITE%»%YELLOW%»
 
 // Rare Item Good — upstream FMT_RARE_GG body + upstream mid-rare icon prefix (amu-tier)
-Alias[RARE_GOOD_ITEM]: %DOT-20%%MAP-21%%BORDER-6D%%SAGE%••%YELLOW%••%WHITE%•   %NAME%   %WHITE%•%YELLOW%••%SAGE%••
+Alias[RARE_GOOD_ITEM]: %DOT-20%%MAP-21%%BORDER-6D%%Yellow%«%White%«%Yellow%«%White%«%Yellow%« %Black%O%Yellow%%Name%%Black%O %Yellow%»%White%»%Yellow%»%White%»%Yellow%»
 
 // Rare Item GG — upstream FMT_RARE_JEWEL body + upstream top-rare icon prefix (jewel-tier)
-Alias[RARE_SUPER]: %DOT-20%%MAP-21%%BORDER-6D%%SAGE%•••%YELLOW%•••%WHITE%••   %NAME%   %WHITE%••%YELLOW%•••%SAGE%•••
+Alias[RARE_SUPER]: %DOT-20%%MAP-21%%BORDER-6D%%Yellow%«%White%«%Yellow%«%White%«%Yellow%« %Black%O%Yellow%%Name%%Black%O %Yellow%»%White%»%Yellow%»%White%»%Yellow%»
 
 // Amazon quiver UNID annotations — Kassahi-luxe O style
 Alias[QUIVER_MAG_AMA]: %BLUE%O  %NAME%  O
@@ -98,9 +98,9 @@ Alias[QUIVER_RARE_AMA_TIGHT]: %YELLOW%O %NAME% O
 // Grand-charm callouts
 Alias[CHARM_HIGH_LVL]: %YELLOW%High Lvl %NAME%
 Alias[CHARM_MID_LVL]: %BLUE%Mid Lvl %NAME%
-Alias[CHARM_GC_TAG]: %BORDER-6A%%DOT-94%%BLUE%OOO GC OOO
-Alias[CHARM_SC_TAG]: %BLUE%SC
-Alias[CHARM_LC_TAG]: %BLUE%LC
+Alias[CHARM_GC_TAG]: %BORDER-6A%%DOT-94%%BLUE%«%WHITE%«%BLUE%« %BLACK%O%BLUE%Grand%BLACK%O %BLUE%»%WHITE%»%BLUE%»
+Alias[CHARM_SC_TAG]: %BLUE%Small
+Alias[CHARM_LC_TAG]: %BLUE%Large
 
 // Unidentified unique charms
 Alias[UNI_UNID_TORCH]: %RED%O %GOLD%Unidentified Hellfire Torch %RED%O
@@ -117,33 +117,33 @@ Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%«·»%ORANGE%«·»%Y
 // Unique Boss Item
 Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%«·»%ORANGE%«·»%YELLOW%«·»%GREEN%«·»%BLUE%«·»%PURPLE%«·» %GOLD%%NAME% %PURPLE%«·»%BLUE%«·»%GREEN%«·»%YELLOW%«·»%ORANGE%«·»%RED%«·»
 
-// Unique GG Item — Kassahi-Luxe GG (matches UNID_GG)
-Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%«·»%GREEN%«·»%RED%«·»%YELLOW%«·» %RED%·%BLACK%·%PURPLE%%NAME%%BLACK%·%RED%· %YELLOW%«·»%RED%«·»%GREEN%«·»%PURPLE%«·»
+// Unique GG Item (Star 4)
+Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»
 
-// Unique Tier3 Item — matches UNID_T3
-Alias[UNI_STAR3_ITEM]: %BORDER-D3%%PURPLE%«·»%GREEN%«·»%RED%«·» %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%· %RED%«·»%GREEN%«·»%PURPLE%«·»
+// Unique Tier3 Item (Star 3)
+Alias[UNI_STAR3_ITEM]: %BORDER-D3%%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%GOLD%%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»
 
-// Unique Tier2 Item — matches UNID_T2
-Alias[UNI_STAR2_ITEM]: %MAP-D3%%PURPLE%«·»%GREEN%«·» %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%· %GREEN%«·»%PURPLE%«·»
+// Unique Tier2 Item (Star 2)
+Alias[UNI_STAR2_ITEM]: %MAP-D3%%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»
 
-// Unique Tier1 Item — matches UNID_T1
-Alias[UNI_STAR1_ITEM]: %DOT-D3%%PURPLE%«·» %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%· %GREEN%«·»
+// Unique Tier1 Item (Star 1)
+Alias[UNI_STAR1_ITEM]: %DOT-D3%%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
-// Unique Tier0 Item — matches UNID_T0
-Alias[UNI_STAR0_ITEM]: %DOT-D3%%RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%·
+// Unique Tier0 Item (uses Star 1 visual)
+Alias[UNI_STAR0_ITEM]: %DOT-D3%%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 
-// SET GG Item — matches UNID_SET_GG
-Alias[SET_GG_ITEM]: %BORDER-7D%%PURPLE%O%RED%O%DARK_GREEN%O   %GREEN%%NAME%%DARK_GREEN%   O%RED%O%PURPLE%O
+// SET GG Item (Star 4)
+Alias[SET_GG_ITEM]: %BORDER-7D%%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»
 
-// SET Tier3 Item — matches UNID_SET_T3
-Alias[SET_TIER3_ITEM]: %MAP-7D%%RED%O%DARK_GREEN%O  %GREEN%%NAME%%DARK_GREEN%  O%RED%O
+// SET Tier3 Item (Star 3)
+Alias[SET_TIER3_ITEM]: %MAP-7D%%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%GOLD%%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»
 
-// SET Tier2 Item — matches UNID_SET_T2
-Alias[SET_TIER2_ITEM]: %DOT-7D%%RED%O %GREEN%%NAME%%RED% O
+// SET Tier2 Item (Star 2)
+Alias[SET_TIER2_ITEM]: %DOT-7D%%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»
 
-// SET Tier1 Item — matches UNID_SET_T1
-Alias[SET_TIER1_ITEM]: %DOT-7D%%LIGHT_GRAY%O %GREEN%%NAME%%LIGHT_GRAY% O
+// SET Tier1 Item (Star 1)
+Alias[SET_TIER1_ITEM]: %DOT-7D%%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 // RW Bases GG
 Alias[RW_BASE_GG]: %BORDER-9B%%DOT-0E%%SOUNDID-4719% %NAME% %PURPLE%
@@ -202,22 +202,6 @@ ItemDisplay[RUNE>25]: %PURPLE%%NAME%%CONTINUE%
 Alias[WSS_SHARD]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 
 
-// === Set 1: item-specific GG_* / MAIN_DOT / PD2_MATS / rvl rename ===
-
-// imrn
-Alias[GG_IMRN]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%PURPLE%oo%GREEN%o  %RED%%NAME%%GREEN%  o%PURPLE%oo
-// lbox
-Alias[GG_LBOX]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@  %BLACK%O%PURPLE%%NAME%%BLACK%O  %BLACK%@%GREEN%@%PURPLE%@%BLACK%@%PURPLE%@%GREEN%@%BLACK%@
-// lsvl llmr
-Alias[GG_GG]: %DOT-60%%MAP-21%%BORDER-0A%%SOUNDID-4719%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %PURPLE%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
-// rkey
-Alias[GG_RKEY]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
-// rtp
-Alias[GG_RTP]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
-// rid
-Alias[GG_RID]: %SOUNDID-4719%%DOT-60%%MAP-21%%BORDER-0A%%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@   %BLACK%O %RED%%NAME%%BLACK% O   %BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@%GREEN%@@%BLACK%@%PURPLE%@@%BLACK%@
-// PD2 Shards
-
 Alias[MAIN_DOT]: O
 // PD2 mats frame — used by the Phil777 luxenames rename block. Wraps the
 // upstream %NAME% (already coloured by the rename rules in luxenames) in
@@ -228,37 +212,4 @@ Alias[PD2_MATS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«
 ItemDisplay[rvl]: %GREEN%+ %PURPLE%Full %GREEN%+%CONTINUE%
 
 
-// === Merged from 03-alias-kassahi-unid-luxe ===
-// (UNID-tier display aliases for unidentified uniques/sets)
 
-
-
-
-//------------------------------UNID_ITEM_ALIAS_Luxe------------------------------
-
-
-
-
-// UNIQUES
-// CHARMS
-Alias[UNICHARM]: %PURPLE%O%ORANGE%O  %GOLD%%NAME%%ORANGE%  O%PURPLE%O
-// GG
-Alias[UNID_GG]: %PURPLE%«·»%GREEN%«·»%RED%«·»%YELLOW%«·» %RED%·%BLACK%·%PURPLE%%NAME%%BLACK%·%RED%· %YELLOW%«·»%RED%«·»%GREEN%«·»%PURPLE%«·»
-// TIER 3
-Alias[UNID_T3]: %PURPLE%«·»%GREEN%«·»%RED%«·» %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%· %RED%«·»%GREEN%«·»%PURPLE%«·»
-// TIER 2
-Alias[UNID_T2]: %PURPLE%«·»%GREEN%«·» %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%· %GREEN%«·»%PURPLE%«·»
-// TIER 1
-Alias[UNID_T1]: %PURPLE%«·» %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%· %GREEN%«·»
-// TIER 0
-Alias[UNID_T0]: %RED%·%BLACK%·%GOLD%%NAME%%BLACK%·%RED%·
-
-// SETS
-// GG
-Alias[UNID_SET_GG]: %PURPLE%O%RED%O%DARK_GREEN%O   %GREEN%%NAME%%DARK_GREEN%   O%RED%O%PURPLE%O
-// TIER 3
-Alias[UNID_SET_T3]: %RED%O%DARK_GREEN%O  %GREEN%%NAME%%DARK_GREEN%  O%RED%O
-// TIER 2
-Alias[UNID_SET_T2]: %RED%O %GREEN%%NAME%%RED% O
-// TIER 1
-Alias[UNID_SET_T1]: %LIGHT_GRAY%O %GREEN%%NAME%%LIGHT_GRAY% O
