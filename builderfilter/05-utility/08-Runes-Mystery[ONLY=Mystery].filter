@@ -3,12 +3,35 @@
 //-----------------------------------------------------------------------------------
 
 // Out of Town
-// low rune
+// rune
 ItemDisplay[RUNE<21 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%Rune%CONTINUE%
-// Mid rune
-ItemDisplay[RUNE>20 RUNE<24 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%lil Rune%CONTINUE%
-ItemDisplay[RUNE>23 RUNE<26 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%LIL Rune%CONTINUE%
-// High rune
-ItemDisplay[RUNE>25 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%BIG Rune%CONTINUE%
+// lil rune
+ItemDisplay[RUNE>19 RUNE<28 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%lil Rune%CONTINUE%
+// big rune
+ItemDisplay[RUNE>27 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%BIG Rune%CONTINUE%
+
+ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%TIER-8%%CONTINUE%
+
+ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<28]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>27]: %SOUNDID-4719%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
+
+// Show Quantity
+ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
+
+//Larger box for old hands
+ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%
+
+// Low rune name decorations
+// Valuable Crafting rune callout — set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
+ItemDisplay[RUNE<21 FILTLVL<5 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE<21 FILTLVL<5 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
+
+
+ItemDisplay[RUNE>19 AND RUNE<28]: %RUNE_ALT_MID%%CONTINUE%
+ItemDisplay[RUNE>27]: %RUNE_ALT_HIGH%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
