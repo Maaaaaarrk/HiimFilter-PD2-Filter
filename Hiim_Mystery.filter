@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16th%CL%Season 13 - build 182%CL%HiimFilter - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16th%CL%Season 13 - build 183%CL%HiimFilter - Mystery -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2440,26 +2440,18 @@ ItemDisplay[GEM>0 GROUND]:
 //-----------------------------------------------------------------------------------
 
 // Out of Town
-// low rune
+// rune
 ItemDisplay[RUNE<21 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%Rune%CONTINUE%
-// Mid rune
-ItemDisplay[RUNE>20 RUNE<24 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%lil Rune%CONTINUE%
-ItemDisplay[RUNE>23 RUNE<26 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%LIL Rune%CONTINUE%
-// High rune
-ItemDisplay[RUNE>25 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%BIG Rune%CONTINUE%
-
-//-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
-// Runes
-//-----------------------------------------------------------------------------------
-// Basic Formatting
-// Make sure HR's notify
+// lil rune
+ItemDisplay[RUNE>19 RUNE<28 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%lil Rune%CONTINUE%
+// big rune
+ItemDisplay[RUNE>27 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %ORANGE%BIG Rune%CONTINUE%
 
 ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%TIER-8%%CONTINUE%
 
 ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>21 RUNE<26]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<28]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>27]: %SOUNDID-4719%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
 
@@ -2476,14 +2468,8 @@ ItemDisplay[RUNE<21 FILTLVL<5 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
 ItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
 
 
-// Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID), IST GUL (RUNE_ALT_MID)
-ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
-ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
-ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
-// High rune — Vex/Ohm/Lo (26-28)
-ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
-// High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
-ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
+ItemDisplay[RUNE>19 AND RUNE<28]: %RUNE_ALT_MID%%CONTINUE%
+ItemDisplay[RUNE>27]: %RUNE_ALT_HIGH%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
