@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 15th%CL%Season 13 - build 178%CL%Kassahi - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16th%CL%Season 13 - build 179%CL%Kassahi - Mystery -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -353,7 +353,7 @@ Alias[UNID_SET_T1]: %LIGHT_GRAY%• %GREEN%%NAME%%LIGHT_GRAY% •
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 15 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 16 2026
 
 // Valuable crafting runes — TIR(3), NEF(4), ETH(5), TAL(7), RAL(8), ORT(9), AMN(11), SOL(12), HEL(15), IO(16), LUM(17), KO(18), FAL(19)
 Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18 OR RUNE=19)
@@ -363,7 +363,7 @@ Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RU
 //-----------------------------------------------------------------------------------
 
 Alias[OHM_RUNE_VALUE]: 0.85
-Alias[LO_RUNE_VALUE]: 0.95
+Alias[LO_RUNE_VALUE]: 1
 Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
 Alias[JAH_RUNE_VALUE]: 1.75
@@ -372,7 +372,7 @@ Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 85
-Alias[LO_WSS_VALUE]: 95
+Alias[LO_WSS_VALUE]: 100
 Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
 Alias[JAH_WSS_VALUE]: 175
@@ -397,7 +397,7 @@ Alias[HALFHR_STACK_WSS]: (QTY*50)
 
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.85)
-Alias[LO_STACK_HR]: (QTY*0.95)
+Alias[LO_STACK_HR]: (QTY*1)
 Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
 Alias[JAH_STACK_HR]: (QTY*1.75)
@@ -406,7 +406,7 @@ Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*85)
-Alias[LO_STACK_WSS]: (QTY*95)
+Alias[LO_STACK_WSS]: (QTY*100)
 Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
 Alias[JAH_STACK_WSS]: (QTY*175)
@@ -418,35 +418,35 @@ Alias[ZOD_STACK_WSS]: (QTY*600)
 //-----------------------------------------------------------------------------------
 
 Alias[WSS_ITEM_HR_VALUE]: 0.01
-Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.2
+Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
 Alias[LARZUK_PUZZLEBOX_VALUE]: 0.6
-Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.06
-Alias[DEMONIC_CUBE_VALUE]: 0.8
-Alias[CATALYST_SHARD_VALUE]: 0.1
+Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.08
+Alias[DEMONIC_CUBE_VALUE]: 0.75
+Alias[CATALYST_SHARD_VALUE]: 0.15
 
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
-Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 120
+Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
 Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 60
-Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 6
-Alias[DEMONIC_CUBE_WSS_VALUE]: 80
-Alias[CATALYST_SHARD_WSS_VALUE]: 10
+Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 8
+Alias[DEMONIC_CUBE_WSS_VALUE]: 75
+Alias[CATALYST_SHARD_WSS_VALUE]: 15
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
-Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.2)
+Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
 Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.6)
-Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.06)
-Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.8)
-Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.1)
+Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.08)
+Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.75)
+Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.15)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
-Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*120)
+Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
 Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*60)
-Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*6)
-Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*80)
-Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
+Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*8)
+Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*75)
+Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
 
 //-----------------------------------------------------------------------------------
 // Boss Mat estimated values
@@ -465,7 +465,7 @@ Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 // Lucion mats
 Alias[FLESH_OF_MALIC_VALUE]: 0.15
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
-Alias[DEMONIC_INSIGNIA_VALUE]: 0.25
+Alias[DEMONIC_INSIGNIA_VALUE]: 0.3
 //-----------------------------------------------------------------------------------
 // Kassahi display aliases — UNID format callouts + simple PD2-item aliases.
 // UNID format callouts
