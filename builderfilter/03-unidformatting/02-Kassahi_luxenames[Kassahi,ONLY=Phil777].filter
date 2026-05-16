@@ -58,7 +58,7 @@ ItemDisplay[irma]: %ORANGE%%NAME%%CONTINUE%
 
 // Restore QTY counter for the literal-renamed items above (rename drops %NAME%, so the
 // stack count is lost). Fires only on stacks of 2+.
-ItemDisplay[(wss OR iwss OR lpp OR scrb OR jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort) QTY>1]: %NAME% %TAN%QTY %QTY%{%NAME%}%CONTINUE%
+ItemDisplay[(wss OR iwss OR lpp OR scrb OR jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
 ItemDisplay[(jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
 
@@ -74,6 +74,7 @@ ItemDisplay[scou]: %BLACK%O %NAME% %BLACK%O%WHITE%{%NAME%}%CONTINUE%
 // Craft infusions — strip the upstream "%GOLD%Infusion (colored)@" label and
 // reset to plain GOLD Infusion before the BLACK O wrap.
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %GOLD%Infusion%CONTINUE%
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %BLACK%O %NAME% %BLACK%O{%NAME%}%CONTINUE%
 
 // MAG charm size labels
