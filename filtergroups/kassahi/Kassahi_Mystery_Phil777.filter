@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 16th%CL%Season 13 - build 183%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 17th%CL%Season 13 - build 184%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -2957,17 +2957,6 @@ ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: 
 // Horadrim Scarabs
 ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
-
-// Craft Infusions (pre-made craft recipes) — dot decoration inlined per the
-// MAIN_DOT note above. Each rule: outer color → mid color → MAIN_DOTs → NAME → mirror.
-ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-68%%SOUNDID-4715%%NAME%{%NAME%}%CONTINUE%
-ItemDisplay[crfb]: %CORAL%%MAIN_DOT%%RED%%MAIN_DOT%%MAIN_DOT%   %NAME%   %RED%%MAIN_DOT%%MAIN_DOT%%CORAL%%MAIN_DOT%{%NAME%}%CONTINUE%               // Blood — life leech / edmg
-ItemDisplay[crfc]: %BLUE%%MAIN_DOT%%PURPLE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %PURPLE%%MAIN_DOT%%MAIN_DOT%%BLUE%%MAIN_DOT%{%NAME%}%CONTINUE%            // Caster — fcr / mana
-ItemDisplay[crfs]: %DARK_GREEN%%MAIN_DOT%%GREEN%%MAIN_DOT%%MAIN_DOT%   %NAME%   %GREEN%%MAIN_DOT%%MAIN_DOT%%DARK_GREEN%%MAIN_DOT%{%NAME%}%CONTINUE%  // Safety — pdr / resist
-ItemDisplay[crfh]: %TEAL%%MAIN_DOT%%BLUE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %BLUE%%MAIN_DOT%%MAIN_DOT%%TEAL%%MAIN_DOT%{%NAME%}%CONTINUE%               // Hitpower — fhr / ctc fnova
-ItemDisplay[crfv]: %GOLD%%MAIN_DOT%%ORANGE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %ORANGE%%MAIN_DOT%%MAIN_DOT%%GOLD%%MAIN_DOT%{%NAME%}%CONTINUE%           // Vampiric — ml / plr
-ItemDisplay[crfu]: %SAGE%%MAIN_DOT%%YELLOW%%MAIN_DOT%%MAIN_DOT%   %NAME%   %YELLOW%%MAIN_DOT%%MAIN_DOT%%SAGE%%MAIN_DOT%{%NAME%}%CONTINUE%           // Bountiful — mf / lr
-ItemDisplay[crfp]: %LIGHT_GRAY%%MAIN_DOT%%WHITE%%MAIN_DOT%%MAIN_DOT%   %NAME%   %WHITE%%MAIN_DOT%%MAIN_DOT%%LIGHT_GRAY%%MAIN_DOT%{%NAME%}%CONTINUE%  // Brilliant — astat / ias
 //-----------------------------------------------------------------------------------
 // Phil777 + Mystery overrides
 //
