@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 18th Season 13 - build 187
+## Last updated May 18th Season 13 - build 188
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -143,7 +143,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Tomb Reaver (ETH only)
 - Veil of Steel or Nightwings Veil
 - Verdungos Hearty Cord
-- War Fist (ETH only)
 - Warlords Trust (ETH only)
 - Waterwalk
 - Windhammer (ETH only)
@@ -155,7 +154,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Ariocs Needle
 - Arreats Face
 - Bloodtree Stump
-- Death Cleaver
 - Doombringer
 - Draculs Grasp
 - Earth Shifter or The Cranium Basher
@@ -204,6 +202,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Chance Guards
 - Corpsemourn
 - Darkforce
+- Death Cleaver
 - Deaths Fathom
 - Demon Machine
 - Demonhorns Edge
@@ -218,6 +217,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Fenris
 - Firelizards Talons
 - Flamebellow
+- Frostburn
 - Frostwind
 - Gargoyles Bite
 - Gerkes Sanctuary
@@ -285,7 +285,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Cyclopean Roar
 - Eaglehorn
 - Exceptional Bolts
-- Frostburn
 - Humongous
 - Lacerator
 - Nethercrux
@@ -295,7 +294,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Treads of Cthon
 - Venom Ward
 - Viperfork
-- Warlords Trust
 - Wildspeaker
 - Witchwild String
 - Wizardspike
@@ -329,6 +327,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Hand of Broc
 - The Impaler
 - The Spirit Shroud
+- Warlords Trust
 
 ### Level 1-4 — most permissive
 

@@ -98,6 +98,20 @@ function isMoveIgnored(name, variant, direction) {
     return true;
   });
 }
+
+// True when the item has an eth-downgrade-protection rule in IGNORE_MOVES.
+// Used to force a split row (eth + noneth) instead of collapsing into 'both',
+// so the eth side gets pinned by its existing alias and only the non-eth side
+// is re-tiered via the generic value alias.
+function isEthProtected(name) {
+  const n = (name || '').toLowerCase();
+  return IGNORE_MOVES.some((rule) => {
+    if (!rule.name || !n.includes(rule.name.toLowerCase())) return false;
+    const matchesEth = rule.variant === 'eth' || rule.variants?.includes('eth');
+    const matchesDowngrade = !rule.direction || rule.direction === 'downgrade';
+    return matchesEth && matchesDowngrade;
+  });
+}
 // top-percentile: per-name, only the top X% of listings by price contribute to the
 // per-name median. Default 0.25 = "median of the top 25% priced listings". Captures
 // the upside of finding a good (often corrupted) copy rather than the typical drop.
@@ -529,8 +543,13 @@ async function main() {
     // (our alias system only has *_NO_ETH_UNIQUE / *_ETH_UNIQUE at 3★/4★).
     // If either variant is below 3★, collapse to a combined row at the higher tier.
     const eitherBelowThreeStar = lowerSugIdx > THREE_STAR_IDX;
+    // Eth-protected items: force split so the eth row is filtered by IGNORE_MOVES
+    // and only the non-eth row reaches the moves output. Without this the
+    // collapse-to-'both' shadowed the variants:['eth'] rule.
+    const topName = ethRow?.maxName || nonethRow?.maxName;
+    const ethProtected = isEthProtected(topName);
 
-    if (ethSug === nonethSug || eitherBelowThreeStar) {
+    if (!ethProtected && (ethSug === nonethSug || eitherBelowThreeStar)) {
       // Combined row using the higher of the two as the suggestion
       const combinedSug = VALUE_TIERS[higherSugIdx] ?? null;
       // Pick whichever variant has more listings to drive the displayed data
@@ -718,7 +737,16 @@ function formatMoveLine(m) {
   const qualifyStr = m.cutoffTier ? `≥${tierShort[m.cutoffTier]} (${m.cutoffCount})` : '';
   const qualifyPadded = qualifyStr.padEnd(11);
   const total = String(m.totalListings).padStart(5);
-  const topStr = `${m.topName || ''} (top ${m.topUsedForMedian} of ${m.topNameTotal})`;
+  let topStr = `${m.topName || ''} (top ${m.topUsedForMedian} of ${m.topNameTotal})`;
+  // Eth-protected non-eth-only move: annotate that the eth side stays pinned
+  // by its existing eth-conditional alias; only the generic value alias is moved.
+  if (m.variant === 'noneth' && isEthProtected(m.topName)) {
+    const ethPinTier =
+      m.sourceTiers?.includes('4_STAR_ETH_UNIQUE') ? '4★' :
+      m.sourceTiers?.includes('4_STAR_NO_ETH_UNIQUE') ? '3★' :
+      null;
+    if (ethPinTier) topStr += ` — eth pinned ${ethPinTier}`;
+  }
   return `${base}  ${v}   ${move}   ${med}   ${topVal}   ${qualifyPadded}  ${total}  ${topStr}`;
 }
 
