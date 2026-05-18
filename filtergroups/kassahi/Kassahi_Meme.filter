@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 18th%CL%Season 13 - build 193%CL%Kassahi - Meme -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 18th%CL%Season 13 - build 194%CL%Kassahi - Meme -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -857,6 +857,8 @@ Alias[MAP_MAGICFIND]:((STAT370+MAX(CHARSTAT80,1))*250/((STAT370+MAX(CHARSTAT80,1
 Alias[MAP_XP_SCORE]:(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373+100*STAT374)
 // Weighted MF-roll score for maps: Density + Rarity (equal weight)
 Alias[MAP_MF_SCORE]:(STAT372+STAT375)
+// Weighted Crafting-roll score for maps: Density + Rarity + Crafting (7% craft == 100% density)
+Alias[MAP_CRAFT_SCORE]:(STAT372+STAT375+STAT497*100/7)
 
 // XP-roll thresholds: _ROLLS = unslammed (prompts SLAM), _SLAM = already slammed
 Alias[MAP_XP_T3_ROLLS]:249

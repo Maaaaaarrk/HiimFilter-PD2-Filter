@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 18th%CL%Season 13 - build 193%CL%HiimFilter - Sorc - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 18th%CL%Season 13 - build 194%CL%HiimFilter - Sorc - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -820,6 +820,8 @@ Alias[MAP_MAGICFIND]:((STAT370+MAX(CHARSTAT80,1))*250/((STAT370+MAX(CHARSTAT80,1
 Alias[MAP_XP_SCORE]:(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373+100*STAT374)
 // Weighted MF-roll score for maps: Density + Rarity (equal weight)
 Alias[MAP_MF_SCORE]:(STAT372+STAT375)
+// Weighted Crafting-roll score for maps: Density + Rarity + Crafting (7% craft == 100% density)
+Alias[MAP_CRAFT_SCORE]:(STAT372+STAT375+STAT497*100/7)
 
 // XP-roll thresholds: _ROLLS = unslammed (prompts SLAM), _SLAM = already slammed
 Alias[MAP_XP_T3_ROLLS]:249
@@ -2418,12 +2420,21 @@ ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS
 // Slammed
 ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%)) < < <%CL%}
 
+// Tier 3 Craft Maps
+ItemDisplay[MAPTIER=3 STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS]: %ORANGE% [GEM ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[MAPTIER=3 STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_SLAM]: %ORANGE% [GEM]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_SLAM%)) < < <%CL%}
+// Tier 2/1 Craft Maps
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS]: %ORANGE% [GEM ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_ROLLS%)) < < <%CL%}
+// Slammed
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_SLAM]: %ORANGE% [GEM]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_SLAM%)) < < <%CL%}
+
 // T3 Reroll note
-ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T2 Reroll note
-ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T1 Reroll note
-ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 
 
 // Tell the User to convert map to rare
