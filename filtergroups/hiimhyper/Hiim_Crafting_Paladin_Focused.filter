@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 17th%CL%Season 13 - build 184%CL%HiimFilter - Hyper - Paladin - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 17th%CL%Season 13 - build 186%CL%HiimFilter - Hyper - Paladin - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -315,7 +315,7 @@ ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %ORANGE%OoO
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 16 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 17 2026
 
 // Valuable crafting runes — TIR(3), NEF(4), ETH(5), TAL(7), RAL(8), ORT(9), AMN(11), SOL(12), HEL(15), IO(16), LUM(17), KO(18), FAL(19)
 Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18 OR RUNE=19)
@@ -380,32 +380,32 @@ Alias[ZOD_STACK_WSS]: (QTY*600)
 //-----------------------------------------------------------------------------------
 
 Alias[WSS_ITEM_HR_VALUE]: 0.01
-Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
-Alias[LARZUK_PUZZLEBOX_VALUE]: 0.5
+Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.5
+Alias[LARZUK_PUZZLEBOX_VALUE]: 0.75
 Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.07
 Alias[DEMONIC_CUBE_VALUE]: 0.75
 Alias[CATALYST_SHARD_VALUE]: 0.15
 
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
-Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
-Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 50
+Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 150
+Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 75
 Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 7
 Alias[DEMONIC_CUBE_WSS_VALUE]: 75
 Alias[CATALYST_SHARD_WSS_VALUE]: 15
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
-Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
-Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.5)
+Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.5)
+Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.75)
 Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.07)
 Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.75)
 Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.15)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
-Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
-Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*50)
+Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*150)
+Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*75)
 Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*7)
 Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*75)
 Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
