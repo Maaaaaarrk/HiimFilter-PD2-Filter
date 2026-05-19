@@ -1,5 +1,5 @@
 # kassahi
-## Last updated May 19th Season 13 - build 199
+## Last updated May 19th Season 13 - build 200
 
 ## Filters
 * Regular — Standard: Kassahi's all-in-one balanced filter. The standard recommendation for most players. [Kassahi.filter]
@@ -7,9 +7,7 @@
 * Meme — Standard: Standard filter with meme item names for a humorous experience. [Kassahi_Meme.filter]
 * Mystery — Hyper: Mystery filter with a Hyper visual theme. [Kassahi_Mystery_Hyper.filter]
 * Mystery — Standard: Filter where high-value items are renamed to hide their identity. [Kassahi_Mystery.filter]
-* Mystery — philanthropy777: Mystery filter with a philanthropy777 visual theme. [Kassahi_Mystery_Phil777.filter]
 * Regular — Hyper: Standard filter with a Hyper visual theme. [Kassahi_Hyper.filter]
-* Regular — philanthropy777: Standard filter with a philanthropy777 visual theme. [Kassahi_Phil777.filter]
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.

@@ -1,19 +1,17 @@
-# hiimtalrasha
+# phil777
 ## Last updated May 19th Season 13 - build 200
 
 ## Filters
-* Style — TalRasha: All-in-one filter with a TalRasha color theme. [Hiim_TalRasha_Themed.filter]
-* Class — Amazon: Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Amazon_Focused.filter]
-* Class — Assassin: Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Assassin_Focused.filter]
-* Class — Barbarian: Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Barbarian_Focused.filter]
-* Class — Druid: Class filter tuned for Druid. Shows Druid-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Druid_Focused.filter]
-* Class — Necromancer: Class filter tuned for Necromancer. Shows Necromancer-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Necromancer_Focused.filter]
-* Class — Paladin: Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Paladin_Focused.filter]
-* Class — Sorceress: Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Sorceress_Focused.filter]
-* Crafting: Same as the standard filter, but good crafting bases are not limited in higher filter levels. [Hiim_Crafting.filter]
-* Grail Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Hiim_Grail.filter]
-* LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
-* Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
+* philanthropy777: Standard filter with a philanthropy777 visual theme. [Kassahi_Phil777.filter]
+* Mystery: Mystery filter with a philanthropy777 visual theme. [Kassahi_Mystery_Phil777.filter]
+* Crafting: Crafting filter (good crafting bases stay visible at higher filter levels) with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting.filter]
+* Class — Amazon: Class filter tuned for Amazon with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Amazon_Focused.filter]
+* Class — Assassin: Class filter tuned for Assassin with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Assassin_Focused.filter]
+* Class — Barbarian: Class filter tuned for Barbarian with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Barbarian_Focused.filter]
+* Class — Druid: Class filter tuned for Druid with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Druid_Focused.filter]
+* Class — Necromancer: Class filter tuned for Necromancer with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Necromancer_Focused.filter]
+* Class — Paladin: Class filter tuned for Paladin with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Paladin_Focused.filter]
+* Class — Sorceress: Class filter tuned for Sorceress with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Sorceress_Focused.filter]
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
