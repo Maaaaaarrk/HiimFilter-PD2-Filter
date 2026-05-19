@@ -1,0 +1,17 @@
+//-----------------------------------------------------------------------------------
+// Phil777 (both Regular + Mystery) overrides — folder 06 so these fire AFTER the
+// upstream wraps in 05-utility/03-PD2_items[ALL].
+//
+//   iwss (Catalyst Shard)   — WSS_SHARD-style «·» frame, literal RED "Catalyst"
+//   jewf (Jewel Fragments)  — WSS_SHARD-style «·» frame, literal ORANGE "Jewel Fragments"
+//   imrn (Demonic Cube)     — quad-«·» frame around %NAME%
+//-----------------------------------------------------------------------------------
+
+// Catalyst Shard — overrides 03-PD2_items[ALL]:33 GEN_ALT wrap and 02-Kassahi_pd2items:25 WSS_SHARD wrap
+ItemDisplay[iwss]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %RED%Catalyst %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}
+
+// Jewel Fragments — overrides 03-PD2_items[ALL]:20 MAG_DBL_AFFIX_ITEM wrap
+ItemDisplay[jewf]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %ORANGE%Jewel Fragments %BLACK%O %GREEN%«%BLACK%·%PURPLE%»{%NAME%}
+
+// Demonic Cube — overrides 03-PD2_items[ALL]:28 GEN_GG_ITEM wrap with the quad-«·» frame
+ItemDisplay[imrn]: %PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%»%PURPLE%«%BLACK%·%GREEN%» %BLACK%O%NAME%%BLACK%O %GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»%GREEN%«%BLACK%·%PURPLE%»{%NAME%}
