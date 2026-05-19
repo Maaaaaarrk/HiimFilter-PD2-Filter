@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 18th%CL%Season 13 - build 189%CL%HiimFilter - TalRasha -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 19th%CL%Season 13 - build 197%CL%HiimFilter - TalRasha -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -816,8 +816,10 @@ Alias[MAP_MAGICFIND]:((STAT370+MAX(CHARSTAT80,1))*250/((STAT370+MAX(CHARSTAT80,1
 
 // Weighted XP-roll score for maps: 2xDensity + 2xRarity + 3xXP + 100 per +AreaLevel
 Alias[MAP_XP_SCORE]:(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373+100*STAT374)
-// Weighted MF-roll score for maps: 2xDensity + MF
-Alias[MAP_MF_SCORE]:(STAT372+STAT372+STAT370)
+// Weighted MF-roll score for maps: Density + Rarity (equal weight)
+Alias[MAP_MF_SCORE]:(STAT372+STAT375)
+// Weighted Crafting-roll score for maps: Density + Rarity + Crafting (7% craft == 100% density)
+Alias[MAP_CRAFT_SCORE]:(STAT372+STAT375+STAT497*100/6)
 
 // XP-roll thresholds: _ROLLS = unslammed (prompts SLAM), _SLAM = already slammed
 Alias[MAP_XP_T3_ROLLS]:249
@@ -827,10 +829,10 @@ Alias[MAP_XP_T2_SLAM]:259
 Alias[MAP_XP_T1_ROLLS]:174
 Alias[MAP_XP_T1_SLAM]:233
 // MF-roll thresholds (T21 = shared Tier 2 / Tier 1 band)
-Alias[MAP_MF_T3_ROLLS]:297
-Alias[MAP_MF_T3_SLAM]:446
-Alias[MAP_MF_T21_ROLLS]:197
-Alias[MAP_MF_T21_SLAM]:296
+Alias[MAP_MF_T3_ROLLS]:99
+Alias[MAP_MF_T3_SLAM]:149
+Alias[MAP_MF_T21_ROLLS]:79
+Alias[MAP_MF_T21_SLAM]:109
 
 // Weighted score aliases for Ring/Amulet/Jewel Pt tooltips
 Alias[PTSRING_MELEE]:(STR*8+DEX*10+CRES*3+FRES*3+LRES*3+PRES*3+MINDMG*27+MAXDMG*19+AR+STAT3*8+STAT60*17+STAT62*26+STAT110*6+STAT80*8)
@@ -2114,7 +2116,7 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t6
 
 // Map Immunities
 ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) NMAG]: %NAME%%CONTINUE%{%TAN%Immunities (Updated Apr 27th 2026):%CL%%NAME%}
-ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) !NMAG]: %NAME%%CONTINUE%{%TAN%Immunities:%CL%%NAME%}
+//ItemDisplay[(MAPTIER=2 OR MAPTIER=3 OR MAPTIER=1 OR MAPTIER=5) !NMAG]: %NAME%%CONTINUE%{%TAN%Immunities:%CL%%NAME%}
 
 ItemDisplay[t23]: %NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 105% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Arreat Battlefield Level id 139 Updated: Apr 23rd 2026
 ItemDisplay[t25]: %NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 66% %ORANGE%M 50% %GREEN%P 120%%CL%%NAME%}%CONTINUE% // Sewers of Harrogath Level id 141 Updated: Apr 23rd 2026
@@ -2244,39 +2246,39 @@ ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 //Warnings 
 
-// Map Contains Cursing Mobs
-ItemDisplay[(t12 OR t13 OR t31 OR t37 OR t38 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Cursing Mobs %CL%%NAME%}
+// Map Cursing Mobs
+ItemDisplay[(t12 OR t13 OR t31 OR t37 OR t38 OR STAT438>0)]: %NAME%%CONTINUE%{%PURPLE%Cursing Mobs%CL%%NAME%}
 
-// Map Contains SOULS
-ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [2xSOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Double Souls %CL%%NAME%}
-ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% [SOULS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
-ItemDisplay[(t14 OR t3a) NMAG MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Souls %CL%%NAME%}
+// Map SOULS
+ItemDisplay[(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% 2xSOULS%NAME%%CONTINUE%{%PURPLE%Double Souls%CL%%NAME%}
+ItemDisplay[!(t14 OR t3a) STAT470>0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% SOULS%NAME%%CONTINUE%{%PURPLE%Souls%CL%%NAME%}
+ItemDisplay[(t14 OR t3a) STAT470=0 (MAG OR RARE) ID MAPTIER<4]: %YELLOW% SOULS%NAME%%CONTINUE%{%PURPLE%Souls%CL%%NAME%}
+ItemDisplay[(t14 OR t3a) NMAG MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%Souls%CL%%NAME%}
 
-// Map Contains Added PSN
-ItemDisplay[STAT435>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Added %GREEN%PSN %PURPLE%Damage %CL%%NAME%}
+// Map Added PSN
+ItemDisplay[STAT435>0 MAPTIER<4]: %NAME%%CONTINUE%{%GREEN%PSN %PURPLE%Damage %CL%%NAME%}
 
-// Map Contains Projectile Pierce
-ItemDisplay[STAT406>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Projectile Pierce %CL%%NAME%}
+// Map Projectile Pierce
+ItemDisplay[STAT406>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%Proj. Pierce%CL%%NAME%}
 
-// Map Contains Fearing Mobs
-// No long in S11 ItemDisplay[STAT499>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%WARNING: Contains Fearing Mobs %CL%%NAME%}
+// Map Fearing Mobs
+// No long in S11 ItemDisplay[STAT499>0 MAPTIER<4]: %NAME%%CONTINUE%{%PURPLE%Fearing Mobs%CL%%NAME%}
 
-//Map contains minions
-ItemDisplay[STAT499>0 MAPTIER<4]: %ORANGE% [Minion]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Minions of Destruction%CL%%NAME%}
+//Map minions
+ItemDisplay[STAT499>0 MAPTIER<4]: %ORANGE% Minion%NAME%%CONTINUE%{%PURPLE%Minions%CL%%NAME%}
 
 // Buffs / Tags
-// Map Contains Ghosts
-ItemDisplay[(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [2xGHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Double Ghosts!  <%CL%%NAME%}
-ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% [GHOSTS]%NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
-ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%>  Contains Ghosts!  <%CL%%NAME%}
+// Map Ghosts
+ItemDisplay[(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% 2xGHOSTS%NAME%%CONTINUE%{%WHITE%Double Ghosts!%CL%%NAME%}
+ItemDisplay[!(t12 OR t27 OR t34) STAT442>0 (MAG OR RARE) ID]: %WHITE% GHOSTS%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% GHOSTS%NAME%%CONTINUE%{%NAME%}
+//ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%Ghosts!%CL%%NAME%}
 
 // Map has Standard of Heroes applied
 ItemDisplay[STAT458>0]: %GREEN% [H]%NAME%%CONTINUE%{%NAME%}
 
-// Map has bonus crafting mats
-ItemDisplay[STAT497>0]: %TEAL% [Craft]%NAME%%CONTINUE%{%TEAL%Extra Crafting Mats%CL%%NAME%}
+// Map has bonus crafting mats replaced with calc
+//ItemDisplay[STAT497>0]: %TEAL% [Craft]%NAME%%CONTINUE%{%TEAL%Extra Crafting Mats%CL%%NAME%}
 
 // Map has Orb of Fortification applied
 ItemDisplay[STAT493>0]: %ORANGE% [F]%NAME%%CONTINUE%{%NAME%}
@@ -2288,15 +2290,15 @@ ItemDisplay[STAT500>0]: %CORAL% [E]%NAME%%CONTINUE%{%PURPLE%Catalyzed%CL%%NAME%}
 ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %RED% [C]%NAME%%CONTINUE%{%NAME%}
 
 
-// Map Contains Dolls
-ItemDisplay[STAT437>0 MAPTIER<4]: %RED% [DOLLS]%NAME%%CONTINUE%{%PURPLE%WARNING: Contains Dolls %CL%%NAME%}
+// Map Dolls
+ItemDisplay[STAT437>0 MAPTIER<4]: %RED% DOLLS%NAME%%CONTINUE%{%PURPLE%Dolls%CL%%NAME%}
 
 // 2x Map Boss
-ItemDisplay[STAT498>0]: %BLUE% [2xBoss]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT498>0]: %BLUE% 2xBoss%NAME%%CONTINUE%{%NAME%}
 
 // +Area Level
-ItemDisplay[STAT374>0 STAT374<2]: %PURPLE% [+1]%NAME%%CONTINUE%{%NAME%}
-ItemDisplay[STAT374>1 STAT374<3]: %PURPLE% [+2]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT374>0 STAT374<2]: %PURPLE% +1%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT374>1 STAT374<3]: %PURPLE% +2%NAME%%CONTINUE%{%NAME%}
 
 //Map EXPERIMENTAL
 // Not ready yet ItemDisplay[!GROUND ID !NMAG MAPTIER>0]:%NAME%{%WHITE%Experience Rating: $f(ROUND((1+STAT373/100)*((1+STAT372/100)*%NORM_XP%+(1+MIN(STAT375/100,MAX(STAT372/100,STAT375/200)))*%ELITE_XP%)/2*100))%%CL%%NAME%}%CONTINUE%
@@ -2307,46 +2309,55 @@ ItemDisplay[MAPTIER=4 STAT360=0]: %NAME%%CONTINUE%{%NAME%%GOLD%XP Map Rating: $f
 ItemDisplay[MAPTIER=4 STAT360>0]: %NAME%%CONTINUE%{%NAME%%GOLD%XP Map Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%))%CL%}
 
 // Tier 3 Good Maps
-ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%)) < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %GOLD% XP rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%XP Map rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T3_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%)) < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T3_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%XP Map rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T3_SLAM%))%CL%}
 // Tier 3 Juicer tag
-ItemDisplay[MAPTIER=3 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%%CONTINUE%{%NAME%%ORANGE%> > > XP & Density & Rarity < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT372>0 STAT375>0 STAT373>0 $f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS]: %NAME%%CONTINUE%{%NAME%%ORANGE%XP & Density & Rarity%CL%}
 
 // Tier 2 Good Maps
-ItemDisplay[MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_ROLLS%)) < < <%CL%}
+ItemDisplay[MAPTIER=2 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS]: %GOLD% XP rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%XP Map rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[MAPTIER=2 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T2_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_SLAM%)) < < <%CL%}
+ItemDisplay[MAPTIER=2 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T2_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%XP Map rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T2_SLAM%))%CL%}
 
 // Tier 1 Good Maps
-ItemDisplay[MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS]: %GOLD% [XP ROLLS]%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_ROLLS%)) < < <%CL%}
+ItemDisplay[MAPTIER=1 STAT360=0 $f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS]: %GOLD% XP rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%GOLD%XP Map rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%> > > Good XP Map Rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_SLAM%)) < < <%CL%}
+ItemDisplay[MAPTIER=1 STAT360>0 $f(MAP_XP_SCORE)>MAP_XP_T1_SLAM]: %GOLD% [XP]%NAME%%CONTINUE%{%NAME%%CL%%GOLD%XP Map rolls Rating: $f(ROUND(%MAP_XP_SCORE%*100/%MAP_XP_T1_SLAM%))%CL%}
 
 
 // Tier 3 MF Maps
-ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS]: %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_ROLLS%)) < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS]: %BLUE% MF rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%BLUE%MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T3_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_SLAM%)) < < <%CL%}
+ItemDisplay[MAPTIER=3 STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T3_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T3_SLAM%))%CL%}
 // Tier 2/1 MF Maps
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS]: %BLUE% [MF ROLLS]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_ROLLS%)) < < <%CL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS]: %BLUE% MF rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%BLUE%MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%> > > Good MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%)) < < <%CL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%}
+
+// Tier 3 MF Maps
+ItemDisplay[MAPTIER=3 STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS]: %TEAL% Craft rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%TEAL%Craft Map Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_ROLLS%))%CL%}
+// Slammed
+ItemDisplay[MAPTIER=3 STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_SLAM]: %TEAL% Craft%NAME%%CONTINUE%{%NAME%%TEAL%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_SLAM%))%CL%}
+// Tier 2/1 Craft Maps
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS]: %TEAL% Craft rolls%NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%%TEAL%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_ROLLS%))%CL%}
+// Slammed
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_SLAM]: %TEAL% Craft%NAME%%CONTINUE%{%NAME%%TEAL%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%}
 
 // T3 Reroll note
-ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=3 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T2 Reroll note
-ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 // T1 Reroll note
-ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
+ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 
 
 // Tell the User to convert map to rare
-ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%BLUE%This Map %WHITE%+ %GOLD%Angelic Orb %WHITE%+ %WHITE%Any PGem %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%CL%%PURPLE%Convert to %WHITE%Stackable %PURPLE%Map%CL%%NAME%}
+ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4) !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%CL%%BLUE%This Map %WHITE%+ %GOLD%Angelic Orb %WHITE%+ %WHITE%Any PGem %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%CL%%PURPLE%Convert to %WHITE%Stackable %PURPLE%Map%CL%%NAME%}
 ItemDisplay[NMAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%WHITE%This Map + %GOLD%Zakarum Orb + %BLUE%Jewel %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%NAME%}
 
 // Inform how to clear the map
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Fast Map Clear Guides Visit:%NL%%CL%%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Map Guides:%NL%%CL%%NAME%}%CONTINUE%
 
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %NAME%{%NAME%}
 
@@ -3974,6 +3985,8 @@ ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>169 STAT360=0) OR (S
 
 //Low Price Crafting Bases
 ItemDisplay[SHOP MAG BUYPRICE<60000 FILTLVL>2 FILTLVL<8 (CHEST OR STAFF OR SCEPTER OR WAND OR SIN OR CLUB OR bhm OR xh9 OR bsh OR xsh OR spk OR xpk OR lbt OR xlb OR vbt OR xvb)]: %NAME%%SAGE%{%SAGE%Affordable Crafting Base%CL%%NAME%}%CONTINUE%
+
+ItemDisplay[SHOP MAG BUYPRICE<120000 CHEST MAXSOCKETS>3 ILVL>84]: %NAME%%SAGE%{%SAGE%Affordable Crafting Base%CL%%NAME%}%CONTINUE%
 
 // LLD - Wands
 ItemDisplay[WAND TABSK17>1 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD WAND%RED%   ***}

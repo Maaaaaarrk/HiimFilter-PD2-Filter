@@ -9,8 +9,10 @@ Alias[MAP_MAGICFIND]:((STAT370+MAX(CHARSTAT80,1))*250/((STAT370+MAX(CHARSTAT80,1
 
 // Weighted XP-roll score for maps: 2xDensity + 2xRarity + 3xXP + 100 per +AreaLevel
 Alias[MAP_XP_SCORE]:(STAT372+STAT372+STAT375+STAT375+STAT373+STAT373+STAT373+100*STAT374)
-// Weighted MF-roll score for maps: 2xDensity + MF
-Alias[MAP_MF_SCORE]:(STAT372+STAT372+STAT370)
+// Weighted MF-roll score for maps: Density + Rarity (equal weight)
+Alias[MAP_MF_SCORE]:(STAT372+STAT375)
+// Weighted Crafting-roll score for maps: Density + Rarity + Crafting (7% craft == 100% density)
+Alias[MAP_CRAFT_SCORE]:(STAT372+STAT375+STAT497*100/6)
 
 // XP-roll thresholds: _ROLLS = unslammed (prompts SLAM), _SLAM = already slammed
 Alias[MAP_XP_T3_ROLLS]:249
@@ -20,10 +22,10 @@ Alias[MAP_XP_T2_SLAM]:259
 Alias[MAP_XP_T1_ROLLS]:174
 Alias[MAP_XP_T1_SLAM]:233
 // MF-roll thresholds (T21 = shared Tier 2 / Tier 1 band)
-Alias[MAP_MF_T3_ROLLS]:297
-Alias[MAP_MF_T3_SLAM]:446
-Alias[MAP_MF_T21_ROLLS]:197
-Alias[MAP_MF_T21_SLAM]:296
+Alias[MAP_MF_T3_ROLLS]:99
+Alias[MAP_MF_T3_SLAM]:149
+Alias[MAP_MF_T21_ROLLS]:79
+Alias[MAP_MF_T21_SLAM]:109
 
 // Weighted score aliases for Ring/Amulet/Jewel Pt tooltips
 Alias[PTSRING_MELEE]:(STR*8+DEX*10+CRES*3+FRES*3+LRES*3+PRES*3+MINDMG*27+MAXDMG*19+AR+STAT3*8+STAT60*17+STAT62*26+STAT110*6+STAT80*8)
