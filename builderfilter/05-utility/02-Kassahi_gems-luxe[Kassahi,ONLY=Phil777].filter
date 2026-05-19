@@ -7,15 +7,6 @@ ItemDisplay[GEM=1 CLVL<24]: %WHITE%Chip-%SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=2 CLVL<24]: %WHITE%Fla-%SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=3 CLVL<24]: %SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) CLVL>23]:
-ItemDisplay[GEM=4]: %DOT-20%%WHITE%Flawless%CONTINUE%
-ItemDisplay[GEM=5]: %MAP-20%%WHITE%Perfect%CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE=1]: %PURPLE% o %CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE=2]: %WHITE% o %CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE=3]: %GREEN% o %CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE=4]: %RED% o %CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE=5]: %BLUE% o %CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE=6]: %YELLOW% o %CONTINUE%
-ItemDisplay[FLAWSKULLLVLS GEM=4 GEMTYPE=7]: %DOT-20%%LIGHT_GRAY%+ o +%CONTINUE%
 ItemDisplay[GEM=4 AND GEMTYPE=1 OR gpv OR gpvs]: %WHITE%F %PURPLE%Amethyst%CONTINUE%
 ItemDisplay[GEM=4 AND GEMTYPE=2 OR gpw OR gpws]: %WHITE%F %WHITE%Diamond%CONTINUE%
 ItemDisplay[GEM=4 AND GEMTYPE=3 OR gpg OR gpgs]: %WHITE%F %GREEN%Emerald%CONTINUE%
@@ -32,7 +23,10 @@ ItemDisplay[GEM=5 AND GEMTYPE=4 OR gpr OR gprs]: %WHITE%P %RED%Ruby%MAP-20%%CONT
 ItemDisplay[GEM=5 AND GEMTYPE=5 OR gpb OR gpbs]: %WHITE%P %BLUE%Sapphire%MAP-20%%CONTINUE%
 ItemDisplay[GEM=5 AND GEMTYPE=6 OR gpy OR gpys]: %WHITE%P %YELLOW%Topaz%MAP-20%%CONTINUE%
 ItemDisplay[GEM=5 AND GEMTYPE=7 OR skz OR skzs]: %WHITE%P %GRAY%Skull%MAP-20%%CONTINUE%
-// QTY rule removed — handled by Hiim shared 06-Gems to avoid double display
+
+// Restore QTY annotation for stacked flawless/perfect gems before the terminating
+ItemDisplay[(GEM=4 OR GEM=5) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%
+
 ItemDisplay[GEM=4 GEMTYPE=1]: %PURPLE%+ %BLACK%O %NAME% %BLACK%O %PURPLE%+%CONTINUE%
 ItemDisplay[GEM=4 GEMTYPE=2]: %WHITE%+ %BLACK%O %NAME% %BLACK%O %WHITE%+%CONTINUE%
 ItemDisplay[GEM=4 GEMTYPE=3]: %GREEN%+ %BLACK%O %NAME% %BLACK%O %GREEN%+%CONTINUE%
@@ -56,9 +50,6 @@ ItemDisplay[gpys]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Ko: %BLUE%10-20vit, 2
 ItemDisplay[gpws]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%3-5ares, hfd%CL%%WHITE%belt, %ORANGE%Io: %BLUE%5-10ias, hfd%CL%%WHITE%gloves, %ORANGE%Shael: %BLUE%5-10ias, 10-20ar%CL%%WHITE%boots, %ORANGE%Ko: %BLUE%10ms, hfd%CL%%WHITE%helm, %ORANGE%Eld: %BLUE%5-10ias, hfd%CL%%WHITE%chest, %ORANGE%El: %BLUE%5-10ares, 10-20block%CL%%WHITE%shield, %ORANGE%Ort: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%20-40edmg, 20ias%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %WHITE%brill O%NL%}
 ItemDisplay[skzs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
 
-// Restore QTY annotation for stacked flawless/perfect gems before the terminating
-// rule below (otherwise the universal 06-Gems[ALL] QTY rule never fires).
-ItemDisplay[(GEM=4 OR GEM=5) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[GEM=5]: %NAME%
 ItemDisplay[GEM=4 FILTLVL<9]: %NAME%
 ItemDisplay[GEMTYPE=7 GEM=4]: %NAME%
