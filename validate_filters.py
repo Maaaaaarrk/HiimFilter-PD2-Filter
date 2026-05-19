@@ -325,6 +325,18 @@ def validate_output(output: str, filename, lineno, issues, defined_aliases):
                 elif not is_valid_percent_token(token, defined_aliases):
                     issues.append(Issue(filename, lineno, 'ERROR',
                         f"Unknown output token: %{token}%"))
+            elif re.match(r'^[A-Za-z][A-Za-z0-9_-]*$', token):
+                # Token isn't all-uppercase but looks like a keyword attempt.
+                # If its uppercase form is a known token, the casing is wrong —
+                # PD2 filter tokens are case-sensitive, so %Yellow% won't render
+                # as the YELLOW color.
+                upper = token.upper()
+                if (upper in COLOR_CODES
+                        or upper in VALUE_KEYWORDS
+                        or upper in SPECIAL_KEYWORDS
+                        or upper in defined_aliases):
+                    issues.append(Issue(filename, lineno, 'ERROR',
+                        f"Mixed-case token %{token}% — filter tokens are case-sensitive (did you mean %{upper}%?)"))
             pos = end + 1
         else:
             pos += 1
