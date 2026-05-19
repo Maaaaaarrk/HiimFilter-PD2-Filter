@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 19th%CL%Season 13 - build 200%CL%HiimFilter - TalRasha -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 19th%CL%Season 13 - build 201%CL%HiimFilter - TalRasha -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -4626,24 +4626,8 @@ ItemDisplay[GROUND !UNI !SET !RW NMAG FILTLVL>2 (SK36>2 OR SK37>2 OR SK38>2 OR S
 //ItemDisplay[WEAPON !THROWING !INF SUP SOCK=0 NMAG]: %NAME%{%CL%%RED%SLAM %WHITE%For chance of 1 to Max Sockets%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------------
-// ITEM TAGS - PART 2
-//-----------------------------------------------------------------------------------
-// RES value on PALADIN shields
-ItemDisplay[!INF !RW NMAG RES>0]: %GREEN%%RES%r %NAME%{%NAME%}%CONTINUE%
-//ItemDisplay[!INF !RW NMAG RES>29]: %GREEN%* * %NAME% %GREEN%* *{%NAME%}%CONTINUE%
-
-// ITEM TAGS - DEF on Chest
-ItemDisplay[CHEST !INF !RW NMAG DEF>400]: %TAN%%DEF% Def %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[CHEST !INF !RW NMAG DEF>799]: %DOT-D6%%NAME%{%NAME%}%CONTINUE%
-
-// ITEM TAGS - EDEF
-ItemDisplay[!INF !RW NMAG EDEF>0]: %BLUE%%EDEF%% %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!INF !RW NMAG EDEF=20]: %BLUE%* * %NAME% %BLUE%* *{%NAME%}%CONTINUE%
-
-// ITEM TAGS - EDAM
-ItemDisplay[!INF !RW NMAG EDAM>0]: %RED%%EDAM%% %NAME%{%NAME%}%CONTINUE%
-ItemDisplay[!INF !RW NMAG EDAM=20 !DIN]: %RED%* * %NAME% %RED%* *{%NAME%}%CONTINUE%
+// ITEM TAGS - PART 2 stat tags moved to 27-Tags_Nmag_StatTags[Hiim,ALL-EXCEPT=OnlyFilter]
+// — Kassahi has its own equivalents in 29-Kassahi_Item_Stat_Names[Kassahi].filter.
 
 // ITEM TAGS - LARZUK FOR SOCKETS
 ItemDisplay[NMAG SOCK=0 MAXSOCKETS>0 (ARMOR OR WEAPON OR QUIVER)]:%NAME%{%TAN%Larzuk for $f(MIN(MAXSOCKETS,IF(AND(!NMAG,ONEHAND),4,6),IF(AND(!NMAG,!WEAPON),3,6),IF(STAT360>0,IF(TWOHAND,4,2),6))) sockets%CL%%NAME%}%CONTINUE%
@@ -4660,6 +4644,26 @@ ItemDisplay[SHIELD !INF SOCK=0 NMAG]: %NAME%{%WHITE%This Item + %ORANGE%Tal %WHI
 ItemDisplay[(aqv OR cqv OR aqv2 OR cqv2 OR aqv3 OR cqv3) !INF SOCK=0 NMAG]: %NAME%{%WHITE%This Item + %ORANGE%Tal %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %RED%O%CL%%WHITE%Socketing Recipe Rolls 1-Max Sockets:%CL%%NAME%}%CONTINUE%
 ItemDisplay[WEAPON !THROWING !INF SOCK=0 NMAG]: %NAME%{%WHITE%This Item + %ORANGE%Ral %WHITE%+ %ORANGE%Amn %WHITE%+ Perf %PURPLE%O%CL%%WHITE%Socketing Recipe Rolls 1-Max Sockets:%CL%%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+// ITEM TAGS - PART 2 (Hiim-only — Kassahi has its own stat-name tags in
+// 07-identifieditemtooltips/29-Kassahi_Item_Stat_Names[Kassahi].filter,
+// so this block must not double-fire on Kassahi filters)
+//-----------------------------------------------------------------------------------
+// RES value on PALADIN shields
+ItemDisplay[!INF !RW NMAG RES>0]: %GREEN%%RES%r %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[!INF !RW NMAG RES>29]: %GREEN%* * %NAME% %GREEN%* *{%NAME%}%CONTINUE%
+
+// ITEM TAGS - DEF on Chest
+ItemDisplay[CHEST !INF !RW NMAG DEF>400]: %TAN%%DEF% Def %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[CHEST !INF !RW NMAG DEF>799]: %DOT-D6%%NAME%{%NAME%}%CONTINUE%
+
+// ITEM TAGS - EDEF
+ItemDisplay[!INF !RW NMAG EDEF>0]: %BLUE%%EDEF%% %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG EDEF=20]: %BLUE%* * %NAME% %BLUE%* *{%NAME%}%CONTINUE%
+
+// ITEM TAGS - EDAM
+ItemDisplay[!INF !RW NMAG EDAM>0]: %RED%%EDAM%% %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[!INF !RW NMAG EDAM=20 !DIN]: %RED%* * %NAME% %RED%* *{%NAME%}%CONTINUE%
 //-----------------------------------------------------------------------------------
 // RUNEWORDS
 //-----------------------------------------------------------------------------------
