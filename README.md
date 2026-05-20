@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 20th Season 13 - build 206
+## Last updated May 20th Season 13 - build 207
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -182,7 +182,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - War Fist
 - War Traveler
 - Widowmaker
-- Windhammer
 - Zerae's Resolve
 
 ### Level 7 — adds 2-star uniques
@@ -272,6 +271,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Valkyrie Wing
 - Venom Grip
 - Windforce
+- Windhammer
 
 ### Level 6-5 — adds 1-star, 0-star, and NO-star uniques
 
