@@ -31,7 +31,7 @@ ItemDisplay[(ubaa OR ubab OR ubac)]: %ORANGE%%NAME%%CONTINUE%
 ItemDisplay[(dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR lucb OR lucc OR lucd)]: %ORANGE%%NAME%%CONTINUE%
 
 // Worldstone Shard — ORANGE  (wrapped by WSS_SHARD in 03-PD2_items)
-ItemDisplay[wss]: %ORANGE%Worldstone%CONTINUE%
+ItemDisplay[wss]: %RED%Worldstone%CONTINUE%
 
 // Catalyst Shard — RED  (wrapped by WSS_SHARD in 02-Kassahi_pd2items)
 ItemDisplay[iwss]: %RED%Catalyst%CONTINUE%
@@ -55,12 +55,13 @@ ItemDisplay[urma]: %GOLD%Infused Angelic%CONTINUE%
 ItemDisplay[upmp]: %GOLD%Cartographer%CONTINUE%
 ItemDisplay[fort]: %GOLD%Fortification%CONTINUE%
 ItemDisplay[irma]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[lbox]: %PURPLE%Puzzle Box%CONTINUE%
 
 // Restore QTY counter for the literal-renamed items above (rename drops %NAME%, so the
 // stack count is lost). Fires only on stacks of 2+.
 ItemDisplay[(iwss OR lpp OR scrb OR jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
-ItemDisplay[(jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
+ItemDisplay[(std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
 
 
 // --- Items that bypass the «·» frame (different style) ---------------------------
