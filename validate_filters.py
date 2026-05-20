@@ -5,9 +5,9 @@ Checks .filter files against the Project Diablo 2 item filtering spec.
 Reference: https://wiki.projectdiablo2.com/wiki/Item_Filtering
 
 Usage:
-    python validate_filters.py                  # checks all *.filter in script dir
+    python validate_filters.py                  # checks root *.filter AND filtergroups/ outputs
     python validate_filters.py Hiim.filter      # check specific files
-    python validate_filters.py --all            # also check filtergroups/ outputs
+    python validate_filters.py --root-only      # skip filtergroups/ outputs
     python validate_filters.py --errors-only    # suppress warnings
 """
 
@@ -141,6 +141,12 @@ _RE_BORDER    = re.compile(r'^BORDER-(' + _HEX2 + r')$')
 _RE_PX        = re.compile(r'^PX-(' + _HEX2 + r')$')
 _RE_SOUND     = re.compile(r'^SOUNDID-(\d+)$')
 _RE_SOUND_TAG = re.compile(r'%SOUNDID-\d+%')   # for counting %SOUNDID-N% tags in expanded output
+# Map/minimap/border/pixel marker tags — at most one of each per rendered line.
+# MAP matches both the bare %MAP% shorthand and the colored %MAP-XX% form.
+_RE_DOT_TAG    = re.compile(r'%DOT-[0-9A-Fa-f]{2}%')
+_RE_BORDER_TAG = re.compile(r'%BORDER-[0-9A-Fa-f]{2}%')
+_RE_MAP_TAG    = re.compile(r'%MAP(?:-[0-9A-Fa-f]{2})?%')
+_RE_PX_TAG     = re.compile(r'%PX-[0-9A-Fa-f]{2}%')
 _RE_NOTIFY    = re.compile(r'^NOTIFY-([0-9A-Fa-f]|DEAD)$')  # %NOTIFY-F% or %NOTIFY-DEAD%
 _RE_FORMULA   = re.compile(r'^FORMULA([A-Z][A-Z0-9_]*)$')   # explicit formula refs: FORMULADPS
 _RE_ISLAND    = re.compile(r'^ISLAND_([A-Z]+)$')             # auto-generated inline formula tokens
@@ -639,6 +645,18 @@ def validate_file(filepath: Path, errors_only: bool = False):
                         f"Line has {len(sound_tags)} %SOUNDID-N% tags after "
                         f"alias expansion ({', '.join(sound_tags)}) — only one "
                         f"is allowed per rendered line"))
+                for kind, pattern in (
+                    ('DOT',    _RE_DOT_TAG),
+                    ('BORDER', _RE_BORDER_TAG),
+                    ('MAP',    _RE_MAP_TAG),
+                    ('PX',     _RE_PX_TAG),
+                ):
+                    tags = pattern.findall(expanded)
+                    if len(tags) > 1:
+                        issues.append(Issue(fname, lineno, 'ERROR',
+                            f"Line has {len(tags)} %{kind}-...% tags after "
+                            f"alias expansion ({', '.join(tags)}) — only one "
+                            f"is allowed per rendered line"))
             continue
 
         # Anything else that looks like it starts a rule is suspicious
@@ -664,22 +682,23 @@ def validate_file(filepath: Path, errors_only: bool = False):
 def main():
     args       = sys.argv[1:]
     errors_only = '--errors-only' in args
-    include_all = '--all' in args
-    args = [a for a in args if a not in ('--errors-only', '--all')]
+    root_only   = '--root-only' in args
+    # '--all' is retained as a no-op for backwards compatibility (it's now the default)
+    args = [a for a in args if a not in ('--errors-only', '--root-only', '--all')]
 
     script_dir = Path(__file__).parent
 
     if args:
         filter_files = [Path(a) for a in args]
-    elif include_all:
-        # Root output filters + filtergroups/ outputs (skip builderfilter source
-        # fragments and any cloned upstream repos under temp/).
-        filter_files = sorted(script_dir.glob('*.filter'))
-        fg = script_dir / 'filtergroups'
-        if fg.is_dir():
-            filter_files += sorted(fg.rglob('*.filter'))
     else:
+        # Default: root output filters + filtergroups/ outputs (skip builderfilter
+        # source fragments and any cloned upstream repos under temp/).
+        # --root-only skips the filtergroups/ scan.
         filter_files = sorted(script_dir.glob('*.filter'))
+        if not root_only:
+            fg = script_dir / 'filtergroups'
+            if fg.is_dir():
+                filter_files += sorted(fg.rglob('*.filter'))
 
     if not filter_files:
         print("No .filter files found.")

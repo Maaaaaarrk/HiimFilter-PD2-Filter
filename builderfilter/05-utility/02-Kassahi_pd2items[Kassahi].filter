@@ -40,3 +40,17 @@ ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: 
 // Horadrim Scarabs
 ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+// Kassahi: hide Arcane / Angelic / Destruction orbs at every filter level.
+//
+//   irma — Infused Arcane Orb
+//   upma — Angelic Orb        (base)
+//   urma — Infused Angelic Orb
+//   scou — Orb of Destruction
+//
+// Placed after the styling rules so the empty output wins regardless of the
+// prior %CONTINUE% chain.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[(irma OR upma OR urma OR scou)]:
