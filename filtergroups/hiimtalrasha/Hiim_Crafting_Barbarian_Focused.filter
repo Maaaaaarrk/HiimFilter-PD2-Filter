@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 20th%CL%Season 13 - build 207%CL%HiimFilter - TalRasha - Barb - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 21st%CL%Season 13 - build 208%CL%HiimFilter - TalRasha - Barb - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -321,7 +321,7 @@ ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %ORANGE%O o
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 20 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated May 21 2026
 
 // Valuable crafting runes — TIR(3), NEF(4), ETH(5), TAL(7), RAL(8), ORT(9), AMN(11), SOL(12), HEL(15), IO(16), LUM(17), KO(18), FAL(19)
 Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18 OR RUNE=19)
@@ -334,18 +334,18 @@ Alias[OHM_RUNE_VALUE]: 0.85
 Alias[LO_RUNE_VALUE]: 1
 Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
-Alias[JAH_RUNE_VALUE]: 2
+Alias[JAH_RUNE_VALUE]: 1.75
 Alias[CHAM_RUNE_VALUE]: 3
-Alias[ZOD_RUNE_VALUE]: 6.5
+Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 85
 Alias[LO_WSS_VALUE]: 100
 Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
-Alias[JAH_WSS_VALUE]: 200
+Alias[JAH_WSS_VALUE]: 175
 Alias[CHAM_WSS_VALUE]: 300
-Alias[ZOD_WSS_VALUE]: 650
+Alias[ZOD_WSS_VALUE]: 600
 
 // Stack HR and WSS formulas for lower runes
 Alias[PUL_STACK_HR]: (QTY*0.01)
@@ -368,18 +368,18 @@ Alias[OHM_STACK_HR]: (QTY*0.85)
 Alias[LO_STACK_HR]: (QTY*1)
 Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
-Alias[JAH_STACK_HR]: (QTY*2)
+Alias[JAH_STACK_HR]: (QTY*1.75)
 Alias[CHAM_STACK_HR]: (QTY*3)
-Alias[ZOD_STACK_HR]: (QTY*6.5)
+Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*85)
 Alias[LO_STACK_WSS]: (QTY*100)
 Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
-Alias[JAH_STACK_WSS]: (QTY*200)
+Alias[JAH_STACK_WSS]: (QTY*175)
 Alias[CHAM_STACK_WSS]: (QTY*300)
-Alias[ZOD_STACK_WSS]: (QTY*650)
+Alias[ZOD_STACK_WSS]: (QTY*600)
 
 //-----------------------------------------------------------------------------------
 // PD2 Item estimated values
@@ -390,7 +390,7 @@ Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
 Alias[LARZUK_PUZZLEBOX_VALUE]: 0.75
 Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.09
 Alias[DEMONIC_CUBE_VALUE]: 0.75
-Alias[CATALYST_SHARD_VALUE]: 0.15
+Alias[CATALYST_SHARD_VALUE]: 0.1
 
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
@@ -398,7 +398,7 @@ Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
 Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 75
 Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 9
 Alias[DEMONIC_CUBE_WSS_VALUE]: 75
-Alias[CATALYST_SHARD_WSS_VALUE]: 15
+Alias[CATALYST_SHARD_WSS_VALUE]: 10
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
@@ -406,7 +406,7 @@ Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
 Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.75)
 Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.09)
 Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.75)
-Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.15)
+Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.1)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
@@ -414,7 +414,7 @@ Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
 Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*75)
 Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*9)
 Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*75)
-Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
+Alias[CATALYST_SHARD_STACK_WSS]: (QTY*10)
 
 //-----------------------------------------------------------------------------------
 // Boss Mat estimated values
@@ -423,7 +423,7 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
 // DClone mats
 Alias[BLACK_SOULSTONE_VALUE]: 0.25
 Alias[PRIME_EVIL_SOUL_VALUE]: 0.5
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.03
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.04
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.45
@@ -433,7 +433,7 @@ Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 // Lucion mats
 Alias[FLESH_OF_MALIC_VALUE]: 0.15
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
-Alias[DEMONIC_INSIGNIA_VALUE]: 0.4
+Alias[DEMONIC_INSIGNIA_VALUE]: 0.35
 //-----------------------------------------------------------------------------------
 // Star Ratings
 //-----------------------------------------------------------------------------------
@@ -1599,185 +1599,184 @@ ItemDisplay[UNI !ID 7gw]: %CONTINUE%Deaths Web
 // ------------------------------------------------------------------------------
 // These item bases belong to multiple sets, so you cannot know what one they are until identified
 ItemDisplay[SET !ID amu]: %CONTINUE%Set Amulet
-ItemDisplay[SET !ID cap]: %CONTINUE%Infernal or Sanders
-ItemDisplay[SET !ID crn]: %CONTINUE%Iratha or Milabrega
-ItemDisplay[SET !ID mbl]: %CONTINUE%Hsaru or Hwanin
+ItemDisplay[SET !ID cap]: %CONTINUE%Infernal or Sanders Cap
+ItemDisplay[SET !ID crn]: %CONTINUE%Iratha or Milabrega Crown
+ItemDisplay[SET !ID mbl]: %CONTINUE%Hsaru or Hwanin Belt
 ItemDisplay[SET !ID rin]: %CONTINUE%Set Ring
-ItemDisplay[SET !ID tbl]: %CONTINUE%Infernal or Iratha
-ItemDisplay[SET !ID tgl]: %CONTINUE%Arctic or Iratha
-ItemDisplay[SET !ID vbt]: %CONTINUE%Cow King or Sander
+ItemDisplay[SET !ID tbl]: %CONTINUE%Infernal or Iratha Belt
+ItemDisplay[SET !ID tgl]: %CONTINUE%Arctic or Iratha Gloves
+ItemDisplay[SET !ID vbt]: %CONTINUE%Cow King or Sander Boots
 
 // Angelic's
-ItemDisplay[SET !ID rng]: %CONTINUE%Angelic Mantle
-ItemDisplay[SET !ID sbr]: %CONTINUE%Angelic Sickle
+ItemDisplay[SET !ID rng]: %CONTINUE%Angelic Armor
+ItemDisplay[SET !ID sbr]: %CONTINUE%Angelic Sword
 
 // Arcana's
-ItemDisplay[SET !ID skp]: %CONTINUE%Arcanna's
-ItemDisplay[SET !ID ltp]: %CONTINUE%Arcanna's Flesh Light Plate
-ItemDisplay[SET !ID wst]: %CONTINUE%Arcanna's Deathwand
+ItemDisplay[SET !ID skp]: %CONTINUE%Arcanna's Helm
+ItemDisplay[SET !ID ltp]: %CONTINUE%Arcanna's Armor
+ItemDisplay[SET !ID wst]: %CONTINUE%Arcanna's Staff
 //ItemDisplay[SET !ID skp]: %CONTINUE%Arcanna's Head Game// - Skull Cap
 //ItemDisplay[SET !ID ltp]: %CONTINUE%Arcanna's Flesh Light
 //ItemDisplay[SET !ID wst]: %CONTINUE%Arcanna's Magic Wand//Deathwand - War Staff
 
 // Arctic
-ItemDisplay[SET !ID qui]: %CONTINUE%Arctic Furs
-ItemDisplay[SET !ID vbl]: %CONTINUE%Arctic Binding
-ItemDisplay[SET !ID swb]: %CONTINUE%Arctic Horn
+ItemDisplay[SET !ID qui]: %CONTINUE%Arctic Armor
+ItemDisplay[SET !ID vbl]: %CONTINUE%Arctic Belt
+ItemDisplay[SET !ID swb]: %CONTINUE%Arctic Bow
 
 // Berserker's
-ItemDisplay[SET !ID hlm]: %CONTINUE%Berserker's Headgear
-ItemDisplay[SET !ID spl]: %CONTINUE%Berserker's Hauberk
-ItemDisplay[SET !ID 2ax]: %CONTINUE%Berserker's Hatchet
+ItemDisplay[SET !ID hlm]: %CONTINUE%Berserker's Helm
+ItemDisplay[SET !ID spl]: %CONTINUE%Berserker's Armor
+ItemDisplay[SET !ID 2ax]: %CONTINUE%Berserker's Axe
 
 // Cathan's
-ItemDisplay[SET !ID msk]: %CONTINUE%Cathan's Visage
-ItemDisplay[SET !ID chn]: %CONTINUE%Cathan's Mesh
-ItemDisplay[SET !ID bst]: %CONTINUE%Cathan's Rule
+ItemDisplay[SET !ID msk]: %CONTINUE%Cathan's Helm
+ItemDisplay[SET !ID chn]: %CONTINUE%Cathan's Armor
+ItemDisplay[SET !ID bst]: %CONTINUE%Cathan's Staff
 
 // Civerb's
-ItemDisplay[SET !ID gsc]: %CONTINUE%Civerb's Cudgel
-ItemDisplay[SET !ID lrg]: %CONTINUE%Civerb's Ward
+ItemDisplay[SET !ID gsc]: %CONTINUE%Civerb's Scepter
+ItemDisplay[SET !ID lrg]: %CONTINUE%Civerb's Shield
 
 // Cleglaw's
-ItemDisplay[SET !ID lsd]: %CONTINUE%Cleglaw's Tooth
-ItemDisplay[SET !ID mgl]: %CONTINUE%Cleglaw's Pincers
-ItemDisplay[SET !ID sml]: %CONTINUE%Cleglaw's Claw
+ItemDisplay[SET !ID lsd]: %CONTINUE%Cleglaw's Sword
+ItemDisplay[SET !ID mgl]: %CONTINUE%Cleglaw's Gloves
+ItemDisplay[SET !ID sml]: %CONTINUE%Cleglaw's Shield
 
 // Death's
-ItemDisplay[SET !ID wsd]: %CONTINUE%Death's Touch
-ItemDisplay[SET !ID lgl]: %CONTINUE%Death's Hand
-ItemDisplay[SET !ID lbl]: %CONTINUE%Death's Guard
+ItemDisplay[SET !ID wsd]: %CONTINUE%Death's Sword
+ItemDisplay[SET !ID lgl]: %CONTINUE%Death's Gloves
+ItemDisplay[SET !ID lbl]: %CONTINUE%Death's Belt
 
 // Hsarus'
-ItemDisplay[SET !ID buc]: %CONTINUE%Hsarus Iron Fist
+ItemDisplay[SET !ID buc]: %CONTINUE%Hsarus Shield
 // Hsarus Iron Stay Belt in "Set Multiple" section
-ItemDisplay[SET !ID mbt]: %CONTINUE%Hsarus Iron Heel
+ItemDisplay[SET !ID mbt]: %CONTINUE%Hsarus Boots
 
 // Infernal
-ItemDisplay[SET !ID dgr]: %CONTINUE%Infernal Spine
+ItemDisplay[SET !ID dgr]: %CONTINUE%Infernal Dagger
 
 // Isenhart
-ItemDisplay[SET !ID bsd]: %CONTINUE%Isenhart's Lightbrand
-ItemDisplay[SET !ID fhl]: %CONTINUE%Isenhart's Horns
-ItemDisplay[SET !ID brs]: %CONTINUE%Isenhart's Case
-ItemDisplay[SET !ID gts]: %CONTINUE%Isenhart's Parry
+ItemDisplay[SET !ID bsd]: %CONTINUE%Isenhart's Sword
+ItemDisplay[SET !ID fhl]: %CONTINUE%Isenhart's Helm
+ItemDisplay[SET !ID brs]: %CONTINUE%Isenhart's Armor
+ItemDisplay[SET !ID gts]: %CONTINUE%Isenhart's Shield
 
 // Milabregas
-ItemDisplay[SET !ID aar]: %CONTINUE%Milabrega's Robe
-ItemDisplay[SET !ID kit]: %CONTINUE%Milabrega's Orb
-ItemDisplay[SET !ID wsp]: %CONTINUE%Milabrega's Rod
+ItemDisplay[SET !ID aar]: %CONTINUE%Milabrega's Armor
+ItemDisplay[SET !ID kit]: %CONTINUE%Milabrega's Shield
+ItemDisplay[SET !ID wsp]: %CONTINUE%Milabrega's Scepter
 
 // Sigon's
-ItemDisplay[SET !ID ghm]: %CONTINUE%Sigon's Visor
-ItemDisplay[SET !ID gth]: %CONTINUE%Sigon's Shelter
-ItemDisplay[SET !ID hbt]: %CONTINUE%Sigon's Sabot
-ItemDisplay[SET !ID tow]: %CONTINUE%Sigon's Guard
-ItemDisplay[SET !ID hbl]: %CONTINUE%Sigon's Wrap
-ItemDisplay[SET !ID hgl]: %CONTINUE%Sigon's Gage
+ItemDisplay[SET !ID ghm]: %CONTINUE%Sigon's Helm
+ItemDisplay[SET !ID gth]: %CONTINUE%Sigon's Armor
+ItemDisplay[SET !ID hbt]: %CONTINUE%Sigon's Boots
+ItemDisplay[SET !ID tow]: %CONTINUE%Sigon's Shield
+ItemDisplay[SET !ID hbl]: %CONTINUE%Sigon's Belt
+ItemDisplay[SET !ID hgl]: %CONTINUE%Sigon's Gloves
 
 // Tancred's
-ItemDisplay[SET !ID bhm]: %CONTINUE%Tancred's Skull
-ItemDisplay[SET !ID ful]: %CONTINUE%Tancred's Spine
-ItemDisplay[SET !ID lbt]: %CONTINUE%Tancred's Hobnails
-ItemDisplay[SET !ID mpi]: %CONTINUE%Tancred's Crowbill
+ItemDisplay[SET !ID bhm]: %CONTINUE%Tancred's Helm
+ItemDisplay[SET !ID ful]: %CONTINUE%Tancred's Armor
+ItemDisplay[SET !ID lbt]: %CONTINUE%Tancred's Boots
+ItemDisplay[SET !ID mpi]: %CONTINUE%Tancred's Mace
 
 // Vidala's
-ItemDisplay[SET !ID lbb]: %CONTINUE%Vidala's Barb Long
-ItemDisplay[SET !ID lea]: %CONTINUE%Vidala's Ambush
-ItemDisplay[SET !ID tbt]: %CONTINUE%Vidala's Fetlock
+ItemDisplay[SET !ID lbb]: %CONTINUE%Vidala's Bow
+ItemDisplay[SET !ID lea]: %CONTINUE%Vidala's Armor
+ItemDisplay[SET !ID tbt]: %CONTINUE%Vidala's Boots
 
 // Aldur's
-ItemDisplay[SET !ID dr8]: %CONTINUE%Aldur's Stony Gaze
-ItemDisplay[SET !ID xtb]: %CONTINUE%Aldur's Advance
-ItemDisplay[SET !ID uul]: %CONTINUE%Aldur's Deception
-ItemDisplay[SET !ID 9mt]: %CONTINUE%Aldur's Rhythm
+ItemDisplay[SET !ID dr8]: %CONTINUE%Aldur's Druid Pelt
+ItemDisplay[SET !ID xtb]: %CONTINUE%Aldur's Boots
+ItemDisplay[SET !ID uul]: %CONTINUE%Aldur's Armor
+ItemDisplay[SET !ID 9mt]: %CONTINUE%Aldur's Mace
 
 // Bul-Kathos
-ItemDisplay[SET !ID 7gd]: %CONTINUE%Bul-Katho's Sacred Charge// Colossus Blade 
-ItemDisplay[SET !ID 7fb]: %CONTINUE%Bul-Katho's Tribal Guardian// Colossus Sword
-ItemDisplay[SET !ID 7wd]: %CONTINUE%Bul-Katho's Tribal Guardian// Mythical Sword(legacy)
+ItemDisplay[SET !ID 7gd]: %CONTINUE%Bul-Katho's Sword// Colossus Blade
+ItemDisplay[SET !ID 7fb]: %CONTINUE%Bul-Katho's Sword// Colossus Sword
+//ItemDisplay[SET !ID 7wd]: %CONTINUE%Bul-Katho's Sword// Mythical Sword(legacy)
 
 // Cow King's
-ItemDisplay[SET !ID xap]: %CONTINUE%Cow King's Horns
-ItemDisplay[SET !ID stu]: %CONTINUE%Cow King's Hide
+ItemDisplay[SET !ID xap]: %CONTINUE%Cow King's Helm
+ItemDisplay[SET !ID stu]: %CONTINUE%Cow King's Armor
 
 // Disciple
-ItemDisplay[SET !ID ulg]: %CONTINUE%Laying of Hands
-ItemDisplay[SET !ID uui]: %CONTINUE%Dark Adherent
-ItemDisplay[SET !ID xlb]: %CONTINUE%Rite of Passage
-ItemDisplay[SET !ID umc]: %CONTINUE%Credendum
+ItemDisplay[SET !ID ulg]: %CONTINUE%Disciple Gloves
+ItemDisplay[SET !ID uui]: %CONTINUE%Disciple Armor
+ItemDisplay[SET !ID xlb]: %CONTINUE%Disciple Boots
+ItemDisplay[SET !ID umc]: %CONTINUE%Disciple Belt
 
 // Griswald's
-ItemDisplay[SET !ID xar]: %CONTINUE%Griswold's Heart
-ItemDisplay[SET !ID urn]: %CONTINUE%Griswold's Valor
-ItemDisplay[SET !ID 7ws]: %CONTINUE%Griswold's Redemption
-ItemDisplay[SET !ID paf]: %CONTINUE%Griswold's Honor
+ItemDisplay[SET !ID xar]: %CONTINUE%Griswold's Armor
+ItemDisplay[SET !ID urn]: %CONTINUE%Griswold's Helm
+ItemDisplay[SET !ID 7ws]: %CONTINUE%Griswold's Sword
+ItemDisplay[SET !ID paf]: %CONTINUE%Griswold's Paladin Shield
 
 // Heaven's
-ItemDisplay[SET !ID xrs]: %CONTINUE%Haemosus Adamant
-ItemDisplay[SET !ID 7ma]: %CONTINUE%Dangoons Teaching
-ItemDisplay[SET !ID uts]: %CONTINUE%Taebaeks Glory
-ItemDisplay[SET !ID uhm]: %CONTINUE%Ondals Almighty
+ItemDisplay[SET !ID xrs]: %CONTINUE%Heaven's Paladin Shield
+ItemDisplay[SET !ID 7ma]: %CONTINUE%Heaven's Mace
+ItemDisplay[SET !ID uts]: %CONTINUE%Heaven's Armor
+ItemDisplay[SET !ID uhm]: %CONTINUE%Heaven's Helm
 
 // Hwain's
-ItemDisplay[SET !ID xrn]: %CONTINUE%Hwanin's Splendor
-ItemDisplay[SET !ID 9vo]: %CONTINUE%Hwanin's Justice
-ItemDisplay[SET !ID xcl]: %CONTINUE%Hwanin's Refuge
+ItemDisplay[SET !ID xrn]: %CONTINUE%Hwanin's Helm
+ItemDisplay[SET !ID 9vo]: %CONTINUE%Hwanin's Polearm
+ItemDisplay[SET !ID xcl]: %CONTINUE%Hwanin's Armor
 
-// IK 
-ItemDisplay[SET !ID ba5]: %CONTINUE%Immortal Kings Will
-ItemDisplay[SET !ID 7m7]: %CONTINUE%Immortal Kings Stone Crusher
-ItemDisplay[SET !ID uar]: %CONTINUE%Immortal Kings Soul Cage
-ItemDisplay[SET !ID zhb]: %CONTINUE%Immortal Kings Detail
-ItemDisplay[SET !ID xhg]: %CONTINUE%Immortal Kings Forge
-ItemDisplay[SET !ID xhb]: %CONTINUE%Immortal Kings Pillar
+// IK
+ItemDisplay[SET !ID ba5]: %CONTINUE%Immortal King's Barb Helm
+ItemDisplay[SET !ID 7m7]: %CONTINUE%Immortal King's Maul
+ItemDisplay[SET !ID uar]: %CONTINUE%Immortal King's Armor
+ItemDisplay[SET !ID zhb]: %CONTINUE%Immortal King's Belt
+ItemDisplay[SET !ID xhg]: %CONTINUE%Immortal King's Gloves
+ItemDisplay[SET !ID xhb]: %CONTINUE%Immortal King's Boots
 
 // Mavina
-ItemDisplay[SET !ID ci3]: %CONTINUE%Mavinas True Sight
-ItemDisplay[SET !ID amc]: %CONTINUE%Mavinas Caster
-ItemDisplay[SET !ID uld]: %CONTINUE%Mavinas Embrace
-ItemDisplay[SET !ID xtg]: %CONTINUE%Mavinas Icy Clutch
-ItemDisplay[SET !ID zvb]: %CONTINUE%Mavinas Tenet
+ItemDisplay[SET !ID ci3]: %CONTINUE%Mavina's Helm
+ItemDisplay[SET !ID amc]: %CONTINUE%Mavina's Amazon Bow
+ItemDisplay[SET !ID uld]: %CONTINUE%Mavina's Armor
+ItemDisplay[SET !ID xtg]: %CONTINUE%Mavina's Gloves
+ItemDisplay[SET !ID zvb]: %CONTINUE%Mavina's Belt
 
 // Natalya's
-ItemDisplay[SET !ID xh9]: %CONTINUE%Natalya's Totem
-ItemDisplay[SET !ID 7qr]: %CONTINUE%Natalya's Mark
-ItemDisplay[SET !ID ucl]: %CONTINUE%Natalya's Shadow
-ItemDisplay[SET !ID xmb]: %CONTINUE%Natalya's Soul
+ItemDisplay[SET !ID xh9]: %CONTINUE%Natalya's Helm
+ItemDisplay[SET !ID 7qr]: %CONTINUE%Natalya's Claw
+ItemDisplay[SET !ID ucl]: %CONTINUE%Natalya's Armor
+ItemDisplay[SET !ID xmb]: %CONTINUE%Natalya's Boots
 
 // Naj's
-ItemDisplay[SET !ID ci0]: %CONTINUE%Naj's Circlet// Circlet
-ItemDisplay[SET !ID ult]: %CONTINUE%Naj's Light Plate// Hellforge Plate
-ItemDisplay[SET !ID 6cs]: %CONTINUE%Naj's Puzzler// Elder Staff
+ItemDisplay[SET !ID ci0]: %CONTINUE%Naj's Helm// Circlet
+ItemDisplay[SET !ID ult]: %CONTINUE%Naj's Armor// Hellforge Plate
+ItemDisplay[SET !ID 6cs]: %CONTINUE%Naj's Staff// Elder Staff
 
 // Orphan's
 ItemDisplay[SET !ID xhm]: %CONTINUE%Guillaumes Face// Winged Helm
-ItemDisplay[SET !ID xml]: %CONTINUE%Whitstans Guard
-ItemDisplay[SET !ID xvg]: %CONTINUE%Magnus Skin
-ItemDisplay[SET !ID ztb]: %CONTINUE%Wilhelms Pride
+ItemDisplay[SET !ID xml]: %CONTINUE%Orphan's Shield
+ItemDisplay[SET !ID xvg]: %CONTINUE%Orphan's Gloves
+ItemDisplay[SET !ID ztb]: %CONTINUE%Orphan's Belt
 
 // Sander's
-ItemDisplay[SET !ID bwn]: %CONTINUE%Sanders Superstition
-ItemDisplay[SET !ID vgl]: %CONTINUE%Sanders Taboo
+ItemDisplay[SET !ID bwn]: %CONTINUE%Sander's Wand
+ItemDisplay[SET !ID vgl]: %CONTINUE%Sander's Gloves
 
 // Szabi's
-ItemDisplay[SET !ID xhl]: %CONTINUE%Sazabis Mental Sheath
-ItemDisplay[SET !ID 7ls]: %CONTINUE%Sazabis Cobalt Redeemer
-ItemDisplay[SET !ID upl]: %CONTINUE%Sazabis Ghost Liberator
+ItemDisplay[SET !ID xhl]: %CONTINUE%Sazabi's Helm
+ItemDisplay[SET !ID 7ls]: %CONTINUE%Sazabi's Sword
+ItemDisplay[SET !ID upl]: %CONTINUE%Sazabi's Armor
 
 // Tal Rasha's
-ItemDisplay[SET !ID oba]: %CONTINUE%Tal Rasha's Lidless Eye
-ItemDisplay[SET !ID xsk]: %CONTINUE%Tal Rasha's Horadric Crest
-ItemDisplay[SET !ID uth]: %CONTINUE%Tal Rasha's Guardianship
-ItemDisplay[SET !ID zmb]: %CONTINUE%Tal Rasha's Fine-Spun Cloth
+ItemDisplay[SET !ID oba]: %CONTINUE%Tal Rasha's Sorc Orb
+ItemDisplay[SET !ID xsk]: %CONTINUE%Tal Rasha's Helm
+ItemDisplay[SET !ID uth]: %CONTINUE%Tal Rasha's Armor
+ItemDisplay[SET !ID zmb]: %CONTINUE%Tal Rasha's Belt
 
 // Trang's
-ItemDisplay[SET !ID uh9]: %CONTINUE%Trang-Oul's Guise
-ItemDisplay[SET !ID xul]: %CONTINUE%Trang-Oul's Scales
-ItemDisplay[SET !ID ne9]: %CONTINUE%Trang-Oul's Wing
-ItemDisplay[SET !ID utc]: %CONTINUE%Trang-Oul's Girth
-//ItemDisplay[SET !ID utc]: %CONTINUE%Trang-Oul's Girthquake - Troll Belt
-ItemDisplay[SET !ID xmg]: %CONTINUE%Trang-Oul's Claws
+ItemDisplay[SET !ID uh9]: %CONTINUE%Trang-Oul's Helm
+ItemDisplay[SET !ID xul]: %CONTINUE%Trang-Oul's Armor
+ItemDisplay[SET !ID ne9]: %CONTINUE%Trang-Oul's Necro Head
+ItemDisplay[SET !ID utc]: %CONTINUE%Trang-Oul's Belt
+ItemDisplay[SET !ID xmg]: %CONTINUE%Trang-Oul's Gloves
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 // UNI/SET !ID Formatting
