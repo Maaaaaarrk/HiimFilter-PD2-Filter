@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated May 22nd Season 13 - build 212
+## Last updated May 22nd Season 13 - build 213
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -110,6 +110,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Draculs Grasp
 - Earth Shifter or The Cranium Basher (ETH only)
 - Ghostflame
+- Giant Skull
 - Gore Rider
 - Griffons Eye
 - Guardian Angel (ETH only)
@@ -139,7 +140,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Titans Revenge (ETH only)
 - Tomb Reaver
 - Tomb Reaver (ETH only)
-- Vampire Gaze
 - Veil of Steel or Nightwings Veil
 - Verdungos Hearty Cord
 - Vortex Shield
@@ -158,7 +158,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Elite Bolts
 - Executioners Justice
 - Gerkes Sanctuary
-- Giant Skull
 - Guardian Angel
 - Herald of Zakarum
 - Lava Gout
@@ -182,6 +181,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Grandfather
 - The Reapers Toll
 - Thundergods Vigor (non-ETH only)
+- Vampire Gaze
 - War Fist
 - War Traveler
 - Widowmaker
@@ -197,7 +197,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Blackhand Key
 - Blade of Ali Baba
 - Bloodravens Charge
-- Bloodtree Stump (non-ETH only)
+- Bloodtree Stump
 - Boneflame
 - Boneshade
 - Brimstone Rain
@@ -287,13 +287,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Lacerator
 - Nethercrux
 - Odium
-- Purgatory (non-ETH only)
+- Purgatory
 - Que-Hegans Wisdom
 - Rune Master
 - Shatterblade
 - Silks of the Victor
 - Swordguard
-- The Gavel Of Pain (non-ETH only)
+- The Gavel Of Pain
 - The Spirit Shroud
 - Toothrow
 - Venom Ward

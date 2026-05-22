@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 22nd%CL%Season 13 - build 212%CL%Kassahi - Mystery - Phil777 - Necro - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 22nd%CL%Season 13 - build 213%CL%Kassahi - Mystery - Phil777 - Necro - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -472,7 +472,10 @@ Alias[HORADRIC_SCARAB]: %GOLD% %NAME%
 // Verdungos Hearty Cord - Mithril Coil
 // Soul Drainer - Vambraces
 // Griffons Eye - Diadem
-Alias[4_STAR_UNIQUE]: (uar OR uhm OR usk OR urn OR 7wh OR 7ws OR 6ws OR 7gw OR xhb OR uhc OR uul OR 7pa OR drd OR umc OR umg OR uhg OR 7cr OR obe OR 7bl OR pac OR 7gi OR bae OR ung OR xvb OR 7s8 OR amf OR ci3)
+// Vampire Gaze - Grim Helm
+// Vortex Shield - Skywarden
+// Draculs Grasp - Vampirebone Gloves
+Alias[4_STAR_UNIQUE]: (uar OR uhm OR usk OR urn OR 7wh OR 7ws OR 6ws OR 7gw OR xhb OR uhc OR uul OR 7pa OR drd OR umc OR umg OR uhg OR 7cr OR 7bl OR pac OR bae OR ung OR xvb OR amf OR ci3 OR uh9 OR paf OR uvg)
 
 // 4 Star Unique Callouts only when not ETH
 //-----------------------------------------------------------------------------------
@@ -518,26 +521,29 @@ Alias[4_STAR_ETH_UNIQUE]: (utp OR 9gm OR 7p7 OR 9la OR 7b7 OR 7b8 OR ama OR aar 
 // Blackhand Key - Grave Wand
 // War Traveler - Battle Boots
 // Lightsabre or Azurewrath - Phase Blade
-// Draculs Grasp - Vampirebone Gloves
 // Steel Pillar - War Pike
 // War Fist - Whispering Mirage
-// Vampire Gaze - Grim Helm
 // Widowmaker - Ward Bow
 // The Grandfather - Colossus Blade
-// Vortex Shield - Skywarden
 // Earth Shifter or The Cranium Basher - Thunder Maul
 // Doombringer - Champion Sword
 // Guardian Angel - Templar Coat
 // Skyfall - Vortex Orb
 // Elite Bolts
-// Bloodtree Stump - War Club (non-ETH; eth -> 4*)
 // Waterwalk - Sharkskin Boots
 // Stoneraven - Matriarchal Spear (non-ETH)
 // Kiras Guardian - Tiara
 // Herald of Zakarum - Gilded Shield
 // Zerae's Resolve - Cryptic Axe (non-eth; eth -> 4★)
+// Magefist - Light Gauntlets
+// Dragonscale - Zakarum Shield
+// Pus Spitter - Siege Crossbow
+// Occultist - Crusader Gauntlets
+// Gerkes Sanctuary - Pavise
+// Executioners Justice - Glorious Axe
+// The Reapers Toll - Thresher
 
-Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR 7wc OR xtb OR uvg OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR paf OR 7gm OR 7b7 OR xlt OR cqv3 OR 9m9 OR amd OR xtg OR uh9 OR baa OR 7sr OR pa9 OR ame OR xmb OR xsh)
+Alias[3_STAR_UNIQUE]: (xhn OR zlb OR uvc OR 7wc OR xtb OR 7p7 OR 7xf OR xh9 OR 6sw OR 7gd OR 7gm OR 7b7 OR xlt OR cqv3 OR amd OR xtg OR baa OR pa9 OR ame OR xmb OR xsh OR 8mx OR utg OR xow OR pae OR tgl OR 7gi OR 7s8 OR obe)
 
 // 3 Star Unique Callouts when not eth
 //-----------------------------------------------------------------------------------
@@ -557,15 +563,12 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR ned OR uap OR uit OR ztb OR uui)
 // The Oculus - Swirling Crystal
 // Skin of the Vipermagi - Serpentskin Armor
 // Silkweave - Mesh Boots
-// Magefist - Light Gauntlets
 // Gravepalm - Sharkskin Gloves
 // Ghostflame - Legend Spike
 // Suicide Branch - Burnt Wand
 // Boneshade - Lich Wand
-// Toothrow - Sharktooth Armor
 // Marrowwalk - Boneweave Boots
 // Hellslayer - Decapitator
-// Dragonscale - Zakarum Shield
 // Lava Gout - Battle Gauntlets
 // Death Cleaver - Berserker Axe (non-ETH; eth -> 4★)
 // Skull Collector - Rune Staff
@@ -576,7 +579,6 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR ned OR uap OR uit OR ztb OR uui)
 // Jalals Mane - Totemic Mask
 // Frostwind - Cryptic Sword
 // Alma Negra - Sacred Rondache
-// The Reapers Toll - Thresher
 // Sacred Totem - Hellspawn Skull
 // Ephemeral - Sacred Targe
 // Ormus Robes - Dusk Shroud
@@ -585,17 +587,14 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR ned OR uap OR uit OR ztb OR uui)
 // Wraithskin - Diamond Mail
 // Ribcracker - Quarterstaff (non-ETH)
 // Demon Machine - Chu-Ko-Nu
-// Pus Spitter - Siege Crossbow
 // Thunderstroke - Matriarchal Javelin (non-ETH)
 // Elite Arrows
 // Exceptional Arrows
 // Deaths Fathom - Dimensional Shard
 // Medusas Gaze - Aegis
-// The Gavel Of Pain - Martel de Fer (non-ETH)
 // Horizons Tornado or Stormlash - Scourge
 // Arm of King Leoric - Tomb Wand
 // Windforce - Hydra Bow
-// Occultist - Crusader Gauntlets
 // Boneflame - Succubus Skull
 // Razortail - Sharkskin Belt
 // Giant Skull - Bone Visage
@@ -603,14 +602,12 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR ned OR uap OR uit OR ztb OR uui)
 // Stalker's Cull - Runic Talons
 // Goldwrap - Heavy Belt
 // Infernostride - Demonhide Boots
-// Rune Master - Ettin Axe
 // Valkyrie Wing - Winged Helm
 // Homunculus - Hierophant Trophy
 // Chance Guards - Chain Gloves
 // Blade of Ali Baba - Tulwar
 // Spike Thorn - Blade Barrier
 // Flamebellow - Balrog Blade
-// Gerkes Sanctuary - Pavise
 // Head Hunters Glory - Troll Nest
 // Heavenly Garb - Light Plate
 // Ondals Wisdom - Elder Staff
@@ -622,11 +619,15 @@ Alias[3_STAR_NO_ETH_UNIQUE]: (zhb OR ned OR uap OR uit OR ztb OR uui)
 // Brimstone Rain - Shillelagh
 // Frostburn - Gauntlets
 // Windhammer - Ogre Maul (non-ETH; eth -> 4★)
-Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR tgl OR xvg OR 9wn OR 7bw OR xld OR umb OR 7bt OR pae OR 8ws OR obc OR uhb OR bad OR 9s8 OR dra OR 7ls OR neg OR pab OR 9wc OR 8ls OR 8rx OR 8mx OR aqv3 OR aqv2 OR obf OR uow OR 9gm OR 7fl OR 9bw OR 6lw OR utg OR nee OR zvb OR drc OR 9gw OR uml OR xar OR ulg OR urg OR amc OR xap OR gsd OR uld OR 9ls OR xth OR xpl OR obd OR ulb OR xlg OR xmg OR xhg OR uvb OR amb OR 7wb OR 7lw OR uhl OR 7vo OR ama OR 7fb OR 7ts OR nef OR 7tw OR 9fc OR upk OR 72a OR ush OR utu OR xhm OR xlb OR xow OR tbl OR 6cs OR 9tw OR ltp OR mgl OR nea OR 7gs OR dr6 OR baf OR drf OR 6bs OR hgl OR 7wa OR 7m7)
+// Cyclopean Roar - Jawbone Visor
+// Humongous - Giant Axe
+// Treads of Cthon - Chain Boots
+// Bloodtree Stump - War Club (non-ETH; eth -> 4★)
+// Ariocs Needle - Hyperion Spear
+Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR xvg OR 9wn OR 7bw OR umb OR 7bt OR 8ws OR obc OR uhb OR bad OR 9s8 OR dra OR 7ls OR neg OR pab OR 9wc OR 8ls OR 8rx OR aqv3 OR aqv2 OR obf OR uow OR 7fl OR 9bw OR 6lw OR nee OR zvb OR drc OR 9gw OR xar OR ulg OR urg OR amc OR xap OR gsd OR uld OR 9ls OR xth OR xpl OR obd OR ulb OR xlg OR xmg OR xhg OR uvb OR amb OR 7wb OR 7lw OR uhl OR 7vo OR ama OR 7ts OR nef OR 7tw OR 9fc OR upk OR ush OR utu OR xhm OR xlb OR tbl OR 6cs OR 9tw OR ltp OR mgl OR nea OR 7gs OR dr6 OR baf OR drf OR 6bs OR hgl OR 7wa OR 7m7 OR ba6 OR gix OR mbt OR 9m9 OR 7sr)
 
 // 1 Star Unique Callouts
 //-----------------------------------------------------------------------------------
-// Blackoak Shield - Luna
 // Corpsemourn - Ornate Plate
 // Titans Grip - Bramble Mitts
 // Twilights Reflection - Hyperion
@@ -639,14 +640,21 @@ Alias[2_STAR_UNIQUE]: (drb OR oba OR xea OR tgl OR xvg OR 9wn OR 7bw OR xld OR u
 // Wildspeaker - Lion Helm
 // Atmas Wail - Embossed Plate
 // Skullders Ire - Russet Armor
-// Treads of Cthon - Chain Boots
 // Embersworn - Demon Heart
 // Merman's Sprocket - Wyrmhide Boots
-// Cyclopean Roar - Jawbone Visor
-// Humongous - Giant Axe
 // Blackbogs Sharp - Cinquedeas
+// Que-Hegans Wisdom - Mage Plate
+// Bloodfist - Heavy Gloves
+// Purgatory - Archon Plate (non-ETH; eth -> 4★)
+// Crow Caw - Tigulated Mail
+// The Spirit Shroud - Ghost Armor
+// Gimmershred - Flying Axe
+// Rune Master - Ettin Axe
+// Odium - Colossus Sword
+// Toothrow - Sharktooth Armor
+// The Gavel Of Pain - Martel de Fer (non-ETH; eth -> 4★)
 
-Alias[1_STAR_UNIQUE]: (aar OR ba7 OR xul OR 7br OR 8cs OR 7b8 OR brs OR xrn OR 8s8 OR 6l7 OR 7dg OR 9gd OR bac OR 7di OR 8hx OR cqv2 OR 7yw OR gix OR mbt OR ba6 OR 9kr)
+Alias[1_STAR_UNIQUE]: (aar OR ba7 OR xul OR 7br OR 8cs OR 7b8 OR brs OR xrn OR 8s8 OR 7dg OR 9gd OR bac OR 7di OR 8hx OR cqv2 OR 7yw OR 9kr OR xtp OR vgl OR utp OR xcl OR xui OR 7ta OR 72a OR 7fb OR xld OR 9gm)
 
 
 // 0 Star Unique Callouts
@@ -654,20 +662,19 @@ Alias[1_STAR_UNIQUE]: (aar OR ba7 OR xul OR 7br OR 8cs OR 7b8 OR brs OR xrn OR 8
 // Venom Grip - Demonhide Gloves
 // Ghoulhide - Heavy Bracers
 // Hellmouth - War Gauntlets
-// Purgatory - Archon Plate (non-ETH)
 // Sandstorm Trek - Scarabshell Boots
 // Bloodravens Charge - Matriarchal Bow
 // Heart Carver - Rondel
-// Bloodfist - Heavy Gloves
 // Jade Talon - Wrist Sword
 // Firelizards Talons - Feral Claws
 // Sage's Defiance - Giant Conch
 // Giant Maimer - Colossus Voulge
-// Que-Hegans Wisdom - Mage Plate
 // The Jade Tan Do - Kris
 // Gorefoot - Heavy Boots
+// Endlesshail - Double Bow
+// Eaglehorn - Crusader Bow
 
-Alias[0_STAR_UNIQUE]: (utp OR 9di OR vgl OR xtp OR xkp OR lbb OR kri OR vbt)
+Alias[0_STAR_UNIQUE]: (9di OR xkp OR lbb OR kri OR vbt OR 8cb OR 6l7)
 
 
 // NO Star Unique Callouts
@@ -682,17 +689,13 @@ Alias[0_STAR_UNIQUE]: (utp OR 9di OR vgl OR xtp OR xkp OR lbb OR kri OR vbt)
 // Viperfork - Mancatcher
 // Chromatic Ire - Cedar Staff
 // Djinn Slayer - Ataghan
-// Gimmershred - Flying Axe
 // Lacerator - Winged Axe (non-ETH)
 // Venom Ward - Breast Plate
 // Titans Revenge - Ceremonial Javelin (non-ETH)
 // Arreats Face - Slayer Guard
 // Crown of Thieves - Grand Crown
 // Witchwild String - Short Siege Bow
-// Eaglehorn - Crusader Bow
 // Wizardspike - Bone Knife
-// Ariocs Needle - Hyperion Spear
-// Odium - Colossus Sword
 // Cloudcrack - Gothic Sword
 // Swordguard - Executioner Sword
 // Zerae's Resolve - Matriarchal Pike
@@ -701,19 +704,16 @@ Alias[0_STAR_UNIQUE]: (utp OR 9di OR vgl OR xtp OR xkp OR lbb OR kri OR vbt)
 // Magewrath - Rune Bow
 // Shatterblade - Mithril Point
 // Baezils Vortex - Knout
-// Executioners Justice - Glorious Axe
 // Warlords Trust - Military Axe (non-ETH; eth -> 4★)
 // Ursa's Nightmare - Dream Spirit
 // Buriza-Do Kyanon - Ballista
 // Duskdeep - Full Helm
 // The Impaler - War Spear
 // Exceptional Bolts
-// Crow Caw - Tigulated Mail
 // Nethercrux - Ghost Wand
-// The Spirit Shroud - Ghost Armor
-// Endlesshail - Double Bow
+// Blackoak Shield - Luna
 
-Alias[NO_STAR_UNIQUE]: (lgl OR cap OR xts OR 8lb OR dgr OR 7sm OR 9b9 OR 8sw OR 9fl OR fhl OR 9sr OR xcl OR xui OR 7ta OR 8cb OR 9la)
+Alias[NO_STAR_UNIQUE]: (lgl OR cap OR xts OR 8lb OR dgr OR 7sm OR 9b9 OR 8sw OR 9fl OR fhl OR 9sr OR 9la OR uml)
 
 //  lld
 //-----------------------------------------------------------------------------------
@@ -753,11 +753,10 @@ Alias[4_STAR_SET]: (lbt OR uar)
 // Griswold's Redemption - Caduceus
 // Natalya's Shadow - Loricated Mail
 // Natalya's Mark - Scissors Suwayyah
-// Immortal Kings Stone Crusher - Ogre Maul
 // Trang-Oul's Scales - Chaos Armor
 // Trang-Oul's Claws - Heavy Bracers
 
-Alias[3_STAR_SET]: (ne9 OR 7ws OR ucl OR 7qr OR 7m7 OR xul OR xmg)
+Alias[3_STAR_SET]: (ne9 OR 7ws OR ucl OR 7qr OR xul OR xmg)
 
 // Set 2 star Callouts
 //-----------------------------------------------------------------------------------
@@ -780,13 +779,14 @@ Alias[3_STAR_SET]: (ne9 OR 7ws OR ucl OR 7qr OR 7m7 OR xul OR xmg)
 // Trang-Oul's Girth - Troll Belt
 // Griswold's Heart - Ornate Plate
 // Aldur's Stony Gaze - Hunters Guise
-Alias[2_STAR_SET]: (xap OR stu OR urn OR vbt OR xhm OR xmb OR xvg OR zhb OR ulg OR xhb OR uth OR xsk OR oba OR uul OR xh9 OR paf OR utc OR xar OR dr8)
+// Immortal Kings Will - Avenger Guard
+// Immortal Kings Stone Crusher - Ogre Maul
+Alias[2_STAR_SET]: (xap OR stu OR urn OR vbt OR xhm OR xmb OR xvg OR zhb OR ulg OR xhb OR uth OR xsk OR oba OR uul OR xh9 OR paf OR utc OR xar OR dr8 OR ba5 OR 7m7)
 
 // Set 1 star Callouts
 //-----------------------------------------------------------------------------------
 // Naj's Puzzler - Elder Staff
 // Aldur's Advance - Battle Boots
-// Immortal Kings Will - Avenger Guard
 // Immortal Kings Forge - War Gauntlets
 // Tal Rasha's Fine-Spun Cloth - Mesh Belt
 // Trang-Oul's Guise - Bone Visage
@@ -801,7 +801,7 @@ Alias[2_STAR_SET]: (xap OR stu OR urn OR vbt OR xhm OR xmb OR xvg OR zhb OR ulg 
 // Ondals Almighty - Spired Helm
 // Taebaeks Glory - Ward
 // Aldur's Rhythm - Jagged Star
-Alias[1_STAR_SET]: (6cs OR xtb OR ba5 OR xhg OR zmb OR ci3 OR amc OR uld OR xtg OR zvb OR mbl OR lgl OR tow OR uhm OR uts OR 9mt)
+Alias[1_STAR_SET]: (6cs OR xtb OR xhg OR zmb OR ci3 OR amc OR uld OR xtg OR zvb OR mbl OR lgl OR tow OR uhm OR uts OR 9mt)
 
 // Set 0 star Callouts
 //-----------------------------------------------------------------------------------
@@ -900,9 +900,9 @@ Alias[GG_GC]: ((LIFE>29 TABSK40>0) OR (FRW>0 TABSK40>0) OR (FHR>0 TABSK40>0) OR 
 ItemDisplay[MAG cm1 GG_SC]: %PURPLE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm2 GG_LC]: %PURPLE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm3 GG_GC]: %PURPLE%%NAME%%CONTINUE%
-ItemDisplay[MAG !ID cm1]: Small%CONTINUE%
-ItemDisplay[MAG !ID cm2]: Large%CONTINUE%
-ItemDisplay[MAG !ID cm3]: Grand%CONTINUE%
+ItemDisplay[MAG !ID cm1]: %BLUE%Small%CONTINUE%
+ItemDisplay[MAG !ID cm2]: %BLUE%Large%CONTINUE%
+ItemDisplay[MAG !ID cm3]: %BLUE%Grand%CONTINUE%
 ItemDisplay[MAG !ID ((ILVL>89 (cm1 OR cm2 OR cm3)) OR (ILVL>84 (jew)))]: %PURPLE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm1p]: %PURPLE%Pvp Arena %BLUE%Small Charm%CONTINUE%
 ItemDisplay[MAG cm2p]: %PURPLE%Pvp Arena %BLUE%Large Charm%CONTINUE%
@@ -1619,7 +1619,7 @@ ItemDisplay[crfv]: %GOLD%Infusion %LIGHT_GRAY%@{%NAME%}%CONTINUE%
 
 // Infusion stack QTY annotation — since it was re-named we need to add it back
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
+ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma OR imrn) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
 // Renamed-item QTY annotation since it was re-named we need to add it back
 ItemDisplay[(tes OR ceh OR bet OR fed OR pk1 OR pk2 OR pk3 OR mbr OR dhn OR bey OR ubaa OR ubab OR ubac OR dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR cwss OR lucb OR lucc OR lucd OR wss OR iwss OR lmal OR jewf OR lpp OR scrb OR std) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
@@ -2945,14 +2945,14 @@ ItemDisplay[GEM=1 CLVL<24]: %WHITE%Chip-%SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=2 CLVL<24]: %WHITE%Fla-%SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=3 CLVL<24]: %SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[(GEM=1 OR GEM=2 OR GEM=3) CLVL>23]:
-ItemDisplay[GEM=4 AND GEMTYPE=1 OR gpv OR gpvs]: %WHITE%F %PURPLE%Amethyst%CONTINUE%
-ItemDisplay[GEM=4 AND GEMTYPE=2 OR gpw OR gpws]: %WHITE%F %WHITE%Diamond%CONTINUE%
-ItemDisplay[GEM=4 AND GEMTYPE=3 OR gpg OR gpgs]: %WHITE%F %GREEN%Emerald%CONTINUE%
-ItemDisplay[GEM=4 AND GEMTYPE=4 OR gpr OR gprs]: %WHITE%F %RED%Ruby%CONTINUE%
-ItemDisplay[GEM=4 AND GEMTYPE=5 OR gpb OR gpbs]: %WHITE%F %BLUE%Sapphire%CONTINUE%
-ItemDisplay[GEM=4 AND GEMTYPE=6 OR gpy OR gpys]: %WHITE%F %YELLOW%Topaz%CONTINUE%
-ItemDisplay[GEM=4 AND GEMTYPE=7 OR skz OR skzs]: %WHITE%F %GRAY%Skull%CONTINUE%
-ItemDisplay[(GEM=4 AND GEMTYPE=7) OR skl OR skls]: %WHITE%F %GRAY%Skull%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=1 OR gpv OR gpvs]: %PURPLE%Amethyst%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=2 OR gpw OR gpws]: %WHITE%Diamond%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=3 OR gpg OR gpgs]: %GREEN%Emerald%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=4 OR gpr OR gprs]: %RED%Ruby%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=5 OR gpb OR gpbs]: %BLUE%Sapphire%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=6 OR gpy OR gpys]: %YELLOW%Topaz%CONTINUE%
+ItemDisplay[GEM=4 AND GEMTYPE=7 OR skz OR skzs]: %GRAY%Skull%CONTINUE%
+ItemDisplay[(GEM=4 AND GEMTYPE=7) OR skl OR skls]: %GRAY%Skull%CONTINUE%
 //Perfect
 ItemDisplay[GEM=5 AND GEMTYPE=1 OR gpv OR gpvs]: %WHITE%P %PURPLE%Amethyst%MAP-20%%CONTINUE%
 ItemDisplay[GEM=5 AND GEMTYPE=2 OR gpw OR gpws]: %WHITE%P %WHITE%Diamond%MAP-20%%CONTINUE%
@@ -2988,9 +2988,9 @@ ItemDisplay[gpys]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Ko: %BLUE%10-20vit, 2
 ItemDisplay[gpws]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Tal: %BLUE%5-10ares, 4-8astat%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%3-5ares, hfd%CL%%WHITE%belt, %ORANGE%Io: %BLUE%5-10ias, hfd%CL%%WHITE%gloves, %ORANGE%Shael: %BLUE%5-10ias, 10-20ar%CL%%WHITE%boots, %ORANGE%Ko: %BLUE%10ms, hfd%CL%%WHITE%helm, %ORANGE%Eld: %BLUE%5-10ias, hfd%CL%%WHITE%chest, %ORANGE%El: %BLUE%5-10ares, 10-20block%CL%%WHITE%shield, %ORANGE%Ort: %BLUE%5-10ares, 10-20block, hfd%CL%%WHITE%weapon, %ORANGE%Sol: %BLUE%20-40edmg, 20ias%CL%  %WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %WHITE%brill O%NL%}
 ItemDisplay[skzs]: %CONTINUE%%NAME%{%WHITE%amulet, %ORANGE%Dol: %BLUE%10-20cdr, 3-6ml%CL%%WHITE%ring, %ORANGE%Hel: %BLUE%10-20plr, 1-3ml%CL%%WHITE%belt, %ORANGE%Eld: %BLUE%10-20plr, 3-6ml%CL%%WHITE%gloves, %ORANGE%Io: %BLUE%5-10ds, 2-4ml%CL%%WHITE%boots, %ORANGE%El: %BLUE%10-20plr, 2-4ml%CL%%WHITE%helm, %ORANGE%Lum: %BLUE%10-20ds, 2-4ml%CL%%WHITE%chest, %ORANGE%Tir: %BLUE%3-6ml, 20-30plr%CL%%WHITE%shield, %ORANGE%Sol: %BLUE%10-20block, 3-6ml, 20-30plr%CL%%WHITE%weapon, %ORANGE%Shael: %BLUE%100-140dem/und, 3-6ml%CL%%WHITE%cube: %BLUE%magic%TAN%/%YELLOW%rare %WHITE%item, %GOLD%O, %GRAY%vamp O%NL%}
 
-ItemDisplay[GEM=5]: %NAME%
-ItemDisplay[GEM=4 FILTLVL<8]: %NAME%
-ItemDisplay[GEMTYPE=7 GEM=4]: %NAME%
+ItemDisplay[GEM=5]: %NAME%{%NAME%}
+ItemDisplay[GEM=4 FILTLVL<8]: %NAME%{%NAME%}
+ItemDisplay[GEMTYPE=7 GEM=4]: %NAME%{%NAME%}
 
 ItemDisplay[GEM=4 FILTLVL>8]:
 //-----------------------------------------------------------------------------------
@@ -3605,6 +3605,7 @@ ItemDisplay[t37]: Pandemonium Map{%NAME%}%CONTINUE%
 ItemDisplay[t38]: Canyon Map{%NAME%}%CONTINUE%
 ItemDisplay[t39]: Market Map{%NAME%}%CONTINUE%
 ItemDisplay[t3a]: Ashen Map{%NAME%}%CONTINUE%
+ItemDisplay[t3b]: Kyovoshad Map{%NAME%}%CONTINUE%
 ItemDisplay[t41]: Cathedral of Light Dungeon{%NAME%}%CONTINUE%
 ItemDisplay[t42]: Plains of Torment Dungeon{%NAME%}%CONTINUE%
 ItemDisplay[t43]: Sanctuary of Sin Dungeon{%NAME%}%CONTINUE%
@@ -3634,33 +3635,33 @@ ItemDisplay[MAPTIER=1]: %MAP-80%%TEAL%T1 %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=2]: %MAP-80%%TEAL%T2 %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=3]: %MAP-80%%TEAL%T3 %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=4]: %MAP-80%%ORANGE%T4 %NAME% %ORANGE%•{%NAME%}
-ItemDisplay[(t51 OR t52 OR t54 OR t55 OR t56 OR t57 OR t58)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
+ItemDisplay[MAPTIER>0 (UNI OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
 // MAPS NAME IMMUNITIES
-ItemDisplay[t11]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GOLD%•{%NAME%}%CONTINUE% // Ruins of Viz-jun 143
-ItemDisplay[t12]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Horazon's Memory 142
-ItemDisplay[t13]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Bastion Keep 149
-ItemDisplay[t14]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Sanatorium 167
-ItemDisplay[t15]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Royal Crypts 170
-ItemDisplay[t16]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Ruined Cistern 174
-ItemDisplay[t17]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%BLUE%•{%NAME%}%CONTINUE% // Halls of Torture 193
-ItemDisplay[t21]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Phlegethon 145
-ItemDisplay[t22]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Torajan Jungle 148
-ItemDisplay[t23]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Arreat Battlefield 139
-ItemDisplay[t24]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
-ItemDisplay[t25]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Sewers of Harrogath 141
-ItemDisplay[t26]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Shadows of Westmarch 169
-ItemDisplay[t27]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Demon Road 191
-ItemDisplay[t28]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Skovos Stronghold 190
-ItemDisplay[t31]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // River of Blood 144
-ItemDisplay[t32]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Throne of Insanity 150
-ItemDisplay[t33]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Lost Temple 158
-ItemDisplay[t34]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•{%NAME%}%CONTINUE% // Ancestral Trial 146
+ItemDisplay[t11 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GOLD%•{%NAME%}%CONTINUE% // Ruins of Viz-jun 143
+ItemDisplay[t12 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Horazon's Memory 142
+ItemDisplay[t13 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Bastion Keep 149
+ItemDisplay[t14 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Sanatorium 167
+ItemDisplay[t15 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Royal Crypts 170
+ItemDisplay[t16 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t17 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%BLUE%•{%NAME%}%CONTINUE% // Halls of Torture 193
+ItemDisplay[t21 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Phlegethon 145
+ItemDisplay[t22 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Torajan Jungle 148
+ItemDisplay[t23 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Arreat Battlefield 139
+ItemDisplay[t24 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
+ItemDisplay[t25 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Sewers of Harrogath 141
+ItemDisplay[t26 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Shadows of Westmarch 169
+ItemDisplay[t27 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Demon Road 191
+ItemDisplay[t28 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Skovos Stronghold 190
+ItemDisplay[t31 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // River of Blood 144
+ItemDisplay[t32 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Throne of Insanity 150
+ItemDisplay[t33 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Lost Temple 158
+ItemDisplay[t34 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•{%NAME%}%CONTINUE% // Ancestral Trial 146
 ItemDisplay[t35]: %PURPLE%•%RED%•  %NAME%  %RED%•%PURPLE%•{%NAME%}%CONTINUE% // Blood Moon 154
-ItemDisplay[t36]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Fall of Caldeum 155
-ItemDisplay[t37]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Pandemonium Citadel 156
-ItemDisplay[t38]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Canyon of Sescheron 160
-ItemDisplay[t39]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Kehjistan Marketplace 147
-ItemDisplay[t3a]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Ashen Plains 175
+ItemDisplay[t36 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Fall of Caldeum 155
+ItemDisplay[t37 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Pandemonium Citadel 156
+ItemDisplay[t38 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Canyon of Sescheron 160
+ItemDisplay[t39 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Kehjistan Marketplace 147
+ItemDisplay[t3a FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Ashen Plains 175
 ItemDisplay[MAPTIER>0]: %CL%%NAME%{%NAME%}%CONTINUE%
 // MAPS NAME TAG'S
 ItemDisplay[STAT360=78]: %RED%M.Ds*%NAME%{%NAME%}%CONTINUE%
@@ -4373,7 +4374,7 @@ ItemDisplay[cm1 !UNI ID FILTLVL>6 !(LIFE>14 OR MANA>10 OR MAXDMG>2 OR RES>0 OR M
 ItemDisplay[cm2 !UNI ID FILTLVL>6 !(IAS>0 OR FCR>0 OR MAXDMG>6 OR RES>0 OR STAT357>2 OR STAT329>2 OR STAT330>2 OR STAT331>2 OR STAT332>2 OR STAT49>20 OR STAT51>32 OR STAT55>17)]:{%TAN%Bad Rolled Charm%CL%%NAME%}
 ItemDisplay[cm3 !UNI ID FILTLVL>6 ILVL<90 !(MAXDMG>7 OR RES>9 OR MFIND>20 OR STAT79>30 OR FRES>24 OR LRES>24 OR CRES>24 OR PRES>24 OR STAT49>20 OR STAT51>32 OR STAT55>17 OR TABSK0>0 OR TABSK2>0 OR TABSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR TABSK24>0 OR TABSK25>0 OR TABSK26>0 OR TABSK32>0 OR TABSK33>0 OR TABSK34>0 OR TABSK40>0 OR TABSK41>0 OR TABSK42>0 OR TABSK48>0 OR TABSK49>0 OR TABSK50>0)]:{%TAN%Bad Rolled Charm%CL%%NAME%}
 
-
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI ID]: %BLUE%%NAME%{%NAME%}%CONTINUE%
 
 // socket count on socketed non-runewords (excluded for STAT477=4/21 which have their own callouts below)
 ItemDisplay[SOCK>0 !RW !(STAT477=4 OR STAT477=21)]: %NAME% %WHITE%%SOCKETS%{%NAME%}%CONTINUE%
@@ -4726,8 +4727,8 @@ ItemDisplay[leg !RW]: %NAME%{%NAME%%CL%%GRAY%(wirt's leg can be used in all diff
 ItemDisplay[!SHOP INVENTORY !RW !(cm1 OR cm2 OR cm3 OR jew OR UNI OR SET OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) !(STAT477=4 OR STAT477=21) (ARMOR OR WEAPON)]: %NAME%{%NAME%%CL%%SAGE%$%PRICE%}%CONTINUE%
 
 // SPECIAL LINK
-ItemDisplay[UNI ID cm1 STAT3=30 RES=10 STAT85=5]: %NAME%{%GREEN%www.twitch.tv/sky_88/clip/PerfectSullenKalePipeHype-pS4haIZHk-KVzvQ_%CL%Link is Save - Kassahi%CL%%NAME%}%CONTINUE%
-ItemDisplay[UNI ID uap STAT36=4 MFIND=28]: %NAME%{%GREEN%www.twitch.tv/daarmyd2/clip/ThankfulTemperedDiscDatBoi-in9bPp-hkGuzzASU%CL%Link is Save - Kassahi%CL%%NAME%}%CONTINUE%
+//ItemDisplay[UNI ID cm1 STAT3=30 RES=10 STAT85=5]: %NAME%{%GREEN%www.twitch.tv/sky_88/clip/PerfectSullenKalePipeHype-pS4haIZHk-KVzvQ_%CL%Link is Save - Kassahi%CL%%NAME%}%CONTINUE%
+//ItemDisplay[UNI ID uap STAT36=4 MFIND=28]: %NAME%{%GREEN%www.twitch.tv/daarmyd2/clip/ThankfulTemperedDiscDatBoi-in9bPp-hkGuzzASU%CL%Link is Save - Kassahi%CL%%NAME%}%CONTINUE%
 
 //Notes for upgrading
 //Recipes
