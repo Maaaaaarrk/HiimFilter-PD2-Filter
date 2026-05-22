@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 22nd%CL%Season 13 - build 213%CL%HiimFilter - Vanilla -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 22nd%CL%Season 13 - build 214%CL%HiimFilter - Vanilla -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -198,8 +198,8 @@ Alias[QUIVER_RARE_AMA]: %NAME%
 Alias[QUIVER_RARE_AMA_TIGHT]: %NAME%
 
 // Grand-charm callouts (prefixes use %CONTINUE% so they stack with the alias below)
-Alias[CHARM_HIGH_LVL]: %NAME%
-Alias[CHARM_MID_LVL]: %NAME%
+Alias[CHARM_HIGH_LVL]: %BLUE%hi-lvl %NAME%
+Alias[CHARM_MID_LVL]: %BLUE%mid-lvl %NAME%
 Alias[CHARM_GC_TAG]: %NAME%
 Alias[CHARM_SC_TAG]: %NAME%
 Alias[CHARM_LC_TAG]: %NAME%
@@ -327,19 +327,19 @@ Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RU
 
 Alias[OHM_RUNE_VALUE]: 0.9
 Alias[LO_RUNE_VALUE]: 0.95
-Alias[SUR_RUNE_VALUE]: 1.5
+Alias[SUR_RUNE_VALUE]: 1.6
 Alias[BER_RUNE_VALUE]: 3
 Alias[JAH_RUNE_VALUE]: 1.75
-Alias[CHAM_RUNE_VALUE]: 2.85
+Alias[CHAM_RUNE_VALUE]: 2.95
 Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 90
 Alias[LO_WSS_VALUE]: 95
-Alias[SUR_WSS_VALUE]: 150
+Alias[SUR_WSS_VALUE]: 160
 Alias[BER_WSS_VALUE]: 300
 Alias[JAH_WSS_VALUE]: 175
-Alias[CHAM_WSS_VALUE]: 285
+Alias[CHAM_WSS_VALUE]: 295
 Alias[ZOD_WSS_VALUE]: 600
 
 // Stack HR and WSS formulas for lower runes
@@ -361,19 +361,19 @@ Alias[HALFHR_STACK_WSS]: (QTY*50)
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.9)
 Alias[LO_STACK_HR]: (QTY*0.95)
-Alias[SUR_STACK_HR]: (QTY*1.5)
+Alias[SUR_STACK_HR]: (QTY*1.6)
 Alias[BER_STACK_HR]: (QTY*3)
 Alias[JAH_STACK_HR]: (QTY*1.75)
-Alias[CHAM_STACK_HR]: (QTY*2.85)
+Alias[CHAM_STACK_HR]: (QTY*2.95)
 Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*90)
 Alias[LO_STACK_WSS]: (QTY*95)
-Alias[SUR_STACK_WSS]: (QTY*150)
+Alias[SUR_STACK_WSS]: (QTY*160)
 Alias[BER_STACK_WSS]: (QTY*300)
 Alias[JAH_STACK_WSS]: (QTY*175)
-Alias[CHAM_STACK_WSS]: (QTY*285)
+Alias[CHAM_STACK_WSS]: (QTY*295)
 Alias[ZOD_STACK_WSS]: (QTY*600)
 
 //-----------------------------------------------------------------------------------
