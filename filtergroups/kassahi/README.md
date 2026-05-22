@@ -1,5 +1,5 @@
 # kassahi
-## Last updated May 21st Season 13 - build 209
+## Last updated May 22nd Season 13 - build 210
 
 ## Filters
 * Regular — Standard: Kassahi's all-in-one balanced filter. The standard recommendation for most players. [Kassahi.filter]
@@ -40,7 +40,7 @@ Cube will state current filter version & chosen filter level information.
 
 * **5: Stricter** — For players comfortable with the game who want a cleaner screen during fast farming.
   * HP/MP potions restored (back from level 4)
-  * Low-value unidentified uniques and sets hidden (0-star tier)
+  * Low-value unidentified sets hidden (0-star tier — uniques of the same tier don't drop off until level 7)
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
   * Specific low-value rare bows hidden
