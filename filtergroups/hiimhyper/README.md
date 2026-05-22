@@ -1,5 +1,5 @@
 # hiimhyper
-## Last updated May 22nd Season 13 - build 211
+## Last updated May 22nd Season 13 - build 212
 
 ## Filters
 * Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
@@ -63,17 +63,17 @@ Cube will state current filter version & chosen filter level information.
   * Still shows: high-star uniques/sets, GG rares, HR runes, good charms, jewels
 
 * **8: High Roller** — Built for players farming high-end content where low-value pickups waste time. Assumes self-sustain (no pots needed).
-  * Low runes (El–Amn) hidden outside town
   * Small rejuvs hidden
   * Rare rings hidden
   * Flawless gems and magic jewels hidden
-  * Tradeoff: you will walk past low runes and small rejuvs — intentional for speed
+  * Tradeoff: you will walk past small rejuvs — intentional for speed
 
 * **9: 3 Minute Mapper + Rejuvs** — Aggressive map-running level. Full rejuvs still shown for safety; most other clutter gone.
   * Rejuvs shown
+  * Low runes (El–Lum) hidden outside town
   * Rare necro heads, rare boots, and rare chests hidden
   * Grand charms heavily reduced (only notable rolls shown)
-  * Tradeoff: Only consider this filter if you would double back for a WSS
+  * Tradeoff: you will walk past low runes — only consider this filter if you would double back for a WSS
 
 * **10: 3 Minute Mapper** — Maximum speed farming. Almost nothing shows outside of high-value items.
   * Rejuvs hidden
