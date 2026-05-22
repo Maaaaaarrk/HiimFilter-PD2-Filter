@@ -23,9 +23,9 @@ Alias[GG_GC]: ((LIFE>29 TABSK40>0) OR (FRW>0 TABSK40>0) OR (FHR>0 TABSK40>0) OR 
 ItemDisplay[MAG cm1 GG_SC]: %PURPLE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm2 GG_LC]: %PURPLE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm3 GG_GC]: %PURPLE%%NAME%%CONTINUE%
-ItemDisplay[MAG !ID cm1]: Small%CONTINUE%
-ItemDisplay[MAG !ID cm2]: Large%CONTINUE%
-ItemDisplay[MAG !ID cm3]: Grand%CONTINUE%
+ItemDisplay[MAG !ID cm1]: %BLUE%Small%CONTINUE%
+ItemDisplay[MAG !ID cm2]: %BLUE%Large%CONTINUE%
+ItemDisplay[MAG !ID cm3]: %BLUE%Grand%CONTINUE%
 ItemDisplay[MAG !ID ((ILVL>89 (cm1 OR cm2 OR cm3)) OR (ILVL>84 (jew)))]: %PURPLE%%NAME%%CONTINUE%
 ItemDisplay[MAG cm1p]: %PURPLE%Pvp Arena %BLUE%Small Charm%CONTINUE%
 ItemDisplay[MAG cm2p]: %PURPLE%Pvp Arena %BLUE%Large Charm%CONTINUE%
@@ -742,7 +742,7 @@ ItemDisplay[crfv]: %GOLD%Infusion %LIGHT_GRAY%@{%NAME%}%CONTINUE%
 
 // Infusion stack QTY annotation — since it was re-named we need to add it back
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
+ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR scou OR irma OR imrn) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
 // Renamed-item QTY annotation since it was re-named we need to add it back
 ItemDisplay[(tes OR ceh OR bet OR fed OR pk1 OR pk2 OR pk3 OR mbr OR dhn OR bey OR ubaa OR ubab OR ubac OR dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR cwss OR lucb OR lucc OR lucd OR wss OR iwss OR lmal OR jewf OR lpp OR scrb OR std) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%

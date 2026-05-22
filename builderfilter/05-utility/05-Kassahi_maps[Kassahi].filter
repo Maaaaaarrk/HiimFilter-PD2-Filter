@@ -237,6 +237,7 @@ ItemDisplay[t37]: Pandemonium Map{%NAME%}%CONTINUE%
 ItemDisplay[t38]: Canyon Map{%NAME%}%CONTINUE%
 ItemDisplay[t39]: Market Map{%NAME%}%CONTINUE%
 ItemDisplay[t3a]: Ashen Map{%NAME%}%CONTINUE%
+ItemDisplay[t3b]: Kyovoshad Map{%NAME%}%CONTINUE%
 ItemDisplay[t41]: Cathedral of Light Dungeon{%NAME%}%CONTINUE%
 ItemDisplay[t42]: Plains of Torment Dungeon{%NAME%}%CONTINUE%
 ItemDisplay[t43]: Sanctuary of Sin Dungeon{%NAME%}%CONTINUE%
@@ -266,33 +267,33 @@ ItemDisplay[MAPTIER=1]: %MAP-80%%TEAL%T1 %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=2]: %MAP-80%%TEAL%T2 %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=3]: %MAP-80%%TEAL%T3 %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=4]: %MAP-80%%ORANGE%T4 %NAME% %ORANGE%•{%NAME%}
-ItemDisplay[(t51 OR t52 OR t54 OR t55 OR t56 OR t57 OR t58)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
+ItemDisplay[MAPTIER>0 (UNI OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58)]: %MAP-80%%SOUNDID-4718%%PURPLE%••%RED%••%ORANGE%•   %NAME%   %ORANGE%•%RED%••%PURPLE%••{%NAME%}
 // MAPS NAME IMMUNITIES
-ItemDisplay[t11]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GOLD%•{%NAME%}%CONTINUE% // Ruins of Viz-jun 143
-ItemDisplay[t12]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Horazon's Memory 142
-ItemDisplay[t13]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Bastion Keep 149
-ItemDisplay[t14]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Sanatorium 167
-ItemDisplay[t15]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Royal Crypts 170
-ItemDisplay[t16]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Ruined Cistern 174
-ItemDisplay[t17]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%BLUE%•{%NAME%}%CONTINUE% // Halls of Torture 193
-ItemDisplay[t21]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Phlegethon 145
-ItemDisplay[t22]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Torajan Jungle 148
-ItemDisplay[t23]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Arreat Battlefield 139
-ItemDisplay[t24]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
-ItemDisplay[t25]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Sewers of Harrogath 141
-ItemDisplay[t26]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Shadows of Westmarch 169
-ItemDisplay[t27]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Demon Road 191
-ItemDisplay[t28]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Skovos Stronghold 190
-ItemDisplay[t31]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // River of Blood 144
-ItemDisplay[t32]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Throne of Insanity 150
-ItemDisplay[t33]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Lost Temple 158
-ItemDisplay[t34]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•{%NAME%}%CONTINUE% // Ancestral Trial 146
+ItemDisplay[t11 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GOLD%•{%NAME%}%CONTINUE% // Ruins of Viz-jun 143
+ItemDisplay[t12 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Horazon's Memory 142
+ItemDisplay[t13 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Bastion Keep 149
+ItemDisplay[t14 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Sanatorium 167
+ItemDisplay[t15 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Royal Crypts 170
+ItemDisplay[t16 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Ruined Cistern 174
+ItemDisplay[t17 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%BLUE%•{%NAME%}%CONTINUE% // Halls of Torture 193
+ItemDisplay[t21 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Phlegethon 145
+ItemDisplay[t22 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Torajan Jungle 148
+ItemDisplay[t23 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Arreat Battlefield 139
+ItemDisplay[t24 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Tomb of Zoltun Kulle 151
+ItemDisplay[t25 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•{%NAME%}%CONTINUE% // Sewers of Harrogath 141
+ItemDisplay[t26 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // Shadows of Westmarch 169
+ItemDisplay[t27 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•%GOLD%•{%NAME%}%CONTINUE% // Demon Road 191
+ItemDisplay[t28 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%GREEN%•{%NAME%}%CONTINUE% // Skovos Stronghold 190
+ItemDisplay[t31 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%GREEN%•%ORANGE%•{%NAME%}%CONTINUE% // River of Blood 144
+ItemDisplay[t32 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %GREEN%•%GOLD%•{%NAME%}%CONTINUE% // Throne of Insanity 150
+ItemDisplay[t33 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Lost Temple 158
+ItemDisplay[t34 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%YELLOW%•{%NAME%}%CONTINUE% // Ancestral Trial 146
 ItemDisplay[t35]: %PURPLE%•%RED%•  %NAME%  %RED%•%PURPLE%•{%NAME%}%CONTINUE% // Blood Moon 154
-ItemDisplay[t36]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Fall of Caldeum 155
-ItemDisplay[t37]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Pandemonium Citadel 156
-ItemDisplay[t38]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Canyon of Sescheron 160
-ItemDisplay[t39]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Kehjistan Marketplace 147
-ItemDisplay[t3a]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Ashen Plains 175
+ItemDisplay[t36 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %YELLOW%•%ORANGE%•%GOLD%•{%NAME%}%CONTINUE% // Fall of Caldeum 155
+ItemDisplay[t37 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %BLUE%•%ORANGE%•{%NAME%}%CONTINUE% // Pandemonium Citadel 156
+ItemDisplay[t38 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Canyon of Sescheron 160
+ItemDisplay[t39 FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%GOLD%•{%NAME%}%CONTINUE% // Kehjistan Marketplace 147
+ItemDisplay[t3a FILTLVL<7]: %NAME% %LIGHT_GRAY%Im: %RED%•%BLUE%•{%NAME%}%CONTINUE% // Ashen Plains 175
 ItemDisplay[MAPTIER>0]: %CL%%NAME%{%NAME%}%CONTINUE%
 // MAPS NAME TAG'S
 ItemDisplay[STAT360=78]: %RED%M.Ds*%NAME%{%NAME%}%CONTINUE%
