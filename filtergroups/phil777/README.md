@@ -1,5 +1,5 @@
 # phil777
-## Last updated May 21st Season 13 - build 209
+## Last updated May 22nd Season 13 - build 212
 
 ## Filters
 * philanthropy777: Standard filter with a philanthropy777 visual theme. [Kassahi_Phil777.filter]
@@ -52,7 +52,7 @@ Cube will state current filter version & chosen filter level information.
 
 * **5: Stricter** — For players comfortable with the game who want a cleaner screen during fast farming.
   * HP/MP potions restored (back from level 4)
-  * Low-value unidentified uniques and sets hidden (0-star tier)
+  * Low-value unidentified sets hidden (0-star tier — uniques of the same tier don't drop off until level 7)
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
   * Specific low-value rare bows hidden
@@ -69,17 +69,17 @@ Cube will state current filter version & chosen filter level information.
   * Still shows: high-star uniques/sets, GG rares, HR runes, good charms, jewels
 
 * **8: High Roller** — Built for players farming high-end content where low-value pickups waste time. Assumes self-sustain (no pots needed).
-  * Low runes (El–Amn) hidden outside town
   * Small rejuvs hidden
   * Rare rings hidden
   * Flawless gems and magic jewels hidden
-  * Tradeoff: you will walk past low runes and small rejuvs — intentional for speed
+  * Tradeoff: you will walk past small rejuvs — intentional for speed
 
 * **9: 3 Minute Mapper + Rejuvs** — Aggressive map-running level. Full rejuvs still shown for safety; most other clutter gone.
   * Rejuvs shown
+  * Low runes (El–Lum) hidden outside town
   * Rare necro heads, rare boots, and rare chests hidden
   * Grand charms heavily reduced (only notable rolls shown)
-  * Tradeoff: Only consider this filter if you would double back for a WSS
+  * Tradeoff: you will walk past low runes — only consider this filter if you would double back for a WSS
 
 * **10: 3 Minute Mapper** — Maximum speed farming. Almost nothing shows outside of high-value items.
   * Rejuvs hidden
