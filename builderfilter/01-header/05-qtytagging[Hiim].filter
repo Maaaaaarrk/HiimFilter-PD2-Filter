@@ -3,4 +3,11 @@
 Alias[QTY_TAG]: %TAN%x %QTY%
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
+// Slammed Tag
+Alias[SLAMMED_TAG]: [C]
+// Two affix ²②
+Alias[TWO_AFFIX_TAG]: ²
 
+// Notes Un-Stacked
+ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %ORANGE%%NAME%
+ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}

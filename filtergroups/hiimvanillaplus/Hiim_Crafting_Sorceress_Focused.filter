@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 23rd%CL%Season 13 - build 217%CL%HiimFilter - Vanilla - Sorc - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 23rd%CL%Season 13 - build 220%CL%HiimFilter - Vanilla - Sorc - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -81,8 +81,8 @@ ItemDisplay[STAT206>0]: %NAME%{%NAME%}
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]{%NAME%}// In case you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]{%NAME%}// In case you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%%GOLD%[D]{%NAME%}// In case you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%{%NAME%}// In case you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%{%NAME%}// In case you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE — explicit include list (rvl/rvs/runes/gems/gold/potions/etc. excluded by NOT being in the list)
 ItemDisplay[FILTLVL>10 (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR jew OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
@@ -104,7 +104,14 @@ ItemDisplay[GOLD<999999 FILTLVL>10 CLVL>79 !MAPID=83]:
 Alias[QTY_TAG]: %TAN%x %QTY%
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
+// Slammed Tag
+Alias[SLAMMED_TAG]: [C]
+// Two affix ²②
+Alias[TWO_AFFIX_TAG]: ²
 
+// Notes Un-Stacked
+ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %ORANGE%%NAME%
+ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}
 //-----------------------------------------------------------------------------------
 // Alias for item ground annotations Vanilla++
 //-----------------------------------------------------------------------------------
@@ -297,19 +304,19 @@ ItemDisplay[crfp]: %WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%
 
 // Formating for names
 ItemDisplay[gzv OR gzvs]: %PURPLE%Amethyst%CONTINUE%
-ItemDisplay[gpv OR gpvs]: %PURPLE%O  P. Amethyst  O%CONTINUE%
+ItemDisplay[gpv OR gpvs]: %PURPLE%O  P Amethyst  O%CONTINUE%
 ItemDisplay[glw OR glws]: %WHITE%Diamond%CONTINUE%
-ItemDisplay[gpw OR gpws]: %PURPLE%O  %WHITE%P. Diamond  %PURPLE%O%CONTINUE%
+ItemDisplay[gpw OR gpws]: %PURPLE%O  %WHITE%P Diamond  %PURPLE%O%CONTINUE%
 ItemDisplay[glg OR glgs]: %GREEN%Emerald%CONTINUE%
-ItemDisplay[gpg OR gpgs]: %GREEN%O  P. Emerald  O%CONTINUE%
+ItemDisplay[gpg OR gpgs]: %GREEN%O  P Emerald  O%CONTINUE%
 ItemDisplay[glr OR glrs]: %RED%Ruby%CONTINUE%
-ItemDisplay[gpr OR gprs]: %RED%O  P. Ruby  O%CONTINUE%
+ItemDisplay[gpr OR gprs]: %RED%O  P Ruby  O%CONTINUE%
 ItemDisplay[glb OR glbs]: %BLUE%Sapphire%CONTINUE%
-ItemDisplay[gpb OR gpbs]: %BLUE%O  P. Sapphire  O%CONTINUE%
+ItemDisplay[gpb OR gpbs]: %BLUE%O  P Sapphire  O%CONTINUE%
 ItemDisplay[gly OR glys]: %YELLOW%Topaz%CONTINUE%
-ItemDisplay[gpy OR gpys]: %YELLOW%O  P. Topaz  O%CONTINUE%
+ItemDisplay[gpy OR gpys]: %YELLOW%O  P Topaz  O%CONTINUE%
 ItemDisplay[skl OR skls]: %CORAL%· %LIGHT_GRAY%Skull %CORAL%·%CONTINUE%
-ItemDisplay[skz OR skzs]: %CORAL%O O  %LIGHT_GRAY%P. Skull  %CORAL%O O%CONTINUE%
+ItemDisplay[skz OR skzs]: %CORAL%O O  %LIGHT_GRAY%P Skull  %CORAL%O O%CONTINUE%
 
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 //-----------------------------------------------------------------------------------
@@ -326,20 +333,20 @@ Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RU
 //-----------------------------------------------------------------------------------
 
 Alias[OHM_RUNE_VALUE]: 0.85
-Alias[LO_RUNE_VALUE]: 0.95
-Alias[SUR_RUNE_VALUE]: 1.6
+Alias[LO_RUNE_VALUE]: 1
+Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
-Alias[JAH_RUNE_VALUE]: 1.75
-Alias[CHAM_RUNE_VALUE]: 2.95
+Alias[JAH_RUNE_VALUE]: 2
+Alias[CHAM_RUNE_VALUE]: 3.5
 Alias[ZOD_RUNE_VALUE]: 6
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 85
-Alias[LO_WSS_VALUE]: 95
-Alias[SUR_WSS_VALUE]: 160
+Alias[LO_WSS_VALUE]: 100
+Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
-Alias[JAH_WSS_VALUE]: 175
-Alias[CHAM_WSS_VALUE]: 295
+Alias[JAH_WSS_VALUE]: 200
+Alias[CHAM_WSS_VALUE]: 350
 Alias[ZOD_WSS_VALUE]: 600
 
 // Stack HR and WSS formulas for lower runes
@@ -360,20 +367,20 @@ Alias[HALFHR_STACK_WSS]: (QTY*50)
 
 // Stack HR formulas for runes (QTY * HR value each)
 Alias[OHM_STACK_HR]: (QTY*0.85)
-Alias[LO_STACK_HR]: (QTY*0.95)
-Alias[SUR_STACK_HR]: (QTY*1.6)
+Alias[LO_STACK_HR]: (QTY*1)
+Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
-Alias[JAH_STACK_HR]: (QTY*1.75)
-Alias[CHAM_STACK_HR]: (QTY*2.95)
+Alias[JAH_STACK_HR]: (QTY*2)
+Alias[CHAM_STACK_HR]: (QTY*3.5)
 Alias[ZOD_STACK_HR]: (QTY*6)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*85)
-Alias[LO_STACK_WSS]: (QTY*95)
-Alias[SUR_STACK_WSS]: (QTY*160)
+Alias[LO_STACK_WSS]: (QTY*100)
+Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
-Alias[JAH_STACK_WSS]: (QTY*175)
-Alias[CHAM_STACK_WSS]: (QTY*295)
+Alias[JAH_STACK_WSS]: (QTY*200)
+Alias[CHAM_STACK_WSS]: (QTY*350)
 Alias[ZOD_STACK_WSS]: (QTY*600)
 
 //-----------------------------------------------------------------------------------
@@ -382,7 +389,7 @@ Alias[ZOD_STACK_WSS]: (QTY*600)
 
 Alias[WSS_ITEM_HR_VALUE]: 0.01
 Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
-Alias[LARZUK_PUZZLEBOX_VALUE]: 0.75
+Alias[LARZUK_PUZZLEBOX_VALUE]: 0.7
 Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.1
 Alias[DEMONIC_CUBE_VALUE]: 0.75
 Alias[CATALYST_SHARD_VALUE]: 0.15
@@ -390,7 +397,7 @@ Alias[CATALYST_SHARD_VALUE]: 0.15
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
 Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
-Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 75
+Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 70
 Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 10
 Alias[DEMONIC_CUBE_WSS_VALUE]: 75
 Alias[CATALYST_SHARD_WSS_VALUE]: 15
@@ -398,7 +405,7 @@ Alias[CATALYST_SHARD_WSS_VALUE]: 15
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
-Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.75)
+Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.7)
 Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.1)
 Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.75)
 Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.15)
@@ -406,7 +413,7 @@ Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.15)
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
-Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*75)
+Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*70)
 Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*10)
 Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*75)
 Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
@@ -418,7 +425,7 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
 // DClone mats
 Alias[BLACK_SOULSTONE_VALUE]: 0.25
 Alias[PRIME_EVIL_SOUL_VALUE]: 0.5
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.04
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.03
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.45
@@ -426,8 +433,8 @@ Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.4
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.15
-Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.04
+Alias[FLESH_OF_MALIC_VALUE]: 0.2
+Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.35
 //-----------------------------------------------------------------------------------
 // Star Ratings
@@ -913,8 +920,8 @@ ItemDisplay[NMAG ETH !RW SOCK=0]:%NAME%%CONTINUE%{%RED%SLAM %WHITE%For chance of
 // UNID Formatting
 //-----------------------------------------------------------------------------------
 // Warrior Map Formatting
-ItemDisplay[MAG !ID (ARMOR OR WEAPON OR rin OR amu OR QUIVER) (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%[C] *%CONTINUE%
-ItemDisplay[RARE !ID (ARMOR OR WEAPON OR rin OR amu OR QUIVER) (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[MAG !ID (ARMOR OR WEAPON OR rin OR amu OR QUIVER) (MAPID=181 OR MAPID=182)]: %RED%* %BLUE%%NAME% %RED%%SLAMMED_TAG% *%CONTINUE%
+ItemDisplay[RARE !ID (ARMOR OR WEAPON OR rin OR amu OR QUIVER) (MAPID=181 OR MAPID=182)]: %RED%* %YELLOW%%NAME% %RED%%SLAMMED_TAG% *%CONTINUE%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -936,8 +943,8 @@ ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
 
 // Eth add on callout
-ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
-ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%· %NAME% %PURPLE%·%CONTINUE%
+ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%· %NAME% %PURPLE%·%CONTINUE%
 
 // LLD UNI
 ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
@@ -946,8 +953,8 @@ ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR 
 ItemDisplay[SET (vbt OR vgl OR lgl OR lbl OR lbt) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
 
 // Warrior Map Formatting
-ItemDisplay[UNI (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GOLD%%NAME% %RED%[C] *%CONTINUE%
-ItemDisplay[SET (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%NAME% %RED%[C] *%CONTINUE%
+ItemDisplay[UNI (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GOLD%%NAME% %RED%%SLAMMED_TAG% *%CONTINUE%
+ItemDisplay[SET (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%NAME% %RED%%SLAMMED_TAG% *%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
@@ -1333,10 +1340,13 @@ ItemDisplay[std]: %DOT-9D%%GEN_TOP_RARE%{%NAME%}
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%BOSS_MAT%{%NAME%}
 
 // Map Tier Tags
-ItemDisplay[MAPTIER=1]: %GREEN%* [T1] %CONTINUE%
-ItemDisplay[MAPTIER=2]: %YELLOW%* [T2] %CONTINUE%
-ItemDisplay[MAPTIER=3]: %ORANGE%* [T3] %CONTINUE%
-ItemDisplay[MAPTIER=4]: %RED%* [T4] %CONTINUE%
+ItemDisplay[MAPTIER=1 NMAG]: %GREEN%* [T1] %CONTINUE%
+ItemDisplay[MAPTIER=1 !NMAG]: %GREEN%[T1] %CONTINUE%
+ItemDisplay[MAPTIER=2 NMAG]: %YELLOW%* [T2] %CONTINUE%
+ItemDisplay[MAPTIER=2 !NMAG]: %YELLOW%[T2] %CONTINUE%
+ItemDisplay[MAPTIER=3 NMAG]: %ORANGE%* [T3] %CONTINUE%
+ItemDisplay[MAPTIER=3 !NMAG]: %ORANGE%[T3] %CONTINUE%
+ItemDisplay[MAPTIER=4]: %RED%[T4] %CONTINUE%
 ItemDisplay[(MAPTIER=5) !ID]: %GOLD%* * * * [U] %CONTINUE%
 ItemDisplay[(MAPTIER=5) ID]: %GOLD%* [U] %CONTINUE%
 ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%
@@ -1467,10 +1477,10 @@ ItemDisplay[t62]: %NAME%PvP Map 2 (Moor)%CONTINUE%{%NAME%}
 ItemDisplay[(MAPTIER>0 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%NAME%}
 
 // Map End Wrapper by Tier
-ItemDisplay[MAPTIER=1]: %MAP-62%%TIER-8%%NAME% %GREEN%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=2]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=3]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=4]: %MAP-62%%TIER-8%%NAME% %RED%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=1 NMAG]: %MAP-62%%TIER-8%%NAME% %GREEN%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=2 NMAG]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 NMAG]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
+//ItemDisplay[MAPTIER=4]: %MAP-62%%TIER-8%%NAME% %RED%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=5 !ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=5 ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%*{%NAME%}%CONTINUE%
 ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
@@ -1507,7 +1517,7 @@ ItemDisplay[(t12 OR t27 OR t34) STAT442=0 (MAG OR RARE) ID]: %WHITE% GHOSTS%NAME
 //ItemDisplay[(t12 OR t27 OR t34) NMAG]: %NAME%%CONTINUE%{%WHITE%Ghosts!%CL%%NAME%}
 
 // Map has Standard of Heroes applied
-ItemDisplay[STAT458>0]: %GREEN% [H]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT458>0]: %DARK_GREEN% [H]%NAME%%CONTINUE%{%NAME%}
 
 // Map has bonus crafting mats replaced with calc
 //ItemDisplay[STAT497>0]: %TEAL% [Craft]%NAME%%CONTINUE%{%TEAL%Extra Crafting Mats%CL%%NAME%}
@@ -1519,7 +1529,7 @@ ItemDisplay[STAT493>0]: %ORANGE% [F]%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[STAT500>0]: %CORAL% [E]%NAME%%CONTINUE%{%PURPLE%Catalyzed%CL%%NAME%}
 
 // Slammed
-ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %RED% [C]%NAME%%CONTINUE%{%NAME%}
+ItemDisplay[STAT360>0 (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %RED% %SLAMMED_TAG%%NAME%%CONTINUE%{%NAME%}
 
 
 // Map Dolls
@@ -1569,13 +1579,13 @@ ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS
 ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 $f(MAP_MF_SCORE)>MAP_MF_T21_SLAM]: %BLUE% [MF]%NAME%%CONTINUE%{%NAME%%BLUE%MF Map Stats Rating: $f(ROUND(%MAP_MF_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%}
 
 // Tier 3 Craft Maps
-ItemDisplay[MAPTIER=3 STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS]: %TEAL% Craft rolls%NAME%%CONTINUE%{%NAME%%TEAL%Craft Map Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_ROLLS%))%CL%}
+ItemDisplay[MAPTIER=3 STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS]: %GREEN% Craft rolls%NAME%%CONTINUE%{%NAME%%GREENdoe%Craft Map Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[MAPTIER=3 STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_SLAM]: %TEAL% Craft%NAME%%CONTINUE%{%NAME%%TEAL%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_SLAM%))%CL%}
+ItemDisplay[MAPTIER=3 STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T3_SLAM]: %GREEN% Craft%NAME%%CONTINUE%{%NAME%%GREEN%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T3_SLAM%))%CL%}
 // Tier 2/1 Craft Maps
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS]: %TEAL% Craft rolls%NAME%%CONTINUE%{%NAME%%TEAL%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_ROLLS%))%CL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360=0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS]: %GREEN% Craft rolls%NAME%%CONTINUE%{%NAME%%GREEN%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_ROLLS%))%CL%}
 // Slammed
-ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_SLAM]: %TEAL% Craft%NAME%%CONTINUE%{%NAME%%TEAL%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%}
+ItemDisplay[(MAPTIER=2 OR MAPTIER=1) STAT360>0 STAT497>0 $f(MAP_CRAFT_SCORE)>MAP_MF_T21_SLAM]: %GREEN% Craft%NAME%%CONTINUE%{%NAME%%GREEN%Craft Mat Stats Rating: $f(ROUND(%MAP_CRAFT_SCORE%*100/%MAP_MF_T21_SLAM%))%CL%}
 
 // T3 Slam note
 ItemDisplay[RARE MAPTIER=3 STAT360=0 ($f(MAP_XP_SCORE)>MAP_XP_T3_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T3_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T3_ROLLS)]: %NAME%%CONTINUE%{%NL%%RED%> > > SLAM THIS MAP < < <%NL%%NL%%NAME%}
@@ -1612,7 +1622,7 @@ ItemDisplay[GEM~1-3 (FILTLVL>2 OR DIFF>1)]:
 
 // Formatting for stacked vs unstacked with warning
 ItemDisplay[GEM>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
+//ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
 
 // Flawless
 ItemDisplay[gzvs]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: +24 Def%CL%Armor/Helm: +8 to Strength%CL%Weapon: +100 to Attack Rating%CL%}
@@ -1711,8 +1721,6 @@ ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10]: %NAME%{%NAME%}
 //-----------------------------------------------------------------------------------
 // Runes Tooltip
 //-----------------------------------------------------------------------------------
-//Runes Notes Un-Stacked
-ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %NAME%%CONTINUE%
 
 // Estimated HR value notes
 ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
@@ -1993,6 +2001,13 @@ ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%NAME%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
+// Two affix tagging
+//-----------------------------------------------------------------------------------
+ItemDisplay[MAG EQ7 !ID ILVL>84]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
+ItemDisplay[MAG jew !ID ILVL>84]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
+ItemDisplay[MAG (rin OR amu) !ID ILVL>84]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
+
+//-----------------------------------------------------------------------------------
 // UNID Jewelry
 //-----------------------------------------------------------------------------------
 // ring amulet
@@ -2010,10 +2025,9 @@ ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM
 ItemDisplay[RARE rin !ID FILTLVL<8]: %NAME%
 
 // Jewel
-ItemDisplay[MAG jew !ID FILTLVL<8 ILVL>84]: %MAG_DBL_AFFIX_ITEM%
+ItemDisplay[MAG jew !ID FILTLVL<7 ILVL>84]: %MAG_DBL_AFFIX_ITEM%
+ItemDisplay[MAG jew !ID FILTLVL=8 ILVL>84]: %MAG_ITEM%
 ItemDisplay[MAG jew !ID FILTLVL<7]: %MAG_ITEM%
-ItemDisplay[MAG jew !ID FILTLVL<8]: %MAG_ITEM%
-ItemDisplay[MAG jew !ID FILTLVL=8 ILVL>84]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM%
 ItemDisplay[RARE jew !ID]: %RARE_HIGH_ITEM%
 
@@ -2034,21 +2048,23 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 // grand
 ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %CHARM_HIGH_LVL%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %CHARM_MID_LVL%%CONTINUE%
+ItemDisplay[MAG cm3 !ID ILVL>89]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%CHARM_GC_TAG%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
-ItemDisplay[MAG cm3 CLVL<80 !ID FILTLVL<9]: %MAG_ITEM%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
 // small
 ItemDisplay[MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
-ItemDisplay[MAG cm1 !ID ILVL>89 FILTLVL>6 FILTLVL<9]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
+ItemDisplay[MAG cm1 !ID ILVL>89]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
 ItemDisplay[MAG cm1 !ID ILVL>89 FILTLVL<9]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm1 !ID FILTLVL<8]: %TIER-6%%MAG_ITEM%
-ItemDisplay[MAG cm1 !ID FILTLVL<9]: %NAME%
 // large
 ItemDisplay[MAG cm2 !ID FILTLVL>6]: %CHARM_LC_TAG%%CONTINUE%
+ItemDisplay[MAG cm2 !ID ILVL>89]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
 ItemDisplay[MAG cm2 !ID ILVL>89 FILTLVL<9]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm2 !ID FILTLVL<7]: %NAME%
+// Low level catch
+ItemDisplay[MAG (cm1 OR cm2 OR cm3) CLVL<80 !ID FILTLVL<9]: %MAG_ITEM%
 // Unique Charms - UNID
 ItemDisplay[cm2 UNI !ID]: %UNI_UNID_TORCH%
 ItemDisplay[cm1 UNI !ID]: %UNI_UNID_ANNI%
@@ -2975,7 +2991,7 @@ ItemDisplay[STAT360=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=52]: %NAME% PDR%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=19]: %NAME% DS%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
-ItemDisplay[STAT360>0]: %NAME% [C]%CONTINUE%{%NAME%}
+ItemDisplay[STAT360>0]: %NAME% %SLAMMED_TAG%%CONTINUE%{%NAME%}
 
 
 // ITEM TAGS - Corrupted [D]
@@ -4867,7 +4883,8 @@ ItemDisplay[NMAG !ID SHOP dr2]: %GOLD%Denmother%CL%Quetzalcoatl%CL%%NAME%%CONTIN
 ItemDisplay[NMAG !ID SHOP dr3]: %GOLD%Spirit Keeper%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP dr4]: %GOLD%Ravenlore%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP dr5]: %GOLD%Ursa's Nightmare%CL%Jalal's Mane%CL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP ne1]: %GOLD%Sacred Totem%CL%Kalan's Legacy%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne1]: %GOLD%Kalan's Legacy%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ne2]: %GOLD%Sacred Totem%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ne3]: %GOLD%Martyrdom%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ne4]: %GOLD%Boneflame%CL%%NAME%%CONTINUE%
 ItemDisplay[NMAG !ID SHOP ne5]: %GOLD%Darkforce Spawn%CL%Homunculus%CL%%NAME%%CONTINUE%

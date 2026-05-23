@@ -20,7 +20,7 @@ const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
 
 const runes = [
   { code: 'r27', name: 'Ohm',  alias: 'OHM' },
-  { code: 'r28', name: 'Lo',   alias: 'LO' },
+  { code: 'r28', name: 'Lo',   alias: 'LO',   cap: 1 },   // manual cap: market-driven but never above 1 HR
   { code: 'r29', name: 'Sur',  alias: 'SUR',  floor: 1.5 },
   { code: 'r30', name: 'Ber',  alias: 'BER',  floor: 3 },
   { code: 'r31', name: 'Jah',  alias: 'JAH' },
@@ -134,10 +134,11 @@ function getCurrentAliasNumber(text, aliasName) {
   return Number.isFinite(v) ? v : undefined;
 }
 
-function computeHrValue(price, floor, round) {
+function computeHrValue(price, floor, cap, round) {
   let hrValue = round(valueFromPrice(price));
   if (!Number.isFinite(hrValue) || hrValue <= 0) return undefined;
-  if (floor !== undefined && hrValue < floor) hrValue = floor;
+  if (floor !== undefined && hrValue < floor) hrValue = floor;   // manual minimum
+  if (cap !== undefined && hrValue > cap) hrValue = cap;         // manual maximum
   return hrValue;
 }
 
@@ -169,7 +170,7 @@ async function main() {
   const updates = [];
 
   for (const rune of runes) {
-    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, roundToFiveHundredths);
+    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
 
     if (hrValue === undefined) {
       console.log(`${rune.name} (${rune.code}): no usable price data, skipping`);
@@ -179,7 +180,7 @@ async function main() {
     const currentAlias = `${rune.alias}_RUNE_VALUE`;
     const current = getCurrentAliasNumber(text, currentAlias);
     if (Number.isFinite(current) && hrValue < current) {
-      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, roundToFiveHundredths);
+      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
       if (altValue !== undefined) {
         console.log(`${rune.name} (${rune.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
         hrValue = altValue;
@@ -198,7 +199,7 @@ async function main() {
   }
 
   for (const mat of ubermats) {
-    let hrValue = computeHrValue(pricesPrimary.get(mat.code), mat.floor, roundMatValue);
+    let hrValue = computeHrValue(pricesPrimary.get(mat.code), mat.floor, mat.cap, roundMatValue);
 
     if (hrValue === undefined) {
       console.log(`${mat.name} (${mat.code}): no usable price data, skipping`);
@@ -209,7 +210,7 @@ async function main() {
     const valueAlias = `${mat.alias}${valueSuffix}`;
     const current = getCurrentAliasNumber(text, valueAlias);
     if (Number.isFinite(current) && hrValue < current) {
-      const altValue = computeHrValue(pricesDecrease.get(mat.code), mat.floor, roundMatValue);
+      const altValue = computeHrValue(pricesDecrease.get(mat.code), mat.floor, mat.cap, roundMatValue);
       if (altValue !== undefined) {
         console.log(`${mat.name} (${mat.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
         hrValue = altValue;
