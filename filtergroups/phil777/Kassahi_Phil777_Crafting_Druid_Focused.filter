@@ -22,7 +22,7 @@ ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
 //-----------------------------------------------------------------------------------
 // SHOW VERSION AND LEVEL DETAILS ON CUBE/KEYS
 //-----------------------------------------------------------------------------------
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 23rd%CL%Season 13 - build 220%CL%Kassahi - Phil777 - Druid - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated May 23rd%CL%Season 13 - build 221%CL%Kassahi - Phil777 - Druid - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -107,7 +107,7 @@ ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv 
 // Slammed Tag
 Alias[SLAMMED_TAG]: Ⓒ
 // Two affix
-Alias[TWO_AFFIX_TAG]: ②
+Alias[TWO_AFFIX_TAG]:
 
 // Notes Un-Stacked
 ItemDisplay[RUNE>0 QTY=0]: %RED%Unstacked will socket %ORANGE%%NAME%
@@ -212,7 +212,7 @@ Alias[QUIVER_RARE_AMA_TIGHT]: %YELLOW%O %NAME% O
 // Grand-charm callouts
 Alias[CHARM_HIGH_LVL]: %NAME%
 Alias[CHARM_MID_LVL]: %NAME%
-Alias[CHARM_GC_TAG]: %BORDER-6A%%DOT-94%%BLUE%«%WHITE%«%BLUE%« %BLACK%O%BLUE%Grand%BLACK%O %BLUE%»%WHITE%»%BLUE%»
+Alias[CHARM_GC_TAG]: %BLUE%Grand
 Alias[CHARM_SC_TAG]: %BLUE%Small
 Alias[CHARM_LC_TAG]: %BLUE%Large
 
@@ -4091,11 +4091,11 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 //-----------------------------------------------------------------------------------
 // Charms - UNID
 // grand
+ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%CHARM_GC_TAG%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %CHARM_HIGH_LVL%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %CHARM_MID_LVL%%CONTINUE%
 ItemDisplay[MAG cm3 !ID ILVL>89]: %NAME%%TWO_AFFIX_TAG%%CONTINUE%
-ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<9]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
-ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%CHARM_GC_TAG%
+ItemDisplay[MAG cm3 !ID ILVL>89]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
 // small
