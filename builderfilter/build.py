@@ -1,3 +1,4 @@
+import argparse
 import datetime
 import json
 import os
@@ -208,7 +209,47 @@ def build_filter(entry, groups):
     return "".join(parts)
 
 
+def strip_inline_comment(line):
+    """Cut a // comment off a line, matching how the game (and validate_filters.py) parse.
+
+    // only begins a comment at brace depth 0; inside a tooltip {...} it is literal display
+    text and is kept. Returns the line up to the comment (right-stripped), or unchanged if
+    there is none. Full-line comments collapse to '' and are dropped by the caller.
+    """
+    bd = 0
+    for i, ch in enumerate(line):
+        if ch == '{':
+            bd += 1
+        elif ch == '}':
+            bd -= 1
+        elif bd == 0 and line[i:i + 2] == '//':
+            return line[:i].rstrip()
+    return line
+
+
+def minify(content):
+    """Shrink an output filter: strip // comments (full-line and trailing) and blank lines.
+
+    Comment detection is brace-aware (see strip_inline_comment), so a // inside a tooltip
+    survives. Any line left empty after stripping is dropped.
+    """
+    kept = []
+    for line in content.splitlines():
+        line = strip_inline_comment(line)
+        if line.strip():
+            kept.append(line)
+    return "\n".join(kept) + "\n" if kept else ""
+
+
 def main():
+    parser = argparse.ArgumentParser(description="Build PD2 loot filters.")
+    parser.add_argument(
+        "--no-minify",
+        action="store_true",
+        help="Keep comments and blank lines in output filters (default: minified).",
+    )
+    args = parser.parse_args()
+
     update_version()
     filters, groups, beta = load_config()
 
@@ -219,6 +260,8 @@ def main():
         out_file = entry["file"].replace(".filter", "_beta.filter") if beta else entry["file"]
         print(f"Building {out_file} ...")
         content = build_filter(entry, groups)
+        if not args.no_minify:
+            content = minify(content)
         out_dir = output_dir_for(entry)
         os.makedirs(out_dir, exist_ok=True)
         out_path = os.path.join(out_dir, out_file)
