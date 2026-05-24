@@ -24,7 +24,7 @@ const runes = [
   { code: 'r29', name: 'Sur',  alias: 'SUR',  floor: 1.5 },
   { code: 'r30', name: 'Ber',  alias: 'BER',  floor: 3 },
   { code: 'r31', name: 'Jah',  alias: 'JAH' },
-  { code: 'r32', name: 'Cham', alias: 'CHAM' },
+  { code: 'r32', name: 'Cham', alias: 'CHAM' },  // floor set at runtime to 1/2 Zod
   { code: 'r33', name: 'Zod',  alias: 'ZOD' },
 ];
 
@@ -142,6 +142,20 @@ function computeHrValue(price, floor, cap, round) {
   return hrValue;
 }
 
+// Final HR value a rune will be written at: primary window, falling back to the longer
+// decrease window when the primary would lower the current alias. Quiet (no logging) — used
+// to derive Cham's dynamic floor before the main loop recomputes and logs the same value.
+function resolveRuneValue(rune, pricesPrimary, pricesDecrease, text) {
+  let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
+  if (hrValue === undefined) return undefined;
+  const current = getCurrentAliasNumber(text, `${rune.alias}_RUNE_VALUE`);
+  if (Number.isFinite(current) && hrValue < current) {
+    const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
+    if (altValue !== undefined) hrValue = altValue;
+  }
+  return hrValue;
+}
+
 function replaceAlias(text, aliasName, newValue) {
   const re = new RegExp(`^(Alias\\[${aliasName}\\]:\\s*).+$`, 'm');
   if (!re.test(text)) {
@@ -168,6 +182,17 @@ async function main() {
   const original = await readFile(ALIAS_FILE, 'utf8');
   let text = original;
   const updates = [];
+
+  // Cham tracks Zod: never list Cham below half of Zod's resolved value.
+  const chamRune = runes.find((r) => r.alias === 'CHAM');
+  const zodRune = runes.find((r) => r.alias === 'ZOD');
+  if (chamRune && zodRune) {
+    const zodValue = resolveRuneValue(zodRune, pricesPrimary, pricesDecrease, text);
+    if (zodValue !== undefined) {
+      chamRune.floor = roundToFiveHundredths(zodValue / 2);
+      console.log(`Cham floor set to ${chamRune.floor}HR (1/2 of Zod ${zodValue}HR)`);
+    }
+  }
 
   for (const rune of runes) {
     let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
