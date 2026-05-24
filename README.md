@@ -151,9 +151,8 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 ### Level 8 — adds 3-star uniques
 
-- Arreats Face
+- Brimstone Rain
 - Doombringer
-- Dragonscale
 - Earth Shifter or The Cranium Basher
 - Elite Bolts
 - Executioners Justice
@@ -164,10 +163,12 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Lidless Wall
 - Magefist
 - Martyrdom (non-ETH only)
+- Medusas Gaze
 - Nosferatus Coil
 - Occultist
 - Ormus Robes (non-ETH only)
 - Pus Spitter
+- Sacred Totem
 - Shaftstop
 - SHAKO (non-ETH only)
 - Silkweave
@@ -181,6 +182,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Grandfather
 - The Reapers Toll
 - Thundergods Vigor (non-ETH only)
+- Valkyrie Wing
 - Vampire Gaze
 - War Fist
 - War Traveler
@@ -191,6 +193,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 - Ariocs Needle
 - Arm of King Leoric
+- Arreats Face
 - Athenas Wrath
 - Atmas Wail
 - Bartucs Cut-Throat
@@ -200,10 +203,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Bloodtree Stump
 - Boneflame
 - Boneshade
-- Brimstone Rain
 - Cerebus Bite
-- Chance Guards
-- Corpsemourn
 - Cyclopean Roar
 - Darkforce
 - Death Cleaver
@@ -211,17 +211,15 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Demon Machine
 - Demonhorns Edge
 - Denmother
+- Dragonscale
 - Ebonbane
 - Elite Arrows
-- Embersworn
 - Ephemeral
 - Eschutas Temper
 - Exceptional Arrows
 - Fenris
 - Firelizards Talons
 - Flamebellow
-- Frostburn
-- Frostwind
 - Gargoyles Bite
 - Ghoulhide
 - Giant Maimer
@@ -232,23 +230,18 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Heavenly Garb
 - Hellmouth
 - Hellslayer
-- Homunculus
 - Horizons Tornado or Stormlash
-- Humongous
 - Infernostride
 - Jade Talon
-- Jalals Mane
 - Leviathan
 - Marrowwalk
-- Medusas Gaze
 - Merman's Sprocket
-- Ondals Wisdom
 - Peasant Crown
 - Plague Bearer
+- Que-Hegans Wisdom
 - Raekor's Virtue
 - Razortail
 - Ribcracker
-- Sacred Totem
 - Sage's Defiance
 - Sandstorm Trek
 - Shadow Dancer
@@ -256,17 +249,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skull Collector
 - Skullders Ire
 - Spike Thorn
-- Stalker's Cull
 - Suicide Branch
 - The Gladiator's Bane
 - The Oculus
 - The Patriarch
 - Titans Grip
-- Titans Revenge
-- Treads of Cthon
 - Twilights Reflection
 - Ursa's Nightmare
-- Valkyrie Wing
 - Venom Grip
 - Windforce
 - Windhammer
@@ -276,42 +265,52 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 **1-star:**
 
 - Black Hades
-- Blackbogs Sharp
 - Bloodfist
 - Buriza-Do Kyanon
+- Chance Guards
 - Chromatic Ire
-- Crow Caw
+- Corpsemourn
 - Crown of Thieves
+- Embersworn
 - Exceptional Bolts
-- Gimmershred
-- Lacerator
+- Frostburn
+- Frostwind
+- Homunculus
+- Humongous
+- Jalals Mane
 - Nethercrux
-- Odium
+- Ondals Wisdom
 - Purgatory
-- Que-Hegans Wisdom
 - Rune Master
 - Shatterblade
 - Silks of the Victor
+- Stalker's Cull
 - Swordguard
 - The Gavel Of Pain
 - The Spirit Shroud
+- Titans Revenge
 - Toothrow
-- Venom Ward
 - Viperfork
 - Wildspeaker
 - Witchwild String
 - Wizardspike
-- Wolfhowl
 
 **0-star:**
 
-- Eaglehorn
+- Blackbogs Sharp
+- Crow Caw
 - Endlesshail
 - Gorefoot
 - Heart Carver
+- Lacerator
+- Odium
+- Radaments Sphere
 - Rockstopper
 - The Jade Tan Do
+- Treads of Cthon
+- Venom Ward
 - Wizendraw
+- Wolfhowl
 
 **NO-star:**
 
@@ -321,10 +320,11 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Cloudcrack
 - Djinn Slayer
 - Duskdeep
+- Eaglehorn
+- Gimmershred
 - Gull Dagger
 - Kuko Shakaku
 - Magewrath
-- Radaments Sphere
 - The Hand of Broc
 - The Impaler
 - Warlords Trust

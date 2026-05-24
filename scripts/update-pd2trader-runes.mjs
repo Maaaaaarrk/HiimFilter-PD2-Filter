@@ -46,6 +46,11 @@ const ubermats = [
   { code: 'lucb', name: 'Demonic Insignia',          alias: 'DEMONIC_INSIGNIA',          set: 'single' },
   { code: 'lucc', name: 'Talisman of Transgression', alias: 'TALISMAN_OF_TRANSGRESSION', set: 'single' },
   { code: 'lucd', name: 'Flesh of Malic',            alias: 'FLESH_OF_MALIC',            set: 'single' },
+  // Token of Absolution essences
+  { code: 'fed',  name: 'Festering Essence',         alias: 'FESTERING_ESS',             set: 'single' },
+  { code: 'bet',  name: 'Burning Essence',           alias: 'BURNING_ESS',               set: 'single' },
+  { code: 'ceh',  name: 'Charged Essence',           alias: 'CHARGED_ESS',               set: 'single' },
+  { code: 'tes',  name: 'Twisted Essence',           alias: 'TWISTED_ESS',               set: 'single' },
   // PD2 utility items (full alias set: VALUE / WSS_VALUE / STACK_HR / STACK_WSS)
   { code: 'wss',  name: 'Worldstone Shard',          alias: 'WSS_ITEM',                  set: 'full', valueSuffix: '_HR_VALUE' },
   { code: 'cwss', name: 'Tainted Worldstone Shard',  alias: 'TAINTED_WORLDSTONE_SHARD',  set: 'full' },

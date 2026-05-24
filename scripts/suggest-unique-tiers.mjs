@@ -53,13 +53,14 @@ const throttleMs = Number(args['throttle-ms']) || 200;
 // Manual tier cutoffs in HR (top-down, first match wins). Override via CLI:
 //   --cutoff-4=4.0 --cutoff-3=2.0 --cutoff-2=0.5 --cutoff-1=0.25 --cutoff-0=0.15 --cutoff-no=0.1
 // Note: 100 WSS = 1 HR. Item-name medians are converted to HR before comparison.
+// Early ladder, 4,3, 1, .5, .25, .15
 const CUTOFFS_HR = [
-  { tier: '4_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-4']  ?? 6.0) },
-  { tier: '3_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-3']  ?? 3.0) },
-  { tier: '2_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-2']  ?? 1) },
-  { tier: '1_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-1']  ?? 0.5) },
-  { tier: '0_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-0']  ?? 0.25) },
-  { tier: 'NO_STAR_UNIQUE', cutoffHR: Number(args['cutoff-no'] ?? 0.15) },
+  { tier: '4_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-4']  ?? 7.0) },
+  { tier: '3_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-3']  ?? 4.0) },
+  { tier: '2_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-2']  ?? 2) },
+  { tier: '1_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-1']  ?? 1) },
+  { tier: '0_STAR_UNIQUE',  cutoffHR: Number(args['cutoff-0']  ?? 0.5) },
+  { tier: 'NO_STAR_UNIQUE', cutoffHR: Number(args['cutoff-no'] ?? 0.25) },
 ];
 
 // Items to skip when emitting move suggestions. Matched case-insensitively against
