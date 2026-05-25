@@ -88,11 +88,11 @@ function roundToFiveHundredths(value) {
   return value > 0 && rounded === 0 ? 0.05 : rounded;
 }
 
-// Mats span a wider price range than runes — under 0.1 HR a 0.05 step rounds away most
-// of the signal, so use 0.01 steps there and switch to 0.05 once it's worth at least 0.1.
+// Mats span a wider price range than runes — under 0.25 HR a 0.05 step rounds away most
+// of the signal, so use 0.01 steps there and switch to 0.05 once it's worth at least 0.25.
 function roundMatValue(value) {
   if (!Number.isFinite(value)) return value;
-  if (value < 0.1) {
+  if (value < 0.25) {
     const rounded = Math.round(value * 100) / 100;
     return value > 0 && rounded === 0 ? 0.01 : rounded;
   }

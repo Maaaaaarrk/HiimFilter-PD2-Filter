@@ -10,37 +10,39 @@ This is a **Diablo II loot filter generator** for the Project Diablo 2 (PD2) mod
 
 Filters are built automatically by `.github/workflows/build-filters.yml` on every push to non-main branches. The workflow:
 
-1. Reads/increments `builder/version.txt` and generates a version stamp
-2. Concatenates numbered segment files from `builder2/` directories using `cat`
-3. Produces ~15 distinct `.filter` files by combining segments with different tag inclusions
-4. Updates `README.md` by replacing `{{REPLACE_ME}}` with the version string
-5. Auto-commits and pushes the generated outputs
+1. Reads/increments `version.txt` (repo root) and generates a version stamp
+2. Runs `python builderfilter/build.py`, which assembles numbered segment files from `builderfilter/` subdirectories into each output filter
+3. Produces the root `.filter` outputs plus per-group copies under `filtergroups/` by combining segments with different tag inclusions
+4. Regenerates `README.md` via `python builderreadme/create_readme.py` (fills version + filter data into the `builderreadme/` template)
+5. Validates with `validate_filters.py`, then auto-commits and pushes the generated outputs
 
-**To trigger a build:** push to any branch other than `main`. There is no local build command — the CI pipeline handles everything.
+**To trigger a CI build:** push to any branch other than `main`. **To build locally:** `python builderfilter/build.py` (then `python validate_filters.py`).
 
-## Architecture: builder2 Tag System
+## Architecture: builderfilter Tag System
 
-Source filter segments live in `builder2/` subdirectories, organized by category (01-header through 09-footer). Files use **filename tags** to control which output filters include them:
+Source filter segments live in `builderfilter/` subdirectories, organized by category (01-header through 09-footer). Files use **filename tags** to control which output filters include them:
 
 - `[ALL]` — included in every filter
 - `[ONLY=FilterName]` — included only in the named filter
 - `[ALL-EXCEPT=FilterName+OtherFilter]` — excluded from listed filters
 - `[CRAFTING-ALL]` / `[LLD-ALL]` — shorthand group categories
 
-The CI script resolves these tags to determine which segments to concatenate for each output filter variant.
+`builderfilter/build.py` resolves these tags to determine which segments to concatenate for each output filter variant.
 
 ## Filter Variants
 
-15 filters are produced from shared source segments:
+The core `Hiim` set is produced from shared source segments:
 
 | Category | Filters |
 |----------|---------|
 | Standard | `Hiim` (main balanced filter) |
 | Themed | `Hyper`, `TalRasha`, `Vanilla_Plus`, `Mystery` |
 | Grail | `Grail` (always shows uniques/sets) |
-| Crafting | `Crafting` + 6 class-specific variants |
+| Crafting | `Crafting` + 7 class-specific variants |
 | LLD | `LLD_Focused`, `LLD_Hyper` |
 | Minimal | `Only_Filter`, `Closed_Beta` |
+
+Additional group variants (e.g. `Kassahi`, `Phil777`) are built into `filtergroups/` subdirectories from the same tagged segments.
 
 ## Filter Levels (0–11)
 
@@ -54,11 +56,14 @@ Output files use Diablo II's native filter language:
 ItemDisplay[CONDITION]: %DISPLAY_NAME%{TOOLTIP}
 ```
 
-Color codes, icons, and tooltip blocks are embedded inline. Placeholder values like `*_Value` are replaced at build time by `Pd2Scraper.java` with live economy data from pd2.tools.
+Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune HR values, currency prices, uber material values) live as `Alias[...]` entries in `builderfilter/02-alias/04-alias-economy-values[ALL].filter` and are referenced by the segments.
 
-## Economy Scraper (`src/Pd2Scraper.java`)
+## Economy Data
 
-A Selenium + JSoup Java scraper that pulls rune HR values, currency prices, and uber material values from pd2.tools. It replaces `*_Value` placeholders in builder2 template files before concatenation. Build with `mvn -f mvn.xml` if running locally.
+Two sources keep economy values current:
+
+- **`scripts/update-pd2trader-runes.mjs`** — Node script that pulls median prices from the PD2 Trader API and rewrites the rune / uber-material aliases in `builderfilter/02-alias/04-alias-economy-values[ALL].filter`. Run on a schedule by `.github/workflows/update-pd2trader-rune-values.yml`. Mat values use tiered rounding (`roundMatValue`): nearest 0.01 below 0.25 HR, nearest 0.05 at 0.25 HR and up.
+- **`src/Pd2Scraper.java`** — Selenium + JSoup scraper that pulls economy data from pd2.tools and replaces `*_Value` placeholders. Build with `mvn -f mvn.xml` if running locally.
 
 ## Filter Validation (Required Step)
 
@@ -93,8 +98,10 @@ Exit code is non-zero if any errors are found, which blocks the CI commit step.
 - `version.txt` — auto-incremented build number
 - `builderfilter/` — all source filter segments
 - `builderfilter/filters.json` — filter definitions and beta flag
+- `builderfilter/build.py` — local/CI build script (resolves tags, concatenates segments)
 - `validate_filters.py` — filter linter/QA (required to pass)
-- `README.md` — user-facing documentation (regenerated by CI; edit the template, not the output)
-- `changelog.md` — version history
-- `src/Pd2Scraper.java` — economy data scraper
+- `README.md` — user-facing documentation (regenerated by CI from the `builderreadme/` template; edit the template, not the output)
+- `builderreadme/create_readme.py` — README generator (template in `builderreadme/README.md`)
+- `scripts/update-pd2trader-runes.mjs` — PD2 Trader economy-value updater (HR rune/mat prices)
+- `src/Pd2Scraper.java` — pd2.tools economy data scraper
 - `mvn.xml` — Maven POM for the scraper
