@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 2nd%CL%Season 13 - build 238%CL%Kassahi - Mystery - Phil777 - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 2nd%CL%Season 13 - build 239%CL%Kassahi - Mystery - Phil777 - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -43,9 +43,9 @@ ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 
 ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%{%NAME%}
 ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%{%NAME%}
 ItemDisplay[FILTLVL>10 (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR jew OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
-ItemDisplay[GOLD<500 FILTLVL=1 (CLVL>79 OR FILTLVL>1) !MAPID=83]:
-ItemDisplay[GOLD<1000 FILTLVL=2 (CLVL>79 OR FILTLVL>2) !MAPID=83]:
-ItemDisplay[GOLD<5000 FILTLVL~3-4 (CLVL>79 OR FILTLVL>4) !MAPID=83]:
+ItemDisplay[GOLD<500 ((FILTLVL=1 CLVL>79) OR FILTLVL>1) !MAPID=83]:
+ItemDisplay[GOLD<1000 ((FILTLVL=2 CLVL>79) OR FILTLVL>2) !MAPID=83]:
+ItemDisplay[GOLD<5000 ((FILTLVL~3-4 CLVL>79) OR FILTLVL>4) !MAPID=83]:
 ItemDisplay[GOLD<7500 FILTLVL~5-6 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<10000 FILTLVL~7-8 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<25000 FILTLVL~9-10 CLVL>79 !MAPID=83]:
