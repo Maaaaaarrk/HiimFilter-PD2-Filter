@@ -1,5 +1,5 @@
 # kassahi
-## Last updated June 3rd Season 13 - build 241
+## Last updated June 5th Season 13 - build 242
 
 ## Filters
 * Regular — Standard: Kassahi's all-in-one balanced filter. The standard recommendation for most players. [Kassahi.filter]
