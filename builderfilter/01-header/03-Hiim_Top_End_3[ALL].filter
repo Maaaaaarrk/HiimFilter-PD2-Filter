@@ -1,0 +1,13 @@
+
+//-----------------------------------------------------------------------------------
+// GOLD — scaled by filter level (aggressive); never hides in Travincal (MAPID=83)
+//-----------------------------------------------------------------------------------
+// Filter-level scaling
+ItemDisplay[GOLD<500 ((FILTLVL=1 CLVL>79) OR FILTLVL>1) !MAPID=83]:
+ItemDisplay[GOLD<1000 ((FILTLVL=2 CLVL>79) OR FILTLVL>2) !MAPID=83]:
+ItemDisplay[GOLD<5000 ((FILTLVL~3-4 CLVL>79) OR FILTLVL>4) !MAPID=83]:
+ItemDisplay[GOLD<7500 FILTLVL~5-6 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<10000 FILTLVL~7-8 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<25000 FILTLVL~9-10 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<999999 FILTLVL>10 CLVL>79 !MAPID=83]:
+//-----------------------------------------------------------------------------------

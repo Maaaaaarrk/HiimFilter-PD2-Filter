@@ -1,0 +1,690 @@
+//-----------------------------------------------------------------------------------
+// Sanctuary of Exile changes (SOE)
+
+// SOE-only aliases: left/right halves of the UBER_KEYS bracket decoration, used by
+// the Voices rule below (the community edit referenced these without defining them).
+Alias[UBER_KEYS_LEFT]: %RED%>>  >
+Alias[UBER_KEYS_RIGHT]: %RED%<  <<
+
+// Currency items
+
+// Gemcutter/Charsi/Extraction
+ItemDisplay[gcbx OR ccbx OR ooe]: %SOUNDID-1118%%PX-68%%ORANGE%* %NAME% %ORANGE%* 
+// Carto Box
+ItemDisplay[cabx]: %SOUNDID-4715%%BORDER-68%%PURPLE%%ORANGE% %NAME% %ORANGE%%PURPLE% 
+//Mythic Orb
+ItemDisplay[mfo]: %SOUNDID-248%%DOT-68%%PURPLE%*%ORANGE%*%CORAL%   Mythic Orb  %CORAL%%ORANGE%*%PURPLE%* 
+// Exalt Orb
+ItemDisplay[exo]: %SOUNDID-248%%DOT-68%%PURPLE%*%ORANGE%*%GREEN%   Exalt Orb   %GREEN%%ORANGE%*%PURPLE%*
+// Divine/Sacred Orb
+ItemDisplay[dvo OR sror]: %SOUNDID-4714%%BORDER-68%%ORANGE%%PURPLE%*%RED%*%YELLOW%*%GREEN%*   %NAME%   %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE% 
+// Chisel Avarice/Procurement
+ItemDisplay[ccsa]: %MAP-68%%GOLD%Chisel-Averice
+ItemDisplay[ccpr]: %SOUNDID-4715%%MAP-68%%PURPLE%*%GREEN%* %GOLD%Chisel-Procurement %GREEN%*%PURPLE%*  
+// Terror of Opulence/Ethereal/Resplendence/Absolute
+ItemDisplay[troo OR troe OR tror OR troa]: %SOUNDID-4715%%BORDER-68%%PURPLE% %NAME% %PURPLE% 
+//Glyph of Nemesis/Corruption/Adverseries/Moo/Lineage
+ItemDisplay[scnm OR sccn OR scas OR scmo OR schr]: %SOUNDID-4715%%BORDER-68%%PURPLE% %NAME% %PURPLE% 
+//Cinder Soul
+ItemDisplay[hfcr]: %BORDER-68%%ORANGE%  %NAME%  %ORANGE% 
+//Cinder Cluster
+ItemDisplay[hfmx]: %SOUNDID-4715%%BORDER-68%%ORANGE%  %NAME%  %ORANGE% 
+
+// Ornate Charms - Magic Unid
+ItemDisplay[MAG !ID cm4]: %BLUE% %NAME% %BLUE%
+
+// Ornate Charms - Unique Unid
+ItemDisplay[UNI !ID cm4]: %GOLD%*** %NAME% *** %GOLD%
+
+// Mythic jewel ---------------------------------------------------------
+
+ItemDisplay[mjw MAG !ID ALVL>90]: %SOUNDID-248%%GOLD%**%BLUE% %NAME% hi alvl:%ALVL%%GOLD%**
+ItemDisplay[mjw MAG !ID]: %NAME% alvl:%ALVL%
+ItemDisplay[mjw RARE !ID ALVL>90]: %DOT-A8%%SOUNDID-248%%ORANGE%** hi alvl %ALVL%%YELLOW% %NAME% %ORANGE%**
+ItemDisplay[mjw RARE !ID]: %NAME% alvl %ALVL%
+ItemDisplay[mjw UNI]: %NAME%
+
+
+// Display Rolls In Name
+ItemDisplay[mjw ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]: {%NAME%}%CONTINUE%
+
+// - req STAT91
+ItemDisplay[mjw STAT91<0]: %SAGE%-Req %NAME%%CONTINUE%{%NAME%}
+
+// IAS
+ItemDisplay[mjw IAS>0]: %GOLD%IAS %NAME%%CONTINUE%{%NAME%}
+
+// FCR
+ItemDisplay[mjw STAT105>0]: %GOLD%%STAT105%FCR%NAME%%CONTINUE%{%NAME%}
+
+// MAX MANA %
+ItemDisplay[mjw STAT77>0]: %BLUE%%STAT77%%Mana %NAME%%CONTINUE%{%NAME%}
+
+// Energy 
+ItemDisplay[mjw STAT1>0]: %BLUE%+%STAT1% Energy %NAME%%CONTINUE%{%NAME%}
+
+// Open Wounds
+ItemDisplay[mjw !UNI STAT501>0]: %RED%+%STAT501% OW %NAME%%CONTINUE%{%NAME%}
+
+// ED
+ItemDisplay[mjw EDAM>0]: %GREEN%%EDAM%%ED %NAME%%CONTINUE%{%NAME%}
+
+// Max Dmg
+ItemDisplay[mjw STAT24>0 !(STAT23>0)]: %RED%%STAT24% MaxDMG %NAME%%CONTINUE%{%NAME%}
+
+// Min Dmg
+ItemDisplay[mjw STAT23>0 !(STAT24>0)]: %BLUE%%STAT23% MinDMG %NAME%%CONTINUE%{%NAME%}
+
+// Dmg Range
+ItemDisplay[mjw STAT23>0 STAT24>0]: %RED%+(%STAT23%-%STAT24%)DMG %NAME%%CONTINUE%{%NAME%}
+
+// FHR
+ItemDisplay[mjw FHR>0]: %GOLD%FHR %NAME%%CONTINUE%{%NAME%}
+
+// REPLIFE
+ItemDisplay[mjw (REPLIFE>2)]: %RED%%REPLIFE%rep %NAME%%CONTINUE%
+
+// Mana
+ItemDisplay[mjw (MANA>30)]: %BLUE%%MANA%mana %NAME%%CONTINUE%
+
+// STATS
+ItemDisplay[mjw (STR+DEX>9)]: Stat %NAME%%CONTINUE%
+ItemDisplay[mjw (STR+DEX>15)]: Fat%NAME%%CONTINUE%
+ItemDisplay[mjw (STR+DEX>9)]: %LIGHT_GRAY%%NAME%%CONTINUE%
+
+// Life After Kill
+ItemDisplay[mjw !UNI !SET STAT86>0]: %RED%%STAT86% LAEK %NAME%%CONTINUE%{%NAME%}
+
+// Mana After Kill
+ItemDisplay[mjw !UNI !SET STAT138>0]: %BLUE%%STAT138% MAEK %NAME%%CONTINUE%{%NAME%}
+
+// All RES
+ItemDisplay[mjw !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%}
+
+ItemDisplay[mjw MAG !ID ALVL>90]: %SOUNDID-248%%GOLD%**%BLUE% %NAME% hi alvl:%ALVL%%GOLD%**
+ItemDisplay[mjw MAG !ID]: %NAME% alvl:%ALVL%
+ItemDisplay[mjw RARE !ID ALVL>90]: %DOT-A8%%SOUNDID-248%%ORANGE%** hi alvl %ALVL%%YELLOW% %NAME% %ORANGE%**
+ItemDisplay[mjw RARE !ID]: %NAME% alvl %ALVL%
+
+// Display Rolls In Name
+ItemDisplay[mjw ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]: {%NAME%}%CONTINUE%
+
+// - req STAT91
+ItemDisplay[mjw STAT91<0]: %SAGE%-Req %NAME%%CONTINUE%{%NAME%}
+
+// IAS
+ItemDisplay[mjw IAS>0]: %GOLD%IAS %NAME%%CONTINUE%{%NAME%}
+
+// FCR
+ItemDisplay[mjw STAT105>0]: %GOLD%%STAT105%%FCR %NAME%%CONTINUE%{%NAME%}
+
+// MAX MANA %
+ItemDisplay[mjw STAT77>0]: %BLUE%%STAT77%%Mana %NAME%%CONTINUE%{%NAME%}
+
+// Energy 
+ItemDisplay[mjw STAT1>0]: %BLUE%+%STAT1% Energy %NAME%%CONTINUE%{%NAME%}
+
+// Open Wounds
+ItemDisplay[mjw !UNI STAT501>0]: %RED%+%STAT501% OW %NAME%%CONTINUE%{%NAME%}
+
+// ED
+ItemDisplay[mjw EDAM>0]: %GREEN%%EDAM%%ED %NAME%%CONTINUE%{%NAME%}
+
+// Max Dmg
+ItemDisplay[mjw STAT24>0 !(STAT23>0)]: %RED%%STAT24% MaxDMG %NAME%%CONTINUE%{%NAME%}
+
+// Min Dmg
+ItemDisplay[mjw STAT23>0 !(STAT24>0)]: %BLUE%%STAT23% MinDMG %NAME%%CONTINUE%{%NAME%}
+
+// Dmg Range
+ItemDisplay[mjw STAT23>0 STAT24>0]: %RED%+(%STAT23%-%STAT24%)DMG %NAME%%CONTINUE%{%NAME%}
+
+// FHR
+ItemDisplay[mjw FHR>0]: %GOLD%%FHR%%FHR %NAME%%CONTINUE%{%NAME%}
+
+// REPLIFE
+ItemDisplay[mjw (REPLIFE>2)]: %RED%%REPLIFE%rep %NAME%%CONTINUE%
+
+// Mana
+ItemDisplay[mjw (MANA>30)]: %BLUE%%MANA%mana %NAME%%CONTINUE%
+
+// STATS
+ItemDisplay[mjw (STR+DEX>14)]: Stat %NAME%%CONTINUE%
+ItemDisplay[mjw (STR+DEX>28)]: Fat%NAME%%CONTINUE%
+ItemDisplay[mjw (STR+DEX>14)]: %LIGHT_GRAY%%NAME%%CONTINUE%
+
+// Life After Kill
+ItemDisplay[mjw !UNI !SET STAT86>0]: %RED%%STAT86% LAEK %NAME%%CONTINUE%{%NAME%}
+
+// Mana After Kill
+ItemDisplay[mjw !UNI !SET STAT138>0]: %BLUE%%STAT138% MAEK %NAME%%CONTINUE%{%NAME%}
+
+// All RES
+ItemDisplay[mjw !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%}
+
+// Pierce
+ItemDisplay[mjw !UNI STAT156>0]: %TEAL%%STAT156%Pierce %NAME%%CONTINUE%{%NAME%}
+
+
+// Top line formatting
+ItemDisplay[mjw ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]: %DOT-50%%NAME%%CL%%CONTINUE%{%NAME%}
+
+// BIG Mythic Jewel callouts
+ItemDisplay[mjw FHR>7 STAT91<0 RES>15]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (FHR>7 OR STAT91<0) RES>19]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (FHR>7 OR STAT91<0) (FRES+CRES+LRES+PRES>80) RES=0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (RES>19 OR STAT91<0 OR FHR>7) (STAT86>5 OR STAT138>5)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (STR+DEX>15) (FHR>7 OR STAT91<0 OR REPLIFE>9 OR STAT86>5 OR STAT138>5)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw STAT86>5 STAT138>5]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>44 (STAT121>44 OR STAT122>44)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM+STAT121+STAT122>100]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>45 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>25)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>38 EDAM<48 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>54)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>12 EDAM<40 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>73)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>37 STAT501>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>100)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>45 IAS>15]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw RES>18 IAS>15]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw MANA>32 STAT77>6 (STAT86>5 OR STAT138>5)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw MANA>37 STAT77>7]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw MANA>34 STAT1>15]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw STAT77>5 (STAT105>4 OR MANA>37 OR STAT1>15)]: %NAME%%PURPLE%BIG %CONTINUE%
+
+
+// Mythic Jewel name formatting
+
+ItemDisplay[mjw MAG ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]:%NAME%%BLUE%Mythic Jewel%CONTINUE%{%NAME%}
+ItemDisplay[mjw RARE ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]:%NAME%%YELLOW%Mythic Jewel%CONTINUE%{%NAME%}
+ItemDisplay[mjw CRAFT ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]:%NAME%%ORANGE%Mythic Jewel%CONTINUE%{%NAME%}
+
+ItemDisplay[mjw MAG ALVL>90]:%RED%hi affix rolls alvl:%ALVL%%CL%%BLUE%%NAME% 
+ItemDisplay[mjw RARE ALVL>90]:%RED%hi affix rolls alvl:%ALVL%%CL%%YELLOW%%NAME%{%NL%%TAN%Reroll with 3 P.Gems} 
+
+ItemDisplay[mjw MAG]: alvl:%ALVL%%CL%%NAME% {%NL%%TAN%Note: %WHITE%Upgrade to %YELLOW%rare %WHITE%with Jeweller's Prism from Anya.%NL%}
+ItemDisplay[mjw RARE]: alvl:%ALVL%%CL%%NAME% 
+
+
+
+
+// Top line formatting
+ItemDisplay[mjw ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]: %DOT-50%%NAME%%CL%%CONTINUE%{%NAME%}
+
+// BIG Mythic Jewel callouts
+ItemDisplay[mjw FHR>0 STAT91<0 RES>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (FHR>0 OR STAT91<0) RES>14]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (FHR>0 OR STAT91<0) (FRES+CRES+LRES+PRES>25) RES=0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (RES>14 OR STAT91<0 OR FHR>0) (STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (STR+DEX>15) (FHR>0 OR STAT91<0 OR REPLIFE>4 OR STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw STAT86>3 STAT138>3]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>44 (STAT121>44 OR STAT122>44)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM+STAT121+STAT122>100]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>45 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>25)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>39 EDAM<48 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>38)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>12 EDAM<40 (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>57)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>37 STAT501>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw (MINDMG+MINDMG+MINDMG+MAXDMG+MAXDMG>100)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw EDAM>45 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw RES>9 IAS>0]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw MANA>32 STAT77>6 (STAT86>2 OR STAT138>2)]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw MANA>37 STAT77>7]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw MANA>34 STAT1>15]: %NAME%%PURPLE%BIG %CONTINUE%
+ItemDisplay[mjw STAT77>5 (STAT105>3 OR MANA>37 OR STAT1>15)]: %NAME%%PURPLE%BIG %CONTINUE%
+
+
+// Mythic Jewel name formatting
+
+ItemDisplay[mjw MAG ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]:%NAME%%BLUE%%CL%Mythic Jewel%CONTINUE%{%NAME%}
+ItemDisplay[mjw RARE ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]:%NAME%%YELLOW%%CL%Mythic Jewel%CONTINUE%{%NAME%}
+ItemDisplay[mjw CRAFT ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]:%NAME%%ORANGE%%CL%Mythic Jewel%CONTINUE%{%NAME%}
+
+ItemDisplay[mjw MAG ALVL>90]:%RED%hi affix rolls alvl:%ALVL%%CL%%BLUE%%NAME% 
+ItemDisplay[mjw RARE ALVL>90]:%RED%hi affix rolls alvl:%ALVL%%CL%%YELLOW%%NAME%{%NL%%TAN%Reroll with 3 P.Gems} 
+
+ItemDisplay[mjw MAG]: alvl:%ALVL%%CL%%NAME% {%NL%%TAN%Note: %WHITE%Upgrade to %YELLOW%rare %WHITE%with Jeweller's Prism from Anya.%NL%}
+ItemDisplay[mjw RARE]: alvl:%ALVL%%CL%%NAME% 
+
+
+
+// SOE Infernal Maps [tmXi] ----------------------------------------------------------
+
+ItemDisplay[tm1i]: %RED%%NAME%{%CL%%RED%F 120% %YELLOW%L 80% %BLUE% C 75%%CL%%GRAY%Ph 50% %ORANGE%M 50% %DARK_GREEN%P 120%%CL%%NAME%} //Phlegethon
+ItemDisplay[tm2i]: %RED%%NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 75% %DARK_GREEN%P 120%%CL%%NAME%} //Throne of insanity
+ItemDisplay[tm3i]: %RED%%NAME%{%CL%%RED%F 65% %YELLOW%L 65% %BLUE% C 65%%CL%%GRAY%Ph 50% %ORANGE%M 33% %DARK_GREEN%P 65%%CL%%NAME%} //Blood Moon
+ItemDisplay[tm4i]: %RED%%NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 120%%CL%%GRAY%Ph 50% %ORANGE%M 105% %DARK_GREEN%P 80%%CL%%NAME%} //Pandemonium Citadel
+ItemDisplay[tm5i]: %RED%%NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 115% %ORANGE%M 50% %DARK_GREEN%P 75%%CL%%NAME%} //Kehjistan Marketplace
+ItemDisplay[tm6i]: %RED%%NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 80%%CL%%GRAY%Ph 115% %ORANGE%M 55% %DARK_GREEN%P 75%%CL%%NAME%} //Canyon Of Sescheron
+ItemDisplay[tm7i]: %RED%%NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %DARK_GREEN%P 75%%CL%%NAME%} //Sanatorium 
+ItemDisplay[tm8i]: %RED%%NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %DARK_GREEN%P 120%%CL%%NAME%} //Ruined Cistern
+ItemDisplay[tm9i]: %RED%%NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %DARK_GREEN%P 75%%CL%%NAME%} //Ashen Plains
+
+// New unique items
+
+ItemDisplay[cm1 UNI !ID (MAPID=188 OR MAPID=189)]: %UBER_KEYS_LEFT%%GOLD% Voices %UBER_KEYS_RIGHT% //Voices
+ 
+ItemDisplay[mgb UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%MAGE %PURPLE%*%RED%*%YELLOW%*%GREEN%*     %GOLD%%NAME%     %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%BLOOD?
+ 
+ItemDisplay[mgb UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%MAGE %PURPLE%*%RED%*%YELLOW%*%GREEN%*     %GOLD%%NAME%     %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%BLOOD?
+ 
+ItemDisplay[mjw UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%SUPER %PURPLE%*%RED%*%YELLOW%*%GREEN%*  %GOLD%%NAME%  %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%RARE
+ 
+//Unique regular jewels
+ItemDisplay[jew UNI !ID]: %SOUNDID-621%%BORDER-68%%ORANGE% %PURPLE%*%RED%*%YELLOW%*%GREEN%*     %NAME%     %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%
+ 
+//-----------------------------------------------------------------------------------
+
+// Normal bases for runewords
+// REMOVE --->   //    <----  In front of ItemDisplayfor the rule to start working and replace "XXX" with the item code you want. Find codes on pd2 (https://wiki.projectdiablo2.com/wiki/Item_Filtering#Item_Group_Codes)
+//ItemDisplay[XXX (!INF NMAG)]: %PX-86% %SAGE%%NAME% 
+
+//ItemDisplay[7ws (!INF NMAG)]: %PX-86% %SAGE%%NAME% //Caduceus
+
+//ItemDisplay[paf (!INF NMAG)]: %PX-86% %SAGE%%NAME% //Vortex Shield
+
+
+// Normal and Exceptional bases for Mythic Orb
+// REMOVE --->   //    <----  In front of ItemDisplayfor the rule to start working and replace "XXX" with the item code you want. Find codes on pd2 (https://wiki.projectdiablo2.com/wiki/Item_Filtering#Item_Group_Codes)
+// Replace "YYY" for any notes in the items description instead of name/title
+//ItemDisplay[XXX (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%CORAL%Myth For YYY} 
+
+//ItemDisplay[zvb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%CORAL%Myth For Razortail} //Sharkskin Belt
+
+
+// Normal and Exceptional bases for Exalted Orb
+// REMOVE --->   //    <----  In front of ItemDisplayfor the rule to start working and replace "XXX" with the item code you want. Find codes on pd2 (https://wiki.projectdiablo2.com/wiki/Item_Filtering#Item_Group_Codes)
+// Replace "YYY" for any notes in the items description instead of name/title
+//ItemDisplay[XXX (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GREEN%Exalt For YYY} 
+
+// Elite bases for Divine/Exalt Orb 
+// REMOVE --->   //    <----  In front of ItemDisplayfor the rule to start working and replace "XXX" with the item code you want. Find codes on pd2 (https://wiki.projectdiablo2.com/wiki/Item_Filtering#Item_Group_Codes)
+// Replace "YYY" for any notes in the items description instead of name/title
+//ItemDisplay[XXX (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For YYY%GREEN%}
+
+// HELMS ----------------------------------------------------------------
+
+// SHAKO [UNIQ] Harlequin Crest
+//ItemDisplay[uap (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Harlequin Crest}
+// Armet [UNIQ] Steel Shade
+//ItemDisplay[ulm (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Steel Shade}
+// Demonhead [UNIQ] Andariel's Visage
+//ItemDisplay[usk (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Andariel's Visage}
+// Bone Visage [UNIQ] Giant Skull [SET] Trang-Oul's Guise
+//ItemDisplay[uh9 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Giant Skull. %GREEN%Exalt For Trangs}
+// Spired Helm [UNIQ] Veil of Steel,Nightwing's Veil [SET] Ondal's Almighty
+//ItemDisplay[uhm (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Veil of Steel,Nightwing's Veil. %GREEN%Exalt For Ondal's}
+// Corona [UNIQ] Crown of Ages [SET] Griswold's Valor
+//ItemDisplay[urn (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Crown of Ages. %GREEN%Exalt For Giswold's}
+// Diadem [UNIQ] Griffon's Eye [SET] M'avina's True Sight
+//ItemDisplay[ci3 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Griffon's Eye. %GREEN%Exalt For M'avina's}
+// Hunter Hood [UNIQ] Kashyas Sorrow
+//ItemDisplay[sh3 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Kashyas Sorrow}
+
+// DRUID HELMS -----------------------------------
+// Blood Spirit [UNIQ] Cerebus' Bite
+//ItemDisplay[drb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Cerebus' Bite}
+// Sun Spirit [UNIQ] Denmother
+//ItemDisplay[drc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Denmother}
+// Earth Spirit [UNIQ] Spirit Keeper
+//ItemDisplay[drd (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Spirit Keeper}
+// Sky Spirit [UNIQ] Ravenlore
+//ItemDisplay[dre (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ravenlore}
+// Dream Spirit Ursa's Nightmare
+//ItemDisplay[drf (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ursa's Nightmare}
+
+// BARBARIAN HELMS -------------------------------
+// Fury Visor [UNIQ] Wolfhowl
+//ItemDisplay[bac (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Wolfhowl}
+// Destroyer Helm [UNIQ] Demonhorn's Edge
+//ItemDisplay[bad (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Demonhorn's Edge}
+// Conqueror Crown [UNIQ] Halaberd's Reign
+//ItemDisplay[bae (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Halaberd's Reign}
+// Guardian Crown [UNIQ] Raekor's Virtue
+//ItemDisplay[baf (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Raekor's Virtue}
+
+// PALADIN HELMS ---------------------------------
+// Pious Helmet [UNIQ] Halo of the Justicar
+//ItemDisplay[ph3 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Halo of the Justicar}
+
+// CHESTS ----------------------------------------------------------------
+
+// Dusk Shroud [UNIQ] Ormus' Robes [SET] Dark Adherent
+//ItemDisplay[uui (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ormus' Robes. %GREEN% Exalt For Dark Adherent}
+// Wire Fleece [UNIQ] The Gladiator's Bane
+//ItemDisplay[utu (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For The Gladiator's Bane}
+// Diamond Mail [UNIQ] Wraithskin
+//ItemDisplay[ung (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Wraithskin}
+// Loricated Mail [SET] Natalya's Shadow
+//ItemDisplay[ucl (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GREEN%xalt For Natalyas%GREEN%}
+// Balrog Skin [UNIQ] Arkaine's Valor [SET] Sazabi's Ghost Liberator
+//ItemDisplay[upl (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Arkaine's Valor. %GREEN%Exalt For Sazabi's}
+// Hellforge Plate [SET] Naj's Light Plate
+//ItemDisplay[ult (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GREEN%Exalt For Naj's}
+// Kraken Shell [UNIQ] Leviathan [SET] M'avina's Embrace
+ItemDisplay[uld (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Leviathan. %GREEN%Exalt For M'avina's}
+// Lacquered Plate [SET] Tal Rasha's Guardianship
+//ItemDisplay[uth (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GREEN%Exalt For Tal Rasha's}
+// Archon Plate [UNIQ] Purgatory
+//ItemDisplay[utp (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Purgatory}
+// Shadow Plate [UNIQ] Steel Carapace [SET] Aldur's Deception
+//ItemDisplay[uul (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Steel Carapace. %GREEN%Exalt For Aldur's}
+//SACRED ARMORS  [UNIQ] Templar's Might,Tyrael's Might [SET]  Immortal King's Soul Cage
+//ItemDisplay[uar (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Templar's Might,Tyrael's Might. %GREEN%Exalt For Immortal King's}
+
+// SHIELDS ----------------------------------------------------------------
+
+// Luna [UNIQ] Blackoak Shield
+//ItemDisplay[uml (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Blackoak Shield}
+// Hyperion [UNIQ] Twilight's Reflection
+//ItemDisplay[urg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Twilight's Reflection}
+// Blade Barrier [UNIQ] Spike Thorn
+//ItemDisplay[upk (NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Spike Thorn}
+// Monarch [UNIQ] Stormshield
+//ItemDisplay[uit (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Stormshield}
+// Troll Nest [UNIQ] Head Hunter's Glory
+//ItemDisplay[ush (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Head Hunter's Glory}
+// Aegis [UNIQ] Medusa's Gaze
+//ItemDisplay[uow (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Medusa's Gaze}
+// Ward [UNIQ] Spirit Ward [SET] Taebaek's Glory
+//ItemDisplay[uts (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Spirit Ward. %GREEN%Exalt For Taebaek's}
+//ELEGANT ROUND [UNIQ] The Squire,The Oppressor
+//ItemDisplay[ers (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For The Squire,The Oppressor}
+
+// PALADIN SHIELDS -------------------------------
+// Sacred Rondache [UNIQ] Alma Negra
+//ItemDisplay[pac (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Alma Negra}
+// Zakarum Shield [UNIQ] Dragonscale
+//ItemDisplay[pae (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Dragonscale}
+// Vortex Shield [UNIQ] Skywarden [SET] Griswold's Honor
+//ItemDisplay[paf (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For  Skywarden. %GREEN%Exalt For Griswold's}
+
+// NECRO SHIELDS ---------------------------------
+// Hellspawn Skull [UNIQ] Sacred Totem
+//ItemDisplay[neg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Sacred Totem}
+// Overseer Skull [UNIQ] Martyrdom
+//ItemDisplay[ned (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Martyrdom}
+// Succubus Skull [UNIQ] Boneflame
+//ItemDisplay[nee (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Boneflame}
+// Bloodlord Skull [UNIQ] Darkforce Spawn,Whispering Skull
+//ItemDisplay[nef (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Darkforce Spawn,Whispering Skull}
+
+// GLOVES ----------------------------------------------------------------
+
+// Bramble Mitts [UNIQ] Titan's Grip [SET] Laying of Hands
+//ItemDisplay[ulg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Titan's Grip. %GREEN%Exalt For Laying of Hands}
+// Vampirebone Gloves [UNIQ] Dracul's Grasp
+//ItemDisplay[uvg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Dracul's Grasp}
+// Vambraces [UNIQ] Soul Drainer
+//ItemDisplay[umg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Soul Drainer}
+// Crusader Gauntlets [UNIQ] Occultist
+//ItemDisplay[utg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Occultist}
+// Ogre Gauntlets [UNIQ] Steelrend
+//ItemDisplay[uhg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Steelrend}
+
+// BOOTS ----------------------------------------------------------------
+
+// Wyrmhide Boots [UNIQ] Merman's Sprocket
+//ItemDisplay[ulb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Merman's Sprocket}
+// Scarabshell Boots [UNIQ] Sandstorm Trek
+//ItemDisplay[uvb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Sandstorm Trek}
+// Boneweave Boots [UNIQ] Marrowwalk
+//ItemDisplay[umb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Marrowwalk}
+// Myrmidon Greaves [UNIQ] Shadow Dancer
+//ItemDisplay[uhb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Shadow Dancer}
+
+// BELTS ----------------------------------------------------------------
+
+// Spiderweb Sash [UNIQ] Arachnid Mesh
+//ItemDisplay[ulc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Arachnid Mesh}
+// Vampirefang Belt [UNIQ] Nosferatu's Coil
+//ItemDisplay[uvc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Nosferatu's Coil}
+// Mithril Coil [UNIQ] Verdungo's Hearty Cord [SET] Credendum
+//ItemDisplay[umc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Verdungo's Hearty Cord. %GREEN%Exalt For Credendum}
+// Troll Belt [SET] Trang-Oul's Girth
+//ItemDisplay[utc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GREEN%Exalt For Trang-Oul's}
+// Colossus Girdle [UNIQ] Siggard's Staunch, HeadHunter
+//ItemDisplay[uhc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Siggard's Staunch, HeadHunter}
+// Mythic Belt [UNIQ] Mageblood, Kratos Fury
+//ItemDisplay[mgb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Mageblood, Kratos Fury}
+
+//WEAPONS ----------------------------------------------------------------
+
+// AXES ------------------------------------------
+// Tomahawk [UNIQ] Razor's Edge
+//ItemDisplay[7ha (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Razor's Edge}
+// Ettin Axe [UNIQ] Rune Master
+//ItemDisplay[72a (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Rune Master}
+// War Spike [UNIQ] Cranebeak
+//ItemDisplay[7mp (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Cranebeak}
+// Berserker Axe [UNIQ] Death Cleaver
+//ItemDisplay[7wa (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For  Death Cleaver}
+// Silver-edged Axe [UNIQ] Ethereal Edge
+//ItemDisplay[7ba (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ethereal Edge}
+// Decapitator [UNIQ] Hellslayer
+//ItemDisplay[7bt (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Hellslaye}
+// Champion Axe [UNIQ] Messerschmidt's Reaver
+//ItemDisplay[7ga (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Messerschmidt's Reaver}
+// Glorious Axe [UNIQ] Executioner's Justice
+//ItemDisplay[7gi (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Executioner's Justice}
+
+// Maces -----------------------------------------
+// Truncheon [UNIQ] Nord's Tenderizer
+//ItemDisplay[7cl (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Nord's Tenderizer
+// Tyrant Club [UNIQ] Demon Limb
+//ItemDisplay[7sp (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Demon Limb}
+// Reinforced Mace [SET] Dangoon's Teaching
+//ItemDisplay[XXX (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Dangoon's Teaching}
+// Devil Star [UNIQ] Baranar's Star
+//ItemDisplay[7mt (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Baranar's Star}
+// Scourge [UNIQ] Horizon's Tornado,Stormlash
+//ItemDisplay[7fl (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Horizon's Tornado,Stormlash}
+// Legendary Mallet [UNIQ] Stone Crusher,Schaefer's Hammer
+//ItemDisplay[7wh (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Stone Crusher,Schaefer's Hammer}
+// Ogre Maul [UNIQ] Windhammer [SET] Immortal King's Stone Crusher
+//ItemDisplay[7m7 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Windhammer. %GREEN%Exalt For Immortal King's}
+// Thunder Maul [UNIQ] Earth Shifter,The Cranium Basher,Mjolner
+//ItemDisplay[7gm (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Earth Shifter,The Cranium Basher,Mjolner}
+// Ruination Maul [UNIQ] Gravebloom
+//ItemDisplay[rmu (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Gravebloom}
+
+// Swords ----------------------------------------
+// Ataghan [UNIQ] Djinn Slayer
+//ItemDisplay[7sm (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Djinn Slayer}
+// Elegant Blade [UNIQ] Bloodmoon
+//ItemDisplay[7sb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Bloodmoon}
+// Phase Blade [UNIQ] Lightsabre,Azurewrath
+//ItemDisplay[7cr (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Lightsabre,Azurewrath}
+// Cryptic Sword [UNIQ] Frostwind [SET] Sazabi's Cobalt Redeemer
+//ItemDisplay[7ls (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Frostwind. %GREEN%Exalt For Sazabi's}
+// Highland Blade [UNIQ] Leoric's Mithril Bane
+//ItemDisplay[7cm (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Leoric's Mithril Bane}
+// Balrog Blade [UNIQ] Flamebellow
+//ItemDisplay[7gs (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Flamebellow}
+// Champion Sword [UNIQ] Doombringer
+//ItemDisplay[7b7 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Doombringer}
+// Colossus Sword [UNIQ] Odium [SET] Bul-Kathos' Tribal Guardian
+//ItemDisplay[7fb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Odium. %GREEN%Exalt For Bul-Kathos' Tribal Guardian}
+// Colossus Blade [UNIQ] The Grandfather [SET] Bul-Kathos' Sacred Charge
+//ItemDisplay[7gd (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For The Grandfather. %GREEN%Exalt For Bul-Kathos' Sacred Charge}
+// Mythical sword Nihlathak's Malice
+//ItemDisplay[7wd (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Nihlathak's Malice}
+
+// Daggers ---------------------------------------
+// Bone Knife [UNIQ] Wizardspike
+//ItemDisplay[7dg (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Wizardspike}
+// Mithril Point [UNIQ] Shatterblade
+//ItemDisplay[7di (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Shatterblade}
+// Fanged Knife [UNIQ] Fleshripper
+//ItemDisplay[7kr (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Fleshripper}
+// Legend Spike [UNIQ] Ghostflame
+//ItemDisplay[7bl (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ghostflame}
+
+// Throwing Axes & Throwing Knives ---------------
+// Flying Axe [UNIQ] Gimmershred
+//ItemDisplay[7ta (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Gimmershred}
+// Winged Knife [UNIQ] Warshrike
+//ItemDisplay[7bk (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Warshrike}
+// Winged Axe [UNIQ] Lacerator
+//ItemDisplay[7b8 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Lacerator}
+
+// Javelins --------------------------------------
+// Balrog Spear [UNIQ] Demon's Arch
+//ItemDisplay[7s7 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Demon's Arch}
+// Ghost Glaive [UNIQ] Wraith Flight
+//ItemDisplay[7gl (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Wraith Flight}
+// Winged Harpoon [UNIQ] Gargoyle's Bite
+//ItemDisplay[7ts (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Gargoyle's Bite}
+
+// Spears ----------------------------------------
+// Hyperion Spear [UNIQ] Arioc's Needle
+//ItemDisplay[7sr (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Arioc's Needle}
+// Mancatcher [UNIQ] Viperfork
+//ItemDisplay[7br (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Viperfork}
+// Ghost Spear [UNIQ] Uldyssian's Awakening
+//ItemDisplay[7st (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Uldyssian's Awakening}
+// War Pike [UNIQ] Steel Pillar, Askaris Zephyr
+//ItemDisplay[7p7 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Steel Pillar, Askaris Zephyr}
+
+// Polearms --------------------------------------
+// Ogre Axe [UNIQ] Bonehew
+//ItemDisplay[7o7 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Bonehew}
+// Thresher [UNIQ] The Reaper's Toll
+//ItemDisplay[7s8 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For The Reaper's Toll}
+// Cryptic Axe [UNIQ] Tomb Reaver
+//ItemDisplay[7pa (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Tomb Reaver}
+// 	Giant Thresher [UNIQ] Stormspire
+//ItemDisplay[7wc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Stormspire}
+
+// Bows ------------------------------------------
+// Blade Bow [UNIQ] Crackleshot
+//ItemDisplay[6hb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Crackleshot}
+// Crusader Bow [UNIQ] Eaglehorn
+//ItemDisplay[6l7 (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Eaglehorn}
+// Ward Bow [UNIQ] Widowmaker
+//ItemDisplay[6sw (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Widowmaker}
+// Hydra Bow [UNIQ] Windforce,Hailstorm
+//ItemDisplay[6lw (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Windforce,Hailstorm}
+
+// Crossbows -------------------------------------
+// Colossus Crossbow [UNIQ] Hellrack
+//ItemDisplay[6hx (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Hellrack}
+// Demon Crossbow [UNIQ] Gut Siphon
+//ItemDisplay[6rx (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Gut Siphon}
+
+// Staves ----------------------------------------
+// Elder Staff [UNIQ] Ondal's Wisdom [SET] Naj's Puzzler
+//ItemDisplay[6cs (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ondal's Wisdom. %GREEN%Exalt For Naj's}
+// Shillelagh [UNIQ] Brimstone Rain
+//ItemDisplay[6bs (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Brimstone Rain}
+// Archon Staff [UNIQ] Mang Song's Lesson
+//ItemDisplay[6ws (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Mang Song's Lesson}
+
+// Wands -----------------------------------------
+// Lich Wand [UNIQ] Boneshade
+//ItemDisplay[7bw (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Boneshade}
+// Unearthed Wand [UNIQ] Death's Web,Rathmas Hand
+//ItemDisplay[7gw (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Death's Web,Rathmas Hand}
+
+// Scepters --------------------------------------
+// Mighty Scepter [UNIQ] Heaven's Light,The Redeemer
+//ItemDisplay[7sc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Heaven's Light,The Redeemer}
+// Seraph Rod [UNIQ] Akarat's Devotion
+//ItemDisplay[7qs (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Akarat's Devotion}
+// Caduceus [UNIQ] Astreon's Iron Ward [SET] Griswold's Redemption
+//ItemDisplay[7ws (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Astreon's Iron Ward. %GREEN%Exalt For Griswold's}
+
+// Assassin Claws --------------------------------
+// Wrist Sword [UNIQ] Jade Talon
+//ItemDisplay[7wb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Jade Talon}
+// War Fist [UNIQ] Whispering Mirage
+//ItemDisplay[7xf (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Whispering Mirage}
+// Battle Cestus [UNIQ] Shadow Killer
+//ItemDisplay[7cs (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Shadow Killer}
+// Feral Claws [UNIQ] Firelizard's Talons
+//ItemDisplay[7lw (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Firelizard's Talons}
+// Runic Talons [UNIQ] Stalker's Cull
+//ItemDisplay[7tw (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Stalker's Cull}
+// Scissors Suwayyah [SET] Natalya's Mark
+//ItemDisplay[7qr (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Natalya's Mark}
+
+// Sorc Orbs -------------------------------------
+// Eldritch Orb [UNIQ] Eschuta's Temper
+//ItemDisplay[obc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Eschuta's Temper}
+// Dimensional Shard [UNIQ] Death's Fathom,Glacial Mist,Blaze of Glory
+//ItemDisplay[obf (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Death's Fathom,Glacial Mist,Blaze of Glory}
+
+// Amazon Weapons --------------------------------
+// Matriarchal Bow [UNIQ] Blood Raven's Charge
+//ItemDisplay[amb (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Blood Raven's Charge}
+// Grand Matron Bow [UNIQ] Ebonbane [SET] M'avina's Caster
+//ItemDisplay[amc (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Ebonbane. %GREEN%Exalt For M'avina's}
+// Matriarchal Spear [UNIQ] Stoneraven
+//ItemDisplay[amd (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Stoneraven}
+// Matriarchal Pike [UNIQ] Zerae's Resolve
+//ItemDisplay[ame (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Zerae's Resolve}
+// Matriarchal Javelin [UNIQ] Thunderstroke
+//ItemDisplay[XXX (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Thunderstroke}
+
+
+// New unique bases
+ItemDisplay[(smer OR uts OR uuc OR utbe) UNI !ID]: %MAP-4A%%BORDER-9B%%GOLD%*** %NAME% ***{%NAME%}
+// Hatred Orbs
+ItemDisplay[(hor1 OR hor2 OR hor3 OR hor4 OR hor5 OR hor6)]: %MAP-4A%%BORDER-68%%RED%*%PURPLE%*%ORANGE% Hatred Orb: %NAME% %ORANGE%*%PURPLE%*%RED%*{%NAME%}
+// New SoE currency and materials
+// Chaos Orb
+ItemDisplay[csor]: %MAP-4A%%BORDER-68%%ORANGE%* Chaos Orb *{%NAME%}
+// Eternal Orb
+ItemDisplay[etor]: %MAP-4A%%BORDER-68%%ORANGE%* Eternal Orb *{%NAME%}
+// Orb of Alchemy
+ItemDisplay[ooal]: %MAP-4A%%BORDER-68%%ORANGE%* Orb of Alchemy *{%NAME%}
+// Orb of Horizons
+ItemDisplay[oroh]: %MAP-4A%%BORDER-68%%ORANGE%* Orb of Horizons *{%NAME%}
+// Ascendancy items
+ItemDisplay[(ascc OR assc)]: %MAP-0A%%BORDER-9B%%PURPLE%Ascendancy: %NAME%{%NAME%}
+// T0 Fate Cards
+ItemDisplay[(fa01 OR fa02 OR fa03 OR fa04 OR fa05 OR fa06 OR fa07 OR fa08 OR fa09 OR fa10 OR fa11 OR fa12)]: %MAP-4A%%BORDER-9B%%GOLD%[T0 Fate] %NAME%{%NAME%}
+// T1 Fate Cards
+ItemDisplay[(fa13 OR fa14 OR fa15 OR fa16 OR fa17 OR fa18 OR fa19 OR fa20 OR fa21)]: %MAP-4A%%BORDER-68%%PURPLE%[T1 Fate] %NAME%{%NAME%}
+// T2 Fate Cards
+ItemDisplay[(fa22 OR fa23 OR fa24 OR fa25 OR fa26 OR fa27 OR fa28 OR fa29 OR fa30 OR fa31)]: %MAP-4A%%BORDER-68%%CORAL%[T2 Fate] %NAME%{%NAME%}
+// T3 Fate Cards
+ItemDisplay[(fa32 OR fa33 OR fa34 OR fa35 OR fa36 OR fa37 OR fa38 OR fa39 OR fa40 OR fa41 OR fa42 OR fa43 OR fa44 OR fa45 OR fa46 OR fa47 OR fa48 OR fa49 OR fa50 OR fa51 OR fa52 OR fa53 OR fa54)]: %MAP-4A%%DOT-68%%BLUE%[T3 Fate] %NAME%{%NAME%}
+// T4 Fate Cards
+ItemDisplay[(fa55 OR fa56 OR fa57 OR fa58)]: %MAP-4A%%DOT-68%%GREEN%[T4 Fate] %NAME%{%NAME%}
+// T5 Fate Cards
+ItemDisplay[(fa59 OR fa60 OR fa61 OR fa62 OR fa63)]: %MAP-4A%%DOT-68%%TAN%[T5 Fate] %NAME%{%NAME%}
+// Base Essences and Essence of Insanity
+ItemDisplay[(es01 OR es16 OR es59 OR es25 OR es32 OR es10 OR es13 OR es50 OR es19 OR es22 OR es41 OR es07 OR es38 OR es56 OR es35 OR es44 OR es04 OR es47 OR es28 OR es53 OR es31)]: %MAP-4A%%DOT-68%%TEAL%[Essence] %NAME%{%NAME%}
+// Greater Essences
+ItemDisplay[(es02 OR es17 OR es60 OR es26 OR es33 OR es11 OR es14 OR es51 OR es20 OR es23 OR es42 OR es08 OR es39 OR es57 OR es36 OR es45 OR es05 OR es48 OR es29 OR es54)]: %MAP-4A%%BORDER-68%%PURPLE%[Greater Essence] %NAME%{%NAME%}
+// Perfect Essences
+ItemDisplay[(es03 OR es18 OR es61 OR es27 OR es34 OR es12 OR es15 OR es52 OR es21 OR es24 OR es43 OR es09 OR es40 OR es58 OR es37 OR es46 OR es06 OR es49 OR es30 OR es55)]: %MAP-4A%%BORDER-9B%%GOLD%[Perfect Essence] %NAME%{%NAME%}
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+
+//------------------------------------
+//----- Tier List
+ItemDisplay[INF PRICE=1 DIFF<1]: %NAME%{%BLACK%~%CL%%BLUE%tinyurl.com/HiimPD2%CL%%BLACK%~%CL%%GOLD%Hiim Mapping Build Tier Lists:%CL%%BLACK%~%CL%%NAME%}%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+// HIDE JUNK RULES
+//-----------------------------------------------------------------------------------
+ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:{%NAME%}// Hide inferior items
+ItemDisplay[ear]:// Hide player ears
+ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuff always after 80
+ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher Filter levels after 60
+//-----------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------------
+// ONLYs FILTER ENFORCEMENT
+//-----------------------------------------------------------------------------------
+// Shows 
+ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+// Hide EVERYTHING ELSE
+ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
+ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
+//-----------------------------------------------------------------------------------
