@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 9th%CL%Season 13 - build 243%CL%HiimFilter - Sancofexile - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated June 9th%CL%Season 13 - build 244%CL%HiimFilter - Sancofexile - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -45,22 +45,22 @@ ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPI
 ItemDisplay[FILTLVL>10 (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR jew OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
 Alias[UBER_KEYS_LEFT]: %RED%>>  >
 Alias[UBER_KEYS_RIGHT]: %RED%<  <<
-ItemDisplay[gcbx OR ccbx OR ooe]: %SOUNDID-1118%%PX-68%%ORANGE%* %NAME% %ORANGE%* 
+ItemDisplay[gcbx OR ccbx OR ooe]: %SOUNDID-1118%%PX-68%%ORANGE%• %NAME% %ORANGE%• 
 ItemDisplay[cabx]: %SOUNDID-4715%%BORDER-68%%PURPLE%%ORANGE% %NAME% %ORANGE%%PURPLE% 
-ItemDisplay[mfo]: %SOUNDID-248%%DOT-68%%PURPLE%*%ORANGE%*%CORAL%   Mythic Orb  %CORAL%%ORANGE%*%PURPLE%* 
-ItemDisplay[exo]: %SOUNDID-248%%DOT-68%%PURPLE%*%ORANGE%*%GREEN%   Exalt Orb   %GREEN%%ORANGE%*%PURPLE%*
-ItemDisplay[dvo OR sror]: %SOUNDID-4714%%BORDER-68%%ORANGE%%PURPLE%*%RED%*%YELLOW%*%GREEN%*   %NAME%   %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE% 
+ItemDisplay[mfo]: %SOUNDID-248%%DOT-68%%PURPLE%•%ORANGE%•%CORAL%   Mythic Orb  %CORAL%%ORANGE%•%PURPLE%• 
+ItemDisplay[exo]: %SOUNDID-248%%DOT-68%%PURPLE%•%ORANGE%•%GREEN%   Exalt Orb   %GREEN%%ORANGE%•%PURPLE%•
+ItemDisplay[dvo OR sror]: %SOUNDID-4714%%BORDER-68%%ORANGE%%PURPLE%•%RED%•%YELLOW%•%GREEN%•   %NAME%   %GREEN%•%YELLOW%•%RED%•%PURPLE%• %ORANGE% 
 ItemDisplay[ccsa]: %MAP-68%%GOLD%Chisel-Averice
-ItemDisplay[ccpr]: %SOUNDID-4715%%MAP-68%%PURPLE%*%GREEN%* %GOLD%Chisel-Procurement %GREEN%*%PURPLE%*  
+ItemDisplay[ccpr]: %SOUNDID-4715%%MAP-68%%PURPLE%•%GREEN%• %GOLD%Chisel-Procurement %GREEN%•%PURPLE%•  
 ItemDisplay[troo OR troe OR tror OR troa]: %SOUNDID-4715%%BORDER-68%%PURPLE% %NAME% %PURPLE% 
 ItemDisplay[scnm OR sccn OR scas OR scmo OR schr]: %SOUNDID-4715%%BORDER-68%%PURPLE% %NAME% %PURPLE% 
 ItemDisplay[hfcr]: %BORDER-68%%ORANGE%  %NAME%  %ORANGE% 
 ItemDisplay[hfmx]: %SOUNDID-4715%%BORDER-68%%ORANGE%  %NAME%  %ORANGE% 
 ItemDisplay[MAG !ID cm4]: %BLUE% %NAME% %BLUE%
-ItemDisplay[UNI !ID cm4]: %GOLD%*** %NAME% *** %GOLD%
-ItemDisplay[mjw MAG !ID ALVL>90]: %SOUNDID-248%%GOLD%**%BLUE% %NAME% hi alvl:%ALVL%%GOLD%**
+ItemDisplay[UNI !ID cm4]: %GOLD%••• %NAME% ••• %GOLD%
+ItemDisplay[mjw MAG !ID ALVL>90]: %SOUNDID-248%%GOLD%••%BLUE% %NAME% hi alvl:%ALVL%%GOLD%••
 ItemDisplay[mjw MAG !ID]: %NAME% alvl:%ALVL%
-ItemDisplay[mjw RARE !ID ALVL>90]: %DOT-A8%%SOUNDID-248%%ORANGE%** hi alvl %ALVL%%YELLOW% %NAME% %ORANGE%**
+ItemDisplay[mjw RARE !ID ALVL>90]: %DOT-A8%%SOUNDID-248%%ORANGE%•• hi alvl %ALVL%%YELLOW% %NAME% %ORANGE%••
 ItemDisplay[mjw RARE !ID]: %NAME% alvl %ALVL%
 ItemDisplay[mjw UNI]: %NAME%
 ItemDisplay[mjw ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]: {%NAME%}%CONTINUE%
@@ -83,9 +83,9 @@ ItemDisplay[mjw (STR+DEX>9)]: %LIGHT_GRAY%%NAME%%CONTINUE%
 ItemDisplay[mjw !UNI !SET STAT86>0]: %RED%%STAT86% LAEK %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[mjw !UNI !SET STAT138>0]: %BLUE%%STAT138% MAEK %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[mjw !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[mjw MAG !ID ALVL>90]: %SOUNDID-248%%GOLD%**%BLUE% %NAME% hi alvl:%ALVL%%GOLD%**
+ItemDisplay[mjw MAG !ID ALVL>90]: %SOUNDID-248%%GOLD%••%BLUE% %NAME% hi alvl:%ALVL%%GOLD%••
 ItemDisplay[mjw MAG !ID]: %NAME% alvl:%ALVL%
-ItemDisplay[mjw RARE !ID ALVL>90]: %DOT-A8%%SOUNDID-248%%ORANGE%** hi alvl %ALVL%%YELLOW% %NAME% %ORANGE%**
+ItemDisplay[mjw RARE !ID ALVL>90]: %DOT-A8%%SOUNDID-248%%ORANGE%•• hi alvl %ALVL%%YELLOW% %NAME% %ORANGE%••
 ItemDisplay[mjw RARE !ID]: %NAME% alvl %ALVL%
 ItemDisplay[mjw ID (STAT105>0 OR STAT91<0 OR STAT501>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT77>0 OR STAT1>0)]: {%NAME%}%CONTINUE%
 ItemDisplay[mjw STAT91<0]: %SAGE%-Req %NAME%%CONTINUE%{%NAME%}
@@ -172,17 +172,17 @@ ItemDisplay[tm7i]: %RED%%NAME%{%CL%%RED%F 75% %YELLOW%L 120% %BLUE% C 75%%CL%%GR
 ItemDisplay[tm8i]: %RED%%NAME%{%CL%%RED%F 75% %YELLOW%L 75% %BLUE% C 75%%CL%%GRAY%Ph 60% %ORANGE%M 105% %DARK_GREEN%P 120%%CL%%NAME%}
 ItemDisplay[tm9i]: %RED%%NAME%{%CL%%RED%F 120% %YELLOW%L 75% %BLUE% C 130%%CL%%GRAY%Ph 50% %ORANGE%M 50% %DARK_GREEN%P 75%%CL%%NAME%}
 ItemDisplay[cm1 UNI !ID (MAPID=188 OR MAPID=189)]: %UBER_KEYS_LEFT%%GOLD% Voices %UBER_KEYS_RIGHT%
-ItemDisplay[mgb UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%MAGE %PURPLE%*%RED%*%YELLOW%*%GREEN%*     %GOLD%%NAME%     %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%BLOOD?
-ItemDisplay[mgb UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%MAGE %PURPLE%*%RED%*%YELLOW%*%GREEN%*     %GOLD%%NAME%     %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%BLOOD?
-ItemDisplay[mjw UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%SUPER %PURPLE%*%RED%*%YELLOW%*%GREEN%*  %GOLD%%NAME%  %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%RARE
-ItemDisplay[jew UNI !ID]: %SOUNDID-621%%BORDER-68%%ORANGE% %PURPLE%*%RED%*%YELLOW%*%GREEN%*     %NAME%     %GREEN%*%YELLOW%*%RED%*%PURPLE%* %ORANGE%
+ItemDisplay[mgb UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%MAGE %PURPLE%•%RED%•%YELLOW%•%GREEN%•     %GOLD%%NAME%     %GREEN%•%YELLOW%•%RED%•%PURPLE%• %ORANGE%BLOOD?
+ItemDisplay[mgb UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%MAGE %PURPLE%•%RED%•%YELLOW%•%GREEN%•     %GOLD%%NAME%     %GREEN%•%YELLOW%•%RED%•%PURPLE%• %ORANGE%BLOOD?
+ItemDisplay[mjw UNI !ID]: %SOUNDID-34%%BORDER-68%%ORANGE%SUPER %PURPLE%•%RED%•%YELLOW%•%GREEN%•  %GOLD%%NAME%  %GREEN%•%YELLOW%•%RED%•%PURPLE%• %ORANGE%RARE
+ItemDisplay[jew UNI !ID]: %SOUNDID-621%%BORDER-68%%ORANGE% %PURPLE%•%RED%•%YELLOW%•%GREEN%•     %NAME%     %GREEN%•%YELLOW%•%RED%•%PURPLE%• %ORANGE%
 ItemDisplay[uld (!INF NMAG OR (!ID (MAG OR RARE)))]: %PX-9F%%TEAL% %NAME% {%GOLD%Div For Leviathan. %GREEN%Exalt For M'avina's}
-ItemDisplay[(smer OR uts OR uuc OR utbe) UNI !ID]: %MAP-4A%%BORDER-9B%%GOLD%*** %NAME% ***{%NAME%}
-ItemDisplay[(hor1 OR hor2 OR hor3 OR hor4 OR hor5 OR hor6)]: %MAP-4A%%BORDER-68%%RED%*%PURPLE%*%ORANGE% Hatred Orb: %NAME% %ORANGE%*%PURPLE%*%RED%*{%NAME%}
-ItemDisplay[csor]: %MAP-4A%%BORDER-68%%ORANGE%* Chaos Orb *{%NAME%}
-ItemDisplay[etor]: %MAP-4A%%BORDER-68%%ORANGE%* Eternal Orb *{%NAME%}
-ItemDisplay[ooal]: %MAP-4A%%BORDER-68%%ORANGE%* Orb of Alchemy *{%NAME%}
-ItemDisplay[oroh]: %MAP-4A%%BORDER-68%%ORANGE%* Orb of Horizons *{%NAME%}
+ItemDisplay[(smer OR uts OR uuc OR utbe) UNI !ID]: %MAP-4A%%BORDER-9B%%GOLD%••• %NAME% •••{%NAME%}
+ItemDisplay[(hor1 OR hor2 OR hor3 OR hor4 OR hor5 OR hor6)]: %MAP-4A%%BORDER-68%%RED%•%PURPLE%•%ORANGE% Hatred Orb: %NAME% %ORANGE%•%PURPLE%•%RED%•{%NAME%}
+ItemDisplay[csor]: %MAP-4A%%BORDER-68%%ORANGE%• Chaos Orb •{%NAME%}
+ItemDisplay[etor]: %MAP-4A%%BORDER-68%%ORANGE%• Eternal Orb •{%NAME%}
+ItemDisplay[ooal]: %MAP-4A%%BORDER-68%%ORANGE%• Orb of Alchemy •{%NAME%}
+ItemDisplay[oroh]: %MAP-4A%%BORDER-68%%ORANGE%• Orb of Horizons •{%NAME%}
 ItemDisplay[(ascc OR assc)]: %MAP-0A%%BORDER-9B%%PURPLE%Ascendancy: %NAME%{%NAME%}
 ItemDisplay[(fa01 OR fa02 OR fa03 OR fa04 OR fa05 OR fa06 OR fa07 OR fa08 OR fa09 OR fa10 OR fa11 OR fa12)]: %MAP-4A%%BORDER-9B%%GOLD%[T0 Fate] %NAME%{%NAME%}
 ItemDisplay[(fa13 OR fa14 OR fa15 OR fa16 OR fa17 OR fa18 OR fa19 OR fa20 OR fa21)]: %MAP-4A%%BORDER-68%%PURPLE%[T1 Fate] %NAME%{%NAME%}
@@ -218,8 +218,8 @@ ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg O
 Alias[GEN_ITEM]: %ORANGE%• • • %NAME% %ORANGE%• • •
 Alias[WSS_SHARD]: %ORANGE%• • • %NAME% %ORANGE%• • •
 Alias[GEN_ALT]: %PURPLE%• • • %NAME% %PURPLE%• • •
-Alias[TOKEN_PARTS]: %ORANGE%> > %NAME% %ORANGE%< <
-Alias[UBER_KEYS]: %RED%>>  > %NAME% %RED%<  <<
+Alias[TOKEN_PARTS]: %ORANGE%• • %NAME% %ORANGE%• •
+Alias[UBER_KEYS]: %RED%••  • %NAME% %RED%•  ••
 Alias[BOSS_MAT]: %YELLOW%•• •• •• %NAME% %YELLOW%•• •• ••
 Alias[BOSS_ALT]: %YELLOW%X X X X %NAME% %YELLOW%X X X X
 Alias[PD2_MATS]: %YELLOW%X X X X %NAME% %YELLOW%X X X X
@@ -234,8 +234,8 @@ Alias[RUNE_CRAFT]: %DOT-0B%%ORANGE%···· %NAME% %ORANGE%····
 Alias[RUNE_MID]: %DOT-9B%%PX-0B%%PURPLE%•• •• %NAME% %PURPLE%•• ••
 Alias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%PURPLE%•• •• %NAME% %PURPLE%•• ••
 Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%PURPLE%•• •• •• %NAME% %PURPLE%•• •• ••
-Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> %NAME% %PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%>
-Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>
+Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%•%ORANGE%!%PURPLE%• •%ORANGE%!%PURPLE%• •%ORANGE%!%PURPLE%• •%ORANGE%!%PURPLE%• %NAME% %PURPLE%•%ORANGE%!%PURPLE%• •%ORANGE%!%PURPLE%• •%ORANGE%!%PURPLE%• •%ORANGE%!%PURPLE%•
+Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%•%GREEN%!%PURPLE%• •%GREEN%!%PURPLE%• •%GREEN%!%PURPLE%• •%GREEN%!%PURPLE%• %NAME% %PURPLE%•%GREEN%!%PURPLE%• •%GREEN%!%PURPLE%• •%GREEN%!%PURPLE%• •%GREEN%!%PURPLE%•
 Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%YELLOW%X %NAME% %YELLOW%X
 Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%YELLOW%XX %NAME% %YELLOW%XX
 Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%X %NAME% %ORANGE%X
