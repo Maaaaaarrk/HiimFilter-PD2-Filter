@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated June 9th Season 13 - build 245
+## Last updated June 10th Season 13 - build 246
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -119,6 +119,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Lacerator (ETH only)
 - Lightsabre or Azurewrath
 - Mang Songs Lesson
+- Occultist
 - Purgatory (ETH only)
 - Ravenlore (non-ETH only)
 - Ribcracker (ETH only)
@@ -132,7 +133,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Steel Shade (non-ETH only)
 - Steelrend
 - Stone Crusher or Schaefers Hammer
-- Stoneraven (ETH only)
+- Stoneraven
 - Templars Might or Tyraels Might
 - The Gavel Of Pain (ETH only)
 - The Grandfather (ETH only)
@@ -152,10 +153,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 ### Level 8 — adds 3-star uniques
 
 - Brimstone Rain
+- Demon Machine
 - Doombringer
 - Earth Shifter or The Cranium Basher
+- Elite Arrows
 - Elite Bolts
 - Executioners Justice
+- Firelizards Talons
 - Gerkes Sanctuary
 - Guardian Angel
 - Herald of Zakarum
@@ -165,7 +169,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Martyrdom (non-ETH only)
 - Medusas Gaze
 - Nosferatus Coil
-- Occultist
 - Ormus Robes (non-ETH only)
 - Pus Spitter
 - Sacred Totem
@@ -175,7 +178,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skyfall
 - Snowclash (non-ETH only)
 - Steel Pillar
-- Stoneraven
 - Stormshield (non-ETH only)
 - Stormspire
 - String of Ears
@@ -187,6 +189,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - War Fist
 - War Traveler
 - Widowmaker
+- Windforce
 - Zerae's Resolve
 
 ### Level 7 — adds 2-star uniques
@@ -208,17 +211,16 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Darkforce
 - Death Cleaver
 - Deaths Fathom
-- Demon Machine
 - Demonhorns Edge
 - Denmother
 - Dragonscale
 - Ebonbane
-- Elite Arrows
+- Embersworn
 - Ephemeral
 - Eschutas Temper
 - Exceptional Arrows
+- Exceptional Bolts
 - Fenris
-- Firelizards Talons
 - Flamebellow
 - Gargoyles Bite
 - Ghoulhide
@@ -233,6 +235,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Horizons Tornado or Stormlash
 - Infernostride
 - Jade Talon
+- Jalals Mane
 - Leviathan
 - Marrowwalk
 - Merman's Sprocket
@@ -255,9 +258,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Patriarch
 - Titans Grip
 - Twilights Reflection
-- Ursa's Nightmare
 - Venom Grip
-- Windforce
 - Windhammer
 
 ### Level 6-5 — adds 1-star, 0-star, and NO-star uniques
@@ -271,13 +272,11 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Chromatic Ire
 - Corpsemourn
 - Crown of Thieves
-- Embersworn
-- Exceptional Bolts
 - Frostburn
 - Frostwind
+- Gimmershred
 - Homunculus
 - Humongous
-- Jalals Mane
 - Nethercrux
 - Ondals Wisdom
 - Purgatory
@@ -290,6 +289,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Spirit Shroud
 - Titans Revenge
 - Toothrow
+- Ursa's Nightmare
 - Viperfork
 - Wildspeaker
 - Witchwild String
@@ -321,7 +321,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Djinn Slayer
 - Duskdeep
 - Eaglehorn
-- Gimmershred
 - Gull Dagger
 - Kuko Shakaku
 - Magewrath
