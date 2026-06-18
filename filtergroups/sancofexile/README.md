@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated June 15th Season 13 - build 251
+## Last updated June 18th Season 13 - build 252
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
