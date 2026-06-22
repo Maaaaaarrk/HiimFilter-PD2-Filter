@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated June 21st Season 13 - build 253
+## Last updated June 22nd Season 13 - build 255
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -11,6 +11,7 @@
 * Class — Paladin: Class filter tuned for Paladin. Shows Paladin-relevant items and crafting bases at higher filter levels. [Sancofexile_Crafting_Paladin_Focused.filter]
 * Class — Sorceress: Class filter tuned for Sorceress. Shows Sorceress-relevant items and crafting bases at higher filter levels. [Sancofexile_Crafting_Sorceress_Focused.filter]
 * Crafting: Same as the standard filter, but good crafting bases are not limited in higher filter levels. [Sancofexile_Crafting.filter]
+* Damnation: Standard filter with the Grail show-all rules, but Uniques and Set items are never tier-limited by filter level (no FILTLVL gating). [Sancofexile_Damnation.filter]
 * Grail Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Sancofexile_Grail.filter]
 * LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Sancofexile_LLD_Focused.filter]
 * Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Sancofexile_Mystery.filter]
