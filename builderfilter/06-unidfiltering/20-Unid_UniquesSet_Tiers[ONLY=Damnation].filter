@@ -1,0 +1,33 @@
+//-----------------------------------------------------------------------------------
+// IMPORTANT DROPS (Damnation)
+// Copy of the standard Unid Uniques/Set tiers, but with every FILTLVL< rule removed
+// so Uniques and Set items are never tier-limited by filter level.
+//-----------------------------------------------------------------------------------
+
+//  Boss Items
+//-----------------------------------------------------------------------------------
+// The Third Eye Amulet
+// Cage of the Unsullied Boneweave
+// Band of Skulls Troll Belt
+// Aidans Scar - Scissors Suwayyah
+// Cage of the Unsullied - Boneweave
+// Dark Abyss - Lacquered Plate
+// Band of Skulls - Troll Belt
+// Itheraels Path - Mirrored Boots
+// Hadriels Hand - Conquest Sword
+
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %SOUNDID-4719%%UNI_BOSS_ITEM%
+
+// Overlords Helm
+ItemDisplay[UNI !ID uh9 MAPID=137]: %SOUNDID-4719%%UNI_BOSS_ITEM%
+
+//-----------------------------------------------------------------------------------
+
+// Boss zone catch
+//-----------------------------------------------------------------------------------
+// Dclone
+ItemDisplay[UNI !ID MAPID=137]: %NAME%
+// Rathma
+ItemDisplay[UNI !ID (MAPID=161 OR MAPID=162 OR MAPID=163)]: %NAME%
+//-----------------------------------------------------------------------------------
+
