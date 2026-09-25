@@ -12,7 +12,7 @@ VERSION_FILTER    = os.path.join(ROOT_DIR, "builderfilter", "01-header", "01-Ver
 FILTER_DEFS       = os.path.join(ROOT_DIR, "filter_definitions.json")
 FILTERGROUPS_DIR  = os.path.join(ROOT_DIR, "filtergroups")
 UNIQUE_TIER_FILE  = os.path.join(ROOT_DIR, "builderfilter", "02-alias", "05-unid-unique-set-stars[ALL].filter")
-UNIQUE_NAME_FILE  = os.path.join(ROOT_DIR, "builderfilter", "03-unidformatting", "18-Unid_UniquesSet_Name[ALL-EXCEPT=Vanilla+OnlyFilter].filter")
+UNIQUE_NAME_FILE  = os.path.join(ROOT_DIR, "builderfilter", "03-unidformatting", "18-Unid_UniquesSet_Name[ALL-EXCEPT=Vanilla+OnlyFilter+Kassahi].filter")
 
 UNIQUE_TIERS = [
     "4_STAR_UNIQUE",

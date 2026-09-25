@@ -1,0 +1,11 @@
+//-----------------------------------------------------------------------------------
+// Kassahi rune names — ports upstream 05-utility/04-runename (and the Meme variant).
+//
+// The base name comes from 02-alias (%RUNENAME%, or the Meme names for 26-33); this
+// appends the green rune number. Out of town on filter level 9+ the low runes
+// that are not in CRAFTING_RUNES_SET collapse to just their number.
+// Phil777 has its own rune names in 03-alias-kassahi-luxe.
+// Mystery renames 26-33 afterwards in 09-Runes-Kassashi-1mystery (no number shown).
+//-----------------------------------------------------------------------------------
+ItemDisplay[RUNE>0]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
+ItemDisplay[RUNE>0 RUNE<20 FILTLVL>8 !CRAFTING_RUNES_SET !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GREEN% %RUNENUM% %CONTINUE%

@@ -15,37 +15,37 @@
 Alias[GEN_ITEM]: %ORANGE%@@%BLACK%@ %ORANGE%@@%BLACK%@ %NAME% %BLACK%@%ORANGE%@@ %BLACK%@%ORANGE%@@
 
 // General item Alt
-Alias[GEN_ALT]: %PURPLE%@@%BLACK%@ %PURPLE%@@%BLACK%@ %NAME% %BLACK%@%PURPLE%@@ %BLACK%@%PURPLE%@@
+Alias[GEN_ALT]: %NAME%
 
 // Token parts
-Alias[TOKEN_PARTS]: %ORANGE%@%BLACK%@ %NAME% %BLACK%@%ORANGE%@
+Alias[TOKEN_PARTS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 
 // Uber Keys
-Alias[UBER_KEYS]: %RED%@@%ORANGE%@@%RED%@@   %NAME%   %RED%@@%ORANGE%@@%RED%@@
+Alias[UBER_KEYS]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 
 // Boss Mat Item
-Alias[BOSS_MAT]: %YELLOW%@%ORANGE%@%YELLOW%@%ORANGE%@%YELLOW%@ %NAME% %YELLOW%@%ORANGE%@%YELLOW%@%ORANGE%@%YELLOW%@
+Alias[BOSS_MAT]: %PURPLE%«%BLACK%·%RED%» %NAME% %RED%«%BLACK%·%PURPLE%»
 
 // Boss Mat Item Alt
 Alias[BOSS_ALT]: %YELLOW%@@@@ %NAME% %YELLOW%@@@@
 
 // Boss Entry Item
-Alias[BOSS_ENTRY]: %RED%@@@ %NAME% %RED%@@@
+Alias[BOSS_ENTRY]: %LIGHT_GRAY%•%RED%•  %NAME%  %RED%•%LIGHT_GRAY%•
 
 // Rare General Item — orange-red doublet pattern
 Alias[GEN_RARE]: %ORANGE%@%RED%@%ORANGE%@   %NAME%   %ORANGE%@%RED%@%ORANGE%@
 
 // Rarer General Item — dark green emphasis
-Alias[GEN_TOP_RARE]: %DARK_GREEN%@%GREEN%@%DARK_GREEN%@   %NAME%   %DARK_GREEN%@%GREEN%@%DARK_GREEN%@
+Alias[GEN_TOP_RARE]: %NAME%
 
 // GG General Item Drop — full warm gradient
-Alias[GEN_GG_ITEM]: %PURPLE%@%RED%@%ORANGE%@%YELLOW%@   %NAME%   %YELLOW%@%ORANGE%@%RED%@%PURPLE%@
+Alias[GEN_GG_ITEM]: %GREEN%@@%BLACK%@ %PURPLE%@@%BLACK%@   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%@%PURPLE%@@ %BLACK%@%GREEN%@@
 
 // Rare GG Item Drop — gradient with white accent
-Alias[RARE_GG_ITEM]: %PURPLE%@@%RED%@@%ORANGE%@@%YELLOW%@@ %WHITE%•   %NAME%   %WHITE%• %YELLOW%@@%ORANGE%@@%RED%@@%PURPLE%@@
+Alias[RARE_GG_ITEM]: %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
 
 // Unlimited Use items
-Alias[RARE_GG_ALT]: %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X %NAME% %PURPLE%X%RED%@%PURPLE%X%RED%@%PURPLE%X
+Alias[RARE_GG_ALT]: %GREEN%OO%BLACK%O %PURPLE%OO%BLACK%O   %WHITE%• %RED%%NAME%%WHITE% •   %BLACK%O%PURPLE%OO %BLACK%O%GREEN%OO
 
 // Flawless Gems
 Alias[FLAW_GEM1]: %PURPLE%•  %NAME%  %PURPLE%•
@@ -77,6 +77,9 @@ Alias[INFUSION7]: %TAN%•%ORANGE%••  %NAME%  %ORANGE%••%TAN%•
 // Low rune — single red @ pair (matches upstream RUNE 20-21 hyper styling)
 Alias[RUNE_LOW]: %PX-0B%%GREEN%•  %ORANGE%%NAME%  %GREEN%•
 
+// Low rune on filter level 9+ — no frame (upstream shows just the rune number there)
+Alias[RUNE_LOW_STRICT]: %NAME%
+
 // Craft rune
 Alias[RUNE_CRAFT]: %DOT-0B%%GREEN%••  %ORANGE%%NAME%  %GREEN%••
 
@@ -92,6 +95,9 @@ Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@@%BLACK%@ %GREEN%@@@%BLAC
 
 // High rune Tier 2 — wider spacing (matches upstream RUNE 30, 33 hyper)
 Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@@%BLACK%@ %PURPLE%@@@%BLACK%@ %GREEN%@@@%BLACK%@  %WHITE%• %RED%%NAME% %WHITE%•  %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@@ %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@
+
+// High rune Tier 3 — BER ZOD (same frame as Tier 2 in this family)
+Alias[RUNE_TOP_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%@@%BLACK%@ %GREEN%@@@%BLACK%@ %PURPLE%@@@%BLACK%@ %GREEN%@@@%BLACK%@  %WHITE%• %RED%%NAME% %WHITE%•  %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@@ %BLACK%@%GREEN%@@@ %BLACK%@%PURPLE%@@
 
 
 // Magic Item 1 Affix — matches upstream FMT_MAG_T3 body
@@ -128,16 +134,16 @@ Alias[CHARM_SC_TAG]: %BLUE%SC
 Alias[CHARM_LC_TAG]: %BLUE%LC
 
 // Unidentified unique charms
-Alias[UNI_UNID_TORCH]: %RED%x %GOLD%Unidentified Hellfire Torch %RED%x
-Alias[UNI_UNID_ANNI]: %RED%x %GOLD%Unidentified Annihilus %RED%x
-Alias[UNI_UNID_GHEEDS]: %RED%x %GOLD%Unidentified Gheeds Fortune %RED%x
+Alias[UNI_UNID_TORCH]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
+Alias[UNI_UNID_ANNI]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
+Alias[UNI_UNID_GHEEDS]: %PURPLE%•%ORANGE%•  %GOLD%%NAME%%ORANGE%  •%PURPLE%•
 
 // Leveling Tag
 Alias[LEVELING_TAG]: %SAGE%lvling%PX-62%
 
 
 // FACET Item — full rainbow + gold name
-Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%@%ORANGE%@%YELLOW%@%GREEN%@%BLUE%@%PURPLE%@ %GOLD%%NAME% %PURPLE%@%BLUE%@%GREEN%@%YELLOW%@%ORANGE%@%RED%@
+Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%PURPLE%xX%RED%xX%ORANGE%xX  %GOLD%%NAME%%ORANGE%  Xx%RED%Xx%PURPLE%Xx
 
 // Unique Boss Item — full rainbow + gold name
 Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%X%ORANGE%X%YELLOW%X%GREEN%X%BLUE%X%PURPLE%X %GOLD%%NAME% %PURPLE%X%BLUE%X%GREEN%X%YELLOW%X%ORANGE%X%RED%X
@@ -204,7 +210,8 @@ Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
 //-----------------------------------------------------------------------------------
 
 ItemDisplay[RUNE>0]: %RUNENAME%%CONTINUE%
-ItemDisplay[RUNE>0]: %ORANGE%%NAME%%CONTINUE%
+// Vex+ stay red (the RUNE_HIGH / RUNE_ALT_HIGH / RUNE_TOP_HIGH frames colour the name)
+ItemDisplay[RUNE>0 RUNE<26]: %ORANGE%%NAME%%CONTINUE%
 // Runes 1-20: keep the rune-name annotation tooltip at higher filter levels
 // (Hiim suppresses these above FILTLVL 7; Kassahi keeps them visible).
 ItemDisplay[RUNE>0 RUNE<21]: %NAME%{%NAME%}%CONTINUE%
