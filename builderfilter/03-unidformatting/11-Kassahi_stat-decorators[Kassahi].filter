@@ -1,0 +1,86 @@
+//-----------------------------------------------------------------------------------
+// Kassahi stat decorators
+//
+// Ports upstream Kassahi `04-statdecorators/01-item-stat-decorators[ALL]` up to the
+// SLAMMED block (the slam/desecrate suffixes live in 12-Kassahi_corruption-flavor).
+// Replaces Hiim 10/11-Formatted_MagRare_* and 18/19 unid unique naming/tags for the
+// Kassahi family: quality colours, "*" identified mark, Sup/Shit/Eth prefixes,
+// base tier marks, socket count, auto-rolled open sockets and sup/din dots.
+//
+// The upstream "Good Crafting Bases Callout" block is omitted: the Kassahi family
+// gets the same ° callout via CRAFT_ZERO/ONE/TWO in 23-Tags_Crafting_Unid.
+//-----------------------------------------------------------------------------------
+//------------------------------SPECIFIC_NAME_INFORMATIONS------------------------------
+
+
+
+
+
+// BOSS Item Colors
+ItemDisplay[ETH UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR uhl OR 7bs OR 7cr2)]: %PURPLE%%NAME%{%NAME%}%CONTINUE%
+// GG Item Colors
+ItemDisplay[ETH UNI !ID (ci3 OR pa9 OR obf OR uar OR ulc OR uap OR uhm OR usk OR urn OR uit OR uts OR 7wh OR 7ws OR 6bs OR 6ws OR 7gw OR xhb OR uhc OR ci2 OR nef OR uui OR upl OR uul OR 8mx OR dre)]: %PURPLE%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[ETH UNI !ID (utp OR amf OR 9gm OR 7p7 OR 7xf OR 9la OR 7s8 OR 7b7 OR 7b8 OR ama OR aar OR xlt OR 7gd OR 7pa OR 8ls OR 7gm OR 7ts)]: %PURPLE%%NAME%{%NAME%}%CONTINUE%
+// Other Uniq & Set Item Colors
+ItemDisplay[ETH UNI !ID !(STAT477=4 OR STAT477=21)]: %GOLD%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[ETH SET !ID !(STAT477=4 OR STAT477=21)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+// Mirror Item Colors
+ItemDisplay[(STAT477=4 OR STAT477=21)]: %RED%%NAME%%CONTINUE%
+// ORGINAL COLORS (ITEMS)
+ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[SET]: %GREEN%%NAME%%CONTINUE%
+ItemDisplay[ID UNI]: %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
+// IDENTIFIED (ITEMS)
+ItemDisplay[ID !NMAG !UNI !SET !(STAT477=4 OR STAT477=21)]: %DARK_GREEN%*%NAME%{%NAME%}%CONTINUE%
+// SUPERIOR (ITEMS)
+ItemDisplay[SUP ARMOR ED<1]: %BLUE%Sup %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SUP WEAPON ED<1]: %RED%Sup %NAME%{%NAME%}%CONTINUE%
+// INFINITE (ITEMS)
+ItemDisplay[INF ID !rin !amu]: %GRAY%Shit %NAME%{%NAME%}%CONTINUE%
+// ETHEREAL (ITEMS)
+ItemDisplay[ETH !(STAT477=4 OR STAT477=21)]: %WHITE%Eth %NAME%{%NAME%}%CONTINUE%
+// BASE VERSION (ITEMS)
+ItemDisplay[NORM (WEAPON OR ARMOR OR QUIVER) !(STAT477=4 OR STAT477=21)]: %NAME%%DARK_GREEN%¹{%NAME%}%CONTINUE%
+ItemDisplay[EXC (WEAPON OR ARMOR OR QUIVER) !(STAT477=4 OR STAT477=21)]: %NAME%%DARK_GREEN%²{%NAME%}%CONTINUE%
+ItemDisplay[ELT (WEAPON OR ARMOR OR QUIVER) !(STAT477=4 OR STAT477=21)]: %NAME%%DARK_GREEN%³{%NAME%}%CONTINUE%
+// SOCKETED (ITEMS)
+ItemDisplay[SOCK>0 !RW !(STAT477=4 OR STAT477=21)]: %NAME% %WHITE%%SOCKETS%{%NAME%}%CONTINUE%
+// AUTOMATICALLY ROLLS OPEN SOCKETS
+ItemDisplay[SET ID urn STAT234>0]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID urn STAT109>49]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (xng OR ung) STAT363>0]: %NAME%/2{%NAME%}%CONTINUE%
+ItemDisplay[SET ID ucl TABSK49>0]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (xul OR uul) STAT121>159]: %NAME%/4{%NAME%}%CONTINUE%
+ItemDisplay[SET ID (xar OR uar) CLSK3>0]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (xml OR uml) FBR>29 STAT20>24]: %NAME%/2{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID ush FRW>24]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[SET ID (ba5 OR baa OR baf)]: %NAME%/2{%NAME%}%CONTINUE%
+ItemDisplay[SET ID paf]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (ne6 OR neb)]: %NAME%/2{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID 72a STAT44>4]: %NAME%/5{%NAME%}%CONTINUE%
+ItemDisplay[SET ID (9mt OR 7mt)]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID 7sm STAT145>2]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (9fc OR 7fc) STAT240>0]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (9st OR 7st) REPAIR>0]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID 7o7 STAT117>0]: %NAME%/4{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID 7pa STAT124>249]: %NAME%/5{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID (8s8 OR 6s7) STAT250>0]: %NAME%/4{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID 6hx STAT363>3]: %NAME%/5{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID 7sc STAT139>14]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[SET ID 7ws]: %NAME%/5{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID ram]: %NAME%/1{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID rbe]: %NAME%/1{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID rar]: %NAME%/6{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID drc]: %NAME%/3{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID ush MULTI198,28319=12]: %NAME%/3{%NAME%}%CONTINUE%
+// Superior/All res Dot Callout
+ItemDisplay[SUP ARMOR ED<15]: %NAME% %BLUE%·{%NAME%}%CONTINUE%
+ItemDisplay[SUP WEAPON ED<15]: %NAME% %RED%·{%NAME%}%CONTINUE%
+ItemDisplay[SUP ARMOR ED=15]: %NAME% %BLUE%•{%NAME%}%CONTINUE%
+ItemDisplay[SUP WEAPON ED=15]: %NAME% %RED%•{%NAME%}%CONTINUE%
+ItemDisplay[NMAG DIN RES<30]: %NAME% %PURPLE%·{%NAME%}%CONTINUE%
+ItemDisplay[NMAG DIN RES=30]: %NAME% %PURPLE%•{%NAME%}%CONTINUE%

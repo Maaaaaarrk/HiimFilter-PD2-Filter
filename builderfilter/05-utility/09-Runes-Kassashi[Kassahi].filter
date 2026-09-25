@@ -1,24 +1,26 @@
 //-----------------------------------------------------------------------------------
 // Runes
 //-----------------------------------------------------------------------------------
-// Basic Formatting
-// Make sure HR's notify
+// Minimap markers come from the RUNE_* aliases (each family sets its own).
 
-ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%CONTINUE%
-
+// Rune sounds (upstream ids: Lem/Pul 4715, Um-Gul 4714, Vex+ 4719)
 ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9]: %SOUNDID-4714%%NAME%%CONTINUE%
 
 ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
-ItemDisplay[RUNE>0 (FILTLVL<3 OR MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
 
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 
-// Low rune name decorations
+// High runes in red (upstream 08-runes)
+ItemDisplay[RUNE>25]: %RED%%NAME%%CONTINUE%
+
+// Low rune name decorations (El-Fal, 1-19)
 // Valuable Crafting rune callout — set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
-ItemDisplay[RUNE<21 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
-ItemDisplay[RUNE<21 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE<20 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE<20 !CRAFTING_RUNES_SET FILTLVL<9]: %RUNE_LOW%%CONTINUE%
+// Filter level 9+: RUNE_LOW_STRICT (Regular/Hyper: no frame, the rune shows only its number — upstream; Phil777: same frame as RUNE_LOW)
+ItemDisplay[RUNE<20 !CRAFTING_RUNES_SET FILTLVL>8]: %RUNE_LOW_STRICT%%CONTINUE%
 
 
 // Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID), IST GUL (RUNE_ALT_MID)
@@ -27,8 +29,10 @@ ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 // High rune — Vex/Ohm/Lo (26-28)
 ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
-// High rune Tier 2 — Sur/Ber/Jah/Cham/Zod (29+)
-ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
+// High rune Tier 2 — Sur/Jah/Cham (29, 31, 32)
+ItemDisplay[RUNE=29 OR RUNE=31 OR RUNE=32]: %RUNE_ALT_HIGH%%CONTINUE%
+// High rune Tier 3 — Ber/Zod (30, 33)
+ItemDisplay[RUNE=30 OR RUNE=33]: %RUNE_TOP_HIGH%%CONTINUE%
 
 // force show lower runes
 ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10]: %NAME%{%NAME%}

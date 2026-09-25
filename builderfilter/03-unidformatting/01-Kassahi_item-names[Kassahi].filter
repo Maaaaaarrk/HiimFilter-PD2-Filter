@@ -11,7 +11,9 @@
 
 // ITEM'S NAME (BASE)
 ItemDisplay[(SET OR UNI) !ID !jew]: %BASENAME%%CONTINUE%
-ItemDisplay[(NMAG OR MAG OR RARE OR CRAFT) ID !RW !rvl (rin OR amu OR jew OR ARMOR OR WEAPON)]: %BASENAME%%CONTINUE%
+// Upstream applies this to every NMAG item too; here it is limited to gear/jewelry so it
+// does not wipe the rune/rejuv names set earlier in 02-alias/03-alias-kassahi-*.
+ItemDisplay[(NMAG OR MAG OR RARE OR CRAFT) !RW (rin OR amu OR jew OR ARMOR OR WEAPON)]: %BASENAME%%CONTINUE%
 ItemDisplay[MAG (cm1 OR cm2 OR cm3) !STASH !INVENTORY]: %BASENAME%%CONTINUE%
 
 // GG Charms
@@ -750,13 +752,3 @@ ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR sco
 // Renamed-item QTY annotation since it was re-named we need to add it back
 ItemDisplay[(tes OR ceh OR bet OR fed OR pk1 OR pk2 OR pk3 OR mbr OR dhn OR bey OR ubaa OR ubab OR ubac OR dcho OR dcso OR dcbl OR rtmo OR rtmv OR cm2f OR cwss OR lucb OR lucc OR lucd OR wss OR iwss OR lmal OR jewf OR lpp OR scrb OR std) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
-ItemDisplay[UNI ID]: %GOLD%%NAME%%CONTINUE%
-ItemDisplay[SET ID]: %GREEN%%NAME%%CONTINUE%
-ItemDisplay[RARE ID]: %YELLOW%%NAME%%CONTINUE%
-ItemDisplay[CRAFT ID]: %ORANGE%%NAME%%CONTINUE%
-ItemDisplay[MAG ID]: %ORANGE%%NAME%%CONTINUE%
-// Match upstream Kassahi `04-statdecorators/01-item-stat-decorators[ALL]` lines 28-29:
-//   (ARMOR OR WEAPON) NMAG !ETH SOCK=0 → WHITE; (ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH) → GRAY.
-// Apply to both ID and !ID NMAG (no ID restriction).
-ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
-ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
