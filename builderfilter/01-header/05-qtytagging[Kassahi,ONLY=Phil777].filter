@@ -5,6 +5,10 @@ Alias[QTY_TAG]: %TAN%x%QTY%
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
 // Slammed Tag
 Alias[SLAMMED_TAG]: Ⓒ
+// Desecrated Tag (FILTLVL 11 slammed/desecrated gear line in 03-Hiim_Top_End_1)
+Alias[DESECRATED_TAG]: %GOLD%[D]
+// Vendor-for-gold tag (31-Leveling / 32-Footer)
+Alias[VENDOR_GOLD_TAG]: %ORANGE%• %WHITE%$
 
 // Notes Un-Stacked
 ItemDisplay[RUNE>0 QTY=0]: %RED%Unstacked will socket %ORANGE%%NAME%

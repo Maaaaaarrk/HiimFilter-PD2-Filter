@@ -1,0 +1,23 @@
+//-----------------------------------------------------------------------------------
+// Kassahi 3-star / 4-star unique decoration rules (Kassahi bucket, not Phil777)
+//
+// The UNI_GG_ITEM / UNI_STAR3_ITEM aliases carry their own icons + sound here, so
+// no site tags are added. ETH versions of NO_ETH_UNIQUE items get %BLAME_ONION%
+// instead of Hiim's tier-down. Phil777 copy: 19-Kassahi_UNID-stars[...+KassahiStd].
+//
+// FILTLVL gating preserved (per project policy). Fires before the shared 20- rules.
+//-----------------------------------------------------------------------------------
+
+// 4-star unique (always shows)
+ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %UNI_GG_ITEM%
+
+// 4-star NO_ETH unique: blame onion on eth, full decoration on non-eth
+ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %BLAME_ONION%
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_GG_ITEM%
+
+// 3-star unique (always shows)
+ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %UNI_STAR3_ITEM%
+
+// 3-star NO_ETH unique: blame onion on eth, full decoration on non-eth
+ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %BLAME_ONION%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%

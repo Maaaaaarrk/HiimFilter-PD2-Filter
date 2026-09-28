@@ -1,0 +1,61 @@
+// Kassahi bucket copy of 02-Kassahi_pd2items[Kassahi,ONLY=Phil777]: cwss/lpp/std drop the site
+// %SOUNDID%/icon tags the WSS_SHARD / PD2_MATS aliases already provide. Keep the two in sync.
+//-----------------------------------------------------------------------------------
+// Kassahi-only PD2 items
+//
+// Items also covered by Hiim's `03-PD2_items[ALL]` / `04-Ubermats[ALL]` (which use
+// alias-driven decoration like %GEN_ITEM%, %BOSS_MAT%, %BOSS_ENTRY%, %TOKEN_PARTS%,
+// %UBER_KEYS%) are NOT redefined here — they render with Kassahi-variant styling
+// because each Kassahi variant's `03-alias-kassahi-general-*.filter` defines those
+// aliases with Kassahi visuals.
+//
+// %MAIN_DOT% (defined per-variant in 03-alias-kassahi-{normal,hyper,luxe}.filter)
+// is used inline below for variant-specific dot decoration. It is NOT wrapped in
+// another alias body — PD2 only resolves aliases one level deep at ItemDisplay
+// substitution time, so nesting %MAIN_DOT% inside another Alias[] body causes
+// the engine to emit the literal token. HORADRIC_SCARAB and BLAME_ONION (which
+// don't reference MAIN_DOT) remain in `02-alias/04-alias-kassahi-displays`.
+//-----------------------------------------------------------------------------------
+
+
+// Token of Absolution — literal "Token" label, no %NAME%
+ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%{%GOLD%Wherever You Are is The Entry Point.%NL%}
+
+// Worldstone Shards — wss rule moved to common 05-utility/02-wss-display[ALL]
+// so Hiim filters route through %WSS_SHARD% too. iwss/cwss stay Kassahi-only
+// because Hiim handles those differently in 03-PD2_items[ALL].
+ItemDisplay[iwss]: %WSS_SHARD%{%NAME%}%CONTINUE%
+ItemDisplay[cwss]: %MAP-0A%%WSS_SHARD%{%NAME%}%CONTINUE%
+
+// Ears
+ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
+
+
+// Larzuk's Puzzle Piece — mirrors upstream `05-utility/15-pd2items[ALL]:41-42`
+// Terminates (no %CONTINUE%) so the shared `03-PD2_items[ALL]` rule below
+// doesn't overwrite the Kassahi-styled output.
+ItemDisplay[lpp]: %GOLD%%NAME%%CONTINUE%
+ItemDisplay[lpp]: %MAP-0A%%PD2_MATS%{%GRAY%(Gray/White/Magic/Rare/Crafted)%NL%%WHITE%Armor: 1-2, 1h Weapon: 1-2, 2h Weapon: 2-4%NL%%WHITE%Possible Sockets:%NL%%NAME%}
+
+// Standard of Heroes — upstream frames it with the organs; Hiim has no std rule
+ItemDisplay[std]: %PD2_MATS%{%NAME%}%CONTINUE%
+// Hellfire Torch — Annihilus → Torch tooltip
+ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: %WHITE%Torch, Key, to}
+
+// Horadrim Scarabs
+ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
+ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+// Kassahi: hide Arcane / Angelic / Destruction orbs at every filter level.
+//
+//   irma — Infused Arcane Orb
+//   upma — Angelic Orb        (base)
+//   urma — Infused Angelic Orb
+//   scou — Orb of Destruction
+//
+// Placed after the styling rules so the empty output wins regardless of the
+// prior %CONTINUE% chain.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[(irma OR upma OR urma OR scou)]:

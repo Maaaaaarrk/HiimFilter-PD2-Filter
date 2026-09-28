@@ -1,15 +1,15 @@
 
 // QTY Alias
-Alias[QTY_TAG]: %TAN%x %QTY%
+Alias[QTY_TAG]: %TAN%x%WHITE%%QTY%
 // Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
 // Slammed Tag
-Alias[SLAMMED_TAG]: [C]
+Alias[SLAMMED_TAG]: *
 // Desecrated Tag (FILTLVL 11 slammed/desecrated gear line in 03-Hiim_Top_End_1)
-Alias[DESECRATED_TAG]: %GOLD%[D]
+Alias[DESECRATED_TAG]: %GOLD%*
 // Vendor-for-gold tag (31-Leveling / 32-Footer)
-Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
+Alias[VENDOR_GOLD_TAG]: %ORANGE%• %WHITE%$
 
 // Notes Un-Stacked
-ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %ORANGE%%NAME%
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}
+ItemDisplay[RUNE>0 QTY=0]: %RED%Unstacked %ORANGE%%NAME%
+// Unstacked flawless/perfect gems are tagged inside the gem styling in 05-utility/02-Kassahi_gems*
