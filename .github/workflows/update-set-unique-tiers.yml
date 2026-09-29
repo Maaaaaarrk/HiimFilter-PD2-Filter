@@ -9,6 +9,12 @@ on:
     # Every 3rd day of the month (1st, 4th, 7th, ... 31st) at 07:30 UTC
     - cron: '30 7 */3 * *'
   workflow_dispatch:
+  # TEMP one-off test: runs on this branch without committing or opening a PR
+  push:
+    branches:
+      - auto-set-unique-tiers
+    paths:
+      - .github/workflows/update-set-unique-tiers.yml
 
 permissions:
   contents: write
@@ -25,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'push' && github.ref || 'main' }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -45,6 +51,14 @@ jobs:
 
       - name: Apply upgrades only
         run: node scripts/apply-tier-upgrades.mjs
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f temp/tier-upgrades-applied.md ]; then cat temp/tier-upgrades-applied.md >> "$GITHUB_STEP_SUMMARY"; fi
+          echo '```diff' >> "$GITHUB_STEP_SUMMARY"
+          git diff -- "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" | cut -c1-200 >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload suggestion reports
         if: always()
@@ -85,7 +99,7 @@ jobs:
         run: python validate_filters.py --errors-only
 
       - name: Commit and open PR
-        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true' && github.event_name != 'push'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BOT_BRANCH: bot/update-set-unique-tiers
