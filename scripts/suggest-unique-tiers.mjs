@@ -19,6 +19,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
+import { uniqueTier } from './lib/tier-model.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter';
 const REPORT_FILE = 'temp/unique-tier-report.txt';
@@ -162,21 +163,9 @@ function parseAliases(text) {
 }
 
 function effectiveTier(tiers, isEth) {
-  // Map a base's tier-set + eth flag into a single effective value tier.
-  // Mirrors the rule precedence in 06-unidfiltering/20-Unid_UniquesSet_Tiers[ALL].filter
-  // (first matching ItemDisplay rule wins, top-down).
-  if (isEth && tiers.has('4_STAR_ETH_UNIQUE')) return '4_STAR_UNIQUE';
-  if (!isEth && tiers.has('4_STAR_NO_ETH_UNIQUE')) return '4_STAR_UNIQUE';
-  if (isEth && tiers.has('4_STAR_NO_ETH_UNIQUE')) return '3_STAR_UNIQUE';
-  if (tiers.has('4_STAR_UNIQUE')) return '4_STAR_UNIQUE';
-  if (!isEth && tiers.has('3_STAR_NO_ETH_UNIQUE')) return '3_STAR_UNIQUE';
-  if (isEth && tiers.has('3_STAR_NO_ETH_UNIQUE')) return '2_STAR_UNIQUE';
-  if (tiers.has('3_STAR_UNIQUE')) return '3_STAR_UNIQUE';
-  if (tiers.has('2_STAR_UNIQUE')) return '2_STAR_UNIQUE';
-  if (tiers.has('1_STAR_UNIQUE')) return '1_STAR_UNIQUE';
-  if (tiers.has('0_STAR_UNIQUE')) return '0_STAR_UNIQUE';
-  if (tiers.has('NO_STAR_UNIQUE')) return 'NO_STAR_UNIQUE';
-  return null;
+  // Map a base's tier-set + eth flag into a single effective value tier, using the
+  // shared model of the 20-Unid_UniquesSet_Tiers rule order (first match wins).
+  return uniqueTier((t) => tiers.has(t), isEth);
 }
 
 async function fetchListingsForBase(baseCode, isEth) {
