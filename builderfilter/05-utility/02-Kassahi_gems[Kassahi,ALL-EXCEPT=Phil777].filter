@@ -1,39 +1,6 @@
 //------------------------------GEMS------------------------------
 
-// Formatting for gem name
-ItemDisplay[GEM=1]: %WHITE%Chip-%GEMTYPE%%CONTINUE%
-ItemDisplay[GEM=2]: %WHITE%Fla-%GEMTYPE%%CONTINUE%
-ItemDisplay[GEM=3]: %WHITE%%GEMTYPE%%CONTINUE%
-ItemDisplay[GEM=4]: %WHITE%Flawless%CONTINUE%
-ItemDisplay[GEM=5]: %WHITE%Perfect%CONTINUE%
-
-// Formatting for gem o/O colors
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=1]: %NAME% %PURPLE%%CONTINUE%
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=2]: %NAME% %WHITE%%CONTINUE%
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=3]: %NAME% %GREEN%%CONTINUE%
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=4]: %NAME% %RED%%CONTINUE%
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=5]: %NAME% %BLUE%%CONTINUE%
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=6]: %NAME% %YELLOW%%CONTINUE%
-ItemDisplay[(GEM>3 GEM<6) GEMTYPE=7]: %NAME% %LIGHT_GRAY%%CONTINUE%
-ItemDisplay[GEM=4 GEMTYPE>0]: %NAME%o%CONTINUE%
-ItemDisplay[GEM=5 GEMTYPE>0]: %NAME%O%CONTINUE%
-
-// Formatting for Infusion name
-ItemDisplay[(crfc OR crfp OR crfs OR crfb OR crfh OR crfu OR crfv)]: %GOLD%Infusion%CONTINUE%
-
-// Formatting for Infusion @ colors
-ItemDisplay[crfc]: %NAME% %PURPLE%%CONTINUE%
-ItemDisplay[crfp]: %NAME% %WHITE%%CONTINUE%
-ItemDisplay[crfs]: %NAME% %GREEN%%CONTINUE%
-ItemDisplay[crfb]: %NAME% %RED%%CONTINUE%
-ItemDisplay[crfh]: %NAME% %BLUE%%CONTINUE%
-ItemDisplay[crfu]: %NAME% %YELLOW%%CONTINUE%
-ItemDisplay[crfv]: %NAME% %LIGHT_GRAY%%CONTINUE%
-ItemDisplay[(crfc OR crfp OR crfs OR crfb OR crfh OR crfu OR crfv)]: %NAME%@%CONTINUE%
-
-// Formatting for stacked vs unstacked with warning
-ItemDisplay[(GEM>0 OR crfc OR crfp OR crfs OR crfb OR crfh OR crfu OR crfv) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %RED%Unstacked %NAME%{%TAN%Note%WHITE%: Cube Gems to stack them}%CONTINUE%
+// Gem / infusion names, the quantity tag and "Unstacked" are set in 03-unidformatting/01-Kassahi_item-names-4
 
 // Formatting for flawless highlighting
 ItemDisplay[GEM=4 GEMTYPE=1]: %FLAW_GEM1%%CONTINUE%

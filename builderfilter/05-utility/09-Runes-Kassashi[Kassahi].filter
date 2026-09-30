@@ -3,12 +3,6 @@
 //-----------------------------------------------------------------------------------
 // Minimap markers come from the RUNE_* aliases (each family sets its own).
 
-// Rune sounds (upstream ids: Lem/Pul 4715, Um-Gul 4714, Vex+ 4719)
-ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9]: %SOUNDID-4714%%NAME%%CONTINUE%
-
-ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
-
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 

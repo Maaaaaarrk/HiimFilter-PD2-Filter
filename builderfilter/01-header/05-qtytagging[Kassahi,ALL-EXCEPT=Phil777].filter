@@ -1,8 +1,7 @@
+// Quantity and "Unstacked" tags are added at the end of 03-unidformatting/01-Kassahi_item-names-4, after the renames
 
 // QTY Alias
 Alias[QTY_TAG]: %TAN%x%WHITE%%QTY%
-// Show Quantity on Items - Quantity has to be high up in the filter for PD2 specific items
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
 // Slammed Tag
 Alias[SLAMMED_TAG]: *
 // Desecrated Tag (FILTLVL 11 slammed/desecrated gear line in 03-Hiim_Top_End_1)
@@ -12,7 +11,3 @@ Alias[VENDOR_GOLD_TAG]: %ORANGE%• %WHITE%$
 // Antidote labels (05-utility/11-Kassahi_Potions)
 Alias[ANTI_TAG]: %GREEN%° %WHITE%A
 Alias[ANTI_SHORT_TAG]: %GREEN%° %WHITE%A
-
-// Notes Un-Stacked
-ItemDisplay[RUNE>0 QTY=0]: %RED%Unstacked %ORANGE%%NAME%
-// Unstacked flawless/perfect gems are tagged inside the gem styling in 05-utility/02-Kassahi_gems*

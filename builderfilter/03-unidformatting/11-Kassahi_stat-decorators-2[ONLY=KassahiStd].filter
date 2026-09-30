@@ -1,0 +1,16 @@
+// ORGINAL COLORS (ITEMS)
+ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[SET]: %GREEN%%NAME%%CONTINUE%
+ItemDisplay[UNI]: %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
+// HIGH ILVL JEWELS & CHARMS — purple name. Set after the quality colours (not with %NAME%,
+// which already starts with the blue code) so the purple is the colour that shows.
+ItemDisplay[MAG !ID ILVL>84 jew]: %PURPLE%Jewel%CONTINUE%
+ItemDisplay[MAG !ID ILVL>89 cm1]: %PURPLE%Small%CONTINUE%
+ItemDisplay[MAG !ID ILVL>89 cm2]: %PURPLE%Large%CONTINUE%
+ItemDisplay[MAG !ID ILVL>89 cm3]: %PURPLE%Grand%CONTINUE%
+// IDENTIFIED (ITEMS)
+ItemDisplay[ID !NMAG !UNI !SET !(STAT477=4 OR STAT477=21)]: %DARK_GREEN%·%NAME%{%NAME%}%CONTINUE%

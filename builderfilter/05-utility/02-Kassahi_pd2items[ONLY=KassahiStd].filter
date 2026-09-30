@@ -13,8 +13,7 @@
 // is used inline below for variant-specific dot decoration. It is NOT wrapped in
 // another alias body — PD2 only resolves aliases one level deep at ItemDisplay
 // substitution time, so nesting %MAIN_DOT% inside another Alias[] body causes
-// the engine to emit the literal token. HORADRIC_SCARAB and BLAME_ONION (which
-// don't reference MAIN_DOT) remain in `02-alias/04-alias-kassahi-displays`.
+// the engine to emit the literal token.
 //-----------------------------------------------------------------------------------
 
 
@@ -31,11 +30,7 @@ ItemDisplay[cwss]: %MAP-0A%%WSS_SHARD%{%NAME%}%CONTINUE%
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
 
 
-// Larzuk's Puzzle Piece — mirrors upstream `05-utility/15-pd2items[ALL]:41-42`
-// Terminates (no %CONTINUE%) so the shared `03-PD2_items[ALL]` rule below
-// doesn't overwrite the Kassahi-styled output.
-ItemDisplay[lpp]: %GOLD%%NAME%%CONTINUE%
-ItemDisplay[lpp]: %MAP-0A%%PD2_MATS%{%GRAY%(Gray/White/Magic/Rare/Crafted)%NL%%WHITE%Armor: 1-2, 1h Weapon: 1-2, 2h Weapon: 2-4%NL%%WHITE%Possible Sockets:%NL%%NAME%}
+// Larzuk's Puzzle Piece — name comes from 01-Kassahi_item-names-4, frame from 03-PD2_items-2 (GEN_RARE)
 
 // Standard of Heroes — upstream frames it with the organs; Hiim has no std rule
 ItemDisplay[std]: %PD2_MATS%{%NAME%}%CONTINUE%
@@ -43,7 +38,6 @@ ItemDisplay[std]: %PD2_MATS%{%NAME%}%CONTINUE%
 ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: %WHITE%Torch, Key, to}
 
 // Horadrim Scarabs
-ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
