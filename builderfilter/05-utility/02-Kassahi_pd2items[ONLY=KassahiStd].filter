@@ -17,25 +17,18 @@
 //-----------------------------------------------------------------------------------
 
 
-// Token of Absolution — literal "Token" label, no %NAME%
-ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%RED%%MAIN_DOT%%MAIN_DOT%  %ORANGE%Token  %RED%%MAIN_DOT%%MAIN_DOT%{%GOLD%Wherever You Are is The Entry Point.%NL%}
+// Token of Absolution
+ItemDisplay[toa]: %TOKEN_PARTS%{%NAME%}
 
-// Worldstone Shards — wss rule moved to common 05-utility/02-wss-display[ALL]
-// so Hiim filters route through %WSS_SHARD% too. iwss/cwss stay Kassahi-only
-// because Hiim handles those differently in 03-PD2_items[ALL].
-ItemDisplay[iwss]: %WSS_SHARD%{%NAME%}%CONTINUE%
-ItemDisplay[cwss]: %MAP-0A%%WSS_SHARD%{%NAME%}%CONTINUE%
 
 // Ears
-ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
+ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %PD2_MATS%{%NAME%}
 
 
 // Larzuk's Puzzle Piece — name comes from 01-Kassahi_item-names-4, frame from 03-PD2_items-2 (GEN_RARE)
 
 // Standard of Heroes — upstream frames it with the organs; Hiim has no std rule
 ItemDisplay[std]: %PD2_MATS%{%NAME%}%CONTINUE%
-// Hellfire Torch — Annihilus → Torch tooltip
-ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: %WHITE%Torch, Key, to}
 
 // Horadrim Scarabs
 ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
