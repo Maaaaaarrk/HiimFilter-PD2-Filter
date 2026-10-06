@@ -12,7 +12,12 @@ VERSION_FILTER    = os.path.join(ROOT_DIR, "builderfilter", "01-header", "01-Ver
 FILTER_DEFS       = os.path.join(ROOT_DIR, "filter_definitions.json")
 FILTERGROUPS_DIR  = os.path.join(ROOT_DIR, "filtergroups")
 UNIQUE_TIER_FILE  = os.path.join(ROOT_DIR, "builderfilter", "02-alias", "05-unid-unique-set-stars[ALL].filter")
-UNIQUE_NAME_FILE  = os.path.join(ROOT_DIR, "builderfilter", "03-unidformatting", "18-Unid_UniquesSet_Name[ALL-EXCEPT=Vanilla+OnlyFilter].filter")
+UNIDFORMAT_DIR    = os.path.join(ROOT_DIR, "builderfilter", "03-unidformatting")
+# Looked up by name prefix so retagging the segment (its [..] tag) does not break the README build.
+UNIQUE_NAME_FILE  = next(
+    os.path.join(UNIDFORMAT_DIR, f) for f in sorted(os.listdir(UNIDFORMAT_DIR))
+    if f.startswith("18-Unid_UniquesSet_Name[") and f.endswith(".filter")
+)
 
 UNIQUE_TIERS = [
     "4_STAR_UNIQUE",

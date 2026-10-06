@@ -1,0 +1,124 @@
+//-----------------------------------------------------------------------------------
+// Kassahi names for PD2 / gem items (names only — tooltips, frames, icons and
+// sounds come from the display rules further down).
+// The rune / map name block (issue #982) sits right above the quantity
+// tag in 01-Kassahi_item-names-5. The block is split over -4 (rune names), -4b-meme
+// (Meme renames 26-33, before the rune number is added) and -4c (rune number, map names and tiers).
+//-----------------------------------------------------------------------------------
+
+// PD2 ITEMS
+ItemDisplay[lsvl]: %RED%Vial%CONTINUE%
+ItemDisplay[llmr]: %RED%Mirror%CONTINUE%
+ItemDisplay[std]: %ORANGE%Standard of Heroes%CONTINUE%
+ItemDisplay[dcso]: %ORANGE%Prime Evil Soul%CONTINUE%
+ItemDisplay[dcbl]: %ORANGE%Pure Demonic Essence%CONTINUE%
+ItemDisplay[cm2f]: %ORANGE%Hellfire Ashes%CONTINUE%
+ItemDisplay[lbox]: %RED%Puzzle Box%CONTINUE%
+ItemDisplay[lpp]: %GOLD%Puzzle Piece%CONTINUE%
+ItemDisplay[scrb]: %GOLD%Horadrim Scarab%CONTINUE%
+ItemDisplay[rtp]: %RED%Navigator%CONTINUE%
+ItemDisplay[rid]: %RED%Almanac%CONTINUE%
+ItemDisplay[imrn]: %RED%Demonic Cube%CONTINUE%
+ItemDisplay[rkey]: %RED%Skeleton Key%CONTINUE%
+
+// ESSENCES, KEYS, ORGANS, SIGILS, DCLONE, RATHMA & LUCION ITEMS
+ItemDisplay[tes]: %ORANGE%Essence of Suffering%CONTINUE%
+ItemDisplay[ceh]: %ORANGE%Essence of Hatred%CONTINUE%
+ItemDisplay[bet]: %ORANGE%Essence of Terror%CONTINUE%
+ItemDisplay[fed]: %ORANGE%Essence of Destruction%CONTINUE%
+ItemDisplay[pk1]: %ORANGE%Key of Terror%CONTINUE%
+ItemDisplay[pk2]: %ORANGE%Key of Hate%CONTINUE%
+ItemDisplay[pk3]: %ORANGE%Key of Destruction%CONTINUE%
+ItemDisplay[mbr]: %ORANGE%Mephisto's Brain%CONTINUE%
+ItemDisplay[dhn]: %ORANGE%Diablo's Horn%CONTINUE%
+ItemDisplay[bey]: %ORANGE%Baal's Eye%CONTINUE%
+ItemDisplay[ubaa]: %ORANGE%Sigil of Madawc%CONTINUE%
+ItemDisplay[ubab]: %ORANGE%Sigil of Talic%CONTINUE%
+ItemDisplay[ubac]: %ORANGE%Sigil of Korlic%CONTINUE%
+ItemDisplay[dcho]: %ORANGE%Black Soulstone%CONTINUE%
+ItemDisplay[rtmo]: %ORANGE%Trang-Oul's Jawbone%CONTINUE%
+ItemDisplay[rtmv]: %ORANGE%Splinter of the Void%CONTINUE%
+ItemDisplay[cwss]: %RED%Tainted%CONTINUE%
+ItemDisplay[lucb]: %ORANGE%Demonic Insignia%CONTINUE%
+ItemDisplay[lucc]: %ORANGE%Talisman of Transgression%CONTINUE%
+ItemDisplay[lucd]: %ORANGE%Flesh of Malic%CONTINUE%
+
+// PROJECT DIABLO 2 ITEMS
+ItemDisplay[(rid OR rtp OR rkey) INVENTORY]: %RED%%NAME%%CONTINUE%
+ItemDisplay[wss]: %RED%Worldstone%CONTINUE%
+ItemDisplay[iwss]: %RED%Catalyst%CONTINUE%
+// EARS
+ItemDisplay[ivea]: %GOLD%Assassin Ear%CONTINUE%
+ItemDisplay[ivez]: %GOLD%Amazon Ear%CONTINUE%
+ItemDisplay[iveb]: %GOLD%Barbarian Ear%CONTINUE%
+ItemDisplay[ived]: %GOLD%Druid Ear%CONTINUE%
+ItemDisplay[iven]: %GOLD%Necromancer Ear%CONTINUE%
+ItemDisplay[ivep]: %GOLD%Paladin Ear%CONTINUE%
+ItemDisplay[ives]: %GOLD%Sorceress Ear%CONTINUE%
+// LARZUK, JEWEL FRAGMENTS & MAP ORBS
+ItemDisplay[lmal]: %WHITE%Larzuk's Malus%CONTINUE%
+ItemDisplay[jewf]: %WHITE%Jewel Fragments %GOLD%O%CONTINUE%
+ItemDisplay[imma]:
+ItemDisplay[imra]: %WHITE%Zakarum%CONTINUE%
+ItemDisplay[rera]: %WHITE%Horadrim%CONTINUE%
+ItemDisplay[scou]: %WHITE%Destruction%CONTINUE%
+ItemDisplay[upma]: %WHITE%Angelic%CONTINUE%
+ItemDisplay[upmp]: %WHITE%Cartographer%CONTINUE%
+ItemDisplay[fort]: %WHITE%Fortification%CONTINUE%
+ItemDisplay[irma]: %GOLD%Infused Arcane%CONTINUE%
+ItemDisplay[irra]: %GOLD%Infused Zakarum%CONTINUE%
+ItemDisplay[rrra]: %GOLD%Infused Horadrim%CONTINUE%
+ItemDisplay[urma]: %GOLD%Infused Angelic%CONTINUE%
+
+// GEMS & INFUSIONS
+ItemDisplay[GEM=1]: %WHITE%Chip-%GEMTYPE%%CONTINUE%
+ItemDisplay[GEM=2]: %WHITE%Fla-%GEMTYPE%%CONTINUE%
+ItemDisplay[GEM=3]: %WHITE%%GEMTYPE%%CONTINUE%
+ItemDisplay[GEM=4]: %WHITE%Flawless%CONTINUE%
+ItemDisplay[GEM=5]: %WHITE%Perfect%CONTINUE%
+ItemDisplay[(crfb OR crfc OR crfh OR crfs OR crfu OR crfp OR crfv)]: %GOLD%Infusion%CONTINUE%
+ItemDisplay[((GEMTYPE=1 (GEM>3 GEM<6)) OR (crfc))]: %NAME% %PURPLE%%CONTINUE%
+ItemDisplay[((GEMTYPE=2 (GEM>3 GEM<6)) OR (crfp))]: %NAME% %WHITE%%CONTINUE%
+ItemDisplay[((GEMTYPE=3 (GEM>3 GEM<6)) OR (crfs))]: %NAME% %GREEN%%CONTINUE%
+ItemDisplay[((GEMTYPE=4 (GEM>3 GEM<6)) OR (crfb))]: %NAME% %RED%%CONTINUE%
+ItemDisplay[((GEMTYPE=5 (GEM>3 GEM<6)) OR (crfh))]: %NAME% %BLUE%%CONTINUE%
+ItemDisplay[((GEMTYPE=6 (GEM>3 GEM<6)) OR (crfu))]: %NAME% %YELLOW%%CONTINUE%
+ItemDisplay[((GEMTYPE=7 (GEM>3 GEM<6)) OR (crfv))]: %NAME% %LIGHT_GRAY%%CONTINUE%
+ItemDisplay[GEM=4 GEMTYPE>0]: %NAME%o%CONTINUE%
+ItemDisplay[GEM=5 GEMTYPE>0]: %NAME%O%CONTINUE%
+ItemDisplay[(crfc OR crfp OR crfs OR crfb OR crfh OR crfu OR crfv)]: %NAME%@%CONTINUE%
+
+// RUNE NAMES (issue #982; continues in 01-Kassahi_item-names-4c)
+ItemDisplay[RUNE=01]: %ORANGE%El%CONTINUE%
+ItemDisplay[RUNE=02]: %ORANGE%Eld%CONTINUE%
+ItemDisplay[RUNE=03]: %ORANGE%Tir%CONTINUE%
+ItemDisplay[RUNE=04]: %ORANGE%Nef%CONTINUE%
+ItemDisplay[RUNE=05]: %ORANGE%Eth%CONTINUE%
+ItemDisplay[RUNE=06]: %ORANGE%Ith%CONTINUE%
+ItemDisplay[RUNE=07]: %ORANGE%Tal%CONTINUE%
+ItemDisplay[RUNE=08]: %ORANGE%Ral%CONTINUE%
+ItemDisplay[RUNE=09]: %ORANGE%Ort%CONTINUE%
+ItemDisplay[RUNE=10]: %ORANGE%Thul%CONTINUE%
+ItemDisplay[RUNE=11]: %ORANGE%Amn%CONTINUE%
+ItemDisplay[RUNE=12]: %ORANGE%Sol%CONTINUE%
+ItemDisplay[RUNE=13]: %ORANGE%Shael%CONTINUE%
+ItemDisplay[RUNE=14]: %ORANGE%Dol%CONTINUE%
+ItemDisplay[RUNE=15]: %ORANGE%Hel%CONTINUE%
+ItemDisplay[RUNE=16]: %ORANGE%Io%CONTINUE%
+ItemDisplay[RUNE=17]: %ORANGE%Lum%CONTINUE%
+ItemDisplay[RUNE=18]: %ORANGE%Ko%CONTINUE%
+ItemDisplay[RUNE=19]: %ORANGE%Fal%CONTINUE%
+ItemDisplay[RUNE=20]: %ORANGE%Lem%CONTINUE%
+ItemDisplay[RUNE=21]: %ORANGE%Pul%CONTINUE%
+ItemDisplay[RUNE=22]: %ORANGE%Um%CONTINUE%
+ItemDisplay[RUNE=23]: %ORANGE%Mal%CONTINUE%
+ItemDisplay[RUNE=24]: %ORANGE%Ist%CONTINUE%
+ItemDisplay[RUNE=25]: %ORANGE%Gul%CONTINUE%
+ItemDisplay[RUNE=26]: %RED%Vex%CONTINUE%
+ItemDisplay[RUNE=27]: %RED%Ohm%CONTINUE%
+ItemDisplay[RUNE=28]: %RED%Lo%CONTINUE%
+ItemDisplay[RUNE=29]: %RED%Sur%CONTINUE%
+ItemDisplay[RUNE=30]: %RED%Ber%CONTINUE%
+ItemDisplay[RUNE=31]: %RED%Jah%CONTINUE%
+ItemDisplay[RUNE=32]: %RED%Cham%CONTINUE%
+ItemDisplay[RUNE=33]: %RED%Zod%CONTINUE%
