@@ -1,0 +1,20 @@
+// Kassahi bucket copy of 03-PD2_items-1[ALL-EXCEPT=KassahiStd]: no Hiim minimap icons on top of the
+// Kassahi WSS_SHARD / MAG_DBL_AFFIX_ITEM frames; wss/cwss/iwss use the Kassahi frames and no
+// extra stack tag (issue #981). Keep the two in sync.
+//-----------------------------------------------------------------------------------
+// PD2 ITEMS
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// Mirrored Items
+ItemDisplay[STAT477>0 (ARMOR OR WEAPON OR amu OR rin)]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
+
+//-----------------------------------------------------------------------------------
+// General
+ItemDisplay[wss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[wss]: %CONTINUE%%TIER-8%%NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %WSS_ITEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %WSS_ITEM_HR_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt}
+ItemDisplay[wss]: %WSS_SHARD%{%NAME%}
+ItemDisplay[cwss QTY>1 QTY<8]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[cwss QTY>7]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[cwss]: %WSS_SHARD%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%RED%Corrupts %TAN%your Annihilus}
+ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}

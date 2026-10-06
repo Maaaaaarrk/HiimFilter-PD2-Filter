@@ -56,7 +56,7 @@ ItemDisplay[STAT206>0]: %NAME%{%NAME%}
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%%GOLD%[D]{%NAME%}// In case you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT206>0 FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%%DESECRATED_TAG%{%NAME%}// In case you drop a piece of gear on potions only show all desc slammed gear
 ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%{%NAME%}// In case you drop a piece of gear on potions only show all slammed gear
 ItemDisplay[RW FILTLVL>10 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%{%NAME%}// In case you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE — explicit include list (rvl/rvs/runes/gems/gold/potions/etc. excluded by NOT being in the list)

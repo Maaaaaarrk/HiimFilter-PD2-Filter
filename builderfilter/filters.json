@@ -753,5 +753,19 @@
       "description": "All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity."
     }
   ],
+
+  // Tag groups usable in segment filenames, e.g. [ONLY=KassahiStd].
+  // KassahiStd = the kassahi bucket (not Phil777). Its aliases carry their own
+  // sound/icon tags, so shared segments that add site tags get a split copy.
+  "groups": {
+    "KassahiStd": [
+      "Kassahi-Regular",
+      "Kassahi-Regular-Hyper",
+      "Kassahi-Meme",
+      "Kassahi-Meme-Hyper",
+      "Kassahi-Mystery",
+      "Kassahi-Mystery-Hyper"
+    ]
+  },
   "beta": false
 }
