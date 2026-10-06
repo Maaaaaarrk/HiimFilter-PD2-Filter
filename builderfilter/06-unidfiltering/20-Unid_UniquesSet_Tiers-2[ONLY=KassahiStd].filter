@@ -1,0 +1,39 @@
+// Kassahi bucket copy of the matching [ALL-EXCEPT=...KassahiStd] file: site %SOUNDID%/icon tags are
+// removed where the Kassahi alias already provides them. Keep conditions and tooltips in sync.
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %UNI_BOSS_ITEM%
+
+// Overlords Helm
+ItemDisplay[UNI !ID uh9 MAPID=137]: %UNI_BOSS_ITEM%
+
+// 4 Star Unique Callouts
+//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %UNI_GG_ITEM%
+
+// 4 Star Unique Callouts only when not ETH, 3 star when ETH
+//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_GG_ITEM%
+ItemDisplay[UNI !ID FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%
+
+// 4 Star Unique Callouts only when ETH
+//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %UNI_GG_ITEM%
+
+// Jewelry
+//-----------------------------------------------------------------------------------
+// Amulet
+// Ring
+ItemDisplay[UNI !ID FILTLVL<11 (amu OR rin)]: %UNI_GG_ITEM%
+
+// Rainbow Facet
+ItemDisplay[jew UNI !ID FILTLVL<11]: %FACET_ITEM%
+
+// 3 Star Unique Callouts
+// Filter level 1-8
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %UNI_STAR3_ITEM%
+
+
+// 3 Star Unique Callouts only when not ETH, 2 star when ETH
+//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%

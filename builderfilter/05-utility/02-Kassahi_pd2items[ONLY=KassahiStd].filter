@@ -1,0 +1,46 @@
+// Kassahi bucket copy of 02-Kassahi_pd2items[Kassahi,ONLY=Phil777]: cwss/lpp/std drop the site
+// %SOUNDID%/icon tags the WSS_SHARD / PD2_MATS aliases already provide. Keep the two in sync.
+//-----------------------------------------------------------------------------------
+// Kassahi-only PD2 items
+//
+// Items also covered by Hiim's `03-PD2_items[ALL]` / `04-Ubermats[ALL]` (which use
+// alias-driven decoration like %GEN_ITEM%, %BOSS_MAT%, %BOSS_ENTRY%, %TOKEN_PARTS%,
+// %UBER_KEYS%) are NOT redefined here — they render with Kassahi-variant styling
+// because each Kassahi variant's `03-alias-kassahi-general-*.filter` defines those
+// aliases with Kassahi visuals.
+//
+// %MAIN_DOT% (defined per-variant in 03-alias-kassahi-{normal,hyper,luxe}.filter)
+// is used inline below for variant-specific dot decoration. It is NOT wrapped in
+// another alias body — PD2 only resolves aliases one level deep at ItemDisplay
+// substitution time, so nesting %MAIN_DOT% inside another Alias[] body causes
+// the engine to emit the literal token.
+//-----------------------------------------------------------------------------------
+
+
+
+
+// Ears
+ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %PD2_MATS%{%NAME%}
+
+
+// Larzuk's Puzzle Piece — name comes from 01-Kassahi_item-names-4, frame from 03-PD2_items-2 (GEN_RARE)
+
+// Standard of Heroes — upstream frames it with the organs; Hiim has no std rule
+ItemDisplay[std]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+// Horadrim Scarabs
+ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
+
+//-----------------------------------------------------------------------------------
+// Kassahi: hide Arcane / Angelic / Destruction orbs at every filter level.
+//
+//   irma — Infused Arcane Orb
+//   upma — Angelic Orb        (base)
+//   urma — Infused Angelic Orb
+//   scou — Orb of Destruction
+//
+// Placed after the styling rules so the empty output wins regardless of the
+// prior %CONTINUE% chain.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[(irma OR upma OR urma OR scou)]:

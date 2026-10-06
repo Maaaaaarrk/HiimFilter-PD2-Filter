@@ -1,0 +1,3 @@
+// Quantity (runes included, issue #982) and "Unstacked" tags, after every rename so renamed stacks keep them.
+ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%
+ItemDisplay[((gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz) OR (RUNE>0 QTY=0))]: %RED%Unstacked %NAME%%CONTINUE%

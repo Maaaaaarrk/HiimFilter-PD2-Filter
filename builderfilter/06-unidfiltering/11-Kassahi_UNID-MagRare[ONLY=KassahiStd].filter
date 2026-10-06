@@ -1,0 +1,9 @@
+//-----------------------------------------------------------------------------------
+// Kassahi (not Phil777) — unidentified magic jewel override, fired before the
+// shared 12-Unid_MagRare-* files. Keep the conditions in sync with those.
+//-----------------------------------------------------------------------------------
+
+// 85+ magic jewels: upstream keeps the purple FMT_MAG_GG frame + purple minimap
+// icon (MAP-9B) on every filter level; 12-Unid_MagRare drops the frame above FILTLVL 6.
+ItemDisplay[MAG jew !ID FILTLVL<11 ILVL>84]: %MAG_DBL_AFFIX_ITEM%
+

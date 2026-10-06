@@ -1,0 +1,6 @@
+//------------------------------Rune name Mystery Override------------------------------
+// Vex+ keep their real name and number in town and in the inventory while in town (rune number added in 03-unidformatting/01-Kassahi_item-names-4c).
+// Out of town, single runes are renamed like the PD2 items in 03-unidformatting/02-Kassahi_mysterynames.
+ItemDisplay[RUNE>25 RUNE<29 QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RED%Lil Mystery%CONTINUE%
+ItemDisplay[(RUNE=29 OR RUNE=31 OR RUNE=32) QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RED%Big Mystery%CONTINUE%
+ItemDisplay[(RUNE=30 OR RUNE=33) QTY=1 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %RED%GG Mystery%CONTINUE%
