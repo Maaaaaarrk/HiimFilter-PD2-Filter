@@ -63,6 +63,7 @@ Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune
 Two sources keep economy values current:
 
 - **`scripts/update-pd2trader-runes.mjs`** — Node script that pulls median prices from the PD2 Trader API and rewrites the rune / uber-material aliases in `builderfilter/02-alias/04-alias-economy-values[ALL].filter`. Run on a schedule by `.github/workflows/update-pd2trader-rune-values.yml`. Mat values use tiered rounding (`roundMatValue`): nearest 0.01 below 0.25 HR, nearest 0.05 at 0.25 HR and up.
+- **Set / unique star tiers** — `scripts/suggest-unique-tiers.mjs` and `scripts/suggest-set-tiers.mjs` compare PD2 market listings against the tier aliases in `builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter` and write suggestions to `temp/`. `scripts/apply-tier-upgrades.mjs` applies **upgrades only**, re-checking every edit against the real rule order (`scripts/lib/tier-model.mjs`, mirrors `20-Unid_UniquesSet_Tiers`) and aborting if any ETH/non-ETH tier would drop. Run every 3 days by `.github/workflows/update-set-unique-tiers.yml`, which opens a `bot/update-set-unique-tiers` PR. Downgrades are reviewed and applied manually.
 - **`src/Pd2Scraper.java`** — Selenium + JSoup scraper that pulls economy data from pd2.tools and replaces `*_Value` placeholders. Build with `mvn -f mvn.xml` if running locally.
 
 ## Filter Validation (Required Step)

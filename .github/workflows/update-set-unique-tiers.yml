@@ -1,0 +1,129 @@
+name: Update Set & Unique Star Tiers
+
+# Upgrade-only: scripts/apply-tier-upgrades.mjs never applies a downgrade and
+# aborts if any unique/set tier (ETH or non-ETH) would end up lower. Downgrades
+# stay a manual decision (run the suggest scripts locally and review temp/*-moves.txt).
+
+on:
+  schedule:
+    # Every 3rd day of the month (1st, 4th, 7th, ... 31st) at 07:30 UTC
+    - cron: '30 7 */3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-set-unique-tiers
+  cancel-in-progress: false
+
+jobs:
+  update-tiers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Suggest unique tiers (PD2 market)
+        run: node scripts/suggest-unique-tiers.mjs --ladder=true --hardcore=false
+
+      - name: Suggest set tiers (PD2 market)
+        run: node scripts/suggest-set-tiers.mjs --ladder=true --hardcore=false
+
+      - name: Apply upgrades only
+        run: node scripts/apply-tier-upgrades.mjs
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f temp/tier-upgrades-applied.md ]; then cat temp/tier-upgrades-applied.md >> "$GITHUB_STEP_SUMMARY"; fi
+          echo '```diff' >> "$GITHUB_STEP_SUMMARY"
+          git diff -- "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" | cut -c1-200 >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload suggestion reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tier-reports
+          path: temp/
+          if-no-files-found: ignore
+
+      - name: Check if alias file changed
+        id: check
+        run: |
+          if git diff --quiet -- "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Increment version
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          VERSION=$(cat version.txt | tr -d '[:space:]')
+          if ! echo "$VERSION" | grep -qE '^[0-9]+$'; then VERSION=0; fi
+          VERSION=$((VERSION + 1))
+          echo "$VERSION" > version.txt
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Build filters
+        if: steps.check.outputs.changed == 'true'
+        run: python builderfilter/build.py
+
+      - name: Generate README
+        if: steps.check.outputs.changed == 'true'
+        run: python builderreadme/create_readme.py
+
+      - name: Validate filters
+        if: steps.check.outputs.changed == 'true'
+        run: python validate_filters.py --errors-only
+
+      - name: Commit and open PR
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BOT_BRANCH: bot/update-set-unique-tiers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" \
+                  version.txt \
+                  "builderfilter/01-header/01-Version[ALL].filter" \
+                  filter_definitions.json \
+                  README.md
+          git add *.filter 2>/dev/null || true
+          git add filtergroups 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Upgrade set/unique star tiers from PD2 market (version ${{ env.VERSION }})"
+          git push --force origin "HEAD:$BOT_BRANCH"
+
+          existing_pr=$(gh pr list --head "$BOT_BRANCH" --base main --state open --json number -q '.[0].number')
+          if [ -z "$existing_pr" ]; then
+            gh pr create \
+              --base main \
+              --head "$BOT_BRANCH" \
+              --title "Upgrade set/unique star tiers (version ${{ env.VERSION }})" \
+              --body-file temp/tier-upgrades-applied.md
+          else
+            gh pr edit "$existing_pr" \
+              --title "Upgrade set/unique star tiers (version ${{ env.VERSION }})" \
+              --body-file temp/tier-upgrades-applied.md
+            echo "Existing PR #$existing_pr was updated by force-push."
+          fi
