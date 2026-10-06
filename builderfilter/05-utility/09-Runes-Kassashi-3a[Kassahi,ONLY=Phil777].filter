@@ -1,12 +1,7 @@
-//-----------------------------------------------------------------------------------
-// Runes
-//-----------------------------------------------------------------------------------
-// Minimap markers come from the RUNE_* aliases (each family sets its own).
-// Phil777 only: the Kassahi bucket adds the rune quantity in 03-unidformatting/01-Kassahi_item-names-5
-// and colours Vex-Zod in 01-Kassahi_item-names-4 (issue #982).
-
 // Show Quantity
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
 
-// High runes in red (upstream 08-runes)
-ItemDisplay[RUNE>25]: %RED%%NAME%%CONTINUE%
+// Low rune name decorations
+// Valuable Crafting rune callout — set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
+ItemDisplay[RUNE<21 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE<21 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%

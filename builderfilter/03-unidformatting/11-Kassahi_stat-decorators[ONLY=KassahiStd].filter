@@ -1,3 +1,36 @@
+//-----------------------------------------------------------------------------------
+// Kassahi stat decorators
+//
+// Ports upstream Kassahi `04-statdecorators/01-item-stat-decorators[ALL]` up to the
+// SLAMMED block (the slam/desecrate suffixes live in 12-Kassahi_corruption-flavor, Phil777 only since issue #982).
+// Replaces Hiim 10/11-Formatted_MagRare_* and 18/19 unid unique naming/tags for the
+// Kassahi family: quality colours, "*" identified mark, Sup/Shit/Eth prefixes,
+// base tier marks, socket count, auto-rolled open sockets and sup/din dots.
+//
+// The upstream "Good Crafting Bases Callout" block is omitted: the Kassahi family
+// gets the same ° callout via CRAFT_ZERO/ONE/TWO in 23-Tags_Crafting_Unid.
+//-----------------------------------------------------------------------------------
+//------------------------------SPECIFIC_NAME_INFORMATIONS------------------------------
+
+
+
+
+
+// Other Uniq & Set Item Colors
+ItemDisplay[ETH UNI !ID !(STAT477=4 OR STAT477=21)]: %GOLD%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[ETH SET !ID !(STAT477=4 OR STAT477=21)]: %GREEN%%NAME%{%NAME%}%CONTINUE%
+// Mirror Item Colors
+ItemDisplay[(STAT477=4 OR STAT477=21)]: %RED%%NAME%%CONTINUE%
+// ORGINAL COLORS (ITEMS)
+ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
+ItemDisplay[CRAFT]: %ORANGE%%NAME%%CONTINUE%
+ItemDisplay[SET]: %GREEN%%NAME%%CONTINUE%
+ItemDisplay[UNI]: %GOLD%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
+// IDENTIFIED (ITEMS)
+ItemDisplay[ID !MAPTIER>0 !NMAG !UNI !SET !(STAT477=4 OR STAT477=21)]: %DARK_GREEN%·%NAME%{%NAME%}%CONTINUE%
 // INFINITE (ITEMS)
 ItemDisplay[INF ID !rin !amu]: %GRAY%Shit %NAME%{%NAME%}%CONTINUE%
 // ETHEREAL (ITEMS)
@@ -36,3 +69,10 @@ ItemDisplay[UNI ID rbe]: %NAME%/1{%NAME%}%CONTINUE%
 ItemDisplay[UNI ID rar]: %NAME%/6{%NAME%}%CONTINUE%
 ItemDisplay[UNI ID drc]: %NAME%/3{%NAME%}%CONTINUE%
 ItemDisplay[UNI ID ush MULTI198,28319=12]: %NAME%/3{%NAME%}%CONTINUE%
+// Superior/All res Dot Callout
+ItemDisplay[SUP ARMOR ED>0 ED<20]: %NAME% %BLUE%·{%NAME%}%CONTINUE%
+ItemDisplay[SUP WEAPON ED>0 ED<20]: %NAME% %RED%·{%NAME%}%CONTINUE%
+ItemDisplay[SUP ARMOR ED=20]: %NAME% %BLUE%•{%NAME%}%CONTINUE%
+ItemDisplay[SUP WEAPON ED=20]: %NAME% %RED%•{%NAME%}%CONTINUE%
+ItemDisplay[NMAG DIN RES<30]: %NAME% %PURPLE%·{%NAME%}%CONTINUE%
+ItemDisplay[NMAG DIN RES=30]: %NAME% %PURPLE%•{%NAME%}%CONTINUE%
