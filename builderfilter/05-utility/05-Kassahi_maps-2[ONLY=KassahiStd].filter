@@ -1,0 +1,10 @@
+// Kassahi bucket map frames (issue #981). Phil777 keeps the previous version in
+// 05-Kassahi_maps-2[Kassahi,ONLY=Phil777]. Map names, colours and tiers are set in
+// 03-unidformatting/01-Kassahi_item-names-4 (issue #982). Unique maps stop at %UNI_MAPS%;
+// the other maps end on %COW_MAP% (Blood Moon) / %NORMAL_MAPS%.
+// MAP FRAMES
+ItemDisplay[NMAG MAPTIER>0]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=0]: %DOT-80%%NAME% %TAN%•{%NAME%}
+ItemDisplay[MAPTIER>0 (UNI OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58)]: %UNI_MAPS%{%NAME%}
+ItemDisplay[t35]: %COW_MAP%{%NAME%}
+ItemDisplay[MAPTIER>0]: %NORMAL_MAPS%{%NAME%}

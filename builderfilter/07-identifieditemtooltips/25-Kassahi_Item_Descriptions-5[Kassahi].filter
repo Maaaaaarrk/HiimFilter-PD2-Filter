@@ -1,0 +1,958 @@
+//Notes about socketing recipes
+ItemDisplay[CHEST !INF SOCK=0 NMAG]: %NAME%{%NAME%%CL%%WHITE%possible os: %ORANGE%Tal, Thul, %YELLOW%O:}%CONTINUE%
+ItemDisplay[WEAPON !INF SOCK=0 NMAG]: %NAME%{%NAME%%CL%%WHITE%possible os: %ORANGE%Ral, Amn, %PURPLE%O:}%CONTINUE%
+ItemDisplay[(HELM OR CIRC) !INF SOCK=0 NMAG]: %NAME%{%NAME%%CL%%WHITE%possible os: %ORANGE%Ral, Thul, %BLUE%O:}%CONTINUE%
+ItemDisplay[SHIELD !INF SOCK=0 NMAG]: %NAME%{%NAME%%CL%%WHITE%possible os: %ORANGE%Tal, Amn, %RED%O:}%CONTINUE%
+ItemDisplay[(aqv OR cqv OR aqv2 OR aqv3 OR cqv2 OR cqv3) !INF SOCK=0 NMAG]: %NAME%{%NAME%%CL%%WHITE%possible os: %ORANGE%Tal, Amn, %RED%O:}%CONTINUE%
+
+//Notes about socketing INF/SUP items
+//ItemDisplay[(CHEST OR WEAPON OR HELM OR CIRC OR SHIELD) (INF OR SUP) NMAG SOCK=0]: %NAME%{%NAME%%CL%%WHITE%possible os: }%CONTINUE%
+
+//Notes about Max Sockets in !INF/!SUP NMAG items
+//helmets & circlets
+ItemDisplay[ci0 NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
+ItemDisplay[ci0 NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR ulm OR fhl OR xhl OR uhl OR bhm OR xh9 OR ci1) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(msk OR ghm OR crn) NMAG !INF SOCK=0 ILVL<41]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(msk OR ghm OR crn) NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[(xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+//barb helms & dru pelts
+ItemDisplay[(BAR OR DRU) NORM NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(BAR OR DRU) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+//chest
+ItemDisplay[(qui OR lea OR hla OR stu OR xui OR xea OR xla OR xtu OR scl OR chn OR spl OR plt OR fld) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[(uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+//shields
+ItemDisplay[(buc OR xuc OR aqv OR cqv) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
+ItemDisplay[(uuc OR sml OR xml OR uml OR bsh OR aqv2 OR aqv3 OR cqv2 OR cqv3) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(lrg OR xrg OR urg OR upk OR kit OR xit OR ush OR tow OR xow OR gts OR xts OR spk OR xpk OR xsh) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[(uit OR uow OR uts) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+//pala shields
+ItemDisplay[DIN NORM NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[DIN NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+//necro shields
+ItemDisplay[NEC NORM NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[NEC (EXC OR ELT) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+//Weapons
+//always 1
+ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
+//always 2
+ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR 9tk OR 7tk OR 9ta OR 7ta OR bkf OR 9bk OR 7bk OR ssp OR 9s9 OR 7s7 OR 9pi OR 7pi OR 9ja OR 7ja OR pil OR am5 OR ama OR amf OR (SOR !(ob5 OR oba OR obf))) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+//always 3
+ItemDisplay[(9ha OR 7ha OR 9cl OR 7cl OR 9ma OR 7ma OR 9sp OR mst OR 9mt OR 7mt OR 9ss OR 9sm OR 9sb OR 9fc OR 7ss OR 7sm OR 7sb OR 7fc OR wsd OR 9wd OR 7wd OR 2hs OR 92h OR 72h OR 9kr OR 7kr OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR 7sp OR (SIN !(ktr OR wrb OR axf OR ces OR clw OR btl OR skr)) OR oba OR obf OR 9b8 OR 7b8 OR 9gl OR 7gl OR 9ts OR 7ts) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+//always 4
+ItemDisplay[(axe OR 9ax OR 7ax OR lax OR 9wh OR 7wh OR 9bs OR 7bs OR 9cm OR 9gs OR 9b9 OR 7cm OR 7gs OR 7b7 OR 9tr OR 7tr OR 9b7 OR 9vo OR 7o7 OR 7vo OR 8sb OR 6sb OR 8hb OR 6hb OR 8cb OR 6cb OR 8lx OR 6lx OR 8mx OR 6mx OR cst OR 8cs OR 6cs OR bst OR 8bs OR 6bs OR 6ls) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+//always 5
+ItemDisplay[(92a OR 72a OR 9la OR 9ba OR 9bt OR 7la OR 7ba OR 7bt OR 9fl OR 7fl OR 9fb OR 7fb OR 9br OR 7br OR 7s8 OR 7pa OR 8s8 OR 8sw OR 6s7 OR 6sw OR 8rx OR 6rx OR 9ws OR 7ws OR amb OR am7 OR amc OR 7ls) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+//always 6
+ItemDisplay[(9mp OR 9wa OR 7mp OR 7wa OR 9ga OR 9gi OR 7ga OR 7gi OR 9m9 OR 9gm OR 7m7 OR 7gm OR 7cr OR 9gd OR 7gd OR 9st OR 9p9 OR 7st OR 7p7 OR 9h9 OR 9wc OR 7h7 OR 7wc OR 8l8 OR 8lw OR 6l7 OR 6lw OR 8hx OR 6hx OR 8ws OR 6ws OR am8 OR am9 OR amd OR ame OR 7sr) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
+//varies 2/3/3
+ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+//varies 3/4/4
+ItemDisplay[(whm OR bsd OR lsd OR clm OR gis OR bsw OR tri OR vou OR hbw OR cbw OR mxb OR 9sr) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[(whm OR bsd OR lsd OR clm OR gis OR bsw OR tri OR vou OR hbw OR cbw OR mxb OR 9sr) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+//varies 3/4/5
+ItemDisplay[(fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb OR 9ls) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[(fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb OR 9ls) NMAG !INF SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[(fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb OR 9ls) NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+//varies 3/4/6
+ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb) NMAG !INF SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb) NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
+//varies 3/5/5
+ItemDisplay[wsp NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[wsp NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+//varies 4/5/5
+ItemDisplay[(2ax OR bax OR btx) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[(2ax OR bax OR btx) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+//varies 4/5/6
+ItemDisplay[(mpi OR wax OR gax OR gix) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[(mpi OR wax OR gax OR gix) NMAG !INF SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+ItemDisplay[(mpi OR wax OR gax OR gix) NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
+//varies 5/6/6
+ItemDisplay[wst NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+ItemDisplay[wst NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
+
+//Notes about Max Sockets in NMAG items
+//helmets & circlets
+ItemDisplay[ci0 NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[ci0 NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR ulm OR fhl OR xhl OR uhl OR bhm OR xh9 OR ci1) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(msk OR ghm OR crn) NMAG SOCK=0 ILVL<41]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(msk OR ghm OR crn) NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+//barb helms & dru pelts
+ItemDisplay[(BAR OR DRU) NORM NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(BAR OR DRU) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+//chest
+ItemDisplay[(qui OR lea OR hla OR stu OR xui OR xea OR xla OR xtu OR scl OR chn OR spl OR plt OR fld) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+//shields
+ItemDisplay[(aqv OR cqv OR buc OR xuc) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(aqv2 OR cqv2 OR aqv3 OR cqv3 OR uuc OR sml OR xml OR uml OR bsh) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(lrg OR xrg OR urg OR upk OR kit OR xit OR ush OR tow OR xow OR gts OR xts OR spk OR xpk OR xsh) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(uit OR uow OR uts) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+//pala shields
+ItemDisplay[DIN NORM NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[DIN NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+//necro shields
+ItemDisplay[NEC NORM NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[NEC (EXC OR ELT) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+//Weapons
+//always 1
+ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
+//always 2
+ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR 9tk OR 7tk OR 9ta OR 7ta OR bkf OR 9bk OR 7bk OR ssp OR 9s9 OR 7s7 OR 9pi OR 7pi OR 9ja OR 7ja OR pil OR am5 OR ama OR amf OR (SOR !(ob5 OR oba OR obf))) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+//always 3
+ItemDisplay[(9ha OR 7ha OR 9cl OR 7cl OR 9ma OR 7ma OR 9sp OR mst OR 9mt OR 7mt OR 9ss OR 9sm OR 9sb OR 9fc OR 7ss OR 7sm OR 7sb OR 7fc OR wsd OR 9wd OR 7wd OR 2hs OR 92h OR 72h OR 9kr OR 7kr OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR 7sp OR (SIN !(ktr OR wrb OR axf OR ces OR clw OR btl OR skr)) OR oba OR obf OR 9b8 OR 7b8 OR 9gl OR 7gl OR 9ts OR 7ts) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+//always 4
+ItemDisplay[(axe OR 9ax OR 7ax OR lax OR 9wh OR 7wh OR 9bs OR 7bs OR 9cm OR 9gs OR 9b9 OR 7cm OR 7gs OR 7b7 OR 9tr OR 7tr OR 9b7 OR 9vo OR 7o7 OR 7vo OR 8sb OR 6sb OR 8hb OR 6hb OR 8cb OR 6cb OR 8lx OR 6lx OR 8mx OR 6mx OR cst OR 8cs OR 6cs OR bst OR 8bs OR 6bs OR 6ls) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+//always 5
+ItemDisplay[(92a OR 72a OR 9la OR 9ba OR 9bt OR 7la OR 7ba OR 7bt OR 9fl OR 7fl OR 9fb OR 7fb OR 9br OR 7br OR 7s8 OR 7pa OR 8s8 OR 8sw OR 6s7 OR 6sw OR 8rx OR 6rx OR 9ws OR 7ws OR amb OR am7 OR amc OR 7ls) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+//always 6
+ItemDisplay[(9mp OR 9wa OR 7mp OR 7wa OR 9ga OR 9gi OR 7ga OR 7gi OR 9m9 OR 9gm OR 7m7 OR 7gm OR 7cr OR 9gd OR 7gd OR 9st OR 9p9 OR 7st OR 7p7 OR 9h9 OR 9wc OR 7h7 OR 7wc OR 8l8 OR 8lw OR 6l7 OR 6lw OR 8hx OR 6hx OR 8ws OR 6ws OR am8 OR am9 OR amd OR ame OR 7sr) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
+//varies 2/3/3
+ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+//varies 3/4/4
+ItemDisplay[(whm OR bsd OR lsd OR clm OR gis OR bsw OR tri OR vou OR hbw OR cbw OR mxb OR 9sr) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(whm OR bsd OR lsd OR clm OR gis OR bsw OR tri OR vou OR hbw OR cbw OR mxb OR 9sr) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+//varies 3/4/5
+ItemDisplay[(fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb OR 9ls) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb OR 9ls) NMAG SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb OR 9ls) NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+//varies 3/4/6
+ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb) NMAG SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb) NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
+//varies 3/5/5
+ItemDisplay[wsp NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[wsp NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+//varies 4/5/5
+ItemDisplay[(2ax OR bax OR btx) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(2ax OR bax OR btx) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+//varies 4/5/6
+ItemDisplay[(mpi OR wax OR gax OR gix) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(mpi OR wax OR gax OR gix) NMAG SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(mpi OR wax OR gax OR gix) NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
+//varies 5/6/6
+ItemDisplay[wst NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[wst NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
+
+// BASE VERSION (ITEMS)
+ItemDisplay[NORM ID (WEAPON OR ARMOR OR QUIVER)]: %NAME%{%NAME%%CL%%WHITE%base: %DARK_GREEN%nor}%CONTINUE%
+ItemDisplay[EXC ID (WEAPON OR ARMOR OR QUIVER)]: %NAME%{%NAME%%CL%%WHITE%base: %DARK_GREEN%exc}%CONTINUE%
+ItemDisplay[ELT ID (WEAPON OR ARMOR OR QUIVER)]: %NAME%{%NAME%%CL%%WHITE%base: %DARK_GREEN%eli}%CONTINUE%
+
+// Potion Slots (ITEMS)
+ItemDisplay[lbl ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%8}%CONTINUE%
+ItemDisplay[vbl ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%8}%CONTINUE%
+ItemDisplay[mbl ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%12}%CONTINUE%
+ItemDisplay[tbl ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%12}%CONTINUE%
+ItemDisplay[hbl ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[zlb ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[zvb ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[zmb ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[ztb ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[zhb ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[ulc ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[uvc ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[umc ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[utc ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+ItemDisplay[uhc ID]: %NAME%{%NAME%, %CORAL%ps:%WHITE%16}%CONTINUE%
+
+// Base Weapons Avg Dmg
+// Non Eth Axes
+ItemDisplay[!ETH hax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4.5}%CONTINUE%
+ItemDisplay[!ETH 9ha]: %NAME%{%NAME%, %CORAL%avg:%WHITE%22.5}%CONTINUE%
+ItemDisplay[!ETH 7ha]: %NAME%{%NAME%, %CORAL%avg:%WHITE%59.5}%CONTINUE%
+ItemDisplay[!ETH axe]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[!ETH 9ax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%30.5}%CONTINUE%
+ItemDisplay[!ETH 7ax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%60}%CONTINUE%
+ItemDisplay[!ETH 2ax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9}%CONTINUE%
+ItemDisplay[!ETH 92a]: %NAME%{%NAME%, %CORAL%avg:%WHITE%36}%CONTINUE%
+ItemDisplay[!ETH 72a]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62}%CONTINUE%
+ItemDisplay[!ETH mpi]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9}%CONTINUE%
+ItemDisplay[!ETH 9mp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34.5}%CONTINUE%
+ItemDisplay[!ETH 7mp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%49}%CONTINUE%
+ItemDisplay[!ETH wax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%16}%CONTINUE%
+ItemDisplay[!ETH 9wa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%43.5}%CONTINUE%
+ItemDisplay[!ETH 7wa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%59.5}%CONTINUE%
+ItemDisplay[!ETH lax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9.5}%CONTINUE%
+ItemDisplay[!ETH 9la]: %NAME%{%NAME%, %CORAL%avg:%WHITE%41}%CONTINUE%
+ItemDisplay[!ETH 7la]: %NAME%{%NAME%, %CORAL%avg:%WHITE%92.5}%CONTINUE%
+ItemDisplay[!ETH bax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[!ETH 9ba]: %NAME%{%NAME%, %CORAL%avg:%WHITE%50}%CONTINUE%
+ItemDisplay[!ETH 7ba]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108}%CONTINUE%
+ItemDisplay[!ETH btx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%22}%CONTINUE%
+ItemDisplay[!ETH 9bt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%67}%CONTINUE%
+ItemDisplay[!ETH 7bt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%116}%CONTINUE%
+ItemDisplay[!ETH gax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%19.5}%CONTINUE%
+ItemDisplay[!ETH 9ga]: %NAME%{%NAME%, %CORAL%avg:%WHITE%61.5}%CONTINUE%
+ItemDisplay[!ETH 7ga]: %NAME%{%NAME%, %CORAL%avg:%WHITE%96}%CONTINUE%
+ItemDisplay[!ETH gix]: %NAME%{%NAME%, %CORAL%avg:%WHITE%33.5}%CONTINUE%
+ItemDisplay[!ETH 9gi]: %NAME%{%NAME%, %CORAL%avg:%WHITE%92}%CONTINUE%
+ItemDisplay[!ETH 7gi]: %NAME%{%NAME%, %CORAL%avg:%WHITE%115}%CONTINUE%
+// Non Eth Clubs
+ItemDisplay[!ETH clb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%3.5}%CONTINUE%
+ItemDisplay[!ETH 9cl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%20}%CONTINUE%
+ItemDisplay[!ETH 7cl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%49}%CONTINUE%
+ItemDisplay[!ETH spc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6.5}%CONTINUE%
+ItemDisplay[!ETH 9sp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27}%CONTINUE%
+ItemDisplay[!ETH 7sp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%59}%CONTINUE%
+// Non Eth Maces
+ItemDisplay[!ETH mac]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6.5}%CONTINUE%
+ItemDisplay[!ETH 9ma]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27.5}%CONTINUE%
+ItemDisplay[!ETH 7ma]: %NAME%{%NAME%, %CORAL%avg:%WHITE%61}%CONTINUE%
+ItemDisplay[!ETH mst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11.5}%CONTINUE%
+ItemDisplay[!ETH 9mt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%37}%CONTINUE%
+ItemDisplay[!ETH 7mt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62.5}%CONTINUE%
+ItemDisplay[!ETH fla]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12.5}%CONTINUE%
+ItemDisplay[!ETH 9fl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34}%CONTINUE%
+ItemDisplay[!ETH 7fl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%57}%CONTINUE%
+// Non Eth Hammers
+ItemDisplay[!ETH whm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27}%CONTINUE%
+ItemDisplay[!ETH 9wh]: %NAME%{%NAME%, %CORAL%avg:%WHITE%49.5}%CONTINUE%
+ItemDisplay[!ETH 7wh]: %NAME%{%NAME%, %CORAL%avg:%WHITE%69.5}%CONTINUE%
+ItemDisplay[!ETH mau]: %NAME%{%NAME%, %CORAL%avg:%WHITE%36.5}%CONTINUE%
+ItemDisplay[!ETH 9m9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%91}%CONTINUE%
+ItemDisplay[!ETH 7m7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%114}%CONTINUE%
+ItemDisplay[!ETH gma]: %NAME%{%NAME%, %CORAL%avg:%WHITE%48}%CONTINUE%
+ItemDisplay[!ETH 9gm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%103.5}%CONTINUE%
+ItemDisplay[!ETH 7gm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%133}%CONTINUE%
+// Non Eth Swords
+ItemDisplay[!ETH ssd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4.5}%CONTINUE%
+ItemDisplay[!ETH 9ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%22}%CONTINUE%
+ItemDisplay[!ETH 7ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%56.5}%CONTINUE%
+ItemDisplay[!ETH scm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4}%CONTINUE%
+ItemDisplay[!ETH 9sm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%21}%CONTINUE%
+ItemDisplay[!ETH 7sm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%45.5}%CONTINUE%
+ItemDisplay[!ETH sbr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%5.5}%CONTINUE%
+ItemDisplay[!ETH 9sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%24.5}%CONTINUE%
+ItemDisplay[!ETH 7sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%48.5}%CONTINUE%
+ItemDisplay[!ETH flc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13}%CONTINUE%
+ItemDisplay[!ETH 9fc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%36.5}%CONTINUE%
+ItemDisplay[!ETH 7fc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%60}%CONTINUE%
+ItemDisplay[!ETH crs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10}%CONTINUE%
+ItemDisplay[!ETH 9cr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34.5}%CONTINUE%
+ItemDisplay[!ETH 7cr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%41.5}%CONTINUE%
+ItemDisplay[!ETH bsd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10.5}%CONTINUE%
+ItemDisplay[!ETH 9bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35.5}%CONTINUE%
+ItemDisplay[!ETH 7bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%56}%CONTINUE%
+ItemDisplay[!ETH lsd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11}%CONTINUE%
+ItemDisplay[!ETH 9ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%37}%CONTINUE%
+ItemDisplay[!ETH 7ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%51}%CONTINUE%
+ItemDisplay[!ETH wsd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[!ETH 9wd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%40}%CONTINUE%
+ItemDisplay[!ETH 7wd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%56.5}%CONTINUE%
+ItemDisplay[!ETH 2hs]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%5.5, %CORAL%2h:%WHITE%12.5}%CONTINUE%
+ItemDisplay[!ETH 92h]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%24.5, %CORAL%2h:%WHITE%45}%CONTINUE%
+ItemDisplay[!ETH 72h]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%49, %CORAL%2h:%WHITE%90.5}%CONTINUE%
+ItemDisplay[!ETH clm]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%8.5, %CORAL%2h:%WHITE%21.5}%CONTINUE%
+ItemDisplay[!ETH 9cm]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%30.5, %CORAL%2h:%WHITE%62.5}%CONTINUE%
+ItemDisplay[!ETH 7cm]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%53, %CORAL%2h:%WHITE%102}%CONTINUE%
+ItemDisplay[!ETH gis]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%9.5, %CORAL%2h:%WHITE%18.5}%CONTINUE%
+ItemDisplay[!ETH 9gs]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%33.5, %CORAL%2h:%WHITE%55.5}%CONTINUE%
+ItemDisplay[!ETH 7gs]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%56.5, %CORAL%2h:%WHITE%109}%CONTINUE%
+ItemDisplay[!ETH bsw]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%13, %CORAL%2h:%WHITE%24}%CONTINUE%
+ItemDisplay[!ETH 9b9]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%40, %CORAL%2h:%WHITE%72}%CONTINUE%
+ItemDisplay[!ETH 7b7]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%49, %CORAL%2h:%WHITE%96.5}%CONTINUE%
+ItemDisplay[!ETH flb]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%12, %CORAL%2h:%WHITE%19.5}%CONTINUE%
+ItemDisplay[!ETH 9fb]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%39.5, %CORAL%2h:%WHITE%59}%CONTINUE%
+ItemDisplay[!ETH 7fb]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%60.5, %CORAL%2h:%WHITE%113.5}%CONTINUE%
+ItemDisplay[!ETH gsd]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%16, %CORAL%2h:%WHITE%33.5}%CONTINUE%
+ItemDisplay[!ETH 9gd]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%43, %CORAL%2h:%WHITE%91.5}%CONTINUE%
+ItemDisplay[!ETH 7gd]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%56, %CORAL%2h:%WHITE%108.5}%CONTINUE%
+// Non Eth Daggers
+ItemDisplay[!ETH dgr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%2.5}%CONTINUE%
+ItemDisplay[!ETH 9dg]: %NAME%{%NAME%, %CORAL%avg:%WHITE%17.5}%CONTINUE%
+ItemDisplay[!ETH 7dg]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42}%CONTINUE%
+ItemDisplay[!ETH dir]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6}%CONTINUE%
+ItemDisplay[!ETH 9di]: %NAME%{%NAME%, %CORAL%avg:%WHITE%26}%CONTINUE%
+ItemDisplay[!ETH 7di]: %NAME%{%NAME%, %CORAL%avg:%WHITE%52}%CONTINUE%
+ItemDisplay[!ETH kri]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6.5}%CONTINUE%
+ItemDisplay[!ETH 9kr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%31}%CONTINUE%
+ItemDisplay[!ETH 7kr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42}%CONTINUE%
+ItemDisplay[!ETH bld]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9.5}%CONTINUE%
+ItemDisplay[!ETH 9bl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%40}%CONTINUE%
+ItemDisplay[!ETH 7bl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%50}%CONTINUE%
+// Non Eth Throwing Weapons
+ItemDisplay[!ETH tkf]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%4.5, %CORAL%1h:%WHITE%2.5}%CONTINUE%
+ItemDisplay[!ETH 9tk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%22, %CORAL%1h:%WHITE%16}%CONTINUE%
+ItemDisplay[!ETH 7tk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%38.5, %CORAL%1h:%WHITE%38.5}%CONTINUE%
+ItemDisplay[!ETH tax]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%7.5, %CORAL%1h:%WHITE%5.5}%CONTINUE%
+ItemDisplay[!ETH 9ta]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%31.5, %CORAL%1h:%WHITE%20}%CONTINUE%
+ItemDisplay[!ETH 7ta]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%40.5, %CORAL%1h:%WHITE%41}%CONTINUE%
+ItemDisplay[!ETH bkf]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%8.5, %CORAL%1h:%WHITE%4.5}%CONTINUE%
+ItemDisplay[!ETH 9bk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%25.5, %CORAL%1h:%WHITE%19}%CONTINUE%
+ItemDisplay[!ETH 7bk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%31, %CORAL%1h:%WHITE%31}%CONTINUE%
+ItemDisplay[!ETH bal]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%13.5, %CORAL%1h:%WHITE%7.5}%CONTINUE%
+ItemDisplay[!ETH 9b8]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%29, %CORAL%1h:%WHITE%26.5}%CONTINUE%
+ItemDisplay[!ETH 7b8]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%33.5, %CORAL%1h:%WHITE%33.5}%CONTINUE%
+// Non Eth Javelins
+ItemDisplay[!ETH jav]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%8, %CORAL%1h:%WHITE%3}%CONTINUE%
+ItemDisplay[!ETH 9ja]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%29, %CORAL%1h:%WHITE%15.5}%CONTINUE%
+ItemDisplay[!ETH 7ja]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%41.5, %CORAL%1h:%WHITE%39}%CONTINUE%
+ItemDisplay[!ETH pil]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%13.5, %CORAL%1h:%WHITE%6.5}%CONTINUE%
+ItemDisplay[!ETH 9pi]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%34.5, %CORAL%1h:%WHITE%23}%CONTINUE%
+ItemDisplay[!ETH 7pi]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%48, %CORAL%1h:%WHITE%39}%CONTINUE%
+ItemDisplay[!ETH ssp]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%16, %CORAL%1h:%WHITE%7.5}%CONTINUE%
+ItemDisplay[!ETH 9s9]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%46, %CORAL%1h:%WHITE%25}%CONTINUE%
+ItemDisplay[!ETH 7s7]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%51, %CORAL%1h:%WHITE%48}%CONTINUE%
+ItemDisplay[!ETH glv]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%19, %CORAL%1h:%WHITE%11}%CONTINUE%
+ItemDisplay[!ETH 9gl]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%48.5, %CORAL%1h:%WHITE%32}%CONTINUE%
+ItemDisplay[!ETH 7gl]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%54, %CORAL%1h:%WHITE%39.5}%CONTINUE%
+ItemDisplay[!ETH tsp]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%21, %CORAL%1h:%WHITE%10}%CONTINUE%
+ItemDisplay[!ETH 9ts]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%41, %CORAL%1h:%WHITE%30}%CONTINUE%
+ItemDisplay[!ETH 7ts]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%44, %CORAL%1h:%WHITE%31}%CONTINUE%
+// Non Eth Spears
+ItemDisplay[!ETH spr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9}%CONTINUE%
+ItemDisplay[!ETH 9sr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34.5}%CONTINUE%
+ItemDisplay[!ETH 7sr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%96.5}%CONTINUE%
+ItemDisplay[!ETH tri]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12}%CONTINUE%
+ItemDisplay[!ETH 9tr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%38.5}%CONTINUE%
+ItemDisplay[!ETH 7tr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108}%CONTINUE%
+ItemDisplay[!ETH brn]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12}%CONTINUE%
+ItemDisplay[!ETH 9br]: %NAME%{%NAME%, %CORAL%avg:%WHITE%40.5}%CONTINUE%
+ItemDisplay[!ETH 7br]: %NAME%{%NAME%, %CORAL%avg:%WHITE%83.5}%CONTINUE%
+ItemDisplay[!ETH spt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%19}%CONTINUE%
+ItemDisplay[!ETH 9st]: %NAME%{%NAME%, %CORAL%avg:%WHITE%63}%CONTINUE%
+ItemDisplay[!ETH 7st]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108.5}%CONTINUE%
+ItemDisplay[!ETH pik]: %NAME%{%NAME%, %CORAL%avg:%WHITE%38.5}%CONTINUE%
+ItemDisplay[!ETH 9p9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%98}%CONTINUE%
+ItemDisplay[!ETH 7p7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%132}%CONTINUE%
+// Non Eth Polearms
+ItemDisplay[!ETH bar]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[!ETH 9b7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%46}%CONTINUE%
+ItemDisplay[!ETH 7o7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108}%CONTINUE%
+ItemDisplay[!ETH vou]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13.5}%CONTINUE%
+ItemDisplay[!ETH 9vo]: %NAME%{%NAME%, %CORAL%avg:%WHITE%48}%CONTINUE%
+ItemDisplay[!ETH 7vo]: %NAME%{%NAME%, %CORAL%avg:%WHITE%113.5}%CONTINUE%
+ItemDisplay[!ETH scy]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[!ETH 9s8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%44.5}%CONTINUE%
+ItemDisplay[!ETH 7s8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%95.5}%CONTINUE%
+ItemDisplay[!ETH pax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%28.5}%CONTINUE%
+ItemDisplay[!ETH 9pa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%78.5}%CONTINUE%
+ItemDisplay[!ETH 7pa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%114.5}%CONTINUE%
+ItemDisplay[!ETH hal]: %NAME%{%NAME%, %CORAL%avg:%WHITE%28.5}%CONTINUE%
+ItemDisplay[!ETH 9h9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%70}%CONTINUE%
+ItemDisplay[!ETH 7h7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108.5}%CONTINUE%
+ItemDisplay[!ETH wsc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%25.5}%CONTINUE%
+ItemDisplay[!ETH 9wc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%72}%CONTINUE%
+ItemDisplay[!ETH 7wc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%96}%CONTINUE%
+// Non Eth Bows
+ItemDisplay[!ETH sbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%2.5}%CONTINUE%
+ItemDisplay[!ETH 8sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%16.5}%CONTINUE%
+ItemDisplay[!ETH 6sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%53.5}%CONTINUE%
+ItemDisplay[!ETH hbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4}%CONTINUE%
+ItemDisplay[!ETH 8hb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%20}%CONTINUE%
+ItemDisplay[!ETH 6hb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%45}%CONTINUE%
+ItemDisplay[!ETH lbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[!ETH 8lb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%25.5}%CONTINUE%
+ItemDisplay[!ETH 6lb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%54}%CONTINUE%
+ItemDisplay[!ETH cbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7}%CONTINUE%
+ItemDisplay[!ETH 8cb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%24.5}%CONTINUE%
+ItemDisplay[!ETH 6cb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%46.5}%CONTINUE%
+ItemDisplay[!ETH sbb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9}%CONTINUE%
+ItemDisplay[!ETH 8s8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%28.5}%CONTINUE%
+ItemDisplay[!ETH 6s7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%53}%CONTINUE%
+ItemDisplay[!ETH lbb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12.5}%CONTINUE%
+ItemDisplay[!ETH 8l8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34.5}%CONTINUE%
+ItemDisplay[!ETH 6l7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%57}%CONTINUE%
+ItemDisplay[!ETH swb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10}%CONTINUE%
+ItemDisplay[!ETH 8sw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%32.5}%CONTINUE%
+ItemDisplay[!ETH 6sw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%53}%CONTINUE%
+ItemDisplay[!ETH lwb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13}%CONTINUE%
+ItemDisplay[!ETH 8lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35.5}%CONTINUE%
+ItemDisplay[!ETH 6lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%57}%CONTINUE%
+// Non Eth Corssbows
+ItemDisplay[!ETH lxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9.5}%CONTINUE%
+ItemDisplay[!ETH 8lx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%29}%CONTINUE%
+ItemDisplay[!ETH 6lx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%69.5}%CONTINUE%
+ItemDisplay[!ETH mxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15}%CONTINUE%
+ItemDisplay[!ETH 8mx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%44}%CONTINUE%
+ItemDisplay[!ETH 6mx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%79.5}%CONTINUE%
+ItemDisplay[!ETH hxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%26.5}%CONTINUE%
+ItemDisplay[!ETH 8hx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62.5}%CONTINUE%
+ItemDisplay[!ETH 6hx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%86}%CONTINUE%
+ItemDisplay[!ETH rxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13.5}%CONTINUE%
+ItemDisplay[!ETH 8rx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%36}%CONTINUE%
+ItemDisplay[!ETH 6rx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%54.5}%CONTINUE%
+// Non Eth Staffs
+ItemDisplay[!ETH sst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%3}%CONTINUE%
+ItemDisplay[!ETH 8ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%19.5}%CONTINUE%
+ItemDisplay[!ETH 6ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%96}%CONTINUE%
+ItemDisplay[!ETH lst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%5}%CONTINUE%
+ItemDisplay[!ETH 8ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%25}%CONTINUE%
+ItemDisplay[!ETH 6ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%114}%CONTINUE%
+ItemDisplay[!ETH cst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%8}%CONTINUE%
+ItemDisplay[!ETH 8cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%30.5}%CONTINUE%
+ItemDisplay[!ETH 6cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108}%CONTINUE%
+ItemDisplay[!ETH bst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9.5}%CONTINUE%
+ItemDisplay[!ETH 8bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34.5}%CONTINUE%
+ItemDisplay[!ETH 6bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%108}%CONTINUE%
+ItemDisplay[!ETH wst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%20}%CONTINUE%
+ItemDisplay[!ETH 8ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%59.5}%CONTINUE%
+ItemDisplay[!ETH 6ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%114}%CONTINUE%
+// Non Eth Scepters
+ItemDisplay[!ETH scp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%8.5}%CONTINUE%
+ItemDisplay[!ETH 9sc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%26.5}%CONTINUE%
+ItemDisplay[!ETH 7sc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%57.5}%CONTINUE%
+ItemDisplay[!ETH gsc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13}%CONTINUE%
+ItemDisplay[!ETH 9qs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%36}%CONTINUE%
+ItemDisplay[!ETH 7qs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62}%CONTINUE%
+ItemDisplay[!ETH wsp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15.5}%CONTINUE%
+ItemDisplay[!ETH 9ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35}%CONTINUE%
+ItemDisplay[!ETH 7ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%50}%CONTINUE%
+// Non Eth Assassin Claws
+ItemDisplay[!ETH ktr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6.5}%CONTINUE%
+ItemDisplay[!ETH 9ar]: %NAME%{%NAME%, %CORAL%avg:%WHITE%25}%CONTINUE%
+ItemDisplay[!ETH 7ar]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62.5}%CONTINUE%
+ItemDisplay[!ETH wrb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%8}%CONTINUE%
+ItemDisplay[!ETH 9wb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%33}%CONTINUE%
+ItemDisplay[!ETH 7wb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%54.5}%CONTINUE%
+ItemDisplay[!ETH axf]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10}%CONTINUE%
+ItemDisplay[!ETH 9xf]: %NAME%{%NAME%, %CORAL%avg:%WHITE%32.5}%CONTINUE%
+ItemDisplay[!ETH 7xf]: %NAME%{%NAME%, %CORAL%avg:%WHITE%66.5}%CONTINUE%
+ItemDisplay[!ETH ces]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12.5}%CONTINUE%
+ItemDisplay[!ETH 9cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%34.5}%CONTINUE%
+ItemDisplay[!ETH 7cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%49}%CONTINUE%
+ItemDisplay[!ETH clw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12.5}%CONTINUE%
+ItemDisplay[!ETH 9lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%38}%CONTINUE%
+ItemDisplay[!ETH 7lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%51.5}%CONTINUE%
+ItemDisplay[!ETH btl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13}%CONTINUE%
+ItemDisplay[!ETH 9tw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35}%CONTINUE%
+ItemDisplay[!ETH 7tw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%46.5}%CONTINUE%
+ItemDisplay[!ETH skr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14.5}%CONTINUE%
+ItemDisplay[!ETH 9qr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%43}%CONTINUE%
+ItemDisplay[!ETH 7qr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62.5}%CONTINUE%
+// Non Eth Amazon Weapons
+ItemDisplay[!ETH am1]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11}%CONTINUE%
+ItemDisplay[!ETH am6]: %NAME%{%NAME%, %CORAL%avg:%WHITE%28.5}%CONTINUE%
+ItemDisplay[!ETH amb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%52.5}%CONTINUE%
+ItemDisplay[!ETH am2]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15.5}%CONTINUE%
+ItemDisplay[!ETH am7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%37.5}%CONTINUE%
+ItemDisplay[!ETH amc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62}%CONTINUE%
+ItemDisplay[!ETH am3]: %NAME%{%NAME%, %CORAL%avg:%WHITE%23}%CONTINUE%
+ItemDisplay[!ETH am8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%61.5}%CONTINUE%
+ItemDisplay[!ETH amd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%97.5}%CONTINUE%
+ItemDisplay[!ETH am4]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[!ETH am9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%100}%CONTINUE%
+ItemDisplay[!ETH ame]: %NAME%{%NAME%, %CORAL%avg:%WHITE%114.5}%CONTINUE%
+ItemDisplay[!ETH am5]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%14, %CORAL%1h:%WHITE%11}%CONTINUE%
+ItemDisplay[!ETH ama]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%47, %CORAL%1h:%WHITE%38.5}%CONTINUE%
+ItemDisplay[!ETH amf]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%63.5, %CORAL%1h:%WHITE%53}%CONTINUE%
+
+// Eth Axes
+ItemDisplay[ETH hax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%5}%CONTINUE%
+ItemDisplay[ETH 9ha]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27.5}%CONTINUE%
+ItemDisplay[ETH 7ha]: %NAME%{%NAME%, %CORAL%avg:%WHITE%74}%CONTINUE%
+ItemDisplay[ETH axe]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9}%CONTINUE%
+ItemDisplay[ETH 9ax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%37.5}%CONTINUE%
+ItemDisplay[ETH 7ax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%75.5}%CONTINUE%
+ItemDisplay[ETH 2ax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10}%CONTINUE%
+ItemDisplay[ETH 92a]: %NAME%{%NAME%, %CORAL%avg:%WHITE%44.5}%CONTINUE%
+ItemDisplay[ETH 72a]: %NAME%{%NAME%, %CORAL%avg:%WHITE%76.5}%CONTINUE%
+ItemDisplay[ETH mpi]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10.5}%CONTINUE%
+ItemDisplay[ETH 9mp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 7mp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%61}%CONTINUE%
+ItemDisplay[ETH wax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%20}%CONTINUE%
+ItemDisplay[ETH 9wa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%54}%CONTINUE%
+ItemDisplay[ETH 7wa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%73.5}%CONTINUE%
+ItemDisplay[ETH lax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11}%CONTINUE%
+ItemDisplay[ETH 9la]: %NAME%{%NAME%, %CORAL%avg:%WHITE%50}%CONTINUE%
+ItemDisplay[ETH 7la]: %NAME%{%NAME%, %CORAL%avg:%WHITE%115}%CONTINUE%
+ItemDisplay[ETH bax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%17}%CONTINUE%
+ItemDisplay[ETH 9ba]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62}%CONTINUE%
+ItemDisplay[ETH 7ba]: %NAME%{%NAME%, %CORAL%avg:%WHITE%134.5}%CONTINUE%
+ItemDisplay[ETH btx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27.5}%CONTINUE%
+ItemDisplay[ETH 9bt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%83}%CONTINUE%
+ItemDisplay[ETH 7bt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%144}%CONTINUE%
+ItemDisplay[ETH gax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%23.5}%CONTINUE%
+ItemDisplay[ETH 9ga]: %NAME%{%NAME%, %CORAL%avg:%WHITE%76.5}%CONTINUE%
+ItemDisplay[ETH 7ga]: %NAME%{%NAME%, %CORAL%avg:%WHITE%119.5}%CONTINUE%
+ItemDisplay[ETH gix]: %NAME%{%NAME%, %CORAL%avg:%WHITE%41}%CONTINUE%
+ItemDisplay[ETH 9gi]: %NAME%{%NAME%, %CORAL%avg:%WHITE%114.5}%CONTINUE%
+ItemDisplay[ETH 7gi]: %NAME%{%NAME%, %CORAL%avg:%WHITE%143}%CONTINUE%
+// Eth Clubs
+ItemDisplay[ETH clb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4}%CONTINUE%
+ItemDisplay[ETH 9cl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%24.5}%CONTINUE%
+ItemDisplay[ETH 7cl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%61}%CONTINUE%
+ItemDisplay[ETH spc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[ETH 9sp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27}%CONTINUE%
+ItemDisplay[ETH 7sp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%59}%CONTINUE%
+// Eth Maces
+ItemDisplay[ETH mac]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[ETH 9ma]: %NAME%{%NAME%, %CORAL%avg:%WHITE%33.5}%CONTINUE%
+ItemDisplay[ETH 7ma]: %NAME%{%NAME%, %CORAL%avg:%WHITE%76}%CONTINUE%
+ItemDisplay[ETH mst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[ETH 9mt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%45}%CONTINUE%
+ItemDisplay[ETH 7mt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH fla]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15.5}%CONTINUE%
+ItemDisplay[ETH 9fl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42}%CONTINUE%
+ItemDisplay[ETH 7fl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%71}%CONTINUE%
+// Eth Hammers
+ItemDisplay[ETH whm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%33.5}%CONTINUE%
+ItemDisplay[ETH 9wh]: %NAME%{%NAME%, %CORAL%avg:%WHITE%61.5}%CONTINUE%
+ItemDisplay[ETH 7wh]: %NAME%{%NAME%, %CORAL%avg:%WHITE%86.5}%CONTINUE%
+ItemDisplay[ETH mau]: %NAME%{%NAME%, %CORAL%avg:%WHITE%45}%CONTINUE%
+ItemDisplay[ETH 9m9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%112.5}%CONTINUE%
+ItemDisplay[ETH 7m7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%142.5}%CONTINUE%
+ItemDisplay[ETH gma]: %NAME%{%NAME%, %CORAL%avg:%WHITE%59.5}%CONTINUE%
+ItemDisplay[ETH 9gm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%129}%CONTINUE%
+ItemDisplay[ETH 7gm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%165}%CONTINUE%
+// Eth Swords
+ItemDisplay[ETH ssd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%5}%CONTINUE%
+ItemDisplay[ETH 9ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%27.5}%CONTINUE%
+ItemDisplay[ETH 7ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%70}%CONTINUE%
+ItemDisplay[ETH scm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4.5}%CONTINUE%
+ItemDisplay[ETH 9sm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%26}%CONTINUE%
+ItemDisplay[ETH 7sm]: %NAME%{%NAME%, %CORAL%avg:%WHITE%56}%CONTINUE%
+ItemDisplay[ETH sbr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6.5}%CONTINUE%
+ItemDisplay[ETH 9sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%24.5}%CONTINUE%
+ItemDisplay[ETH 7sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%48.5}%CONTINUE%
+ItemDisplay[ETH flc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15}%CONTINUE%
+ItemDisplay[ETH 9fc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%45}%CONTINUE%
+ItemDisplay[ETH 7fc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%74}%CONTINUE%
+ItemDisplay[ETH crs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11.5}%CONTINUE%
+ItemDisplay[ETH 9cr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 7cr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%51.5}%CONTINUE%
+ItemDisplay[ETH bsd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12.5}%CONTINUE%
+ItemDisplay[ETH 9bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%44}%CONTINUE%
+ItemDisplay[ETH 7bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%69.5}%CONTINUE%
+ItemDisplay[ETH lsd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13}%CONTINUE%
+ItemDisplay[ETH 9ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%46}%CONTINUE%
+ItemDisplay[ETH 7ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%63.5}%CONTINUE%
+ItemDisplay[ETH wsd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%17.5}%CONTINUE%
+ItemDisplay[ETH 9wd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%49}%CONTINUE%
+ItemDisplay[ETH 7wd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%70}%CONTINUE%
+ItemDisplay[ETH 2hs]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%6, %CORAL%2h:%WHITE%15}%CONTINUE%
+ItemDisplay[ETH 92h]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%24.5, %CORAL%2h:%WHITE%56}%CONTINUE%
+ItemDisplay[ETH 72h]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%61, %CORAL%2h:%WHITE%112.5}%CONTINUE%
+ItemDisplay[ETH clm]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%10, %CORAL%2h:%WHITE%26}%CONTINUE%
+ItemDisplay[ETH 9cm]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%37.5, %CORAL%2h:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH 7cm]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%66, %CORAL%2h:%WHITE%127.5}%CONTINUE%
+ItemDisplay[ETH gis]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%11.5, %CORAL%2h:%WHITE%22.5}%CONTINUE%
+ItemDisplay[ETH 9gs]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%41, %CORAL%2h:%WHITE%69}%CONTINUE%
+ItemDisplay[ETH 7gs]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%70, %CORAL%2h:%WHITE%135}%CONTINUE%
+ItemDisplay[ETH bsw]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%15.5, %CORAL%2h:%WHITE%30}%CONTINUE%
+ItemDisplay[ETH 9b9]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%49.5, %CORAL%2h:%WHITE%89.5}%CONTINUE%
+ItemDisplay[ETH 7b7]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%61, %CORAL%2h:%WHITE%120}%CONTINUE%
+ItemDisplay[ETH flb]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%14, %CORAL%2h:%WHITE%23.5}%CONTINUE%
+ItemDisplay[ETH 9fb]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%49, %CORAL%2h:%WHITE%72.5}%CONTINUE%
+ItemDisplay[ETH 7fb]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%75, %CORAL%2h:%WHITE%141.5}%CONTINUE%
+ItemDisplay[ETH gsd]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%20, %CORAL%2h:%WHITE%41}%CONTINUE%
+ItemDisplay[ETH 9gd]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%53.5, %CORAL%2h:%WHITE%114}%CONTINUE%
+ItemDisplay[ETH 7gd]: %NAME%{%NAME%, %CORAL%avg 1h:%WHITE%69, %CORAL%2h:%WHITE%135}%CONTINUE%
+// Eth Daggers
+ItemDisplay[ETH dgr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%3}%CONTINUE%
+ItemDisplay[ETH 9dg]: %NAME%{%NAME%, %CORAL%avg:%WHITE%21}%CONTINUE%
+ItemDisplay[ETH 7dg]: %NAME%{%NAME%, %CORAL%avg:%WHITE%52.5}%CONTINUE%
+ItemDisplay[ETH dir]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6.5}%CONTINUE%
+ItemDisplay[ETH 9di]: %NAME%{%NAME%, %CORAL%avg:%WHITE%32}%CONTINUE%
+ItemDisplay[ETH 7di]: %NAME%{%NAME%, %CORAL%avg:%WHITE%64}%CONTINUE%
+ItemDisplay[ETH kri]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[ETH 9kr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%37.5}%CONTINUE%
+ItemDisplay[ETH 7kr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%51.5}%CONTINUE%
+ItemDisplay[ETH bld]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11.5}%CONTINUE%
+ItemDisplay[ETH 9bl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%50}%CONTINUE%
+ItemDisplay[ETH 7bl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62.5}%CONTINUE%
+// Eth Throwing Weapons
+ItemDisplay[ETH tkf]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%5, %CORAL%1h:%WHITE%2.5}%CONTINUE%
+ItemDisplay[ETH 9tk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%27, %CORAL%1h:%WHITE%20}%CONTINUE%
+ItemDisplay[ETH 7tk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%47.5, %CORAL%1h:%WHITE%47.5}%CONTINUE%
+ItemDisplay[ETH tax]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%9, %CORAL%1h:%WHITE%6.5}%CONTINUE%
+ItemDisplay[ETH 9ta]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%38.5, %CORAL%1h:%WHITE%24}%CONTINUE%
+ItemDisplay[ETH 7ta]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%50, %CORAL%1h:%WHITE%50}%CONTINUE%
+ItemDisplay[ETH bkf]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%10, %CORAL%1h:%WHITE%5.5}%CONTINUE%
+ItemDisplay[ETH 9bk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%31, %CORAL%1h:%WHITE%23.5}%CONTINUE%
+ItemDisplay[ETH 7bk]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%38, %CORAL%1h:%WHITE%38}%CONTINUE%
+ItemDisplay[ETH bal]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%16.5, %CORAL%1h:%WHITE%8.5}%CONTINUE%
+ItemDisplay[ETH 9b8]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%36, %CORAL%1h:%WHITE%32.5}%CONTINUE%
+ItemDisplay[ETH 7b8]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%41.5, %CORAL%1h:%WHITE%41.5}%CONTINUE%
+// Eth Javelins
+ItemDisplay[ETH jav]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%9.5, %CORAL%1h:%WHITE%3}%CONTINUE%
+ItemDisplay[ETH 9ja]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%36, %CORAL%1h:%WHITE%19}%CONTINUE%
+ItemDisplay[ETH 7ja]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%51.5, %CORAL%1h:%WHITE%47.5}%CONTINUE%
+ItemDisplay[ETH pil]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%16.5, %CORAL%1h:%WHITE%7.5}%CONTINUE%
+ItemDisplay[ETH 9pi]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%42.5, %CORAL%1h:%WHITE%27.5}%CONTINUE%
+ItemDisplay[ETH 7pi]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%59, %CORAL%1h:%WHITE%48.5}%CONTINUE%
+ItemDisplay[ETH ssp]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%19.5, %CORAL%1h:%WHITE%8.5}%CONTINUE%
+ItemDisplay[ETH 9s9]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%57, %CORAL%1h:%WHITE%31}%CONTINUE%
+ItemDisplay[ETH 7s7]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%63, %CORAL%1h:%WHITE%59}%CONTINUE%
+ItemDisplay[ETH glv]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%23.5, %CORAL%1h:%WHITE%12.5}%CONTINUE%
+ItemDisplay[ETH 9gl]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%60, %CORAL%1h:%WHITE%40}%CONTINUE%
+ItemDisplay[ETH 7gl]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%67, %CORAL%1h:%WHITE%49}%CONTINUE%
+ItemDisplay[ETH tsp]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%26, %CORAL%1h:%WHITE%11.5}%CONTINUE%
+ItemDisplay[ETH 9ts]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%50.5, %CORAL%1h:%WHITE%37.5}%CONTINUE%
+ItemDisplay[ETH 7ts]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%54, %CORAL%1h:%WHITE%38}%CONTINUE%
+// Eth Spears
+ItemDisplay[ETH spr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10.5}%CONTINUE%
+ItemDisplay[ETH 9sr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 7sr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%120}%CONTINUE%
+ItemDisplay[ETH tri]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[ETH 9tr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%47.5}%CONTINUE%
+ItemDisplay[ETH 7tr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%135}%CONTINUE%
+ItemDisplay[ETH brn]: %NAME%{%NAME%, %CORAL%avg:%WHITE%14}%CONTINUE%
+ItemDisplay[ETH 9br]: %NAME%{%NAME%, %CORAL%avg:%WHITE%50}%CONTINUE%
+ItemDisplay[ETH 7br]: %NAME%{%NAME%, %CORAL%avg:%WHITE%104}%CONTINUE%
+ItemDisplay[ETH spt]: %NAME%{%NAME%, %CORAL%avg:%WHITE%23}%CONTINUE%
+ItemDisplay[ETH 9st]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH 7st]: %NAME%{%NAME%, %CORAL%avg:%WHITE%135}%CONTINUE%
+ItemDisplay[ETH pik]: %NAME%{%NAME%, %CORAL%avg:%WHITE%47.5}%CONTINUE%
+ItemDisplay[ETH 9p9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%121.5}%CONTINUE%
+ItemDisplay[ETH 7p7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%164}%CONTINUE%
+// Eth Polearms
+ItemDisplay[ETH bar]: %NAME%{%NAME%, %CORAL%avg:%WHITE%17}%CONTINUE%
+ItemDisplay[ETH 9b7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%56.5}%CONTINUE%
+ItemDisplay[ETH 7o7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%134}%CONTINUE%
+ItemDisplay[ETH vou]: %NAME%{%NAME%, %CORAL%avg:%WHITE%16}%CONTINUE%
+ItemDisplay[ETH 9vo]: %NAME%{%NAME%, %CORAL%avg:%WHITE%60}%CONTINUE%
+ItemDisplay[ETH 7vo]: %NAME%{%NAME%, %CORAL%avg:%WHITE%141}%CONTINUE%
+ItemDisplay[ETH scy]: %NAME%{%NAME%, %CORAL%avg:%WHITE%17.5}%CONTINUE%
+ItemDisplay[ETH 9s8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%55}%CONTINUE%
+ItemDisplay[ETH 7s8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%119}%CONTINUE%
+ItemDisplay[ETH pax]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35}%CONTINUE%
+ItemDisplay[ETH 9pa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%97.5}%CONTINUE%
+ItemDisplay[ETH 7pa]: %NAME%{%NAME%, %CORAL%avg:%WHITE%142.5}%CONTINUE%
+ItemDisplay[ETH hal]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35}%CONTINUE%
+ItemDisplay[ETH 9h9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%87}%CONTINUE%
+ItemDisplay[ETH 7h7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%135}%CONTINUE%
+ItemDisplay[ETH wsc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%31.5}%CONTINUE%
+ItemDisplay[ETH 9wc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%90}%CONTINUE%
+ItemDisplay[ETH 7wc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%119.5}%CONTINUE%
+// Eth Bows
+ItemDisplay[ETH sbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%3}%CONTINUE%
+ItemDisplay[ETH 8sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%20}%CONTINUE%
+ItemDisplay[ETH 6sb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%66}%CONTINUE%
+ItemDisplay[ETH hbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%4.5}%CONTINUE%
+ItemDisplay[ETH 8hb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%24}%CONTINUE%
+ItemDisplay[ETH 6hb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%56}%CONTINUE%
+ItemDisplay[ETH lbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%8.5}%CONTINUE%
+ItemDisplay[ETH 8lb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%31}%CONTINUE%
+ItemDisplay[ETH 6lb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%67}%CONTINUE%
+ItemDisplay[ETH cbw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[ETH 8cb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%30}%CONTINUE%
+ItemDisplay[ETH 6cb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%57.5}%CONTINUE%
+ItemDisplay[ETH sbb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11}%CONTINUE%
+ItemDisplay[ETH 8s8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35}%CONTINUE%
+ItemDisplay[ETH 6s7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%66}%CONTINUE%
+ItemDisplay[ETH lbb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15}%CONTINUE%
+ItemDisplay[ETH 8l8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 6l7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%70.5}%CONTINUE%
+ItemDisplay[ETH swb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%12}%CONTINUE%
+ItemDisplay[ETH 8sw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%40}%CONTINUE%
+ItemDisplay[ETH 6sw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%65}%CONTINUE%
+ItemDisplay[ETH lwb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15.5}%CONTINUE%
+ItemDisplay[ETH 8lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%44}%CONTINUE%
+ItemDisplay[ETH 6lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%71}%CONTINUE%
+// Eth Corssbows
+ItemDisplay[ETH lxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11.5}%CONTINUE%
+ItemDisplay[ETH 8lx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%36}%CONTINUE%
+ItemDisplay[ETH 6lx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%86.5}%CONTINUE%
+ItemDisplay[ETH mxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%18}%CONTINUE%
+ItemDisplay[ETH 8mx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%55}%CONTINUE%
+ItemDisplay[ETH 6mx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%99}%CONTINUE%
+ItemDisplay[ETH hxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%32.5}%CONTINUE%
+ItemDisplay[ETH 8hx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH 6hx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%106.5}%CONTINUE%
+ItemDisplay[ETH rxb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%16}%CONTINUE%
+ItemDisplay[ETH 8rx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%44.5}%CONTINUE%
+ItemDisplay[ETH 6rx]: %NAME%{%NAME%, %CORAL%avg:%WHITE%67.5}%CONTINUE%
+// Eth Staffs
+ItemDisplay[ETH sst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%3}%CONTINUE%
+ItemDisplay[ETH 8ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%23.5}%CONTINUE%
+ItemDisplay[ETH 6ss]: %NAME%{%NAME%, %CORAL%avg:%WHITE%119.5}%CONTINUE%
+ItemDisplay[ETH lst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%6}%CONTINUE%
+ItemDisplay[ETH 8ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%31}%CONTINUE%
+ItemDisplay[ETH 6ls]: %NAME%{%NAME%, %CORAL%avg:%WHITE%142}%CONTINUE%
+ItemDisplay[ETH cst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10}%CONTINUE%
+ItemDisplay[ETH 8cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%37.5}%CONTINUE%
+ItemDisplay[ETH 6cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%135}%CONTINUE%
+ItemDisplay[ETH bst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11}%CONTINUE%
+ItemDisplay[ETH 8bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 6bs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%134}%CONTINUE%
+ItemDisplay[ETH wst]: %NAME%{%NAME%, %CORAL%avg:%WHITE%25}%CONTINUE%
+ItemDisplay[ETH 8ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%74}%CONTINUE%
+ItemDisplay[ETH 6ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%142.5}%CONTINUE%
+// Eth Scepters
+ItemDisplay[ETH scp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%10}%CONTINUE%
+ItemDisplay[ETH 9sc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%32.5}%CONTINUE%
+ItemDisplay[ETH 7sc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%71}%CONTINUE%
+ItemDisplay[ETH gsc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%16}%CONTINUE%
+ItemDisplay[ETH 9qs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%45}%CONTINUE%
+ItemDisplay[ETH 7qs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH wsp]: %NAME%{%NAME%, %CORAL%avg:%WHITE%19}%CONTINUE%
+ItemDisplay[ETH 9ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%43.5}%CONTINUE%
+ItemDisplay[ETH 7ws]: %NAME%{%NAME%, %CORAL%avg:%WHITE%62}%CONTINUE%
+// Eth Assassin Claws
+ItemDisplay[ETH ktr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%7.5}%CONTINUE%
+ItemDisplay[ETH 9ar]: %NAME%{%NAME%, %CORAL%avg:%WHITE%30.5}%CONTINUE%
+ItemDisplay[ETH 7ar]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH wrb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%9.5}%CONTINUE%
+ItemDisplay[ETH 9wb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%41}%CONTINUE%
+ItemDisplay[ETH 7wb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%67.5}%CONTINUE%
+ItemDisplay[ETH axf]: %NAME%{%NAME%, %CORAL%avg:%WHITE%11.5}%CONTINUE%
+ItemDisplay[ETH 9xf]: %NAME%{%NAME%, %CORAL%avg:%WHITE%40}%CONTINUE%
+ItemDisplay[ETH 7xf]: %NAME%{%NAME%, %CORAL%avg:%WHITE%82.5}%CONTINUE%
+ItemDisplay[ETH ces]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15}%CONTINUE%
+ItemDisplay[ETH 9cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 7cs]: %NAME%{%NAME%, %CORAL%avg:%WHITE%60}%CONTINUE%
+ItemDisplay[ETH clw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15}%CONTINUE%
+ItemDisplay[ETH 9lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%46.5}%CONTINUE%
+ItemDisplay[ETH 7lw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%63.5}%CONTINUE%
+ItemDisplay[ETH btl]: %NAME%{%NAME%, %CORAL%avg:%WHITE%15.5}%CONTINUE%
+ItemDisplay[ETH 9tw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%42.5}%CONTINUE%
+ItemDisplay[ETH 7tw]: %NAME%{%NAME%, %CORAL%avg:%WHITE%57.5}%CONTINUE%
+ItemDisplay[ETH skr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%17.5}%CONTINUE%
+ItemDisplay[ETH 9qr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%53.5}%CONTINUE%
+ItemDisplay[ETH 7qr]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+// Eth Amazon Weapons
+ItemDisplay[ETH am1]: %NAME%{%NAME%, %CORAL%avg:%WHITE%13.5}%CONTINUE%
+ItemDisplay[ETH am6]: %NAME%{%NAME%, %CORAL%avg:%WHITE%35}%CONTINUE%
+ItemDisplay[ETH amb]: %NAME%{%NAME%, %CORAL%avg:%WHITE%65}%CONTINUE%
+ItemDisplay[ETH am2]: %NAME%{%NAME%, %CORAL%avg:%WHITE%18.5}%CONTINUE%
+ItemDisplay[ETH am7]: %NAME%{%NAME%, %CORAL%avg:%WHITE%46}%CONTINUE%
+ItemDisplay[ETH amc]: %NAME%{%NAME%, %CORAL%avg:%WHITE%77.5}%CONTINUE%
+ItemDisplay[ETH am3]: %NAME%{%NAME%, %CORAL%avg:%WHITE%28.5}%CONTINUE%
+ItemDisplay[ETH am8]: %NAME%{%NAME%, %CORAL%avg:%WHITE%76}%CONTINUE%
+ItemDisplay[ETH amd]: %NAME%{%NAME%, %CORAL%avg:%WHITE%121.5}%CONTINUE%
+ItemDisplay[ETH am4]: %NAME%{%NAME%, %CORAL%avg:%WHITE%52.5}%CONTINUE%
+ItemDisplay[ETH am9]: %NAME%{%NAME%, %CORAL%avg:%WHITE%125}%CONTINUE%
+ItemDisplay[ETH ame]: %NAME%{%NAME%, %CORAL%avg:%WHITE%142.5}%CONTINUE%
+ItemDisplay[ETH am5]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%17, %CORAL%1h:%WHITE%13.5}%CONTINUE%
+ItemDisplay[ETH ama]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%57.5, %CORAL%1h:%WHITE%47.5}%CONTINUE%
+ItemDisplay[ETH amf]: %NAME%{%NAME%, %CORAL%avg th:%WHITE%79, %CORAL%1h:%WHITE%66}%CONTINUE%
+
+// WEAPON'S SPEED/RANGE
+ItemDisplay[WEAPON !(BOW OR XBOW OR WAND OR SOR)]: %NAME%{%NAME%, %CORAL%sp:%WHITE%%WPNSPD%, %CORAL%r:%WHITE%%RANGE%}%CONTINUE%
+ItemDisplay[WEAPON (BOW OR XBOW)]: %NAME%{%NAME%, %CORAL%sp:%WHITE%%WPNSPD%}%CONTINUE%
+
+// ITEM'S ILVL
+ItemDisplay[(WEAPON OR ARMOR OR amu OR rin OR jew) OR ((MAG (cm1 OR cm2 OR cm3)))]: %NAME%{%NAME%%CL%%WHITE%Item Level: %ILVL%}%CONTINUE%
+
+// SET BOOT'S KICK DAMAGE (INFO)
+ItemDisplay[SET lbt ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 3 to 8}%CONTINUE%
+ItemDisplay[SET vbt ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 4 to 12}%CONTINUE%
+ItemDisplay[SET mbt ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 6 to 14}%CONTINUE%
+ItemDisplay[SET tbt ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 8 to 18}%CONTINUE%
+ItemDisplay[SET hbt ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 10 to 20}%CONTINUE%
+ItemDisplay[SET xlb ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 30 to 64}%CONTINUE%
+ItemDisplay[SET xvb ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 32 to 72}%CONTINUE%
+ItemDisplay[SET xmb ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 35 to 78}%CONTINUE%
+ItemDisplay[SET xtb ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 42 to 84}%CONTINUE%
+ItemDisplay[SET xhb ID]: %NAME%{%NAME%%CL%%WHITE%kick damage: 45 to 90}%CONTINUE%
+ItemDisplay[SET ulb ID]: %NAME%{%WHITE%kick damage: 75 to 100}%CONTINUE%
+ItemDisplay[SET uvb ID]: %NAME%{%WHITE%kick damage: 70 to 110}%CONTINUE%
+ItemDisplay[SET umb ID]: %NAME%{%WHITE%kick damage: 80 to 125}%CONTINUE%
+ItemDisplay[SET utb ID]: %NAME%{%WHITE%kick damage: 69 to 147}%CONTINUE%
+ItemDisplay[SET uhb ID]: %NAME%{%WHITE%kick damage: 83 to 155}%CONTINUE%
+
+// SET BOUNSE'S
+ItemDisplay[SET ID STASH (amu OR rin)]: %NAME%{%NL%%NAME%}%CONTINUE%
+ItemDisplay[FILTLVL=1 SET ID STASH ((STAT486=0 (NORM OR EXC) !(SOR OR WAND)) OR (SOCK=0 STAT360=0 STAT486=0 (HELM OR CIRC OR CHEST OR SHIELD OR WEAPON)) OR (WEAPON !(WAND OR SOR))) (rin OR amu OR cap OR skp OR hlm OR fhl OR msk OR bhm OR ghm OR crn OR xap OR xhl OR xsk OR xh9 OR xhm OR xrn OR uh9 OR uhm OR urn OR qui OR lea OR stu OR rng OR chn OR brs OR spl OR gth OR ltp OR ful OR aar OR xcl OR xrs OR xul OR xar OR uui OR ucl OR upl OR ult OR uld OR uth OR uul OR uar OR buc OR sml OR lrg OR kit OR tow OR gts OR xml OR uts OR lgl OR vgl OR mgl OR tgl OR hgl OR xvg OR xmg OR xtg OR xhg OR ulg OR lbt OR vbt OR mbt OR tbt OR hbt OR xlb OR xmb OR xtb OR xhb OR zmb OR ztb OR zhb OR lbl OR vbl OR mbl OR tbl OR hbl OR zvb OR zmb OR ztb OR zhb OR umc OR utc OR ci0 OR ci3 OR dr8 OR ba5 OR paf OR ne9 OR 2ax OR mpi OR 9mt OR 7ma OR 7m7 OR sbr OR bsd OR lsd OR wsd OR 7ls OR 7fb OR 7gd OR dgr OR 9vo OR lbb OR swb OR bst OR wst OR 6cs OR bwn OR gsc OR wsp OR 7ws OR 7qr OR oba OR amc)]:  %NAME%{%NL%%NAME%}%CONTINUE%    // Adds new line for items that already have something in their description (items with description lines for upgrade recipes, max corruptable sockets, or weapon speed)  ...the huge list of item codes is a list of all set item bases - this rule currently only applies to bases which have set items by default, since set bonuses aren't currently shown for upgraded versions
+// ARCTIC'S SET
+ItemDisplay[SET ID STASH ((qui !STAT122>199) OR vbl OR (tgl STAT118=0 STAT153=0) OR swb)]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%cbf, +30pie, 6-14cold%CL%%GRAY%2:%GOLD%5str, %GRAY%3:%GOLD%50life %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH qui !STAT122>199]: %NAME%{%NL%%GRAY%2:%GREEN%3-297def 3plvl, %GRAY%3:%GREEN%15cres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH vbl]: %NAME%{%NL%%GRAY%2:%GREEN%40mf, %GRAY%3:%GREEN%10cres %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH tgl STAT118=0 STAT153=0]: %NAME%{%NL%%GRAY%2:%GREEN%50ar, 25pie, %GRAY%3:%GREEN%10dex %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH swb]: %NAME%{%NL%%GRAY%2:%GREEN%8-792ar 8plvl, %GRAY%3:%GREEN%20-30cold%NAME%}%CONTINUE%
+// HSARUS' SET
+ItemDisplay[SET ID STASH ((mbt STAT39>24) OR (mbl LIFE=20) OR buc)]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%cbf, 5max, 25lres%CL%%GRAY%2:%GOLD%9atd%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH mbt STAT39>24]: %NAME%{%NL%%GRAY%2:%GREEN%10-990ar 10plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH mbl LIFE=20]: %NAME%{%NL%%GRAY%2:%GREEN%2-247def 2.5plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH buc]: %NAME%{%NL%%GRAY%2:%GREEN%2-247def 2.5plvl%NAME%}%CONTINUE%
+// BERSERKER'S SET
+ItemDisplay[SET ID STASH (hlm OR (spl CLSK4=1) OR 2ax)]: %NAME%{%CL%%NL%%GOLD%20frw, 75plr, 13-17psn%CL%%GRAY%full:%GOLD%1bar, 75def,%CL%%GRAY%2:%GOLD%50life%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH hlm]: %NAME%{%NL%%GRAY%full:%GREEN%1bar%CL%%GRAY%2:%GREEN%8-792ar 8plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH spl CLSK4=1]: %NAME%{%NL%%GRAY%full:%GREEN%3-346max 3.5plvl%CL%%GRAY%2:%GREEN%4-445def 4.5plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 2ax]: %NAME%{%NL%%GRAY%full:%GREEN%1bar%CL%%GRAY%2:%GREEN%50ed%NAME%}%CONTINUE%
+// CLEGLAW'S SET
+ItemDisplay[SET ID STASH ((mgl !FCR>19) OR (sml STAT110>74) OR (lsd !(STAT152>0 STAT121>317)))]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%20ias, 35cb, 6ml, 50def%CL%%GRAY%2:%GOLD%50def %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH mgl !FCR>19]: %NAME%{%NL%%GRAY%2:%GREEN%10-990ar 10plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH sml STAT110>74]: %NAME%{%NL%%GRAY%2:%GREEN%15ares%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lsd !(STAT152>0 STAT121>317)]: %NAME%{%NL%%GRAY%2:%GREEN%1-123max 1.25plvl%NAME%}%CONTINUE%
+// INFERNAL'S SET
+ItemDisplay[SET ID STASH ((cap RES>9 DTM>19 STAT214=0 !(ALLSK>0 STAT153>0 DTM>34 STAT78>9)) OR (tbl LIFE=20) OR dgr)]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%1nec, 20%ar, 6ml, 12psn%CL%%GRAY%2:%GOLD%20fhr, 3mpk%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH cap RES>9 DTM>19 STAT214=0]: %NAME%{%NL%%GRAY%2:%GREEN%4-396def 4plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH tbl LIFE=20]: %NAME%{%NL%%GRAY%full:%GREEN%cbf%CL%%GRAY%2:%GREEN%45pres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH dgr]: %NAME%{%NL%%GRAY%full:%GREEN%2pst%CL%%GRAY%2:%GREEN%10-990ar 10plvl%NAME%}%CONTINUE%
+// DEATH'S SET
+ItemDisplay[SET ID STASH (lbl OR (lgl !STAT39>29) OR wsd)]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%10min, 25ares, 40%ar %CL%%GRAY%2:%GOLD%8ll %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lbl]: %NAME%{%NL%%GRAY%2:%GREEN%15ares%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lgl !STAT39>29]: %NAME%{%NL%%GRAY%full:%GREEN%0-49max 0.5plvl%CL%%GRAY%2:%GREEN%30ias%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH wsd]: %NAME%{%NL%%GRAY%full:%GREEN%15%reanimate %CL%%GRAY%2:%GREEN%25-75cold %NAME%}%CONTINUE%
+// SIGON'S SET
+ItemDisplay[SET ID STASH ((ghm STAT136=0 !(STR>9 DEX>9 FHR>23 ALLSK>0)) OR (gth !STAT91<-59) OR (hbt !AR>89) OR (hbl LIFE=20) OR (hgl !DEX>19) OR tow)]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%12fres, 7pdr, 20mana, 12atd%CL%%CL%%GRAY%2:%GOLD%10ll, %GRAY%3:%GOLD%100def%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ghm STAT136=0 !(STR>9 DEX>9)]: %NAME%{%NL%%GRAY%2:%GREEN%8-792ar 8plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH gth !STAT91<-59]: %NAME%{%NL%%GRAY%2:%GREEN%20atd%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH hbt !AR>89]: %NAME%{%NL%%GRAY%2:%GREEN%50ar, %GRAY%3:%GREEN%50mf%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH hbl LIFE=20]: %NAME%{%NL%%GRAY%2:%GREEN%2-198def 2plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH hgl !DEX>19]: %NAME%{%NL%%GRAY%2:%GREEN%30ias%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH tow]: %NAME%{%NAME%}%CONTINUE%
+// ISENHART'S SET
+ItemDisplay[SET ID STASH ((fhl DEX>5 !(REPLIFE>14 ALLSK>0 STAT39>14 STAT41>14)) OR (brs !STAT32>199) OR (gts STAT238>0) OR bsd)]: %NAME%{%CL%%NL%%GOLD%35%ar, 30ibc%CL%%GRAY%full:%GOLD%20frw, 5ll, 10ares,%CL%%CL%%GRAY%2:%GOLD%10str, %GRAY%3:%GOLD%10dex %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH fhl DEX>5 !(REPLIFE>14)]: %NAME%{%NL%%GRAY%3:%GREEN%1-99lres 1plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH brs !STAT32>199]: %NAME%{%NL%%GRAY%2:%GREEN%2-198def 2plvl, %GRAY%3:%GREEN%1-99cres 1plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH gts STAT238>0]: %NAME%{%NL%%GRAY%3:%GREEN%1-99fres 1plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH bsd]: %NAME%{%NL%%GRAY%2:%GREEN%5-495lig 5plvl%NAME%}%CONTINUE%
+// CIVERB'S SET
+ItemDisplay[SET ID STASH gsc]: %NAME%{%NL%%GRAY%full:%GOLD%15str, 25lres, 200und%CL%%GRAY%2:%GOLD%25fres%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH (lrg OR (amu STAT27=40))]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%15str, 25lres, 200und%CL%%GRAY%2:%GOLD%25fres%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lrg]: %NAME%{%NL%%GRAY%amu:%GREEN%22mana, %GRAY%wea:%GREEN%26pres%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH gsc]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu STAT27=40]: %NAME%{%NL%%GRAY%full:%GREEN%10%pdr %CL%%GRAY%2:%GREEN%25cres %NAME%}%CONTINUE%
+// CATHAN'S SET
+ItemDisplay[SET ID STASH ((msk !STAT60>5) OR chn OR bst OR (amu FHR>9 STAT41>19) OR (rin STAT60>5 STAT34>1))]: %NAME%{%CL%%NL%%GOLD%25ares, 20mana, 3mdr%CL%%GRAY%full:%GOLD%2trp, 10fcr, 60ar,%CL%%GRAY%2:%GOLD%15-20fire%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH msk !STAT60>5]: %NAME%{%NL%%GRAY%2:%GREEN%2-198def 2plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH chn]: %NAME%{%NL%%GRAY%2:%GREEN%atd1-99 1plvl, %GRAY%3:%GREEN%30fres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH bst]: %NAME%{%NL%%GRAY%full:%GREEN%40ias%CL%%GRAY%4:%GREEN%-35tdef %CL%%GRAY%2:%GREEN%50mana, %GRAY%3:%GREEN%10ares %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu FHR>9 STAT41>19]: %NAME%{%NL%%GRAY%2:%GREEN%50ar, %GRAY%3:%GREEN%25mf%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH rin STAT60>5 STAT34>1]: %NAME%{%NL%%GRAY%2:%GREEN%10str, %GRAY%4:%GREEN%10max%NAME%}%CONTINUE%
+// ANGELIC'S SET
+ItemDisplay[SET ID STASH (rng OR sbr OR (amu STAT89=3) OR (rin REPLIFE=6))]: %NAME%{%CL%%NL%%GOLD%40mf, 8rm%CL%%GRAY%full:%GOLD%cbf, 25ares,%CL%%GRAY%2:%GOLD%10dex, %GRAY%3:%GOLD%50mana %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH rng]: %NAME%{%NL%%GRAY%2:%GREEN%150def, %GRAY%3:%GREEN%50fres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH sbr]: %NAME%{%NL%%GRAY%full:%GREEN%10% lvl 1 foh striking%CL%%GRAY%2:%GREEN%75ed, %GRAY%3:%GREEN%30ias %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu STAT89=3]: %NAME%{%NL%%GRAY%2:%GREEN%75life, %GRAY%3:%GREEN%1all%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH rin REPLIFE=6]: %NAME%{%NL%%GRAY%2:%GREEN%12-1188ar 12plvl, %GRAY%3:%GREEN%50mf%NAME%}%CONTINUE%
+// VIDALA'S SET
+ItemDisplay[SET ID STASH (lea OR (tbt !STAT39>39) OR lbb OR (amu STAT156>29))]: %NAME%{%CL%%NL%%GOLD%30Pie, 15-20cold%CL%%GRAY%full:%GOLD%10str, fzt,%CL%%GRAY%2:%GOLD%75ar, %GRAY%3:%GOLD%15dex%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lea]: %NAME%{%NL%%GRAY%2:%GREEN%24fres, %GRAY%3:%GREEN%2-247def 2.5plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH tbt !STAT39>39]: %NAME%{%NL%%GRAY%2:%GREEN%8ares%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lbb]: %NAME%{%NL%%GRAY%full:%GREEN%2-198dex 2plvl%CL%%GRAY%2:%GREEN%8-792ar 8plvl, %GRAY%3:%GREEN%20ias%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu STAT156>29]: %NAME%{%NL%%GRAY%2:%GREEN%50mf%NAME%}%CONTINUE%
+// ARCANNA'S SET
+ItemDisplay[SET ID STASH (skp OR ltp OR wst OR (amu STAT27=20))]: %NAME%{%CL%%NL%%GOLD%5ml, 25mana%CL%%GRAY%full:%GOLD%1all, 30fcr,%CL%%GRAY%2:%GOLD%25mana, %GRAY%3:%GOLD%50life%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH skp]: %NAME%{%NL%%GRAY%2:%GREEN%3-297def 3plvl, %GRAY%3:%GREEN%25lres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ltp]: %NAME%{%NL%%GRAY%full:%GREEN%20rm%CL%%GRAY%2:%GREEN%100def, %GRAY%3:%GREEN%20ene %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH wst]: %NAME%{%NL%%GRAY%full:%GREEN%40ias%CL%%GRAY%2:%GREEN%75mana, %GRAY%3:%GREEN%20rm%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu STAT27=20]: %NAME%{%NL%%GRAY%2:%GREEN%50mf, %GRAY%3:%GREEN%30fres%NAME%}%CONTINUE%
+// IRATHA'S SET
+ItemDisplay[SET ID STASH ((crn STAT39>29 STAT41>29) OR (tbl !LIFE=20) OR (tgl STAT118>0) OR (amu STAT110>24))]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%2mres, 25ares, 15dex%CL%%GRAY%2:%GOLD%50def, %GRAY%3:%GOLD%20frw%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH crn STAT39>29 STAT41>29]: %NAME%{%NL%%GRAY%2:%GREEN%2-198def 2plvl, %GRAY%3:%GREEN%1ama%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH tbl !LIFE=20]: %NAME%{%NL%%GRAY%2:%GREEN%10dex, %GRAY%3:%GREEN%10max%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH tgl STAT118>0]: %NAME%{%NL%%GRAY%2:%GREEN%20ias%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu STAT110>24]: %NAME%{%NL%%GRAY%2:%GREEN%10ares, %GRAY%3:%GREEN%1ama%NAME%}%CONTINUE%
+// MILABREGA'S SET
+ItemDisplay[SET ID STASH ((crn LIFE>14 MANA>14 STAT55>34) OR (aar CLSK3=0 TABSK32=0) OR kit OR (wsp CLSK3=1))]: %NAME%{%CL%%NL%%GRAY%full:%GOLD%2pal, 10ml, 8ll, 15pres%CL%%GRAY%2:%GOLD%75ar, %GRAY%3:%GOLD%125ar%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH crn LIFE>14 MANA>14 STAT55>34]: %NAME%{%NL%%GRAY%2:%GREEN%40cres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH aar CLSK3=0 TABSK32=0]: %NAME%{%NL%%GRAY%3:%GREEN%14% lvl 5 fno Striking%CL%%GRAY%2:%GREEN%100edef %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH kit]: %NAME%{%NL%%GRAY%3:%GREEN%+50edef%CL%%GRAY%2:%GREEN%25% lvl 6 fno Struck%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH wsp CLSK3=1]: %NAME%{%NL%%GRAY%3:%GREEN%12% lvl 6 fno Striking%NAME%}%CONTINUE%
+// TANCRED'S SET
+ItemDisplay[SET ID STASH ((bhm !MANA>149 !(DEX>19 STR>9 STAT35>2)) OR (ful TABSK18=0 TABSK41=0) OR (lbt STAT36>4) OR mpi OR (amu STAT34>2))]: %NAME%{%CL%%NL%%GOLD%35%slt, 0-74lig 0.75plvl%CL%%GRAY%full:%GOLD%10ares, 75gf,%CL%%GRAY%3:%GOLD%5ll%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH bhm !MANA>149 !(DEX>19 STR>9)]: %NAME%{%NL%%GRAY%2:%GREEN%10ares%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ful TABSK18=0 TABSK41=0]: %NAME%{%NL%%GRAY%2:%GREEN%6-594def 6plvl%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH lbt STAT36>4]: %NAME%{%NL%%GRAY%2:%GREEN%30frw, %GRAY%3:%GREEN%10str%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH mpi]: %NAME%{%NL%%GRAY%3:%GREEN%20% lvl 12 cbo attack%CL%%GRAY%2:%GREEN%20ias %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu STAT34>2]: %NAME%{%NL%%GRAY%2:%GREEN%78mf, %GRAY%3:%GREEN%160ar%NAME%}%CONTINUE%
+// COW KING'S SET
+ItemDisplay[SET ID STASH ((xap ALLSK>0 STAT153>0 DTM>34 STAT78>9) OR stu OR (vbt DEX>19 MFIND>24))]: %NAME%{Full Set Equipped Turns u into Lucian%CL%%NL%%GOLD%25% lvl 18 sfd struck%CL%%GRAY%full:%GOLD%30ias, 100mf, 100gf, 100 stam, %CL%%GRAY%2:%GOLD%25pres %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xap ALLSK>0 STAT153>0 DTM>34]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH stu]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH vbt DEX>19 MFIND>24]: %NAME%{%NAME%}%CONTINUE%
+// SANDER'S SET
+ItemDisplay[SET ID STASH ((cap STAT214>0) OR (vbt STR>4 AR>99 FRW>39) OR (vgl !STAT156>19) OR bwn)]: %NAME%{%CL%%NL%%GOLD%50mf, 50mana%CL%%GRAY%Full: %GOLD%1all, 4ll,%CL%%GRAY%2:%GOLD%+50def, %GRAY%3:%GOLD%75ar%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH cap STAT214>0]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH vbt STR>4 AR>99 FRW>39]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH vgl !STAT156>19]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH bwn]: %NAME%{%NL%%GRAY%2:%GREEN%2all, Splash%NAME%}%CONTINUE%
+// HWANIN'S SET
+ItemDisplay[SET ID STASH ((xrn REPLIFE>29 STAT43>36) OR (xcl !TABSK49>1) OR (mbl STAT144>3) OR 9vo)]: %NAME%{%NL%%GOLD%30ares, 20ll, 100dem%CL%%GRAY%full:%GOLD%2all, 30frw,%CL%%GRAY%2:%GOLD%100def, %GRAY%3:%GOLD%200def%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xrn REPLIFE>29 STAT43>36]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xcl !TABSK49>1]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH mbl STAT144>3]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 9vo]: %NAME%{%NL%%GRAY%2:%GREEN%20% lvl 16 sfd striking%CL%%NAME%}%CONTINUE%
+// ORPHAN'S SET
+ItemDisplay[SET ID STASH ((xhm STAT136=35) OR (ztb STAT62>3) OR (xvg STAT156>19) OR (xml !STAT110>74))]: %NAME%{%CL%%NL%%GOLD%20str, 10dex, 100def%CL%%GRAY%full:%GOLD%30ares, 100life, 80mf,%CL%%GRAY%2:%GOLD%35life, %GRAY%3:%GOLD%250atd%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xhm STAT136=35]: %NAME%{%NL%%GRAY%2:%GREEN%-20TDef%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ztb STAT62>3]: %NAME%{%NL%%GRAY%3:%GREEN%100dem%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xvg STAT156>19]: %NAME%{%NL%%GRAY%3:%GREEN%100und%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xml !STAT110>74]: %NAME%{%NL%%GRAY%3:%GREEN%150ed%NAME%}%CONTINUE%
+// DISCIPLE'S SET
+ItemDisplay[SET ID STASH ((umc RES>14) OR (ulg STAT39>29))]: %NAME%{%NL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ((xlb !STAT36>4) OR (umc RES>14) OR (ulg STAT39>29) OR (amu ALLSK>0 STAT45>34))]: %NAME%{%NL%%GOLD%150demon & und, 100mana%CL%%GRAY%Full: %GOLD%2all, 50ares,%CL%%GRAY%2:%GOLD%150def, %GRAY%4:%GOLD%10str%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uui STAT122>199]: %NAME%{%NL%%GOLD%150demon & und, 100mana%CL%%GRAY%Full: %GOLD%2all, 50ares,%CL%%GRAY%2:%GOLD%150def, %GRAY%4:%GOLD%10str%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH uui STAT122>199]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xlb !STAT36>4]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH umc RES>14]: %NAME%{%NL%%GRAY%3:%GREEN%20fhr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ulg STAT39>29]: %NAME%{%NL%%GRAY%2:%GREEN%220psn%CL%%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH amu ALLSK>0 STAT45>34]: %NAME%{%NAME%}%CONTINUE%
+// NAJ'S SET
+ItemDisplay[SET ID STASH ((ci0 FCR=20) OR 6cs)]: %NAME%{%NL%%GOLD%20str, 15dex, 100mana, 10repl%CL%%GRAY%full:%GOLD%3all, 50ares,%CL%%GRAY%2:%GOLD%175fef%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ult]: %NAME%{%NL%%GOLD%20str, 15dex, 100mana, 10repl%CL%%GRAY%full:%GOLD%3all, 50ares,%CL%%GRAY%2:%GOLD%175fef%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ci0 FCR=20]: %NAME%{%NL%%GRAY%2:%GREEN%1all%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ult]: %NAME%{%NL%%GRAY%2:%GREEN%20fcr%CL%%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH 6cs]: %NAME%{%NAME%}%CONTINUE%
+// SAZABI'S SET
+ItemDisplay[SET ID STASH ((xhl REPLIFE>14 ALLSK>0 STAT39>14 STAT41>14) OR (upl CLSK4=0) OR (7ls STAT152>0 STAT121>317))]: %NAME%{%NL%%GOLD%15ll, 27imf%CL%%GRAY%full:%GOLD%2all, 30ares,%CL%%GRAY%2:%GOLD%40fcr, 40frw%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xhl REPLIFE>14 ALLSK>0]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH upl CLSK4=0]: %NAME%{%NL%%GRAY%2:%GREEN%30repl%CL%%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH 7ls STAT152>0 STAT121>317]: %NAME%{%NAME%}%CONTINUE%
+// HEAVEN'S SET
+ItemDisplay[SET ID STASH ((uhm STR>9 DEX>9 FHR>23 ALLSK>0) OR (xrs STAT32>199) OR (uts STAT224=0) OR 7ma)]: %NAME%{%NL%%GOLD%50ares, 40repl, 5rad%CL%%GRAY%full:%GOLD%2all, cbf, 20fcr%CL%%GRAY%2:%GOLD%50hs, %GRAY%3:%GOLD%30repl%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uhm STR>9 DEX>9 FHR>23 ALLSK>0]: %NAME%{%NL%%GRAY%2:%GREEN%20fcr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xrs STAT32>199]: %NAME%{%NL%%GRAY%2:%GREEN%20fcr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uts STAT224=0]: %NAME%{%NL%%GRAY%3:%GREEN%1all%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 7ma]: %NAME%{%NL%%GRAY%3:%GREEN%2all%CL%%NAME%}%CONTINUE%
+// BUL-KATHOS'S SET
+ItemDisplay[SET ID STASH (7gd OR 7fb OR (rin ED>14))]: %NAME%{%CL%%NL%%GOLD%200ar, 500def, 200fire%CL%200dem & und,%CL%%GRAY%full:%GOLD%2all, 25ds, 25cb,%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 7gd]: %NAME%{%NL%%GRAY%2:%GREEN%30ias%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 7fb]: %NAME%{%NL%%GRAY%2:%GREEN%50ed%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH rin ED>14]: %NAME%{%NL%%GRAY%2:%GREEN%cbf%NAME%}%CONTINUE%
+// ALDUR'S SET
+ItemDisplay[SET ID STASH (dr8 OR (uul TABSK41>0) OR (xtb STAT39>39) OR 9mt)]: %NAME%{%CL%%NL%%GOLD%10ml, 150mana, 15ene, 150def%CL%%GRAY%full:%GOLD%3dru, 350ed, 50ares,%CL%%GRAY%2:%GOLD%10fcr, 150%ar, %GRAY%3:%GOLD%20fcr, 50mf%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH dr8]: %NAME%{%NL%%GRAY%all:%GREEN%15ene%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uul TABSK41>0]: %NAME%{%NL%%GRAY%all:%GREEN%15vit%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xtb STAT39>39]: %NAME%{%NL%%GRAY%all:%GREEN%15dex%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 9mt]: %NAME%{%NL%%GRAY%all:%GREEN%15str%NAME%}%CONTINUE%
+// GRISWOLD'S SET
+ItemDisplay[SET ID STASH ((urn STAT234>0) OR (xar CLSK3>0) OR paf OR (7ws CLSK3=0))]: %NAME%{%CL%%NL%%GOLD%50ares, 150life, 25mf, 200ar%CL%%GRAY%full:%GOLD%3pal, 20fcr, 30fhr,%CL%%GRAY%2:%GOLD%20str, %GRAY%3:%GOLD%30dex%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH urn STAT234>0]: %NAME%{%NL%%GRAY%2:%GREEN%2off%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xar CLSK3>0]: %NAME%{%NL%%GRAY%2:%GREEN%30fcr%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH paf]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 7ws CLSK3=0]: %NAME%{%NL%%GRAY%full:%GREEN%10-20dmg%CL%%GRAY%2:%GREEN%2pcb, %GRAY%3:%GREEN%10-20dmg%NAME%}%CONTINUE%
+// IMMORTAL'S SET
+ItemDisplay[SET ID STASH (ba5 OR (uar TABSK32>2) OR (xhb AR>89) OR (zhb STAT41>25) OR (xhg DEX>19) OR 7m7)]: %NAME%{%CL%%NL%%GOLD%150life, 10mdr%CL%%GRAY%full:%GOLD%3bar, 100ed, 50ares,%CL%%GRAY%2:%GOLD%50ar, %GRAY%3:%GOLD%75ar, %GRAY%4:%GOLD%125ar, %GRAY%5:%GOLD%200ar%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ba5]: %NAME%{%NL%%GRAY%3:%GREEN%8%pdr %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uar TABSK32>2]: %NAME%{%NL%%GRAY%full:%GREEN%50edef%CL%%GRAY%4:%GREEN%40fres, %GRAY%5:%GREEN%40lres%CL%%GRAY%2:%GREEN%25fhr, %GRAY%3:%GREEN%40cres%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xhb AR>89]: %NAME%{%NL%%GRAY%4:%GREEN%160def, %GRAY%5:%GREEN%hfd%CL%%GRAY%2:%GREEN%25mf, %GRAY%3:%GREEN%2bcb%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH zhb STAT41>25]: %NAME%{%NL%%GRAY%full:%GREEN%2mti%CL%%GRAY%4:%GREEN%100edef, %GRAY%5:%GREEN%20%pdr %CL%%GRAY%2:%GREEN%105def, %GRAY%3:%GREEN%25fhr %NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xhg DEX>19]: %NAME%{%NL%%GRAY%full:%GREEN%2fzt%CL%%GRAY%4:%GREEN%10ll, %GRAY%5:%GREEN%10ml%CL%%GRAY%2:%GREEN%25ias, %GRAY%3:%GREEN%120def%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 7m7]: %NAME%{%NL%%GRAY%full:%GREEN%250-361magic%CL%%GRAY%4:%GREEN%127-364cold, %GRAY%5:%GREEN%+682psn%CL%%GRAY%2:%GREEN%211-397fire, %GRAY%3:%GREEN%7-477lig%NAME%}%CONTINUE%
+// M'AVINA'S SET
+ItemDisplay[SET ID STASH ((ci3 FCR=0) OR uld OR (zvb FRW>19) OR (xtg STAT153>0) OR amc)]: %NAME%{%NL%%GOLD%100mf, 100ar, 100def%CL%%GRAY%full:%GOLD%2ama, 50ares,%CL%%GRAY%2:%GOLD%20str, %GRAY%3:%GOLD%30dex%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ci3 FCR=0]: %NAME%{%NL%%GRAY%full:%GREEN%15fire%CL%%GRAY%4:%GREEN%25ares%CL%%GRAY%2:%GREEN%1all, %GRAY%3:%GREEN%+50%ar %CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uld]: %NAME%{%NL%%GRAY%2:%GREEN%30frw, %GRAY%3:%GREEN%30fhr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH zvb FRW>19]: %NAME%{%NL%%GRAY%4:%GREEN%25ares%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xtg STAT153>0]: %NAME%{%NL%%GRAY%full:%GREEN%15cold%CL%%GRAY%4:%GREEN%131-252cold%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amc]: %NAME%{%NL%%GRAY%4:%GREEN%2bow%CL%%GRAY%3:%GREEN%10% lvl 25 nov striking%CL%%GRAY%2:%GREEN%228-754magic %CL%%NAME%}%CONTINUE%
+// NATALYA'S SET
+ItemDisplay[SET ID STASH ((xh9 DEX>19 STR>9 STAT35>2) OR (ucl TABSK49>1) OR (xmb !STAT39>24) OR 7qr)]: %NAME%{%NL%%GOLD%50ares, 10ll, 10ml, 150def%CL%%GRAY%full:%GOLD%3sin, 20%pdr,%CL%%GRAY%2:%GOLD%15mdr, %GRAY%3:%GOLD%200def %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xh9 DEX>19 STR>9 STAT35>2]: %NAME%{%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH ucl TABSK49>1]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xmb !STAT39>24]: %NAME%{%NL%%GRAY%3:%GREEN%30kick%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH 7qr]: %NAME%{%NL%%GRAY%3:%GREEN%itd%CL%%NAME%}%CONTINUE%
+// TAL RASHA'S SET
+ItemDisplay[SET ID STASH ((xsk STAT60>5) OR (uth STAT91<-59) OR (zmb DTM=37) OR oba OR (amu CLSK1=2))]: %NAME%{%NL%%GOLD%50dvm, 150def%CL%%GRAY%full:%GOLD%3sor, 50ares, 150life,%CL%%GRAY%2:%GOLD%10repl, %GRAY%3:%GOLD%40mf, %GRAY%4:%GOLD%25fhr%CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH xsk STAT60>5]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH uth STAT91<-59]: %NAME%{%NL%%GRAY%2:%GREEN%10fcr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH zmb DTM=37]: %NAME%{%NL%%GRAY%2:%GREEN%60def, %GRAY%3:%GREEN%10fcr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH oba]: %NAME%{%NL%%GRAY%full:%GREEN%15cold%CL%%GRAY%3:%GREEN%-15fire, %GRAY%4:%GREEN%-15lig%CL%%GRAY%2:%GREEN%1sor%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH amu CLSK1=2]: %NAME%{%NL%%GRAY%4:%GREEN%10fcr%CL%%NAME%}%CONTINUE%
+// TRANG-OUL'S SET
+ItemDisplay[SET ID STASH utc STAT153>0]: %NAME%{%NL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ((uh9 MANA>149) OR (xul TABSK18>1) OR ne9 OR (utc STAT153>0) OR (xmg FCR>19))]: %NAME%{%NL%%GOLD%20ll, 15rm, 10repl%CL%%GRAY%full:%GOLD%3nec, 50ares, 100mana,%CL%%GRAY%2:%GOLD%18fba, 20rm, %GRAY%3:%GOLD%26fwa, 15rm, %GRAY%4:%GOLD%10fba %CL%%WHITE%set bonuses:%NAME%}%CONTINUE%
+//ItemDisplay[SET ID STASH uh9 MANA>149]: %NAME%{%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xul TABSK18>1]: %NAME%{%NL%%GRAY%full:%GREEN%25%pdr %CL%%GRAY%3:%GREEN%50lres %CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH ne9]: %NAME%{%NL%%GRAY%3:%GREEN%-25psn, %GRAY%4:%GREEN%30fcr%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH utc STAT153>0]: %NAME%{%NL%%GRAY%3:%GREEN%40cres%CL%%NAME%}%CONTINUE%
+ItemDisplay[SET ID STASH xmg FCR>19]: %NAME%{%NL%%GRAY%4:%GREEN%20mtr%CL%%NAME%}%CONTINUE%
+// Set bonuses only Shows in Stash
+ItemDisplay[SET ID !STASH]: %NAME%{%RED%Set bonuses Shows in Stash%NL%%NAME%}
+
+// GHEED FORTUNE
+ItemDisplay[UNI cm3]: %NAME%{%NAME%+69 to Niko Niko Nii Skills}%CONTINUE%
