@@ -1,32 +1,10 @@
 //-----------------------------------------------------------------------------------
-// Kassahi names for PD2 / quest / gem items (names only — tooltips, frames, icons and
-// sounds come from the display rules further down). Rune names come from the
-// 02-alias RUNE lines so the Meme names keep working.
-// The quantity tag is added here, after every rename, so renamed stacks keep it.
+// Kassahi names for PD2 / gem items (names only — tooltips, frames, icons and
+// sounds come from the display rules further down).
+// The rune / map name block (issue #982) sits right above the quantity
+// tag in 01-Kassahi_item-names-5. The block is split over -4 (rune names), -4b-meme
+// (Meme renames 26-33, before the rune number is added) and -4c (rune number, map names and tiers).
 //-----------------------------------------------------------------------------------
-// QUEST ITEMS
-ItemDisplay[bks]: %GOLD%Scroll of Inifuss %RED%•%CONTINUE%
-ItemDisplay[bkd]: %GOLD%Key to the Cairn Stones %RED%•%CONTINUE%
-ItemDisplay[hdm]: %GOLD%Horadric Malus %RED%•%CONTINUE%
-ItemDisplay[ass]: %GOLD%Book of Skill %RED%•%CONTINUE%
-ItemDisplay[tr1]: %GOLD%Horadric Scroll%CONTINUE%
-ItemDisplay[msf]: %GOLD%Staff of Kings %RED%•%CONTINUE%
-ItemDisplay[vip]: %GOLD%Amulet of the Viper %RED%•%CONTINUE%
-ItemDisplay[hst]: %GOLD%Horadric Staff %RED%•%CONTINUE%
-ItemDisplay[j34]: %GOLD%Jade Figurine %RED%•%CONTINUE%
-ItemDisplay[g34]: %GOLD%Golden Bird %RED%•%CONTINUE%
-ItemDisplay[xyz]: %GOLD%Potion of Life %RED%•%CONTINUE%
-ItemDisplay[g33]: %GOLD%Gidbinn %RED%•%CONTINUE%
-ItemDisplay[qey]: %GOLD%Khalim's Eye %RED%•%CONTINUE%
-ItemDisplay[qbr]: %GOLD%Khalim's Brain %RED%•%CONTINUE%
-ItemDisplay[qhr]: %GOLD%Khalim's Heart %RED%•%CONTINUE%
-ItemDisplay[qf1]: %GOLD%Khalim's Flail %RED%•%CONTINUE%
-ItemDisplay[qf2]: %GOLD%Khalim's Will %RED%•%CONTINUE%
-ItemDisplay[bbb]: %GOLD%Lam Esen's Tome %RED%•%CONTINUE%
-ItemDisplay[mss]: %GOLD%Mephisto's Soulstone %RED%•%CONTINUE%
-ItemDisplay[hfh]: %GOLD%Hellforge Hammer %RED%•%CONTINUE%
-ItemDisplay[ice]: %GOLD%Malah's Potion %RED%•%CONTINUE%
-ItemDisplay[tr2]: %GOLD%Scroll of Resistance %RED%•%CONTINUE%
 
 // PD2 ITEMS
 ItemDisplay[lsvl]: %RED%Vial%CONTINUE%
@@ -110,6 +88,37 @@ ItemDisplay[GEM=4 GEMTYPE>0]: %NAME%o%CONTINUE%
 ItemDisplay[GEM=5 GEMTYPE>0]: %NAME%O%CONTINUE%
 ItemDisplay[(crfc OR crfp OR crfs OR crfb OR crfh OR crfu OR crfv)]: %NAME%@%CONTINUE%
 
-// QUANTITY & UNSTACKED
-ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
-ItemDisplay[((gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz) OR (RUNE>0 QTY=0))]: %RED%Unstacked %NAME%%CONTINUE%
+// RUNE NAMES (issue #982; continues in 01-Kassahi_item-names-4c)
+ItemDisplay[RUNE=01]: %ORANGE%El%CONTINUE%
+ItemDisplay[RUNE=02]: %ORANGE%Eld%CONTINUE%
+ItemDisplay[RUNE=03]: %ORANGE%Tir%CONTINUE%
+ItemDisplay[RUNE=04]: %ORANGE%Nef%CONTINUE%
+ItemDisplay[RUNE=05]: %ORANGE%Eth%CONTINUE%
+ItemDisplay[RUNE=06]: %ORANGE%Ith%CONTINUE%
+ItemDisplay[RUNE=07]: %ORANGE%Tal%CONTINUE%
+ItemDisplay[RUNE=08]: %ORANGE%Ral%CONTINUE%
+ItemDisplay[RUNE=09]: %ORANGE%Ort%CONTINUE%
+ItemDisplay[RUNE=10]: %ORANGE%Thul%CONTINUE%
+ItemDisplay[RUNE=11]: %ORANGE%Amn%CONTINUE%
+ItemDisplay[RUNE=12]: %ORANGE%Sol%CONTINUE%
+ItemDisplay[RUNE=13]: %ORANGE%Shael%CONTINUE%
+ItemDisplay[RUNE=14]: %ORANGE%Dol%CONTINUE%
+ItemDisplay[RUNE=15]: %ORANGE%Hel%CONTINUE%
+ItemDisplay[RUNE=16]: %ORANGE%Io%CONTINUE%
+ItemDisplay[RUNE=17]: %ORANGE%Lum%CONTINUE%
+ItemDisplay[RUNE=18]: %ORANGE%Ko%CONTINUE%
+ItemDisplay[RUNE=19]: %ORANGE%Fal%CONTINUE%
+ItemDisplay[RUNE=20]: %ORANGE%Lem%CONTINUE%
+ItemDisplay[RUNE=21]: %ORANGE%Pul%CONTINUE%
+ItemDisplay[RUNE=22]: %ORANGE%Um%CONTINUE%
+ItemDisplay[RUNE=23]: %ORANGE%Mal%CONTINUE%
+ItemDisplay[RUNE=24]: %ORANGE%Ist%CONTINUE%
+ItemDisplay[RUNE=25]: %ORANGE%Gul%CONTINUE%
+ItemDisplay[RUNE=26]: %RED%Vex%CONTINUE%
+ItemDisplay[RUNE=27]: %RED%Ohm%CONTINUE%
+ItemDisplay[RUNE=28]: %RED%Lo%CONTINUE%
+ItemDisplay[RUNE=29]: %RED%Sur%CONTINUE%
+ItemDisplay[RUNE=30]: %RED%Ber%CONTINUE%
+ItemDisplay[RUNE=31]: %RED%Jah%CONTINUE%
+ItemDisplay[RUNE=32]: %RED%Cham%CONTINUE%
+ItemDisplay[RUNE=33]: %RED%Zod%CONTINUE%
