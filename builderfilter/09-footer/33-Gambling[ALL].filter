@@ -12,18 +12,18 @@
 //ItemDisplay[NMAG !ID SHOP pil]: %NAME%
 
 // Gamble callout
-ItemDisplay[NMAG !ID SHOP ci0 CLVL<92 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%DARK_GREEN%Buy at Clvl 92+ for PVM/HLD%CL%%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP ci0 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%DARK_GREEN%Buy at Clvl 42 for LLD%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ci0 CLVL<92 IN_TOWN]: %CL%%DARK_GREEN%Buy at Clvl 92+ for PVM/HLD%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP ci0 IN_TOWN]: %CL%%DARK_GREEN%Buy at Clvl 42 for LLD%CL%%NAME%%CONTINUE%
 
 // Main title
 ItemDisplay[NMAG !ID SHOP]: %CL%%ORANGE%Possible Items:%WHITE%%CL%%NAME%%CONTINUE%
 
 // Magic Rare in town
-ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%YELLOW%Rare%CL%%BLUE%Magic%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP IN_TOWN]: %CL%%YELLOW%Rare%CL%%BLUE%Magic%NAME%%CONTINUE%
 
 // rin/amu until big box is supported
 ItemDisplay[NMAG !ID SHOP (rin OR amu)]: %GOLD%Unique%NAME%%CONTINUE%
-ItemDisplay[NMAG !ID SHOP (rin OR amu) (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %GREEN%Set%CL%%NAME%%CONTINUE%
+ItemDisplay[NMAG !ID SHOP (rin OR amu) IN_TOWN]: %GREEN%Set%CL%%NAME%%CONTINUE%
 
 // Uniques
 // Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GOLD%Nokozan Relic%CL%The Eye of Etlich%CL%The Mahim-Oak Curio%CL%Saracen's Chance%CL%The Cat's Eye%CL%Crescent Moon%CL%Atma's Scarab%CL%The Rising Sun%CL%Highlord's Wrath%CL%Mara's Kaleidoscope%CL%Seraph's Hymn%CL%Metalgrid%CL%%NAME%%CONTINUE%
@@ -192,7 +192,7 @@ ItemDisplay[NMAG !ID SHOP bwn]: %GOLD%Boneshade%CL%Arm of King Leoric%CL%Gravens
 ItemDisplay[NMAG !ID SHOP gwn]: %GOLD%Death's Web%CL%Blackhand Key%CL%Ume's Lament%CL%%NAME%%CONTINUE%
 
 // Gheed Event
-ItemDisplay[NMAG !ID SHOP !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%{%NAME%}
+ItemDisplay[NMAG !ID SHOP !IN_TOWN]: %NAME%{%NAME%}
 
 // Sets
 // Cant do this yet ItemDisplay[NMAG !ID SHOP amu]: %GREEN%Angelic Wings%CL%Arcanna's Sign%CL%Cathan's Sigil%CL%Civerb's Icon%CL%Iratha's Collar%CL%Tancred's Weird%CL%Vidala's Snare%CL%Telling of Beads%CL%Tal Rasha's Adjudication%CL%%CL%%NAME%
@@ -270,7 +270,7 @@ ItemDisplay[NMAG !ID SHOP gsd]: %GREEN%Bul-Kathos' Sacred Charge%CL%%CONTINUE%%C
 ItemDisplay[NMAG !ID SHOP bwn]: %GREEN%Sander's Superstition%CL%%CONTINUE%%CL%%NAME%
 ItemDisplay[NMAG !ID SHOP wsp]: %GREEN%Griswold's Redemption%CL%%NAME%%CONTINUE%
 
-ItemDisplay[NMAG !ID SHOP (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %CL%%NAME%{%NAME%}
+ItemDisplay[NMAG !ID SHOP IN_TOWN]: %CL%%NAME%{%NAME%}
 
 
 //-----------------------------------------------------------------------------------
