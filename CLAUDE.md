@@ -60,6 +60,8 @@ Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune
 
 **Style-specific icons/sounds in shared segments:** don't inline `%MAP-..%`/`%SOUNDID-..%`/`%DOT-..%` in a shared segment when a style (e.g. the `KassahiStd` bucket) already bakes them into its aliases, and don't make a `[ONLY=...]` copy of the segment. Use an `FX_*` (tags) or `DISP_*` (whole display part) alias from `builderfilter/02-alias/07-alias-site-fx[...]` and give it a value per style; `SITE_FX` is a condition flag for rules only one style wants.
 
+**Shared condition aliases:** use `IN_TOWN` (`builderfilter/01-header/02b-alias-conditions[ALL].filter`) instead of spelling out the town `MAPID` list, and the `SOCK_*` base groups (`builderfilter/02-alias/08-alias-socket-caps[ALL].filter`) for socket-cap lists. A base's socket cap changes in one place there, not in each tooltip copy.
+
 ## Economy Data
 
 Two sources keep economy values current:

@@ -76,9 +76,9 @@ ItemDisplay[pvpp]: %BLUE%PVP Mana Pot{%NAME%}
 
 
 //Hide conditions
-ItemDisplay[(tpfs OR tpgs OR tpcs OR tpls) (FILTLVL>1 OR CLVL>19) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Small
-ItemDisplay[(tpfm OR tpgm OR tpcm OR tplm) (FILTLVL>1 OR CLVL>49) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Medium
-ItemDisplay[(tpfl OR tpgl OR tpcl OR tpll) (FILTLVL>1 OR CLVL>59) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]://Large
+ItemDisplay[(tpfs OR tpgs OR tpcs OR tpls) (FILTLVL>1 OR CLVL>19) !IN_TOWN]://Small
+ItemDisplay[(tpfm OR tpgm OR tpcm OR tplm) (FILTLVL>1 OR CLVL>49) !IN_TOWN]://Medium
+ItemDisplay[(tpfl OR tpgl OR tpcl OR tpll) (FILTLVL>1 OR CLVL>59) !IN_TOWN]://Large
 
 // Small Potions
 ItemDisplay[tpfs]: %ORANGE%-%WHITE%Sml Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Small%CL%%GRAY%Fulminating Potion}
