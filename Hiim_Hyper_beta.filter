@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 3%CL%HiimFilter - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 4%CL%HiimFilter - Hyper -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -1771,7 +1771,9 @@ ItemDisplay[jew !UNI !SET STAT138>0]: %BLUE%%STAT138% MAEK %NAME%%CONTINUE%{%NAM
 ItemDisplay[jew !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI STAT80>0]: %BLUE%%STAT80%%MF %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI STAT79>0]: %GOLD%%STAT79%%GF %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[jew !UNI STAT329>0 STAT330>0 STAT331>0]: %ORANGE%+%STAT329%% Ele %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[jew !UNI STAT329>0]: %RED%+%STAT329% Fire %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[jew !UNI STAT330>0]: %YELLOW%+%STAT330% Light %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[jew !UNI STAT331>0]: %BLUE%+%STAT331% Cold %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew ID !UNI (STAT91<0 OR STAT501>0 OR STAT114>0 OR STAT80>0 OR STAT79>0 OR RES>0 OR FHR>0 OR STAT86>0 OR STAT138>0 OR IAS>0 OR EDAM>0 OR MINDMG>0 OR MAXDMG>0 OR MANA>14 OR REPLIFE>2 OR STR+DEX>9 OR STAT329>0 OR STAT330>0 OR STAT331>0)]: %DOT-50%%NAME%%CL%%CONTINUE%{%NAME%}
 ItemDisplay[jew FHR>0 STAT91<0 RES>0]: %NAME%%PURPLE%BIG %CONTINUE%
 ItemDisplay[jew (FHR>0 OR STAT91<0) RES>14]: %NAME%%PURPLE%BIG %CONTINUE%
