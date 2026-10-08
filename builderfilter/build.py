@@ -22,7 +22,7 @@ def update_version():
     with open(VERSION_TXT, encoding="utf-8") as f:
         version = int(f.read().strip())
 
-    season = "Season 13"
+    season = "Season 14"
 
     today = datetime.date.today()
     date_str = f"{today.strftime('%B')} {_ordinal(today.day)}"
@@ -40,7 +40,10 @@ def load_config():
         text = f.read()
     text = _LINE_COMMENT.sub("", text)
     data = json.loads(text)
-    return data["filters"], data.get("groups", {}), data.get("beta", False)
+    beta_exclude = set(data.get("beta_exclude", []))
+    for entry in data["filters"]:
+        entry["_beta"] = data.get("beta", False) and entry.get("filterdir") not in beta_exclude
+    return data["filters"], data.get("groups", {})
 
 
 def output_dir_for(entry):
@@ -57,7 +60,7 @@ def order_for_definitions(entries):
     return pinned + rest
 
 
-def generate_filter_definitions(filters, beta):
+def generate_filter_definitions(filters):
     """Write filter_definitions.json into root and each filtergroups/<filterdir>."""
     by_dir = {}
     for entry in filters:
@@ -73,7 +76,7 @@ def generate_filter_definitions(filters, beta):
                 "description": entry["description"],
                 "file_name": entry["file"],
             }
-            if beta:
+            if entry["_beta"]:
                 info["file_name_beta"] = entry["file"].replace(".filter", "_beta.filter")
             defs["filter_info"][str(idx)] = info
 
@@ -86,8 +89,10 @@ def generate_filter_definitions(filters, beta):
 
 
 def cleanup_beta_files(filters):
-    """Delete leftover *_beta.filter files when beta is turned off."""
+    """Delete leftover *_beta.filter files for entries not building beta."""
     for entry in filters:
+        if entry["_beta"]:
+            continue
         beta_file = entry["file"].replace(".filter", "_beta.filter")
         path = os.path.join(output_dir_for(entry), beta_file)
         if os.path.exists(path):
@@ -251,13 +256,11 @@ def main():
     args = parser.parse_args()
 
     update_version()
-    filters, groups, beta = load_config()
-
-    if not beta:
-        cleanup_beta_files(filters)
+    filters, groups = load_config()
+    cleanup_beta_files(filters)
 
     for entry in filters:
-        out_file = entry["file"].replace(".filter", "_beta.filter") if beta else entry["file"]
+        out_file = entry["file"].replace(".filter", "_beta.filter") if entry["_beta"] else entry["file"]
         print(f"Building {out_file} ...")
         content = build_filter(entry, groups)
         if not args.no_minify:
@@ -270,7 +273,7 @@ def main():
         print(f"  wrote {len(content):,} chars -> {out_path}")
 
     print("Generating filter_definitions.json ...")
-    generate_filter_definitions(filters, beta)
+    generate_filter_definitions(filters)
 
     print("All filters built.")
 
