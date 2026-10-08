@@ -1,0 +1,7 @@
+//------------------------------Rune name Mystery Override------------------------------
+// Out of town, single runes are renamed like the PD2 items in 03-unidformatting/02-Kassahi_mysterynames.
+// Kassahi bucket: Vex+ keep their real name and number in town (rune number added in 03-unidformatting/01-Kassahi_item-names-4c).
+// MYSTERY_COLOR / MYSTERY_TOP_NAME: Kassahi bucket red + "GG Mystery" for Ber/Zod; Phil777 purple + "Big Mystery".
+ItemDisplay[RUNE>25 RUNE<29 QTY=1 !IN_TOWN]: %MYSTERY_COLOR%Lil Mystery%CONTINUE%
+ItemDisplay[(RUNE=29 OR RUNE=31 OR RUNE=32) QTY=1 !IN_TOWN]: %MYSTERY_COLOR%Big Mystery%CONTINUE%
+ItemDisplay[(RUNE=30 OR RUNE=33) QTY=1 !IN_TOWN]: %MYSTERY_COLOR%%MYSTERY_TOP_NAME%%CONTINUE%
