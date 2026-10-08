@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 8%CL%Kassahi - Mystery - Phil777 - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 9%CL%Kassahi - Mystery - Phil777 - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -51,11 +51,7 @@ ItemDisplay[GOLD<7500 FILTLVL~5-6 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<10000 FILTLVL~7-8 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<25000 FILTLVL~9-10 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<999999 FILTLVL>10 CLVL>79 !MAPID=83]:
-Alias[QTY_TAG]: %TAN%x%QTY%
 ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) QTY>1 QTY<51 !(RUNE>0)]: %NAME% %QTY_TAG%%CONTINUE%
-Alias[SLAMMED_TAG]: Ⓒ
-Alias[DESECRATED_TAG]: %GOLD%[D]
-Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
 ItemDisplay[RUNE>0 QTY=0]: %RED%Unstacked will socket %ORANGE%%NAME%
 ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%Unstacked{%TAN%Note%WHITE%: Cube Gems to stack them}
 Alias[GEN_ITEM]: %BLACK%@%PURPLE%@%GREEN%@%BLACK%@ %NAME% %BLACK%@%GREEN%@%PURPLE%@%BLACK%@
@@ -138,6 +134,19 @@ Alias[WSS_SHARD]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%�
 Alias[MAIN_DOT]: O
 Alias[PD2_MATS]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %NAME% %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 ItemDisplay[rvl]: %GREEN%+ %PURPLE%Full %GREEN%+%CONTINUE%
+Alias[PHIL777_STYLE]: TRUE
+Alias[QTY_TAG]: %TAN%x%QTY%
+Alias[SLAMMED_TAG]: Ⓒ
+Alias[DESECRATED_TAG]: %GOLD%[D]
+Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
+Alias[RUNE_LOW_RANGE]: (RUNE<21)
+Alias[RUNE_LOW_STRICT]: %RUNE_LOW%
+Alias[RUNE_TOP_HIGH]: %RUNE_ALT_HIGH%
+Alias[MYSTERY_COLOR]: %PURPLE%
+Alias[MYSTERY_TOP_NAME]: Big Mystery
+Alias[MYSTERY_QTY]: TRUE
+Alias[REJUV_SMALL_LABEL]: %PURPLE%° %WHITE%35%
+Alias[REJUV_FULL_LABEL]: %NAME%
 Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated Sep 11 2026
 Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18 OR RUNE=19)
 Alias[OHM_RUNE_VALUE]: 0.9
@@ -992,8 +1001,9 @@ ItemDisplay[MAG !ID cm1]: %BLUE%Small%CONTINUE%
 ItemDisplay[MAG !ID cm2]: %BLUE%Large%CONTINUE%
 ItemDisplay[MAG !ID cm3]: %BLUE%Grand%CONTINUE%
 ItemDisplay[MAG !ID jew]: %BLUE%Jewel%CONTINUE%
-ItemDisplay[(lbox) !IN_TOWN]: %PURPLE%Lil Mystery%CONTINUE%
-ItemDisplay[(lsvl OR llmr OR rkey OR rtp OR rid) !IN_TOWN]: %PURPLE%Big Mystery%CONTINUE%
+ItemDisplay[lbox MYSTERY_QTY !IN_TOWN]: %MYSTERY_COLOR%Lil Mystery%CONTINUE%
+ItemDisplay[(rkey OR rtp OR rid) MYSTERY_QTY !IN_TOWN]: %MYSTERY_COLOR%Big Mystery%CONTINUE%
+ItemDisplay[(lsvl OR llmr) MYSTERY_QTY !IN_TOWN]: %MYSTERY_COLOR%%MYSTERY_TOP_NAME%%CONTINUE%
 ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
 ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
 ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
@@ -2448,22 +2458,43 @@ ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %FX_INFUSIO
 ItemDisplay[GEM>3 FILTLVL<11]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 IN_TOWN]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 GROUND]:
-ItemDisplay[(RUNE=26 OR RUNE=27 OR RUNE=28) QTY=1 !IN_TOWN]: %PURPLE%Lil Mystery%CONTINUE%
-ItemDisplay[(RUNE=29 OR RUNE=30 OR RUNE=31 OR RUNE=32 OR RUNE=33) QTY=1 !IN_TOWN]: %PURPLE%Big Mystery%CONTINUE%
-ItemDisplay[RUNE>0 RUNE<21]: %DOT-70%%NAME%%CONTINUE%
-ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9]: %SOUNDID-4715%%NAME%%CONTINUE%
-ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
-ItemDisplay[RUNE>0 (FILTLVL<3 OR IN_TOWN)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
-ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[RUNE<21 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
-ItemDisplay[RUNE<21 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE>25 RUNE<29 QTY=1 !IN_TOWN]: %MYSTERY_COLOR%Lil Mystery%CONTINUE%
+ItemDisplay[(RUNE=29 OR RUNE=31 OR RUNE=32) QTY=1 !IN_TOWN]: %MYSTERY_COLOR%Big Mystery%CONTINUE%
+ItemDisplay[(RUNE=30 OR RUNE=33) QTY=1 !IN_TOWN]: %MYSTERY_COLOR%%MYSTERY_TOP_NAME%%CONTINUE%
+ItemDisplay[RUNE>0 RUNE<21 PHIL777_STYLE]: %DOT-70%%NAME%%CONTINUE%
+ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8 PHIL777_STYLE]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9 PHIL777_STYLE]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>25 PHIL777_STYLE]: %SOUNDID-4719%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0 (FILTLVL<3 OR IN_TOWN) PHIL777_STYLE]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
+ItemDisplay[RUNE>0 QTY>1 QTY<51 PHIL777_STYLE]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
+ItemDisplay[RUNE_LOW_RANGE CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL<9]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL>8]: %RUNE_LOW_STRICT%%CONTINUE%
 ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
 ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
-ItemDisplay[RUNE>28]: %RUNE_ALT_HIGH%%CONTINUE%
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10]: %NAME%{%NAME%}
+ItemDisplay[RUNE=29 OR RUNE=31 OR RUNE=32]: %RUNE_ALT_HIGH%%CONTINUE%
+ItemDisplay[RUNE=30 OR RUNE=33]: %RUNE_TOP_HIGH%%CONTINUE%
+ItemDisplay[r01s !PHIL777_STYLE]: %NAME%{%LIGHT_GRAY%Vampiric %WHITE%Boots: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%El, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r02s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Helm: O%NL%%YELLOW%Bountiful %WHITE%Chest: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Belt: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eld, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r03s !PHIL777_STYLE]: %NAME%{%YELLOW%Bountiful %WHITE%Helm: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Chest: %LIGHT_GRAY%O%NL%%BLUE%Hitpower %WHITE%Weapon: %BLUE%O%NL%%PURPLE%Caster %WHITE%Weapon: %PURPLE%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tir, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r04s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Shield: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Chest: %BLUE%O%NL%%PURPLE%Caster %WHITE%Helm: %PURPLE%O%NL%%RED%Blood %WHITE%Gloves: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Nef, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r05s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Chest: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Shield: %BLUE%O%NL%%PURPLE%Caster %WHITE%Shield: %PURPLE%O%NL%%RED%Blood %WHITE%Boots: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eth, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r06s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Helm: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Helm: %BLUE%O%NL%%PURPLE%Caster %WHITE%Belt: %PURPLE%O%NL%%RED%Blood %WHITE%Shield: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ith, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r07s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Amulet: O%NL%%GREEN%Safety %WHITE%Belt: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Belt: %BLUE%O%NL%%PURPLE%Caster %WHITE%Chest: %PURPLE%O%NL%%RED%Blood %WHITE%Belt: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tal, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r08s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Gloves: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Boots: %BLUE%O%NL%%PURPLE%Caster %WHITE%Amulet: %PURPLE%O%NL%%RED%Blood %WHITE%Helm: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ral, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r09s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Shield: O%NL%%GREEN%Safety %WHITE%Boots: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Gloves: %BLUE%O%NL%%PURPLE%Caster %WHITE%Gloves: %PURPLE%O%NL%%RED%Blood %WHITE%Weapon: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ort, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r10s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Amulet: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Amulet: %BLUE%O%NL%%PURPLE%Caster %WHITE%Boots: %PURPLE%O%NL%%RED%Blood %WHITE%Chest: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Thul, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r11s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Ring: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Ring: %BLUE%O%NL%%PURPLE%Caster %WHITE%Ring: %PURPLE%O%NL%%RED%Blood %WHITE%Amulet: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Amn, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r12s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Weapon: O%NL%%LIGHT_GRAY%Vampiric %WHITE%Shield: %LIGHT_GRAY%O%NL%%GREEN%Safety %WHITE%Weapon: %GREEN%O%NL%%RED%Blood %WHITE%Ring: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Sol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r13s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Gloves: O%NL%%YELLOW%Bountiful %WHITE%Weapon: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Weapon: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Shael, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r14s !PHIL777_STYLE]: %NAME%{%YELLOW%Bountiful %WHITE%Shield: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Amulet: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Dol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r15s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Ring: O%NL%%YELLOW%Bountiful %WHITE%Gloves: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Ring: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Hel, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r16s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Belt: O%NL%%YELLOW%Bountiful %WHITE%Boots: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Gloves: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Io, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r17s !PHIL777_STYLE]: %NAME%{%YELLOW%Bountiful %WHITE%Ring: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Helm: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Lum, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r18s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10 PHIL777_STYLE]: %NAME%{%NAME%}
 ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 1%CL%%TAN%HR Estimated Value Each%WHITE%: 0.01%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 3%CL%%TAN%HR Estimated Value Each%WHITE%: 0.03%CL%%NAME%}%CONTINUE%
@@ -2600,9 +2631,9 @@ ItemDisplay[tpgl]: %GREEN%-%WHITE%Lrg Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damag
 ItemDisplay[tpcl]: %BLUE%-%WHITE%Lrg Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Large%CL%%GRAY%Freezing Potion}
 ItemDisplay[tpll]: %YELLOW%-%WHITE%Lrg Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Large%CL%%GRAY%Shock Potion}
 ItemDisplay[(wms OR gpl OR gpm OR gps OR opl OR opm OR ops) (FILTLVL>1 OR CLVL>23)]:
-ItemDisplay[FILTLVL<7 rvs]: %PURPLE%° %WHITE%35%
+ItemDisplay[FILTLVL<7 rvs]: %REJUV_SMALL_LABEL%
 ItemDisplay[rvs]:
-ItemDisplay[rvl]: %NAME%
+ItemDisplay[rvl]: %REJUV_FULL_LABEL%
 ItemDisplay[bks]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 1%CL%Talk to Akara%CL%}
 ItemDisplay[bkd]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Go to Act 1 Stony Field%CL%}
 ItemDisplay[leg]: %GOLD%X   %NAME%   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Tome of Town Portal in Act 1 to open Cow Level}
