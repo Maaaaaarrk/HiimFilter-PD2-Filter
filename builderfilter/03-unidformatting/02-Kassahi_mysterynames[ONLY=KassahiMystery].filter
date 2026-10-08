@@ -1,0 +1,6 @@
+//------------------------------MYSTERY Names------------------------------
+// Out of town. Runes get the same names in 05-utility/09-Runes-Kassashi-1mystery (after the rune number is added).
+// MYSTERY_QTY: the Kassahi bucket renames single items only (QTY=1); Phil777 renames any stack (TRUE).
+ItemDisplay[lbox MYSTERY_QTY !IN_TOWN]: %MYSTERY_COLOR%Lil Mystery%CONTINUE%
+ItemDisplay[(rkey OR rtp OR rid) MYSTERY_QTY !IN_TOWN]: %MYSTERY_COLOR%Big Mystery%CONTINUE%
+ItemDisplay[(lsvl OR llmr) MYSTERY_QTY !IN_TOWN]: %MYSTERY_COLOR%%MYSTERY_TOP_NAME%%CONTINUE%

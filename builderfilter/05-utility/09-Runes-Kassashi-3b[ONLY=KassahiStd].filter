@@ -1,9 +1,0 @@
-// Rune frames (Kassahi bucket; Phil777 keeps its own in 09-Runes-Kassashi-3a). Minimap markers come from the RUNE_* aliases (each family sets its own).
-
-// Low rune name decorations (El-Fal, 1-19)
-// Valuable Crafting rune callout — set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
-ItemDisplay[RUNE<20 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
-ItemDisplay[RUNE<20 !CRAFTING_RUNES_SET FILTLVL<9]: %RUNE_LOW%%CONTINUE%
-// Filter level 9+: RUNE_LOW_STRICT (no frame, the rune shows only its number — upstream)
-ItemDisplay[RUNE<20 !CRAFTING_RUNES_SET FILTLVL>8]: %RUNE_LOW_STRICT%%CONTINUE%
-

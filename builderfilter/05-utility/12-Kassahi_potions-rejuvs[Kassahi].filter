@@ -1,0 +1,9 @@
+//-----------------------------------------------------------------------------------
+// Kassahi rejuv display rules (rvl/rvs) - terminal display for rejuvs.
+// REJUV_SMALL_LABEL / REJUV_FULL_LABEL: the Kassahi bucket labels rvl here ("Juice", issue #982);
+// Phil777 renames rvl upstream in 02-alias/03-alias-kassahi-luxe ("+ Full +"), so its label is %NAME%.
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[FILTLVL<7 rvs]: %REJUV_SMALL_LABEL%
+ItemDisplay[rvs]:
+ItemDisplay[rvl]: %REJUV_FULL_LABEL%
