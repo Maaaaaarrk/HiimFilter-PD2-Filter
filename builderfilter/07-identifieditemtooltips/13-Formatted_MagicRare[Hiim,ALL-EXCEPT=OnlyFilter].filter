@@ -87,8 +87,15 @@ ItemDisplay[jew !UNI STAT80>0]: %BLUE%%STAT80%%MF %NAME%%CONTINUE%{%NAME%}
 // GF
 ItemDisplay[jew !UNI STAT79>0]: %GOLD%%STAT79%%GF %NAME%%CONTINUE%{%NAME%}
 
-// Elemental damage (S14 prefix, rolls fire/light/cold mastery together)
-ItemDisplay[jew !UNI STAT329>0 STAT330>0 STAT331>0]: %ORANGE%+%STAT329%% Ele %NAME%%CONTINUE%{%NAME%}
+// Elemental damage (S14 prefix)
+// Fire
+ItemDisplay[jew !UNI STAT329>0]: %RED%+%STAT329% Fire %NAME%%CONTINUE%{%NAME%}
+
+// Lightning
+ItemDisplay[jew !UNI STAT330>0]: %YELLOW%+%STAT330% Light %NAME%%CONTINUE%{%NAME%}
+
+// Cold
+ItemDisplay[jew !UNI STAT331>0]: %BLUE%+%STAT331% Cold %NAME%%CONTINUE%{%NAME%}
 
 
 // Top line formatting
