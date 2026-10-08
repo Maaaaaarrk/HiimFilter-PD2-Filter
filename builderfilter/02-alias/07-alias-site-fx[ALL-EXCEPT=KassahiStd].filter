@@ -1,0 +1,61 @@
+//-----------------------------------------------------------------------------------
+// SITE FX: per-rule minimap icon / sound / frame tags for shared segments.
+// Hiim (and Phil777) segments add these inline; the Kassahi bucket's aliases already
+// carry their own icon and sound, so its copy of each alias is empty (or its own frame).
+// Keep the alias names identical in 07-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
+//-----------------------------------------------------------------------------------
+// Values for Hiim styles and Phil777.
+
+// SITE_FX: condition flag for the few rules that only exist in one style (wss / cwss stack tag).
+Alias[SITE_FX]: TRUE
+
+// cwss frame
+Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
+// iwss frame
+Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
+// lmal decoration
+Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
+// toa
+Alias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <
+// uber boss mats
+Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
+// essences
+Alias[FX_ESSENCE]: %MAP-4A%
+// flawless gem / skull stacks
+Alias[FX_GEM_STACK]: %DOT-70%
+// infusions (crf*)
+Alias[FX_INFUSION]: %MAP-0B%
+// jewf
+Alias[FX_JEWF]: %MAP-68%
+// lbox / imrn
+Alias[FX_PD2_GG]: %MAP-4A%%SOUNDID-4719%
+// lpp
+Alias[FX_PD2_RARE]: %MAP-4A%%SOUNDID-4715%
+// perfect gem / skull stacks
+Alias[FX_PGEM_STACK]: %MAP-60%%DOT-70%
+// rkey
+Alias[FX_RKEY]: %MAP-68%%SOUNDID-4721%
+// rtp / rid
+Alias[FX_RTP_RID]: %BORDER-0A%%DOT-55%%SOUNDID-4719%
+// unid 3-star uniques (Phil777, 19-Kassahi_UNID-stars)
+Alias[FX_STARS_3]: %SOUNDID-4714%
+// uba
+Alias[FX_UBA]: %MAP-4A%%SOUNDID-4721%
+// ubaa / ubab / ubac
+Alias[FX_UBA_PARTS]: %PX-60%%SOUNDID-4715%
+// pk1 / pk2 / pk3
+Alias[FX_UBER_KEY]: %MAP-62%%SOUNDID-4721%
+// mbr / bey / dhn
+Alias[FX_UBER_ORGAN]: %MAP-9D%%SOUNDID-4721%
+// ubtm
+Alias[FX_UBTM]: %MAP-A9%%SOUNDID-4721%
+// unid 3-star uniques (Hiim)
+Alias[FX_UNID_3STAR]: %SOUNDID-4726%
+// unid GG uniques / sets
+Alias[FX_UNID_GG]: %SOUNDID-4719%
+// unid EQ7 rares
+Alias[FX_UNID_RARE_SUPER]: %SOUNDID-4715%
+// lsvl / llmr
+Alias[FX_VIAL_MIRROR]: %BORDER-4A%%DOT-55%%SOUNDID-4733%
+// wss
+Alias[FX_WSS]: %MAP-62%%SOUNDID-4715%
