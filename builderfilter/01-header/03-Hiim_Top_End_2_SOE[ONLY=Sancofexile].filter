@@ -683,10 +683,10 @@ ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide jun
 // ONLYs FILTER ENFORCEMENT
 //-----------------------------------------------------------------------------------
 // Shows 
-ItemDisplay[STAT206>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
-ItemDisplay[STAT360>0 FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
-ItemDisplay[RW FILTLVL>8 !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
+ItemDisplay[STAT206>0 FILTLVL>8 !IN_TOWN]: %MAP-58%%NAME% %RED%[C]%GOLD%[D]// Incase you drop a piece of gear on potions only show all desc slammed gear
+ItemDisplay[STAT360>0 FILTLVL>8 !IN_TOWN]: %MAP-58%%NAME% %RED%[C]// Incase you drop a piece of gear on potions only show all slammed gear
+ItemDisplay[RW FILTLVL>8 !IN_TOWN]: %MAP-58%%NAME%// Incase you drop a piece of gear on potions only show all runeword gear
 // Hide EVERYTHING ELSE
-ItemDisplay[FILTLVL>8 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
-ItemDisplay[FILTLVL>10 !(rvl OR rvs) !(MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109) !SHOP !EQUIPPED]:%NOTIFY-DEAD%
+ItemDisplay[FILTLVL>8 !(rvl OR rvs) !IN_TOWN !SHOP !EQUIPPED (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR aqv OR cqv)]:%NOTIFY-DEAD%
+ItemDisplay[FILTLVL>10 !(rvl OR rvs) !IN_TOWN !SHOP !EQUIPPED]:%NOTIFY-DEAD%
 //-----------------------------------------------------------------------------------

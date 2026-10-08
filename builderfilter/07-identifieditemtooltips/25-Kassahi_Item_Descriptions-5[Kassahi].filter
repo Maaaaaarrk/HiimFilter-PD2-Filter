@@ -12,22 +12,22 @@ ItemDisplay[(aqv OR cqv OR aqv2 OR aqv3 OR cqv2 OR cqv3) !INF SOCK=0 NMAG]: %NAM
 //helmets & circlets
 ItemDisplay[ci0 NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
 ItemDisplay[ci0 NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
-ItemDisplay[(cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
-ItemDisplay[(msk OR ghm OR crn) NMAG !INF SOCK=0 ILVL<41]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
-ItemDisplay[(msk OR ghm OR crn) NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
-ItemDisplay[(xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3 OR ulm OR uhl) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[SOCK_HELM_2 NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[SOCK_HELM_2_3 NMAG !INF SOCK=0 ILVL<41]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[SOCK_HELM_2_3 NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[SOCK_HELM_3 NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
 //barb helms & dru pelts
 ItemDisplay[(BAR OR DRU) NORM NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
 ItemDisplay[(BAR OR DRU) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
 //chest
-ItemDisplay[(qui OR lea OR hla OR stu OR scl OR chn) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[SOCK_CHEST_2 NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
 ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR spl OR plt OR fld OR xui OR xea OR xla OR xtu) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
 ItemDisplay[(uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
 //shields
-ItemDisplay[(buc OR xuc OR aqv OR cqv) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
-ItemDisplay[(uuc OR sml OR xml OR uml OR bsh OR aqv2 OR aqv3 OR cqv2 OR cqv3) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
-ItemDisplay[(lrg OR xrg OR urg OR upk OR kit OR xit OR ush OR tow OR xow OR gts OR xts OR spk OR xpk OR xsh) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
-ItemDisplay[(uit OR uow OR uts) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[(SOCK_QUIVER_1 OR SOCK_SHIELD_1) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
+ItemDisplay[(SOCK_QUIVER_2 OR SOCK_SHIELD_2) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
+ItemDisplay[SOCK_SHIELD_3 NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
+ItemDisplay[SOCK_SHIELD_ELITE_TOP NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
 //pala shields
 ItemDisplay[DIN NORM NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
 ItemDisplay[DIN NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
@@ -36,7 +36,7 @@ ItemDisplay[NEC NORM NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
 ItemDisplay[NEC (EXC OR ELT) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
 //Weapons
 //always 1
-ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_1 NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1, }%CONTINUE%
 //always 2
 ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR 9tk OR 7tk OR 9ta OR 7ta OR bkf OR 9bk OR 7bk OR ssp OR 9s9 OR 7s7 OR 9pi OR 7pi OR 9ja OR 7ja OR pil OR am5 OR ama OR (SOR !(ob5 OR oba OR obf))) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
 //always 3
@@ -46,7 +46,7 @@ ItemDisplay[(axe OR 9ax OR 7ax OR lax OR 9wh OR 7wh OR 9bs OR 7bs OR 9cm OR 9gs 
 //always 5
 ItemDisplay[(92a OR 72a OR 9la OR 9ba OR 9bt OR 7la OR 7ba OR 7bt OR 9fl OR 7fl OR 9fb OR 7fb OR 9br OR 7br OR 7s8 OR 7pa OR 8s8 OR 8sw OR 6s7 OR 6sw OR 8rx OR 6rx OR 9ws OR 7ws OR amb OR am7 OR amc OR 7ls) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
 //always 6
-ItemDisplay[(9mp OR 9wa OR 7mp OR 7wa OR 9ga OR 9gi OR 7ga OR 7gi OR 9m9 OR 9gm OR 7m7 OR 7gm OR 7cr OR 9gd OR 7gd OR 9st OR 9p9 OR 7st OR 7p7 OR 9h9 OR 9wc OR 7h7 OR 7wc OR 8l8 OR 8lw OR 6l7 OR 6lw OR 8hx OR 6hx OR 8ws OR 6ws OR am8 OR am9 OR amd OR ame OR 7sr) NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_6 NMAG !INF SOCK=0]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
 //varies 2/3/3
 ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-2, }%CONTINUE%
 ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
@@ -65,12 +65,12 @@ ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb 
 ItemDisplay[wsp NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-3, }%CONTINUE%
 ItemDisplay[wsp NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
 //varies 4/5/5
-ItemDisplay[(2ax OR bax OR btx) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
-ItemDisplay[(2ax OR bax OR btx) NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_5 NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_5 NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
 //varies 4/5/6
-ItemDisplay[(mpi OR wax OR gax OR gix) NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
-ItemDisplay[(mpi OR wax OR gax OR gix) NMAG !INF SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
-ItemDisplay[(mpi OR wax OR gax OR gix) NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_6 NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-4, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_6 NMAG !INF SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_6 NMAG !INF SOCK=0 ILVL>40]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
 //varies 5/6/6
 ItemDisplay[wst NMAG !INF SOCK=0 ILVL<26]: %NAME%{%NAME%%WHITE%1-5, }%CONTINUE%
 ItemDisplay[wst NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
@@ -79,22 +79,22 @@ ItemDisplay[wst NMAG !INF SOCK=0 ILVL>25]: %NAME%{%NAME%%WHITE%1-6, }%CONTINUE%
 //helmets & circlets
 ItemDisplay[ci0 NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[ci0 NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(msk OR ghm OR crn) NMAG SOCK=0 ILVL<41]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(msk OR ghm OR crn) NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3 OR ulm OR uhl) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_HELM_2 NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_HELM_2_3 NMAG SOCK=0 ILVL<41]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_HELM_2_3 NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_HELM_3 NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
 //barb helms & dru pelts
 ItemDisplay[(BAR OR DRU) NORM NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[(BAR OR DRU) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
 //chest
-ItemDisplay[(qui OR lea OR hla OR stu OR scl OR chn) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_CHEST_2 NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR spl OR plt OR fld OR xui OR xea OR xla OR xtu) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[(uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
 //shields
-ItemDisplay[(aqv OR cqv OR buc OR xuc) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(aqv2 OR cqv2 OR aqv3 OR cqv3 OR uuc OR sml OR xml OR uml OR bsh) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(lrg OR xrg OR urg OR upk OR kit OR xit OR ush OR tow OR xow OR gts OR xts OR spk OR xpk OR xsh) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(uit OR uow OR uts) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(SOCK_QUIVER_1 OR SOCK_SHIELD_1) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[(SOCK_QUIVER_2 OR SOCK_SHIELD_2) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_SHIELD_3 NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_SHIELD_ELITE_TOP NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
 //pala shields
 ItemDisplay[DIN NORM NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[DIN NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
@@ -103,7 +103,7 @@ ItemDisplay[NEC NORM NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%
 ItemDisplay[NEC (EXC OR ELT) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
 //Weapons
 //always 1
-ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_1 NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%1, %RED%c:%WHITE%1%GOLD%/%RED%b}%CONTINUE%
 //always 2
 ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR 9tk OR 7tk OR 9ta OR 7ta OR bkf OR 9bk OR 7bk OR ssp OR 9s9 OR 7s7 OR 9pi OR 7pi OR 9ja OR 7ja OR pil OR am5 OR ama OR (SOR !(ob5 OR oba OR obf))) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
 //always 3
@@ -113,7 +113,7 @@ ItemDisplay[(axe OR 9ax OR 7ax OR lax OR 9wh OR 7wh OR 9bs OR 7bs OR 9cm OR 9gs 
 //always 5
 ItemDisplay[(92a OR 72a OR 9la OR 9ba OR 9bt OR 7la OR 7ba OR 7bt OR 9fl OR 7fl OR 9fb OR 7fb OR 9br OR 7br OR 7s8 OR 7pa OR 8s8 OR 8sw OR 6s7 OR 6sw OR 8rx OR 6rx OR 9ws OR 7ws OR amb OR am7 OR amc OR 7ls) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
 //always 6
-ItemDisplay[(9mp OR 9wa OR 7mp OR 7wa OR 9ga OR 9gi OR 7ga OR 7gi OR 9m9 OR 9gm OR 7m7 OR 7gm OR 7cr OR 9gd OR 7gd OR 9st OR 9p9 OR 7st OR 7p7 OR 9h9 OR 9wc OR 7h7 OR 7wc OR 8l8 OR 8lw OR 6l7 OR 6lw OR 8hx OR 6hx OR 8ws OR 6ws OR am8 OR am9 OR amd OR ame OR 7sr) NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_6 NMAG SOCK=0]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
 //varies 2/3/3
 ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%2, %RED%c:%WHITE%1-2%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[(kri OR clw OR btl OR skr OR ob5 OR bal OR glv OR tsp) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
@@ -132,12 +132,12 @@ ItemDisplay[(mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb 
 ItemDisplay[wsp NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%3, %RED%c:%WHITE%1-3%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[wsp NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
 //varies 4/5/5
-ItemDisplay[(2ax OR bax OR btx) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(2ax OR bax OR btx) NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_5 NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_5 NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
 //varies 4/5/6
-ItemDisplay[(mpi OR wax OR gax OR gix) NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(mpi OR wax OR gax OR gix) NMAG SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
-ItemDisplay[(mpi OR wax OR gax OR gix) NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_6 NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%4, %RED%c:%WHITE%1-4%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_6 NMAG SOCK=0 (ILVL>25 AND ILVL<41)]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
+ItemDisplay[SOCK_WEAP_4_6 NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
 //varies 5/6/6
 ItemDisplay[wst NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[wst NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
