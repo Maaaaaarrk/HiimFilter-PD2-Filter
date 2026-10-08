@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 8%CL%Kassahi - Meme - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 9%CL%Kassahi - Meme - Hyper -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -51,10 +51,6 @@ ItemDisplay[GOLD<7500 FILTLVL~5-6 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<10000 FILTLVL~7-8 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<25000 FILTLVL~9-10 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<999999 FILTLVL>10 CLVL>79 !MAPID=83]:
-Alias[QTY_TAG]: %TAN%x%WHITE%%QTY%
-Alias[SLAMMED_TAG]: *
-Alias[DESECRATED_TAG]: %GOLD%*
-Alias[VENDOR_GOLD_TAG]: %ORANGE%• %WHITE%$
 Alias[GEN_ITEM]: %NAME%
 Alias[GEN_ALT]: %NAME%
 Alias[TOKEN_PARTS]: %SOUNDID-4715%%PX-9B%%DOT-62%%PURPLE%«%BLACK%·%RED%»  %NAME%  %RED%«%BLACK%·%PURPLE%»
@@ -315,6 +311,17 @@ Alias[FX_UNID_GG]:
 Alias[FX_UNID_RARE_SUPER]:
 Alias[FX_VIAL_MIRROR]:
 Alias[FX_WSS]:
+Alias[PHIL777_STYLE]: FALSE
+Alias[QTY_TAG]: %TAN%x%WHITE%%QTY%
+Alias[SLAMMED_TAG]: *
+Alias[DESECRATED_TAG]: %GOLD%*
+Alias[VENDOR_GOLD_TAG]: %ORANGE%• %WHITE%$
+Alias[RUNE_LOW_RANGE]: (RUNE<20)
+Alias[MYSTERY_COLOR]: %RED%
+Alias[MYSTERY_TOP_NAME]: GG Mystery
+Alias[MYSTERY_QTY]: (QTY=1)
+Alias[REJUV_SMALL_LABEL]: %PURPLE%° %WHITE%35% %PURPLE%°
+Alias[REJUV_FULL_LABEL]: %PURPLE%° %WHITE%Juice %PURPLE%°
 Alias[SOCK_QUIVER_1]: (aqv OR cqv)
 Alias[SOCK_QUIVER_2]: (aqv2 OR aqv3 OR cqv2 OR cqv3)
 Alias[SOCK_HELM_2]: (cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1)
@@ -1602,33 +1609,40 @@ ItemDisplay[GEM>4 FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[skzs FILTLVL<11]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 IN_TOWN]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 GROUND]:
-ItemDisplay[RUNE<20 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
-ItemDisplay[RUNE<20 !CRAFTING_RUNES_SET FILTLVL<9]: %RUNE_LOW%%CONTINUE%
-ItemDisplay[RUNE<20 !CRAFTING_RUNES_SET FILTLVL>8]: %RUNE_LOW_STRICT%%CONTINUE%
+ItemDisplay[RUNE>0 RUNE<21 PHIL777_STYLE]: %DOT-70%%NAME%%CONTINUE%
+ItemDisplay[RUNE>19 RUNE<22 FILTLVL<8 PHIL777_STYLE]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>21 RUNE<26 FILTLVL<9 PHIL777_STYLE]: %SOUNDID-4715%%NAME%%CONTINUE%
+ItemDisplay[RUNE>25 PHIL777_STYLE]: %SOUNDID-4719%%NAME%%CONTINUE%
+ItemDisplay[RUNE>0 (FILTLVL<3 OR IN_TOWN) PHIL777_STYLE]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
+ItemDisplay[RUNE>0 QTY>1 QTY<51 PHIL777_STYLE]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
+ItemDisplay[RUNE_LOW_RANGE CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
+ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL<9]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL>8]: %RUNE_LOW_STRICT%%CONTINUE%
 ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
 ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
 ItemDisplay[RUNE=29 OR RUNE=31 OR RUNE=32]: %RUNE_ALT_HIGH%%CONTINUE%
 ItemDisplay[RUNE=30 OR RUNE=33]: %RUNE_TOP_HIGH%%CONTINUE%
-ItemDisplay[r01s]: %NAME%{%LIGHT_GRAY%Vampiric %WHITE%Boots: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%El, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r02s]: %NAME%{%WHITE%Brilliant Helm: O%NL%%YELLOW%Bountiful %WHITE%Chest: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Belt: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eld, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r03s]: %NAME%{%YELLOW%Bountiful %WHITE%Helm: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Chest: %LIGHT_GRAY%O%NL%%BLUE%Hitpower %WHITE%Weapon: %BLUE%O%NL%%PURPLE%Caster %WHITE%Weapon: %PURPLE%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tir, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r04s]: %NAME%{%GREEN%Safety %WHITE%Shield: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Chest: %BLUE%O%NL%%PURPLE%Caster %WHITE%Helm: %PURPLE%O%NL%%RED%Blood %WHITE%Gloves: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Nef, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r05s]: %NAME%{%GREEN%Safety %WHITE%Chest: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Shield: %BLUE%O%NL%%PURPLE%Caster %WHITE%Shield: %PURPLE%O%NL%%RED%Blood %WHITE%Boots: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eth, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r06s]: %NAME%{%GREEN%Safety %WHITE%Helm: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Helm: %BLUE%O%NL%%PURPLE%Caster %WHITE%Belt: %PURPLE%O%NL%%RED%Blood %WHITE%Shield: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ith, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r07s]: %NAME%{%WHITE%Brilliant Amulet: O%NL%%GREEN%Safety %WHITE%Belt: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Belt: %BLUE%O%NL%%PURPLE%Caster %WHITE%Chest: %PURPLE%O%NL%%RED%Blood %WHITE%Belt: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tal, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r08s]: %NAME%{%GREEN%Safety %WHITE%Gloves: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Boots: %BLUE%O%NL%%PURPLE%Caster %WHITE%Amulet: %PURPLE%O%NL%%RED%Blood %WHITE%Helm: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ral, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r09s]: %NAME%{%WHITE%Brilliant Shield: O%NL%%GREEN%Safety %WHITE%Boots: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Gloves: %BLUE%O%NL%%PURPLE%Caster %WHITE%Gloves: %PURPLE%O%NL%%RED%Blood %WHITE%Weapon: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ort, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r10s]: %NAME%{%GREEN%Safety %WHITE%Amulet: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Amulet: %BLUE%O%NL%%PURPLE%Caster %WHITE%Boots: %PURPLE%O%NL%%RED%Blood %WHITE%Chest: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Thul, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r11s]: %NAME%{%GREEN%Safety %WHITE%Ring: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Ring: %BLUE%O%NL%%PURPLE%Caster %WHITE%Ring: %PURPLE%O%NL%%RED%Blood %WHITE%Amulet: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Amn, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r12s]: %NAME%{%WHITE%Brilliant Weapon: O%NL%%LIGHT_GRAY%Vampiric %WHITE%Shield: %LIGHT_GRAY%O%NL%%GREEN%Safety %WHITE%Weapon: %GREEN%O%NL%%RED%Blood %WHITE%Ring: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Sol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r13s]: %NAME%{%WHITE%Brilliant Gloves: O%NL%%YELLOW%Bountiful %WHITE%Weapon: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Weapon: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Shael, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r14s]: %NAME%{%YELLOW%Bountiful %WHITE%Shield: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Amulet: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Dol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r15s]: %NAME%{%WHITE%Brilliant Ring: O%NL%%YELLOW%Bountiful %WHITE%Gloves: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Ring: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Hel, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r16s]: %NAME%{%WHITE%Brilliant Belt: O%NL%%YELLOW%Bountiful %WHITE%Boots: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Gloves: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Io, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r17s]: %NAME%{%YELLOW%Bountiful %WHITE%Ring: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Helm: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Lum, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
-ItemDisplay[r18s]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r01s !PHIL777_STYLE]: %NAME%{%LIGHT_GRAY%Vampiric %WHITE%Boots: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%El, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r02s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Helm: O%NL%%YELLOW%Bountiful %WHITE%Chest: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Belt: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eld, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r03s !PHIL777_STYLE]: %NAME%{%YELLOW%Bountiful %WHITE%Helm: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Chest: %LIGHT_GRAY%O%NL%%BLUE%Hitpower %WHITE%Weapon: %BLUE%O%NL%%PURPLE%Caster %WHITE%Weapon: %PURPLE%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tir, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r04s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Shield: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Chest: %BLUE%O%NL%%PURPLE%Caster %WHITE%Helm: %PURPLE%O%NL%%RED%Blood %WHITE%Gloves: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Nef, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r05s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Chest: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Shield: %BLUE%O%NL%%PURPLE%Caster %WHITE%Shield: %PURPLE%O%NL%%RED%Blood %WHITE%Boots: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Eth, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r06s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Helm: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Helm: %BLUE%O%NL%%PURPLE%Caster %WHITE%Belt: %PURPLE%O%NL%%RED%Blood %WHITE%Shield: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ith, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r07s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Amulet: O%NL%%GREEN%Safety %WHITE%Belt: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Belt: %BLUE%O%NL%%PURPLE%Caster %WHITE%Chest: %PURPLE%O%NL%%RED%Blood %WHITE%Belt: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Tal, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r08s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Gloves: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Boots: %BLUE%O%NL%%PURPLE%Caster %WHITE%Amulet: %PURPLE%O%NL%%RED%Blood %WHITE%Helm: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ral, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r09s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Shield: O%NL%%GREEN%Safety %WHITE%Boots: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Gloves: %BLUE%O%NL%%PURPLE%Caster %WHITE%Gloves: %PURPLE%O%NL%%RED%Blood %WHITE%Weapon: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ort, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r10s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Amulet: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Amulet: %BLUE%O%NL%%PURPLE%Caster %WHITE%Boots: %PURPLE%O%NL%%RED%Blood %WHITE%Chest: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Thul, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r11s !PHIL777_STYLE]: %NAME%{%GREEN%Safety %WHITE%Ring: %GREEN%O%NL%%BLUE%Hitpower %WHITE%Ring: %BLUE%O%NL%%PURPLE%Caster %WHITE%Ring: %PURPLE%O%NL%%RED%Blood %WHITE%Amulet: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Amn, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r12s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Weapon: O%NL%%LIGHT_GRAY%Vampiric %WHITE%Shield: %LIGHT_GRAY%O%NL%%GREEN%Safety %WHITE%Weapon: %GREEN%O%NL%%RED%Blood %WHITE%Ring: %RED%O%NL%%WHITE%Crafting Recipes: %ORANGE%Sol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r13s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Gloves: O%NL%%YELLOW%Bountiful %WHITE%Weapon: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Weapon: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Shael, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r14s !PHIL777_STYLE]: %NAME%{%YELLOW%Bountiful %WHITE%Shield: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Amulet: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Dol, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r15s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Ring: O%NL%%YELLOW%Bountiful %WHITE%Gloves: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Ring: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Hel, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r16s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Belt: O%NL%%YELLOW%Bountiful %WHITE%Boots: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Gloves: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Io, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r17s !PHIL777_STYLE]: %NAME%{%YELLOW%Bountiful %WHITE%Ring: %YELLOW%O%NL%%LIGHT_GRAY%Vampiric %WHITE%Helm: %LIGHT_GRAY%O%NL%%WHITE%Crafting Recipes: %ORANGE%Lum, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[r18s !PHIL777_STYLE]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE<21 RUNE>0 FILTLVL<10 PHIL777_STYLE]: %NAME%{%NAME%}
 ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 1%CL%%TAN%HR Estimated Value Each%WHITE%: 0.01%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: 3%CL%%TAN%HR Estimated Value Each%WHITE%: 0.03%CL%%NAME%}%CONTINUE%
@@ -1765,9 +1779,9 @@ ItemDisplay[tpgl]: %GREEN%· %WHITE%p3 %GREEN%·{%NAME%%BLUE%Deals Poison Damage
 ItemDisplay[tpcl]: %BLUE%· %WHITE%c3 %BLUE%·{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Large%CL%%GRAY%Freezing Potion}
 ItemDisplay[tpll]: %YELLOW%· %WHITE%l3 %YELLOW%·{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Large%CL%%GRAY%Shock Potion}
 ItemDisplay[(wms OR gpl OR gpm OR gps OR opl OR opm OR ops) (FILTLVL>1 OR CLVL>23)]:
-ItemDisplay[FILTLVL<7 rvs]: %PURPLE%° %WHITE%35% %PURPLE%°
+ItemDisplay[FILTLVL<7 rvs]: %REJUV_SMALL_LABEL%
 ItemDisplay[rvs]:
-ItemDisplay[rvl]: %PURPLE%° %WHITE%Juice %PURPLE%°
+ItemDisplay[rvl]: %REJUV_FULL_LABEL%
 ItemDisplay[bks]: %MAP-51%%GOLD%Scroll of Inifuss %RED%•{%TAN%Now Rests Treehead Woodfist%NL%Ageless, protected by Wilds%NL%Torn Bark of The Sacred Tree}
 ItemDisplay[bkd]: %MAP-51%%GOLD%Key to the Cairn Stones %RED%•{%TAN%Find The Sage Deckard Cain%NL%Behest a Demigod Imp, Rakanishu%NL%A portal to Tristram Awaits}
 ItemDisplay[hdm]: %MAP-51%%GOLD%Horadric Malus %RED%•{%TAN%Bestowed to The Sisters of The Sightless Eye%NL%Enchanted by Ancient Horadric Mages%NL%Crafted in Necessity of The Sin War}
