@@ -58,6 +58,8 @@ ItemDisplay[CONDITION]: %DISPLAY_NAME%{TOOLTIP}
 
 Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune HR values, currency prices, uber material values) live as `Alias[...]` entries in `builderfilter/02-alias/04-alias-economy-values[ALL].filter` and are referenced by the segments.
 
+**Style-specific icons/sounds in shared segments:** don't inline `%MAP-..%`/`%SOUNDID-..%`/`%DOT-..%` in a shared segment when a style (e.g. the `KassahiStd` bucket) already bakes them into its aliases, and don't make a `[ONLY=...]` copy of the segment. Use an `FX_*` (tags) or `DISP_*` (whole display part) alias from `builderfilter/02-alias/07-alias-site-fx[...]` and give it a value per style; `SITE_FX` is a condition flag for rules only one style wants.
+
 ## Economy Data
 
 Two sources keep economy values current:

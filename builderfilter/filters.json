@@ -756,7 +756,8 @@
 
   // Tag groups usable in segment filenames, e.g. [ONLY=KassahiStd].
   // KassahiStd = the kassahi bucket (not Phil777). Its aliases carry their own
-  // sound/icon tags, so shared segments that add site tags get a split copy.
+  // sound/icon tags, so shared segments put site tags in FX_*/DISP_* aliases
+  // (02-alias/07-alias-site-fx) instead of inline; that bucket defines them empty.
   "groups": {
     "KassahiStd": [
       "Kassahi-Regular",
