@@ -24,18 +24,18 @@ ItemDisplay[(aqv2 OR aqv3 OR cqv2 OR cqv3) (RARE OR CRAFT OR UNI OR SET OR MAG) 
 // helmets & circlets
 ItemDisplay[ci0 (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL<26]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
 ItemDisplay[ci0 (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL>25]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
-ItemDisplay[(cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR ulm OR fhl OR xhl OR uhl OR bhm OR xh9 OR ci1) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
+ItemDisplay[(cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
 ItemDisplay[(msk OR ghm OR crn) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL<41]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
 ItemDisplay[(msk OR ghm OR crn) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL>40]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
-ItemDisplay[(xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
+ItemDisplay[(xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3 OR ulm OR uhl) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 
 // barb helms & dru pelts
 ItemDisplay[(BAR OR DRU) NORM (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL<26]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
 ItemDisplay[(BAR OR DRU) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0 ILVL>25]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 
 // chest
-ItemDisplay[(qui OR lea OR hla OR stu OR xui OR xea OR xla OR xtu OR scl OR chn OR spl OR plt OR fld) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
-ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR gth) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
+ItemDisplay[(qui OR lea OR hla OR stu OR scl OR chn) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
+ItemDisplay[(rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR gth OR spl OR plt OR fld OR xui OR xea OR xla OR xtu) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 ItemDisplay[(uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR ful OR aar OR xth OR xul OR xar) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 
 // shields
@@ -57,10 +57,10 @@ ItemDisplay[NEC (EXC OR ELT) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360
 ItemDisplay[(dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:1}%CONTINUE%
 
 // always 2
-ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR bkf OR 9tk OR 9bk OR 7tk OR 7bk OR 9ta OR 7ta OR pil OR ssp OR 9ja OR 9pi OR 9s9 OR 7ja OR 7pi OR 7s7 OR am5 OR ama OR amf OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR (SOR !(ob5 OR oba OR obf))) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
+ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR 9dg OR 9di OR 7dg OR 7di OR bld OR 9bl OR 7bl OR sst OR bkf OR 9tk OR 9bk OR 7tk OR 7bk OR 9ta OR 7ta OR pil OR ssp OR 9ja OR 9pi OR 9s9 OR 7ja OR 7pi OR 7s7 OR am5 OR ama OR (WAND !(wnd OR ywn OR 9wn)) OR scp OR ktr OR wrb OR axf OR ces OR (SOR !(ob5 OR oba OR obf))) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:2}%CONTINUE%
 
 // always 3
-ItemDisplay[(9ha OR 7ha OR 9cl OR 7cl OR 9sp OR 7sp OR 9ma OR 7ma OR mst OR 9mt OR 7mt OR 9ss OR 9sm OR 9sb OR 9fc OR 7ss OR 7sm OR 7sb OR 7fc OR wsd OR 9wd OR 7wd OR 2hs OR 92h OR 72h OR 9kr OR 7kr OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR oba OR obf OR bal OR 9b8 OR 7b8 OR glv OR tsp OR 9gl OR 9ts OR 7gl OR 7ts) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
+ItemDisplay[(9ha OR 7ha OR 9cl OR 7cl OR 9sp OR 7sp OR 9ma OR 7ma OR mst OR 9mt OR 7mt OR 9ss OR 9sm OR 9sb OR 9fc OR 7ss OR 7sm OR 7sb OR 7fc OR wsd OR 9wd OR 7wd OR 2hs OR 92h OR 72h OR 9kr OR 7kr OR spr OR bar OR sbw OR lxb OR 8ss OR 6ss OR lst OR 8ls OR 6ls OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR oba OR obf OR bal OR 9b8 OR 7b8 OR glv OR tsp OR 9gl OR 9ts OR 7gl OR 7ts OR amf) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 ItemDisplay[SIN !(ktr OR wrb OR axf OR ces OR clw OR btl OR skr) (RARE OR CRAFT OR UNI OR SET OR MAG) SOCK=0 STAT360=0]:%NAME%{%NAME%, %RED%C%WHITE%:3}%CONTINUE%
 
 // always 4
