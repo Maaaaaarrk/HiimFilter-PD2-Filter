@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 5%CL%HiimFilter - Sancofexile - Barb - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 8th%CL%Season 14 - build 6%CL%HiimFilter - Sancofexile - Barb - Crafting -}%CONTINUE%
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
 ItemDisplay[box FILTLVL=2]: %NAME%{%NAME% Semi-Strict (2)}%CONTINUE%
@@ -443,6 +443,32 @@ Alias[PTS_AMU_DIV]:144
 Alias[PTS_MELEEJEW_DIV]:72
 Alias[PTS_CASTERJEW_DIV]:24
 Alias[PTS_LLDJEW_DIV]:48
+Alias[SITE_FX]: (CLVL>0)
+Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
+Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
+Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
+Alias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <
+Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
+Alias[FX_ESSENCE]: %MAP-4A%
+Alias[FX_GEM_STACK]: %DOT-70%
+Alias[FX_INFUSION]: %MAP-0B%
+Alias[FX_JEWF]: %MAP-68%
+Alias[FX_PD2_GG]: %MAP-4A%%SOUNDID-4719%
+Alias[FX_PD2_RARE]: %MAP-4A%%SOUNDID-4715%
+Alias[FX_PGEM_STACK]: %MAP-60%%DOT-70%
+Alias[FX_RKEY]: %MAP-68%%SOUNDID-4721%
+Alias[FX_RTP_RID]: %BORDER-0A%%DOT-55%%SOUNDID-4719%
+Alias[FX_STARS_3]: %SOUNDID-4714%
+Alias[FX_UBA]: %MAP-4A%%SOUNDID-4721%
+Alias[FX_UBA_PARTS]: %PX-60%%SOUNDID-4715%
+Alias[FX_UBER_KEY]: %MAP-62%%SOUNDID-4721%
+Alias[FX_UBER_ORGAN]: %MAP-9D%%SOUNDID-4721%
+Alias[FX_UBTM]: %MAP-A9%%SOUNDID-4721%
+Alias[FX_UNID_3STAR]: %SOUNDID-4726%
+Alias[FX_UNID_GG]: %SOUNDID-4719%
+Alias[FX_UNID_RARE_SUPER]: %SOUNDID-4715%
+Alias[FX_VIAL_MIRROR]: %BORDER-4A%%DOT-55%%SOUNDID-4733%
+Alias[FX_WSS]: %MAP-62%%SOUNDID-4715%
 ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
 ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
 ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
@@ -1175,31 +1201,31 @@ ItemDisplay[!ID WEAPON (MAG OR RARE) ETH FILTLVL<7]: %CRAFT_ONE%
 ItemDisplay[MAG amu !ID FILTLVL<5]: %NAME%
 ItemDisplay[MAG amu !ID FILTLVL<7]: %BLUE%Amu
 ItemDisplay[STAT477>0 (ARMOR OR WEAPON OR amu OR rin)]: %BORDER-4A%%DOT-55%%SOUNDID-4719%%NAME%{%NAME%}
-ItemDisplay[wss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
+ItemDisplay[wss QTY>1 SITE_FX]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[wss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[wss]: %CONTINUE%%TIER-8%%MAP-62%%SOUNDID-4715%%NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %WSS_ITEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %WSS_ITEM_HR_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt}
-ItemDisplay[wss FILTLVL<9]: %WSS_SHARD%{%NAME%}
+ItemDisplay[wss]: %CONTINUE%%TIER-8%%FX_WSS%%NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %WSS_ITEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %WSS_ITEM_HR_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt}
+ItemDisplay[wss (FILTLVL<9 OR !SITE_FX)]: %WSS_SHARD%{%NAME%}
 ItemDisplay[wss]: %NAME%{%NAME%}
-ItemDisplay[cwss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
+ItemDisplay[cwss QTY>1 SITE_FX]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[cwss QTY>1 QTY<8]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[cwss QTY>7]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%RED%Corrupts %TAN%your Annihilus}
-ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM%%MAP-68%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
+ItemDisplay[cwss]: %DISP_CWSS%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%RED%Corrupts %TAN%your Annihilus}
+ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM%%FX_JEWF%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
 ItemDisplay[lbox QTY>1 QTY<7]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[lbox QTY>6]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[lbox]: %MAP-4A%%SOUNDID-4719%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lbox]: %FX_PD2_GG%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEPIECE_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEPIECE_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[lpp]: %MAP-4A%%SOUNDID-4715%%GEN_RARE%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lpp]: %FX_PD2_RARE%%GEN_RARE%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[imrn QTY>1 QTY<5]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[imrn QTY>4]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[imrn]: %MAP-4A%%SOUNDID-4719%%PD2_MATS%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %DEMONIC_CUBE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %DEMONIC_CUBE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
-ItemDisplay[lmal]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
-ItemDisplay[llmr]: %BORDER-4A%%DOT-55%%SOUNDID-4733%%RARE_GG_ITEM%{%NAME%}
-ItemDisplay[lsvl]: %BORDER-4A%%DOT-55%%SOUNDID-4733%%RARE_GG_ITEM%{%NAME%}
+ItemDisplay[imrn]: %FX_PD2_GG%%PD2_MATS%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %DEMONIC_CUBE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %DEMONIC_CUBE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%GREEN%Set Item%CL%%GOLD%Unique Item%CL%%TAN%Note%WHITE%: Use it to %TAN%Re-roll stats of}
+ItemDisplay[lmal]: %DISP_LMAL%{%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item with 1}
+ItemDisplay[llmr]: %FX_VIAL_MIRROR%%RARE_GG_ITEM%{%NAME%}
+ItemDisplay[lsvl]: %FX_VIAL_MIRROR%%RARE_GG_ITEM%{%NAME%}
 ItemDisplay[iwss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%CATALYST_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%CATALYST_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[iwss]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %CATALYST_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %CATALYST_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%NAME%}
-ItemDisplay[rtp]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ALT%{%NAME%}
-ItemDisplay[rid]: %BORDER-0A%%DOT-55%%SOUNDID-4719%%RARE_GG_ALT%{%NAME%}
+ItemDisplay[iwss]: %DISP_IWSS%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %CATALYST_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %CATALYST_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%NAME%}
+ItemDisplay[rtp]: %FX_RTP_RID%%RARE_GG_ALT%{%NAME%}
+ItemDisplay[rid]: %FX_RTP_RID%%RARE_GG_ALT%{%NAME%}
 ItemDisplay[(key OR rkey) MAPID=1]: %NAME%{%BLACK%-%CL%%GRAY%Town!%CL%%BLACK%-%CL%%GOLD%Rogue Encampment%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=2]: %NAME%{%BLACK%-%CL%%TAN%Follow the %WHITE%Road%CL%%BLACK%-%CL%%GOLD%Blood Moor%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID=3]: %NAME%{%BLACK%-%CL%%WHITE%No pathing hints for this zone%CL%%BLACK%-%CL%%GOLD%Cold Plains%CL%%NAME%}%CONTINUE%
@@ -1367,10 +1393,10 @@ ItemDisplay[(key OR rkey) MAPID<132]:%NAME%{%BLUE%maxroll.gg/d2/resources/map-re
 ItemDisplay[key ASSASSIN]:{%NAME%}
 ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%NAME%{%NAME%}
 ItemDisplay[key]:{%NAME%}
-ItemDisplay[rkey]: %RARE_GG_ALT%%MAP-68%%SOUNDID-4721%{%NAME%}
-ItemDisplay[(dcbl OR dcho OR dcso)]: %MAP-0A%%SOUNDID-4721%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%-%CL%%ORANGE%Black Soulstone %WHITE%%BLACK_SOULSTONE_VALUE% hr - drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%%PRIME_EVIL_SOUL_VALUE% hr - drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%ORANGE%Pure Demonic Essence %WHITE%%PURE_DEMONIC_ESSENCE_VALUE% hr - drops from Map bosses%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
-ItemDisplay[(rtmo OR rtmv OR cm2f)]: %MAP-0A%%SOUNDID-4721%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Tainted Wss (Anni Corruption)%CL%%GRAY%-%CL%%ORANGE%Hellfire Torch(Ashes)%WHITE% %HELLFIRE_ASHES_VALUE% hr%CL%%ORANGE%Splinter of the Void %WHITE%%SPLINTER_OF_THE_VOID_VALUE% hr - drops in Mendeln map event%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%%TRANG_OUL_JAWBONE_VALUE% hr - drops from undead%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Minimum Res:%CL%%GOLD%Voidstone - Rathma boss fight}
-ItemDisplay[(lucb OR lucc OR lucd)]: %MAP-0A%%SOUNDID-4721%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Desecrate Item (Corrupted Amulets only)%CL%%GRAY%-%CL%%ORANGE%Flesh of Malic %WHITE%%FLESH_OF_MALIC_VALUE% hr - drops from any demon%CL%%ORANGE%Talisman of Transgression %WHITE%%TALISMAN_OF_TRANSGRESSION_VALUE% hr - drops in corrupted zone%CL%%ORANGE%Demonic Insignia %WHITE%%DEMONIC_INSIGNIA_VALUE% hr - drops in Act 5 red portal LOD zones%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
+ItemDisplay[rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}
+ItemDisplay[(dcbl OR dcho OR dcso)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%-%CL%%ORANGE%Black Soulstone %WHITE%%BLACK_SOULSTONE_VALUE% hr - drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%%PRIME_EVIL_SOUL_VALUE% hr - drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%ORANGE%Pure Demonic Essence %WHITE%%PURE_DEMONIC_ESSENCE_VALUE% hr - drops from Map bosses%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
+ItemDisplay[(rtmo OR rtmv OR cm2f)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Tainted Wss (Anni Corruption)%CL%%GRAY%-%CL%%ORANGE%Hellfire Torch(Ashes)%WHITE% %HELLFIRE_ASHES_VALUE% hr%CL%%ORANGE%Splinter of the Void %WHITE%%SPLINTER_OF_THE_VOID_VALUE% hr - drops in Mendeln map event%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%%TRANG_OUL_JAWBONE_VALUE% hr - drops from undead%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Minimum Res:%CL%%GOLD%Voidstone - Rathma boss fight}
+ItemDisplay[(lucb OR lucc OR lucd)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Desecrate Item (Corrupted Amulets only)%CL%%GRAY%-%CL%%ORANGE%Flesh of Malic %WHITE%%FLESH_OF_MALIC_VALUE% hr - drops from any demon%CL%%ORANGE%Talisman of Transgression %WHITE%%TALISMAN_OF_TRANSGRESSION_VALUE% hr - drops in corrupted zone%CL%%ORANGE%Demonic Insignia %WHITE%%DEMONIC_INSIGNIA_VALUE% hr - drops in Act 5 red portal LOD zones%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
 ItemDisplay[rtma]: Voidstone%CONTINUE%
 ItemDisplay[dcma]: Vision of Terror%CONTINUE%
 ItemDisplay[luca]: Shadow of Hatred%CONTINUE%
@@ -1384,19 +1410,19 @@ ItemDisplay[luca STAT185=2]: %RED%%NAME%%CONTINUE%{%ORANGE%> > %RED%Tier 2 (60% 
 ItemDisplay[dcma]: %NAME%%CONTINUE%{%NAME%%CL%%RED%Diablo Clone Entry}
 ItemDisplay[rtma]: %NAME%%CONTINUE%{%NAME%%CL%%BLUE%Rathma Entry}
 ItemDisplay[luca]: %NAME%%CONTINUE%{%NAME%%CL%%ORANGE%Lucion Boss Entry}
-ItemDisplay[(rtma OR dcma OR luca)]: %MAP-0A%%SOUNDID-4721%%BOSS_ENTRY%{%NAME%}
+ItemDisplay[(rtma OR dcma OR luca)]: %FX_BOSS_MAT%%BOSS_ENTRY%{%NAME%}
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
 ItemDisplay[ubab]: %NAME%{Found in T2 Maps}%CONTINUE%
 ItemDisplay[ubac]: %NAME%{Found in T3 Maps}%CONTINUE%
-ItemDisplay[(ubaa OR ubab OR ubac)]: %PX-60%%SOUNDID-4715%%PD2_MATS%{%NAME%}
-ItemDisplay[uba]: %MAP-4A%%SOUNDID-4721%%BOSS_ENTRY%{%NAME%}
-ItemDisplay[tes OR ceh OR bet OR fed]: %MAP-4A%%TOKEN_PARTS%{%NAME%%DARK_GREEN%Festering %TAN%Essence %WHITE%%FESTERING_ESS_VALUE% hr - from: %DARK_GREEN%Baal%CL%%RED%Burning %TAN%Essence %WHITE%%BURNING_ESS_VALUE% hr - from: %RED%Diablo%CL%%YELLOW%Charged %TAN%Essence %WHITE%%CHARGED_ESS_VALUE% hr - from: %YELLOW%Mephisto%CL%%BLUE%Twisted %TAN%Essence %WHITE%%TWISTED_ESS_VALUE% hr - from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
-ItemDisplay[toa]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <{%NAME%}
-ItemDisplay[pk1]: %MAP-62%%SOUNDID-4721%%UBER_KEYS%{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
-ItemDisplay[pk2]: %MAP-62%%SOUNDID-4721%%UBER_KEYS%{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
-ItemDisplay[pk3]: %MAP-62%%SOUNDID-4721%%UBER_KEYS%{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
-ItemDisplay[(mbr OR bey OR dhn)]: %MAP-9D%%SOUNDID-4721%%UBER_KEYS%{%ORANGE%Uber Izual %WHITE%- Furnace of Pain - Mephisto's Brain%CL%%ORANGE%Uber Duriel %WHITE%- Forgotten Sands - Baal's Eye%CL%%ORANGE%Lilith %WHITE%- Matron's Den - Diablo's Horn%CL%%WHITE%to create %RED%Uber Tristram %WHITE%Entry%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the 3 Organs together}
-ItemDisplay[ubtm]: %MAP-A9%%SOUNDID-4721%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristram - Uber bosses fight}
+ItemDisplay[(ubaa OR ubab OR ubac)]: %FX_UBA_PARTS%%PD2_MATS%{%NAME%}
+ItemDisplay[uba]: %FX_UBA%%BOSS_ENTRY%{%NAME%}
+ItemDisplay[tes OR ceh OR bet OR fed]: %FX_ESSENCE%%TOKEN_PARTS%{%NAME%%DARK_GREEN%Festering %TAN%Essence %WHITE%%FESTERING_ESS_VALUE% hr - from: %DARK_GREEN%Baal%CL%%RED%Burning %TAN%Essence %WHITE%%BURNING_ESS_VALUE% hr - from: %RED%Diablo%CL%%YELLOW%Charged %TAN%Essence %WHITE%%CHARGED_ESS_VALUE% hr - from: %YELLOW%Mephisto%CL%%BLUE%Twisted %TAN%Essence %WHITE%%TWISTED_ESS_VALUE% hr - from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
+ItemDisplay[toa]: %DISP_TOA%{%NAME%}
+ItemDisplay[pk1]: %FX_UBER_KEY%%UBER_KEYS%{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
+ItemDisplay[pk2]: %FX_UBER_KEY%%UBER_KEYS%{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
+ItemDisplay[pk3]: %FX_UBER_KEY%%UBER_KEYS%{%TAN%Key of Destruction %WHITE%from: %PURPLE%Nihlathak %WHITE%or %PURPLE%Izual%CL%%TAN%Key of Hate %WHITE%from: %BLUE%Summoner %WHITE%or %BLUE%Bloodwitch%CL%%TAN%Key of Terror %WHITE%from: %RED%Countess %WHITE%or %RED%Blood Raven%CL%%WHITE%To open mini-uber portal(s)%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the Keys together}%CONTINUE%
+ItemDisplay[(mbr OR bey OR dhn)]: %FX_UBER_ORGAN%%UBER_KEYS%{%ORANGE%Uber Izual %WHITE%- Furnace of Pain - Mephisto's Brain%CL%%ORANGE%Uber Duriel %WHITE%- Forgotten Sands - Baal's Eye%CL%%ORANGE%Lilith %WHITE%- Matron's Den - Diablo's Horn%CL%%WHITE%to create %RED%Uber Tristram %WHITE%Entry%CL%%TAN%Note%WHITE%: Cube 1 of %ORANGE%each %WHITE%of the 3 Organs together}
+ItemDisplay[ubtm]: %FX_UBTM%%UBER_KEYS%{%NAME%%CL%%BLUE%Reward: Hellfire Torch & Black soulstone%CL%%GRAY%---------%CL%%ORANGE%Uber Diablo %WHITE%- no over cap needed%CL%%ORANGE%Uber Baal %WHITE%- 75% (Lower res)%CL%%ORANGE%Uber Mephisto %WHITE%- 50% (Conviction)%CL%%GRAY%Overcap Recommended:%CL%%GRAY%--------%CL%%GOLD%Uber Tristram - Uber bosses fight}
 ItemDisplay[fort]: %MAP-4A%%NAME%{%WHITE%Cube with: %WHITE%Any Map to make a %GOLD%Fortified %WHITE%Map}
 ItemDisplay[imma]:
 ItemDisplay[imra]: %MAP-4A%%NAME%
@@ -1561,20 +1587,20 @@ ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t6
 ItemDisplay[GEM~1-3 (FILTLVL=1 OR DIFF<2) FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[GEM~1-3 (FILTLVL>2 OR DIFF>1)]:
 ItemDisplay[GEM>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[gzvs]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: +24 Def%CL%Armor/Helm: +8 to Strength%CL%Weapon: +100 to Attack Rating%CL%}
-ItemDisplay[glys]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Light Res%CL%Armor/Helm: 20% Magic Find%CL%Weapon: 1-30 Light Damage%CL%}
-ItemDisplay[glbs]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Cold Res%CL%Armor/Helm: +31 to Mana%CL%Weapon: 6-10 Cold Damage%CL%}
-ItemDisplay[glgs]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Psn Res%CL%Armor/Helm: +8 Dexterity%CL%Weapon: +60 Psn Dmg over 6 Sec%CL%}
-ItemDisplay[glrs]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Fire Res%CL%Armor/Helm: +31 to Life%CL%Weapon: 10-16 Fire Dmg%CL%}
-ItemDisplay[glws]: %CONTINUE%%DOT-70%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: All Res +14%%CL%Armor/Helm: +80 to AR%CL%Weapon: +54% Dmg vs Undead%CL%}
-ItemDisplay[skls]: %CONTINUE%%DOT-70%%NAME%%TIER-4%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: Atcker+16Dmg%CL%Armor/Helm: Rep Life 4, Reg Mana 12%%CL%Weapon: 3%Life 3%Mana %CL%}
-ItemDisplay[gpvs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest Tal, +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield Eth, [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
-ItemDisplay[gpys]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring Lum, +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest Eld, +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield Dol, [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon Shael, +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft}
-ItemDisplay[gpbs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring Amn, +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt Tal, 10% FBR +[10-20]% FHR 5%CTC FNova%CL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots Ral, +[60-120]DefvMelee [10-20]% FHR 5%CTC FNova%CL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest Nef, +[75-100]%EDef +[30-40]% FHR 8%CTC FNova%CL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft}
-ItemDisplay[gpgs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Thul, 10% Block [4-7]MDR & PDR%CL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%CL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%CL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%CL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%CL%Helm Ith, +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest Eth, +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield Nef, +[50-75]% EDef [4-6]% PDR  +[100-150]DefvMelee%CL%Weapon Sol, +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft}
-ItemDisplay[gprs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring Sol, +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots Eth, [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm Ral, [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest Thul, +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield Ith, [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft}
-ItemDisplay[gpws]: %CONTINUE%%MAP-60%%DOT-70%%NAME%%TIER-8%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
-ItemDisplay[skzs]: %CONTINUE%%MAP-60%%DOT-70%%NAME%{Amulet Dol, [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring Hel,[15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt Eld, [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots El, [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm Lum, [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest Tir, [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield Sol, [10-20]% Block [3-6]%ML [30-50] PLR%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
+ItemDisplay[gzvs]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: +24 Def%CL%Armor/Helm: +8 to Strength%CL%Weapon: +100 to Attack Rating%CL%}
+ItemDisplay[glys]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Light Res%CL%Armor/Helm: 20% Magic Find%CL%Weapon: 1-30 Light Damage%CL%}
+ItemDisplay[glbs]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Cold Res%CL%Armor/Helm: +31 to Mana%CL%Weapon: 6-10 Cold Damage%CL%}
+ItemDisplay[glgs]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Psn Res%CL%Armor/Helm: +8 Dexterity%CL%Weapon: +60 Psn Dmg over 6 Sec%CL%}
+ItemDisplay[glrs]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: 28% Fire Res%CL%Armor/Helm: +31 to Life%CL%Weapon: 10-16 Fire Dmg%CL%}
+ItemDisplay[glws]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-2%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: All Res +14%%CL%Armor/Helm: +80 to AR%CL%Weapon: +54% Dmg vs Undead%CL%}
+ItemDisplay[skls]: %CONTINUE%%FX_GEM_STACK%%NAME%%TIER-4%{%TAN%Note%WHITE%: 3xFlawless + %GRAY%key %WHITE%= Perf%CL%%CL%%WHITE%Shield: Atcker+16Dmg%CL%Armor/Helm: Rep Life 4, Reg Mana 12%%CL%Weapon: 3%Life 3%Mana %CL%}
+ItemDisplay[gpvs]: %CONTINUE%%FX_PGEM_STACK%%NAME%%TIER-8%{Amulet Ral, +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring Amn, +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt Ith, +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves Ort, +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Thul, Max Mana [10-15]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm Nef, +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest Tal, +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield Eth, [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon Tir, +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft}
+ItemDisplay[gpys]: %CONTINUE%%FX_PGEM_STACK%%NAME%%TIER-8%{Amulet Ko, +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring Lum, +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt El, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves Hel, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots Io, +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm Tir, +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest Eld, +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield Dol, [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon Shael, +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft}
+ItemDisplay[gpbs]: %CONTINUE%%FX_PGEM_STACK%%NAME%%TIER-8%{Amulet Thul, +[150-250]AR +[10-20]% FHR 5%CTC FNova%CL%Ring Amn, +[5-10]Dex +[2-4] MaxDmg 5%CTC FNova%CL%Belt Tal, 10% FBR +[10-20]% FHR 5%CTC FNova%CL%Gloves Ort, Knockback -[10-20]% Target Def 5%CTC FNova%CL%Boots Ral, +[60-120]DefvMelee [10-20]% FHR 5%CTC FNova%CL%Helm Ith, +[100-200]AR +[10-20]% FHR 5%CTC FNova%CL%Chest Nef, +[75-100]%EDef +[30-40]% FHR 8%CTC FNova%CL%Shield Eth, [10-20]%Block +[20-30]% FBR 5%CTC FNova%CL%Weapon Tir, +[50-80]%EDmg -[10-20]%Trgt Def 5%CTC FNova%CL%%BLUE%Hitpower Craft}
+ItemDisplay[gpgs]: %CONTINUE%%FX_PGEM_STACK%%NAME%%TIER-8%{Amulet Thul, 10% Block [4-7]MDR & PDR%CL%Ring Amn, +[5-10] Vit [2-5]MDR [2-5]PDR%CL%Belt Tal, +[10-30]% EDef +[10-20]% Psn Res [2-5]MDR [2-5]PDR%CL%Gloves Ral, +[10-30]% Edef +[10-20]% Cold Res [2-5]MDR [2-5]PDR%CL%Boots Ort, +[20-60]% EDef +[10-20]% Fire Res [2-5]MDR [2-5]PDR%CL%Helm Ith, +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest Eth, +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield Nef, +[50-75]% EDef [4-6]% PDR  +[100-150]DefvMelee%CL%Weapon Sol, +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft}
+ItemDisplay[gprs]: %CONTINUE%%FX_PGEM_STACK%%NAME%%TIER-8%{Amulet Amn, 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring Sol, +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt Tal, [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves Nef, [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots Eth, [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm Ral, [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest Thul, +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield Ith, [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon Ort, +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft}
+ItemDisplay[gpws]: %CONTINUE%%FX_PGEM_STACK%%NAME%%TIER-8%{Amulet Tal, +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring Hel, +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt Io, +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves Shael, +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots Ko, 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm Eld, +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest El, +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield Ort, +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon Sol, [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft}
+ItemDisplay[skzs]: %CONTINUE%%FX_PGEM_STACK%%NAME%{Amulet Dol, [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring Hel,[15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt Eld, [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves Io, [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots El, [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm Lum, [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest Tir, [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield Sol, [10-20]% Block [3-6]%ML [30-50] PLR%CL%Weapon Shael, +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft}
 ItemDisplay[crfb]: %NAME%%CONTINUE%{Amulet 10% FRW +[3-6] LPK +[10-20] Life%CL%Ring +[5-10] Str [2-3]% LL +[10-20] Life%CL%Belt [10-20]% Open Wounds [3-6]% LL +[10-20] Life%CL%Gloves [5-10]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Boots [5-10]% Open Wounds [2-4]%LL +[10-20] Life%CL%Helm [10-15]% Crushing Blow [2-4]% LL +[10-20] Life%CL%Chest +[4-6] LPK +[30-50]% EDef +[5-8]% MaxLife%CL%Shield [10-20]% Block [3-6]% LL +[5-8]% MaxLife%CL%Weapon +[50-80]% EDmg [3-6]% LL +[10-20] Life%CL%%RED%Blood Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[crfc]: %NAME%%CONTINUE%{Amulet +[5-10]% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Ring +[5-10] Energy +[1-2] MPK +[10-20] Mana%CL%Belt +10% FCR Regen Mana [4-10]% +[10-20] Mana%CL%Gloves +[5-10]% FCR +[1-3] MPK +[10-20] Mana%CL%Boots Max Mana [10-150]% Regen Mana [4-10]% +[10-20] Mana%CL%Helm +10% FCR Regen Mana [5-10]% +[10-20] Energy%CL%Chest +[10-15]% FCR +[3-6] MPK +[15-25] Energy%CL%Shield [10-20]% Block +10% FCR [20-30]% MaxMana%CL%Weapon +1 to All Skills +[10-20]% FCR +[10-20] Mana%CL%%PURPLE%Caster Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[crfs]: %NAME%%CONTINUE%{Amulet 10% Block [4-7] MDR & PDR%CL%Ring +[5-10] to Vit [2-5] MDR [2-5] PDR%CL%Belt +[10-30]% EDef +[10-20]% Psn Res [2-5] MDR [2-5] PDR%CL%Gloves +[10-30]% Edef +[10-20]% Cold Res [2-5] MDR [2-5] PDR%CL%Boots +[20-60]% EDef +[10-20]% Fire Res [2-5] MDR [2-5] PDR%CL%Helm +[30-60]% EDef +[10-20]% Light Res [4-6]% PDR%CL%Chest +[50-75]% EDef +[100-150]DefvMelee [4-6]% PDR%CL%Shield +[50-75]% EDef [4-6]% PDR%CL%Weapon +[50-80]% EDmg KnBak [2-5]MDR & PDR%CL%%GREEN%Safety Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
@@ -1582,7 +1608,7 @@ ItemDisplay[crfh]: %NAME%%CONTINUE%{Amulet +[150-250]AR +[10-20]% FHR 5%CTC FNov
 ItemDisplay[crfv]: %NAME%%CONTINUE%{Amulet [15-25]% CurseDurReduct [3-6]%ML +[20-30] RepLife%CL%Ring [15-25]% PLR [2-3]%ML +[2-4] MinDmg%CL%Belt [15-25]% PLR [3-6]%ML +[10-20] RepLife%CL%Gloves [5-10]% DeadlyStrike [2-4]%ML +[10-20] RepLife%CL%Boots [15-25]% PLR [2-4]%ML +[10-20] RepLife%CL%Helm [10-15]% DeadlyStrike [2-4]%ML [10-20] RepLife%CL%Chest [4-6]%ML +[30-50]% EDef [30-50]%PLR%CL%Shield [10-20]% Block [3-6]%ML [30-50]%PLR%CL%Weapon +[100-140]%ToDemon&Undead [3-6]%ML +[10-15] RepLife%CL%%GRAY%Vampiric Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[crfu]: %NAME%%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[crfp]: %NAME%%CONTINUE%{Amulet +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
-ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %MAP-0B%%NAME%{%NAME%}
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %FX_INFUSION%%NAME%{%NAME%}
 ItemDisplay[GEM>3 FILTLVL<11]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 GROUND]:
@@ -1807,7 +1833,7 @@ ItemDisplay[MAG jew !ID FILTLVL<11 ILVL>84]: %NAME%
 ItemDisplay[MAG jew !ID FILTLVL<7]: %MAG_ITEM%
 ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM%
 ItemDisplay[RARE jew !ID]: %RARE_HIGH_ITEM%
-ItemDisplay[EQ7 RARE !ID]: %SOUNDID-4715%%RARE_SUPER%
+ItemDisplay[EQ7 RARE !ID]: %FX_UNID_RARE_SUPER%%RARE_SUPER%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID ILVL>84 FILTLVL<8]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID FILTLVL<7]: %MAG_ITEM%
 ItemDisplay[EQ7 MAG !ETH !ID FILTLVL<5]: %NAME%
@@ -1873,23 +1899,23 @@ ItemDisplay[RARE !ID CLASS FILTLVL<5]: %TIER-6%%NAME%
 ItemDisplay[RARE !ID MAPID=83 FILTLVL<7]: %TIER-6%%NAME%
 ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)]: %NAME%
 ItemDisplay[RARE !ID FILTLVL>2]:
-ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %SOUNDID-4719%%UNI_BOSS_ITEM%
-ItemDisplay[UNI !ID uh9 MAPID=137]: %SOUNDID-4719%%UNI_BOSS_ITEM%
-ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
-ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %FX_UNID_GG%%UNI_BOSS_ITEM%
+ItemDisplay[UNI !ID uh9 MAPID=137]: %FX_UNID_GG%%UNI_BOSS_ITEM%
+ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
 ItemDisplay[UNI !ID FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%
-ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
-ItemDisplay[UNI !ID FILTLVL<11 (amu OR rin)]: %SOUNDID-4719%%UNI_GG_ITEM%
-ItemDisplay[jew UNI !ID FILTLVL<11]: %SOUNDID-4719%%FACET_ITEM%
-ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
-ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
+ItemDisplay[UNI !ID FILTLVL<11 (amu OR rin)]: %FX_UNID_GG%%UNI_GG_ITEM%
+ItemDisplay[jew UNI !ID FILTLVL<11]: %FX_UNID_GG%%FACET_ITEM%
+ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
 ItemDisplay[UNI !ID FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %UNI_STAR2_ITEM%
 ItemDisplay[UNI !ID FILTLVL<8 2_STAR_UNIQUE]: %UNI_STAR2_ITEM%
 ItemDisplay[UNI !ID FILTLVL<7 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
 ItemDisplay[UNI !ID FILTLVL<7 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
 ItemDisplay[UNI !ID FILTLVL<7 NO_STAR_UNIQUE]: %UNI_STAR0_ITEM%
 ItemDisplay[UNI !ID FILTLVL<7 LLD_UNIQUE]: %UNI_STAR1_ITEM%
-ItemDisplay[SET !ID FILTLVL<11 4_STAR_SET]: %SOUNDID-4719%%SET_GG_ITEM%
+ItemDisplay[SET !ID FILTLVL<11 4_STAR_SET]: %FX_UNID_GG%%SET_GG_ITEM%
 ItemDisplay[SET !ID (amu OR rin) FILTLVL<6]: %SET_TIER3_ITEM%
 ItemDisplay[SET !ID amu FILTLVL<7]: %NAME%
 ItemDisplay[SET !ID rin FILTLVL<8]: %NAME%
