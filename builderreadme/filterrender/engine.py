@@ -93,8 +93,33 @@ class Filter:
             name = new
             if not cont:
                 break
-        shown = matched is False or any(t.strip() for line in name for t, _ in line)
+        name = _trim(name)
+        shown = matched is False or bool(name)
         return name, border, shown
+
+
+def _trim(lines):
+    """The game trim()s the finished label: whitespace (spaces and line breaks) at its very
+    start and end is dropped; spacing inside it stays."""
+    flat = []  # (line index, text, rgb)
+    for k, line in enumerate(lines):
+        flat.extend((k, t, c) for t, c in line)
+        flat.append((k, "\n", None))
+    text = "".join(t for _, t, _ in flat)
+    lead = len(text) - len(text.lstrip())
+    keep = len(text.rstrip())
+    out, pos = [[]], 0
+    for _, t, c in flat:
+        lo, hi = max(lead - pos, 0), min(keep - pos, len(t))
+        pos += len(t)
+        if hi <= lo:
+            continue
+        piece = t[lo:hi]
+        if c is None:
+            out.append([])
+        else:
+            out[-1].append((piece, c))
+    return out if any(out) else []
 
 
 def item_color(item):
