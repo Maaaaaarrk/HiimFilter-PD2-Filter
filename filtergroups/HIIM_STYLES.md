@@ -17,3 +17,5 @@ The Kassahi-family filters ([Phil777](phil777/README.md), [Kassahi](kassahi/READ
 * [Style — Hyper](../examples/render/Hiim_Hyper.png?raw=true) — files in [hiimhyper](hiimhyper/README.md)
 * [Style — TalRasha](../examples/render/Hiim_TalRasha_Themed.png?raw=true) — files in [hiimtalrasha](hiimtalrasha/README.md)
 * [Vanilla Plus](../examples/render/Hiim_Vanilla_Plus.png?raw=true) — files in [hiimvanillaplus](hiimvanillaplus/README.md)
+* [Kassahi — Standard](../examples/render/Kassahi.png?raw=true) — files in [kassahi](kassahi/README.md)
+* [Kassahi & Philanthropy777](../examples/render/Kassahi_Phil777.png?raw=true) — files in [phil777](phil777/README.md)

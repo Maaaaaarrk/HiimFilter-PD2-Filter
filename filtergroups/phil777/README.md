@@ -1,5 +1,6 @@
 # phil777
 ## Last updated October 9th Season 14 - build 18
+## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
 * philanthropy777: Standard filter with a philanthropy777 visual theme. [Kassahi_Phil777.filter]
@@ -20,6 +21,11 @@
 * Mystery — Class — Necromancer: Mystery class filter tuned for Necromancer with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Necromancer_Focused.filter]
 * Mystery — Class — Paladin: Mystery class filter tuned for Paladin with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Paladin_Focused.filter]
 * Mystery — Class — Sorceress: Mystery class filter tuned for Sorceress with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Sorceress_Focused.filter]
+
+## Filter Preview — Kassahi & Philanthropy777
+Rendered by `builderreadme/render_readme_images.py` from the filter on every build. Rows are sample items, columns are filter-level groups; a cell split into notes (e.g. `level 3 | level 4`) changes inside its group. Unique and set samples are picked per star tier from `builderfilter/data/unique-set-tiers.json`. Compare all Hiim styles side by side: [Hiim styles](../HIIM_STYLES.md)
+
+[![Kassahi & Philanthropy777](../../examples/render/Kassahi_Phil777.png?raw=true)](../../examples/render/Kassahi_Phil777.png?raw=true)
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.

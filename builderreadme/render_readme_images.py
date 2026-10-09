@@ -14,7 +14,11 @@ import sys
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 OUT_DIR = os.path.join(ROOT_DIR, "examples", "render")
-PREVIEW_GROUPS = ["hiimhyper", "hiimtalrasha", "hiimvanillaplus"]
+PREVIEW_GROUPS = ["hiimhyper", "hiimtalrasha", "hiimvanillaplus", "kassahi", "phil777"]
+# groups whose general filter is a Hiim style (the Hiim styles comparison)
+HIIM_STYLE_GROUPS = [None, "hiimhyper", "hiimtalrasha", "hiimvanillaplus"]
+# preview titles for groups whose display_name doesn't say whose filter it is
+PREVIEW_TITLES = {"kassahi": "Kassahi — Standard", "phil777": "Kassahi & Philanthropy777"}
 STYLES_LEVEL = 5
 STYLES_IMAGE = "examples/render/Hiim_Styles.png"
 # (filtergroups dir, release file, column title) for the Kassahi-family comparison
@@ -49,6 +53,7 @@ def previews():
     for group in [None] + PREVIEW_GROUPS:
         defs_dir = ROOT_DIR if group is None else os.path.join(ROOT_DIR, "filtergroups", group)
         name, release, path = general_filter(defs_dir)
+        name = PREVIEW_TITLES.get(group, name)
         image = f"examples/render/{os.path.splitext(release)[0]}.png"
         out.append((group, name, image, path))
     return out
@@ -57,9 +62,10 @@ def previews():
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     named = []
-    for _, name, image, path in previews():
+    for group, name, image, path in previews():
         flt = Filter(path)
-        named.append((name, flt))
+        if group in HIIM_STYLE_GROUPS:
+            named.append((name, flt))
         render_examples.render_grid(flt, os.path.join(ROOT_DIR, image), name)
         print(f"  wrote {image} from {os.path.relpath(path, ROOT_DIR)}")
     render_examples.render_styles(named, STYLES_LEVEL, os.path.join(ROOT_DIR, STYLES_IMAGE),
