@@ -43,6 +43,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git add version.txt \
                   "builderfilter/01-header/01-Version[ALL].filter" \
+                  "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" \
                   filter_definitions.json \
                   README.md
           git add *.filter 2>/dev/null || true
