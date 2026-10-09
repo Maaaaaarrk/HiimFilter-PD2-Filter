@@ -1,5 +1,5 @@
 # Hiim Styles Side by Side
-## Last updated October 9th Season 14 - build 15
+## Last updated October 9th Season 14 - build 16
 
 Every Hiim style at filter level 5, item for item. Each style ships the same rules and tiers; only the look differs.
 
