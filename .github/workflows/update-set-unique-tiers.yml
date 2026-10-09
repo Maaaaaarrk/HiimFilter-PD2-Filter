@@ -1,8 +1,10 @@
 name: Update Set & Unique Star Tiers
 
-# Upgrade-only: scripts/apply-tier-upgrades.mjs never applies a downgrade and
-# aborts if any unique/set tier (ETH or non-ETH) would end up lower. Downgrades
-# stay a manual decision (run the suggest scripts locally and review temp/*-moves.txt).
+# Tiers live in builderfilter/data/unique-set-tiers.json (the build regenerates the
+# 05-unid-unique-set-stars alias file from it). scripts/apply-tier-changes.mjs always
+# applies upgrades; downgrades are applied only when the repository variable
+# TIER_AUTO_DOWNGRADES is 'true' (Settings > Secrets and variables > Actions > Variables).
+# Downgrades never go below an entry's "floor", and "locked" entries are never changed.
 
 on:
   schedule:
@@ -43,15 +45,15 @@ jobs:
       - name: Suggest set tiers (PD2 market)
         run: node scripts/suggest-set-tiers.mjs --ladder=true --hardcore=false
 
-      - name: Apply upgrades only
-        run: node scripts/apply-tier-upgrades.mjs
+      - name: Apply tier changes (downgrades only if TIER_AUTO_DOWNGRADES is 'true')
+        run: node scripts/apply-tier-changes.mjs ${{ vars.TIER_AUTO_DOWNGRADES == 'true' && '--downgrades=true' || '' }}
 
       - name: Job summary
         if: always()
         run: |
-          if [ -f temp/tier-upgrades-applied.md ]; then cat temp/tier-upgrades-applied.md >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f temp/tier-changes-applied.md ]; then cat temp/tier-changes-applied.md >> "$GITHUB_STEP_SUMMARY"; fi
           echo '```diff' >> "$GITHUB_STEP_SUMMARY"
-          git diff -- "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" | cut -c1-200 >> "$GITHUB_STEP_SUMMARY"
+          git diff -- builderfilter/data/unique-set-tiers.json | cut -c1-200 >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload suggestion reports
@@ -62,10 +64,10 @@ jobs:
           path: temp/
           if-no-files-found: ignore
 
-      - name: Check if alias file changed
+      - name: Check if tiers changed
         id: check
         run: |
-          if git diff --quiet -- "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter"; then
+          if git diff --quiet -- builderfilter/data/unique-set-tiers.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -100,7 +102,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" \
+          git add builderfilter/data/unique-set-tiers.json \
+                  "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" \
                   version.txt \
                   "builderfilter/01-header/01-Version[ALL].filter" \
                   filter_definitions.json \
@@ -111,7 +114,7 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Upgrade set/unique star tiers from PD2 market (version ${{ env.VERSION }})"
+          git commit -m "Update set/unique star tiers from PD2 market (version ${{ env.VERSION }})"
           git push --force origin "HEAD:$BOT_BRANCH"
 
           existing_pr=$(gh pr list --head "$BOT_BRANCH" --base main --state open --json number -q '.[0].number')
@@ -119,11 +122,11 @@ jobs:
             gh pr create \
               --base main \
               --head "$BOT_BRANCH" \
-              --title "Upgrade set/unique star tiers (version ${{ env.VERSION }})" \
-              --body-file temp/tier-upgrades-applied.md
+              --title "Update set/unique star tiers (version ${{ env.VERSION }})" \
+              --body-file temp/tier-changes-applied.md
           else
             gh pr edit "$existing_pr" \
-              --title "Upgrade set/unique star tiers (version ${{ env.VERSION }})" \
-              --body-file temp/tier-upgrades-applied.md
+              --title "Update set/unique star tiers (version ${{ env.VERSION }})" \
+              --body-file temp/tier-changes-applied.md
             echo "Existing PR #$existing_pr was updated by force-push."
           fi

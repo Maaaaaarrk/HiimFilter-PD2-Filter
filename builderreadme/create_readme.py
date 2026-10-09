@@ -40,7 +40,8 @@ def parse_unique_tier_lists(path):
         m = re.search(rf"^Alias\[{tier}\]:\s*\(([^)]+)\)", text, re.MULTILINE)
         if not m:
             continue
-        codes = [c.strip() for c in re.split(r"\s+OR\s+", m.group(1), flags=re.IGNORECASE) if c.strip()]
+        codes = [c.strip() for c in re.split(r"\s+OR\s+", m.group(1), flags=re.IGNORECASE)
+                 if c.strip() and c.strip() != "FALSE"]  # an empty tier is generated as (FALSE)
         result[tier] = codes
     return result
 

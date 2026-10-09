@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 9th Season 14 - build 12
+## Last updated October 9th Season 14 - build 13
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 
@@ -140,7 +140,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Thunderstroke
 - Titans Revenge (ETH only)
 - Tomb Reaver
-- Tomb Reaver (ETH only)
 - Veil of Steel or Nightwings Veil
 - Verdungos Hearty Cord
 - Vortex Shield
