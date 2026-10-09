@@ -19,31 +19,15 @@ CATEGORIES = [
         _rune(24, "Ist"),
         _rune(26, "Vex"),
         _rune(30, "Ber"),
-        {"code": "gpv", "name": "Perfect Amethyst", "flags": ["NMAG"], "legend": "Perfect gem"},
+        {"code": "gpvs", "name": "Perfect Amethyst", "flags": ["NMAG"], "num": {"QTY": 1}, "legend": "Perfect gem (stack)"},
         {"code": "gcr", "name": "Chipped Ruby", "flags": ["NMAG"], "legend": "Chipped gem"},
         {"code": "wss", "name": "Worldstone Shard", "flags": ["NMAG"], "legend": "Worldstone Shard"},
         {"code": "lbox", "name": "Larzuk's Puzzlebox", "flags": ["NMAG"], "legend": "Larzuk's Puzzlebox"},
         {"code": "pk1", "name": "Key of Terror", "flags": ["NMAG"], "legend": "Uber key"},
+        {"code": "tes", "name": "Twisted Essence of Suffering", "flags": ["NMAG"], "legend": "Essence"},
+        {"code": "skzs", "name": "Perfect Skull", "flags": ["NMAG"], "num": {"QTY": 1}, "legend": "Perfect skull (stack)"},
     ]),
-    ("Unidentified uniques & sets", [
-        {"code": "uar", "name": "Sacred Armor", "flags": ["UNI", "ARMOR", "CHEST", "ELT"],
-         "legend": "Unid unique Sacred Armor (4-star)"},
-        {"code": "7p7", "name": "War Pike", "flags": ["UNI", "ETH", "WEAPON", "POLEARM", "ELT", "2H"],
-         "legend": "Unid ETH unique War Pike (ETH 4-star)"},
-        {"code": "uap", "name": "Shako", "flags": ["UNI", "ARMOR", "HELM", "ELT"],
-         "legend": "Unid unique Shako (3-star)"},
-        {"code": "xea", "name": "Serpentskin Armor", "flags": ["UNI", "ARMOR", "CHEST", "EXC"],
-         "legend": "Unid unique Serpentskin (2-star)"},
-        {"code": "9di", "name": "Rondel", "flags": ["UNI", "WEAPON", "DAGGER", "EXC", "1H"],
-         "legend": "Unid unique Rondel (0-star)"},
-        {"code": "rin", "name": "Ring", "flags": ["UNI", "JEWELRY"], "legend": "Unid unique ring"},
-        {"code": "lbt", "name": "Boots", "flags": ["SET", "ARMOR", "BOOTS", "NORM"],
-         "legend": "Unid set Boots (4-star set)"},
-        {"code": "7ws", "name": "Caduceus", "flags": ["SET", "WEAPON", "SCEPTER", "ELT", "1H"],
-         "legend": "Unid set Caduceus (3-star set)"},
-        {"code": "vbt", "name": "Heavy Boots", "flags": ["SET", "ARMOR", "BOOTS", "NORM"],
-         "legend": "Unid set Heavy Boots (2-star set)"},
-    ]),
+    ("Unidentified uniques & sets", "STAR_SAMPLES"),  # filled from unique-set-tiers.json at render time
     ("Magic & rare", [
         {"code": "rin", "name": "Doom Coil", "flags": ["RARE", "ID", "JEWELRY"],
          "num": {"FCR": 10, "STR": 15, "LIFE": 30, "FRES": 20, "CRES": 20, "LRES": 20, "PRES": 20, "LVLREQ": 45},
@@ -63,8 +47,10 @@ CATEGORIES = [
          "legend": "Unid magic gloves"},
         {"code": "ci2", "name": "Tiara", "flags": ["RARE", "ARMOR", "CIRC", "EXC"],
          "legend": "Unid rare circlet"},
-        {"code": "xpl", "name": "Russet Armor", "flags": ["RARE", "ARMOR", "CHEST", "EXC"],
-         "legend": "Unid rare body armor"},
+        {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "ELT"],
+         "num": {"ILVL": 85, "ALVL": 75}, "legend": "Unid rare body armor, ilvl 85, alvl 75"},
+        {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "ELT"],
+         "num": {"ILVL": 90, "ALVL": 85}, "legend": "Unid rare body armor, ilvl 90, alvl 85"},
     ]),
     ("Bases & runewords", [
         {"code": "7vo", "name": "Colossus Voulge", "flags": ["NMAG", "ETH", "WEAPON", "POLEARM", "ELT", "2H"],
@@ -77,7 +63,7 @@ CATEGORIES = [
          "num": {"SOCK": 3, "EDEF": 15}, "legend": "3os Dusk Shroud, 15% ED"},
         {"code": "7cr", "name": "Phase Blade", "flags": ["NMAG", "WEAPON", "SWORD", "ELT", "1H"],
          "num": {"SOCK": 0}, "legend": "0os Phase Blade"},
-        {"code": "uui", "name": "Enigma", "flags": ["RW", "ID", "ARMOR", "CHEST", "ELT"], "color": "GOLD",
+        {"code": "uui", "name": "Enigma", "base_line": "Dusk Shroud", "flags": ["RW", "ID", "ARMOR", "CHEST", "ELT"], "color": "GOLD",
          "num": {"SOCK": 3}, "legend": "Runeword: Enigma"},
         {"code": "ssd", "name": "Short Sword", "flags": ["NMAG", "WEAPON", "SWORD", "NORM", "1H"],
          "num": {"ILVL": 20}, "legend": "Plain Short Sword (junk)"},
@@ -94,4 +80,71 @@ CATEGORIES = [
     ]),
 ]
 
-ALL_ITEMS = [it for _, items in CATEGORIES for it in items]
+
+
+# ---- star-tier samples, picked from builderfilter/data/unique-set-tiers.json -------------------
+import os as _os
+import sys as _sys
+
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+_sys.path.insert(0, _os.path.join(_ROOT, "builderfilter"))
+import tier_aliases as _tiers  # noqa: E402
+
+_STAR = {"4": "4-star", "3": "3-star", "2": "2-star", "1": "1-star", "0": "0-star", "no-star": "no-star"}
+
+
+def _base_class(code):
+    """NORM / EXC / ELT from the item code's prefix ('6'/'7'/'u' elite, '8'/'9'/'x' exceptional).
+    Class-specific bases follow their own numbering, so they return None."""
+    if len(code) != 3 or code[:2] in ("am", "ba", "dr", "ne", "pa", "ci", "ob"):
+        return None
+    return "ELT" if code[0] in "67u" else "EXC" if code[0] in "89x" else "NORM"
+
+
+def _sample(e, flags, legend):
+    cls = _base_class(e["code"])
+    return {"code": e["code"], "name": e.get("base") or e["code"],
+            "flags": flags + ([cls] if cls else []), "legend": legend}
+
+
+def _skip(e):
+    base = (e.get("base") or "").lower()
+    return any(w in base for w in ("bolt", "arrow", "ring", "amulet", "charm", "jewel"))
+
+
+def star_samples():
+    """One unidentified unique per star group (plus an ETH-only 4-star) and one set item per
+    set star group, chosen from the current tiers so the images follow tier changes."""
+    data = _tiers.load()
+    ubases = _tiers.unique_code_tiers(data)
+    sbases = _tiers.set_code_tiers(data)
+    out = []
+
+    def pick(entries, ok):
+        # quivers and jewelry make poor examples (bolts/rings all look alike unidentified)
+        cands = sorted((e for e in entries if ok(e) and not _skip(e)), key=lambda e: (bool(e.get("eth")), e["name"].lower()))
+        return cands[0] if cands else None
+
+    for tier in _tiers.UNIQUE_SCALE:
+        same = lambda e: ubases[e["code"]]["noneth"] == tier == ubases[e["code"]]["eth"]
+        # the no-star example should be a normal (else exceptional) base, never an elite one
+        e = pick(data["uniques"], same) if tier != "no-star" else (
+            pick(data["uniques"], lambda e: same(e) and _base_class(e["code"]) == "NORM")
+            or pick(data["uniques"], lambda e: same(e) and _base_class(e["code"]) == "EXC"))
+        if e:
+            out.append(_sample(e, ["UNI"], f"Unid unique {e['name']} - {_STAR[tier]}"))
+    e = pick(data["uniques"], lambda e: ubases[e["code"]]["eth"] == "4" and ubases[e["code"]]["noneth"] != "4")
+    if e:
+        n = ubases[e["code"]]["noneth"]
+        out.append(_sample(e, ["UNI", "ETH"], f"Unid ETH {e['name']} - 4-star ETH, {_STAR.get(n, 'unstarred')} non-ETH"))
+    out.append({"code": "rin", "name": "Ring", "flags": ["UNI", "JEWELRY"], "legend": "Unid unique ring"})
+    for tier in _tiers.SET_SCALE:
+        e = pick(data["sets"], lambda e: sbases[e["code"]]["tier"] == tier)
+        if e:
+            out.append(_sample(e, ["SET"], f"Unid set {e['name']} - {_STAR[tier]} set"))
+    return out
+
+
+def categories():
+    """CATEGORIES with the star-tier samples filled in."""
+    return [(name, star_samples() if items == "STAR_SAMPLES" else items) for name, items in CATEGORIES]

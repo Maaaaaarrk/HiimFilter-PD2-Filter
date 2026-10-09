@@ -15,6 +15,10 @@ FILTERGROUPS_DIR  = os.path.join(ROOT_DIR, "filtergroups")
 # Star tiers come from builderfilter/data/unique-set-tiers.json (via builderfilter/tier_aliases.py).
 sys.path.insert(0, os.path.join(ROOT_DIR, "builderfilter"))
 import tier_aliases  # noqa: E402
+sys.path.insert(0, SCRIPT_DIR)
+import render_readme_images as renders  # noqa: E402
+
+STYLES_PAGE = os.path.join(FILTERGROUPS_DIR, "HIIM_STYLES.md")
 
 # README sections, best -> worst; each lists the uniques whose base first shows at that level.
 LEVEL_SECTIONS = [
@@ -87,6 +91,45 @@ def build_uniques_by_level_section():
     return "\n".join(lines)
 
 
+PREVIEW_INTRO = (
+    "Rendered by `builderreadme/render_readme_images.py` from the filter on every build. "
+    "Rows are sample items, columns are filter-level groups; a cell split into notes "
+    "(e.g. `level 3 | level 4`) changes inside its group. Unique and set samples are picked "
+    "per star tier from `builderfilter/data/unique-set-tiers.json`. "
+    "Compare all Hiim styles side by side: "
+)
+
+
+def preview_section(name, image, to_root, styles_link):
+    """README block embedding one filter's preview grid. to_root: relative path to repo root."""
+    return (
+        f"## Filter Preview — {name}\n"
+        f"{PREVIEW_INTRO}[Hiim styles]({styles_link})\n\n"
+        f"[![{name}]({to_root}{image}?raw=true)]({to_root}{image}?raw=true)\n"
+    )
+
+
+def write_styles_page(version_str, previews):
+    lines = [
+        "# Hiim Styles Side by Side",
+        f"## {version_str}",
+        "",
+        f"Every Hiim style at filter level {renders.STYLES_LEVEL}, item for item. "
+        "Each style ships the same rules and tiers; only the look differs.",
+        "",
+        f"[![Hiim styles](../{renders.STYLES_IMAGE}?raw=true)](../{renders.STYLES_IMAGE}?raw=true)",
+        "",
+        "## Full previews (all filter levels)",
+        "",
+    ]
+    for group, name, image, _ in previews:
+        where = "[repo root](../README.md)" if group is None else f"[{group}]({group}/README.md)"
+        lines.append(f"* [{name}](../{image}?raw=true) — files in {where}")
+    with open(STYLES_PAGE, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+    print(f"  wrote {STYLES_PAGE}")
+
+
 def get_version_string():
     with open(VERSION_FILTER, encoding="utf-8") as f:
         line = f.read().strip()
@@ -107,13 +150,14 @@ def build_filters_section(defs_path):
     return "\n".join(lines)
 
 
-def write_root_readme(version_str, filter_levels, uniques_by_level):
+def write_root_readme(version_str, filter_levels, uniques_by_level, preview):
     filters_section = build_filters_section(FILTER_DEFS)
     with open(TEMPLATE, encoding="utf-8") as f:
         content = f.read()
 
     content = content.replace("{{REPLACE_ME}}", version_str)
     content = content.replace("{{REPLACE_FILTERS}}", filters_section)
+    content = content.replace("{{REPLACE_FILTER_PREVIEW}}", preview)
     content = content.replace("{{REPLACE_FILTER_LEVELS}}", filter_levels)
     content = content.replace("{{REPLACE_UNIQUES_BY_LEVEL}}", uniques_by_level)
 
@@ -122,7 +166,7 @@ def write_root_readme(version_str, filter_levels, uniques_by_level):
     print(f"README.md written with version: {version_str}")
 
 
-def write_bucket_readme(bucket_dir, version_str, filter_levels, uniques_by_level):
+def write_bucket_readme(bucket_dir, version_str, filter_levels, uniques_by_level, preview=""):
     defs_path = os.path.join(bucket_dir, "filter_definitions.json")
     if not os.path.exists(defs_path):
         return
@@ -136,6 +180,7 @@ def write_bucket_readme(bucket_dir, version_str, filter_levels, uniques_by_level
         f"## Filters\n"
         f"{filters_section}\n"
         f"\n"
+        + (f"{preview}\n" if preview else "") +
         f"{filter_levels}\n"
         f"\n"
         f"{uniques_by_level}\n"
@@ -152,13 +197,23 @@ def main():
     filter_levels     = get_filter_levels()
     uniques_by_level  = build_uniques_by_level_section()
 
-    write_root_readme(version_str, filter_levels, uniques_by_level)
+    previews = renders.previews()
+    by_group = {group: (name, image) for group, name, image, _ in previews}
+
+    name, image = by_group[None]
+    write_root_readme(version_str, filter_levels, uniques_by_level,
+                      preview_section(name, image, "", "filtergroups/HIIM_STYLES.md"))
 
     if os.path.isdir(FILTERGROUPS_DIR):
-        for name in sorted(os.listdir(FILTERGROUPS_DIR)):
-            sub = os.path.join(FILTERGROUPS_DIR, name)
+        for group in sorted(os.listdir(FILTERGROUPS_DIR)):
+            sub = os.path.join(FILTERGROUPS_DIR, group)
             if os.path.isdir(sub):
-                write_bucket_readme(sub, version_str, filter_levels, uniques_by_level)
+                preview = ""
+                if group in by_group:
+                    name, image = by_group[group]
+                    preview = preview_section(name, image, "../../", "../HIIM_STYLES.md")
+                write_bucket_readme(sub, version_str, filter_levels, uniques_by_level, preview)
+        write_styles_page(version_str, previews)
 
 
 if __name__ == "__main__":
