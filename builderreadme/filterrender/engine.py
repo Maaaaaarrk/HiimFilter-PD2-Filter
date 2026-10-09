@@ -31,7 +31,8 @@ class Filter:
         self.aliases, self.rules = {}, []
         with open(path, encoding="utf-8") as f:
             for raw in f:
-                line = raw.rstrip("\r\n")
+                # The game reads each row with everything from // stripped, then trimmed.
+                line = raw.split("//", 1)[0].strip()
                 m = re.match(r"^Alias\[([^\]]+)\]:\s?(.*)$", line)
                 if m:
                     self.aliases.setdefault(m.group(1), m.group(2))

@@ -1,5 +1,6 @@
 # kassahi
 ## Last updated October 9th Season 14 - build 18
+## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
 * Regular — Standard: Kassahi's all-in-one balanced filter. The standard recommendation for most players. [Kassahi.filter]
@@ -8,6 +9,11 @@
 * Mystery — Hyper: Mystery filter with a Hyper visual theme. [Kassahi_Mystery_Hyper.filter]
 * Mystery — Standard: Filter where high-value items are renamed to hide their identity. [Kassahi_Mystery.filter]
 * Regular — Hyper: Standard filter with a Hyper visual theme. [Kassahi_Hyper.filter]
+
+## Filter Preview — Kassahi — Standard
+Rendered by `builderreadme/render_readme_images.py` from the filter on every build. Rows are sample items, columns are filter-level groups; a cell split into notes (e.g. `level 3 | level 4`) changes inside its group. Unique and set samples are picked per star tier from `builderfilter/data/unique-set-tiers.json`. Compare all Hiim styles side by side: [Hiim styles](../HIIM_STYLES.md)
+
+[![Kassahi — Standard](../../examples/render/Kassahi.png?raw=true)](../../examples/render/Kassahi.png?raw=true)
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
