@@ -4,45 +4,17 @@
 ## {{REPLACE_ME}}
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
+## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
 
 ## Filters
 {{REPLACE_FILTERS}}
+
+{{REPLACE_FILTER_PREVIEW}}
 {{REPLACE_FILTER_LEVELS}}
 {{REPLACE_UNIQUES_BY_LEVEL}}
 ## NOTE MANY Images below have been taken across many seasons and may not be 100% up to date but show general functionality
 To confirm installation check tool tip on the Cube
 ![cube](examples/cube.png?raw=true)
-## Helper text
-* Check Tooltip on Boss mats for help on Uber Bosses
-* Check Tooltip on keys tooltip for pathing help
-* Many items have helper text, if you need any help just ask in the official discord loot filter channel
-## Charm Stats on Ground
-Charms on ground will show important stats
-![charms1](examples/charms1.PNG?raw=true)
-## Magic / Rare / Crafted items
-These items also show important stats on the ground. This applies to many gear slots not just the ones in the example.
-Rings & Amulets also have points implemented:
-* Range: 2pt, 3Pt, 4Pt, 5pt, 6pt
-* Evaluation includes crafts & a few slams
-* Each Pt of Value = high roll of a valuable stat
-* Evaluation takes into account partial rolls
-* Evaluation includes crafts & a few slams
-![magicrares1](examples/magicrares1.PNG?raw=true)
-![magicrares2](examples/magicrares2.PNG?raw=true)
-![magicrares3](examples/magicrares3.PNG?raw=true)
-![magicrares4](examples/magicrares4.PNG?raw=true)
-## LLD
-Set/Unique items that are valuable to LLD community carry the LLD tag
-LLD Jewels have points implemented:
-* Range: 2pt, 2.5 Pt, 3Pt, 3.3 Pt, 3.6 Pt, 4Pt
-* Each Pt of Value = high roll of a valuable stat
-* Evaluation takes into account partial rolls
-![lld1](examples/lld1.PNG?raw=true)
-![lld2](examples/lld2.png?raw=true)
-## UNIDS
-All UNID Set/Unique items show their identified name options
-![unid1](examples/unid1.PNG?raw=true)
-![unid2](examples/unid2.PNG?raw=true)
 ## Map rolling
 * T1,T2,T3 Maps will tell you when the rolls are good
 * Both MF & XP focused calculations are made
