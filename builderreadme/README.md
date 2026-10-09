@@ -4,6 +4,7 @@
 ## {{REPLACE_ME}}
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
+## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
 
 ## Filters
 {{REPLACE_FILTERS}}
