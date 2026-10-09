@@ -22,7 +22,7 @@ QUALITY_COLOR = {"NMAG": "WHITE", "MAG": "BLUE", "RARE": "YELLOW", "SET": "GREEN
                  "UNI": "GOLD", "CRAFT": "ORANGE"}
 
 _TOKEN = re.compile(r"%([A-Za-z0-9_]+)(?:-([0-9A-Fa-f]+))?%")
-_WORD = re.compile(r"(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]*)(?![A-Za-z0-9_])")
+_WORD = re.compile(r"(?<![A-Za-z0-9_])([A-Za-z0-9_]*[A-Za-z_][A-Za-z0-9_]*)(?![A-Za-z0-9_])")  # aliases may start with a digit (4_STAR_UNIQUE)
 _CMP = re.compile(r"^(.+?)(<=|>=|<|>|=|~)(.+)$")
 
 
@@ -77,6 +77,8 @@ class Filter:
         """Return (segments, border, shown). segments: list of lines, each a list of (text, rgb)."""
         ctx = Context(item, filtlvl)
         name = [[(item.get("name", item["code"]), COLORS[item_color(item)])]]
+        if item.get("base_line"):  # runewords: base name on a second line
+            name.append([(item["base_line"], COLORS[item_color(item)])])
         border = None
         matched = False
         for cond_raw, out_raw in self.rules:
@@ -194,7 +196,7 @@ class Context:
     def __init__(self, item, filtlvl):
         self.item = item
         self.flags = set(item.get("flags", ())) | {"GROUND"}
-        self.num = {"FILTLVL": filtlvl, "CLVL": 90, "DIFF": 2, "MAPID": 2, "QTY": 1, "ILVL": 85,
+        self.num = {"FILTLVL": filtlvl, "CLVL": 86, "DIFF": 2, "MAPID": 2, "QTY": 1, "ILVL": 85,
                     "ALVL": 85, "LVLREQ": 60, "CHARSTAT12": 90}
         self.num.update(item.get("num", {}))
         if item.get("rune"):
