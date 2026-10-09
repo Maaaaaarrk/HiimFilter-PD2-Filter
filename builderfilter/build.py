@@ -4,6 +4,8 @@ import json
 import os
 import re
 
+import tier_aliases
+
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR  = os.path.dirname(SCRIPT_DIR)
 
@@ -256,6 +258,8 @@ def main():
     args = parser.parse_args()
 
     update_version()
+    if tier_aliases.generate():
+        print(f"Regenerated {os.path.relpath(tier_aliases.ALIAS_FILE, OUTPUT_DIR)} from data/unique-set-tiers.json")
     filters, groups = load_config()
     cleanup_beta_files(filters)
 

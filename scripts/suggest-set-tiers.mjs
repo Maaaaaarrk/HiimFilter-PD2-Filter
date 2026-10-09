@@ -1,6 +1,8 @@
 // Suggests set-item tier reclassifications by pulling live listings from the
-// Project Diablo 2 market API and comparing computed medians against our
-// existing tier aliases in builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter.
+// Project Diablo 2 market API and comparing computed medians against the current
+// tiers in builderfilter/data/unique-set-tiers.json (source of the generated
+// 05-unid-unique-set-stars alias file). Locked bases are skipped; downgrades stop
+// at the floor.
 //
 // Mirrors suggest-unique-tiers.mjs but for set items. Differences:
 //   - item.quality.name = Set
@@ -19,8 +21,8 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
+import { loadTiers, setBaseTiers, baseFloor, baseLocked, SET_SCALE, SET_ALIAS, TIERS_FILE } from './lib/tier-model.mjs';
 
-const ALIAS_FILE = 'builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter';
 const REPORT_FILE = 'temp/set-tier-report.txt';
 const DIFF_FILE = 'temp/set-tier-diff.json';
 const MOVES_FILE = 'temp/set-tier-moves.txt';
@@ -50,24 +52,9 @@ const CUTOFFS_HR = [
   { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.10) },
 ];
 
-// Items to skip when emitting move suggestions. Matched case-insensitively against
-// the item's display name (substring match). Optional field:
-//   direction — 'upgrade' or 'downgrade'; omit to ignore moves in either direction.
-//               'downgrade' acts as a tier floor: the item holds its current tier
-//               even if market data softens, but promotions still come through.
-const IGNORE_MOVES = [
-  { name: "Tancred's Hobnails" }, // odd-priced set boots; we don't want auto-retiering
-  { name: "Naj's Puzzler", direction: 'downgrade' }, // floored at 2★ — never demote below
-];
-
-function isMoveIgnored(name, direction) {
-  const n = (name || '').toLowerCase();
-  return IGNORE_MOVES.some((rule) => {
-    if (rule.name && !n.includes(rule.name.toLowerCase())) return false;
-    if (rule.direction && rule.direction !== direction) return false;
-    return true;
-  });
-}
+// Floors and locks come from builderfilter/data/unique-set-tiers.json (they replace the
+// old hand-written IGNORE_MOVES list): a locked entry on a base suppresses its moves, and a
+// downgrade stops at the base's floor (dropped if the floor is already the current tier).
 const topPercentile = Number(args['top-percentile']) || 0.25;
 const excludeCorrupted = args['exclude-corrupted'] === 'true';
 // changeMultiplier: hysteresis. A tier change (upgrade or downgrade) is only
@@ -86,33 +73,6 @@ function parseArgs(argv) {
     if (m) out[m[1]] = m[2];
   }
   return out;
-}
-
-function parseAliases(text) {
-  const tiersByBase = new Map();
-  for (const tier of VALUE_TIERS) {
-    const re = new RegExp(`^Alias\\[${tier}\\]:\\s*\\(([^)]+)\\)`, 'm');
-    const m = text.match(re);
-    if (!m) {
-      console.warn(`alias ${tier} not found in source file`);
-      continue;
-    }
-    const codes = m[1]
-      .split(/\s+OR\s+/i)
-      .map((s) => s.trim())
-      .filter((s) => s && /^[a-z0-9]+$/i.test(s));
-    for (const code of codes) {
-      if (!tiersByBase.has(code)) tiersByBase.set(code, new Set());
-      tiersByBase.get(code).add(tier);
-    }
-  }
-  return tiersByBase;
-}
-
-function effectiveTier(tiers) {
-  // First-match-wins, top-down (mirrors 06-unidfiltering/20-Unid_UniquesSet_Tiers).
-  for (const t of VALUE_TIERS) if (tiers.has(t)) return t;
-  return null;
 }
 
 async function fetchListingsForBase(baseCode) {
@@ -343,10 +303,10 @@ async function main() {
     `  window: ${windowHours}h, min-samples: ${minSamples}, top-pct: ${topPercentile}, ladder=${isLadder} hardcore=${isHardcore}, corrupted=${excludeCorrupted ? 'excluded' : 'included'}, change-multiplier=${changeMultiplier}`,
   );
 
-  const aliasText = await readFile(ALIAS_FILE, 'utf8');
-  const tiersByBase = parseAliases(aliasText);
-  const baseCodes = [...tiersByBase.keys()].sort();
-  console.error(`  ${baseCodes.length} set base codes across ${VALUE_TIERS.length} tiers`);
+  const tierData = await loadTiers();
+  const bases = setBaseTiers(tierData);
+  const baseCodes = [...bases.keys()].sort();
+  console.error(`  ${baseCodes.length} set base codes from ${TIERS_FILE}`);
 
   const jobs = baseCodes.map((base) => async () => {
     const listings = await fetchListingsForBase(base);
@@ -365,14 +325,12 @@ async function main() {
   const itemRows = [];
   for (const r of fetchResults) {
     if (!r || r.error) continue;
-    const tiers = tiersByBase.get(r.base);
-    if (!tiers) continue;
-    const eff = effectiveTier(tiers);
-    if (!eff) continue;
+    const b = bases.get(r.base);
+    if (!b || b.tier == null) continue;
     itemRows.push({
       base: r.base,
-      currentTier: eff,
-      sourceTiers: [...tiers],
+      currentTier: SET_ALIAS[b.tier],
+      sourceTiers: [SET_ALIAS[b.tier]],
       maxMedian: r.maxMedian,
       maxName: r.maxName,
       maxNameTopCount: r.maxNameTopCount,
@@ -454,10 +412,15 @@ async function main() {
   // Diff JSON
   const moves = itemRows
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
-    .filter((r) => {
-      const direction = tierIdx(r.currentTier) > tierIdx(r.suggestedTier) ? 'upgrade' : 'downgrade';
-      return !isMoveIgnored(r.maxName, direction);
+    .filter((r) => !baseLocked(bases.get(r.base)?.entries ?? []))
+    .map((r) => {
+      // downgrades stop at the floor (or are dropped when the floor is the current tier)
+      const f = baseFloor(SET_SCALE, bases.get(r.base)?.entries ?? [], 'noneth');
+      const floor = f == null ? null : SET_ALIAS[f];
+      if (floor && tierIdx(r.suggestedTier) > tierIdx(floor)) return { ...r, suggestedTier: floor, flooredFrom: r.suggestedTier };
+      return r;
     })
+    .filter((r) => r.suggestedTier !== r.currentTier)
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
       const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
@@ -476,6 +439,7 @@ async function main() {
         maxMedianHR: r.maxMedian,
         estTopValHR,
         topName: r.maxName,
+        flooredFrom: r.flooredFrom ?? null,
         topUsedForMedian: r.maxNameTopCount ?? 0,
         topNameTotal: r.maxNameCount ?? 0,
         totalListings: r.totalListings,

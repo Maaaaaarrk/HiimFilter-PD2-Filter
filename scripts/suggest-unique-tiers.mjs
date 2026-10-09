@@ -1,6 +1,8 @@
 // Suggests unique-item tier reclassifications by pulling live listings from the
-// Project Diablo 2 market API and comparing computed medians against our
-// existing tier aliases in builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter.
+// Project Diablo 2 market API and comparing computed medians against the current
+// tiers in builderfilter/data/unique-set-tiers.json (the source of the generated
+// 05-unid-unique-set-stars alias file). Floors and locks in that JSON decide which
+// moves are suggested: locked bases are skipped, downgrades stop at the floor.
 //
 // Output:
 //   temp/unique-tier-report.txt  — sorted human-readable report (every base, every variant)
@@ -19,9 +21,11 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
-import { uniqueTier } from './lib/tier-model.mjs';
+import {
+  loadTiers, uniqueBaseTiers, uniqueAliasesFor, baseFloor, baseLocked, ethFloored,
+  UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE,
+} from './lib/tier-model.mjs';
 
-const ALIAS_FILE = 'builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter';
 const REPORT_FILE = 'temp/unique-tier-report.txt';
 const DIFF_FILE = 'temp/unique-tier-diff.json';
 const MOVES_FILE = 'temp/unique-tier-moves.txt';
@@ -38,12 +42,6 @@ const VALUE_TIERS = [
   '0_STAR_UNIQUE',
   'NO_STAR_UNIQUE',
 ];
-const ETH_CONDITIONAL_TIERS = [
-  '4_STAR_ETH_UNIQUE',     // +ETH copies → 4-star
-  '4_STAR_NO_ETH_UNIQUE',  // non-ETH → 4-star, ETH → 3-star
-  '3_STAR_NO_ETH_UNIQUE',  // non-ETH → 3-star, ETH → 2-star
-];
-const ALL_TIERS = [...VALUE_TIERS, ...ETH_CONDITIONAL_TIERS];
 
 const args = parseArgs(process.argv.slice(2));
 const isLadder = args.ladder !== 'false';
@@ -64,56 +62,22 @@ const CUTOFFS_HR = [
   { tier: 'NO_STAR_UNIQUE', cutoffHR: Number(args['cutoff-no'] ?? 0.25) },
 ];
 
-// Items to skip when emitting move suggestions. Matched case-insensitively against
-// the item's display name (substring match). Optional fields:
-//   variant   — single row variant to match: 'eth' | 'noneth' | 'both'
-//   variants  — array of row variants to match (use instead of variant when more than one)
-//   direction — 'upgrade' or 'downgrade'; omit to match either
-// Omit all of the above to ignore every move for the matched name.
-const IGNORE_MOVES = [
-  { name: 'Silks of the Victor' }, // eth-only unique; market data isn't useful for tiering
-  // Eth-protected: ignore demotions when the eth version is part of the move.
-  // The eth-rolled copy of these weapons holds its tier even if non-eth softens.
-  // Non-eth-only demotions (variant === 'noneth') are still allowed through.
-  { name: 'Stoneraven',         variants: ['eth'], direction: 'downgrade' },
-  { name: 'The Cranium Basher', variants: ['eth'], direction: 'downgrade' },
-  { name: 'Bloodtree Stump',    variants: ['eth'], direction: 'downgrade' },
-  { name: 'Steel Pillar',       variants: ['eth'], direction: 'downgrade' },
-  { name: 'The Grandfather',    variants: ['eth'], direction: 'downgrade' },
-  { name: 'Death Cleaver',      variants: ['eth'], direction: 'downgrade' },
-  { name: 'Lacerator',          variants: ['eth'], direction: 'downgrade' },
-  { name: "Titan's Revenge",    variants: ['eth'], direction: 'downgrade' },
-  { name: 'Purgatory',          variants: ['eth'], direction: 'downgrade' },
-  { name: 'The Gavel of Pain',  variants: ['eth'], direction: 'downgrade' },
-  { name: "Warlord's Trust",    variants: ['eth'], direction: 'downgrade' },
-  { name: 'Ribcracker',         variants: ['eth'], direction: 'downgrade' },
-  { name: "Zerae's Resolve",    variants: ['eth'], direction: 'downgrade' },
-];
-
-function isMoveIgnored(name, variant, direction) {
-  const n = (name || '').toLowerCase();
-  return IGNORE_MOVES.some((rule) => {
-    if (rule.name && !n.includes(rule.name.toLowerCase())) return false;
-    if (rule.variant && rule.variant !== variant) return false;
-    if (rule.variants && !rule.variants.includes(variant)) return false;
-    if (rule.direction && rule.direction !== direction) return false;
-    return true;
-  });
+// Floors and locks come from builderfilter/data/unique-set-tiers.json (they replace the
+// old hand-written IGNORE_MOVES list):
+//   locked entry on a base  -> no moves suggested for that base
+//   downgrade               -> clamped to the base's floor for that variant; dropped if
+//                              the floor is already the current tier
+//   ETH floor above non-ETH -> the base is "eth-floored": ETH and non-ETH rows are always
+//                              split so the non-ETH side can move while ETH stays put.
+const tierIdxOf = (alias) => { const i = VALUE_TIERS.indexOf(alias); return i < 0 ? VALUE_TIERS.length : i; };
+function floorAlias(entries, variant) {
+  const keys = variant === 'both' ? ['noneth', 'eth'] : [variant];
+  const floors = keys.map((k) => baseFloor(UNIQUE_SCALE, entries, k)).filter((f) => f != null);
+  if (!floors.length) return null;
+  // highest floor wins (lowest index on VALUE_TIERS)
+  return floors.map((f) => UNIQUE_ALIAS[f]).sort((x, y) => tierIdxOf(x) - tierIdxOf(y))[0];
 }
 
-// True when the item has an eth-downgrade-protection rule in IGNORE_MOVES.
-// Used to force a split row (eth + noneth) instead of collapsing into 'both',
-// so the eth side gets pinned by its existing alias and only the non-eth side
-// is re-tiered via the generic value alias.
-function isEthProtected(name) {
-  const n = (name || '').toLowerCase();
-  return IGNORE_MOVES.some((rule) => {
-    if (!rule.name || !n.includes(rule.name.toLowerCase())) return false;
-    const matchesEth = rule.variant === 'eth' || rule.variants?.includes('eth');
-    const matchesDowngrade = !rule.direction || rule.direction === 'downgrade';
-    return matchesEth && matchesDowngrade;
-  });
-}
 // top-percentile: per-name, only the top X% of listings by price contribute to the
 // per-name median. Default 0.25 = "median of the top 25% priced listings". Captures
 // the upside of finding a good (often corrupted) copy rather than the typical drop.
@@ -139,33 +103,6 @@ function parseArgs(argv) {
     if (m) out[m[1]] = m[2];
   }
   return out;
-}
-
-function parseAliases(text) {
-  const tiersByBase = new Map();
-  for (const tier of ALL_TIERS) {
-    const re = new RegExp(`^Alias\\[${tier}\\]:\\s*\\(([^)]+)\\)`, 'm');
-    const m = text.match(re);
-    if (!m) {
-      console.warn(`alias ${tier} not found in source file`);
-      continue;
-    }
-    const codes = m[1]
-      .split(/\s+OR\s+/i)
-      .map((s) => s.trim())
-      .filter((s) => s && /^[a-z0-9]+$/i.test(s));
-    for (const code of codes) {
-      if (!tiersByBase.has(code)) tiersByBase.set(code, new Set());
-      tiersByBase.get(code).add(tier);
-    }
-  }
-  return tiersByBase;
-}
-
-function effectiveTier(tiers, isEth) {
-  // Map a base's tier-set + eth flag into a single effective value tier, using the
-  // shared model of the 20-Unid_UniquesSet_Tiers rule order (first match wins).
-  return uniqueTier((t) => tiers.has(t), isEth);
 }
 
 async function fetchListingsForBase(baseCode, isEth) {
@@ -434,10 +371,10 @@ async function main() {
     `  window: ${windowHours}h, min-samples: ${minSamples}, top-pct: ${topPercentile}, ladder=${isLadder} hardcore=${isHardcore}, corrupted=${excludeCorrupted ? 'excluded' : 'included'}, change-multiplier=${changeMultiplier}`,
   );
 
-  const aliasText = await readFile(ALIAS_FILE, 'utf8');
-  const tiersByBase = parseAliases(aliasText);
-  const baseCodes = [...tiersByBase.keys()].sort();
-  console.error(`  ${baseCodes.length} unique base codes across ${ALL_TIERS.length} tiers`);
+  const tierData = await loadTiers();
+  const bases = uniqueBaseTiers(tierData);
+  const baseCodes = [...bases.keys()].sort();
+  console.error(`  ${baseCodes.length} unique base codes from ${TIERS_FILE}`);
 
   const jobs = [];
   for (const base of baseCodes) {
@@ -461,15 +398,15 @@ async function main() {
   const itemRows = [];
   for (const r of fetchResults) {
     if (!r || r.error) continue;
-    const tiers = tiersByBase.get(r.base);
-    if (!tiers) continue;
-    const eff = effectiveTier(tiers, r.isEth);
-    if (!eff) continue;
+    const b = bases.get(r.base);
+    if (!b) continue;
+    const cur = r.isEth ? b.eth : b.noneth;
+    if (cur == null) continue;
     itemRows.push({
       base: r.base,
       isEth: r.isEth,
-      currentTier: eff,
-      sourceTiers: [...tiers],
+      currentTier: UNIQUE_ALIAS[cur],
+      sourceTiers: uniqueAliasesFor(b.noneth, b.eth),
       maxMedian: r.maxMedian,
       maxName: r.maxName,
       maxNameTopCount: r.maxNameTopCount,
@@ -533,11 +470,10 @@ async function main() {
     // (our alias system only has *_NO_ETH_UNIQUE / *_ETH_UNIQUE at 3★/4★).
     // If either variant is below 3★, collapse to a combined row at the higher tier.
     const eitherBelowThreeStar = lowerSugIdx > THREE_STAR_IDX;
-    // Eth-protected items: force split so the eth row is filtered by IGNORE_MOVES
+    // ETH-floored bases: force split so the eth row is held by its floor
     // and only the non-eth row reaches the moves output. Without this the
     // collapse-to-'both' shadowed the variants:['eth'] rule.
-    const topName = ethRow?.maxName || nonethRow?.maxName;
-    const ethProtected = isEthProtected(topName);
+    const ethProtected = ethFloored(bases.get(base)?.entries ?? []);
 
     if (!ethProtected && (ethSug === nonethSug || eitherBelowThreeStar)) {
       // Combined row using the higher of the two as the suggestion
@@ -617,10 +553,14 @@ async function main() {
   // are typically thin-data items that we don't want to act on.
   const moves = moveCandidates
     .filter((r) => r.suggestedTier && r.currentTier && r.suggestedTier !== r.currentTier)
-    .filter((r) => {
-      const direction = tierIdx(r.currentTier) > tierIdx(r.suggestedTier) ? 'upgrade' : 'downgrade';
-      return !isMoveIgnored(r.maxName, r.variantLabel, direction);
+    .filter((r) => !baseLocked(bases.get(r.base)?.entries ?? []))
+    .map((r) => {
+      // downgrades stop at the floor (or are dropped when the floor is the current tier)
+      const floor = floorAlias(bases.get(r.base)?.entries ?? [], r.variantLabel);
+      if (floor && tierIdx(r.suggestedTier) > tierIdx(floor)) return { ...r, suggestedTier: floor, flooredFrom: r.suggestedTier };
+      return r;
     })
+    .filter((r) => r.suggestedTier !== r.currentTier)
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
       const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
@@ -644,6 +584,8 @@ async function main() {
         maxMedianHR: r.maxMedian,
         estTopValHR,
         topName: r.maxName,
+        flooredFrom: r.flooredFrom ?? null,
+        ethFloored: ethFloored(bases.get(r.base)?.entries ?? []),
         topUsedForMedian: r.maxNameTopCount ?? 0,
         topNameTotal: r.maxNameCount ?? 0,
         totalListings: r.totalListings,
@@ -730,7 +672,8 @@ function formatMoveLine(m) {
   let topStr = `${m.topName || ''} (top ${m.topUsedForMedian} of ${m.topNameTotal})`;
   // Eth-protected non-eth-only move: annotate that the eth side stays pinned
   // by its existing eth-conditional alias; only the generic value alias is moved.
-  if (m.variant === 'noneth' && isEthProtected(m.topName)) {
+  if (m.flooredFrom) topStr += ` — floored (market says ${tierShort[m.flooredFrom] ?? m.flooredFrom})`;
+  if (m.variant === 'noneth' && m.ethFloored) {
     const ethPinTier =
       m.sourceTiers?.includes('4_STAR_ETH_UNIQUE') ? '4★' :
       m.sourceTiers?.includes('4_STAR_NO_ETH_UNIQUE') ? '3★' :
