@@ -119,6 +119,15 @@ def write_styles_page(version_str, previews):
         "",
         f"[![Hiim styles](../{renders.STYLES_IMAGE}?raw=true)](../{renders.STYLES_IMAGE}?raw=true)",
         "",
+        "## Kassahi styles",
+        "",
+        "The Kassahi-family filters (" + ", ".join(
+            f"[{title}]({group}/README.md)" for group, _, title in renders.KASSAHI_STYLES)
+        + f") at filter level {renders.STYLES_LEVEL}.",
+        "",
+        f"[![Kassahi styles](../{renders.KASSAHI_STYLES_IMAGE}?raw=true)]"
+        f"(../{renders.KASSAHI_STYLES_IMAGE}?raw=true)",
+        "",
         "## Full previews (all filter levels)",
         "",
     ]
