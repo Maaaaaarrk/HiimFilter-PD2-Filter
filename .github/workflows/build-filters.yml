@@ -9,6 +9,8 @@ on:
       - 'filtergroups/**/*.filter'  # bucketed .filter outputs are also auto-generated
       - 'README.md'                 # also auto-generated
       - 'filtergroups/**/README.md' # per-bucket README files are also auto-generated
+      - 'filtergroups/HIIM_STYLES.md' # styles comparison page, auto-generated
+      - 'examples/render/**'        # filter preview images, auto-generated
 
 permissions:
   contents: write
@@ -31,6 +33,12 @@ jobs:
       - name: Build filters
         run: python builderfilter/build.py
 
+      - name: Install render dependencies
+        run: pip install pillow==12.3.0
+
+      - name: Render filter preview images
+        run: python builderreadme/render_readme_images.py
+
       - name: Generate README
         run: python builderreadme/create_readme.py
 
@@ -45,7 +53,8 @@ jobs:
                   "builderfilter/01-header/01-Version[ALL].filter" \
                   "builderfilter/02-alias/05-unid-unique-set-stars[ALL].filter" \
                   filter_definitions.json \
-                  README.md
+                  README.md \
+                  examples/render
           git add *.filter 2>/dev/null || true
           git add filtergroups 2>/dev/null || true
           if git diff --cached --quiet; then
