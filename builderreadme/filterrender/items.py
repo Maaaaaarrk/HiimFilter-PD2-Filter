@@ -49,7 +49,7 @@ CATEGORIES = [
         {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "ELT"],
          "num": {"ILVL": 85, "ALVL": 75}, "legend": "Unid rare body armor, ilvl 85, alvl 75"},
         {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "ELT"],
-         "num": {"ILVL": 90, "ALVL": 85}, "legend": "Unid rare body armor, ilvl 90, alvl 85"},
+         "num": {"ILVL": 85, "ALVL": 85}, "legend": "Unid rare body armor, ilvl 85, alvl 85"},
     ]),
     ("Bases & runewords", [
         {"code": "7vo", "name": "Colossus Voulge", "flags": ["NMAG", "ETH", "WEAPON", "POLEARM", "ELT", "2H"],
@@ -67,9 +67,9 @@ CATEGORIES = [
         {"code": "uui", "name": "Enigma", "base_line": "Dusk Shroud", "flags": ["RW", "ID", "ARMOR", "CHEST", "ELT"], "color": "GOLD",
          "num": {"SOCK": 3}, "legend": "Runeword: Enigma"},
         {"code": "ssd", "name": "Short Sword", "flags": ["NMAG", "WEAPON", "SWORD", "NORM", "1H"],
-         "num": {"ILVL": 20}, "legend": "Plain Short Sword (junk)"},
+         "num": {"ILVL": 85}, "legend": "Plain Short Sword (junk)"},
         {"code": "lbt", "name": "Boots", "flags": ["MAG", "ARMOR", "BOOTS", "NORM"],
-         "num": {"ILVL": 20}, "legend": "Unid magic Boots (junk)"},
+         "num": {"ILVL": 85}, "legend": "Unid magic Boots (junk)"},
     ]),
     ("Consumables", [
         {"code": "rvl", "name": "Full Rejuvenation Potion", "flags": ["NMAG"], "legend": "Full rejuv"},
