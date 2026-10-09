@@ -197,7 +197,7 @@ def write_root_readme(version_str, filter_levels, uniques_by_level):
     print(f"README.md written with version: {version_str}")
 
 
-def write_bucket_readme(bucket_dir, version_str, filter_levels):
+def write_bucket_readme(bucket_dir, version_str, filter_levels, uniques_by_level):
     defs_path = os.path.join(bucket_dir, "filter_definitions.json")
     if not os.path.exists(defs_path):
         return
@@ -212,6 +212,8 @@ def write_bucket_readme(bucket_dir, version_str, filter_levels):
         f"{filters_section}\n"
         f"\n"
         f"{filter_levels}\n"
+        f"\n"
+        f"{uniques_by_level}\n"
     )
 
     out_path = os.path.join(bucket_dir, "README.md")
@@ -231,7 +233,7 @@ def main():
         for name in sorted(os.listdir(FILTERGROUPS_DIR)):
             sub = os.path.join(FILTERGROUPS_DIR, name)
             if os.path.isdir(sub):
-                write_bucket_readme(sub, version_str, filter_levels)
+                write_bucket_readme(sub, version_str, filter_levels, uniques_by_level)
 
 
 if __name__ == "__main__":
