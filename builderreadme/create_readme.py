@@ -176,6 +176,7 @@ def write_bucket_readme(bucket_dir, version_str, filter_levels, uniques_by_level
     content = (
         f"# {bucket_name}\n"
         f"## {version_str}\n"
+        + ("## [Compare the Hiim styles side by side](../HIIM_STYLES.md)\n" if preview else "") +
         f"\n"
         f"## Filters\n"
         f"{filters_section}\n"
