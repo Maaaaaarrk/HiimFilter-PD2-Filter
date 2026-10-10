@@ -22,7 +22,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import {
-  loadTiers, uniqueBaseTiers, uniqueAliasesFor, baseFloor, baseLocked, ethFloored,
+  loadTiers, uniqueBaseTiers, uniqueAliasesFor, stars, baseFloor, baseLocked, ethFloored,
   UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE,
 } from './lib/tier-model.mjs';
 
@@ -452,7 +452,6 @@ async function main() {
   //  - If the higher of the two suggestions is below 3★ (i.e., 2★ or lower):
   //    don't differentiate — force both to the higher tier, single combined row.
   //  - Else: keep split (eth row + non-eth row).
-  const THREE_STAR_IDX = VALUE_TIERS.indexOf('3_STAR_UNIQUE');
   const baseGroups = new Map();
   for (const row of itemRows) {
     if (!baseGroups.has(row.base)) baseGroups.set(row.base, {});
@@ -465,17 +464,14 @@ async function main() {
     const ethSug = ethRow?.suggestedTier ?? null;
     const nonethSug = nonethRow?.suggestedTier ?? null;
     const higherSugIdx = Math.min(tierIdx(ethSug), tierIdx(nonethSug));
-    const lowerSugIdx = Math.max(tierIdx(ethSug), tierIdx(nonethSug));
-    // Differentiate eth vs non-eth only when BOTH variants suggest 3★ or higher
-    // (our alias system only has *_NO_ETH_UNIQUE / *_ETH_UNIQUE at 3★/4★).
-    // If either variant is below 3★, collapse to a combined row at the higher tier.
-    const eitherBelowThreeStar = lowerSugIdx > THREE_STAR_IDX;
+    // ETH and non-ETH copies have separate tier lists, so the variants only collapse
+    // into one combined row when both suggest the same tier.
     // ETH-floored bases: force split so the eth row is held by its floor
     // and only the non-eth row reaches the moves output. Without this the
     // collapse-to-'both' shadowed the variants:['eth'] rule.
     const ethProtected = ethFloored(bases.get(base)?.entries ?? []);
 
-    if (!ethProtected && (ethSug === nonethSug || eitherBelowThreeStar)) {
+    if (!ethProtected && ethSug === nonethSug) {
       // Combined row using the higher of the two as the suggestion
       const combinedSug = VALUE_TIERS[higherSugIdx] ?? null;
       // Pick whichever variant has more listings to drive the displayed data
@@ -674,10 +670,8 @@ function formatMoveLine(m) {
   // by its existing eth-conditional alias; only the generic value alias is moved.
   if (m.flooredFrom) topStr += ` — floored (market says ${tierShort[m.flooredFrom] ?? m.flooredFrom})`;
   if (m.variant === 'noneth' && m.ethFloored) {
-    const ethPinTier =
-      m.sourceTiers?.includes('4_STAR_ETH_UNIQUE') ? '4★' :
-      m.sourceTiers?.includes('4_STAR_NO_ETH_UNIQUE') ? '3★' :
-      null;
+    const ethAlias = m.sourceTiers?.find((a) => a.endsWith('_ETH_UNIQUE'));
+    const ethPinTier = ethAlias ? stars(ethAlias) : null;
     if (ethPinTier) topStr += ` — eth pinned ${ethPinTier}`;
   }
   return `${base}  ${v}   ${move}   ${med}   ${topVal}   ${qualifyPadded}  ${total}  ${topStr}`;

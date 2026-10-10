@@ -7,7 +7,6 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs
 // Overlords Helm
 ItemDisplay[UNI !ID uh9 MAPID=137]: %PURPLE%Mystery%CONTINUE%
 // GG
-ItemDisplay[UNI !ID 4_STAR_UNIQUE !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
-// 4-star uniques only when NOT eth (Shako, Griffon's, HoZ, etc.) — issue #83
-ItemDisplay[UNI !ID !ETH 4_STAR_NO_ETH_UNIQUE !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
+// non-ETH and ETH copies are tiered separately (e.g. Shako is 4-star only when not ETH) — issue #83
+ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
 ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
