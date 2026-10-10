@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 10th%CL%Season 14 - build 36%CL%HiimFilter - Hyper - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 10th%CL%Season 14 - build 38%CL%HiimFilter - Hyper - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -1047,8 +1047,8 @@ ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID]: %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
-ItemDisplay[UNI SET !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
-ItemDisplay[SET SET !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
+ItemDisplay[UNI !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
+ItemDisplay[SET !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%· %NAME% %PURPLE%·%CONTINUE%
 ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%· %NAME% %PURPLE%·%CONTINUE%
 ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5 OR hbt) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
@@ -1840,8 +1840,8 @@ ItemDisplay[SET !ID FILTLVL<5 0_STAR_SET]: %GREEN%%NAME%
 ItemDisplay[SET !ID FILTLVL<7 LLD_SET]: %SET_TIER1_ITEM%%TIER-6%
 ItemDisplay[UNI !ID MAPID=137]: %NAME%
 ItemDisplay[UNI !ID (MAPID=161 OR MAPID=162 OR MAPID=163)]: %NAME%
-ItemDisplay[UNI SET !ID !ALLDISCOVERED FILTLVL<9]:  %DOT-D3%%NAME%
-ItemDisplay[SET SET !ID !ALLDISCOVERED FILTLVL<9]:  %DOT-D3%%NAME%
+ItemDisplay[UNI !ID !ALLDISCOVERED FILTLVL<9]:  %DOT-D3%%NAME%
+ItemDisplay[SET !ID !ALLDISCOVERED FILTLVL<9]:  %DOT-D3%%NAME%
 ItemDisplay[UNI !ID (MAPID=181 OR MAPID=182)]: %DOT-D3%%NAME%
 ItemDisplay[SET !ID (MAPID=181 OR MAPID=182)]: %DOT-7D%%NAME%
 ItemDisplay[UNI !ID ETH FILTLVL<7 !(7ba OR 7cs OR 7gl)]: %PX-D3%%TIER-6%%NAME%
