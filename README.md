@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 10th Season 14 - build 23
+## Last updated October 10th Season 14 - build 30
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -133,8 +133,10 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Schaefer's Hammer (Legendary Mallet)
 - Siggard's Staunch (Colossus Girdle)
 - Silks of the Victor (Ancient Armor) — ETH
+- Skull Collector (Rune Staff)
 - Skywarden (Vortex Shield)
 - Soul Drainer (Vambraces)
+- Spectral Plate (Great Hauberk)
 - Spirit Keeper (Earth Spirit)
 - Spirit Ward (Ward) — non-ETH
 - Steel Carapace (Shadow Plate)
@@ -194,7 +196,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Sacred Totem (Hellspawn Skull)
 - Shaftstop (Mesh Armor)
 - Silkweave (Mesh Boots)
-- Skull Collector (Rune Staff)
 - Skyfall (Vortex Orb)
 - Snowclash (Battle Belt) — non-ETH
 - Spirit Ward (Ward) — ETH
@@ -210,6 +211,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Valkyrie Wing (Winged Helm)
 - Vampire Gaze (Grim Helm)
 - War Traveler (Battle Boots)
+- Warriv's Warder (Heater)
 - Whispering Mirage (War Fist)
 - Widowmaker (Ward Bow)
 - Windforce (Hydra Bow)
