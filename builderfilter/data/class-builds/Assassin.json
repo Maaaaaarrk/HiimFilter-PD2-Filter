@@ -1,0 +1,49 @@
+{
+  "_readme": [
+    "Uniques and set items the character wears (not merc gear, rings or amulets) in this class's builds on Hiim's",
+    "tier lists (hiimpd2.com). builderfilter/class_build_aliases.py builds CLASS_BUILD_UNIQUE /",
+    "CLASS_BUILD_SET for this class filter from it on every build; those items stay visible through",
+    "filter level 10. Refresh from the planners: node scripts/update-class-build-items.mjs",
+    "Editing: add {\"name\": \"<unique or set item>\", \"manual\": true} to keep an item the planners",
+    "don't list (add \"code\" for items not in unique-set-tiers.json, e.g. rings / amulets), and",
+    "put names in \"exclude\" to drop a planner item. Both survive a refresh."
+  ],
+  "class": "Assassin",
+  "season": 14,
+  "exclude": [],
+  "uniques": [
+    {"name":"Lidless Wall","code":"xsh","base":"Grim Shield","builds":["Blade Fury","Blade Fury (Demon Machine)","Blade Sentinel (Phys)","Blade Sentinel (Venom)","Blades of Ice","Death Sentry","Fists of Fire","Mind Blast"]},
+    {"name":"Whispering Mirage","code":"7xf","base":"War Fist","builds":["Blade Sentinel (Phys)","Blade Sentinel (Venom)","Blades of Ice","Cobra Sin","Death Sentry","Fists of Fire","Mind Blast","Summon Sin (Elemental trap)"]},
+    {"name":"Shadow Dancer","code":"uhb","base":"Myrmidon Greaves","builds":["Blades of Ice","Death Sentry","Fists of Fire","Mind Blast","Summon Sin (Elemental trap)"]},
+    {"name":"Arachnid Mesh","code":"ulc","base":"Spiderweb Sash","builds":["Death Sentry","Fists of Fire","Mind Blast","Summon Sin (Elemental trap)"]},
+    {"name":"Verdungo's Hearty Cord","code":"umc","base":"Mithril Coil","builds":["Blade Sentinel (Phys)","Blade Sentinel (Venom)","Phoenix Strike","Poison Blade Dance"]},
+    {"name":"Siggard's Staunch","code":"uhc","base":"Colossus Girdle","builds":["Cobra Sin","Dragon Tail (Fire Kick)","Dragon Tail (Fire Kick) Astreons"]},
+    {"name":"Steel Carapace","code":"uul","base":"Shadow Plate","builds":["Blades of Ice","Cobra Sin","Fists of Fire"]},
+    {"name":"Veil of Steel","code":"uhm","base":"Spired Helm","builds":["Blade Sentinel (Phys)","Dragon Tail (Fire Kick)","Dragon Tail (Fire Kick) Astreons"]},
+    {"name":"Venom Grip","code":"xlg","base":"Demonhide Gloves","builds":["Blade Sentinel (Venom)","Physical Blade Dance","Poison Blade Dance"]},
+    {"name":"Astreon's Iron Ward","code":"7ws","base":"Caduceus","builds":["Dragon Tail (Fire Kick)","Dragon Tail (Fire Kick) Astreons"]},
+    {"name":"Giant Skull","code":"uh9","base":"Bone Visage","builds":["Blade Fury","Blade Fury (Demon Machine)"]},
+    {"name":"Gore Rider","code":"xhb","base":"War Boots","builds":["Dragon Tail (Fire Kick)","Dragon Tail (Fire Kick) Astreons"]},
+    {"name":"Hellmouth","code":"xhg","base":"War Gauntlets","builds":["Dragon Tail (Fire Kick)","Dragon Tail (Fire Kick) Astreons"]},
+    {"name":"Kira's Guardian","code":"ci2","base":"Tiara","builds":["Fists of Fire","Phoenix Strike"]},
+    {"name":"Magefist","code":"tgl","base":"Light Gauntlets","builds":["Death Sentry","Summon Sin (Elemental trap)"]},
+    {"name":"Soul Drainer","code":"umg","base":"Vambraces","builds":["Blade Fury","Blade Fury (Demon Machine)"]},
+    {"name":"Andariel's Visage","code":"usk","base":"Demonhead","builds":["Cobra Sin"]},
+    {"name":"Bartuc's Cut Throat","code":"7tw","base":"Runic Talons","builds":["Phoenix Strike"]},
+    {"name":"Fleshripper","code":"7kr","base":"Fanged Knife","builds":["Blade Fury"]},
+    {"name":"Harlequin Crest","code":"uap","base":"Shako","builds":["Death Sentry"]},
+    {"name":"Jade Talon","code":"7wb","base":"Wrist Sword","builds":["Cobra Sin"]},
+    {"name":"Merman's Sprocket","code":"ulb","base":"Wyrmhide Boots","builds":["Phoenix Strike"]},
+    {"name":"Nightwing's Veil","code":"uhm","base":"Spired Helm","builds":["Blades of Ice"]},
+    {"name":"Shadow Killer","code":"7cs","base":"Battle Cestus","builds":["Physical Blade Dance"]},
+    {"name":"Snowclash","code":"ztb","base":"Battle Belt","builds":["Blades of Ice"]},
+    {"name":"Steel Shade","code":"ulm","base":"Armet","builds":["Summon Sin (Elemental trap)"]},
+    {"name":"String of Ears","code":"zlb","base":"Demonhide Sash","builds":["Physical Blade Dance"]}
+  ],
+  "sets": [
+    {"name":"Natalya's Mark","code":"7qr","base":"Scissors Suwayyah","builds":["Blade Sentinel (Venom)","Physical Blade Dance","Poison Blade Dance"]},
+    {"name":"Natalya's Shadow","code":"ucl","base":"Loricated Mail","builds":["Blade Sentinel (Venom)","Physical Blade Dance","Poison Blade Dance"]},
+    {"name":"Natalya's Soul","code":"xmb","base":"Mesh Boots","builds":["Blade Sentinel (Venom)","Physical Blade Dance","Poison Blade Dance"]},
+    {"name":"Natalya's Totem","code":"xh9","base":"Grim Helm","builds":["Blade Sentinel (Venom)","Physical Blade Dance","Poison Blade Dance"]}
+  ]
+}

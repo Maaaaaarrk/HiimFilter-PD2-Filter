@@ -1,0 +1,36 @@
+{
+  "_readme": [
+    "Uniques and set items the character wears (not merc gear, rings or amulets) in this class's builds on Hiim's",
+    "tier lists (hiimpd2.com). builderfilter/class_build_aliases.py builds CLASS_BUILD_UNIQUE /",
+    "CLASS_BUILD_SET for this class filter from it on every build; those items stay visible through",
+    "filter level 10. Refresh from the planners: node scripts/update-class-build-items.mjs",
+    "Editing: add {\"name\": \"<unique or set item>\", \"manual\": true} to keep an item the planners",
+    "don't list (add \"code\" for items not in unique-set-tiers.json, e.g. rings / amulets), and",
+    "put names in \"exclude\" to drop a planner item. Both survive a refresh."
+  ],
+  "class": "Sorceress",
+  "season": 14,
+  "exclude": [],
+  "uniques": [
+    {"name":"Silkweave","code":"xmb","base":"Mesh Boots","builds":["Chain Lightning","Charged Bolt","Combustion","Frost Nova","Frozen Orb","Nova"]},
+    {"name":"Nightwing's Veil","code":"uhm","base":"Spired Helm","builds":["Blizzard","Dual Enchant Multishot","Frost Nova","Frozen Orb","Multishot Enchantress"]},
+    {"name":"Lidless Wall","code":"xsh","base":"Grim Shield","builds":["Blizzard","Combustion","Frost Nova","Frozen Orb"]},
+    {"name":"Magefist","code":"tgl","base":"Light Gauntlets","builds":["Chain Lightning","Combustion","Meteor","Red Portal Farmer"]},
+    {"name":"Occultist","code":"utg","base":"Crusader Gauntlets","builds":["Charged Bolt","Frost Nova","Frozen Orb","Nova"]},
+    {"name":"Steel Carapace","code":"uul","base":"Shadow Plate","builds":["Blizzard","Frost Nova","Frozen Orb","Nova"]},
+    {"name":"Griffon's Eye","code":"ci3","base":"Diadem","builds":["Charged Bolt","Nova","Red Portal Farmer"]},
+    {"name":"Arachnid Mesh","code":"ulc","base":"Spiderweb Sash","builds":["Combustion","Red Portal Farmer"]},
+    {"name":"Ormus' Robes","code":"uui","base":"Dusk Shroud","builds":["Charged Bolt","Combustion"]},
+    {"name":"Siggard's Staunch","code":"uhc","base":"Colossus Girdle","builds":["Frost Nova","Nova"]},
+    {"name":"Skin of the Vipermagi","code":"xea","base":"Serpentskin Armor","builds":["Meteor","Red Portal Farmer"]},
+    {"name":"Skull Collector","code":"8ws","base":"Rune Staff","builds":["Blizzard","Frozen Orb"]},
+    {"name":"Snowclash","code":"ztb","base":"Battle Belt","builds":["Blizzard","Frozen Orb"]},
+    {"name":"Dracul's Grasp","code":"uvg","base":"Vampirebone Gloves","builds":["Blizzard"]},
+    {"name":"Kira's Guardian","code":"ci2","base":"Tiara","builds":["Combustion"]},
+    {"name":"Mang Song's Lesson","code":"6ws","base":"Archon Staff","builds":["Frost Nova"]},
+    {"name":"String of Ears","code":"zlb","base":"Demonhide Sash","builds":["Meteor"]},
+    {"name":"Thundergod's Vigor","code":"zhb","base":"War Belt","builds":["Charged Bolt"]}
+  ],
+  "sets": [
+  ]
+}
