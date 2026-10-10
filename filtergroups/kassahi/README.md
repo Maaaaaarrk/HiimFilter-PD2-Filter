@@ -1,5 +1,6 @@
 # kassahi
-## Last updated October 10th Season 14 - build 19
+## Last updated October 10th Season 14 - build 20
+## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
 * Regular — Standard: Kassahi's all-in-one balanced filter. The standard recommendation for most players. [Kassahi.filter]
@@ -8,6 +9,9 @@
 * Mystery — Hyper: Mystery filter with a Hyper visual theme. [Kassahi_Mystery_Hyper.filter]
 * Mystery — Standard: Filter where high-value items are renamed to hide their identity. [Kassahi_Mystery.filter]
 * Regular — Hyper: Standard filter with a Hyper visual theme. [Kassahi_Hyper.filter]
+
+## Filter Preview — Kassahi — Standard
+**[See Kassahi — Standard at every filter level on FilterForge](https://maaaaaarrk.github.io/FilterForge/compare.html?only=kassahi@2,kassahi@4,kassahi@6,kassahi@7,kassahi@8,kassahi@10)** — the same drops as the filter shows them in game, one column per filter level (2, 4, 6, 7, 8, 10). Compare all Hiim styles side by side: [Hiim styles](../HIIM_STYLES.md)
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.

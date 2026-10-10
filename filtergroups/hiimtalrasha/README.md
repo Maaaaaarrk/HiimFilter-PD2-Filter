@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated October 10th Season 14 - build 19
+## Last updated October 10th Season 14 - build 20
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -17,9 +17,7 @@
 * Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
 
 ## Filter Preview — Style — TalRasha
-Rendered by `builderreadme/render_readme_images.py` from the filter on every build. Rows are sample items, columns are filter-level groups; a cell split into notes (e.g. `level 3 | level 4`) changes inside its group. Unique and set samples are picked per star tier from `builderfilter/data/unique-set-tiers.json`. Compare all Hiim styles side by side: [Hiim styles](../HIIM_STYLES.md)
-
-[![Style — TalRasha](../../examples/render/Hiim_TalRasha_Themed.png?raw=true)](../../examples/render/Hiim_TalRasha_Themed.png?raw=true)
+**[See Style — TalRasha at every filter level on FilterForge](https://maaaaaarrk.github.io/FilterForge/compare.html?only=hiim-talrasha@2,hiim-talrasha@4,hiim-talrasha@6,hiim-talrasha@7,hiim-talrasha@8,hiim-talrasha@10)** — the same drops as the filter shows them in game, one column per filter level (2, 4, 6, 7, 8, 10). Compare all Hiim styles side by side: [Hiim styles](../HIIM_STYLES.md)
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.
