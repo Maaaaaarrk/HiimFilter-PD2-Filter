@@ -4,6 +4,7 @@ import json
 import os
 import re
 
+import class_build_aliases
 import tier_aliases
 
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
@@ -260,6 +261,8 @@ def main():
     update_version()
     if tier_aliases.generate():
         print(f"Regenerated {os.path.relpath(tier_aliases.ALIAS_FILE, OUTPUT_DIR)} from data/unique-set-tiers.json")
+    for path in class_build_aliases.generate():
+        print(f"Regenerated {os.path.relpath(path, OUTPUT_DIR)} from data/class-builds/")
     filters, groups = load_config()
     cleanup_beta_files(filters)
 
