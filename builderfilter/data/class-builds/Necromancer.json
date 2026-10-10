@@ -1,0 +1,42 @@
+{
+  "_readme": [
+    "Uniques and set items the character wears (not merc gear, rings or amulets) in this class's builds on Hiim's",
+    "tier lists (hiimpd2.com). builderfilter/class_build_aliases.py builds CLASS_BUILD_UNIQUE /",
+    "CLASS_BUILD_SET for this class filter from it on every build; those items stay visible through",
+    "filter level 10. Refresh from the planners: node scripts/update-class-build-items.mjs",
+    "Editing: add {\"name\": \"<unique or set item>\", \"manual\": true} to keep an item the planners",
+    "don't list (add \"code\" for items not in unique-set-tiers.json, e.g. rings / amulets), and",
+    "put names in \"exclude\" to drop a planner item. Both survive a refresh."
+  ],
+  "class": "Necromancer",
+  "season": 14,
+  "exclude": [],
+  "uniques": [
+    {"name":"Arachnid Mesh","code":"ulc","base":"Spiderweb Sash","builds":["Dark Pact","Elemental Summoner (Mage Skeles + Ele Revives)","Fire Golems","Giga Curse","Green Goblin & Skeletons","Hybrid Curse + Summons","Only Phys Curses","Only Skeletons","Pure Clay/Blood","Pure Revive (Eternity + Sacred Totem)","Skeleton Summons & Amp Hybrid"]},
+    {"name":"Marrowwalk","code":"umb","base":"Boneweave Boots","builds":["Elemental Summoner (Mage Skeles + Ele Revives)","Green Goblin & Skeletons","Hybrid Curse + Summons","Only Skeletons","Pure Clay/Blood","Pure Revive (Eternity + Sacred Totem)","Skeleton Summons & Amp Hybrid"]},
+    {"name":"Arm of King Leoric","code":"9bw","base":"Tomb Wand","builds":["Green Goblin & Skeletons","Hybrid Curse + Summons","Only Skeletons","Skeleton Summons & Amp Hybrid"]},
+    {"name":"Blackhand Key","code":"9gw","base":"Grave Wand","builds":["Dark Pact","Giga Curse","Only Phys Curses"]},
+    {"name":"Darkforce Spawn","code":"nef","base":"Bloodlord Skull","builds":["Dark Pact","Hybrid Curse + Summons","Skeleton Summons & Amp Hybrid"]},
+    {"name":"Gravepalm","code":"xvg","base":"Sharkskin Gloves","builds":["Elemental Summoner (Mage Skeles + Ele Revives)","Pure Clay/Blood","Pure Revive (Eternity + Sacred Totem)"]},
+    {"name":"Harlequin Crest","code":"uap","base":"Shako","builds":["Elemental Summoner (Mage Skeles + Ele Revives)","Pure Clay/Blood","Pure Revive (Eternity + Sacred Totem)"]},
+    {"name":"Sacred Totem","code":"neg","base":"Hellspawn Skull","builds":["Giga Curse","Only Phys Curses","Pure Revive (Eternity + Sacred Totem)"]},
+    {"name":"Boneflame","code":"nee","base":"Succubae Skull","builds":["Green Goblin & Skeletons","Only Skeletons"]},
+    {"name":"Lidless Wall","code":"xsh","base":"Grim Shield","builds":["Pure Clay/Blood","Pure Revive (Eternity + Sacred Totem)"]},
+    {"name":"Magefist","code":"tgl","base":"Light Gauntlets","builds":["Corpse Explosion","Fire Golems"]},
+    {"name":"Sandstorm Trek","code":"uvb","base":"Scarabshell Boots","builds":["Giga Curse","Only Phys Curses"]},
+    {"name":"Death's Web","code":"7gw","base":"Unearthed Wand","builds":["Poison Nova"]},
+    {"name":"Grim's Burning Dead","code":"9wc","base":"Grim Scythe","builds":["Elemental Summoner (Mage Skeles + Ele Revives)"]},
+    {"name":"Kalan's Legacy","code":"ne6","base":"Mummified Trophy","builds":["Pure Clay/Blood"]},
+    {"name":"Nethercrux","code":"7yw","base":"Ghost Wand","builds":["Pure Revive (Eternity + Sacred Totem)"]},
+    {"name":"Silkweave","code":"xmb","base":"Mesh Boots","builds":["Poison Nova"]},
+    {"name":"Skullder's Ire","code":"xpl","base":"Russet Armor","builds":["Poison Nova"]},
+    {"name":"String of Ears","code":"zlb","base":"Demonhide Sash","builds":["Poison Strike"]}
+  ],
+  "sets": [
+    {"name":"Trang-Oul's Claws","code":"xmg","base":"Heavy Bracers","builds":["Dark Pact","Giga Curse","Green Goblin & Skeletons","Hybrid Curse + Summons","Only Phys Curses","Only Skeletons","Poison Nova","Skeleton Summons & Amp Hybrid","Teeth / Bonespear"]},
+    {"name":"Trang-Oul's Scales","code":"xul","base":"Chaos Armor","builds":["Fire Golems","Green Goblin & Skeletons","Hybrid Curse + Summons","Only Skeletons","Pure Clay/Blood","Pure Revive (Eternity + Sacred Totem)","Skeleton Summons & Amp Hybrid"]},
+    {"name":"Trang-Oul's Girth","code":"utc","base":"Troll Belt","builds":["Poison Nova"]},
+    {"name":"Trang-Oul's Wing","code":"ne9","base":"Cantor Trophy","builds":["Poison Nova"]},
+    {"name":"Trang-Oul's Guise","code":"uh9","base":"Bone Visage","manual":true}
+  ]
+}

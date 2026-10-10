@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 10th Season 14 - build 19
+## Last updated October 10th Season 14 - build 20
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -22,9 +22,7 @@
 * Only A Filter: All-in-one filter with no item display changes — filtering only, no annotations or re-naming. [Hiim_Only_Filter.filter]
 
 ## Filter Preview — Hiim — Standard
-Rendered by `builderreadme/render_readme_images.py` from the filter on every build. Rows are sample items, columns are filter-level groups; a cell split into notes (e.g. `level 3 | level 4`) changes inside its group. Unique and set samples are picked per star tier from `builderfilter/data/unique-set-tiers.json`. Compare all Hiim styles side by side: [Hiim styles](filtergroups/HIIM_STYLES.md)
-
-[![Hiim — Standard](examples/render/Hiim.png?raw=true)](examples/render/Hiim.png?raw=true)
+**[See Hiim — Standard at every filter level on FilterForge](https://maaaaaarrk.github.io/FilterForge/compare.html?only=hiimfilter@2,hiimfilter@4,hiimfilter@6,hiimfilter@7,hiimfilter@8,hiimfilter@10)** — the same drops as the filter shows them in game, one column per filter level (2, 4, 6, 7, 8, 10). Compare all Hiim styles side by side: [Hiim styles](filtergroups/HIIM_STYLES.md)
 
 ## Filter Levels
 Cube will state current filter version & chosen filter level information.

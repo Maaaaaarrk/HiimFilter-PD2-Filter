@@ -31,7 +31,8 @@ class Filter:
         self.aliases, self.rules = {}, []
         with open(path, encoding="utf-8") as f:
             for raw in f:
-                line = raw.rstrip("\r\n")
+                # The game reads each row with everything from // stripped, then trimmed.
+                line = raw.split("//", 1)[0].strip()
                 m = re.match(r"^Alias\[([^\]]+)\]:\s?(.*)$", line)
                 if m:
                     self.aliases.setdefault(m.group(1), m.group(2))
@@ -73,12 +74,16 @@ class Filter:
         return self._out_cache[raw]
 
     # ---- evaluation ----------------------------------------------------------------
-    def label(self, item, filtlvl):
-        """Return (segments, border, shown). segments: list of lines, each a list of (text, rgb)."""
+    def label(self, item, filtlvl, trace=None):
+        """Return (segments, border, shown). segments: list of lines top to bottom as drawn in
+        game, each a list of (text, rgb). Lines are built in string order and the game draws
+        them bottom-up (each new line pushes the earlier text up), so they are reversed at the
+        end. trace, if a list, collects (condition, label text) for every matching rule."""
         ctx = Context(item, filtlvl)
-        name = [[(item.get("name", item["code"]), COLORS[item_color(item)])]]
-        if item.get("base_line"):  # runewords: base name on a second line
-            name.append([(item["base_line"], COLORS[item_color(item)])])
+        color = COLORS[item_color(item)]
+        name = [[(item.get("name", item["code"]), color)]]
+        if item.get("base_line"):  # runewords: the base name sits under the runeword name
+            name = [[(item["base_line"], color)], [(item.get("name", item["code"]), color)]]
         border = None
         matched = False
         for cond_raw, out_raw in self.rules:
@@ -87,15 +92,49 @@ class Filter:
             matched = True
             text = self.out(out_raw)
             label_part, _tooltip = _split_tooltip(text)
+            if trace is not None:
+                trace.append((cond_raw, label_part))
             cont = "%CONTINUE%" in label_part
             new, b = _render_label(label_part, name, ctx, item)
             border = b or border
             name = new
             if not cont:
                 break
-        name = _trim(name)
+        name = _trim(_resolve_conditionals(name))
         shown = matched is False or bool(name)
-        return name, border, shown
+        return name[::-1], border, shown
+
+
+# %CL% / %CS% markers carried through the %CONTINUE% chain (a later rule can fill the text
+# around them), resolved on the finished label.
+_CL, _CS = "\x01", "\x02"
+
+
+def _resolve_conditionals(lines):
+    """%CL% becomes a line break only with visible text on both sides of it on its line, so it
+    never makes a blank line or two breaks in a row; %CS% becomes a space only between two
+    visible characters, so it never doubles a space or starts / ends a line."""
+    def visible(segs):
+        return "".join(t for t, _ in segs if t not in (_CL, _CS))
+
+    out = []
+    for line in lines:
+        cur = [[]]
+        for k, (t, c) in enumerate(line):
+            rest = visible(line[k + 1:])
+            if t == _CL:
+                if visible(cur[-1]).strip() and rest.strip():
+                    while cur[-1] and cur[-1][-1][0] == " ":  # a %CS% right before the break
+                        cur[-1].pop()
+                    cur.append([])
+            elif t == _CS:
+                before = visible(cur[-1])
+                if before and not before[-1].isspace() and rest and not rest[0].isspace():
+                    cur[-1].append((" ", c))
+            else:
+                cur[-1].append((t, c))
+        out.extend(cur)
+    return out
 
 
 def _trim(lines):
@@ -402,8 +441,12 @@ def _render_label(text, prev, ctx, item):
                 lines[-1].extend(line)
         elif tok in COLORS:
             color = COLORS[tok]
-        elif tok in ("NL", "CL"):
+        elif tok == "NL":
             lines.append([])
+        elif tok == "CL":  # conditional newline / space: decided on the finished label
+            lines[-1].append((_CL, color))
+        elif tok == "CS":
+            lines[-1].append((_CS, color))
         elif tok == "BORDER":
             border = color_from_index(arg)
         elif tok in _IGNORED:
@@ -414,7 +457,7 @@ def _render_label(text, prev, ctx, item):
             lines[-1].append((item.get("rune_name", ""), color))
         elif tok == "BASENAME":
             lines[-1].append((item.get("base", item.get("name", "")), color))
-        elif tok in _VALUE_TOKENS or tok.startswith("STAT") or tok.startswith("CHARSTAT"):
+        elif tok in _VALUE_TOKENS or re.fullmatch(r"(STAT|CHARSTAT|SK|TABSK|CLSK)\d+", tok):
             lines[-1].append((_fmt(ctx.value(tok)), color))
         else:
             pass  # unknown token: drop
