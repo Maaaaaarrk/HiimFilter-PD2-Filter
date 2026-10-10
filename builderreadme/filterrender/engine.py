@@ -215,23 +215,23 @@ def _parse_cond(text):
     def peek():
         return toks[pos] if pos < len(toks) else None
 
-    def p_or():
+    # Like BH's shunting-yard parser: AND (also implied between terms) and OR have equal
+    # precedence and apply left to right, so "A OR B C" is "(A OR B) AND C"; "!" binds to the
+    # next term or parenthesised group.
+    def p_expr():
         nonlocal pos
-        terms = [p_and()]
-        while peek() == "OR":
-            pos += 1
-            terms.append(p_and())
-        return terms[0] if len(terms) == 1 else ("or", terms)
-
-    def p_and():
-        nonlocal pos
-        terms = [p_not()]
-        while peek() not in (None, "OR", ")"):
-            if peek() == "AND":
+        left = p_not()
+        while peek() not in (None, ")"):
+            op = "and"
+            if peek() == "OR":
+                op = "or"
                 pos += 1
-                continue
-            terms.append(p_not())
-        return terms[0] if len(terms) == 1 else ("and", terms)
+            elif peek() == "AND":
+                pos += 1
+            if peek() in (None, ")"):
+                break
+            left = (op, [left, p_not()])
+        return left
 
     def p_not():
         nonlocal pos
@@ -245,7 +245,7 @@ def _parse_cond(text):
         t = peek()
         pos += 1
         if t == "(":
-            v = p_or()
+            v = p_expr()
             if peek() == ")":
                 pos += 1
             return v
@@ -253,14 +253,15 @@ def _parse_cond(text):
             return ("const", True)
         return ("atom", t)
 
-    return p_or() if toks else ("const", True)
+    return p_expr() if toks else ("const", True)
 
 
 class Context:
     def __init__(self, item, filtlvl):
         self.item = item
         self.flags = set(item.get("flags", ())) | {"GROUND"}
-        self.num = {"FILTLVL": filtlvl, "CLVL": 86, "DIFF": 2, "MAPID": 2, "QTY": 1, "ILVL": 85,
+        # QTY is only set on stackable samples (runes, gem / skull stacks)
+        self.num = {"FILTLVL": filtlvl, "CLVL": 86, "DIFF": 2, "MAPID": 2, "ILVL": 85,
                     "ALVL": 85, "LVLREQ": 60, "CHARSTAT12": 90}
         self.num.update(item.get("num", {}))
         if item.get("rune"):
@@ -405,7 +406,12 @@ def _split_tooltip(text):
 _VALUE_TOKENS = {"QTY", "ILVL", "ALVL", "EDAM", "EDEF", "RES", "DEF", "LIFE", "MANA", "SOCK", "LVLREQ",
                  "CRAFTALVL", "REROLLALVL", "PLR", "REPLIFE", "WPNSPD", "UPLVL", "UPSTR", "UPDEX", "FCR",
                  "IAS", "FHR", "FRW", "STR", "DEX", "MINDMG", "MAXDMG", "ED", "PRICE", "SELLPRICE",
-                 "SOCKETS", "RANGE", "MFIND", "GFIND", "RUNE"}
+                 "SOCKETS", "RANGE", "MFIND", "GFIND", "RUNE", "MAXSOCKETS", "MAPTIER", "GEMLEVEL",
+                 "WIDTH", "HEIGHT", "AREA", "MAXRES", "ALLATTRIB", "BASEBLOCK", "REQLVL", "REQSTR",
+                 "REQDEX", "BASEMINONEH", "BASEMAXONEH", "BASEMINTWOH", "BASEMAXTWOH", "BASEMINSMITE",
+                 "BASEMAXSMITE", "BASEMINTHROW", "BASEMAXTHROW", "BASEMINKICK", "BASEMAXKICK", "QLVL",
+                 "GOLD"}
+_GEM_TYPES = ["", "Amethyst", "Diamond", "Emerald", "Ruby", "Sapphire", "Topaz", "Skull"]
 _IGNORED = {"CONTINUE", "TIER", "SOUNDID", "MAP", "DOT", "PX", "NOTIFY", "IGNORE"}
 
 
@@ -457,6 +463,11 @@ def _render_label(text, prev, ctx, item):
             lines[-1].append((item.get("rune_name", ""), color))
         elif tok == "BASENAME":
             lines[-1].append((item.get("base", item.get("name", "")), color))
+        elif tok == "GEMTYPE":
+            gt = int(ctx.value("GEMTYPE"))
+            lines[-1].append((_GEM_TYPES[gt] if 0 <= gt < len(_GEM_TYPES) else "", color))
+        elif tok == "CODE":
+            lines[-1].append((item["code"], color))
         elif tok in _VALUE_TOKENS or re.fullmatch(r"(STAT|CHARSTAT|SK|TABSK|CLSK)\d+", tok):
             lines[-1].append((_fmt(ctx.value(tok)), color))
         else:
