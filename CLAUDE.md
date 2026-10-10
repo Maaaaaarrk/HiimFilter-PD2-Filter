@@ -62,9 +62,11 @@ ItemDisplay[CONDITION]: %DISPLAY_NAME%{TOOLTIP}
 
 Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune HR values, currency prices, uber material values) live as `Alias[...]` entries in `builderfilter/02-alias/04-alias-economy-values[ALL].filter` and are referenced by the segments.
 
-**Style-specific icons/sounds in shared segments:** don't inline `%MAP-..%`/`%SOUNDID-..%`/`%DOT-..%` in a shared segment when a style (e.g. the `KassahiStd` bucket) already bakes them into its aliases, and don't make a `[ONLY=...]` copy of the segment. Use an `FX_*` (tags) or `DISP_*` (whole display part) alias from `builderfilter/02-alias/07-alias-site-fx[...]` and give it a value per style; `SITE_FX` is a condition flag for rules only one style wants. Within the Kassahi family, Phil777 vs Kassahi-bucket differences go in same-named aliases: Phil777 values in `02-alias/03-alias-kassahi-luxe`, Kassahi-bucket values in `02-alias/07-alias-site-fx[ONLY=KassahiStd]`; `PHIL777_STYLE` (`TRUE`/`FALSE`) gates rules only one of them uses.
+**Style-specific icons/sounds in shared segments:** don't inline `%MAP-..%`/`%SOUNDID-..%`/`%DOT-..%` in a shared segment when a style (e.g. the `KassahiStd` bucket) already bakes them into its aliases, and don't make a `[ONLY=...]` copy of the segment. Use an `FX_*` (tags) or `DISP_*` (whole display part) alias from `builderfilter/02-alias/02-alias-site-fx[...]` and give it a value per style; `SITE_FX` is a condition flag for rules only one style wants. Within the Kassahi family, Phil777 vs Kassahi-bucket differences go in same-named aliases: Phil777 values in `02-alias/03-alias-kassahi-luxe`, Kassahi-bucket values in `02-alias/02-alias-site-fx[ONLY=KassahiStd]`; `PHIL777_STYLE` (`TRUE`/`FALSE`) gates rules only one of them uses.
 
 **Shared condition aliases:** use `IN_TOWN` (`builderfilter/01-header/02b-alias-conditions[ALL].filter`) instead of spelling out the town `MAPID` list, and the `SOCK_*` base groups (`builderfilter/02-alias/08-alias-socket-caps[ALL].filter`) for socket-cap lists. A base's socket cap changes in one place there, not in each tooltip copy.
+
+**Alias order matters in game:** PD2 (BH `ItemDisplay.cpp`) expands aliases in one pass in file order — a plain find-and-replace of the bare name in conditions, `%NAME%` in outputs. So an alias whose value uses another alias must be defined *before* it, and a longer name that starts with a shorter alias name (`SOCK_HELM_2_3` / `SOCK_HELM_2`, `RUNE_LOW_RANGE` / `RUNE_LOW`) must come first. The label checker and FilterForge expand by whole names regardless of order, so they won't show this; `validate_filters.py` simulates the game's expansion and errors on any rule that differs.
 
 ## Economy Data
 
@@ -84,6 +86,7 @@ The validator runs automatically in CI after the build step and will fail the pi
 - Unmatched tooltip braces `{` / `}`
 - Malformed `ItemDisplay[...]` condition brackets
 - Invalid condition syntax and out-of-range values
+- Rules the game would expand differently because of alias definition order
 
 Run it locally at any time:
 
