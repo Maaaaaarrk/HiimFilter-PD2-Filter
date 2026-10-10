@@ -42,13 +42,13 @@ CATEGORIES = [
          "legend": "Small charm: 20 life, 5 all res"},
         {"code": "jew", "name": "Jewel", "flags": ["MAG", "ID"],
          "num": {"EDAM": 40, "IAS": 15}, "legend": "Magic jewel: 40% ED, 15 IAS"},
-        {"code": "xvg", "name": "Sharkskin Gloves", "flags": ["MAG", "ARMOR", "GLOVES", "EXC"],
+        {"code": "xvg", "name": "Sharkskin Gloves", "flags": ["MAG", "ARMOR", "GLOVES", "EQ4", "EXC"],
          "legend": "Unid magic gloves"},
-        {"code": "ci2", "name": "Tiara", "flags": ["RARE", "ARMOR", "CIRC", "EXC"],
+        {"code": "ci2", "name": "Tiara", "flags": ["RARE", "ARMOR", "CIRC", "EQ7", "EXC"],
          "legend": "Unid rare circlet"},
-        {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "ELT"],
+        {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "EQ2", "ELT"],
          "num": {"ILVL": 85, "ALVL": 75}, "legend": "Unid rare body armor, ilvl 85, alvl 75"},
-        {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "ELT"],
+        {"code": "utp", "name": "Archon Plate", "flags": ["RARE", "ARMOR", "CHEST", "EQ2", "ELT"],
          "num": {"ILVL": 85, "ALVL": 85}, "legend": "Unid rare body armor, ilvl 85, alvl 85"},
     ]),
     ("Bases & runewords", [
@@ -58,17 +58,17 @@ CATEGORIES = [
          "num": {"SOCK": 0, "EDAM": 18}, "legend": "ETH 0os Berserker Axe, 18% ED"},
         {"code": "6ws", "name": "Archon Staff", "flags": ["NMAG", "WEAPON", "STAFF", "ELT", "2H"],
          "num": {"SOCK": 4, "SK48": 3, "SK63": 3}, "legend": "4os Archon Staff, +3 Nova, +3 Lightning Mastery"},
-        {"code": "uit", "name": "Monarch", "flags": ["NMAG", "ARMOR", "SHIELD", "ELT"],
+        {"code": "uit", "name": "Monarch", "flags": ["NMAG", "ARMOR", "SHIELD", "EQ3", "ELT"],
          "num": {"SOCK": 4}, "legend": "4os Monarch"},
-        {"code": "uui", "name": "Dusk Shroud", "flags": ["NMAG", "ARMOR", "CHEST", "ELT"],
+        {"code": "uui", "name": "Dusk Shroud", "flags": ["NMAG", "ARMOR", "CHEST", "EQ2", "ELT"],
          "num": {"SOCK": 3, "EDEF": 15}, "legend": "3os Dusk Shroud, 15% ED"},
         {"code": "7cr", "name": "Phase Blade", "flags": ["NMAG", "WEAPON", "SWORD", "ELT", "1H"],
          "num": {"SOCK": 0}, "legend": "0os Phase Blade"},
-        {"code": "uui", "name": "Enigma", "base_line": "Dusk Shroud", "flags": ["RW", "ID", "ARMOR", "CHEST", "ELT"], "color": "GOLD",
+        {"code": "uui", "name": "Enigma", "base_line": "Dusk Shroud", "flags": ["RW", "ID", "ARMOR", "CHEST", "EQ2", "ELT"], "color": "GOLD",
          "num": {"SOCK": 3}, "legend": "Runeword: Enigma"},
         {"code": "ssd", "name": "Short Sword", "flags": ["NMAG", "WEAPON", "SWORD", "NORM", "1H"],
          "num": {"ILVL": 85}, "legend": "Plain Short Sword (junk)"},
-        {"code": "lbt", "name": "Boots", "flags": ["MAG", "ARMOR", "BOOTS", "NORM"],
+        {"code": "lbt", "name": "Boots", "flags": ["MAG", "ARMOR", "BOOTS", "EQ5", "NORM"],
          "num": {"ILVL": 85}, "legend": "Unid magic Boots (junk)"},
     ]),
     ("Consumables", [
@@ -90,16 +90,14 @@ import sys as _sys
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.join(_ROOT, "builderfilter"))
 import tier_aliases as _tiers  # noqa: E402
+from .base_flags import BASE_FLAGS  # noqa: E402
 
 _STAR = {"4": "4-star", "3": "3-star", "2": "2-star", "1": "1-star", "0": "0-star", "no-star": "no-star"}
 
 
 def _base_class(code):
-    """NORM / EXC / ELT from the item code's prefix ('6'/'7'/'u' elite, '8'/'9'/'x' exceptional).
-    Class-specific bases follow their own numbering, so they return None."""
-    if len(code) != 3 or code[:2] in ("am", "ba", "dr", "ne", "pa", "ci", "ob"):
-        return None
-    return "ELT" if code[0] in "67u" else "EXC" if code[0] in "89x" else "NORM"
+    """NORM / EXC / ELT for a weapon or armor code (from the game's item tables); None otherwise."""
+    return next((f for f in BASE_FLAGS.get(code, ()) if f in ("NORM", "EXC", "ELT")), None)
 
 
 def _sample(e, flags, legend):
@@ -146,6 +144,18 @@ def star_samples():
     return out
 
 
+def with_base_flags(item):
+    """The item with its base's loot-filter flags (ARMOR / WEAPON, type and group codes, class
+    item codes, 1H / 2H, NORM / EXC / ELT) added from the game's item tables."""
+    add = list(BASE_FLAGS.get(item["code"], ()))
+    # normal-quality items and runes are always identified in game (rules test !ID)
+    if "NMAG" in item.get("flags", []) or item.get("rune"):
+        add.append("ID")
+    extra = [f for f in add if f not in item.get("flags", [])]
+    return dict(item, flags=list(item.get("flags", [])) + extra) if extra else item
+
+
 def categories():
-    """CATEGORIES with the star-tier samples filled in."""
-    return [(name, star_samples() if items == "STAR_SAMPLES" else items) for name, items in CATEGORIES]
+    """CATEGORIES with the star-tier samples filled in and base flags on every item."""
+    return [(name, [with_base_flags(it) for it in (star_samples() if items == "STAR_SAMPLES" else items)])
+            for name, items in CATEGORIES]

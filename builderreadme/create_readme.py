@@ -15,8 +15,6 @@ FILTERGROUPS_DIR  = os.path.join(ROOT_DIR, "filtergroups")
 # Star tiers come from builderfilter/data/unique-set-tiers.json (via builderfilter/tier_aliases.py).
 sys.path.insert(0, os.path.join(ROOT_DIR, "builderfilter"))
 import tier_aliases  # noqa: E402
-sys.path.insert(0, SCRIPT_DIR)
-import render_readme_images as renders  # noqa: E402
 
 STYLES_PAGE = os.path.join(FILTERGROUPS_DIR, "HIIM_STYLES.md")
 
@@ -91,49 +89,70 @@ def build_uniques_by_level_section():
     return "\n".join(lines)
 
 
-PREVIEW_INTRO = (
-    "Rendered by `builderreadme/render_readme_images.py` from the filter on every build. "
-    "Rows are sample items, columns are filter-level groups; a cell split into notes "
-    "(e.g. `level 3 | level 4`) changes inside its group. Unique and set samples are picked "
-    "per star tier from `builderfilter/data/unique-set-tiers.json`. "
-    "Compare all Hiim styles side by side: "
-)
+# Filter previews live on FilterForge's Compare page, which evaluates the published filters in
+# the browser. A link's `only=` lists columns as <group>[.<file index>]@<level>; groups are
+# FilterForge's author slugs (data/author-filters.json there) and the file index is the
+# position of the file in that author's list.
+COMPARE_URL = "https://maaaaaarrk.github.io/FilterForge/compare.html"
+# README level groups (1-2, 3-4, 5-6, 7, 8, 9-10): one column at the strictest level of each
+PREVIEW_LEVELS = [2, 4, 6, 7, 8, 10]
+STYLES_LEVEL = 5
+# filtergroups dir (None = repo root) -> (display title, FilterForge column token without level)
+PREVIEWS = {
+    None: ("Hiim — Standard", "hiimfilter"),
+    "hiimhyper": ("Style — Hyper", "hiim-hyper"),
+    "hiimtalrasha": ("Style — TalRasha", "hiim-talrasha"),
+    "hiimvanillaplus": ("Vanilla Plus", "hiim-vanillaplus"),
+    "kassahi": ("Kassahi — Standard", "kassahi"),
+    "phil777": ("Kassahi & Philanthropy777", "philanthropy777"),
+}
+HIIM_STYLES = [None, "hiimhyper", "hiimtalrasha", "hiimvanillaplus"]
+# Phil777, Kassahi, Kassahi Hyper (file 5 in FilterForge's Kassahi list)
+KASSAHI_STYLES = [("Phil777", "philanthropy777"), ("Kassahi", "kassahi"), ("Kassahi Hyper", "kassahi.5")]
 
 
-def preview_section(name, image, to_root, styles_link):
-    """README block embedding one filter's preview grid. to_root: relative path to repo root."""
+def compare_link(tokens):
+    return f"{COMPARE_URL}?only={','.join(tokens)}"
+
+
+def preview_section(group, styles_link):
+    """README block linking one filter's preview on FilterForge (every README level group)."""
+    name, token = PREVIEWS[group]
+    link = compare_link(f"{token}@{lvl}" for lvl in PREVIEW_LEVELS)
     return (
         f"## Filter Preview — {name}\n"
-        f"{PREVIEW_INTRO}[Hiim styles]({styles_link})\n\n"
-        f"[![{name}]({to_root}{image}?raw=true)]({to_root}{image}?raw=true)\n"
+        f"**[See {name} at every filter level on FilterForge]({link})** — the same drops as the "
+        f"filter shows them in game, one column per filter level "
+        f"({', '.join(str(lvl) for lvl in PREVIEW_LEVELS)}). "
+        f"Compare all Hiim styles side by side: [Hiim styles]({styles_link})\n"
     )
 
 
-def write_styles_page(version_str, previews):
+def write_styles_page(version_str):
+    hiim = compare_link(f"{PREVIEWS[g][1]}@{STYLES_LEVEL}" for g in HIIM_STYLES)
+    kassahi = compare_link(f"{token}@{STYLES_LEVEL}" for _, token in KASSAHI_STYLES)
     lines = [
         "# Hiim Styles Side by Side",
         f"## {version_str}",
         "",
-        f"Every Hiim style at filter level {renders.STYLES_LEVEL}, item for item. "
-        "Each style ships the same rules and tiers; only the look differs.",
+        "The comparisons open on FilterForge's Compare page, which shows the same drops as each "
+        "filter displays them in game. Change any column's filter or level there, or add more "
+        "filters, and share the link.",
         "",
-        f"[![Hiim styles](../{renders.STYLES_IMAGE}?raw=true)](../{renders.STYLES_IMAGE}?raw=true)",
+        f"### [Compare the Hiim styles at filter level {STYLES_LEVEL}]({hiim})",
+        "Each style ships the same rules and tiers; only the look differs: "
+        + ", ".join(PREVIEWS[g][0] for g in HIIM_STYLES) + ".",
         "",
-        "## Kassahi styles",
+        f"### [Compare the Kassahi styles at filter level {STYLES_LEVEL}]({kassahi})",
+        ", ".join(title for title, _ in KASSAHI_STYLES) + ".",
         "",
-        "The Kassahi-family filters (" + ", ".join(
-            f"[{title}]({group}/README.md)" for group, _, title in renders.KASSAHI_STYLES)
-        + f") at filter level {renders.STYLES_LEVEL}.",
-        "",
-        f"[![Kassahi styles](../{renders.KASSAHI_STYLES_IMAGE}?raw=true)]"
-        f"(../{renders.KASSAHI_STYLES_IMAGE}?raw=true)",
-        "",
-        "## Full previews (all filter levels)",
+        "## Each filter at every filter level",
         "",
     ]
-    for group, name, image, _ in previews:
+    for group, (name, token) in PREVIEWS.items():
         where = "[repo root](../README.md)" if group is None else f"[{group}]({group}/README.md)"
-        lines.append(f"* [{name}](../{image}?raw=true) — files in {where}")
+        link = compare_link(f"{token}@{lvl}" for lvl in PREVIEW_LEVELS)
+        lines.append(f"* [{name}]({link}) — files in {where}")
     with open(STYLES_PAGE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines) + "\n")
     print(f"  wrote {STYLES_PAGE}")
@@ -207,23 +226,16 @@ def main():
     filter_levels     = get_filter_levels()
     uniques_by_level  = build_uniques_by_level_section()
 
-    previews = renders.previews()
-    by_group = {group: (name, image) for group, name, image, _ in previews}
-
-    name, image = by_group[None]
     write_root_readme(version_str, filter_levels, uniques_by_level,
-                      preview_section(name, image, "", "filtergroups/HIIM_STYLES.md"))
+                      preview_section(None, "filtergroups/HIIM_STYLES.md"))
 
     if os.path.isdir(FILTERGROUPS_DIR):
         for group in sorted(os.listdir(FILTERGROUPS_DIR)):
             sub = os.path.join(FILTERGROUPS_DIR, group)
             if os.path.isdir(sub):
-                preview = ""
-                if group in by_group:
-                    name, image = by_group[group]
-                    preview = preview_section(name, image, "../../", "../HIIM_STYLES.md")
+                preview = preview_section(group, "../HIIM_STYLES.md") if group in PREVIEWS else ""
                 write_bucket_readme(sub, version_str, filter_levels, uniques_by_level, preview)
-        write_styles_page(version_str, previews)
+        write_styles_page(version_str)
 
 
 if __name__ == "__main__":
