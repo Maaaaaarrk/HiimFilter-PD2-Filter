@@ -1,5 +1,5 @@
 # hiimhyper
-## Last updated October 10th Season 14 - build 26
+## Last updated October 10th Season 14 - build 27
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
