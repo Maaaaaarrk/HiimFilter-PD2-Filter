@@ -21,11 +21,15 @@ export const SET_SCALE = ['4', '3', '2', '1', '0'];
 export const UNIQUE_ALIAS = {
   4: '4_STAR_UNIQUE', 3: '3_STAR_UNIQUE', 2: '2_STAR_UNIQUE', 1: '1_STAR_UNIQUE', 0: '0_STAR_UNIQUE', 'no-star': 'NO_STAR_UNIQUE',
 };
+export const UNIQUE_ETH_ALIAS = Object.fromEntries(
+  Object.entries(UNIQUE_ALIAS).map(([t, a]) => [t, a.replace('_UNIQUE', '_ETH_UNIQUE')]),
+);
 export const SET_ALIAS = { 4: '4_STAR_SET', 3: '3_STAR_SET', 2: '2_STAR_SET', 1: '1_STAR_SET', 0: '0_STAR_SET' };
 export const UNIQUE_VALUE_TIERS = UNIQUE_SCALE.map((t) => UNIQUE_ALIAS[t]);
 export const SET_TIERS = SET_SCALE.map((t) => SET_ALIAS[t]);
 const FROM_ALIAS = Object.fromEntries([
   ...Object.entries(UNIQUE_ALIAS).map(([t, a]) => [a, t]),
+  ...Object.entries(UNIQUE_ETH_ALIAS).map(([t, a]) => [a, t]),
   ...Object.entries(SET_ALIAS).map(([t, a]) => [a, t]),
 ]);
 export const tierFromAlias = (alias) => (alias == null ? null : FROM_ALIAS[alias] ?? null);
@@ -119,20 +123,11 @@ export const baseLocked = (entries) => entries.some((e) => e.locked);
 export const ethFloored = (entries) =>
   entries.some((e) => e.eth && e.eth.floor != null && rankOn(UNIQUE_SCALE, e.eth.floor) > rankOn(UNIQUE_SCALE, e.floor));
 
-// Alias names a base needs for non-ETH tier n / ETH tier e; throws if not expressible.
+// Alias names a base is listed in for non-ETH tier n / ETH tier e. Non-ETH and ETH tiers
+// have separate alias lists, so every combination works.
 // Mirror of unique_aliases_for() in builderfilter/tier_aliases.py.
 export function uniqueAliasesFor(n, e) {
-  if (n == null && e == null) return [];
-  if (n === '4' && e === '4') return ['4_STAR_UNIQUE'];
-  if (n === '4' && e === '3') return ['4_STAR_NO_ETH_UNIQUE'];
-  if (e === '4') return ['4_STAR_ETH_UNIQUE', ...(n != null ? [UNIQUE_ALIAS[n]] : [])];
-  if (n === '3' && e === '2') return ['3_STAR_NO_ETH_UNIQUE'];
-  if (n === e) return [UNIQUE_ALIAS[n]];
-  throw new Error(`non-ETH ${n} / ETH ${e} cannot be expressed by the tier aliases`);
-}
-
-export function isExpressible(n, e) {
-  try { uniqueAliasesFor(n, e); return true; } catch { return false; }
+  return [...(n != null ? [UNIQUE_ALIAS[n]] : []), ...(e != null ? [UNIQUE_ETH_ALIAS[e]] : [])];
 }
 
 const norm = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');

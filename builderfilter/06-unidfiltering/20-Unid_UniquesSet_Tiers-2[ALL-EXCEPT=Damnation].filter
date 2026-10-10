@@ -3,17 +3,9 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs
 // Overlords Helm
 ItemDisplay[UNI !ID uh9 MAPID=137]: %FX_UNID_GG%%UNI_BOSS_ITEM%
 
-// 4 Star Unique Callouts
+// 4 Star Unique Callouts (non-ETH and ETH copies are tiered separately)
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
-
-// 4 Star Unique Callouts only when not ETH, 3 star when ETH
-//-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
-ItemDisplay[UNI !ID FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%
-
-// 4 Star Unique Callouts only when ETH
-//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
 ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
 
 // Jewelry
@@ -29,9 +21,5 @@ ItemDisplay[jew UNI !ID FILTLVL<11]: %FX_UNID_GG%%FACET_ITEM%
 // Filter level 1-8
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
-
-
-// 3 Star Unique Callouts only when not ETH, 2 star when ETH
-//-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_ETH_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%

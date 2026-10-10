@@ -18,14 +18,11 @@ Without an "eth" block, ETH copies use "current" / "floor".
 Unidentified items only reveal their base, so a base code's tier is the best tier
 of any unique (or set item) on it, per variant (ETH / non-ETH).
 
-The generated aliases keep the names the 06-unidfiltering rules use. ETH vs non-ETH
-differences map onto them like this (first matching row):
-    non-ETH 4, ETH 4          -> 4_STAR_UNIQUE
-    non-ETH 4, ETH 3          -> 4_STAR_NO_ETH_UNIQUE
-    ETH 4 (non-ETH lower)     -> 4_STAR_ETH_UNIQUE + the non-ETH tier's alias
-    non-ETH 3, ETH 2          -> 3_STAR_NO_ETH_UNIQUE
-    same tier                 -> that tier's alias
-Anything else cannot be expressed by the current rules and fails the build.
+Uniques get two independent alias lists per tier, so any non-ETH / ETH combination works:
+    <tier>_STAR_UNIQUE        bases whose non-ETH copies are that tier  (rules use !ETH)
+    <tier>_STAR_ETH_UNIQUE    bases whose ETH copies are that tier      (rules use ETH)
+(NO_STAR_UNIQUE / NO_STAR_ETH_UNIQUE for "no-star".) A rule that needs "ETH copy rated below
+its non-ETH copy" combines them, e.g. ETH 4_STAR_UNIQUE !4_STAR_ETH_UNIQUE.
 """
 import json
 import os
@@ -38,21 +35,16 @@ UNIQUE_SCALE = ["4", "3", "2", "1", "0", "no-star"]          # best -> worst
 SET_SCALE = ["4", "3", "2", "1", "0"]
 UNIQUE_ALIAS = {"4": "4_STAR_UNIQUE", "3": "3_STAR_UNIQUE", "2": "2_STAR_UNIQUE",
                 "1": "1_STAR_UNIQUE", "0": "0_STAR_UNIQUE", "no-star": "NO_STAR_UNIQUE"}
+UNIQUE_ETH_ALIAS = {t: a.replace("_UNIQUE", "_ETH_UNIQUE") for t, a in UNIQUE_ALIAS.items()}
 SET_ALIAS = {"4": "4_STAR_SET", "3": "3_STAR_SET", "2": "2_STAR_SET", "1": "1_STAR_SET", "0": "0_STAR_SET"}
 
 # Alias output order and section titles (matches the rule order in 06-unidfiltering).
-UNIQUE_BLOCKS = [
-    ("4_STAR_UNIQUE", "4 Star Unique Callouts"),
-    ("4_STAR_NO_ETH_UNIQUE", "4 Star Unique Callouts only when not ETH (ETH copies show as 3 star)"),
-    ("4_STAR_ETH_UNIQUE", "4 Star Unique Callouts only when ETH"),
-    ("3_STAR_UNIQUE", "3 Star Unique Callouts"),
-    ("3_STAR_NO_ETH_UNIQUE", "3 Star Unique Callouts only when not ETH (ETH copies show as 2 star)"),
-    ("2_STAR_UNIQUE", "2 Star Unique Callouts"),
-    ("1_STAR_UNIQUE", "1 Star Unique Callouts"),
-    ("0_STAR_UNIQUE", "0 Star Unique Callouts"),
-    ("NO_STAR_UNIQUE", "NO Star Unique Callouts"),
-    ("LLD_UNIQUE", "LLD Unique Callouts"),
-]
+_TIER_TITLE = {"4": "4 Star", "3": "3 Star", "2": "2 Star", "1": "1 Star", "0": "0 Star", "no-star": "NO Star"}
+UNIQUE_BLOCKS = (
+    [(UNIQUE_ALIAS[t], f"{_TIER_TITLE[t]} Unique Callouts (non-ETH copies)") for t in UNIQUE_SCALE]
+    + [(UNIQUE_ETH_ALIAS[t], f"{_TIER_TITLE[t]} Unique Callouts (ETH copies)") for t in UNIQUE_SCALE]
+    + [("LLD_UNIQUE", "LLD Unique Callouts")]
+)
 SET_BLOCKS = [
     ("4_STAR_SET", "Set 4 star (GG) Callouts"),
     ("3_STAR_SET", "Set 3 star Callouts"),
@@ -134,29 +126,13 @@ def set_code_tiers(data):
 
 def unique_aliases_for(n, e):
     """Alias names a base needs so the rules show non-ETH tier n and ETH tier e."""
-    if n is None and e is None:
-        return []
-    if n == "4" and e == "4":
-        return ["4_STAR_UNIQUE"]
-    if n == "4" and e == "3":
-        return ["4_STAR_NO_ETH_UNIQUE"]
-    if e == "4":
-        return ["4_STAR_ETH_UNIQUE"] + ([UNIQUE_ALIAS[n]] if n is not None else [])
-    if n == "3" and e == "2":
-        return ["3_STAR_NO_ETH_UNIQUE"]
-    if n == e:
-        return [UNIQUE_ALIAS[n]]
-    raise TierError(f"non-ETH {n} / ETH {e} cannot be expressed by the tier aliases")
+    return ([UNIQUE_ALIAS[n]] if n is not None else []) + ([UNIQUE_ETH_ALIAS[e]] if e is not None else [])
 
 
 def build_alias_lists(data):
     lists = {name: [] for name, _ in UNIQUE_BLOCKS + SET_BLOCKS}
     for code, t in unique_code_tiers(data).items():
-        try:
-            names = unique_aliases_for(t["noneth"], t["eth"])
-        except TierError as err:
-            raise TierError(f"unique base {code}: {err}") from None
-        for a in names:
+        for a in unique_aliases_for(t["noneth"], t["eth"]):
             lists[a].append(code)
         if t["lld"]:
             lists["LLD_UNIQUE"].append(code)
