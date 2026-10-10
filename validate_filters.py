@@ -259,6 +259,82 @@ def _expand_aliases(text: str, alias_values: dict, _visited=frozenset()) -> str:
     return _RE_ALIAS_REF.sub(repl, text)
 
 
+_RE_COND_WORD = re.compile(r'(?<![A-Za-z0-9_])([A-Za-z0-9_]*[A-Za-z_][A-Za-z0-9_]*)(?![A-Za-z0-9_])')
+
+
+def _game_expand(cond: str, output: str, ordered_aliases: list):
+    """Expand aliases the way PD2's loader (BH ItemDisplay.cpp) does: one pass over the
+    aliases in file order; in the condition every occurrence of the bare name is replaced
+    (plain find-and-replace, no word boundaries), in the output every %NAME%. An alias
+    value is only expanded further by aliases that come later in the file."""
+    for name, value in ordered_aliases:
+        while name in cond:
+            cond = cond.replace(name, value, 1)
+        token = f'%{name.upper()}%'
+        while token in output:
+            output = output.replace(token, value, 1)
+    return cond, output
+
+
+def _intended_expand(cond: str, output: str, alias_values: dict):
+    """Expand aliases as the filter reads: whole names only, nested to any depth."""
+    for _ in range(20):
+        new_cond = _RE_COND_WORD.sub(lambda m: alias_values.get(m.group(1), m.group(0)), cond)
+        new_out = _RE_ALIAS_REF.sub(lambda m: alias_values.get(m.group(1), m.group(0)), output)
+        if (new_cond, new_out) == (cond, output):
+            break
+        cond, output = new_cond, new_out
+    return cond, output
+
+
+def _alias_order_hint(cond: str, output: str, alias_line_map: dict, alias_values: dict) -> str:
+    """Name the alias pair to reorder for a rule the game expands differently."""
+    used, in_cond, todo = set(), set(), [(cond, True), (output, False)]
+    while todo:
+        text, is_cond = todo.pop()
+        names = (_RE_COND_WORD.findall(text) if is_cond else []) + _RE_ALIAS_REF.findall(text)
+        for name in names:
+            if name in alias_values and (name not in used or (is_cond and name not in in_cond)):
+                used.add(name)
+                if is_cond:
+                    in_cond.add(name)
+                todo.append((alias_values[name], is_cond))
+    for name in sorted(used, key=lambda n: alias_line_map[n]):
+        # outputs match %NAME% whole, so only condition names can be cut by a shorter one
+        for other, line in alias_line_map.items():
+            if name in in_cond and other != name and other in name and line < alias_line_map[name]:
+                return (f"'{other}' (line {line}) is replaced first and breaks '{name}' "
+                        f"(line {alias_line_map[name]}); define '{name}' before it")
+        for ref in _RE_COND_WORD.findall(alias_values[name]) + _RE_ALIAS_REF.findall(alias_values[name]):
+            if ref in alias_line_map and ref != name and alias_line_map[ref] < alias_line_map[name]:
+                return (f"'{name}' (line {alias_line_map[name]}) uses '{ref}', which is defined "
+                        f"earlier (line {alias_line_map[ref]}) so the game never expands it; "
+                        f"define '{name}' before '{ref}'")
+    return "alias definitions are out of order"
+
+
+def _check_game_alias_expansion(fname, raw_lines, alias_line_map, alias_values, issues):
+    """ERROR for each ItemDisplay rule whose aliases the game expands differently than
+    intended: a longer alias name defined after a shorter one it starts with, or an alias
+    whose value uses an alias defined above it."""
+    ordered = sorted(((n, alias_values[n]) for n in alias_line_map), key=lambda a: alias_line_map[a[0]])
+    norm = lambda s: ' '.join(s.split())
+    for lineno, raw in enumerate(raw_lines, 1):
+        stripped = raw.strip()
+        if not stripped.startswith('ItemDisplay['):
+            continue
+        end = stripped.find(']:')
+        if end < 0:
+            continue
+        cond, output = stripped[len('ItemDisplay['):end], _strip_inline_comment(stripped[end + 2:])
+        game = _game_expand(cond, output, ordered)
+        want = _intended_expand(cond, output, alias_values)
+        if norm(game[0]) != norm(want[0]) or norm(game[1]) != norm(want[1]):
+            issues.append(Issue(fname, lineno, 'ERROR',
+                "In game this rule expands differently than written (aliases are replaced in "
+                "file order): " + _alias_order_hint(cond, output, alias_line_map, alias_values)))
+
+
 def _strip_inline_formulas(text: str) -> str:
     """Replace $f(...) inline formula expressions with a neutral placeholder.
 
@@ -543,15 +619,8 @@ def validate_file(filepath: Path, errors_only: bool = False):
             defined_formulas.add(formula_key)
             defined_aliases.add(formula_key)
 
-    # --- Alias substring conflict check ---
-    # Sort longest-first so we always report the *shorter* name as the problem
-    alias_names = sorted(alias_line_map.keys(), key=len, reverse=True)
-    for i, longer in enumerate(alias_names):
-        for shorter in alias_names[i + 1:]:
-            if shorter in longer:
-                issues.append(Issue(fname, alias_line_map[shorter], 'WARNING',
-                    f"Alias name '{shorter}' is a substring of alias '{longer}' — "
-                    f"this can cause ambiguous token matching"))
+    # --- Alias order check: does the game expand each rule the way it reads? ---
+    _check_game_alias_expansion(fname, raw_lines, alias_line_map, alias_values, issues)
 
     # --- Pass 2: full validation ---
     for lineno, raw in enumerate(raw_lines, 1):

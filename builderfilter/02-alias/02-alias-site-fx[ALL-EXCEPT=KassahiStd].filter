@@ -2,7 +2,9 @@
 // SITE FX: per-rule minimap icon / sound / frame tags for shared segments.
 // Hiim (and Phil777) segments add these inline; the Kassahi bucket's aliases already
 // carry their own icon and sound, so its copy of each alias is empty (or its own frame).
-// Keep the alias names identical in 07-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
+// Keep the alias names identical in 02-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
+// Numbered 02 so it loads before the 03 style aliases: the game expands aliases in file
+// order, so DISP_* values (%WSS_SHARD%, %TOKEN_PARTS%, ...) must be defined above them.
 //-----------------------------------------------------------------------------------
 // Values for Hiim styles and Phil777.
 
