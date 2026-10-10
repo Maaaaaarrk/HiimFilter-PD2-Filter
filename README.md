@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 9th Season 14 - build 18
+## Last updated October 10th Season 14 - build 19
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -145,10 +145,12 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Steelrend (Ogre Gauntlets)
 - Stone Crusher (Legendary Mallet)
 - Stoneraven (Matriarchal Spear)
+- Stormspire (Giant Thresher) — ETH
 - Templar's Might (Sacred Armor)
 - The Cranium Basher (Thunder Maul) — ETH
 - The Gavel of Pain (Martel de Fer) — ETH
 - The Grandfather (Colossus Blade) — ETH
+- The Reaper's Toll (Thresher) — ETH
 - Thunderstroke (Matriarchal Javelin)
 - Titan's Revenge (Ceremonial Javelin) — ETH
 - Tomb Reaver (Cryptic Axe)
@@ -194,17 +196,18 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Sacred Totem (Hellspawn Skull)
 - Shaftstop (Mesh Armor)
 - Silkweave (Mesh Boots)
+- Skull Collector (Rune Staff)
 - Skyfall (Vortex Orb)
 - Snowclash (Battle Belt) — non-ETH
 - Spirit Ward (Ward) — ETH
 - Steel Pillar (War Pike) — non-ETH
 - Steel Shade (Armet) — ETH
 - Stormshield (Monarch) — non-ETH
-- Stormspire (Giant Thresher)
+- Stormspire (Giant Thresher) — non-ETH
 - String of Ears (Demonhide Sash)
 - The Cranium Basher (Thunder Maul) — non-ETH
 - The Grandfather (Colossus Blade) — non-ETH
-- The Reaper's Toll (Thresher)
+- The Reaper's Toll (Thresher) — non-ETH
 - Thundergod's Vigor (War Belt) — non-ETH
 - Valkyrie Wing (Winged Helm)
 - Vampire Gaze (Grim Helm)
@@ -246,10 +249,10 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Gargoyle's Bite (Winged Harpoon)
 - Ghoulhide (Heavy Bracers)
 - Giant Maimer (Colossus Voulge)
+- Goblin Toe (Light Plated Boots)
 - Goldwrap (Heavy Belt)
 - Gravepalm (Sharkskin Gloves)
 - Grim's Burning Dead (Grim Scythe)
-- Harlequin Crest (Shako) — ETH
 - Head Hunter's Glory (Troll Nest)
 - Heavenly Garb (Light Plate)
 - Hellmouth (War Gauntlets)
@@ -274,7 +277,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Shadow Dancer (Myrmidon Greaves)
 - Shatterhead (Heavy Bolts)
 - Skin of the Vipermagi (Serpentskin Armor)
-- Skull Collector (Rune Staff)
 - Skullder's Ire (Russet Armor)
 - Snowclash (Battle Belt) — ETH
 - Spike Thorn (Blade Barrier)
@@ -306,6 +308,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Frostburn (Gauntlets)
 - Frostwind (Cryptic Sword)
 - Gimmershred (Flying Axe)
+- Harlequin Crest (Shako) — ETH
 - Homunculus (Hierophant Trophy)
 - Humongous (Giant Axe)
 - Nethercrux (Ghost Wand)
@@ -320,6 +323,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Gavel of Pain (Martel de Fer) — non-ETH
 - Titan's Revenge (Ceremonial Javelin) — non-ETH
 - Toothrow (Sharktooth Armor)
+- Treads of Cthon (Chain Boots)
 - Ursa's Nightmare (Dream Spirit)
 - Viperfork (Mancatcher)
 - Wildspeaker (Lion Helm)
@@ -338,7 +342,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Radament's Sphere (Ancient Shield)
 - Rockstopper (Sallet)
 - The Jade Tan Do (Kris)
-- Treads of Cthon (Chain Boots)
 - Venom Ward (Breast Plate)
 - Wizendraw (Long Battle Bow)
 - Wolfhowl (Fury Visor)
