@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 10th%CL%Season 14 - build 30%CL%HiimFilter - Grail -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 10th%CL%Season 14 - build 34%CL%HiimFilter - Grail -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -56,8 +56,6 @@ ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv 
 Alias[SLAMMED_TAG]: [C]
 Alias[DESECRATED_TAG]: %GOLD%[D]
 Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
-ItemDisplay[RUNE>0 QTY=0]: %RED%UNSTACKED WILL SOCKET %ORANGE%%NAME%
-ItemDisplay[gzv OR glw OR glg OR glr OR glb OR gly OR skl OR gpv OR gpw OR gpg OR gpr OR gpb OR gpy OR skz]: %NAME% %RED%UNSTACKED{%TAN%Note%WHITE%: Cube Gems to stack them}
 Alias[GEN_ITEM]: %ORANGE%O O O %NAME% %ORANGE%O O O
 Alias[WSS_SHARD]: %ORANGE%O O O %NAME% %ORANGE%O O O
 Alias[GEN_ALT]: %PURPLE%O O O %NAME% %PURPLE%O O O
@@ -2758,7 +2756,7 @@ ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=4]: %NAME%{%GOLD%Rift %GRAY%Hel + Ko + L
 ItemDisplay[NMAG !RW !SHOP SCEPTER SOCK=5]: %NAME%{%GOLD%Honor %GRAY%Amn + El + Ith + Tir + Sol%CL%%GOLD%Eternity %GRAY%Amn + Ber + Ist + Sol + Sur%CL%%GOLD%Doom %GRAY%Hel + Ohm + Um + Lo + Cham%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%Beast %GRAY%Ber + Tir + Um + Mal + Lum%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW !SHOP STAFF SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%Neophyte %GRAY%Thul + Tir%CL%%GOLD%Leaf %GRAY%Tir + Ral%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW !SHOP STAFF SOCK=3]: %NAME%{%GOLD%Venom %GRAY%Tal + Dol + Mal%CL%%GOLD%Plague %GRAY%Cham + Fal + Um%CL%%GOLD%Purity %GRAY%Amn + Eth + Thul%CL%%GOLD%Malice %GRAY%Ith + El + Eth%CL%%GOLD%Fury %GRAY%Jah + Gul + Eth%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
-ItemDisplay[NMAG !RW !SHOP STAFF SOCK=4]: %NAME%{%GOLD%Spirit %GRAY%Tal + Thul + Ort + Amn%CL%%GOLD%Rampage %GRAY%Shael + El + Ith + Eth%CL%%GOLD%Pride %GRAY%Cham + Sur + Io + Lo%CL%%GOLD%Phoenix %GRAY%Vex + Vex + Lo + Jah%CL%%GOLD%Passion %GRAY%Dol + Ort + Eld + Lem%CL%%GOLD%Memory %GRAY%Lum + Io + Sol + Eth%CL%%GOLD%Insight %GRAY%Ral + Tir + Tal + Sol%CL%%GOLD%Infinity %GRAY%Ber + Mal + Ber + Ist%CL%%GOLD%Heart of the Oak %GRAY%Ko + Vex + Pul + Thul%CL%%GOLD%Hand of Justice %GRAY%Sur + Cham + Amn + Lo%CL%%GOLD%Fortitude %GRAY%El + Sol + Dol + Lo%CL%%GOLD%Madness %GRAY%Sur + Mal + Vex + Shael%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
+ItemDisplay[NMAG !RW !SHOP STAFF SOCK=4]: %NAME%{%GOLD%Spirit     Tal + Thul + Ort + Amn%CL%Rampage     Shael + El + Ith + Eth%CL%Pride     Cham + Sur + Io + Lo%CL%Phoenix     Vex + Vex + Lo + Jah%CL%Passion     Dol + Ort + Eld + Lem%CL%Memory     Lum + Io + Sol + Eth%CL%Insight     Ral + Tir + Tal + Sol%CL%Infinity     Ber + Mal + Ber + Ist%CL%Heart of the Oak     Ko + Vex + Pul + Thul%CL%Hand of Justice     Sur + Cham + Amn + Lo%CL%Fortitude     El + Sol + Dol + Lo%CL%Madness     Sur + Mal + Vex + Shael%CL%X Runewords X%CL%%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW !SHOP STAFF SOCK=5]: %NAME%{%GOLD%Zenith %GRAY%Jah + Zod + Ort + Thul + Ral%CL%%GOLD%Honor %GRAY%Amn + El + Ith + Tir + Sol%CL%%GOLD%Eternity %GRAY%Amn + Ber + Ist + Sol + Sur%CL%%GOLD%Doom %GRAY%Hel + Ohm + Um + Lo + Cham%CL%%GOLD%Destruction %GRAY%Vex + Lo + Ber + Jah + Ko%CL%%GOLD%Call to Arms %GRAY%Amn + Ral + Mal + Ist + Ohm%CL%%GOLD%Beast %GRAY%Ber + Tir + Um + Mal + Lum%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW !SHOP STAFF SOCK=6]: %NAME%{%GOLD%Silence %GRAY%Dol + Eld + Hel + Ist + Tir + Vex%CL%%GOLD%Obsession %GRAY%Zod + Ist + Lem + Lum + Io + Nef%CL%%GOLD%Last Wish %GRAY%Jah + Mal + Jah + Sur + Jah + Ber%CL%%GOLD%Breath of the Dying %GRAY%Vex + Hel + El + Eld + Zod + Eth%CL%%GOLD%Asylum %GRAY%Gul + Cham + Hel + Jah + Dol + Um%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
 ItemDisplay[NMAG !RW !SHOP DAGGER !THROWING SOCK=2]: %NAME%{%GOLD%Wind %GRAY%Sur + El%CL%%GOLD%Strength %GRAY%Amn + Tir%CL%%GOLD%X Runewords X%CL%%NAME%}%CONTINUE%
