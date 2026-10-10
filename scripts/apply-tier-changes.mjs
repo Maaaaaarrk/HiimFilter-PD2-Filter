@@ -18,7 +18,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import {
-  loadTiers, saveTiers, uniqueBaseTiers, setBaseTiers, isExpressible,
+  loadTiers, saveTiers, uniqueBaseTiers, setBaseTiers,
   UNIQUE_SCALE, SET_SCALE, rankOn, tierFromAlias, stars, sameName, entryTier, entryFloor,
 } from './lib/tier-model.mjs';
 
@@ -125,9 +125,6 @@ function applyMove(data, kind, m) {
   if (!changed.length) return { skip: up ? 'already at or above the target' : 'held by floors' };
 
   const after = tiersOf(view(trial));
-  if (isUnique && !isExpressible(after.noneth, after.eth)) {
-    return { skip: `non-ETH ${stars(after.noneth)} / ETH ${stars(after.eth)} can't be expressed by the tier aliases` };
-  }
   if (up && Object.keys(before).some((k) => rankOn(scale, after[k]) < rankOn(scale, before[k]))) {
     return { skip: 'would lower another variant' };
   }

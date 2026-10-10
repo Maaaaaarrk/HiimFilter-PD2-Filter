@@ -22,17 +22,9 @@ ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs
 // Overlords Helm
 ItemDisplay[UNI !ID uh9 MAPID=137]: %SOUNDID-4719%%UNI_BOSS_ITEM%
 
-// 4 Star Unique Callouts
+// 4 Star Unique Callouts (non-ETH and ETH copies are tiered separately)
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID 4_STAR_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
-
-// 4 Star Unique Callouts only when not ETH, 3 star when ETH
-//-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID !ETH 4_STAR_NO_ETH_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
-ItemDisplay[UNI !ID 4_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%
-
-// 4 Star Unique Callouts only when ETH
-//-----------------------------------------------------------------------------------
+ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
 ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE]: %SOUNDID-4719%%UNI_GG_ITEM%
 
 // Jewelry
@@ -48,33 +40,32 @@ ItemDisplay[jew UNI !ID]: %SOUNDID-4719%%FACET_ITEM%
 // Filter level 1-8
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[UNI !ID 3_STAR_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
-
-
-// 3 Star Unique Callouts only when not ETH, 2 star when ETH
-//-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID !ETH 3_STAR_NO_ETH_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
-ItemDisplay[UNI !ID 3_STAR_NO_ETH_UNIQUE]: %UNI_STAR2_ITEM%
+ItemDisplay[UNI !ID !ETH 3_STAR_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID ETH 3_STAR_ETH_UNIQUE]: %SOUNDID-4726%%UNI_STAR3_ITEM%
 
 // 2 Star Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID 2_STAR_UNIQUE]: %UNI_STAR2_ITEM%
+ItemDisplay[UNI !ID !ETH 2_STAR_UNIQUE]: %UNI_STAR2_ITEM%
+ItemDisplay[UNI !ID ETH 2_STAR_ETH_UNIQUE]: %UNI_STAR2_ITEM%
 
 // 1 Star Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
+ItemDisplay[UNI !ID !ETH 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
+ItemDisplay[UNI !ID ETH 1_STAR_ETH_UNIQUE]: %UNI_STAR1_ITEM%
 
 // 0 Star Unique Callouts
 // Filter level 1-7
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID !ETH 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID ETH 0_STAR_ETH_UNIQUE]: %UNI_STAR0_ITEM%
 
 // 00 Star Unique Callouts
 // Filter level 1-6
 //-----------------------------------------------------------------------------------
-ItemDisplay[UNI !ID NO_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID !ETH NO_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID ETH NO_STAR_ETH_UNIQUE]: %UNI_STAR0_ITEM%
 
 //  lld catch callouts as Tier 1
 //-----------------------------------------------------------------------------------

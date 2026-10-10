@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 9th%CL%Season 14 - build 18%CL%Kassahi - Phil777 - Druid - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 10th%CL%Season 14 - build 19%CL%Kassahi - Phil777 - Druid - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -230,15 +230,18 @@ Alias[CHARGED_ESS_VALUE]: 0.15
 Alias[TWISTED_ESS_VALUE]: 0.07
 Alias[BLAME_ONION]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e     %GOLD%%NAME%%PURPLE%     O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
 Alias[HORADRIC_SCARAB]: %GOLD% %NAME%
-Alias[4_STAR_UNIQUE]: (6ws OR 7bl OR 7cr OR 7gw OR 7pa OR 7wh OR 7ws OR amd OR amf OR bae OR ci3 OR drd OR pac OR paf OR uar OR uh9 OR uhc OR uhg OR uhm OR umc OR umg OR ung OR urn OR usk OR utg OR uul OR uvg OR xhb OR xvb)
-Alias[4_STAR_NO_ETH_UNIQUE]: (ci2 OR dre OR ulc OR ulm OR upl OR uts)
-Alias[4_STAR_ETH_UNIQUE]: (7b7 OR 7b8 OR 7gd OR 7gm OR 7m7 OR 7p7 OR 7wa OR 8ls OR 9gm OR 9la OR 9m9 OR aar OR ama OR ame OR utp OR xlt)
-Alias[3_STAR_UNIQUE]: (6bs OR 6lw OR 6sw OR 7b7 OR 7gd OR 7gi OR 7gm OR 7lw OR 7p7 OR 7s8 OR 7wc OR 7xf OR 8mx OR 8rx OR ame OR aqv3 OR cqv3 OR neg OR obe OR pa9 OR tgl OR uow OR uvc OR xh9 OR xhm OR xhn OR xlt OR xmb OR xow OR xsh OR xtb OR xtg OR zlb)
-Alias[3_STAR_NO_ETH_UNIQUE]: (ned OR uap OR uit OR uui OR zhb OR ztb)
-Alias[2_STAR_UNIQUE]: (7bt OR 7bw OR 7fl OR 7gs OR 7m7 OR 7sr OR 7ts OR 7vo OR 7wa OR 7wb OR 8ls OR 8ws OR 9bw OR 9fc OR 9gw OR 9ls OR 9m9 OR 9s8 OR 9tw OR 9wc OR 9wn OR amb OR amc OR aqv2 OR ba6 OR baa OR bad OR baf OR cqv2 OR dr6 OR dra OR drb OR drc OR gsd OR ltp OR nee OR nef OR oba OR obc OR obd OR obf OR pab OR pae OR tbl OR uhb OR uhl OR ulb OR uld OR ulg OR umb OR upk OR urg OR ush OR utu OR uvb OR xap OR xea OR xhg OR xlb OR xlg OR xmg OR xpl OR xth OR xtp OR xvg OR zvb)
-Alias[1_STAR_UNIQUE]: (6cs OR 72a OR 7br OR 7dg OR 7di OR 7ls OR 7ta OR 7tw OR 7yw OR 8cs OR 8hx OR 8s8 OR 9gd OR 9gm OR aar OR ama OR ba7 OR drf OR gix OR hgl OR mgl OR nea OR utp OR vgl OR xar OR xld OR xrn OR xui OR xul)
-Alias[0_STAR_UNIQUE]: (7b8 OR 7fb OR 8cb OR 9di OR 9kr OR bac OR brs OR kri OR lbb OR mbt OR vbt OR xcl OR xkp OR xts)
+Alias[4_STAR_UNIQUE]: (6ws OR 7bl OR 7cr OR 7gw OR 7pa OR 7wh OR 7ws OR amd OR amf OR bae OR ci2 OR ci3 OR drd OR dre OR pac OR paf OR uar OR uh9 OR uhc OR uhg OR uhm OR ulc OR ulm OR umc OR umg OR ung OR upl OR urn OR usk OR utg OR uts OR uul OR uvg OR xhb OR xvb)
+Alias[3_STAR_UNIQUE]: (6bs OR 6lw OR 6sw OR 7b7 OR 7gd OR 7gi OR 7gm OR 7lw OR 7p7 OR 7s8 OR 7wc OR 7xf OR 8mx OR 8rx OR 8ws OR ame OR aqv3 OR cqv3 OR ned OR neg OR obe OR pa9 OR tgl OR uap OR uit OR uow OR uui OR uvc OR xh9 OR xhm OR xhn OR xlt OR xmb OR xow OR xsh OR xtb OR xtg OR zhb OR zlb OR ztb)
+Alias[2_STAR_UNIQUE]: (7bt OR 7bw OR 7fl OR 7gs OR 7m7 OR 7sr OR 7ts OR 7vo OR 7wa OR 7wb OR 8ls OR 9bw OR 9fc OR 9gw OR 9ls OR 9m9 OR 9s8 OR 9tw OR 9wc OR 9wn OR amb OR amc OR aqv2 OR ba6 OR baa OR bad OR baf OR cqv2 OR dr6 OR dra OR drb OR drc OR gsd OR ltp OR nee OR nef OR oba OR obc OR obd OR obf OR pab OR pae OR tbl OR tbt OR uhb OR uhl OR ulb OR uld OR ulg OR umb OR upk OR urg OR ush OR utu OR uvb OR xap OR xea OR xhg OR xlb OR xlg OR xmg OR xpl OR xth OR xtp OR xvg OR zvb)
+Alias[1_STAR_UNIQUE]: (6cs OR 72a OR 7br OR 7dg OR 7di OR 7ls OR 7ta OR 7tw OR 7yw OR 8cs OR 8hx OR 8s8 OR 9gd OR 9gm OR aar OR ama OR ba7 OR drf OR gix OR hgl OR mbt OR mgl OR nea OR utp OR vgl OR xar OR xld OR xrn OR xui OR xul)
+Alias[0_STAR_UNIQUE]: (7b8 OR 7fb OR 8cb OR 9di OR 9kr OR bac OR brs OR kri OR lbb OR vbt OR xcl OR xkp OR xts)
 Alias[NO_STAR_UNIQUE]: (6l7 OR 7sm OR 8lb OR 8sw OR 9b9 OR 9fl OR 9la OR 9sr OR cap OR dgr OR fhl OR lgl OR uml)
+Alias[4_STAR_ETH_UNIQUE]: (6ws OR 7b7 OR 7b8 OR 7bl OR 7cr OR 7gd OR 7gm OR 7gw OR 7m7 OR 7p7 OR 7pa OR 7s8 OR 7wa OR 7wc OR 7wh OR 7ws OR 8ls OR 9gm OR 9la OR 9m9 OR aar OR ama OR amd OR ame OR amf OR bae OR ci3 OR drd OR pac OR paf OR uar OR uh9 OR uhc OR uhg OR uhm OR umc OR umg OR ung OR urn OR usk OR utg OR utp OR uul OR uvg OR xhb OR xlt OR xvb)
+Alias[3_STAR_ETH_UNIQUE]: (6bs OR 6lw OR 6sw OR 7gi OR 7lw OR 7xf OR 8mx OR 8rx OR 8ws OR aqv3 OR ci2 OR cqv3 OR dre OR neg OR obe OR pa9 OR tgl OR ulc OR ulm OR uow OR upl OR uts OR uvc OR xh9 OR xhm OR xhn OR xmb OR xow OR xsh OR xtb OR xtg OR zlb)
+Alias[2_STAR_ETH_UNIQUE]: (7bt OR 7bw OR 7fl OR 7gs OR 7sr OR 7ts OR 7vo OR 7wb OR 9bw OR 9fc OR 9gw OR 9ls OR 9s8 OR 9tw OR 9wc OR 9wn OR amb OR amc OR aqv2 OR ba6 OR baa OR bad OR baf OR cqv2 OR dr6 OR dra OR drb OR drc OR gsd OR ltp OR ned OR nee OR nef OR oba OR obc OR obd OR obf OR pab OR pae OR tbl OR tbt OR uhb OR uhl OR uit OR ulb OR uld OR ulg OR umb OR upk OR urg OR ush OR utu OR uui OR uvb OR xap OR xea OR xhg OR xlb OR xlg OR xmg OR xpl OR xth OR xtp OR xvg OR zhb OR ztb OR zvb)
+Alias[1_STAR_ETH_UNIQUE]: (6cs OR 72a OR 7br OR 7dg OR 7di OR 7ls OR 7ta OR 7tw OR 7yw OR 8cs OR 8hx OR 8s8 OR 9gd OR ba7 OR drf OR gix OR hgl OR mbt OR mgl OR nea OR uap OR vgl OR xar OR xld OR xrn OR xui OR xul)
+Alias[0_STAR_ETH_UNIQUE]: (7fb OR 8cb OR 9di OR 9kr OR bac OR brs OR kri OR lbb OR vbt OR xcl OR xkp OR xts)
+Alias[NO_STAR_ETH_UNIQUE]: (6l7 OR 7sm OR 8lb OR 8sw OR 9b9 OR 9fl OR 9sr OR cap OR dgr OR fhl OR lgl OR uml)
 Alias[LLD_UNIQUE]: (aar OR am5 OR cbw OR dr2 OR flb OR fld OR gma OR gsd OR gth OR hbt OR kit OR mau OR stu OR tbt OR tgl OR vgl OR wax OR wst OR xap OR zlb)
 Alias[4_STAR_SET]: (lbt OR uar)
 Alias[3_STAR_SET]: (7qr OR 7ws OR ne9 OR ucl OR xmg OR xul)
@@ -2825,27 +2828,28 @@ ItemDisplay[RARE !ID CLASS FILTLVL<5]: %TIER-6%%NAME%
 ItemDisplay[RARE !ID MAPID=83 FILTLVL<7]: %TIER-6%%NAME%
 ItemDisplay[RARE !ID (MAPID=181 OR MAPID=182)]: %NAME%
 ItemDisplay[RARE !ID FILTLVL>2]:
-ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %UNI_GG_ITEM%%FX_UNID_GG%
-ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %BLAME_ONION%
-ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_GG_ITEM%%FX_UNID_GG%
-ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %UNI_STAR3_ITEM%%FX_STARS_3%
-ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %BLAME_ONION%
-ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%%FX_STARS_3%
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_UNIQUE]: %UNI_GG_ITEM%%FX_UNID_GG%
+ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %UNI_GG_ITEM%%FX_UNID_GG%
+ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_UNIQUE !4_STAR_ETH_UNIQUE]: %BLAME_ONION%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE]: %UNI_STAR3_ITEM%%FX_STARS_3%
+ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_ETH_UNIQUE]: %UNI_STAR3_ITEM%%FX_STARS_3%
+ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_UNIQUE !3_STAR_ETH_UNIQUE]: %BLAME_ONION%
 ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %FX_UNID_GG%%UNI_BOSS_ITEM%
 ItemDisplay[UNI !ID uh9 MAPID=137]: %FX_UNID_GG%%UNI_BOSS_ITEM%
-ItemDisplay[UNI !ID FILTLVL<11 4_STAR_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
-ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
-ItemDisplay[UNI !ID FILTLVL<11 4_STAR_NO_ETH_UNIQUE]: %UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<11 4_STAR_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
 ItemDisplay[UNI !ID ETH FILTLVL<11 4_STAR_ETH_UNIQUE]: %FX_UNID_GG%%UNI_GG_ITEM%
 ItemDisplay[UNI !ID FILTLVL<11 (amu OR rin)]: %FX_UNID_GG%%UNI_GG_ITEM%
 ItemDisplay[jew UNI !ID FILTLVL<11]: %FX_UNID_GG%%FACET_ITEM%
-ItemDisplay[UNI !ID FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
-ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
-ItemDisplay[UNI !ID FILTLVL<9 3_STAR_NO_ETH_UNIQUE]: %UNI_STAR2_ITEM%
-ItemDisplay[UNI !ID FILTLVL<8 2_STAR_UNIQUE]: %UNI_STAR2_ITEM%
-ItemDisplay[UNI !ID FILTLVL<7 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
-ItemDisplay[UNI !ID FILTLVL<7 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
-ItemDisplay[UNI !ID FILTLVL<7 NO_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_ETH_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<8 2_STAR_UNIQUE]: %UNI_STAR2_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<8 2_STAR_ETH_UNIQUE]: %UNI_STAR2_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<7 1_STAR_UNIQUE]: %UNI_STAR1_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<7 1_STAR_ETH_UNIQUE]: %UNI_STAR1_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<7 0_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<7 0_STAR_ETH_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<7 NO_STAR_UNIQUE]: %UNI_STAR0_ITEM%
+ItemDisplay[UNI !ID ETH FILTLVL<7 NO_STAR_ETH_UNIQUE]: %UNI_STAR0_ITEM%
 ItemDisplay[UNI !ID FILTLVL<7 LLD_UNIQUE]: %UNI_STAR1_ITEM%
 ItemDisplay[SET !ID FILTLVL<11 4_STAR_SET]: %FX_UNID_GG%%SET_GG_ITEM%
 ItemDisplay[SET !ID (amu OR rin) FILTLVL<6]: %SET_TIER3_ITEM%
