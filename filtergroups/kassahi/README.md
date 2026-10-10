@@ -1,5 +1,5 @@
 # kassahi
-## Last updated October 10th Season 14 - build 21
+## Last updated October 10th Season 14 - build 22
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -120,6 +120,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Purgatory (Archon Plate) — ETH
 - Ravenlore (Sky Spirit) — non-ETH
 - Ribcracker (Quarterstaff) — ETH
+- Sandstorm Trek (Scarabshell Boots) — non-ETH
 - Schaefer's Hammer (Legendary Mallet)
 - Siggard's Staunch (Colossus Girdle)
 - Silks of the Victor (Ancient Armor) — ETH
@@ -145,6 +146,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Tyrael's Might (Sacred Armor)
 - Veil of Steel (Spired Helm)
 - Verdungo's Hearty Cord (Mithril Coil)
+- War Traveler (Battle Boots) — non-ETH
 - Warlord's Trust (Military Axe) — ETH
 - Waterwalk (Sharkskin Boots)
 - Windhammer (Ogre Maul) — ETH
@@ -199,7 +201,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Thundergod's Vigor (War Belt) — non-ETH
 - Valkyrie Wing (Winged Helm)
 - Vampire Gaze (Grim Helm)
-- War Traveler (Battle Boots)
+- War Traveler (Battle Boots) — ETH
 - Whispering Mirage (War Fist)
 - Widowmaker (Ward Bow)
 - Windforce (Hydra Bow)
@@ -261,7 +263,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Razortail (Sharkskin Belt)
 - Ribcracker (Quarterstaff) — non-ETH
 - Sage's Defiance (Giant Conch)
-- Sandstorm Trek (Scarabshell Boots)
+- Sandstorm Trek (Scarabshell Boots) — ETH
 - Shadow Dancer (Myrmidon Greaves)
 - Shatterhead (Heavy Bolts)
 - Skin of the Vipermagi (Serpentskin Armor)
