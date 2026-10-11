@@ -1,5 +1,5 @@
 # phil777
-## Last updated October 11th Season 14 - build 39
+## Last updated October 10th Season 14 - build 39
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters

@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 11th%CL%Season 14 - build 39%CL%HiimFilter - Amazon - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 10th%CL%Season 14 - build 39%CL%HiimFilter - Amazon - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -56,6 +56,91 @@ ItemDisplay[!(ARMOR OR WEAPON OR tbk OR ibk OR key OR rkey OR rid OR rtp OR aqv 
 Alias[SLAMMED_TAG]: [C]
 Alias[DESECRATED_TAG]: %GOLD%[D]
 Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
+Alias[SITE_FX]: TRUE
+Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
+Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
+Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
+Alias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <
+Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
+Alias[FX_ESSENCE]: %MAP-4A%
+Alias[FX_GEM_STACK]: %DOT-70%
+Alias[FX_INFUSION]: %MAP-0B%
+Alias[FX_JEWF]: %MAP-68%
+Alias[FX_PD2_GG]: %MAP-4A%%SOUNDID-4719%
+Alias[FX_PD2_RARE]: %MAP-4A%%SOUNDID-4715%
+Alias[FX_PGEM_STACK]: %MAP-60%%DOT-70%
+Alias[FX_RKEY]: %MAP-68%%SOUNDID-4721%
+Alias[FX_RTP_RID]: %BORDER-0A%%DOT-55%%SOUNDID-4719%
+Alias[FX_STARS_3]: %SOUNDID-4714%
+Alias[FX_UBA]: %MAP-4A%%SOUNDID-4721%
+Alias[FX_UBA_PARTS]: %PX-60%%SOUNDID-4715%
+Alias[FX_UBER_KEY]: %MAP-62%%SOUNDID-4721%
+Alias[FX_UBER_ORGAN]: %MAP-9D%%SOUNDID-4721%
+Alias[FX_UBTM]: %MAP-A9%%SOUNDID-4721%
+Alias[FX_UNID_3STAR]: %SOUNDID-4726%
+Alias[FX_UNID_GG]: %SOUNDID-4719%
+Alias[FX_UNID_RARE_SUPER]: %SOUNDID-4715%
+Alias[FX_VIAL_MIRROR]: %BORDER-4A%%DOT-55%%SOUNDID-4733%
+Alias[FX_WSS]: %MAP-62%%SOUNDID-4715%
+Alias[LBL_ISC_1]: %RED%+%WHITE%ID
+Alias[LBL_TSC_1]: %BLUE%+%WHITE%TP
+Alias[LBL_TBK_1]: %RED%LOW QTY %NAME%
+Alias[LBL_IBK_1]: %RED%+%WHITE%ID Tome
+Alias[LBL_TBK_2]: %BLUE%+%WHITE%TP Tome
+Alias[LBL_HP1_1]: %RED%+ %WHITE%HP1 %RED%+
+Alias[LBL_HP2_1]: %RED%+ %WHITE%HP2 %RED%+
+Alias[LBL_HP3_1]: %RED%+ %WHITE%HP3 %RED%+
+Alias[LBL_HP4_1]: %RED%+ %WHITE%HP4 %RED%+
+Alias[LBL_HP5_1]: %RED%+ %WHITE%HP5 %RED%+
+Alias[LBL_HP5_2]: %RED%+ HP
+Alias[LBL_MP1_1]: %BLUE%+ %WHITE%MP1 %BLUE%+
+Alias[LBL_MP2_1]: %BLUE%+ %WHITE%MP2 %BLUE%+
+Alias[LBL_MP3_1]: %BLUE%+ %WHITE%MP3 %BLUE%+
+Alias[LBL_MP4_1]: %BLUE%+ %WHITE%MP4 %BLUE%+
+Alias[LBL_MP5_1]: %BLUE%+ %WHITE%MP5 %BLUE%+
+Alias[LBL_MP5_2]: %BLUE%+ MP
+Alias[LBL_VPS_1]: %GREEN%!%WHITE%sta{%NAME%}
+Alias[LBL_YPS_1]: %GREEN%!Anti{Good Luck on Rathma}
+Alias[LBL_YPS_2]: %NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Resistance:%CL%%GRAY%--------%CL%%GOLD%Voidstone - Rathma boss fight}
+Alias[LBL_YPS_3]: %GREEN%!Anti{%NAME%}
+Alias[LBL_YPS_4]: %GREEN%!A{%NAME%}
+Alias[LBL_WMS_1]: %GREEN%!%WHITE%thaw{%NAME%}
+Alias[LBL_WMS_2]: %GREEN%!%WHITE%thaw{%NAME%}
+Alias[LBL_PVPP_1]: %BLUE%PVP Mana Pot{%NAME%}
+Alias[LBL_TPFS_1]: %ORANGE%-%WHITE%Sml Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Small%CL%%GRAY%Fulminating Potion}
+Alias[LBL_TPGS_1]: %GREEN%-%WHITE%Sml Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%CL%%TAN%Small%CL%%GRAY%Strangling Gas Potion}
+Alias[LBL_TPCS_1]: %BLUE%-%WHITE%Sml Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Small%CL%%GRAY%Chilling Potion}
+Alias[LBL_TPLS_1]: %YELLOW%-%WHITE%Sml Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Small%CL%%GRAY%Charged Potion}
+Alias[LBL_TPFM_1]: %ORANGE%-%WHITE%Med Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Medium%CL%%GRAY%Exploding Potion}
+Alias[LBL_TPGM_1]: %GREEN%-%WHITE%Med Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%CL%%TAN%Medium%CL%%GRAY%Choking Gas Potion}
+Alias[LBL_TPCM_1]: %BLUE%-%WHITE%Med Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Medium%CL%%GRAY%Frost Potion}
+Alias[LBL_TPLM_1]: %YELLOW%-%WHITE%Med Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Medium%CL%%GRAY%Static Potion}
+Alias[LBL_TPFL_1]: %ORANGE%-%WHITE%Lrg Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Large%CL%%GRAY%Oil Potion}
+Alias[LBL_TPGL_1]: %GREEN%-%WHITE%Lrg Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%CL%%TAN%Large%CL%%GRAY%Rancid Gas Potion}
+Alias[LBL_TPCL_1]: %BLUE%-%WHITE%Lrg Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Large%CL%%GRAY%Freezing Potion}
+Alias[LBL_TPLL_1]: %YELLOW%-%WHITE%Lrg Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Large%CL%%GRAY%Shock Potion}
+Alias[QST_BKS]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 1%CL%Talk to Akara%CL%}
+Alias[QST_BKD]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Go to Act 1 Stony Field%CL%}
+Alias[QST_LEG]: %GOLD%X   %NAME%   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Tome of Town Portal in Act 1 to open Cow Level}
+Alias[QST_HDM]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Give to Charsi in Act 1}
+Alias[QST_ASS]: %GOLD%X   Book of Skill   X%MAP-58%%SOUNDID-4721%{%TAN%+1 Skill Point%CL%Right click for %CL%}
+Alias[QST_HST]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Act 2: Tal Rashas Tomb%CL%Place in Tomb Orifice in}
+Alias[QST_VIP]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Staff of Kings}
+Alias[QST_MSF]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Amulet of the Viper}
+Alias[QST_J34]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 3%CL%Give to Meshif%CL%}
+Alias[QST_G34]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 3%CL%Give to Alkor%CL%}
+Alias[QST_XYZ]: %GOLD%Potion of Life%MAP-58%%SOUNDID-4721%{%TAN%permanent +20 to Life%CL%Right click for a%CL%}
+Alias[QST_G33]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Give to Ormus in Act 3}
+Alias[QST_QEY]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Heart, & Flail%CL%Cube w/ Brain,%CL%}
+Alias[QST_QBR]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Heart, & Flail%CL%Cube w/ Eye,%CL%}
+Alias[QST_QHR]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Brain, & Flail%CL%Cube w/ Eye,%CL%}
+Alias[QST_QF1]: X   %NAME%   X{%TAN%Cube w/ Eye, Brain, & Heart}
+Alias[QST_QF2]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Compelling Orb in Act 3: Travincal}
+Alias[QST_BBB]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%+5 Stat Points%CL%Give to Alkor for%CL%}
+Alias[QST_MSS]: X   %NAME%   X{%TAN%Act 4: River of Flame%CL%Take to the Hellforge in%CL%}
+Alias[QST_HFH]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Hellforge in Act 4: River of Flame}
+Alias[QST_ICE]: %GOLD%Malahs Potion%MAP-58%%SOUNDID-4721%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
+Alias[QST_TR2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
 Alias[GEN_ITEM]: %ORANGE%O O O %NAME% %ORANGE%O O O
 Alias[WSS_SHARD]: %ORANGE%O O O %NAME% %ORANGE%O O O
 Alias[GEN_ALT]: %PURPLE%O O O %NAME% %PURPLE%O O O
@@ -284,95 +369,10 @@ Alias[PTS_AMU_DIV]:144
 Alias[PTS_MELEEJEW_DIV]:72
 Alias[PTS_CASTERJEW_DIV]:24
 Alias[PTS_LLDJEW_DIV]:48
-Alias[SITE_FX]: TRUE
-Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
-Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
-Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
-Alias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <
-Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
-Alias[FX_ESSENCE]: %MAP-4A%
-Alias[FX_GEM_STACK]: %DOT-70%
-Alias[FX_INFUSION]: %MAP-0B%
-Alias[FX_JEWF]: %MAP-68%
-Alias[FX_PD2_GG]: %MAP-4A%%SOUNDID-4719%
-Alias[FX_PD2_RARE]: %MAP-4A%%SOUNDID-4715%
-Alias[FX_PGEM_STACK]: %MAP-60%%DOT-70%
-Alias[FX_RKEY]: %MAP-68%%SOUNDID-4721%
-Alias[FX_RTP_RID]: %BORDER-0A%%DOT-55%%SOUNDID-4719%
-Alias[FX_STARS_3]: %SOUNDID-4714%
-Alias[FX_UBA]: %MAP-4A%%SOUNDID-4721%
-Alias[FX_UBA_PARTS]: %PX-60%%SOUNDID-4715%
-Alias[FX_UBER_KEY]: %MAP-62%%SOUNDID-4721%
-Alias[FX_UBER_ORGAN]: %MAP-9D%%SOUNDID-4721%
-Alias[FX_UBTM]: %MAP-A9%%SOUNDID-4721%
-Alias[FX_UNID_3STAR]: %SOUNDID-4726%
-Alias[FX_UNID_GG]: %SOUNDID-4719%
-Alias[FX_UNID_RARE_SUPER]: %SOUNDID-4715%
-Alias[FX_VIAL_MIRROR]: %BORDER-4A%%DOT-55%%SOUNDID-4733%
-Alias[FX_WSS]: %MAP-62%%SOUNDID-4715%
-Alias[LBL_ISC_1]: %RED%+%WHITE%ID
-Alias[LBL_TSC_1]: %BLUE%+%WHITE%TP
-Alias[LBL_TBK_1]: %RED%LOW QTY %NAME%
-Alias[LBL_IBK_1]: %RED%+%WHITE%ID Tome
-Alias[LBL_TBK_2]: %BLUE%+%WHITE%TP Tome
-Alias[LBL_HP1_1]: %RED%+ %WHITE%HP1 %RED%+
-Alias[LBL_HP2_1]: %RED%+ %WHITE%HP2 %RED%+
-Alias[LBL_HP3_1]: %RED%+ %WHITE%HP3 %RED%+
-Alias[LBL_HP4_1]: %RED%+ %WHITE%HP4 %RED%+
-Alias[LBL_HP5_1]: %RED%+ %WHITE%HP5 %RED%+
-Alias[LBL_HP5_2]: %RED%+ HP
-Alias[LBL_MP1_1]: %BLUE%+ %WHITE%MP1 %BLUE%+
-Alias[LBL_MP2_1]: %BLUE%+ %WHITE%MP2 %BLUE%+
-Alias[LBL_MP3_1]: %BLUE%+ %WHITE%MP3 %BLUE%+
-Alias[LBL_MP4_1]: %BLUE%+ %WHITE%MP4 %BLUE%+
-Alias[LBL_MP5_1]: %BLUE%+ %WHITE%MP5 %BLUE%+
-Alias[LBL_MP5_2]: %BLUE%+ MP
-Alias[LBL_VPS_1]: %GREEN%!%WHITE%sta{%NAME%}
-Alias[LBL_YPS_1]: %GREEN%!Anti{Good Luck on Rathma}
-Alias[LBL_YPS_2]: %NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Resistance:%CL%%GRAY%--------%CL%%GOLD%Voidstone - Rathma boss fight}
-Alias[LBL_YPS_3]: %GREEN%!Anti{%NAME%}
-Alias[LBL_YPS_4]: %GREEN%!A{%NAME%}
-Alias[LBL_WMS_1]: %GREEN%!%WHITE%thaw{%NAME%}
-Alias[LBL_WMS_2]: %GREEN%!%WHITE%thaw{%NAME%}
-Alias[LBL_PVPP_1]: %BLUE%PVP Mana Pot{%NAME%}
-Alias[LBL_TPFS_1]: %ORANGE%-%WHITE%Sml Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Small%CL%%GRAY%Fulminating Potion}
-Alias[LBL_TPGS_1]: %GREEN%-%WHITE%Sml Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%CL%%TAN%Small%CL%%GRAY%Strangling Gas Potion}
-Alias[LBL_TPCS_1]: %BLUE%-%WHITE%Sml Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Small%CL%%GRAY%Chilling Potion}
-Alias[LBL_TPLS_1]: %YELLOW%-%WHITE%Sml Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Small%CL%%GRAY%Charged Potion}
-Alias[LBL_TPFM_1]: %ORANGE%-%WHITE%Med Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Medium%CL%%GRAY%Exploding Potion}
-Alias[LBL_TPGM_1]: %GREEN%-%WHITE%Med Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%CL%%TAN%Medium%CL%%GRAY%Choking Gas Potion}
-Alias[LBL_TPCM_1]: %BLUE%-%WHITE%Med Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Medium%CL%%GRAY%Frost Potion}
-Alias[LBL_TPLM_1]: %YELLOW%-%WHITE%Med Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Medium%CL%%GRAY%Static Potion}
-Alias[LBL_TPFL_1]: %ORANGE%-%WHITE%Lrg Fire%ORANGE%-{%NAME%%BLUE%Deals Fire Damage and Reduces Enemy Fire Resist%CL%%TAN%Large%CL%%GRAY%Oil Potion}
-Alias[LBL_TPGL_1]: %GREEN%-%WHITE%Lrg Psn%GREEN%-{%NAME%%BLUE%Deals Poison Damage and Reduces Enemy Poison Resist%CL%%TAN%Large%CL%%GRAY%Rancid Gas Potion}
-Alias[LBL_TPCL_1]: %BLUE%-%WHITE%Lrg Cold%BLUE%-{%NAME%%BLUE%Deals Cold Damage and Reduces Enemy Cold Resist%CL%%TAN%Large%CL%%GRAY%Freezing Potion}
-Alias[LBL_TPLL_1]: %YELLOW%-%WHITE%Lrg Light%YELLOW%-{%NAME%%BLUE%Deals Lightning Damage and Reduces Enemy Lightning Resist%CL%%TAN%Large%CL%%GRAY%Shock Potion}
-Alias[QST_BKS]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 1%CL%Talk to Akara%CL%}
-Alias[QST_BKD]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Go to Act 1 Stony Field%CL%}
-Alias[QST_LEG]: %GOLD%X   %NAME%   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Tome of Town Portal in Act 1 to open Cow Level}
-Alias[QST_HDM]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Give to Charsi in Act 1}
-Alias[QST_ASS]: %GOLD%X   Book of Skill   X%MAP-58%%SOUNDID-4721%{%TAN%+1 Skill Point%CL%Right click for %CL%}
-Alias[QST_HST]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Act 2: Tal Rashas Tomb%CL%Place in Tomb Orifice in}
-Alias[QST_VIP]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Staff of Kings}
-Alias[QST_MSF]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Cube w/ Amulet of the Viper}
-Alias[QST_J34]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 3%CL%Give to Meshif%CL%}
-Alias[QST_G34]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%in Act 3%CL%Give to Alkor%CL%}
-Alias[QST_XYZ]: %GOLD%Potion of Life%MAP-58%%SOUNDID-4721%{%TAN%permanent +20 to Life%CL%Right click for a%CL%}
-Alias[QST_G33]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Give to Ormus in Act 3}
-Alias[QST_QEY]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Heart, & Flail%CL%Cube w/ Brain,%CL%}
-Alias[QST_QBR]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Heart, & Flail%CL%Cube w/ Eye,%CL%}
-Alias[QST_QHR]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Brain, & Flail%CL%Cube w/ Eye,%CL%}
-Alias[QST_QF1]: X   %NAME%   X{%TAN%Cube w/ Eye, Brain, & Heart}
-Alias[QST_QF2]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Compelling Orb in Act 3: Travincal}
-Alias[QST_BBB]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%+5 Stat Points%CL%Give to Alkor for%CL%}
-Alias[QST_MSS]: X   %NAME%   X{%TAN%Act 4: River of Flame%CL%Take to the Hellforge in%CL%}
-Alias[QST_HFH]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Hellforge in Act 4: River of Flame}
-Alias[QST_ICE]: %GOLD%Malahs Potion%MAP-58%%SOUNDID-4721%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
-Alias[QST_TR2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
 Alias[SOCK_QUIVER_1]: (aqv OR cqv)
 Alias[SOCK_QUIVER_2]: (aqv2 OR aqv3 OR cqv2 OR cqv3)
-Alias[SOCK_HELM_2]: (cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1)
 Alias[SOCK_HELM_2_3]: (msk OR ghm OR crn)
+Alias[SOCK_HELM_2]: (cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1)
 Alias[SOCK_HELM_3]: (xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3 OR ulm OR uhl)
 Alias[SOCK_CHEST_2]: (qui OR lea OR hla OR stu OR scl OR chn)
 Alias[SOCK_SHIELD_1]: (buc OR xuc)
@@ -382,13 +382,13 @@ Alias[SOCK_SHIELD_ELITE_TOP]: (uit OR uow OR uts)
 Alias[SOCK_WEAP_1]: (dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav)
 Alias[SOCK_WEAP_6]: (9mp OR 9wa OR 7mp OR 7wa OR 9ga OR 9gi OR 7ga OR 7gi OR 9m9 OR 9gm OR 7m7 OR 7gm OR 7cr OR 9gd OR 7gd OR 9st OR 9p9 OR 7st OR 7p7 OR 9h9 OR 9wc OR 7h7 OR 7wc OR 8l8 OR 8lw OR 6l7 OR 6lw OR 8hx OR 6hx OR 8ws OR 6ws OR am8 OR am9 OR amd OR ame OR 7sr)
 Alias[SOCK_WEAP_2_3]: (kri OR clw OR btl OR skr OR ob5)
+Alias[SOCK_WEAP_3_4_5]: (fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb)
+Alias[SOCK_WEAP_3_4_6]: (mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb)
 Alias[SOCK_WEAP_3_4]: (whm OR bsd OR lsd OR clm OR gis OR bsw OR tri OR vou OR hbw OR cbw OR mxb)
 Alias[SOCK_WEAP_4_5]: (2ax OR bax OR btx)
 Alias[SOCK_WEAP_4_6]: (mpi OR wax OR gax OR gix)
 Alias[SOCK_CHEST_3]: (rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR spl OR plt OR fld OR xui OR xea OR xla OR xtu)
 Alias[SOCK_CHEST_4]: (uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar)
-Alias[SOCK_WEAP_3_4_5]: (fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb)
-Alias[SOCK_WEAP_3_4_6]: (mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb)
 Alias[CLASS_BUILD_UNIQUE]: (6hx OR 6lw OR 7ts OR 8mx OR 8rx OR aar OR amc OR amd OR ame OR amf OR aqv OR ci2 OR ci3 OR cqv OR mbt OR tbt OR uap OR uar OR uh9 OR uhc OR uhm OR ulb OR ulc OR umc OR umg OR usk OR uul OR xhb OR xhm OR xow OR xsh OR xtb OR zlb OR ztb OR zvb)
 Alias[CLASS_BUILD_SET]: (ulg)
 ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
