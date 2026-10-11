@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 11th%CL%Season 14 - build 44%CL%Kassahi - Hyper -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 11th%CL%Season 14 - build 45%CL%Kassahi - Hyper -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -1861,7 +1861,7 @@ ItemDisplay[(MAG OR RARE) CL4 MAPID=83 FILTLVL<8]: %NAME%%TIER-2%
 ItemDisplay[QUIVER MAG !ID AMAZON FILTLVL<3]: %QUIVER_MAG_AMA%
 ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<5]: %QUIVER_RARE_AMA%
 ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<7]: %QUIVER_RARE_AMA_TIGHT%
-ItemDisplay[QUIVER NMAG]:
+ItemDisplay[QUIVER NMAG SOCK<2]:
 ItemDisplay[QUIVER MAG !ID FILTLVL<7]:%NAME%
 ItemDisplay[QUIVER MAG !ID]:
 ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%NAME%
@@ -5996,7 +5996,7 @@ ItemDisplay[(HELM OR CIRC OR BAR OR DRU) NMAG !RW SOCK=3 FILTLVL<3]: %NAME% %LEV
 ItemDisplay[CHEST NMAG !RW SOCK=3 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%3os Chest Base%CL%%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %RARE_PLUS%{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %RARE_PLUS%{%NAME%}
-ItemDisplay[SHIELD NMAG DIFF<2 FILTLVL<3 SOCK=3]: %RARE_PLUS%{%NAME%}
+ItemDisplay[SHIELD NMAG FILTLVL<3 SOCK=3]: %RARE_PLUS%{%NAME%}
 ItemDisplay[WEAPON ELT MAG CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON EXC MAG DIFF<2 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON ETH CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
