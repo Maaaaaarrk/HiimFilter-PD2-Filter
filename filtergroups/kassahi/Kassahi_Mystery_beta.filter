@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 11th%CL%Season 14 - build 42%CL%Kassahi - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 11th%CL%Season 14 - build 43%CL%Kassahi - Mystery -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -6005,7 +6005,7 @@ ItemDisplay[WEAPON ELT MAG CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON EXC MAG DIFF<2 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON ETH CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[NMAG STAFF ELT !RW SOCK=4 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%Memory Base%CL%%NAME%}
-ItemDisplay[RARE (FILTLVL<3 OR CLVL<80)]: %NAME%{%NAME%}
+ItemDisplay[RARE (FILTLVL<3 OR CLVL<80) !(GROUND ID FILTLVL>4)]: %NAME%{%NAME%}
 ItemDisplay[MAG ((FILTLVL<2 AND DIFF<2) OR CLVL<30)]: %NAME%{%NAME%}
 ItemDisplay[MAG CLASS FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[CIRC NMAG !INF SOCK=0 DIFF<1]: %NAME%{%GOLD%Imbue This%CL%%NAME%}
