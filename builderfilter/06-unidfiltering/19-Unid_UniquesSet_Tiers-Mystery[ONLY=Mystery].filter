@@ -58,10 +58,12 @@ ItemDisplay[ETH SET !ID !IN_TOWN]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID ETH FILTLVL<5 !IN_TOWN]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 ItemDisplay[SET !ID ETH FILTLVL<5 !IN_TOWN]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 
+// GRAIL re-added after the Unique Jewelry override
+ItemDisplay[UNI !ID !ALLDISCOVERED (amu OR rin)]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID (amu OR rin)]: %SOUNDID-4726%%UNI_STAR3_ITEM%{%NAME%}
 
 // GRAIL re-added after the out-of-town rename / quiver override (in town 19-Tags already added it)
 ItemDisplay[UNI !ID !ALLDISCOVERED (!IN_TOWN OR QUIVER)]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
-ItemDisplay[SET !ID !ALLDISCOVERED !IN_TOWN]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
+ItemDisplay[SET !ID !ALLDISCOVERED !IN_TOWN !(rin OR amu)]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
