@@ -52,15 +52,16 @@ ItemDisplay[UNI !ID QUIVER]: %GOLD%Unique Quiver{%NAME%}%CONTINUE%
 ItemDisplay[UNI !ID !ETH FILTLVL<10 4_STAR_UNIQUE]: %GOLD%BIG UNIQUE%CONTINUE%
 ItemDisplay[UNI !ID ETH FILTLVL<10 4_STAR_ETH_UNIQUE]: %GOLD%BIG UNIQUE%CONTINUE%
 
-// Eth add on callout
-ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
-ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
-ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
-ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+// Eth add on callout (re-added after the out-of-town Unique/Set rename; in town 19-Tags already added it)
+ItemDisplay[ETH UNI !ID !IN_TOWN]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
+ItemDisplay[ETH SET !ID !IN_TOWN]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
+ItemDisplay[UNI !ID ETH FILTLVL<5 !IN_TOWN]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
+ItemDisplay[SET !ID ETH FILTLVL<5 !IN_TOWN]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 
 ItemDisplay[UNI !ID (amu OR rin)]: %SOUNDID-4726%%UNI_STAR3_ITEM%{%NAME%}
 
-ItemDisplay[UNI !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
-ItemDisplay[SET !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
+// GRAIL re-added after the out-of-town rename / quiver override (in town 19-Tags already added it)
+ItemDisplay[UNI !ID !ALLDISCOVERED (!IN_TOWN OR QUIVER)]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
+ItemDisplay[SET !ID !ALLDISCOVERED !IN_TOWN]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
 
 //-----------------------------------------------------------------------------------
