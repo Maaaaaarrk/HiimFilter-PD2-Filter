@@ -672,7 +672,7 @@ ItemDisplay[INF PRICE=1 DIFF<1]: %NAME%{%BLACK%~%CL%%BLUE%tinyurl.com/HiimPD2%CL
 //-----------------------------------------------------------------------------------
 // HIDE JUNK RULES
 //-----------------------------------------------------------------------------------
-ItemDisplay[(ARMOR OR WEAPON) INF !SHOP]:{%NAME%}// Hide inferior items
+ItemDisplay[(ARMOR OR WEAPON) INF !SHOP !(SWORD SOCK=4)]:{%NAME%}// Hide inferior items
 ItemDisplay[ear]:// Hide player ears
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:// Hide junk 10s stuff always after 80
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>60 FILTLVL>2]:// Hide junk 10s stuff on higher Filter levels after 60
