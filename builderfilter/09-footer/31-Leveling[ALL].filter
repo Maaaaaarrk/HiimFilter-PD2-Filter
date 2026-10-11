@@ -248,7 +248,7 @@ ItemDisplay[WEAPON ETH CLVL<80 FILTLVL<2]: %NAME%{%NAME%}//melee for leveling
 ItemDisplay[NMAG STAFF ELT !RW SOCK=4 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%Memory Base%CL%%NAME%}
 
 // mag/rare on lower levels
-ItemDisplay[RARE (FILTLVL<3 OR CLVL<80)]: %NAME%{%NAME%}
+ItemDisplay[RARE (FILTLVL<3 OR CLVL<80) !(GROUND ID FILTLVL>4)]: %NAME%{%NAME%} // identified ground rares go to the 32-Footer junk hides
 ItemDisplay[MAG ((FILTLVL<2 AND DIFF<2) OR CLVL<30)]: %NAME%{%NAME%}
 ItemDisplay[MAG CLASS FILTLVL<3]: %NAME%{%NAME%}
 
