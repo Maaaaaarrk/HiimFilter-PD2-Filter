@@ -4,15 +4,17 @@
 // Item-code groups by max sockets. Shared by the Hiim socket tooltip (09-footer/30-Tags_Sockets)
 // and the Kassahi copies (25-Kassahi_Item_Descriptions-3 / -5), so a socket-cap change is one edit here.
 // Each tooltip keeps its own wording and values; only the base lists are shared.
+// The game swaps alias names into conditions with a plain find-and-replace, in file order,
+// so a name that starts with another alias name (SOCK_HELM_2_3 / SOCK_HELM_2) must come first.
 
 // Quivers: 1 socket
 Alias[SOCK_QUIVER_1]: (aqv OR cqv)
 // Quivers: 2 sockets
 Alias[SOCK_QUIVER_2]: (aqv2 OR aqv3 OR cqv2 OR cqv3)
-// Helms / circlets: 2 sockets
-Alias[SOCK_HELM_2]: (cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1)
 // Helms: 2 sockets, 3 at ilvl 41+
 Alias[SOCK_HELM_2_3]: (msk OR ghm OR crn)
+// Helms / circlets: 2 sockets
+Alias[SOCK_HELM_2]: (cap OR xap OR uap OR skp OR xkp OR ukp OR hlm OR xlm OR fhl OR xhl OR bhm OR xh9 OR ci1)
 // Helms / circlets: 3 sockets
 Alias[SOCK_HELM_3]: (xsk OR xhm OR xrn OR usk OR uh9 OR uhm OR urn OR ci2 OR ci3 OR ulm OR uhl)
 // Body armor: 2 sockets
@@ -31,6 +33,10 @@ Alias[SOCK_WEAP_1]: (dgr OR dir OR wnd OR ywn OR 9wn OR tkf OR tax OR jav)
 Alias[SOCK_WEAP_6]: (9mp OR 9wa OR 7mp OR 7wa OR 9ga OR 9gi OR 7ga OR 7gi OR 9m9 OR 9gm OR 7m7 OR 7gm OR 7cr OR 9gd OR 7gd OR 9st OR 9p9 OR 7st OR 7p7 OR 9h9 OR 9wc OR 7h7 OR 7wc OR 8l8 OR 8lw OR 6l7 OR 6lw OR 8hx OR 6hx OR 8ws OR 6ws OR am8 OR am9 OR amd OR ame OR 7sr)
 // Weapons: 2 sockets, 3 at ilvl 26+
 Alias[SOCK_WEAP_2_3]: (kri OR clw OR btl OR skr OR ob5)
+// Weapons: 3 / 4 / 5 sockets by ilvl
+Alias[SOCK_WEAP_3_4_5]: (fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb)
+// Weapons: 3 / 4 / 6 sockets by ilvl
+Alias[SOCK_WEAP_3_4_6]: (mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb)
 // Weapons: 3 sockets, 4 at ilvl 26+
 Alias[SOCK_WEAP_3_4]: (whm OR bsd OR lsd OR clm OR gis OR bsw OR tri OR vou OR hbw OR cbw OR mxb)
 // Weapons: 4 sockets, 5 at ilvl 26+ (2H)
@@ -41,7 +47,3 @@ Alias[SOCK_WEAP_4_6]: (mpi OR wax OR gax OR gix)
 Alias[SOCK_CHEST_3]: (rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR spl OR plt OR fld OR xui OR xea OR xla OR xtu)
 // Body armor: 4 sockets (corruption still caps armor at 3)
 Alias[SOCK_CHEST_4]: (uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar)
-// Weapons: 3 / 4 / 5 sockets by ilvl
-Alias[SOCK_WEAP_3_4_5]: (fla OR flb OR brn OR scy OR pax OR 9s8 OR 9pa OR lbw OR 8lb OR sbb OR swb OR am1 OR am2 OR am6 OR rxb)
-// Weapons: 3 / 4 / 6 sockets by ilvl
-Alias[SOCK_WEAP_3_4_6]: (mau OR gma OR crs OR 9cr OR gsd OR spt OR pik OR hal OR wsc OR lbb OR lwb OR hxb OR am3 OR am4 OR 6lb)
