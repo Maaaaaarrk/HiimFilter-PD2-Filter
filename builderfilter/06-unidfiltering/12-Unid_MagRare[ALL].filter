@@ -110,60 +110,79 @@ ItemDisplay[cm3 UNI !ID FILTLVL<8]: %UNI_UNID_GHEEDS%
 
 // Weapon Rares
 ItemDisplay[(7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr) RARE ETH (ILVL>84) !ID]: %TIER-8%%RARE_GOOD_ITEM%
-ItemDisplay[WEAPON RARE ETH (ILVL>84 OR FILTLVL<3) !ID FILTLVL<7]: %TIER-2%%RARE_HIGH_ITEM%
-ItemDisplay[WEAPON RARE !ID FILTLVL<3]: %RARE_HIGH_ITEM%
-ItemDisplay[WEAPON RARE ETH !ID FILTLVL<5]: %TIER-2%%RARE_HIGH_ITEM%
-ItemDisplay[(am2 OR am7 OR amc) RARE (ILVL>84) !ID FILTLVL<8]: %TIER-6%%RARE_HIGH_ITEM%//gmb
-ItemDisplay[(lwb OR 6lw OR 8lw) RARE (ILVL>84) !ID FILTLVL<8]: %TIER-6%%RARE_HIGH_ITEM%//gothic
-ItemDisplay[(mxb OR 8mx OR 6mx) RARE (ILVL>84) !ID FILTLVL<5]: %NAME%//gorgon crossbow
-ItemDisplay[(6hx OR 8hx OR hxb) RARE (ILVL>84) !ID FILTLVL<7]: %NAME%//heavy crossobw
 
-ItemDisplay[(BOW OR XBOW) RARE (ILVL>84) !ID FILTLVL<5]: %TIER-2%%RARE_PLUS%
+
+// 1H axe all MAXSOCKETS>3 except War Spike line
+ItemDisplay[!ID (hax OR 9ha OR 7ha OR axe OR 9ax OR 7ax OR 2ax OR 92a OR 72a OR wax OR 9wa OR 7wa) RARE MAXSOCKETS>3 FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%
+// all 2h sword except Legend Sword line
+ItemDisplay[!ID (clm OR 9cm OR 7cm OR gis OR 9gs OR 7gs OR bsw OR 9b9 OR 7b7 OR flb OR 9fb OR 7fb OR gsd OR 9gd OR 7gd) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%
+// all mace/club/hammer except Truncheon line, Thunder Maul line
+ItemDisplay[!ID (spc OR 9sp OR 7sp OR mac OR 9ma OR 7ma OR mst OR 9mt OR 7mt OR fla OR 9fl OR 7fl OR whm OR 9wh OR 7wh OR mau OR 9m9 OR 7m7) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%
+// all throwing javelin except Hyperion Javelin line, Winged Harpoon line
+ItemDisplay[!ID (pil OR 9pi OR 7pi OR ssp OR 9s9 OR 7s7 OR glv OR 9gl OR 7gl) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%
+
+ItemDisplay[!ID (gax OR 9ga OR 7ga) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%// Champion Axe
+ItemDisplay[!ID (gix OR 9gi OR 7gi) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%// Glorious Axe
+ItemDisplay[!ID (ssd OR 9ss OR 7ss) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%// Falcata
+ItemDisplay[!ID (flc OR 9fc OR 7fc) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%// Hydra Edge
+ItemDisplay[!ID (crs OR 9cr OR 7cr) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%// Phase Blade
+ItemDisplay[!ID (pik OR 9p9 OR 7p7) RARE FILTLVL<8 ILVL>84]: %TIER-2%%RARE_PLUS%// War Pike
+
+// Bow / xbow
+ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Zon bow
+ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Zon bow
+ItemDisplay[!ID (am5 OR ama OR amf) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //zon javs
+ItemDisplay[(lwb OR 6lw OR 8lw) RARE (ILVL>84) !ID FILTLVL<8]: %TIER-6%%RARE_HIGH_ITEM%//gothic
+ItemDisplay[(sbb OR 8s8 OR 6s7) RARE (ILVL>84) !ID FILTLVL<8]: %TIER-6%%NAME%//diamond bow
+ItemDisplay[(mxb OR 8mx OR 6mx) RARE (ILVL>84) !ID FILTLVL<5]: %NAME%//gorgon crossbow
+ItemDisplay[(6hx OR 8hx OR hxb) RARE (ILVL>84) !ID FILTLVL<8]: %TIER-6%%NAME%//heavy crossobw
+ItemDisplay[!ID STAFF RARE FILTLVL<8 MAXSOCKETS>5 ILVL>84]: %TIER-2%%RARE_PLUS%// 6os Natural Staff MAXSOCKETS
+ItemDisplay[!ID STAFF RARE FILTLVL<8 MAXSOCKETS>3 ILVL>84]: %TIER-2%%NAME%// 4os Natural Staff MAXSOCKETS
+ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //4os able scepters
+ItemDisplay[!ID (gsc OR 9qs OR 7qs) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Seraph Rod
+ItemDisplay[!ID (axf OR 9xf OR 7xf) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //sin war fist
+ItemDisplay[!ID (btl OR 9tw OR 7tw) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% // Runic Talons
+
 ItemDisplay[!ID ETH SIN RARE FILTLVL<7 ILVL>84]: %RARE_ITEM% //eth sin claws
-ItemDisplay[!ID ETH SIN RARE FILTLVL<8 ILVL>84]: %TIER-7%%NAME% //eth sin claws
-ItemDisplay[!ID SIN RARE FILTLVL<7 ILVL>84]: %NAME% //non eth sin claws
 ItemDisplay[RARE FILTLVL<7 (ILVL>84) !ID (7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr)]: %NAME%
 
 // 4os Natural Shield
 ItemDisplay[!ID !DIN SHIELD RARE FILTLVL<9 MAXSOCKETS>3 ILVL>84]: %TIER-2%%RARE_PLUS%
+ItemDisplay[!ID DIN RARE FILTLVL<8 MAXSOCKETS>3 ILVL>84]: %TIER-2%%RARE_PLUS%
 
 // 4os Natural Chest
 ItemDisplay[!ID CHEST RARE FILTLVL<9 MAXSOCKETS>3 ILVL>84]: %TIER-8%%RARE_PLUS%
 
-// 6os Natural Staff MAXSOCKETS
-ItemDisplay[!ID STAFF RARE FILTLVL<8 MAXSOCKETS>5 ILVL>84]: %TIER-2%%RARE_PLUS%
 // All staffs lower
-ItemDisplay[!ID STAFF RARE FILTLVL<7 ILVL>84]: %TIER-2%%RARE_PLUS%
+ItemDisplay[!ID STAFF RARE FILTLVL<6 ILVL>84]: %TIER-2%%NAME%
 
 // Barb Hats
 ItemDisplay[!ID BAR RARE FILTLVL<7 ILVL>84]: %TIER-2%%RARE_PLUS%
 
 // Class specific rares show for all
-ItemDisplay[!ID (axf OR 9xf OR 7xf) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //sin war fist
-ItemDisplay[!ID (ktr OR 9ar OR 7ar) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //sin Suwayyah
-ItemDisplay[!ID (skr OR 9qr OR 7qr) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //sin Scissors Suwayyah
-ItemDisplay[!ID (am5 OR ama OR amf) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //zon javs
-ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Zon bow
-ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Zon bow
-ItemDisplay[!ID (pab OR pa6 OR pa1) RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //pala shield
-ItemDisplay[!ID (wsp OR 9ws OR 7ws) RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //4os able scepters
+ItemDisplay[!ID DIN MAXSOCKETS>3 RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //all pala shield
 ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //dudu helms
 ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%NAME% //nec heads
+ItemDisplay[!ID RARE NEC FILTLVL<8 MAXSOCKETS>1 ILVL>84]: %TIER-6%%NAME% //wands
 ItemDisplay[!ID MAG NEC FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //nec heads
 ItemDisplay[!ID RARE SOR MAXSOCKETS>2 FILTLVL<9 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
-ItemDisplay[!ID RARE SOR FILTLVL<8 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
-ItemDisplay[!ID MAG SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
+ItemDisplay[!ID RARE SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
 
 // High Ilvl Non-weap Rares
-ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE (ILVL>84) !ID FILTLVL<9]: %TIER-6%%RARE_PLUS%
+ItemDisplay[GLOVES RARE (ILVL>84) !ID !ETH FILTLVL<7]: %TIER-6%%RARE_PLUS%
+ItemDisplay[BOOTS RARE (ILVL>84) !ID !ETH FILTLVL<9]: %TIER-6%%RARE_PLUS%
+ItemDisplay[BELT RARE (ILVL>84) !ID !ETH FILTLVL<8]: %TIER-6%%RARE_PLUS%
 
 ItemDisplay[!ID CHEST RARE MAXSOCKETS>3 ALVL>84]: %TIER-8%%RARE_PLUS%
 ItemDisplay[RARE !WEAPON (ILVL>84) !ID FILTLVL<3]: %NAME%
-ItemDisplay[RARE ARMOR ETH !ID FILTLVL<7]: %TIER-4%%NAME%
+ItemDisplay[RARE ARMOR ETH !ID FILTLVL<5]: %TIER-4%%NAME%
+ItemDisplay[HELM RARE (ILVL>84) !ID !ETH FILTLVL<5]: %TIER-5%%NAME%
 ItemDisplay[RARE (GLOVES OR BELT) ETH !ID FILTLVL<5]: %NAME%
 ItemDisplay[(GLOVES OR BOOTS OR BELT OR CHEST OR HELM) RARE (ILVL>84) !ID FILTLVL<5]: %TIER-6%%NAME%
 
 // Rare extra cases
+ItemDisplay[WEAPON RARE ETH (ILVL>84 OR FILTLVL<3) !ID FILTLVL<7]: %TIER-2%%RARE_HIGH_ITEM%
+ItemDisplay[WEAPON RARE !ID FILTLVL<3]: %RARE_HIGH_ITEM%
 ItemDisplay[RARE (CLVL<86 OR FILTLVL<3) !ID]: %TIER-6%%NAME%
 ItemDisplay[RARE !ID CLASS FILTLVL<5]: %TIER-6%%NAME%
 ItemDisplay[RARE !ID MAPID=83 FILTLVL<7]: %TIER-6%%NAME%
