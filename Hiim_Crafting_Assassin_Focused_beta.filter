@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 13th%CL%Season 14 - build 58%CL%HiimFilter - Assassin - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 14th%CL%Season 14 - build 59%CL%HiimFilter - Assassin - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -3041,9 +3041,12 @@ ItemDisplay[STAFF SK57>2 SK63>2 !INF NMAG !RW SOCK=4 FILTLVL<8]: %RW_BASE_GG%[ME
 ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>2 SK63>2 !INF NMAG !RW SOCK=0 FILTLVL<8]: %RW_BASE_GG%[MEMORY]{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[STAFF SK58>2 (SK50>0 OR SK60>0) SK57>0 !INF NMAG !RW SOCK=4 FILTLVL<7]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%NAME%}
 ItemDisplay[STAFF SK58>0 (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%NAME%}
-ItemDisplay[STAFF SK57>0 (SK50>0 OR SK60>0 OR SK63>2) !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%NAME%}
+ItemDisplay[STAFF SK57>0 (SK50>0 OR SK60>0 OR SK63>0) !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%NAME%}
+ItemDisplay[STAFF SK57>2 !INF NMAG !RW SOCK=4 FILTLVL<5]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%NAME%}
 ItemDisplay[STAFF SK40>2 SK52>2 !INF NMAG !RW SOCK=4 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%NAME%}
 ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK40>2 SK52>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
+ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>0 (SK50>0 OR SK60>0 OR SK63>0) !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}
 ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK56>2 OR SK51>2 OR SK62>2) SK61>0 (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
 ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK369>2 OR SK64>2 OR SK44>2 OR SK59>2) SK65>0 (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
 ItemDisplay[NMAG STAFF ELT !RW !(8ss OR 8ls OR 6ss OR 6ls) (SK38>2 OR SK47>2 OR SK48>2) SK63>0 (SOCK=0 OR SOCK=4) FILTLVL<3]: %NAME% %DOT-0B%%ORANGE%[MEMORY]{%RED%Memory Base%CL%%NAME%}
@@ -3345,7 +3348,7 @@ ItemDisplay[GEM>0 QTY>0]:
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW WEAPON !ETH]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP FILTLVL>2 NMAG !RW WEAPON]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP FILTLVL>1 NMAG !RW ARMOR !(CHEST AND ETH)]:%NOTIFY-DEAD%{%NAME%}
-ItemDisplay[!SHOP FILTLVL>4 NMAG !RW (WEAPON OR ARMOR)]:%NOTIFY-DEAD%{%NAME%}
+ItemDisplay[!SHOP FILTLVL>4 NMAG !RW (WEAPON OR ARMOR OR QUIVER)]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP MAG !ID !ETH FILTLVL>1 DIFF=2]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP MAG !ID FILTLVL>4]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[!SHOP (ARMOR OR WEAPON) !leg DIFF=2 FILTLVL>6]:%NOTIFY-DEAD%{%NAME%}
