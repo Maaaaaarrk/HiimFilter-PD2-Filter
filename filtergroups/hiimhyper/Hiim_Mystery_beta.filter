@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 14th%CL%Season 14 - build 59%CL%HiimFilter - Hyper - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 14th%CL%Season 14 - build 60%CL%HiimFilter - Hyper - Mystery -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -1047,7 +1047,7 @@ ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID]: %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
-ItemDisplay[UNI !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
+ItemDisplay[UNI !ID !ALLDISCOVERED !jew]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
 ItemDisplay[SET !ID !ALLDISCOVERED]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID ETH FILTLVL<5]: %PURPLE%· %NAME% %PURPLE%·%CONTINUE%
 ItemDisplay[SET !ID ETH FILTLVL<5]: %PURPLE%· %NAME% %PURPLE%·%CONTINUE%
@@ -1801,7 +1801,7 @@ ItemDisplay[UNI !ID ETH FILTLVL<5 !IN_TOWN]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE
 ItemDisplay[SET !ID ETH FILTLVL<5 !IN_TOWN]: %PURPLE%* %NAME% %PURPLE%*%CONTINUE%
 ItemDisplay[UNI !ID !ALLDISCOVERED (amu OR rin)]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID (amu OR rin)]: %SOUNDID-4726%%UNI_STAR3_ITEM%{%NAME%}
-ItemDisplay[UNI !ID !ALLDISCOVERED (!IN_TOWN OR QUIVER)]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
+ItemDisplay[UNI !ID !ALLDISCOVERED (!IN_TOWN OR QUIVER) !jew]: %ORANGE%GRAIL %GOLD%%NAME%%CONTINUE%
 ItemDisplay[SET !ID !ALLDISCOVERED !IN_TOWN !(rin OR amu)]: %ORANGE%GRAIL %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs)]: %FX_UNID_GG%%UNI_BOSS_ITEM%
 ItemDisplay[UNI !ID uh9 MAPID=137]: %FX_UNID_GG%%UNI_BOSS_ITEM%
