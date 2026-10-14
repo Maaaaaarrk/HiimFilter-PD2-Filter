@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated October 14th Season 14 - build 61
+## Last updated October 14th Season 14 - build 63
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -96,6 +96,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 ### Level 10-9 — 4-star uniques
 
 - Aetherwing (Razor Arrows)
+- Alma Negra (Sacred Rondache)
 - Andariel's Visage (Demonhead)
 - Arachnid Mesh (Spiderweb Sash) — non-ETH
 - Arioc's Needle (Hyperion Spear) — ETH
@@ -110,6 +111,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Doombringer (Champion Sword) — ETH
 - Dracul's Grasp (Vampirebone Gloves)
 - Earth Shifter (Thunder Maul) — ETH
+- Ephemeral (Sacred Targe)
 - Ghostflame (Legend Spike)
 - Giant Skull (Bone Visage)
 - Gore Rider (War Boots)
@@ -160,7 +162,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 ### Level 8 — adds 3-star uniques
 
 - Abyssal Ward (War Bolts)
-- Alma Negra (Sacred Rondache)
 - Arachnid Mesh (Spiderweb Sash) — ETH
 - Athena's Wrath (Battle Scythe) — ETH
 - Bannerlord's Call (War Bolts)
@@ -170,7 +171,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Denmother (Sun Spirit)
 - Doombringer (Champion Sword) — non-ETH
 - Earth Shifter (Thunder Maul) — non-ETH
-- Ephemeral (Sacred Targe)
 - Fenris (Alpha Helm)
 - Firelizard's Talons (Feral Claws)
 - Frozen Sorrow (War Bolts)
