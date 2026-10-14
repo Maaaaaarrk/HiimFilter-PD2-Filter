@@ -1,0 +1,9 @@
+//-----------------------------------------------------------------------------------
+// GRAIL TAG (NoGrail)
+//-----------------------------------------------------------------------------------
+// The NoGrail filter drops the GRAIL callout on undiscovered uniques / set items.
+// Other filters get the tag from 07-alias-grail-tag[ALL-EXCEPT=NoGrail].
+Alias[GRAIL_TAG]:
+// Grail callout off: skips the undiscovered-item rules in 06-unidfiltering/21-Unid_UniquesSet_Tiers_Hides
+Alias[GRAILENABLED]: FALSE
+
