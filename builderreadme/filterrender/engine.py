@@ -256,10 +256,17 @@ def _parse_cond(text):
     return p_expr() if toks else ("const", True)
 
 
+# Grail tracking: samples assume a finished grail (every item discovered and owned).
+# An item can set any of these to False in "grail" (e.g. an undiscovered unique).
+GRAIL_FLAGS = {"ANYDISCOVERED": True, "ALLDISCOVERED": True, "ANYOWNED": True, "ALLOWNED": True}
+
+
 class Context:
     def __init__(self, item, filtlvl):
         self.item = item
         self.flags = set(item.get("flags", ())) | {"GROUND"}
+        grail = item.get("grail", {})
+        self.flags |= {k for k, v in GRAIL_FLAGS.items() if grail.get(k, v)}
         # QTY is only set on stackable samples (runes, gem / skull stacks)
         self.num = {"FILTLVL": filtlvl, "CLVL": 86, "DIFF": 2, "MAPID": 2, "ILVL": 85,
                     "ALVL": 85, "LVLREQ": 60, "CHARSTAT12": 90}
