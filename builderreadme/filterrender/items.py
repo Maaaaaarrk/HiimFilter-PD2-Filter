@@ -137,6 +137,10 @@ def star_samples():
         n = ubases[e["code"]]["noneth"]
         out.append(_sample(e, ["UNI", "ETH"], f"Unid ETH {e['name']} - 4-star ETH, {_STAR.get(n, 'unstarred')} non-ETH"))
     out.append({"code": "rin", "name": "Ring", "flags": ["UNI", "JEWELRY"], "legend": "Unid unique ring"})
+    # Grail: the engine treats every item as discovered and owned; this one is neither.
+    out.append({"code": "dgr", "name": "Dagger", "flags": ["UNI"],
+                "grail": {"ANYDISCOVERED": False, "ALLDISCOVERED": False, "ANYOWNED": False, "ALLOWNED": False},
+                "legend": "Grail: unid unique Gull, not yet discovered or owned"})
     for tier in _tiers.SET_SCALE:
         e = pick(data["sets"], lambda e: sbases[e["code"]]["tier"] == tier)
         if e:
