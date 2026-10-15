@@ -1,5 +1,5 @@
 # hiimvanillaplus
-## Last updated October 14th Season 14 - build 66
+## Last updated October 15th Season 14 - build 67
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
