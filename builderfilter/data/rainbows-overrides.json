@@ -1,0 +1,205 @@
+{
+  "description": "Season 14 Rainbows appearance changes relative to the shared Hiim filter. Every old block must match once; if Hiim changes one of these rules, update this overlay deliberately.",
+  "overrides": [
+    {
+      "old": "Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *\nAlias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <\n",
+      "new": "Alias[DISP_LMAL]: %MAP-4A%%NAME%\nAlias[DISP_TOA]: %MAP-A9%%TOKEN_PARTS%\n"
+    },
+    {
+      "old": "Alias[LBL_HP1_1]: %RED%+ %WHITE%HP1 %RED%+\nAlias[LBL_HP2_1]: %RED%+ %WHITE%HP2 %RED%+\nAlias[LBL_HP3_1]: %RED%+ %WHITE%HP3 %RED%+\nAlias[LBL_HP4_1]: %RED%+ %WHITE%HP4 %RED%+\nAlias[LBL_HP5_1]: %RED%+ %WHITE%HP5 %RED%+\nAlias[LBL_HP5_2]: %RED%+ HP\nAlias[LBL_MP1_1]: %BLUE%+ %WHITE%MP1 %BLUE%+\nAlias[LBL_MP2_1]: %BLUE%+ %WHITE%MP2 %BLUE%+\nAlias[LBL_MP3_1]: %BLUE%+ %WHITE%MP3 %BLUE%+\nAlias[LBL_MP4_1]: %BLUE%+ %WHITE%MP4 %BLUE%+\nAlias[LBL_MP5_1]: %BLUE%+ %WHITE%MP5 %BLUE%+\nAlias[LBL_MP5_2]: %BLUE%+ MP\n",
+      "new": "Alias[LBL_HP1_1]: %RED%HP1\nAlias[LBL_HP2_1]: %RED%HP2\nAlias[LBL_HP3_1]: %RED%HP3\nAlias[LBL_HP4_1]: %RED%HP4\nAlias[LBL_HP5_1]: %RED%HP\nAlias[LBL_HP5_2]: %RED%HP\nAlias[LBL_MP1_1]: %BLUE%MP1\nAlias[LBL_MP2_1]: %BLUE%MP2\nAlias[LBL_MP3_1]: %BLUE%MP3\nAlias[LBL_MP4_1]: %BLUE%MP4\nAlias[LBL_MP5_1]: %BLUE%MP\nAlias[LBL_MP5_2]: %BLUE%MP\n"
+    },
+    {
+      "old": "Alias[GEN_ITEM]: %ORANGE%O O O %NAME% %ORANGE%O O O\nAlias[WSS_SHARD]: %ORANGE%O O O %NAME% %ORANGE%O O O\nAlias[GEN_ALT]: %PURPLE%O O O %NAME% %PURPLE%O O O\nAlias[TOKEN_PARTS]: %ORANGE%> > %NAME% %ORANGE%< <\nAlias[UBER_KEYS]: %RED%>>  > %NAME% %RED%<  <<\nAlias[BOSS_MAT]: %YELLOW%<> <> <> %NAME% %YELLOW%<> <> <>\nAlias[BOSS_ALT]: %YELLOW%X X X X %NAME% %YELLOW%X X X X\nAlias[PD2_MATS]: %YELLOW%X X X X %NAME% %YELLOW%X X X X\nAlias[BOSS_ENTRY]: %RED%* * %NAME% %RED%* *\nAlias[GEN_RARE]: %ORANGE%<> <> <> %NAME% %ORANGE%<> <> <>\nAlias[GEN_TOP_RARE]: %DARK_GREEN%<> <> <> %NAME% %DARK_GREEN%<> <> <>\nAlias[GEN_GG_ITEM]: %PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>\nAlias[RARE_GG_ITEM]: %RED%!%GREEN%-%RED%!%GREEN%-%RED%!%GREEN%-%RED%!%GREEN%-%RED%!%GREEN%-%RED%!  %RED%%NAME%  %RED%!%GREEN%-%RED%!%GREEN%-%RED%!%GREEN%-%RED%!%GREEN%-%RED%!%GREEN%-%RED%!\nAlias[RARE_GG_ALT]: %RED%XxXxXxX %NAME% %RED%XxXxXxX\nAlias[RUNE_LOW]: %PX-0B%%ORANGE%** %NAME% %ORANGE%**\nAlias[RUNE_CRAFT]: %DOT-0B%%ORANGE%**** %NAME% %ORANGE%****\nAlias[RUNE_MID]: %DOT-9B%%PX-0B%%PURPLE%<> <> %NAME% %PURPLE%<> <>\nAlias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%PURPLE%<> <> %NAME% %PURPLE%<> <>\nAlias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%PURPLE%<> <> <> %NAME% %PURPLE%<> <> <>\nAlias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> %NAME% %PURPLE%<%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%> <%ORANGE%!%PURPLE%>\nAlias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> %NAME% %PURPLE%<%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%> <%GREEN%!%PURPLE%>\nAlias[MAG_ITEM]: %MAP-6A%%DOT-94%%YELLOW%X %NAME% %YELLOW%X\nAlias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%YELLOW%XX %NAME% %YELLOW%XX\nAlias[RARE_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%X %NAME% %ORANGE%X\nAlias[RARE_PLUS]: %DOT-6A%* %NAME% *\nAlias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%ORANGE%X X %NAME% %ORANGE%X X\nAlias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%PURPLE%X X X %NAME% %PURPLE%X X X\nAlias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%PURPLE%X X X X X %NAME% %PURPLE%X X X X X\n",
+      "new": "Alias[GEN_ITEM]: %YELLOW%OO%BLUE%OO %NAME% %BLUE%OO%YELLOW%OO\nAlias[WSS_SHARD]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[PUZZLEBOX_ITEM]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[GEN_ALT]: %RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[TOKEN_PARTS]: %RED%X%GREEN%><%BLUE%x%ORANGE% %NAME% %BLUE%x%GREEN%><%RED%X\nAlias[UBER_KEYS]: %RED%X%GREEN%><%BLUE%x %NAME% %BLUE%x%GREEN%><%RED%X\nAlias[BOSS_MAT]: %RED%XxXxX %NAME% %RED%XxXxX\nAlias[BOSS_ALT]: %YELLOW%X%YELLOW%X%YELLOW%X %NAME% %YELLOW%X%YELLOW%X%YELLOW%X\nAlias[PD2_MATS]: %YELLOW%X%YELLOW%X%YELLOW%X %NAME% %YELLOW%X%YELLOW%X%YELLOW%X\nAlias[BOSS_ENTRY]: %RED%### %NAME% %RED%###\nAlias[GEN_RARE]: %RED%@%RED%@%RED%@ %NAME% %RED%@%RED%@%RED%@\nAlias[GEN_TOP_RARE]: %RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[GEN_GG_ITEM]: %RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[RARE_GG_ITEM]: %RED%OO%GREEN%OO%BLUE%OO%YELLOW%OO %NAME% %YELLOW%OO%BLUE%OO%GREEN%OO%RED%OO\nAlias[RARE_GG_ALT]: %RED%#%RED%#%RED%# %NAME% %RED%#%RED%#%RED%#\nAlias[RUNE_LOW]: %PX-0B%%RED%O %NAME% %RED%O\nAlias[RUNE_CRAFT]: %DOT-0B%%RED%O%GREEN%O %NAME% %GREEN%O%RED%O\nAlias[RUNE_SOL]: %DOT-0B%%RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[RUNE_MID]: %DOT-9B%%PX-0B%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%O %GREEN%O %BLUE%O %YELLOW%O %NAME% %YELLOW%O %BLUE%O %GREEN%O %RED%O\nAlias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%OO %GREEN%OO %BLUE%OO %YELLOW%OO %NAME% %YELLOW%OO %BLUE%OO %GREEN%OO %RED%OO\nAlias[MAG_ITEM]: %MAP-6A%%DOT-94%%NAME%\nAlias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%YELLOW%OO %NAME% %YELLOW%OO\nAlias[RARE_ITEM]: %MAP-0B%%DOT-6A%%NAME%\nAlias[RARE_PLUS]: %DOT-6A%O %NAME% O\nAlias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%RED%X# %NAME% %RED%X#\nAlias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%RED%O %GREEN%O %BLUE%O %YELLOW%O %NAME% %YELLOW%O %BLUE%O %GREEN%O %RED%O\n"
+    },
+    {
+      "old": "Alias[UNI_UNID_TORCH]: %RED%o %PURPLE%%GOLD%  Unidentified Hellfire Torch  %RED%o\nAlias[UNI_UNID_ANNI]: %RED%o %PURPLE%%GOLD%  Unidentified Annihilus  %RED%o\nAlias[UNI_UNID_GHEEDS]: %RED%o %PURPLE%%GOLD%  Unidentified Gheeds Fortune  %RED%o\nAlias[LEVELING_TAG]: %ORANGE%lvling%PX-62%\nAlias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%*%ORANGE%*%YELLOW%*%GREEN%*%BLUE%*%PURPLE%* %NAME% %PURPLE%*%BLUE%*%GREEN%*%YELLOW%*%ORANGE%*%RED%*\nAlias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%X%ORANGE%X%YELLOW%X%GREEN%X%BLUE%X%PURPLE%X %NAME% %PURPLE%X%BLUE%X%GREEN%X%YELLOW%X%ORANGE%X%RED%X\nAlias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%PURPLE%X X X %NAME% %PURPLE%X X X\nAlias[UNI_STAR3_ITEM]: %BORDER-D3%%GOLD%* * * %NAME% %GOLD%* * *\nAlias[UNI_STAR2_ITEM]: %MAP-D3%%GOLD%* * %NAME% %GOLD%* *\nAlias[UNI_STAR1_ITEM]: %DOT-D3%%GOLD%* %NAME% %GOLD%*\nAlias[UNI_STAR0_ITEM]: %DOT-D3%%GOLD%. %NAME% %GOLD%.\nAlias[SET_GG_ITEM]: %BORDER-7D%%GREEN%* * * * %NAME% %GREEN%* * * *\nAlias[SET_TIER3_ITEM]: %MAP-7D%%GREEN%* * * %NAME% %GREEN%* * *\nAlias[SET_TIER2_ITEM]: %DOT-7D%%GREEN%* * %NAME% %GREEN%* *\nAlias[SET_TIER1_ITEM]: %DOT-7D%%GREEN%* %NAME% %GREEN%*\n",
+      "new": "Alias[UNI_UNID_TORCH]: %RED%O %GOLD%Unidentified Hellfire Torch %RED%O\nAlias[UNI_UNID_ANNI]: %RED%O %GOLD%Unidentified Annihilus %RED%O\nAlias[UNI_UNID_GHEEDS]: %RED%O %GOLD%Unidentified Gheeds Fortune %RED%O\nAlias[LEVELING_TAG]: %SAGE%lvling%PX-62%\nAlias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%O%GREEN%O%BLUE%O%YELLOW%O%ORANGE%O%PURPLE%O %NAME% %PURPLE%O%ORANGE%O%YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O\nAlias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[UNI_STAR3_ITEM]: %BORDER-D3%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nAlias[UNI_STAR2_ITEM]: %MAP-D3%%GOLD%O O %NAME% %GOLD%O O\nAlias[UNI_STAR1_ITEM]: %DOT-D3%%GOLD%O %NAME% %GOLD%O\nAlias[UNI_STAR0_ITEM]: %DOT-D3%%GOLD%o %NAME% %GOLD%o\nAlias[SET_GG_ITEM]: %BORDER-7D%%GREEN%O O O O %NAME% %GREEN%O O O O\nAlias[SET_TIER3_ITEM]: %MAP-7D%%GREEN%O O O %NAME% %GREEN%O O O\nAlias[SET_TIER2_ITEM]: %DOT-7D%%GREEN%O O %NAME% %GREEN%O O\nAlias[SET_TIER1_ITEM]: %DOT-7D%%GREEN%O %NAME% %GREEN%O\n"
+    },
+    {
+      "old": "Alias[RW_BASE_ORANGE]: %NAME% %DOT-0B%%ORANGE%< < <\n",
+      "new": "Alias[RW_BASE_ORANGE]: %NAME% %DOT-0B%\n"
+    },
+    {
+      "old": "Alias[RW_BASE_LOW_GREEN]: %NAME% %DOT-7D%%GREEN%***\nAlias[CRAFT_TWO]: %GREEN%* * %NAME% %DOT-94%%GREEN%[Craft] * *\nAlias[CRAFT_ONE]: %GREEN%* %NAME% %DOT-94%%GREEN%[Craft] *\n",
+      "new": "Alias[RW_BASE_LOW_GREEN]: %NAME% %DOT-7D%%GREEN%OOO\nAlias[CRAFT_TWO]: %GREEN%O O %NAME% %DOT-94%%GREEN%[Craft] O O\nAlias[CRAFT_ONE]: %GREEN%O %NAME% %DOT-94%%GREEN%[Craft] O\n"
+    },
+    {
+      "old": "ItemDisplay[lsvl]: VIAL OF LIGHTSONG%CONTINUE%\nItemDisplay[llmr]: LILITH'S MIRROR%CONTINUE%\n",
+      "new": ""
+    },
+    {
+      "old": "ItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%\n",
+      "new": "ItemDisplay[lucb GROUND]: Dorito%CONTINUE%\nItemDisplay[lucb QTY>1 GROUND]: %NAME% %QTY_TAG%%CONTINUE%\nItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[gpv OR gpvs]: %PURPLE%O  P Amethyst  O%CONTINUE%\n",
+      "new": "ItemDisplay[gpv OR gpvs]: %PURPLE%P Amethyst%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[gpw OR gpws]: %PURPLE%O  %WHITE%P. Diamond  %PURPLE%O%CONTINUE%\n",
+      "new": "ItemDisplay[gpw OR gpws]: %WHITE%P. Diamond%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}\nItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %ORANGE%O O O %NAME% %ORANGE%O O O%CONTINUE%{%NAME%}\n",
+      "new": "ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}\nItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %NAME%%CONTINUE%{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%\n",
+      "new": "ItemDisplay[UNI !ID scl]: %CONTINUE%Hawk Tuah\nItemDisplay[UNI !ID 7st]: %CONTINUE%Jibril's Rod\nItemDisplay[UNI !ID pab]: %CONTINUE%ENPHERNO\nItemDisplay[UNI !ID 7vo]: %CONTINUE%Giant Memer\nItemDisplay[UNI !ID 6hb]: %CONTINUE%Cankles\nItemDisplay[UNI !ID 7yw]: %CONTINUE%Nethercrotch\nItemDisplay[SET !ID skp]: %CONTINUE%Arcanna's Head Game\nItemDisplay[SET !ID ltp]: %CONTINUE%Arcanna's Flesh Light\nItemDisplay[SET !ID wst]: %CONTINUE%Arcanna's Magic Wand\nItemDisplay[SET !ID utc]: %CONTINUE%Trang-Oul's Girthquake\nItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[wss]: %NAME%{%NAME%}\n",
+      "new": "ItemDisplay[wss]: %WSS_SHARD%{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[lbox]: %FX_PD2_GG%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}\n",
+      "new": "ItemDisplay[lbox]: %FX_PD2_GG%%PUZZLEBOX_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}\n"
+    },
+    {
+      "old": "ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%NAME%{%NAME%}\n",
+      "new": "ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%Key{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}\n",
+      "new": "ItemDisplay[rkey]: %RED%X%YELLOW%x%GREEN%X%BLUE%x%BLUE%X%GREEN%x%YELLOW%X%RED%x %NAME% %RED%x%YELLOW%X%GREEN%x%BLUE%X%BLUE%x%GREEN%X%YELLOW%x%RED%X%FX_RKEY%{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[upmp]: %NAME% %ORANGE%*\n",
+      "new": "ItemDisplay[upmp]: %NAME% %YELLOW%*\n"
+    },
+    {
+      "old": "ItemDisplay[MAPTIER=3 NMAG]: %ORANGE%* [T3] %CONTINUE%\n",
+      "new": "ItemDisplay[MAPTIER=3 NMAG]: %YELLOW%* [T3] %CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%\n",
+      "new": "ItemDisplay[(t61 OR t62)]: %BLUE%* [PvP] %CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[MAPTIER=3 NMAG]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%\n",
+      "new": "ItemDisplay[MAPTIER=3 NMAG]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%\n",
+      "new": "ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %BLUE%*{%NAME%}%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[RUNE>0 (FILTLVL<3 OR IN_TOWN)]: %NAME% %GREEN%%RUNENUM%%CONTINUE%\n",
+      "new": "ItemDisplay[RUNE>0 FILTLVL>2 IN_TOWN]: %NAME% %GREEN%%RUNENUM%%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%\nItemDisplay[RUNE<21 FILTLVL<5 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%\nItemDisplay[RUNE<21 FILTLVL<5 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%\nItemDisplay[RUNE<21 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%\n",
+      "new": "ItemDisplay[(RUNE<12 OR RUNE>12) RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%\nItemDisplay[(RUNE<12 OR RUNE>12) RUNE<20 FILTLVL<5 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%\nItemDisplay[(RUNE<12 OR RUNE>12) RUNE<20 FILTLVL<5 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%\nItemDisplay[(RUNE<12 OR RUNE>12) RUNE<20 FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%\nItemDisplay[RUNE=12]: %RUNE_SOL%%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[rvl]: %PURPLE%big%WHITE%Rejuv{Heals 65% of Life & Mana up to a limit}%CONTINUE%\nItemDisplay[rvl FILTLVL<7]: %PURPLE%* %NAME% %PURPLE%*{%NAME%}\n",
+      "new": "ItemDisplay[rvl]: %PURPLE%Rejuv{Heals 65% of Life & Mana up to a limit}%CONTINUE%\nItemDisplay[rvl FILTLVL<7]: %NAME%{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[rvl FILTLVL=11]: %PURPLE%GATORADE{%NAME%}\n",
+      "new": "ItemDisplay[rvl FILTLVL=11]: %PURPLE%Rejuv{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[rvs]: %WHITE%rejuv{Heals 35% of Life & Mana up to a limit}%CONTINUE%\nItemDisplay[rvs FILTLVL<5]: %NAME%%PURPLE%35%{%NAME%}\n",
+      "new": "ItemDisplay[rvs]: %PURPLE%35%{Heals 35% of Life & Mana up to a limit}%CONTINUE%\nItemDisplay[rvs FILTLVL<5]: %NAME%{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[rvs FILTLVL=11]: %PURPLE%powerade{%NAME%}\n",
+      "new": "ItemDisplay[rvs FILTLVL=11]: %NAME%{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %RARE_HIGH_ITEM%\nItemDisplay[RARE amu !ID FILTLVL<5]: %NAME%\nItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM%\nItemDisplay[RARE rin !ID FILTLVL<8]: %NAME%\n",
+      "new": "ItemDisplay[RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O\nItemDisplay[RARE amu !ID FILTLVL<5]: %RED%O %NAME% %RED%O\nItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O\nItemDisplay[RARE rin !ID FILTLVL<8]: %RED%O %NAME% %RED%O\n"
+    },
+    {
+      "old": "ItemDisplay[MAG jew !ID FILTLVL<11 ILVL>84]: %NAME%\n",
+      "new": "ItemDisplay[MAG jew !ID FILTLVL<11 ILVL>84]: %MAG_DBL_AFFIX_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM%\nItemDisplay[RARE jew !ID]: %RARE_HIGH_ITEM%\n",
+      "new": "ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%MAP-9B%%DOT-6A%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nItemDisplay[RARE jew !ID]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O\n"
+    },
+    {
+      "old": "ItemDisplay[MAG cm3 ILVL>89 !ID FILTLVL>7]: %NAME%\n",
+      "new": "ItemDisplay[MAG cm3 ILVL>89 !ID FILTLVL>7]: %MAG_DBL_AFFIX_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%\n",
+      "new": "ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAP-6A%%DOT-94%%YELLOW%O %NAME% %YELLOW%O\n"
+    },
+    {
+      "old": "ItemDisplay[MAG cm1 ILVL>89 !ID FILTLVL>7]: %NAME%\n",
+      "new": "ItemDisplay[MAG cm1 ILVL>89 !ID FILTLVL>7]: %MAG_DBL_AFFIX_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[MAG cm1 !ID FILTLVL<8]: %TIER-6%%MAG_ITEM%\n",
+      "new": "ItemDisplay[MAG cm1 !ID ILVL>49 ILVL<90 FILTLVL<8]: %TIER-6%%MAP-6A%%DOT-94%%YELLOW%O %NAME% %YELLOW%O\nItemDisplay[MAG cm1 !ID FILTLVL<8]: %TIER-6%%MAG_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%\n",
+      "new": "ItemDisplay[UNI !ID !ETH FILTLVL<9 uap]: %FX_UNID_3STAR%%BORDER-D3%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O\nItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[SET !ID amu FILTLVL<7]: %NAME%\nItemDisplay[SET !ID rin FILTLVL<8]: %NAME%\n",
+      "new": "ItemDisplay[SET !ID amu FILTLVL<7]: %SET_TIER3_ITEM%\nItemDisplay[SET !ID rin FILTLVL<8]: %SET_TIER3_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %NAME%\n",
+      "new": "ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %SET_TIER2_ITEM%\n"
+    },
+    {
+      "old": "ItemDisplay[cm3 !UNI ID ILVL=90]: %NAME% %ORANGE%*%CONTINUE%\nItemDisplay[cm3 !UNI ID ILVL>90]: %NAME% %PURPLE%*%CONTINUE%\n",
+      "new": "ItemDisplay[cm3 !UNI ID ILVL=90]: %NAME% %YELLOW%*%CONTINUE%\nItemDisplay[cm3 !UNI ID ILVL>90]: %NAME% %BLUE%*%CONTINUE%\n"
+    },
+    {
+      "old": "ItemDisplay[WAND TABSK17>1 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD WAND%RED%   ***}\nItemDisplay[WAND CLSK2>0 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}\nItemDisplay[WAND TABSK17>0 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}\nItemDisplay[SCEPTER CLSK3>0 (STAT93>20 OR STAT105>10) (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK24>1 (STAT93>20 OR STAT105>10)  (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK25>1 (STAT93>20 OR STAT105>10)  (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER CLSK3>0 (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%***   %NAME% [LLD]   ***{%RED%***   %PURPLE%GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK24>1 (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%***   %NAME% [LLD]   ***{%RED%***   %PURPLE%GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK25>1 (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %PURPLE%***   %NAME% [LLD]   ***{%RED%***   %PURPLE%GG LLD SCEPTER%RED%   ***}\n",
+      "new": "ItemDisplay[WAND TABSK17>1 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD WAND%RED%   ***}\nItemDisplay[WAND CLSK2>0 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2 OR SK94>2) LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}\nItemDisplay[WAND TABSK17>0 (FCR>10 OR STAT332>9 OR STAT336>4) (SK83>2 OR SK84>2 OR SK92>2 OR SK93>2 OR SK74>2) LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD WAND%RED%   ***}\nItemDisplay[SCEPTER CLSK3>0 (STAT93>20 OR STAT105>10) (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK24>1 (STAT93>20 OR STAT105>10)  (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK25>1 (STAT93>20 OR STAT105>10)  (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%OMG GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER CLSK3>0 (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %BLUE%***   %NAME% [LLD]   ***{%RED%***   %PURPLE%GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK24>1 (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %BLUE%***   %NAME% [LLD]   ***{%RED%***   %PURPLE%GG LLD SCEPTER%RED%   ***}\nItemDisplay[SCEPTER TABSK25>1 (SK97>2 OR SK107>2 OR SK112>2 OR SK117>2 OR SK121>2 OR SK378>2) LVLREQ<31]: %BLUE%***   %NAME% [LLD]   ***{%RED%***   %PURPLE%GG LLD SCEPTER%RED%   ***}\n"
+    },
+    {
+      "old": "ItemDisplay[ID (CHSK54>0) FCR>29 STAFF LVLREQ<31]: %PURPLE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD FCR Teleport Charges Staff%RED%   ***}\nItemDisplay[ID (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %ORANGE%* * *   %NAME% %ORANGE%[LLD]   * * *{%RED%***   %PURPLE%LLD FCR Teleport Charges Staff%RED%   ***}\n",
+      "new": "ItemDisplay[ID (CHSK54>0) FCR>29 STAFF LVLREQ<31]: %BLUE%* * *   %NAME% [LLD]   * * *{%RED%***   %PURPLE%GG LLD FCR Teleport Charges Staff%RED%   ***}\nItemDisplay[ID (CHSK54>0) FCR>0 STAFF LVLREQ<31]: %YELLOW%* * *   %NAME% %ORANGE%[LLD]   * * *{%RED%***   %PURPLE%LLD FCR Teleport Charges Staff%RED%   ***}\n"
+    },
+    {
+      "old": "ItemDisplay[CHEST ELT !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) DEF>900]: %BORDER-9B%%DOT-0E%%SOUNDID-4719%%PURPLE%O %NAME% %PURPLE%O{%NAME%}\n",
+      "new": "ItemDisplay[CHEST ELT !INF ETH NMAG !RW (SOCK=0 OR SOCK=4) DEF>900]: %BORDER-9B%%DOT-0E%%SOUNDID-4719%%BLUE%O %NAME% %BLUE%O{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6) (EDAM>4 OR FILTLVL<5) (EDAM>14 OR FILTLVL<7) FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%NAME%}\n",
+      "new": "ItemDisplay[(7p7 OR 7gm) ETH NMAG !RW (SOCK=0 OR SOCK=5 OR SOCK=6) (EDAM>4 OR FILTLVL<5) (EDAM>14 OR FILTLVL<7) FILTLVL<9]: %NAME% %DOT-0B%%YELLOW%< < <{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[(wst OR 8ws OR 6ws) SK50>0 SK60>0 !INF NMAG !RW SOCK=0]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(wst OR 8ws OR 6ws) (SK50>2 OR SK60>2) !INF NMAG !RW SOCK=0]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[(wst OR 8ws OR 6ws) (SK50>2 OR SK60>2) !INF NMAG !RW SOCK=0]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<8]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK57>0) (SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<8]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<7]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[(wst OR 8ws OR 6ws) (SK58>0 OR SK50>0 OR SK60>0) !INF NMAG !RW SOCK=0 FILTLVL<7]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 5 open sockets for CTA Base%CL%%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK40>2 SK52>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\nItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\nItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>0 (SK50>0 OR SK60>0 OR SK63>0) !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK40>2 SK52>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\nItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\nItemDisplay[STAFF !(sst OR 8ss OR 6ss OR lst OR 8ls) SK57>0 (SK50>0 OR SK60>0 OR SK63>0) !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 4 open sockets for Memory Base%CL%%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<7]: %NAME% %DOT-0B%%ORANGE%< < <{%NAME%}\nItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK50>0 SK58>0 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<5]: %NAME% %DOT-0B%%ORANGE%< < <{%NAME%}\n",
+      "new": "ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK58>2 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<7]: %NAME% %DOT-0B%%YELLOW%< < <{%NAME%}\nItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs OR wst OR 8ws OR 6ws) SK50>0 SK58>0 NMAG !RW (SOCK=0 OR SOCK=4 OR SOCK=5) FILTLVL<5]: %NAME% %DOT-0B%%YELLOW%< < <{%NAME%}\n"
+    },
+    {
+      "old": "ItemDisplay[(ob5 OR oba OR obf) SK40>2 SK52>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%ORANGE%< < <{%GREEN%Roll 3 open sockets for Plague Base%CL%%NAME%}\n",
+      "new": "ItemDisplay[(ob5 OR oba OR obf) SK40>2 SK52>2 !INF NMAG !RW SOCK=0 FILTLVL<9]: %NAME% %DOT-0B%%YELLOW%< < <{%GREEN%Roll 3 open sockets for Plague Base%CL%%NAME%}\n"
+    }
+  ]
+}
