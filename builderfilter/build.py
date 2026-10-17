@@ -249,6 +249,30 @@ def minify(content):
     return "\n".join(kept) + "\n" if kept else ""
 
 
+def apply_style_overrides(content, entry):
+    """Apply a style's exact display changes after shared rules are assembled.
+
+    A changed upstream rule must be reviewed rather than silently losing the
+    customization. Unchanged and new shared rules continue to flow through.
+    """
+    overlay = entry.get("overlay")
+    if not overlay:
+        return content
+    path = os.path.join(SCRIPT_DIR, "data", overlay)
+    with open(path, encoding="utf-8") as f:
+        changes = json.load(f)["overrides"]
+    for index, change in enumerate(changes, start=1):
+        old = change["old"]
+        matches = content.count(old)
+        if matches != 1:
+            raise ValueError(
+                f"{entry['name']} override {index}: expected one source match, found {matches}. "
+                "Review Hiim's changed rule before publishing this style."
+            )
+        content = content.replace(old, change["new"], 1)
+    return content
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build PD2 loot filters.")
     parser.add_argument(
@@ -272,6 +296,7 @@ def main():
         content = build_filter(entry, groups)
         if not args.no_minify:
             content = minify(content)
+        content = apply_style_overrides(content, entry)
         out_dir = output_dir_for(entry)
         os.makedirs(out_dir, exist_ok=True)
         out_path = os.path.join(out_dir, out_file)
