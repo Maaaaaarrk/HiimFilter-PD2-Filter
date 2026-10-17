@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc1High roller ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(ÿc;Rejuvesÿc5)
 ItemDisplayFilterName[]: ÿc13 Min Mapper ÿc5(No Rejuves)
 ItemDisplayFilterName[]: ÿc1No Items Out of Town ÿc5(ÿc;Rejuvesÿc5)
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 17th%CL%Season 14 - build 70%CL%HiimFilter - Sancofexile - Grail -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 17th%CL%Season 14 - build 71%CL%HiimFilter - Sancofexile - Grail -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Base (1)}%CONTINUE%
@@ -324,10 +324,7 @@ Alias[DISP_UNID_SET_JEWELRY]: %NAME%
 Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
 Alias[RUNE_NUMBER_LEVELS]: FILTLVL<3
 Alias[RUNE_NUMBER_TOWN_LEVELS]: FILTLVL<12
-Alias[PLAIN_RUNE_RANGE]: RUNE<21
 Alias[LOW_RUNE_RANGE]: RUNE<21
-Alias[DISP_RUNE_SOL]: %NAME%
-Alias[DISP_UNID_SHAKO]: %UNI_STAR3_ITEM%
 Alias[GEN_ITEM]: %ORANGE%• • • %NAME% %ORANGE%• • •
 Alias[WSS_SHARD]: %ORANGE%• • • %NAME% %ORANGE%• • •
 Alias[GEN_ALT]: %PURPLE%• • • %NAME% %PURPLE%• • •
@@ -1656,11 +1653,10 @@ ItemDisplay[RUNE>25]: %SOUNDID-4719%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0]: %TIER-6%%NAME%%CONTINUE%
 ItemDisplay[RUNE>0 (RUNE_NUMBER_LEVELS OR IN_TOWN) RUNE_NUMBER_TOWN_LEVELS]: %NAME% %GREEN%%RUNENUM%%CONTINUE%
 ItemDisplay[RUNE>0 QTY>1 QTY<51]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
-ItemDisplay[RUNE>0 PLAIN_RUNE_RANGE FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%
+ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %ORANGE%  %NAME%  %ORANGE%{%NAME%}%CONTINUE%
 ItemDisplay[LOW_RUNE_RANGE FILTLVL<5 CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
 ItemDisplay[LOW_RUNE_RANGE FILTLVL<5 !CRAFTING_RUNES_SET]: %RUNE_LOW%%CONTINUE%
 ItemDisplay[LOW_RUNE_RANGE FILTLVL>4 FILTLVL<7]: %RUNE_LOW%%CONTINUE%
-ItemDisplay[RUNE=12]: %DISP_RUNE_SOL%%CONTINUE%
 ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
 ItemDisplay[RUNE>21 AND RUNE<24]: %RUNE_MID%%CONTINUE%
 ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
@@ -1889,7 +1885,6 @@ ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
 ItemDisplay[MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
 ItemDisplay[MAG cm1 ILVL>89 !ID FILTLVL>7]: %DISP_UNID_MAG_TOP%
 ItemDisplay[MAG cm1 !ID ILVL>89 FILTLVL<8]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
-ItemDisplay[MAG cm1 !ID ILVL>49 ILVL<90 FILTLVL<8]: %TIER-6%%DISP_UNID_MAG_CHARM%
 ItemDisplay[MAG cm1 !ID FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm2 !ID FILTLVL>6]: %CHARM_LC_TAG%%CONTINUE%
 ItemDisplay[MAG cm2 ILVL>89 !ID FILTLVL>7]: %NAME%
