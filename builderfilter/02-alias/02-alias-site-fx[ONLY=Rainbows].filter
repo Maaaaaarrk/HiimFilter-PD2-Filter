@@ -1,3 +1,5 @@
+// Rainbows style: the shared site-fx aliases with the Rainbows map, token and HP/MP labels.
+// RAINBOWS_STYLE (TRUE only here) gates the shared rules only Rainbows uses.
 //-----------------------------------------------------------------------------------
 // SITE FX: per-rule minimap icon / sound / frame tags for shared segments.
 // Hiim (and Phil777) segments add these inline; the Kassahi bucket's aliases already
@@ -10,15 +12,16 @@
 
 // SITE_FX: condition flag for the few rules that only exist in one style (wss / cwss stack tag).
 Alias[SITE_FX]: TRUE
+Alias[RAINBOWS_STYLE]: TRUE
 
 // cwss frame
 Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
 // iwss frame
 Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
 // lmal decoration
-Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
+Alias[DISP_LMAL]: %MAP-4A%%NAME%
+Alias[DISP_TOA]: %MAP-A9%%TOKEN_PARTS%
 // toa
-Alias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <
 // uber boss mats
 Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
 // essences
@@ -70,18 +73,18 @@ Alias[LBL_TSC_1]: %BLUE%+%WHITE%TP
 Alias[LBL_TBK_1]: %RED%LOW QTY %NAME%
 Alias[LBL_IBK_1]: %RED%+%WHITE%ID Tome
 Alias[LBL_TBK_2]: %BLUE%+%WHITE%TP Tome
-Alias[LBL_HP1_1]: %RED%+ %WHITE%HP1 %RED%+
-Alias[LBL_HP2_1]: %RED%+ %WHITE%HP2 %RED%+
-Alias[LBL_HP3_1]: %RED%+ %WHITE%HP3 %RED%+
-Alias[LBL_HP4_1]: %RED%+ %WHITE%HP4 %RED%+
-Alias[LBL_HP5_1]: %RED%+ %WHITE%HP5 %RED%+
-Alias[LBL_HP5_2]: %RED%+ HP
-Alias[LBL_MP1_1]: %BLUE%+ %WHITE%MP1 %BLUE%+
-Alias[LBL_MP2_1]: %BLUE%+ %WHITE%MP2 %BLUE%+
-Alias[LBL_MP3_1]: %BLUE%+ %WHITE%MP3 %BLUE%+
-Alias[LBL_MP4_1]: %BLUE%+ %WHITE%MP4 %BLUE%+
-Alias[LBL_MP5_1]: %BLUE%+ %WHITE%MP5 %BLUE%+
-Alias[LBL_MP5_2]: %BLUE%+ MP
+Alias[LBL_HP1_1]: %RED%HP1
+Alias[LBL_HP2_1]: %RED%HP2
+Alias[LBL_HP3_1]: %RED%HP3
+Alias[LBL_HP4_1]: %RED%HP4
+Alias[LBL_HP5_1]: %RED%HP
+Alias[LBL_HP5_2]: %RED%HP
+Alias[LBL_MP1_1]: %BLUE%MP1
+Alias[LBL_MP2_1]: %BLUE%MP2
+Alias[LBL_MP3_1]: %BLUE%MP3
+Alias[LBL_MP4_1]: %BLUE%MP4
+Alias[LBL_MP5_1]: %BLUE%MP
+Alias[LBL_MP5_2]: %BLUE%MP
 Alias[LBL_VPS_1]: %GREEN%!%WHITE%sta{%NAME%}
 Alias[LBL_YPS_1]: %GREEN%!Anti{Good Luck on Rathma}
 Alias[LBL_YPS_2]: %NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Resistance:%CL%%GRAY%--------%CL%%GOLD%Voidstone - Rathma boss fight}

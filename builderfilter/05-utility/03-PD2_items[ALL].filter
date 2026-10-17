@@ -12,7 +12,8 @@ ItemDisplay[wss QTY>1 SITE_FX]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[wss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[wss]: %CONTINUE%%TIER-8%%FX_WSS%%NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %WSS_ITEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %WSS_ITEM_HR_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt}
 ItemDisplay[wss (FILTLVL<9 OR !SITE_FX)]: %WSS_SHARD%{%NAME%}
-ItemDisplay[wss]: %NAME%{%NAME%}
+ItemDisplay[wss !RAINBOWS_STYLE]: %NAME%{%NAME%}
+ItemDisplay[wss RAINBOWS_STYLE]: %WSS_SHARD%{%NAME%}
 ItemDisplay[cwss QTY>1 SITE_FX]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[cwss QTY>1 QTY<8]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[cwss QTY>7]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
@@ -20,7 +21,8 @@ ItemDisplay[cwss]: %DISP_CWSS%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %TA
 ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM%%FX_JEWF%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
 ItemDisplay[lbox QTY>1 QTY<7]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[lbox QTY>6]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[lbox]: %FX_PD2_GG%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lbox !RAINBOWS_STYLE]: %FX_PD2_GG%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lbox RAINBOWS_STYLE]: %FX_PD2_GG%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEPIECE_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEPIECE_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[lpp]: %FX_PD2_RARE%%GEN_RARE%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[imrn QTY>1 QTY<5]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_HR%)%CL%%NAME%}%CONTINUE%
@@ -203,6 +205,8 @@ ItemDisplay[(key OR rkey) MAPID<132]:%NAME%{%BLUE%maxroll.gg/d2/resources/map-re
 
 // Keys Final Display
 ItemDisplay[key ASSASSIN]:{%NAME%}
-ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%NAME%{%NAME%}
+ItemDisplay[key (FILTLVL<2 OR CLVL<25) !RAINBOWS_STYLE]: %GOLD%+%WHITE%%NAME%{%NAME%}
+ItemDisplay[key (FILTLVL<2 OR CLVL<25) RAINBOWS_STYLE]: %GOLD%+%WHITE%Key{%NAME%}
 ItemDisplay[key]:{%NAME%}
-ItemDisplay[rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}
+ItemDisplay[rkey !RAINBOWS_STYLE]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}
+ItemDisplay[rkey RAINBOWS_STYLE]: %RED%X%YELLOW%x%GREEN%X%BLUE%x%BLUE%X%GREEN%x%YELLOW%X%RED%x %NAME% %RED%x%YELLOW%X%GREEN%x%BLUE%X%BLUE%x%GREEN%X%YELLOW%x%RED%X%FX_RKEY%{%NAME%}

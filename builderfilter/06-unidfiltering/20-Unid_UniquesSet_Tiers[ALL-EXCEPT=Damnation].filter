@@ -40,7 +40,9 @@ ItemDisplay[jew UNI !ID FILTLVL<11]: %FX_UNID_GG%%FACET_ITEM%
 // Filter level 1-8
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE !RAINBOWS_STYLE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
+ItemDisplay[UNI !ID !ETH FILTLVL<9 uap RAINBOWS_STYLE]: %FX_UNID_3STAR%%BORDER-D3%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+ItemDisplay[UNI !ID !ETH FILTLVL<9 3_STAR_UNIQUE RAINBOWS_STYLE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
 ItemDisplay[UNI !ID ETH FILTLVL<9 3_STAR_ETH_UNIQUE]: %FX_UNID_3STAR%%UNI_STAR3_ITEM%
 // 2 Star Unique Callouts
 // Filter level 1-7
@@ -77,8 +79,10 @@ ItemDisplay[SET !ID FILTLVL<11 4_STAR_SET]: %FX_UNID_GG%%SET_GG_ITEM%
 // Set Ring
 // Set Amulet
 ItemDisplay[SET !ID (amu OR rin) FILTLVL<6]: %SET_TIER3_ITEM%
-ItemDisplay[SET !ID amu FILTLVL<7]: %NAME%
-ItemDisplay[SET !ID rin FILTLVL<8]: %NAME%
+ItemDisplay[SET !ID amu FILTLVL<7 !RAINBOWS_STYLE]: %NAME%
+ItemDisplay[SET !ID rin FILTLVL<8 !RAINBOWS_STYLE]: %NAME%
+ItemDisplay[SET !ID amu FILTLVL<7 RAINBOWS_STYLE]: %SET_TIER3_ITEM%
+ItemDisplay[SET !ID rin FILTLVL<8 RAINBOWS_STYLE]: %SET_TIER3_ITEM%
 
 // Only ETH
 // Immortal Kings Stone Crusher - Ogre Maul
@@ -97,7 +101,8 @@ ItemDisplay[SET !ID FILTLVL<8 2_STAR_SET]: %SET_TIER2_ITEM%
 
 // Any ETH Set weapon catch rest
 ItemDisplay[SET !ID ETH WEAPON FILTLVL<7]: %SET_TIER2_ITEM%
-ItemDisplay[SET !ID ETH WEAPON FILTLVL<8]: %NAME%
+ItemDisplay[SET !ID ETH WEAPON FILTLVL<8 !RAINBOWS_STYLE]: %NAME%
+ItemDisplay[SET !ID ETH WEAPON FILTLVL<8 RAINBOWS_STYLE]: %SET_TIER2_ITEM%
 
 // Set tier 1 Set Callouts
 //-----------------------------------------------------------------------------------
