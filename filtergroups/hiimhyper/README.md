@@ -1,9 +1,10 @@
 # hiimhyper
-## Last updated October 15th Season 14 - build 68
+## Last updated October 17th Season 14 - build 69
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
 * Style — Hyper: All-in-one filter with a Hyper visual theme. [Hiim_Hyper.filter]
+* Style — Rainbows: Hiim's balanced filter with rainbow item markers and colors. [Hiim_Rainbows.filter]
 * Class — Amazon: Class filter tuned for Amazon. Shows Amazon-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Amazon_Focused.filter]
 * Class — Assassin: Class filter tuned for Assassin. Shows Assassin-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Assassin_Focused.filter]
 * Class — Barbarian: Class filter tuned for Barbarian. Shows Barbarian-relevant items and crafting bases at higher filter levels. [Hiim_Crafting_Barbarian_Focused.filter]
