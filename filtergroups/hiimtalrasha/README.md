@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated October 15th Season 14 - build 68
+## Last updated October 17th Season 14 - build 71
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters

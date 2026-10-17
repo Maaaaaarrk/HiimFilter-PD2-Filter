@@ -1,0 +1,216 @@
+// Rainbows style: the general aliases with rainbow item markers and colors.
+//-----------------------------------------------------------------------------------
+// Alias for item ground annotations
+//-----------------------------------------------------------------------------------
+
+// General item
+Alias[GEN_ITEM]: %YELLOW%OO%BLUE%OO %NAME% %BLUE%OO%YELLOW%OO
+Alias[WSS_SHARD]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[GEN_ALT]: %RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O
+Alias[TOKEN_PARTS]: %RED%X%GREEN%><%BLUE%x%ORANGE% %NAME% %BLUE%x%GREEN%><%RED%X
+Alias[UBER_KEYS]: %RED%X%GREEN%><%BLUE%x %NAME% %BLUE%x%GREEN%><%RED%X
+Alias[BOSS_MAT]: %RED%XxXxX %NAME% %RED%XxXxX
+Alias[BOSS_ALT]: %YELLOW%X%YELLOW%X%YELLOW%X %NAME% %YELLOW%X%YELLOW%X%YELLOW%X
+Alias[PD2_MATS]: %YELLOW%X%YELLOW%X%YELLOW%X %NAME% %YELLOW%X%YELLOW%X%YELLOW%X
+Alias[BOSS_ENTRY]: %RED%### %NAME% %RED%###
+Alias[GEN_RARE]: %RED%@%RED%@%RED%@ %NAME% %RED%@%RED%@%RED%@
+Alias[GEN_TOP_RARE]: %RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O
+Alias[GEN_GG_ITEM]: %RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O
+Alias[RARE_GG_ITEM]: %RED%OO%GREEN%OO%BLUE%OO%YELLOW%OO %NAME% %YELLOW%OO%BLUE%OO%GREEN%OO%RED%OO
+Alias[RARE_GG_ALT]: %RED%#%RED%#%RED%# %NAME% %RED%#%RED%#%RED%#
+Alias[RUNE_LOW]: %PX-0B%%RED%O %NAME% %RED%O
+Alias[RUNE_CRAFT]: %DOT-0B%%RED%O%GREEN%O %NAME% %GREEN%O%RED%O
+Alias[RUNE_MID]: %DOT-9B%%PX-0B%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%O %GREEN%O %BLUE%O %YELLOW%O %NAME% %YELLOW%O %BLUE%O %GREEN%O %RED%O
+Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%RED%OO %GREEN%OO %BLUE%OO %YELLOW%OO %NAME% %YELLOW%OO %BLUE%OO %GREEN%OO %RED%OO
+Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%NAME%
+Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%YELLOW%OO %NAME% %YELLOW%OO
+Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%NAME%
+Alias[RARE_PLUS]: %DOT-6A%O %NAME% O
+Alias[RARE_HIGH_ITEM]: %MAP-0B%%DOT-6A%%RED%X# %NAME% %RED%X#
+Alias[RARE_GOOD_ITEM]: %MAP-9B%%DOT-6A%%RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O
+Alias[RARE_SUPER]: %BORDER-9B%%DOT-6A%%RED%O %GREEN%O %BLUE%O %YELLOW%O %NAME% %YELLOW%O %BLUE%O %GREEN%O %RED%O
+
+// Worldstone Shard — Hiim default mirrors GEN_ITEM. Kassahi variants override
+// with bordered dot decoration in 03-alias-kassahi-{normal,hyper,luxe}.filter.
+// Inlined (not %GEN_ITEM%) because PD2 doesn't recursively resolve aliases inside
+// other Alias[] bodies.
+
+// General item Alt
+
+// Token parts
+
+// Uber Keys
+
+// Boss Mat Item
+
+// Boss Mat Item Alt
+
+// PD2 materials (Project Diablo 2 end-game item wrapper)
+
+// Boss Entry Item
+
+// Rare General Item
+
+// Rarer General Item
+
+// GG General Item Drop
+
+// Rare GG Item Drop
+
+// Unlimited Use items
+
+// Low rune
+
+// Craft rune
+
+// Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID)
+
+// Mid rune Tier 2
+
+// High rune
+
+// High rune Tier 2
+
+
+// Magic Item 1 Affix
+
+// Magic Item 2 Affix
+
+// Rare Item basic
+
+// Rare Item Extra
+
+// Rare Item High ilvl
+
+// Rare Item Good
+
+// Rare Item GG
+
+// Amazon quiver UNID annotations
+Alias[QUIVER_MAG_AMA]: %BLUE%*    %NAME%    *
+Alias[QUIVER_RARE_AMA]: %YELLOW%*     %NAME%     *
+Alias[QUIVER_RARE_AMA_TIGHT]: %YELLOW%*   %NAME%   *
+
+// Grand-charm callouts (prefixes use %CONTINUE% so they stack with the alias below)
+Alias[CHARM_HIGH_LVL]: %YELLOW%hi-lvl %NAME%
+Alias[CHARM_MID_LVL]: %BLUE%mid-lvl %NAME%
+Alias[CHARM_GC_TAG]: %BLUE%GC
+Alias[CHARM_SC_TAG]: %BLUE%SC
+Alias[CHARM_LC_TAG]: %BLUE%LC
+
+// Unidentified unique charms (Hellfire Torch / Annihilus / Gheeds Fortune)
+Alias[UNI_UNID_TORCH]: %RED%O %GOLD%Unidentified Hellfire Torch %RED%O
+Alias[UNI_UNID_ANNI]: %RED%O %GOLD%Unidentified Annihilus %RED%O
+Alias[UNI_UNID_GHEEDS]: %RED%O %GOLD%Unidentified Gheeds Fortune %RED%O
+Alias[LEVELING_TAG]: %SAGE%lvling%PX-62%
+Alias[FACET_ITEM]: %BORDER-9B%%MAP-7D%%DOT-6A%%PX-55%%RED%O%GREEN%O%BLUE%O%YELLOW%O%ORANGE%O%PURPLE%O %NAME% %PURPLE%O%ORANGE%O%YELLOW%O%BLUE%O%GREEN%O%RED%O
+Alias[UNI_BOSS_ITEM]: %BORDER-9B%%RED%O%GREEN%O%BLUE%O%YELLOW%O %NAME% %YELLOW%O%BLUE%O%GREEN%O%RED%O
+Alias[UNI_GG_ITEM]: %BORDER-9B%%DOT-D3%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[UNI_STAR3_ITEM]: %BORDER-D3%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[UNI_STAR2_ITEM]: %MAP-D3%%GOLD%O O %NAME% %GOLD%O O
+Alias[UNI_STAR1_ITEM]: %DOT-D3%%GOLD%O %NAME% %GOLD%O
+Alias[UNI_STAR0_ITEM]: %DOT-D3%%GOLD%o %NAME% %GOLD%o
+Alias[SET_GG_ITEM]: %BORDER-7D%%GREEN%O O O O %NAME% %GREEN%O O O O
+Alias[SET_TIER3_ITEM]: %MAP-7D%%GREEN%O O O %NAME% %GREEN%O O O
+Alias[SET_TIER2_ITEM]: %DOT-7D%%GREEN%O O %NAME% %GREEN%O O
+Alias[SET_TIER1_ITEM]: %DOT-7D%%GREEN%O %NAME% %GREEN%O
+
+// Leveling Tag
+
+
+// FACET Item
+
+// Unique Boss Item
+
+// Unique GG Item
+
+// Unique Tier3 Item
+
+// Unique Tier2 Item
+
+// Unique Tier1 Item
+
+// Unique Tier0 Item
+
+
+// SET GG Item
+
+// SET Tier3 Item
+
+// SET Tier2 Item
+
+// SET Tier1 Item
+
+// RW Bases GG
+Alias[RW_BASE_GG]: %BORDER-9B%%DOT-0E%%SOUNDID-4719% %NAME% %PURPLE%
+
+// RW Bases Orange Alt Text
+Alias[RW_BASE_ALT_ORANGE]: %NAME% %DOT-0B%%ORANGE%
+
+// RW Bases Orange Text
+Alias[RW_BASE_ORANGE]: %NAME% %DOT-0B%
+
+// RW Bases Green Text
+Alias[RW_BASE_GREEN]: %NAME% %DOT-76%%DARK_GREEN%
+
+// RW Bases Lower Green Text
+Alias[RW_BASE_LOW_GREEN]: %NAME% %DOT-7D%%GREEN%OOO
+Alias[CRAFT_TWO]: %GREEN%O O %NAME% %DOT-94%%GREEN%[Craft] O O
+Alias[CRAFT_ONE]: %GREEN%O %NAME% %DOT-94%%GREEN%[Craft] O
+
+// Craft 2 Item Base
+
+// Craft 1 Item Base
+
+// Craft Item Base
+Alias[CRAFT_ZERO]: %NAME% %GREEN%[Craft]
+
+// LLD Craft Item Base
+Alias[CRAFT_LLD]: %NAME% %GREEN%[LLD Craft]
+
+
+
+//-----------------------------------------------------------------------------------
+// General Item re-names
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[RUNE>0 RUNE<21 FILTLVL>7]: %RUNENAME%{%NAME%}%CONTINUE%
+
+
+ItemDisplay[wss]: %PURPLE%WORLDSTONE SHARD%CONTINUE%
+ItemDisplay[cwss]: %ORANGE%Tainted %PURPLE%WORLDSTONE SHARD%CONTINUE%
+
+// Craft Infusion renames — set the name here so 05-utility/06-Gems tooltips
+// don't override formatting with hardcoded text.
+ItemDisplay[lucb GROUND]: Dorito%CONTINUE%
+ItemDisplay[lucb QTY>1 GROUND]: %NAME% %QTY_TAG%%CONTINUE%
+ItemDisplay[crfb]: %RED%Blood %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfc]: %PURPLE%Caster %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfs]: %GREEN%Safety %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfh]: %BLUE%Hitpower %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfv]: %GRAY%Vampiric %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfu]: %YELLOW%Bountiful %GOLD%Craft Infusion%CONTINUE%
+ItemDisplay[crfp]: %WHITE%Brilliant %GOLD%Craft Infusion%CONTINUE%
+
+// Formating for names
+ItemDisplay[gzv OR gzvs]: %PURPLE%Amethyst%CONTINUE%
+ItemDisplay[gpv OR gpvs]: %PURPLE%P Amethyst%CONTINUE%
+ItemDisplay[glw OR glws]: %WHITE%Diamond%CONTINUE%
+ItemDisplay[gpw OR gpws]: %WHITE%P. Diamond%CONTINUE%
+ItemDisplay[glg OR glgs]: %GREEN%Emerald%CONTINUE%
+ItemDisplay[gpg OR gpgs]: %GREEN%O  P Emerald  O%CONTINUE%
+ItemDisplay[glr OR glrs]: %RED%Ruby%CONTINUE%
+ItemDisplay[gpr OR gprs]: %RED%O  P Ruby  O%CONTINUE%
+ItemDisplay[glb OR glbs]: %BLUE%Sapphire%CONTINUE%
+ItemDisplay[gpb OR gpbs]: %BLUE%O  P Sapphire  O%CONTINUE%
+ItemDisplay[gly OR glys]: %YELLOW%Topaz%CONTINUE%
+ItemDisplay[gpy OR gpys]: %YELLOW%O  P Topaz  O%CONTINUE%
+ItemDisplay[skl OR skls]: %CORAL%. %LIGHT_GRAY%Skull %CORAL%.%CONTINUE%
+ItemDisplay[skz OR skzs]: %CORAL%O O  %LIGHT_GRAY%P Skull  %CORAL%O O%CONTINUE%
+ItemDisplay[GEM=4 FILTLVL<3]: %WHITE%F %NAME%%CONTINUE%
+
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp) QTY>1]: %NAME% %QTY_TAG%%CONTINUE%{%NAME%}
+ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %NAME%%CONTINUE%{%NAME%}

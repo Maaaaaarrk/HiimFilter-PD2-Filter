@@ -4,15 +4,15 @@
 // (`12-Kassahi_potions-rejuvs[ONLY=KassahiStd]` / `[Kassahi,ONLY=Phil777]`).
 //-----------------------------------------------------------------------------------
 
-ItemDisplay[rvl]: %PURPLE%big%WHITE%Rejuv{Heals 65% of Life & Mana up to a limit}%CONTINUE%
-ItemDisplay[rvl FILTLVL<7]: %PURPLE%* %NAME% %PURPLE%*{%NAME%}
+ItemDisplay[rvl]: %PURPLE%%DISP_RVL_NAME%{Heals 65% of Life & Mana up to a limit}%CONTINUE%
+ItemDisplay[rvl FILTLVL<7]: %DISP_RVL_LOW%{%NAME%}
 ItemDisplay[rvl FILTLVL<11]: %NAME%{%NAME%}
-ItemDisplay[rvl FILTLVL=11]: %PURPLE%GATORADE{%NAME%}
+ItemDisplay[rvl FILTLVL=11]: %PURPLE%%DISP_RVL_MAX%{%NAME%}
 ItemDisplay[rvl (MAPID=161 OR MAPID=162 OR MAPID=163)]: %NAME%{Good Luck on Rathma}
 ItemDisplay[rvl]:
 
-ItemDisplay[rvs]: %WHITE%rejuv{Heals 35% of Life & Mana up to a limit}%CONTINUE%
-ItemDisplay[rvs FILTLVL<5]: %NAME%%PURPLE%35%{%NAME%}
+ItemDisplay[rvs]: %DISP_RVS_NAME%{Heals 35% of Life & Mana up to a limit}%CONTINUE%
+ItemDisplay[rvs FILTLVL<5]: %DISP_RVS_LOW%{%NAME%}
 ItemDisplay[rvs FILTLVL<7]: %NAME%{%NAME%}
-ItemDisplay[rvs FILTLVL=11]: %PURPLE%powerade{%NAME%}
+ItemDisplay[rvs FILTLVL=11]: %DISP_RVS_MAX%{%NAME%}
 ItemDisplay[rvs]:
