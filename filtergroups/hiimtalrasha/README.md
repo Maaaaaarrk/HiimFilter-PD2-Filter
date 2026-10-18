@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated October 15th Season 14 - build 68
+## Last updated October 18th Season 14 - build 74
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -27,62 +27,67 @@ Cube will state current filter version & chosen filter level information.
 
 **Always hidden regardless of level:** Inferior items, ears, small gold piles, junk 10s (after CLVL 80)
 
+**HP5 / MP5 potions are never hidden by filter level** — show or hide them with the in-game potion settings.
+
 * **0: Off** — Filter disabled, all items visible. Use this if you want to see everything or are debugging the filter.
 
-* **1: Base** — Minimal filtering. Recommended for Normal difficulty or new players.
+* **1: Campaign** — Minimal filtering. Recommended for Normal difficulty or new players.
   * Inferior items and absolute junk hidden
   * Everything else visible: all runes, gems, rings, amulets, rares, uniques, charms, pots
   * Tradeoff: busy ground clutter, but zero risk of missing anything valuable, good for speed runners
 
-* **2: Semi-Strict** — Good starting point for Nightmare and early Hell. Cleans up potion and clutter without hiding anything valuable.
+* **2: Campaign-Strict** — Good starting point for Nightmare and early Hell. Cleans up potion and clutter without hiding anything valuable.
   * Throwing potions, stamina, thawing, antidote, and oil potions hidden outside town
   * Staffmod annotations reduced on normal bases
   * Still shows: all runes, all gems, all rings/amulets, all rares, HP/MP pots, leveling items
 
-* **3: Strict** — Recommended for most Hell farming. Hides low-value items that experienced players rarely pick up.
+* **3: Base** — Recommended for most Hell farming. Hides low-value items that experienced players rarely pick up.
   * HP pots 1–4 and MP pots 1–4 hidden
   * Bad Gems hidden (Flawless & Perfect still shown)
   * Magic rings and amulets hidden
   * Most unidentified rares hidden (CLVL 86+)
   * Rune number labels removed from display
-  * Still shows: HP5/MP5, all uniques/sets, high value rares, runes, jewels, charms
+  * Still shows: all uniques/sets, high value rares, runes, jewels, charms
 
-* **4: Strict + No Pots** — Same as level 3 but HP5 and MP5 potions also hidden. Good for characters with life leech or high sustain who don't need to manage potions.
+* **4: Semi-Strict** — Everything from level 3, plus:
+  * Unrated unidentified uniques and sets (no star tier) hidden (CLVL 85+)
 
-* **5: Stricter** — For players comfortable with the game who want a cleaner screen during fast farming.
-  * HP/MP potions restored (back from level 4)
-  * Low-value unidentified sets hidden (0-star tier — uniques of the same tier don't drop off until level 7)
+* **5: Strict** — For players comfortable with the game who want a cleaner screen during fast farming.
+  * NO-star unidentified uniques hidden
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
   * Specific low-value rare bows hidden
   * Tradeoff: you may miss some marginal uniques — use Grail filter if grailing
 
-* **6: Stricter + No Pots** — Everything from level 5, plus HP5 and MP5 hidden. Best for leech builds doing efficient Hell runs.
+* **6: Stricter** — Everything from level 5, plus:
+  * 0-star unidentified uniques and sets hidden; LLD callouts end
+  * ETH uniques/sets and elite uniques no longer shown regardless of tier
+  * Unidentified set rings and amulets lose their tier callout (still shown)
+  * Normal Matriarchal / Grand Matron Bows with +3 Bow skills and under 15% ED hidden
 
 * **7: Extremely Strict** — For experienced endgame players. Significantly reduces ground clutter at the cost of hiding some niche items.
   * Bad-rolled charms hidden on ground
-  * Most unidentified uniques and sets hidden (only high-tiers shown)
+  * Small rejuvs hidden
+  * 1-star unidentified uniques and sets hidden (2-star and up shown)
   * ETH rare armor (chests) hidden; non-ETH rare gloves, boots, and belts hidden; Chests (ALVL<85) hidden
   * Class-specific items hidden: sorc orbs, druid pelts, paladin shields, magic necro heads (barb helms already hidden since level 5; rare necro heads not hidden until level 9)
   * Magic jewel decorations reduced, low rune decorations removed
   * Still shows: high-star uniques/sets, GG rares, HR runes, good charms, jewels
 
-* **8: High Roller** — Built for players farming high-end content where low-value pickups waste time. Assumes self-sustain (no pots needed).
-  * Small rejuvs hidden
+* **8: Extremely Strict+** — Everything from level 7, trimmed further for players farming high-end content where low-value pickups waste time.
+  * 2-star unidentified uniques and sets hidden
   * Rare rings hidden
   * Flawless gems and magic jewels hidden
-  * Tradeoff: you will walk past small rejuvs — intentional for speed
 
-* **9: 3 Minute Mapper + Rejuvs** — Aggressive map-running level. Full rejuvs still shown for safety; most other clutter gone.
-  * Rejuvs shown
+* **9: High Roller** — Aggressive map-running level. Full rejuvs still shown for safety; most other clutter gone.
   * Low runes (El–Lum) hidden outside town
   * Rare necro heads, rare boots, and rare chests hidden
   * Grand charms heavily reduced (only notable rolls shown)
   * Tradeoff: you will walk past low runes — only consider this filter if you would double back for a WSS
 
-* **10: 3 Minute Mapper** — Maximum speed farming. Almost nothing shows outside of high-value items.
-  * Rejuvs hidden
-  * Tradeoff: no safety net on potions — best for group play or near-immortal builds
+* **10: 3 Minute Mapper** — Everything from level 9, plus:
+  * 3-star unidentified uniques and sets hidden (only 4-star shown)
+  * Crafting, class and LLD filters: low runes (below Pul) hidden outside town
 
 * **11: No Items Out of Town** — Extreme clutter removal. Almost nothing shows outside of town.
   * Only desecrated items, slammed items, and runeword bases visible outside town - in case of miss click
@@ -97,7 +102,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 *None.* All unidentified uniques outside town are hidden.
 
-### Level 10-9 — 4-star uniques
+### Level 10 — 4-star uniques
 
 - Aetherwing (Razor Arrows)
 - Alma Negra (Sacred Rondache)
@@ -163,7 +168,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Windforce (Hydra Bow)
 - Zerae's Resolve (Matriarchal Pike) — ETH
 
-### Level 8 — adds 3-star uniques
+### Level 9-8 — adds 3-star uniques
 
 - Abyssal Ward (War Bolts)
 - Arachnid Mesh (Spiderweb Sash) — ETH
@@ -295,9 +300,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Wildspeaker (Lion Helm)
 - Windhammer (Ogre Maul)
 
-### Level 6-5 — adds 1-star, 0-star, and NO-star uniques
-
-**1-star:**
+### Level 6 — adds 1-star uniques
 
 - Biggin's Bonnet (Cap)
 - Black Hades (Chaos Armor)
@@ -336,7 +339,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Witchwild String (Short Siege Bow)
 - Wizardspike (Bone Knife)
 
-**0-star:**
+### Level 5 — adds 0-star uniques
 
 - Blackbog's Sharp (Cinquedeas)
 - Bloodtree Stump (War Club) — non-ETH
@@ -349,7 +352,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Wizendraw (Long Battle Bow)
 - Wolfhowl (Fury Visor)
 
-**NO-star:**
+### Level 4 — adds NO-star uniques
 
 - Baezil's Vortex (Knout)
 - Blackoak Shield (Luna)
@@ -362,7 +365,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Impaler (War Spear)
 - Warlord's Trust (Military Axe) — non-ETH
 
-### Level 1-4 — most permissive
+### Level 1-3 — most permissive
 
 *All uniques are shown.*
 
