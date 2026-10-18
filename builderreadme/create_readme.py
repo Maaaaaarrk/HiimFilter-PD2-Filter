@@ -20,8 +20,8 @@ STYLES_PAGE = os.path.join(FILTERGROUPS_DIR, "HIIM_STYLES.md")
 
 # README sections, best -> worst; each lists the uniques whose base first shows at that level.
 LEVEL_SECTIONS = [
-    ("4", "Level 10-9 — 4-star uniques"),
-    ("3", "Level 8 — adds 3-star uniques"),
+    ("4", "Level 10 — 4-star uniques"),
+    ("3", "Level 9-8 — adds 3-star uniques"),
     ("2", "Level 7 — adds 2-star uniques"),
     ("1", "1-star"), ("0", "0-star"), ("no-star", "NO-star"),
 ]
