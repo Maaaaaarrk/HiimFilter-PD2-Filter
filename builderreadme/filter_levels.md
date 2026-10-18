@@ -49,17 +49,17 @@ Cube will state current filter version & chosen filter level information.
   * Magic jewel decorations reduced, low rune decorations removed
   * Still shows: high-star uniques/sets, GG rares, HR runes, good charms, jewels
 
-* **8: High Roller** — Built for players farming high-end content where low-value pickups waste time. Assumes self-sustain (no pots needed).
+* **8: Extremely Strict+** — Everything from level 7, trimmed further for players farming high-end content where low-value pickups waste time.
   * Rare rings hidden
   * Flawless gems and magic jewels hidden
 
-* **9: 3 Minute Mapper** — Aggressive map-running level. Full rejuvs still shown for safety; most other clutter gone.
+* **9: High Roller** — Aggressive map-running level. Full rejuvs still shown for safety; most other clutter gone.
   * Low runes (El–Lum) hidden outside town
   * Rare necro heads, rare boots, and rare chests hidden
   * Grand charms heavily reduced (only notable rolls shown)
   * Tradeoff: you will walk past low runes — only consider this filter if you would double back for a WSS
 
-* **10: 3 Minute Mapper+** — Currently the same as level 9 in the standard filter.
+* **10: 3 Minute Mapper** — Currently the same as level 9 in the standard filter.
   * Crafting, class and LLD filters: low runes (below Pul) hidden outside town
 
 * **11: No Items Out of Town** — Extreme clutter removal. Almost nothing shows outside of town.
