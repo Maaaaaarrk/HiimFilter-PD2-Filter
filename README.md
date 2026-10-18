@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 18th Season 14 - build 69
+## Last updated October 18th Season 14 - build 70
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -101,7 +101,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 *None.* All unidentified uniques outside town are hidden.
 
-### Level 10-9 — 4-star uniques
+### Level 10 — 4-star uniques
 
 - Aetherwing (Razor Arrows)
 - Alma Negra (Sacred Rondache)
@@ -167,7 +167,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Windforce (Hydra Bow)
 - Zerae's Resolve (Matriarchal Pike) — ETH
 
-### Level 8 — adds 3-star uniques
+### Level 9-8 — adds 3-star uniques
 
 - Abyssal Ward (War Bolts)
 - Arachnid Mesh (Spiderweb Sash) — ETH

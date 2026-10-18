@@ -1,5 +1,5 @@
 # phil777
-## Last updated October 18th Season 14 - build 69
+## Last updated October 18th Season 14 - build 70
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -102,7 +102,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 *None.* All unidentified uniques outside town are hidden.
 
-### Level 10-9 — 4-star uniques
+### Level 10 — 4-star uniques
 
 - Aetherwing (Razor Arrows)
 - Alma Negra (Sacred Rondache)
@@ -168,7 +168,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Windforce (Hydra Bow)
 - Zerae's Resolve (Matriarchal Pike) — ETH
 
-### Level 8 — adds 3-star uniques
+### Level 9-8 — adds 3-star uniques
 
 - Abyssal Ward (War Bolts)
 - Arachnid Mesh (Spiderweb Sash) — ETH
