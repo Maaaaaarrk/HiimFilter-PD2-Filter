@@ -44,9 +44,11 @@ def load_config():
     text = _LINE_COMMENT.sub("", text)
     data = json.loads(text)
     beta_exclude = set(data.get("beta_exclude", []))
-    for entry in data["filters"]:
+    paused = set(data.get("paused_filterdirs", []))
+    filters = [e for e in data["filters"] if e.get("filterdir") not in paused]
+    for entry in filters:
         entry["_beta"] = data.get("beta", False) and entry.get("filterdir") not in beta_exclude
-    return data["filters"], data.get("groups", {})
+    return filters, data.get("groups", {})
 
 
 def output_dir_for(entry):
