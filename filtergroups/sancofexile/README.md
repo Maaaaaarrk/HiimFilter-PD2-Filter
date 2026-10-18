@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated October 18th Season 14 - build 70
+## Last updated October 18th Season 14 - build 71
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -45,29 +45,32 @@ Cube will state current filter version & chosen filter level information.
   * Rune number labels removed from display
   * Still shows: all uniques/sets, high value rares, runes, jewels, charms
 
-* **4: Strict+** — Currently the same as level 3. It used to hide HP5/MP5, which the in-game potion settings now control.
+* **4: Strict+** — Everything from level 3, plus:
+  * Unrated unidentified uniques and sets (no star tier) hidden (CLVL 85+)
 
 * **5: Stricter** — For players comfortable with the game who want a cleaner screen during fast farming.
-  * Low-value unidentified sets hidden (0-star tier — uniques of the same tier don't drop off until level 7)
+  * NO-star unidentified uniques hidden
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
   * Specific low-value rare bows hidden
   * Tradeoff: you may miss some marginal uniques — use Grail filter if grailing
 
 * **6: Stricter+** — Everything from level 5, plus:
+  * 0-star unidentified uniques and sets hidden; LLD callouts end
   * Unidentified set rings and amulets lose their tier callout (still shown)
   * Normal Matriarchal / Grand Matron Bows with +3 Bow skills and under 15% ED hidden
 
 * **7: Extremely Strict** — For experienced endgame players. Significantly reduces ground clutter at the cost of hiding some niche items.
   * Bad-rolled charms hidden on ground
   * Small rejuvs hidden
-  * Most unidentified uniques and sets hidden (only high-tiers shown)
+  * 1-star unidentified uniques and sets hidden (2-star and up shown); ETH and elite uniques no longer shown regardless of tier
   * ETH rare armor (chests) hidden; non-ETH rare gloves, boots, and belts hidden; Chests (ALVL<85) hidden
   * Class-specific items hidden: sorc orbs, druid pelts, paladin shields, magic necro heads (barb helms already hidden since level 5; rare necro heads not hidden until level 9)
   * Magic jewel decorations reduced, low rune decorations removed
   * Still shows: high-star uniques/sets, GG rares, HR runes, good charms, jewels
 
 * **8: Extremely Strict+** — Everything from level 7, trimmed further for players farming high-end content where low-value pickups waste time.
+  * 2-star unidentified uniques and sets hidden
   * Rare rings hidden
   * Flawless gems and magic jewels hidden
 
@@ -77,7 +80,8 @@ Cube will state current filter version & chosen filter level information.
   * Grand charms heavily reduced (only notable rolls shown)
   * Tradeoff: you will walk past low runes — only consider this filter if you would double back for a WSS
 
-* **10: 3 Minute Mapper** — Currently the same as level 9 in the standard filter.
+* **10: 3 Minute Mapper** — Everything from level 9, plus:
+  * 3-star unidentified uniques and sets hidden (only 4-star shown)
   * Crafting, class and LLD filters: low runes (below Pul) hidden outside town
 
 * **11: No Items Out of Town** — Extreme clutter removal. Almost nothing shows outside of town.
@@ -291,9 +295,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Wildspeaker (Lion Helm)
 - Windhammer (Ogre Maul)
 
-### Level 6-5 — adds 1-star, 0-star, and NO-star uniques
-
-**1-star:**
+### Level 6 — adds 1-star uniques
 
 - Biggin's Bonnet (Cap)
 - Black Hades (Chaos Armor)
@@ -332,7 +334,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Witchwild String (Short Siege Bow)
 - Wizardspike (Bone Knife)
 
-**0-star:**
+### Level 5 — adds 0-star uniques
 
 - Blackbog's Sharp (Cinquedeas)
 - Bloodtree Stump (War Club) — non-ETH
@@ -345,7 +347,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Wizendraw (Long Battle Bow)
 - Wolfhowl (Fury Visor)
 
-**NO-star:**
+### Level 4 — adds NO-star uniques
 
 - Baezil's Vortex (Knout)
 - Blackoak Shield (Luna)
@@ -358,7 +360,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Impaler (War Spear)
 - Warlord's Trust (Military Axe) — non-ETH
 
-### Level 1-4 — most permissive
+### Level 1-3 — most permissive
 
 *All uniques are shown.*
 
