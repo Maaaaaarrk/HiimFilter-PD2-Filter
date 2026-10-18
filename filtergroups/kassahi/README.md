@@ -1,5 +1,5 @@
 # kassahi
-## Last updated October 18th Season 14 - build 72
+## Last updated October 18th Season 14 - build 73
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -24,17 +24,17 @@ Cube will state current filter version & chosen filter level information.
 
 * **0: Off** — Filter disabled, all items visible. Use this if you want to see everything or are debugging the filter.
 
-* **1: Base** — Minimal filtering. Recommended for Normal difficulty or new players.
+* **1: Campaign** — Minimal filtering. Recommended for Normal difficulty or new players.
   * Inferior items and absolute junk hidden
   * Everything else visible: all runes, gems, rings, amulets, rares, uniques, charms, pots
   * Tradeoff: busy ground clutter, but zero risk of missing anything valuable, good for speed runners
 
-* **2: Semi-Strict** — Good starting point for Nightmare and early Hell. Cleans up potion and clutter without hiding anything valuable.
+* **2: Campaign-Strict** — Good starting point for Nightmare and early Hell. Cleans up potion and clutter without hiding anything valuable.
   * Throwing potions, stamina, thawing, antidote, and oil potions hidden outside town
   * Staffmod annotations reduced on normal bases
   * Still shows: all runes, all gems, all rings/amulets, all rares, HP/MP pots, leveling items
 
-* **3: Strict** — Recommended for most Hell farming. Hides low-value items that experienced players rarely pick up.
+* **3: Base** — Recommended for most Hell farming. Hides low-value items that experienced players rarely pick up.
   * HP pots 1–4 and MP pots 1–4 hidden
   * Bad Gems hidden (Flawless & Perfect still shown)
   * Magic rings and amulets hidden
@@ -42,17 +42,17 @@ Cube will state current filter version & chosen filter level information.
   * Rune number labels removed from display
   * Still shows: all uniques/sets, high value rares, runes, jewels, charms
 
-* **4: Strict+** — Everything from level 3, plus:
+* **4: Semi-Strict** — Everything from level 3, plus:
   * Unrated unidentified uniques and sets (no star tier) hidden (CLVL 85+)
 
-* **5: Stricter** — For players comfortable with the game who want a cleaner screen during fast farming.
+* **5: Strict** — For players comfortable with the game who want a cleaner screen during fast farming.
   * NO-star unidentified uniques hidden
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
   * Specific low-value rare bows hidden
   * Tradeoff: you may miss some marginal uniques — use Grail filter if grailing
 
-* **6: Stricter+** — Everything from level 5, plus:
+* **6: Stricter** — Everything from level 5, plus:
   * 0-star unidentified uniques and sets hidden; LLD callouts end
   * ETH uniques/sets and elite uniques no longer shown regardless of tier
   * Unidentified set rings and amulets lose their tier callout (still shown)
