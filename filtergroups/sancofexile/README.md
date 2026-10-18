@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated October 18th Season 14 - build 71
+## Last updated October 18th Season 14 - build 72
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -57,13 +57,14 @@ Cube will state current filter version & chosen filter level information.
 
 * **6: Stricter+** — Everything from level 5, plus:
   * 0-star unidentified uniques and sets hidden; LLD callouts end
+  * ETH uniques/sets and elite uniques no longer shown regardless of tier
   * Unidentified set rings and amulets lose their tier callout (still shown)
   * Normal Matriarchal / Grand Matron Bows with +3 Bow skills and under 15% ED hidden
 
 * **7: Extremely Strict** — For experienced endgame players. Significantly reduces ground clutter at the cost of hiding some niche items.
   * Bad-rolled charms hidden on ground
   * Small rejuvs hidden
-  * 1-star unidentified uniques and sets hidden (2-star and up shown); ETH and elite uniques no longer shown regardless of tier
+  * 1-star unidentified uniques and sets hidden (2-star and up shown)
   * ETH rare armor (chests) hidden; non-ETH rare gloves, boots, and belts hidden; Chests (ALVL<85) hidden
   * Class-specific items hidden: sorc orbs, druid pelts, paladin shields, magic necro heads (barb helms already hidden since level 5; rare necro heads not hidden until level 9)
   * Magic jewel decorations reduced, low rune decorations removed
