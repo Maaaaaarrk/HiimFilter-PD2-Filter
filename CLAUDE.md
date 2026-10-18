@@ -4,6 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Working With the User
 
+- **Keep PR descriptions minimal.** A one-line summary is enough; don't write long PR bodies or keep rewriting them as the branch grows. The diff and commit messages are the record.
 - **Never end a reply with a question in prose.** Whenever you are waiting on the user — a decision, a choice between options, a confirmation, or any open question — ask it with the `AskUserQuestion` tool instead of writing the question in the response text.
 
 ## Project Overview
