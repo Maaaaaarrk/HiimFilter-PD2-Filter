@@ -23,7 +23,9 @@ LEVEL_SECTIONS = [
     ("4", "Level 10 — 4-star uniques"),
     ("3", "Level 9-8 — adds 3-star uniques"),
     ("2", "Level 7 — adds 2-star uniques"),
-    ("1", "1-star"), ("0", "0-star"), ("no-star", "NO-star"),
+    ("1", "Level 6 — adds 1-star uniques"),
+    ("0", "Level 5 — adds 0-star uniques"),
+    ("no-star", "Level 4 — adds NO-star uniques"),
 ]
 
 
@@ -69,20 +71,12 @@ def build_uniques_by_level_section():
     lines.append("")
     lines.append("*None.* All unidentified uniques outside town are hidden.")
     lines.append("")
-    for tier, title in LEVEL_SECTIONS[:3]:
+    for tier, title in LEVEL_SECTIONS:
         lines.append(f"### {title}")
         lines.append("")
         lines.append(bullets(tiers[tier]))
         lines.append("")
-    lines.append("### Level 6-5 — adds 1-star, 0-star, and NO-star uniques")
-    lines.append("")
-    for tier, title in LEVEL_SECTIONS[3:]:
-        if tiers[tier]:
-            lines.append(f"**{title}:**")
-            lines.append("")
-            lines.append(bullets(tiers[tier]))
-            lines.append("")
-    lines.append("### Level 1-4 — most permissive")
+    lines.append("### Level 1-3 — most permissive")
     lines.append("")
     lines.append("*All uniques are shown.*")
     lines.append("")
