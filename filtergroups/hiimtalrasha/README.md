@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated October 19th Season 14 - build 78
+## Last updated October 19th Season 14 - build 79
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -44,7 +44,7 @@ Cube will state current filter version & chosen filter level information.
 * **3: Base** — Recommended for most Hell farming. Hides low-value items that experienced players rarely pick up.
   * HP pots 1–4 and MP pots 1–4 hidden
   * Bad Gems hidden (Flawless & Perfect still shown)
-  * Magic rings and amulets hidden
+  * Magic rings hidden
   * Most unidentified rares hidden (CLVL 86+)
   * Rune number labels removed from display
   * Still shows: all uniques/sets, high value rares, runes, jewels, charms
@@ -53,6 +53,7 @@ Cube will state current filter version & chosen filter level information.
   * Unrated unidentified uniques and sets (no star tier) hidden (CLVL 85+)
 
 * **5: Strict** — For players comfortable with the game who want a cleaner screen during fast farming.
+  * Magic amulets hidden
   * NO-star unidentified uniques hidden
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
