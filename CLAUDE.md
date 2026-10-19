@@ -110,7 +110,7 @@ Exit code is non-zero if any errors are found, which blocks the CI commit step.
 - `.github/workflows/build-filters.yml` — full build pipeline
 - `version.txt` — auto-incremented build number
 - `builderfilter/` — all source filter segments
-- `builderfilter/filters.json` — filter definitions, beta flag, and `beta_exclude` (filterdirs that skip beta builds, e.g. `sancofexile`)
+- `builderfilter/filters.json` — filter definitions, beta flag, `beta_exclude` (filterdirs that skip beta builds) and `paused_filterdirs` (filterdirs `build.py` skips entirely, definitions and segments kept; `sancofexile` is paused — remove it from the list and rebuild to re-enable)
 - `builderfilter/build.py` — local/CI build script (resolves tags, concatenates segments; regenerates the star-tier aliases)
 - `builderfilter/data/unique-set-tiers.json` — unique / set star tiers (current + floor per item); `builderfilter/tier_aliases.py` turns it into the tier aliases
 - `validate_filters.py` — filter linter/QA (required to pass)
