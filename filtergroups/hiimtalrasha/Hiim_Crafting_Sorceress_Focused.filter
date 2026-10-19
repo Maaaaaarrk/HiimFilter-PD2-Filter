@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 19th%CL%Season 14 - build 78%CL%HiimFilter - TalRasha - Sorc - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 19th%CL%Season 14 - build 80%CL%HiimFilter - TalRasha - Sorc - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -29,7 +29,7 @@ ItemDisplay[box]: %NAME%{%NAME%}%MAP-58%
 ItemDisplay[FILTLVL=0 (hp1 OR hp2 OR hp3 OR hp4 OR hp5 OR mp1 OR mp2 OR mp3 OR mp4 OR mp5)]: %NAME% - Filter is off{%NAME%%NL%%RED%> > > FILTER IS DISABLED < < <}
 ItemDisplay[FILTLVL=0]: %NAME%{%NAME%}
 ItemDisplay[amu STAT206>0 (MAPID=188 OR MAPID=189)]: %MAP-58%%BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>   %RED%Amulet   %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%> %BLACK%<%RED%!%BLACK%>%CL%%ORANGE%Did it live?{%NAME%}
-ItemDisplay[INF PRICE=1 DIFF<1]: %NAME%{%BLACK%~%CL%%BLUE%tinyurl.com/HiimPD2%CL%%BLACK%~%CL%%GOLD%Hiim Mapping Build Tier Lists:%CL%%BLACK%~%CL%%NAME%}%CONTINUE%
+ItemDisplay[INF PRICE=1 DIFF<1]: %NAME%{%BLACK%~%CL%%BLUE%HiimPD2.com%CL%%BLACK%~%CL%%GOLD%Hiim Mapping Build Tier Lists:%CL%%BLACK%~%CL%%NAME%}%CONTINUE%
 ItemDisplay[(ARMOR OR WEAPON) INF !SHOP !(SWORD SOCK=4)]:{%NAME%}
 ItemDisplay[ear]:
 ItemDisplay[NMAG ID (ARMOR OR WEAPON) SOCK=1 !leg CLVL>80]:
@@ -1508,7 +1508,7 @@ ItemDisplay[RARE MAPTIER=2 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MA
 ItemDisplay[RARE MAPTIER=1 STAT360=0 !($f(MAP_XP_SCORE)>MAP_XP_T1_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%NAME%%NL%%WHITE%Cube: %YELLOW%This Map + %WHITE%Perfect Gem + %ORANGE%Rune + %GOLD%Horadric Orb%NL%%WHITE%> > > RE-ROLL THIS MAP < < <%NL%}
 ItemDisplay[MAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4) !($f(MAP_XP_SCORE)>MAP_XP_T2_ROLLS OR $f(MAP_MF_SCORE)>MAP_MF_T21_ROLLS OR $f(MAP_CRAFT_SCORE)>MAP_MF_T21_ROLLS)]: %NAME%%CONTINUE%{%CL%%BLUE%This Map %WHITE%+ %GOLD%Angelic Orb %WHITE%+ %WHITE%Any PGem %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%BLUE%This Map %WHITE%+ %GOLD%Orb of Destruction%CL%%PURPLE%Convert to %WHITE%Stackable %PURPLE%Map%CL%%NAME%}
 ItemDisplay[NMAG (MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4)]: %NAME%%CONTINUE%{%CL%%WHITE%This Map + %GOLD%Zakarum Orb + %BLUE%Jewel %WHITE%+ %ORANGE%Rune%CL%%PURPLE%Convert to %YELLOW%Rare %PURPLE%Map%CL%%NAME%}
-ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%tinyurl.com/HiimPD2%CL%%WHITE%Map Guides:%NL%%CL%%NAME%}%CONTINUE%
+ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3)]: %NAME%{%BLUE%HiimPD2.com%CL%%WHITE%Map Guides:%NL%%CL%%NAME%}%CONTINUE%
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62)]: %NAME%{%NAME%}
 ItemDisplay[GEM~1-3 (FILTLVL=1 OR DIFF<2) FILTLVL<3]: %NAME%{%NAME%}
 ItemDisplay[GEM~1-3 (FILTLVL>2 OR DIFF>1)]:
@@ -1744,8 +1744,8 @@ ItemDisplay[QUIVER NMAG SOCK<2]:
 ItemDisplay[QUIVER MAG !ID FILTLVL<7]:%NAME%
 ItemDisplay[QUIVER MAG !ID]:
 ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%NAME%
-ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %MAG_ITEM%
-ItemDisplay[MAG (rin OR amu) !ID FILTLVL<3]: %MAG_ITEM%
+ItemDisplay[MAG amu !ID FILTLVL<5]: %MAG_ITEM%
+ItemDisplay[MAG rin !ID FILTLVL<3]: %MAG_ITEM%
 ItemDisplay[MAG amu !ID MAPID=83 FILTLVL<7]: %NAME%%TIER-2%
 ItemDisplay[MAG amu !ID (MAPID=181 OR MAPID=182)]: %NAME%%TIER-2%
 ItemDisplay[RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %RARE_HIGH_ITEM%
