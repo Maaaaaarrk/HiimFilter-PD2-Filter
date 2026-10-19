@@ -799,7 +799,10 @@
       "Kassahi-Mystery-Hyper"
     ]
   },
-  "beta": true,
+  "beta": false,
   // filterdirs that keep building their normal (non-beta) files while beta is on
-  "beta_exclude": ["sancofexile"]
+  "beta_exclude": ["sancofexile"],
+  // filterdirs not built at all (entries and segments kept so they can be re-enabled).
+  // sancofexile: a mod of a mod, paused until it's ready
+  "paused_filterdirs": ["sancofexile"]
 }
