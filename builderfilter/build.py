@@ -37,12 +37,20 @@ def update_version():
 _LINE_COMMENT = re.compile(r"//[^\n]*")
 
 
-def load_config():
+def _read_config():
     """Read filters.json. Supports JSONC-style // line comments for section markers."""
     with open(os.path.join(SCRIPT_DIR, "filters.json"), encoding="utf-8") as f:
         text = f.read()
-    text = _LINE_COMMENT.sub("", text)
-    data = json.loads(text)
+    return json.loads(_LINE_COMMENT.sub("", text))
+
+
+def paused_filterdirs():
+    """filterdirs that are not built; their published files under filtergroups/ are left as they are."""
+    return set(_read_config().get("paused_filterdirs", []))
+
+
+def load_config():
+    data = _read_config()
     beta_exclude = set(data.get("beta_exclude", []))
     paused = set(data.get("paused_filterdirs", []))
     filters = [e for e in data["filters"] if e.get("filterdir") not in paused]
