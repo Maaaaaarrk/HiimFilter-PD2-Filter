@@ -15,6 +15,7 @@ FILTERGROUPS_DIR  = os.path.join(ROOT_DIR, "filtergroups")
 # Star tiers come from builderfilter/data/unique-set-tiers.json (via builderfilter/tier_aliases.py).
 sys.path.insert(0, os.path.join(ROOT_DIR, "builderfilter"))
 import tier_aliases  # noqa: E402
+import build  # noqa: E402
 
 STYLES_PAGE = os.path.join(FILTERGROUPS_DIR, "HIIM_STYLES.md")
 
@@ -224,9 +225,10 @@ def main():
                       preview_section(None, "filtergroups/HIIM_STYLES.md"))
 
     if os.path.isdir(FILTERGROUPS_DIR):
+        paused = build.paused_filterdirs()  # paused groups keep their published README
         for group in sorted(os.listdir(FILTERGROUPS_DIR)):
             sub = os.path.join(FILTERGROUPS_DIR, group)
-            if os.path.isdir(sub):
+            if os.path.isdir(sub) and group not in paused:
                 preview = preview_section(group, "../HIIM_STYLES.md") if group in PREVIEWS else ""
                 write_bucket_readme(sub, version_str, filter_levels, uniques_by_level, preview)
         write_styles_page(version_str)
