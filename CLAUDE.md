@@ -116,7 +116,7 @@ Exit code is non-zero if any errors are found, which blocks the CI commit step.
 
 ## hiimpd2.com Filters Page: Unid Rares
 
-The Unidentified rares card on https://hiimpd2.com/filters is a hand-made copy of the unidentified rare rules in `builderfilter/06-unidfiltering/12-Unid_MagRare[ALL].filter`, as they apply to the main `Hiim` filter: the last filter level each kind of unid rare still shows on (level 5 and up), with its CLVL / ILVL / ALVL (affix level) conditions. It does not update itself. When a change here moves a rare group to another level, adds or removes a group, or changes those conditions, also update `src/features/filters/rares.ts` in the `Maaaaaarrk/Hiim-PD2` site repo (check the levels with the label checker, `builderreadme/filterrender/engine.py`). The unique and set tiers on that page are read live from `builderfilter/data/unique-set-tiers.json` and need no site change.
+The Unidentified rares card on https://hiimpd2.com/filters is a hand-made copy of the unidentified rare rules in `builderfilter/06-unidfiltering/12-Unid_MagRare[ALL].filter`, as they apply to the main `Hiim` filter: the last filter level each kind of unid rare still shows on (level 4 and up; levels 1-2 show every unid rare and level 3 the same as level 4), with its CLVL / ILVL / ALVL (affix level) conditions. It does not update itself. When a change here moves a rare group to another level, adds or removes a group, or changes those conditions, also update `src/features/filters/rares.ts` in the `Maaaaaarrk/Hiim-PD2` site repo (check the levels with the label checker, `builderreadme/filterrender/engine.py`). The unique and set tiers on that page are read live from `builderfilter/data/unique-set-tiers.json` and need no site change.
 
 ## Key Files
 
