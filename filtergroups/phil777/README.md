@@ -1,5 +1,5 @@
 # phil777
-## Last updated October 22nd Season 14 - build 85
+## Last updated October 22nd Season 14 - build 86
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -133,7 +133,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Griffon's Eye (Diadem)
 - Guardian Angel (Templar Coat) — ETH
 - Herald of Zakarum (Gilded Shield)
-- Kira's Guardian (Tiara) — non-ETH
 - Lacerator (Winged Axe) — ETH
 - Lightsabre (Phase Blade)
 - Mang Song's Lesson (Archon Staff)
@@ -197,6 +196,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Infernostride (Demonhide Boots)
 - Jade Talon (Wrist Sword)
 - Jalal's Mane (Totemic Mask)
+- Kira's Guardian (Tiara) — non-ETH
 - Lava Gout (Battle Gauntlets)
 - Lidless Wall (Grim Shield)
 - Magefist (Light Gauntlets)
