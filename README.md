@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 22nd Season 14 - build 88
+## Last updated October 23rd Season 14 - build 89
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -301,6 +301,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Tombsong (Sharp Arrows)
 - Treads of Cthon (Chain Boots)
 - Venom Grip (Demonhide Gloves)
+- Warshrike (Winged Knife)
 - Widowmaker (Ward Bow)
 - Wildspeaker (Lion Helm)
 - Windhammer (Ogre Maul)
