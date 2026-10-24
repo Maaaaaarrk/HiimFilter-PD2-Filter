@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 23rd Season 14 - build 90
+## Last updated October 24th Season 14 - build 91
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -264,6 +264,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Goldwrap (Heavy Belt)
 - Gravepalm (Sharkskin Gloves)
 - Grim's Burning Dead (Grim Scythe)
+- Gut Siphon (Demon Crossbow)
 - Head Hunter's Glory (Troll Nest)
 - Heart Carver (Rondel)
 - Heavenly Garb (Light Plate)
