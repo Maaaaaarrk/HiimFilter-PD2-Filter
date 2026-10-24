@@ -11,9 +11,8 @@
 
 //-----------------------------------------------------------------------------------
 // KASSAHI FAMILY VARIANTS: Phil777 values for aliases used only by Kassahi segments.
-// Kept first: the game expands aliases in file order, so an alias whose value uses
-// another (RUNE_LOW_STRICT -> RUNE_LOW) or whose name starts with one (RUNE_LOW_RANGE)
-// has to come before it.
+// Kept first: the game expands aliases in file order, so an alias
+// whose name starts with another (RUNE_LOW_RANGE / RUNE_LOW) has to come before it.
 // The Kassahi-bucket values are in 02-alias/02-alias-site-fx[ONLY=KassahiStd] (same names).
 //-----------------------------------------------------------------------------------
 Alias[PHIL777_STYLE]: TRUE
@@ -22,10 +21,11 @@ Alias[QTY_TAG]: %TAN%x%QTY%
 Alias[SLAMMED_TAG]: Ⓒ
 Alias[DESECRATED_TAG]: %GOLD%[D]
 Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
-// Runes: El-Lem framed as low; no separate strict / top-high frames
+// Runes: El-Lem framed as low
 Alias[RUNE_LOW_RANGE]: (RUNE<21)
-Alias[RUNE_LOW_STRICT]: %RUNE_LOW%
-Alias[RUNE_TOP_HIGH]: %RUNE_ALT_HIGH%
+// Unused here (the rune rules that show them are gated on !PHIL777_STYLE)
+Alias[RUNE_LOW_STRICT]: %NAME%
+Alias[RUNE_TOP_HIGH]: %NAME%
 // Mystery names
 Alias[MYSTERY_COLOR]: %PURPLE%
 Alias[MYSTERY_TOP_NAME]: Big Mystery

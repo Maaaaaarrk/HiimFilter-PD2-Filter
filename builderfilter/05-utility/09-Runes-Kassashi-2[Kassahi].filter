@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------------
 // KASSAHI RUNES (Kassahi bucket + Phil777)
 // Style differences are aliases: PHIL777_STYLE (TRUE only for Phil777) gates the rules only
-// one style uses; RUNE_LOW_RANGE / RUNE_LOW_STRICT / RUNE_TOP_HIGH carry per-style values.
+// one style uses; RUNE_LOW_RANGE carries per-style values.
 // Phil777 values: 02-alias/03-alias-kassahi-luxe. Kassahi bucket: 02-alias/02-alias-site-fx[ONLY=KassahiStd].
 //-----------------------------------------------------------------------------------
 
@@ -21,9 +21,9 @@ ItemDisplay[RUNE>0 QTY>1 QTY<51 PHIL777_STYLE]: %NAME% %QTY_TAG%%CONTINUE%{%NAME
 // Low rune frames. RUNE_LOW_RANGE: Phil777 = El-Lem (1-20); Kassahi bucket = El-Fal (1-19, Lem is RUNE_MID_LOW below).
 // Valuable Crafting rune callout - set defined as CRAFTING_RUNES_SET in 02-alias/04-alias-economy-values
 ItemDisplay[RUNE_LOW_RANGE CRAFTING_RUNES_SET]: %RUNE_CRAFT%%CONTINUE%
-// Filter level 9+: RUNE_LOW_STRICT (Kassahi bucket: no frame, number only; Phil777: same as RUNE_LOW)
-ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL<9]: %RUNE_LOW%%CONTINUE%
-ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL>8]: %RUNE_LOW_STRICT%%CONTINUE%
+// Filter level 9+: RUNE_LOW_STRICT (Kassahi bucket only: no frame, number only)
+ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET (FILTLVL<9 OR PHIL777_STYLE)]: %RUNE_LOW%%CONTINUE%
+ItemDisplay[RUNE_LOW_RANGE !CRAFTING_RUNES_SET FILTLVL>8 !PHIL777_STYLE]: %RUNE_LOW_STRICT%%CONTINUE%
 
 // Mid rune — LEM PUL (RUNE_MID_LOW), UM MAL (RUNE_MID), IST GUL (RUNE_ALT_MID)
 ItemDisplay[RUNE>19 AND RUNE<22]: %RUNE_MID_LOW%%CONTINUE%
@@ -33,10 +33,9 @@ ItemDisplay[RUNE>23 AND RUNE<26]: %RUNE_ALT_MID%%CONTINUE%
 ItemDisplay[RUNE>25 RUNE<29]: %RUNE_HIGH%%CONTINUE%
 
 // High rune Tier 2 — Sur/Jah/Cham (29, 31, 32)
-ItemDisplay[RUNE=29 OR RUNE=31 OR RUNE=32]: %RUNE_ALT_HIGH%%CONTINUE%
+ItemDisplay[RUNE=29 OR RUNE=31 OR RUNE=32 OR ((RUNE=30 OR RUNE=33) PHIL777_STYLE)]: %RUNE_ALT_HIGH%%CONTINUE%
 // High rune Tier 3 — Ber/Zod (30, 33)
-ItemDisplay[RUNE=30 OR RUNE=33]: %RUNE_TOP_HIGH%%CONTINUE%
-// (Phil777 defines RUNE_TOP_HIGH = RUNE_ALT_HIGH, so Sur-Zod share one frame there.)
+ItemDisplay[(RUNE=30 OR RUNE=33) !PHIL777_STYLE]: %RUNE_TOP_HIGH%%CONTINUE%
 
 //------------------------------Runes-tooltip------------------------------
 // El-Ko crafting tooltips (issue #981). Placed after every rune name/frame rule so the
