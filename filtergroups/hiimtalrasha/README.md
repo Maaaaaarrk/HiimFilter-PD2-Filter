@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated October 23rd Season 14 - build 90
+## Last updated October 24th Season 14 - build 91
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -260,6 +260,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Goldwrap (Heavy Belt)
 - Gravepalm (Sharkskin Gloves)
 - Grim's Burning Dead (Grim Scythe)
+- Gut Siphon (Demon Crossbow)
 - Head Hunter's Glory (Troll Nest)
 - Heart Carver (Rondel)
 - Heavenly Garb (Light Plate)
