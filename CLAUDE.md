@@ -123,7 +123,7 @@ The Unidentified rares card on https://hiimpd2.com/filters is a hand-made copy o
 - `.github/workflows/build-filters.yml` — full build pipeline
 - `version.txt` — auto-incremented build number
 - `builderfilter/` — all source filter segments
-- `builderfilter/filters.json` — filter definitions, beta flag, `beta_exclude` (filterdirs that skip beta builds) and `paused_filterdirs` (filterdirs `build.py` and the README generator skip entirely, definitions, segments and the published `filtergroups/<dir>/` files kept — never delete a paused group's outputs; `sancofexile` is paused — remove it from the list and rebuild to re-enable)
+- `builderfilter/filters.json` — filter definitions, beta flag, `beta_exclude` (filterdirs that skip beta builds) and `paused_filterdirs` (filterdirs `build.py` and the README generator skip entirely, definitions, segments and the published `filtergroups/<dir>/` files kept — never delete a paused group's outputs; remove a filterdir from the list and rebuild to re-enable it)
 - `builderfilter/build.py` — local/CI build script (resolves tags, concatenates segments; regenerates the star-tier aliases)
 - `builderfilter/data/unique-set-tiers.json` — unique / set star tiers (current + floor per item); `builderfilter/tier_aliases.py` turns it into the tier aliases
 - `validate_filters.py` — filter linter/QA (required to pass)
