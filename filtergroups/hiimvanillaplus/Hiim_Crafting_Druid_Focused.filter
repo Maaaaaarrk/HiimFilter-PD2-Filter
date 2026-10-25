@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 25th%CL%Season 14 - build 92%CL%HiimFilter - Vanilla - Druid - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 25th%CL%Season 14 - build 93%CL%HiimFilter - Vanilla - Druid - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -42,7 +42,7 @@ ItemDisplay[STAT206>0 GROUND]: %BORDER-55%%MAP-58%%GOLD%Desecrated %NAME%{%NAME%
 ItemDisplay[STAT206>0]: %NAME%{%NAME%}
 ItemDisplay[STAT206>0 FILTLVL>10 !IN_TOWN]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%%DESECRATED_TAG%{%NAME%}
 ItemDisplay[STAT360>0 FILTLVL>10 !NMAG !IN_TOWN]: %MAP-58%%NAME% %RED%%SLAMMED_TAG%{%NAME%}
-ItemDisplay[RW FILTLVL>10 !IN_TOWN]: %MAP-58%%NAME%{%NAME%}
+ItemDisplay[RW FILTLVL>10 !IN_TOWN]: %MAP-58%%RW_LABEL%{%NAME%}
 ItemDisplay[FILTLVL>10 (ARMOR OR WEAPON OR cm1 OR cm2 OR cm3 OR rin OR amu OR jew OR aqv OR aqv2 OR aqv3 OR cqv OR cqv2 OR cqv3) !IN_TOWN !SHOP !EQUIPPED]:%NOTIFY-DEAD%{%NAME%}
 ItemDisplay[GOLD<500 ((FILTLVL=1 CLVL>79) OR FILTLVL>1) !MAPID=83]:
 ItemDisplay[GOLD<1000 ((FILTLVL=2 CLVL>79) OR FILTLVL>2) !MAPID=83]:
@@ -162,6 +162,9 @@ Alias[RUNE_MID_LOW]: %DOT-9B%%PX-0B%%GREEN%••   %NAME%   %GREEN%••
 Alias[RUNE_ALT_MID]: %BORDER-9B%%DOT-0B%%GREEN%••   %NAME%   %GREEN%••
 Alias[RUNE_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%•%ORANGE%!%PURPLE%•    %NAME%    %PURPLE%•%ORANGE%!%PURPLE%•
 Alias[RUNE_ALT_HIGH]: %BORDER-9B%%MAP-7D%%DOT-0B%%PURPLE%•%GREEN%!%PURPLE%•    %NAME%    %PURPLE%•%GREEN%!%PURPLE%•
+Alias[PHIL777_LOOK]: FALSE
+Alias[CHARM_UNID]: %NAME%
+Alias[RW_LABEL]: %NAME%
 Alias[MAG_ITEM]: %MAP-6A%%DOT-94%%NAME%
 Alias[MAG_DBL_AFFIX_ITEM]: %BORDER-6A%%DOT-94%%NAME%
 Alias[RARE_ITEM]: %MAP-0B%%DOT-6A%%NAME%
@@ -1141,6 +1144,7 @@ ItemDisplay[MAG amu !ID FILTLVL<5]: %MAG_ITEM%
 ItemDisplay[MAG rin !ID FILTLVL<3]: %MAG_ITEM%
 ItemDisplay[MAG amu !ID MAPID=83 FILTLVL<7]: %NAME%%TIER-2%
 ItemDisplay[MAG amu !ID (MAPID=181 OR MAPID=182)]: %NAME%%TIER-2%
+ItemDisplay[RARE (amu OR rin) !ID FILTLVL<3 PHIL777_LOOK]: %RARE_ITEM%
 ItemDisplay[RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %RARE_HIGH_ITEM%
 ItemDisplay[RARE amu !ID FILTLVL<5]: %NAME%
 ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM%
@@ -1159,18 +1163,18 @@ ItemDisplay[ci3 NMAG !ETH SOCK=0 FILTLVL<3]: %NAME%{%TAN%Note%WHITE%: You can %Y
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<11]: %TIER-8%%CHARM_GC_TAG%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL>90 !ID FILTLVL<9]: %CHARM_HIGH_LVL%%CONTINUE%
 ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID FILTLVL<9]: %CHARM_MID_LVL%%CONTINUE%
-ItemDisplay[MAG cm3 ILVL>89 !ID FILTLVL>7]: %NAME%
+ItemDisplay[MAG cm3 ILVL>89 !ID FILTLVL>7]: %CHARM_UNID%
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<8]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
-ItemDisplay[MAG cm3 !ID FILTLVL<7]: %NAME%
+ItemDisplay[MAG cm3 !ID FILTLVL<7]: %CHARM_UNID%
 ItemDisplay[MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
-ItemDisplay[MAG cm1 ILVL>89 !ID FILTLVL>7]: %NAME%
+ItemDisplay[MAG cm1 ILVL>89 !ID FILTLVL>7]: %CHARM_UNID%
 ItemDisplay[MAG cm1 !ID ILVL>89 FILTLVL<8]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm1 !ID FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm2 !ID FILTLVL>6]: %CHARM_LC_TAG%%CONTINUE%
-ItemDisplay[MAG cm2 ILVL>89 !ID FILTLVL>7]: %NAME%
+ItemDisplay[MAG cm2 ILVL>89 !ID FILTLVL>7]: %CHARM_UNID%
 ItemDisplay[MAG cm2 !ID ILVL>89 FILTLVL<8]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
-ItemDisplay[MAG cm2 !ID FILTLVL<7]: %NAME%
+ItemDisplay[MAG cm2 !ID FILTLVL<7]: %CHARM_UNID%
 ItemDisplay[MAG (cm1 OR cm2 OR cm3) CLVL<80 !ID FILTLVL<9]: %MAG_ITEM%
 ItemDisplay[cm2 UNI !ID]: %UNI_UNID_TORCH%
 ItemDisplay[cm1 UNI !ID]: %UNI_UNID_ANNI%
@@ -2688,6 +2692,9 @@ ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL>25 
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL<41 ILVL>25 (am1 OR am2 OR am6 OR am7 OR amb OR amc OR lbw OR sbb OR lbb OR swb OR lwb OR 8lb OR 8s8 OR 8l8 OR 8sw OR 8lw OR 6lb OR 6s7 OR 6l7 OR 6sw OR 6lw)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE%
 ItemDisplay[(HELM OR CIRC OR BAR OR DRU) NMAG !RW SOCK=3 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%3os Helm Base%CL%%NAME%}
 ItemDisplay[CHEST NMAG !RW SOCK=3 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%3os Chest Base%CL%%NAME%}
+ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1 PHIL777_LOOK]: %NAME%{%NAME%}
+ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2 PHIL777_LOOK]: %NAME%{%NAME%}
+ItemDisplay[SHIELD NMAG FILTLVL<3 SOCK=3 PHIL777_LOOK]: %NAME%{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %RARE_PLUS%{%NAME%}
 ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %RARE_PLUS%{%NAME%}
 ItemDisplay[SHIELD NMAG FILTLVL<3 SOCK=3]: %RARE_PLUS%{%NAME%}
@@ -2772,7 +2779,7 @@ ItemDisplay[(cm1 OR cm2 OR cm3 OR jew) ID]: %NAME%{%NAME%}
 ItemDisplay[MAG ID FILTLVL<5]: %DOT-94%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[RARE ID]: %DOT-6A%%NAME%%TIER-2%{%NAME%}
 ItemDisplay[CRAFT ID]: %DOT-0B%%NAME%%TIER-2%{%NAME%}
-ItemDisplay[RW]: %DOT-0E%%NAME%{%NAME%}
+ItemDisplay[RW]: %DOT-0E%%RW_LABEL%{%NAME%}
 ItemDisplay[UNI ID]: %DOT-D3%%NAME%{%NAME%}
 ItemDisplay[SET ID]: %DOT-7D%%NAME%{%NAME%}
 ItemDisplay[UNI FILTLVL<5]: %PX-D3%%NAME%{%NAME%}
