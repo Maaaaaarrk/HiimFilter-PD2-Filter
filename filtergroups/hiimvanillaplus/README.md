@@ -1,5 +1,5 @@
 # hiimvanillaplus
-## Last updated October 25th Season 14 - build 92
+## Last updated October 25th Season 14 - build 93
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -110,9 +110,8 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Andariel's Visage (Demonhead)
 - Arachnid Mesh (Spiderweb Sash) — non-ETH
 - Arioc's Needle (Hyperion Spear) — ETH
-- Arkaine's Valor (Balrog Skin) — non-ETH
 - Astreon's Iron Ward (Caduceus)
-- Azurewrath (Phase Blade)
+- Azurewrath (Phase Blade) — ETH
 - Basilisk's Quill (Razor Arrows)
 - Crown of Ages (Corona)
 - Death Cleaver (Berserker Axe) — ETH
@@ -122,18 +121,17 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Dracul's Grasp (Vampirebone Gloves)
 - Earth Shifter (Thunder Maul) — ETH
 - Ephemeral (Sacred Targe)
-- Ghostflame (Legend Spike)
-- Giant Skull (Bone Visage)
+- Ghostflame (Legend Spike) — non-ETH
+- Giant Skull (Bone Visage) — ETH
 - Gore Rider (War Boots)
 - Griffon's Eye (Diadem)
 - Guardian Angel (Templar Coat) — ETH
 - Herald of Zakarum (Gilded Shield)
-- Kira's Guardian (Tiara) — non-ETH
 - Lacerator (Winged Axe) — ETH
-- Lightsabre (Phase Blade)
+- Lightsabre (Phase Blade) — ETH
 - Mang Song's Lesson (Archon Staff)
 - Nightwing's Veil (Spired Helm)
-- Occultist (Crusader Gauntlets)
+- Occultist (Crusader Gauntlets) — ETH
 - Plague Bearer (Rune Sword)
 - Purgatory (Archon Plate) — ETH
 - Ravenlore (Sky Spirit) — non-ETH
@@ -146,226 +144,294 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skywarden (Vortex Shield)
 - Soul Drainer (Vambraces)
 - Spectral Plate (Great Hauberk)
-- Spirit Keeper (Earth Spirit)
-- Spirit Ward (Ward) — non-ETH
+- Spirit Keeper (Earth Spirit) — ETH
 - Steel Carapace (Shadow Plate)
-- Steel Shade (Armet) — non-ETH
 - Stone Crusher (Legendary Mallet)
-- Stoneraven (Matriarchal Spear)
+- Stoneraven (Matriarchal Spear) — ETH
 - Stormspire (Giant Thresher) — ETH
 - Templar's Might (Sacred Armor)
 - The Cranium Basher (Thunder Maul) — ETH
 - The Grandfather (Colossus Blade) — ETH
 - The Reaper's Toll (Thresher) — ETH
-- Thunderstroke (Matriarchal Javelin)
-- Tomb Reaver (Cryptic Axe)
+- Thunderstroke (Matriarchal Javelin) — ETH
+- Tomb Reaver (Cryptic Axe) — non-ETH
 - True Silver (Maiden Javelin) — ETH
 - Tyrael's Might (Sacred Armor)
-- Vampire Gaze (Grim Helm)
+- Vampire Gaze (Grim Helm) — ETH
 - Veil of Steel (Spired Helm)
-- Verdungo's Hearty Cord (Mithril Coil)
-- War Traveler (Battle Boots)
-- Waterwalk (Sharkskin Boots)
-- Windforce (Hydra Bow)
+- Verdungo's Hearty Cord (Mithril Coil) — ETH
+- War Traveler (Battle Boots) — ETH
+- Waterwalk (Sharkskin Boots) — ETH
+- Windforce (Hydra Bow) — ETH
 - Zerae's Resolve (Matriarchal Pike) — ETH
 
 ### Level 9-8 — adds 3-star uniques
 
-- Abyssal Ward (War Bolts)
+- Abyssal Ward (War Bolts) — ETH
 - Arachnid Mesh (Spiderweb Sash) — ETH
+- Arkaine's Valor (Balrog Skin) — non-ETH
 - Athena's Wrath (Battle Scythe) — ETH
-- Bannerlord's Call (War Bolts)
+- Atma's Wail (Embossed Plate) — non-ETH
+- Azurewrath (Phase Blade) — non-ETH
+- Bannerlord's Call (War Bolts) — ETH
 - Brimstone Rain (Shillelagh)
 - Darkforce Spawn (Bloodlord Skull)
+- Death's Fathom (Dimensional Shard) — non-ETH
 - Demon Machine (Chu-Ko-Nu)
-- Denmother (Sun Spirit)
-- Doombringer (Champion Sword) — non-ETH
-- Earth Shifter (Thunder Maul) — non-ETH
-- Fenris (Alpha Helm)
-- Firelizard's Talons (Feral Claws)
-- Frozen Sorrow (War Bolts)
-- Gerke's Sanctuary (Pavise)
+- Denmother (Sun Spirit) — ETH
+- Fenris (Alpha Helm) — ETH
+- Firelizard's Talons (Feral Claws) — ETH
+- Frozen Sorrow (War Bolts) — ETH
+- Gerke's Sanctuary (Pavise) — ETH
+- Ghostflame (Legend Spike) — ETH
+- Giant Skull (Bone Visage) — non-ETH
 - Goblin Toe (Light Plated Boots)
 - Guardian Angel (Templar Coat) — non-ETH
-- Halaberd's Reign (Conqueror Crown)
+- Halaberd's Reign (Conqueror Crown) — ETH
 - Harlequin Crest (Shako) — non-ETH
-- Infernostride (Demonhide Boots)
-- Jade Talon (Wrist Sword)
-- Jalal's Mane (Totemic Mask)
-- Lava Gout (Battle Gauntlets)
-- Lidless Wall (Grim Shield)
+- Infernostride (Demonhide Boots) — ETH
+- Jade Talon (Wrist Sword) — ETH
+- Jalal's Mane (Totemic Mask) — ETH
+- Kira's Guardian (Tiara) — non-ETH
+- Lava Gout (Battle Gauntlets) — ETH
+- Lidless Wall (Grim Shield) — ETH
+- Lightsabre (Phase Blade) — non-ETH
 - Magefist (Light Gauntlets)
 - Marrowwalk (Boneweave Boots)
 - Martyrdom (Overseer Skull) — non-ETH
-- Medusa's Gaze (Aegis)
-- Nosferatu's Coil (Vampirefang Belt)
+- Medusa's Gaze (Aegis) — ETH
+- Merman's Sprocket (Wyrmhide Boots) — non-ETH
+- Nosferatu's Coil (Vampirefang Belt) — ETH
+- Occultist (Crusader Gauntlets) — non-ETH
 - Ormus' Robes (Dusk Shroud) — non-ETH
 - Pus Spitter (Siege Crossbow)
-- Razortail (Sharkskin Belt)
-- Sacred Totem (Hellspawn Skull)
-- Shaftstop (Mesh Armor)
-- Silkweave (Mesh Boots)
-- Skin of the Vipermagi (Serpentskin Armor)
-- Snowclash (Battle Belt) — non-ETH
-- Spirit Ward (Ward) — ETH
-- Stalker's Cull (Runic Talons)
+- Razortail (Sharkskin Belt) — ETH
+- Sacred Totem (Hellspawn Skull) — ETH
+- Shaftstop (Mesh Armor) — ETH
+- Silkweave (Mesh Boots) — ETH
+- Skin of the Vipermagi (Serpentskin Armor) — ETH
+- Spirit Keeper (Earth Spirit) — non-ETH
+- Spirit Ward (Ward)
+- Stalker's Cull (Runic Talons) — ETH
 - Steel Pillar (War Pike) — ETH
-- Steelrend (Ogre Gauntlets)
-- Stormshield (Monarch) — non-ETH
+- Steel Shade (Armet) — non-ETH
+- Steelrend (Ogre Gauntlets) — ETH
 - Stormspire (Giant Thresher) — non-ETH
 - String of Ears (Demonhide Sash)
-- The Cranium Basher (Thunder Maul) — non-ETH
 - The Gavel of Pain (Martel de Fer) — ETH
-- The Grandfather (Colossus Blade) — non-ETH
-- The Reaper's Toll (Thresher) — non-ETH
-- Thundergod's Vigor (War Belt) — non-ETH
-- Twilight's Reflection (Hyperion)
-- Valkyrie Wing (Winged Helm)
+- Thunderstroke (Matriarchal Javelin) — non-ETH
+- Tomb Reaver (Cryptic Axe) — ETH
+- Twilight's Reflection (Hyperion) — ETH
+- Valkyrie Wing (Winged Helm) — ETH
+- Vampire Gaze (Grim Helm) — non-ETH
+- Verdungo's Hearty Cord (Mithril Coil) — non-ETH
+- War Traveler (Battle Boots) — non-ETH
 - Warlord's Trust (Military Axe) — ETH
 - Warriv's Warder (Heater)
-- Whispering Mirage (War Fist)
-- Wraithskin (Diamond Mail)
-- Zerae's Resolve (Matriarchal Pike) — non-ETH
+- Waterwalk (Sharkskin Boots) — non-ETH
+- Whispering Mirage (War Fist) — ETH
+- Windforce (Hydra Bow) — non-ETH
+- Wraithskin (Diamond Mail) — ETH
 
 ### Level 7 — adds 2-star uniques
 
-- Anvilguard Strap (Heavy Bolts)
-- Arioc's Needle (Hyperion Spear) — non-ETH
+- Anvilguard Strap (Heavy Bolts) — ETH
 - Arkaine's Valor (Balrog Skin) — ETH
 - Arm of King Leoric (Tomb Wand)
-- Arreat's Face (Slayer Guard)
+- Arreat's Face (Slayer Guard) — ETH
 - Athena's Wrath (Battle Scythe) — non-ETH
-- Atma's Wail (Embossed Plate)
-- Bartuc's Cut-Throat (Greater Talons)
+- Atma's Wail (Embossed Plate) — ETH
+- Bartuc's Cut-Throat (Greater Talons) — ETH
 - Blackhand Key (Grave Wand)
 - Blade of Ali Baba (Tulwar)
 - Blood Raven's Charge (Matriarchal Bow)
 - Bloodtree Stump (War Club) — ETH
 - Boneflame (Succubus Skull)
-- Boneshade (Lich Wand)
+- Boneshade (Lich Wand) — ETH
 - Buriza-Do Kyanon (Ballista)
-- Cerebus' Bite (Blood Spirit)
+- Cerebus' Bite (Blood Spirit) — ETH
 - Crow Caw (Tigulated Mail)
 - Cyclopean Roar (Jawbone Visor)
-- Death Cleaver (Berserker Axe) — non-ETH
-- Death's Fathom (Dimensional Shard)
-- Demonhorn's Edge (Destroyer Helm)
-- Dragonscale (Zakarum Shield)
-- Ebonbane (Grand Matron Bow)
-- Embersworn (Demon Heart)
-- Eschuta's Temper (Eldritch Orb)
+- Death's Fathom (Dimensional Shard) — ETH
+- Demonhorn's Edge (Destroyer Helm) — ETH
+- Doombringer (Champion Sword) — non-ETH
+- Dragonscale (Zakarum Shield) — ETH
+- Earth Shifter (Thunder Maul) — non-ETH
+- Ebonbane (Grand Matron Bow) — ETH
+- Embersworn (Demon Heart) — ETH
+- Eschuta's Temper (Eldritch Orb) — ETH
 - Flamebellow (Balrog Blade)
 - Gargoyle's Bite (Winged Harpoon)
-- Ghoulhide (Heavy Bracers)
+- Ghoulhide (Heavy Bracers) — ETH
 - Goldwrap (Heavy Belt)
-- Gravepalm (Sharkskin Gloves)
+- Gravepalm (Sharkskin Gloves) — ETH
 - Grim's Burning Dead (Grim Scythe)
 - Gut Siphon (Demon Crossbow)
+- Halaberd's Reign (Conqueror Crown) — non-ETH
 - Head Hunter's Glory (Troll Nest)
 - Heart Carver (Rondel)
 - Heavenly Garb (Light Plate)
 - Hellmouth (War Gauntlets)
-- Hellslayer (Decapitator)
+- Hellslayer (Decapitator) — ETH
 - Horizon's Tornado (Scourge)
+- Infernostride (Demonhide Boots) — non-ETH
 - Kira's Guardian (Tiara) — ETH
-- Leviathan (Kraken Shell)
+- Lava Gout (Battle Gauntlets) — non-ETH
+- Leviathan (Kraken Shell) — ETH
+- Lidless Wall (Grim Shield) — non-ETH
 - Martyrdom (Overseer Skull) — ETH
-- Merman's Sprocket (Wyrmhide Boots)
+- Medusa's Gaze (Aegis) — non-ETH
+- Merman's Sprocket (Wyrmhide Boots) — ETH
+- Nosferatu's Coil (Vampirefang Belt) — non-ETH
 - Ormus' Robes (Dusk Shroud) — ETH
 - Peasant Crown (War Hat)
-- Que-Hegan's Wisdom (Mage Plate)
+- Que-Hegan's Wisdom (Mage Plate) — ETH
 - Raekor's Virtue (Guardian Crown)
 - Ravenlore (Sky Spirit) — ETH
+- Razortail (Sharkskin Belt) — non-ETH
+- Sacred Totem (Hellspawn Skull) — non-ETH
 - Sage's Defiance (Giant Conch)
 - Sandstorm Trek (Scarabshell Boots)
 - Shadow Dancer (Myrmidon Greaves)
-- Shatterhead (Heavy Bolts)
+- Shaftstop (Mesh Armor) — non-ETH
+- Shatterhead (Heavy Bolts) — ETH
 - Silks of the Victor (Ancient Armor) — non-ETH
-- Skullder's Ire (Russet Armor)
+- Skin of the Vipermagi (Serpentskin Armor) — non-ETH
+- Skullder's Ire (Russet Armor) — ETH
+- Snowclash (Battle Belt) — non-ETH
 - Spike Thorn (Blade Barrier)
-- Steel Pillar (War Pike) — non-ETH
+- Stalker's Cull (Runic Talons) — non-ETH
 - Steel Shade (Armet) — ETH
 - Steelclash (Kite Shield)
+- Steelrend (Ogre Gauntlets) — non-ETH
+- Stoneraven (Matriarchal Spear) — non-ETH
 - Stormlash (Scourge)
-- Stormshield (Monarch) — ETH
+- Stormshield (Monarch)
 - Suicide Branch (Burnt Wand)
 - Swiftwind Needle (Sharp Arrows)
+- The Cranium Basher (Thunder Maul) — non-ETH
 - The Gladiator's Bane (Wire Fleece)
-- The Oculus (Swirling Crystal)
+- The Grandfather (Colossus Blade) — non-ETH
+- The Oculus (Swirling Crystal) — ETH
 - The Patriarch (Great Sword)
+- The Reaper's Toll (Thresher) — non-ETH
+- Thundergod's Vigor (War Belt) — non-ETH
 - Titan's Grip (Bramble Mitts)
 - Titan's Revenge (Ceremonial Javelin) — ETH
 - Tombsong (Sharp Arrows)
 - Treads of Cthon (Chain Boots)
-- Venom Grip (Demonhide Gloves)
+- Venom Grip (Demonhide Gloves) — ETH
 - Warshrike (Winged Knife)
+- Whispering Mirage (War Fist) — non-ETH
 - Widowmaker (Ward Bow)
 - Wildspeaker (Lion Helm)
-- Windhammer (Ogre Maul)
+- Windhammer (Ogre Maul) — ETH
+- Wraithskin (Diamond Mail) — non-ETH
+- Zerae's Resolve (Matriarchal Pike) — non-ETH
 
 ### Level 6 — adds 1-star uniques
 
+- Anvilguard Strap (Heavy Bolts) — non-ETH
+- Arioc's Needle (Hyperion Spear) — non-ETH
+- Arreat's Face (Slayer Guard) — non-ETH
 - Biggin's Bonnet (Cap)
 - Black Hades (Chaos Armor)
 - Bloodfist (Heavy Gloves)
-- Chance Guards (Chain Gloves)
+- Boneshade (Lich Wand) — non-ETH
+- Cerebus' Bite (Blood Spirit) — non-ETH
+- Chance Guards (Chain Gloves) — ETH
 - Chromatic Ire (Cedar Staff)
-- Corpsemourn (Ornate Plate)
+- Corpsemourn (Ornate Plate) — ETH
 - Crown of Thieves (Grand Crown)
+- Denmother (Sun Spirit) — non-ETH
+- Dragonscale (Zakarum Shield) — non-ETH
 - Duskdeep (Full Helm)
 - Eaglehorn (Crusader Bow)
+- Ebonbane (Grand Matron Bow) — non-ETH
+- Embersworn (Demon Heart) — non-ETH
+- Eschuta's Temper (Eldritch Orb) — non-ETH
 - Executioner's Justice (Glorious Axe)
+- Fenris (Alpha Helm) — non-ETH
+- Firelizard's Talons (Feral Claws) — non-ETH
 - Frostburn (Gauntlets)
 - Frostwind (Cryptic Sword)
+- Gerke's Sanctuary (Pavise) — non-ETH
 - Giant Maimer (Colossus Voulge)
 - Gimmershred (Flying Axe)
 - Harlequin Crest (Shako) — ETH
-- Homunculus (Hierophant Trophy)
+- Hellslayer (Decapitator) — non-ETH
+- Homunculus (Hierophant Trophy) — ETH
 - Humongous (Giant Axe)
+- Jade Talon (Wrist Sword) — non-ETH
+- Jalal's Mane (Totemic Mask) — non-ETH
+- Leviathan (Kraken Shell) — non-ETH
 - Nethercrux (Ghost Wand)
-- Ondal's Wisdom (Elder Staff)
+- Ondal's Wisdom (Elder Staff) — ETH
 - Purgatory (Archon Plate) — non-ETH
+- Que-Hegan's Wisdom (Mage Plate) — non-ETH
 - Ribcracker (Quarterstaff) — non-ETH
 - Rockstopper (Sallet)
 - Rune Master (Ettin Axe)
 - Shatterblade (Mithril Point)
+- Shatterhead (Heavy Bolts) — non-ETH
+- Silkweave (Mesh Boots) — non-ETH
+- Skullder's Ire (Russet Armor) — non-ETH
 - Snowclash (Battle Belt) — ETH
 - Spirit Shroud (Ghost Armor)
 - Swordguard (Executioner Sword)
 - The Gavel of Pain (Martel de Fer) — non-ETH
 - Thundergod's Vigor (War Belt) — ETH
-- Titan's Revenge (Ceremonial Javelin) — non-ETH
 - Toothrow (Sharktooth Armor)
+- Twilight's Reflection (Hyperion) — non-ETH
 - Ursa's Nightmare (Dream Spirit)
+- Valkyrie Wing (Winged Helm) — non-ETH
+- Venom Grip (Demonhide Gloves) — non-ETH
 - Venom Ward (Breast Plate)
-- Viperfork (Mancatcher)
+- Viperfork (Mancatcher) — ETH
 - Witchwild String (Short Siege Bow)
 - Wizardspike (Bone Knife)
 
 ### Level 5 — adds 0-star uniques
 
+- Bartuc's Cut-Throat (Greater Talons) — non-ETH
 - Blackbog's Sharp (Cinquedeas)
 - Bloodtree Stump (War Club) — non-ETH
+- Chance Guards (Chain Gloves) — non-ETH
+- Corpsemourn (Ornate Plate) — non-ETH
 - Endlesshail (Double Bow)
+- Ghoulhide (Heavy Bracers) — non-ETH
 - Gorefoot (Heavy Boots)
-- Lacerator (Winged Axe) — non-ETH
 - Odium (Colossus Sword)
+- Ondal's Wisdom (Elder Staff) — non-ETH
 - Radament's Sphere (Ancient Shield)
+- Steel Pillar (War Pike) — non-ETH
 - The Jade Tan Do (Kris)
+- Titan's Revenge (Ceremonial Javelin) — non-ETH
+- Viperfork (Mancatcher) — non-ETH
+- Windhammer (Ogre Maul) — non-ETH
 - Wizendraw (Long Battle Bow)
 - Wolfhowl (Fury Visor)
 
 ### Level 4 — adds NO-star uniques
 
+- Abyssal Ward (War Bolts) — non-ETH
 - Baezil's Vortex (Knout)
+- Bannerlord's Call (War Bolts) — non-ETH
 - Blackoak Shield (Luna)
 - Cloudcrack (Gothic Sword)
+- Death Cleaver (Berserker Axe) — non-ETH
+- Demonhorn's Edge (Destroyer Helm) — non-ETH
 - Djinn Slayer (Ataghan)
+- Frozen Sorrow (War Bolts) — non-ETH
+- Gravepalm (Sharkskin Gloves) — non-ETH
 - Gull (Dagger)
+- Homunculus (Hierophant Trophy) — non-ETH
 - Kuko Shakaku (Cedar Bow)
+- Lacerator (Winged Axe) — non-ETH
 - Magewrath (Rune Bow)
 - The Hand of Broc (Leather Gloves)
 - The Impaler (War Spear)
+- The Oculus (Swirling Crystal) — non-ETH
 - Warlord's Trust (Military Axe) — non-ETH
 
 ### Level 1-3 — most permissive
