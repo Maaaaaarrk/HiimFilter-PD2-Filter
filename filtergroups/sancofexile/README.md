@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated October 18th Season 14 - build 74
+## Last updated October 25th Season 14 - build 94
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -40,7 +40,7 @@ Cube will state current filter version & chosen filter level information.
 * **3: Base** — Recommended for most Hell farming. Hides low-value items that experienced players rarely pick up.
   * HP pots 1–4 and MP pots 1–4 hidden
   * Bad Gems hidden (Flawless & Perfect still shown)
-  * Magic rings and amulets hidden
+  * Magic rings hidden
   * Most unidentified rares hidden (CLVL 86+)
   * Rune number labels removed from display
   * Still shows: all uniques/sets, high value rares, runes, jewels, charms
@@ -49,6 +49,7 @@ Cube will state current filter version & chosen filter level information.
   * Unrated unidentified uniques and sets (no star tier) hidden (CLVL 85+)
 
 * **5: Strict** — For players comfortable with the game who want a cleaner screen during fast farming.
+  * Magic amulets hidden
   * NO-star unidentified uniques hidden
   * Class-specific rare item decorations end at higher filter levels
   * Eth magic crafting bases reduced
@@ -255,6 +256,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Goldwrap (Heavy Belt)
 - Gravepalm (Sharkskin Gloves)
 - Grim's Burning Dead (Grim Scythe)
+- Gut Siphon (Demon Crossbow)
 - Head Hunter's Glory (Troll Nest)
 - Heart Carver (Rondel)
 - Heavenly Garb (Light Plate)
@@ -292,6 +294,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Tombsong (Sharp Arrows)
 - Treads of Cthon (Chain Boots)
 - Venom Grip (Demonhide Gloves)
+- Warshrike (Winged Knife)
 - Widowmaker (Ward Bow)
 - Wildspeaker (Lion Helm)
 - Windhammer (Ogre Maul)
