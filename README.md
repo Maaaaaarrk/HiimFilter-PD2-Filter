@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated October 25th Season 14 - build 95
+## Last updated October 26th Season 14 - build 101
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -52,16 +52,18 @@ Cube will state current filter version & chosen filter level information.
   * Magic rings hidden
   * Most unidentified rares hidden (CLVL 86+)
   * Rune number labels removed from display
+  * Hell: unidentified ETH magic weapons and armor that aren't crafting bases hidden (ETH chests included)
   * Still shows: all uniques/sets, high value rares, runes, jewels, charms
 
 * **4: Semi-Strict** — Everything from level 3, plus:
   * Unrated unidentified uniques and sets (no star tier) hidden (CLVL 85+)
+  * Crafting bases: second-tier ETH weapons (Thunder Maul, Phase Blade, Berserker Axe, Glorious Axe, Legendary Mallet, Stygian Pilum, Balrog Spear, Winged Harpoon, Scourge, Feral Axe) and other classes' bases (sorc orbs, Amazon bows, paladin shields, Divine Scepters, druid pelts, barb helms) hidden
 
 * **5: Strict** — For players comfortable with the game who want a cleaner screen during fast farming.
   * Magic amulets hidden
   * NO-star unidentified uniques hidden
   * Class-specific rare item decorations end at higher filter levels
-  * Eth magic crafting bases reduced
+  * Crafting bases: magic necro heads, ETH claws and your own class's crafting bases hidden
   * Specific low-value rare bows hidden
   * Tradeoff: you may miss some marginal uniques — use Grail filter if grailing
 
@@ -75,8 +77,9 @@ Cube will state current filter version & chosen filter level information.
   * Bad-rolled charms hidden on ground
   * Small rejuvs hidden
   * 1-star unidentified uniques and sets hidden (2-star and up shown)
+  * Crafting bases: the last ones go — ETH Ghost Glaive, War Pike, Ogre Maul, War Fist, Champion Axe, Hyperion Spear, Colossus Blade, Colossus Sword, and 4-socket shields
   * ETH rare armor (chests) hidden; non-ETH rare gloves, boots, and belts hidden; Chests (ALVL<85) hidden
-  * Class-specific items hidden: sorc orbs, druid pelts, paladin shields, magic necro heads (barb helms already hidden since level 5; rare necro heads not hidden until level 9)
+  * Class-specific rare items hidden: sorc orbs, druid pelts, paladin shields (barb helms already hidden since level 5; rare necro heads not hidden until level 9)
   * Magic jewel decorations reduced, low rune decorations removed
   * Still shows: high-star uniques/sets, GG rares, HR runes, good charms, jewels
 
