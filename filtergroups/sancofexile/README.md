@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated October 26th Season 14 - build 97
+## Last updated October 26th Season 14 - build 98
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -63,12 +63,12 @@ Cube will state current filter version & chosen filter level information.
   * ETH uniques/sets and elite uniques no longer shown regardless of tier
   * Unidentified set rings and amulets lose their tier callout (still shown)
   * Normal Matriarchal / Grand Matron Bows with +3 Bow skills and under 15% ED hidden
-  * Crafting bases: the last ones go — ETH Ghost Glaive, War Pike, Ogre Maul, War Fist, Champion Axe, Hyperion Spear, Colossus Blade, Colossus Sword, and 4-socket shields
 
 * **7: Extremely Strict** — For experienced endgame players. Significantly reduces ground clutter at the cost of hiding some niche items.
   * Bad-rolled charms hidden on ground
   * Small rejuvs hidden
   * 1-star unidentified uniques and sets hidden (2-star and up shown)
+  * Crafting bases: the last ones go — ETH Ghost Glaive, War Pike, Ogre Maul, War Fist, Champion Axe, Hyperion Spear, Colossus Blade, Colossus Sword, and 4-socket shields
   * ETH rare armor (chests) hidden; non-ETH rare gloves, boots, and belts hidden; Chests (ALVL<85) hidden
   * Class-specific rare items hidden: sorc orbs, druid pelts, paladin shields (barb helms already hidden since level 5; rare necro heads not hidden until level 9)
   * Magic jewel decorations reduced, low rune decorations removed
