@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 25th%CL%Season 14 - build 94%CL%HiimFilter - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 26th%CL%Season 14 - build 100%CL%HiimFilter - LLD -}%CONTINUE%
 ItemDisplay[mp5 MAPID=83]:
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -94,12 +94,14 @@ Alias[LBL_HP3_1]: %RED%+ %WHITE%HP3 %RED%+
 Alias[LBL_HP4_1]: %RED%+ %WHITE%HP4 %RED%+
 Alias[LBL_HP5_1]: %RED%+ %WHITE%HP5 %RED%+
 Alias[LBL_HP5_2]: %RED%+ HP
+Alias[LBL_HP5_3]: %WHITE%HP
 Alias[LBL_MP1_1]: %BLUE%+ %WHITE%MP1 %BLUE%+
 Alias[LBL_MP2_1]: %BLUE%+ %WHITE%MP2 %BLUE%+
 Alias[LBL_MP3_1]: %BLUE%+ %WHITE%MP3 %BLUE%+
 Alias[LBL_MP4_1]: %BLUE%+ %WHITE%MP4 %BLUE%+
 Alias[LBL_MP5_1]: %BLUE%+ %WHITE%MP5 %BLUE%+
 Alias[LBL_MP5_2]: %BLUE%+ MP
+Alias[LBL_MP5_3]: %WHITE%MP
 Alias[LBL_VPS_1]: %GREEN%!%WHITE%sta{%NAME%}
 Alias[LBL_YPS_1]: %GREEN%!Anti{Good Luck on Rathma}
 Alias[LBL_YPS_2]: %NAME%{%NAME%%CL%%BLUE%Reward: Tainted World Stone Shard (Annihilus Corruption)%CL%%GRAY%---------%CL%%ORANGE%Hellfire Torch%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%- drops from any undead enemy%CL%%ORANGE%Splinter of the Void %WHITE%- drops from Shadow of Mendeln map event%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Recommended Resistance:%CL%%GRAY%--------%CL%%GOLD%Voidstone - Rathma boss fight}
@@ -394,6 +396,7 @@ Alias[SOCK_WEAP_4_5]: (2ax OR bax OR btx)
 Alias[SOCK_WEAP_4_6]: (mpi OR wax OR gax OR gix)
 Alias[SOCK_CHEST_3]: (rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xld OR ltp OR xtp OR spl OR plt OR fld OR xui OR xea OR xla OR xtu)
 Alias[SOCK_CHEST_4]: (uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar)
+Alias[OTHER_CLASS_CRAFT_CAP]: FALSE
 ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
 ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
 ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
@@ -1641,13 +1644,15 @@ ItemDisplay[hp2]: %LBL_HP2_1%
 ItemDisplay[hp3]: %LBL_HP3_1%
 ItemDisplay[hp4]: %LBL_HP4_1%
 ItemDisplay[hp5 FILTLVL<3]: %LBL_HP5_1%
-ItemDisplay[hp5]: %LBL_HP5_2%
+ItemDisplay[hp5 FILTLVL<5]: %LBL_HP5_2%
+ItemDisplay[hp5]: %LBL_HP5_3%
 ItemDisplay[mp1]: %LBL_MP1_1%
 ItemDisplay[mp2]: %LBL_MP2_1%
 ItemDisplay[mp3]: %LBL_MP3_1%
 ItemDisplay[mp4]: %LBL_MP4_1%
 ItemDisplay[mp5 FILTLVL<3]: %LBL_MP5_1%
-ItemDisplay[mp5]: %LBL_MP5_2%
+ItemDisplay[mp5 FILTLVL<5]: %LBL_MP5_2%
+ItemDisplay[mp5]: %LBL_MP5_3%
 ItemDisplay[vps DIFF=2 SHOP]:{%NAME%%CL%%BLUE%Reward: Desecrate Item Altar (Corrupted Amulets only)%CL%%GRAY%---------%CL%%ORANGE%Demonic Insignia %WHITE%- drops from any enemy in Act 5 red portal LOD zones%CL%%ORANGE%Talisman of Transgression %WHITE%- drops from any enemy in corrupted zone%CL%%ORANGE%Flesh of Malic %WHITE%- drops from any demon enemy%CL%%GRAY%Materials:%CL%%GRAY%--------%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GRAY%--------%CL%%GOLD%Shadow of Hatred - Lucion boss fight}%CONTINUE%
 ItemDisplay[vps DIFF<2 CLVL<24]: %LBL_VPS_1%
 ItemDisplay[vps]:{%NAME%}
@@ -1814,7 +1819,7 @@ ItemDisplay[!ID DIN MAXSOCKETS>3 RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID RARE WAND FILTLVL<8 MAXSOCKETS>1 ILVL>84]: %TIER-6%%NAME%
-ItemDisplay[!ID MAG NEC FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
+ItemDisplay[!ID MAG NEC FILTLVL<5 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID RARE SOR MAXSOCKETS>2 FILTLVL<9 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID RARE SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[GLOVES RARE (ILVL>84) !ID !ETH FILTLVL<7]: %TIER-6%%NAME%
@@ -1880,38 +1885,42 @@ ItemDisplay[!ID (7m7 OR 9m9 OR mau) ETH MAG FILTLVL<7]: %CRAFT_TWO%
 ItemDisplay[!ID (axf OR 9xf OR 7xf) ETH MAG FILTLVL<7]: %CRAFT_TWO%
 ItemDisplay[!ID (gax OR 9ga OR 7ga) ETH MAG FILTLVL<7]: %CRAFT_TWO%
 ItemDisplay[!ID (spr OR 9sr OR 7sr) ETH MAG FILTLVL<7]: %CRAFT_TWO%
-ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG FILTLVL<5]: %CRAFT_TWO%
-ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG FILTLVL<5]: %CRAFT_ONE%
+ItemDisplay[!ID (7gm OR 9gm OR gma) ETH MAG FILTLVL<4]: %CRAFT_TWO%
+ItemDisplay[!ID (7cr OR 9cr OR crs) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (7wa OR 9wa OR wax) ETH MAG FILTLVL<4]: %CRAFT_ONE%
 ItemDisplay[!ID (7gd OR 9gd OR gsd) ETH MAG FILTLVL<7]: %CRAFT_ONE%
 ItemDisplay[!ID (7fb OR 9fb OR flb) ETH MAG FILTLVL<7]: %CRAFT_ONE%
-ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (7wh OR 9wh OR whm) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (7pi OR 9pi OR pil) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH MAG FILTLVL<5]: %CRAFT_ONE%
-ItemDisplay[!ID (lax OR 9la OR 7la) ETH MAG FILTLVL<5]: %CRAFT_ONE%
+ItemDisplay[!ID (7gi OR 9gi OR gix) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (7wh OR 9wh OR whm) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (7pi OR 9pi OR pil) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (7s7 OR 9s9 OR ssp) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (7ts OR 9ts OR tsp) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (fla OR 9fl OR 7fl) ETH MAG FILTLVL<4]: %CRAFT_ONE%
+ItemDisplay[!ID (lax OR 9la OR 7la) ETH MAG FILTLVL<4]: %CRAFT_ONE%
 ItemDisplay[!ID GLOVES !(utg OR uhg) MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID (bhm OR xh9 OR uh9) MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID (bsh OR xsh OR ush) MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID (lbt OR xlb OR ulb) MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID (vbt OR xvb OR uvb) MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID SHIELD !DIN (MAG OR RARE) FILTLVL<7 MAXSOCKETS>3 ILVL>84]:%CRAFT_ONE%
-ItemDisplay[!ID (ob5 OR oba OR obf) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID SORCERESS (ob5 OR oba OR obf) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID (ob5 OR oba OR obf) MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID AMAZON (lwb OR 8lw OR 6lw) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID AMAZON (am5 OR ama OR amf) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID (am2 OR am7 OR amc) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID (am1 OR am6 OR amb) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID (pab OR pa6 OR pa1) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID MAG (wsp OR 9ws OR 7ws) FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID MAG !ETH DRU FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID AMAZON (am2 OR am7 OR amc OR am1 OR am6 OR amb) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID (am2 OR am7 OR amc) MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID (am1 OR am6 OR amb) MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID PALADIN (pab OR pa6 OR pa1) MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID (pab OR pa6 OR pa1) MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID MAG (wsp OR 9ws OR 7ws) FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID DRUID MAG !ETH DRU FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID MAG !ETH DRU FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID MAG NEC FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID ETH SIN MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID ETH BAR MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID ETH CHEST MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
-ItemDisplay[!ID SIN ETH !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) MAG FILTLVL<7]: %CRAFT_ZERO%
-ItemDisplay[!ID BAR MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID ETH SIN MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID ETH BAR MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID ETH CHEST MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
+ItemDisplay[!ID SIN ETH !(wrb OR 9wb OR 7wb OR ces OR 9cs OR 7cs) MAG FILTLVL<5]: %CRAFT_ZERO%
+ItemDisplay[!ID BAR MAG FILTLVL<4 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID WAND MAG FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID MAG (scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID MAG (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3 ILVL>84]: %CRAFT_ZERO%
@@ -1923,6 +1932,7 @@ ItemDisplay[!ID ASSASSIN SIN MAG FILTLVL<5 ILVL>84]: %CRAFT_ZERO%
 ItemDisplay[!ID CLASS RARE FILTLVL<3 ILVL>84]: %NAME%
 ItemDisplay[!ID THROWING MAG ETH FILTLVL<3]: %CRAFT_ZERO%
 ItemDisplay[!ID WEAPON MAG ETH FILTLVL<3]: %CRAFT_ZERO%
+ItemDisplay[!SHOP !ID MAG ETH (WEAPON OR ARMOR) FILTLVL>2 DIFF=2]:
 ItemDisplay[!GROUND ID (RARE OR CRAFT) amu STAT360=0]:%NAME%{%WHITE%Experimental Affix Quality: $f(ROUND((MAX(STAT2/30+MAX(STAT21,STAT23)/13+MAX(STAT22,STAT24)/14+STAT19/240+STAT60/6+STAT62/8+CLSK0/2+TABSK0/2+TABSK2/2+TABSK32/2+TABSK41/2+TABSK48/2+TABSK50/2,STAT1/30+STAT9/120+STAT105/10+CLSK1/2+CLSK2/2+TABSK8/2+TABSK9/2+TABSK10/2+TABSK16/2+TABSK17/2+TABSK18/2+TABSK34/2+TABSK40/2+TABSK42/2)+STAT0/30+STAT7/60+(STAT39-RES)/40+(STAT41-RES)/40+(STAT43-RES)/40+(STAT45-RES)/40+RES/20+STAT80/25+STAT110/75+CLSK3/2+CLSK4/2+CLSK5/2+CLSK6/2+TABSK24/2+TABSK49/2)/6*100))%%CL%%NAME%}%CONTINUE%
 ItemDisplay[!GROUND ID (RARE OR CRAFT) rin STAT360=0]:%NAME%{%WHITE%Experimental Affix Quality $f(ROUND((MAX(STAT2/15+MAX(STAT21,STAT23)/13+MAX(STAT22,STAT24)/14+STAT19/120+STAT60/8+STAT62/6,STAT1/15+STAT9/120+STAT86/3+STAT105/10+STAT138/1)+STAT0/20+STAT7/40+(STAT39-RES)/30+(STAT41-RES)/30+(STAT43-RES)/30+(STAT45-RES)/30+RES/11+STAT80/25+STAT110/25)/6*100))%%CL%%NAME%}%CONTINUE%
 ItemDisplay[!GROUND ID (RARE OR CRAFT) jew STAT360=0]:%NAME%{%WHITE%Experimental Affix Quality $f(ROUND((MAX(STAT2/9+MAX(STAT17,STAT18)/40+MAX(STAT21,STAT23)/14+MAX(STAT22,STAT24)/15+STAT19/100+STAT501/125,STAT1/9+STAT9/30+STAT86/3+STAT138/3)+STAT0/9+STAT7/8+(STAT39-RES)/30+(STAT41-RES)/30+(STAT43-RES)/30+(STAT45-RES)/30+RES/10+STAT80/15+STAT99/7)/6*100))%%CL%%NAME%}%CONTINUE%
@@ -2952,6 +2962,9 @@ ItemDisplay[!RW NMAG !INF SCEPTER SOCK=5 (SK118>2 OR SK99>2) FILTLVL<7]: %NAME% 
 ItemDisplay[!RW SK222>2 SK226>0 SK224>0 (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG FILTLVL<9]:%NAME% %PURPLE%[Plague]{%NAME%%CL%%PURPLE%Plague base}
 ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=0 NMAG FILTLVL<7]:%NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN%3os for Plague Base}
 ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) (9cl OR 9sp OR 7cl OR 7sp) SOCK=3 NMAG FILTLVL<7]:%NAME% %DOT-76%%DARK_GREEN%[Plague]{%NAME%%CL%%GREEN%Plague base}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=0 NMAG FILTLVL<7]:%NAME% %DOT-7D%%GREEN%***{%NAME%%CL%%GREEN%3os for Delrium Base}
+ItemDisplay[!RW SK222>2 (SK226>0 OR SK224>0) DRU SOCK=3 NMAG FILTLVL<7]:%NAME% %DOT-7D%%GREEN%***{%NAME%}
+ItemDisplay[!RW SK222>2 DRU (SOCK=3 OR SOCK=0) NMAG FILTLVL<5]:%NAME% %DOT-7D%{%NAME%}
 ItemDisplay[(SK133>2 OR SK140>2 OR SK143>2 OR SK151>2) (SOCK=0 OR SOCK=3) ETH !INF NMAG FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[(ob5 OR oba OR obf) (SK40>2 OR SK52>2) !INF (SOCK=0 OR SOCK=3) NMAG FILTLVL<5]: %NAME%{%NAME%}
 ItemDisplay[(7kr OR 9kr OR kri) (SOCK=0 OR SOCK=3) !ETH NMAG (SK73>2) FILTLVL<7]: %NAME%{%NAME%}
