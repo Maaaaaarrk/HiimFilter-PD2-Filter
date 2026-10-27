@@ -42,14 +42,15 @@ const isHardcore = args.hardcore === 'true';
 const minSamples = Number(args['min-samples']) || 5;
 const windowHours = Number(args['window-hours']) || 168;
 const throttleMs = Number(args['throttle-ms']) || 200;
-// Manual tier cutoffs in HR (top-down, first match wins). Override via CLI:
-//   --cutoff-4=2.0 --cutoff-3=1.0 --cutoff-2=0.5 --cutoff-1=0.25 --cutoff-0=0.10
+// Manual tier cutoffs in HR (top-down, first match wins), the same as the uniques'. Override via CLI:
+//   --cutoff-4=4 --cutoff-3=2 --cutoff-2=1 --cutoff-1=0.5 --cutoff-0=0.25
+// (Before the Season 14 shift: 7 / 4 / 1 / 0.25 / 0.10.)
 const CUTOFFS_HR = [
-  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 7.0) },
-  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 4.0) },
-  { tier: '2_STAR_SET', cutoffHR: Number(args['cutoff-2'] ?? 1.0) },
-  { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.25) },
-  { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.10) },
+  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 4) },
+  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 2) },
+  { tier: '2_STAR_SET', cutoffHR: Number(args['cutoff-2'] ?? 1) },
+  { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.5) },
+  { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.25) },
 ];
 
 // Floors and locks come from builderfilter/data/unique-set-tiers.json (they replace the
