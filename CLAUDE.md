@@ -76,6 +76,8 @@ Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune
 
 **Shared condition aliases:** use `IN_TOWN` (`builderfilter/01-header/02b-alias-conditions[ALL].filter`) instead of spelling out the town `MAPID` list, and the `SOCK_*` base groups (`builderfilter/02-alias/08-alias-socket-caps[ALL].filter`) for socket-cap lists. A base's socket cap changes in one place there, not in each tooltip copy.
 
+**TRUE/FALSE flags go first in a condition:** put a flag alias whose value is `TRUE` or `FALSE` (`PHIL777_LOOK`, `PHIL777_STYLE`, `SITE_FX`, `GRAILENABLED`, `GRAIL_OWNED_CALLOUT`, `OTHER_CLASS_CRAFT_CAP`, ...) at the start of the rule, e.g. `ItemDisplay[PHIL777_LOOK (CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]`, not at the end. This is a runtime optimization: the game reads a condition left to right and stops at the first term that fails, and in 99.99% of cases the flag is the term that fails, so a rule for one style is skipped in every other filter after one check. A flag inside an `OR` group stays where the logic needs it.
+
 **Alias order matters in game:** PD2 (BH `ItemDisplay.cpp`) expands aliases in one pass in file order — a plain find-and-replace of the bare name in conditions, `%NAME%` in outputs. So an alias whose value uses another alias must be defined *before* it, and a longer name that starts with a shorter alias name (`SOCK_HELM_2_3` / `SOCK_HELM_2`, `RUNE_LOW_RANGE` / `RUNE_LOW`) must come first. The label checker and FilterForge expand by whole names regardless of order, so they won't show this; `validate_filters.py` simulates the game's expansion and errors on any rule that differs.
 
 ## Economy Data
