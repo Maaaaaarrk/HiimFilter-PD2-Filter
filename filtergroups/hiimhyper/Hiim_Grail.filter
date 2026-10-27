@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 27th%CL%Season 14 - build 109%CL%HiimFilter - Hyper - Grail -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 27th%CL%Season 14 - build 110%CL%HiimFilter - Hyper - Grail -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -2969,6 +2969,7 @@ ItemDisplay[CHEST EXC !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>19 FILTLVL<9]: 
 ItemDisplay[CHEST (brs OR rng OR gth OR spl OR plt OR fld) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>14 FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[CHEST (brs OR rng OR gth OR spl OR plt OR fld) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>17 FILTLVL<8]: %NAME%{%NAME%}
 ItemDisplay[CHEST (brs OR rng OR gth OR spl OR plt OR fld) !INF !ETH NMAG !RW (SOCK=0 OR SOCK=3) EDEF>19 FILTLVL<9]: %NAME%{%NAME%}
+ItemDisplay[(HELM OR CIRC) (EXC OR ELT) !INF !ETH NMAG !RW SOCK=3 EDEF>19 FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH EDEF>0 NMAG (EDEF>14 OR FILTLVL<7)]: %NAME%{%NAME%}
 ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH NMAG EDEF>17 FILTLVL<8]: %NAME%{%NAME%}
 ItemDisplay[(ci3 OR uh9) SOCK=0 !ETH NMAG EDEF>19 FILTLVL<9]: %NAME%{%NAME%}
@@ -3215,8 +3216,8 @@ ItemDisplay[ID !NMAG !MAG !ELT $f(UPSTR>0) $f(UPSTR>CHARSTAT0-STAT0)]:%NAME%{%RE
 ItemDisplay[ID !NMAG !MAG !ELT $f(UPLVL>0) !$f(UPLVL>CLVL)]:%NAME%{%GRAY%Lvl %UPLVL% %NAME%}%CONTINUE%
 ItemDisplay[ID !NMAG !MAG !ELT $f(UPLVL>0) $f(UPLVL>CLVL)]:%NAME%{%RED%Lvl %UPLVL% %NAME%}%CONTINUE%
 ItemDisplay[ID !NMAG !MAG !ELT $f(OR(UPLVL>0,UPSTR>0,UPDEX>0))]:%NAME%{%GRAY%( Requires: %NAME%}%CONTINUE%
-ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 !SHOP !EQUIPPED (qui OR lea OR hla OR stu OR scl OR chn OR buc OR xuc OR bsh OR hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR lst OR 8ls OR wnd OR ywn OR scp OR 9wn OR tkf OR tax OR jav OR am5 OR ama OR aqv OR cqv OR (ILVL>25 AND (ne1 OR ne2 OR ne3 OR ne4 OR ne5 OR lax OR bar OR sbw OR lxb OR spr OR ktr OR wrb OR axf OR ces OR (NEC NORM))) OR (ILVL>40 AND (bhm OR xh9 OR ci0 OR ci1 OR hlm OR xlm OR fhl OR xhl OR lbw OR 8lb OR 9sr)))]: %NAME%{%RED%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
-ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 !SHOP !EQUIPPED UPLVL>30 LVLREQ<31 (qui OR lea OR hla OR stu OR scl OR chn OR buc OR xuc OR bsh OR hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR dgr OR dir OR sst OR lst OR 8ls OR wnd OR ywn OR scp OR 9wn OR tkf OR tax OR jav OR am5 OR ama OR aqv OR cqv OR (ILVL>25 AND (ne1 OR ne2 OR ne3 OR ne4 OR ne5 OR lax OR bar OR sbw OR lxb OR spr OR ktr OR wrb OR axf OR ces OR (NEC NORM))) OR (ILVL>40 AND (bhm OR xh9 OR ci0 OR ci1 OR hlm OR xlm OR fhl OR xhl OR lbw OR 8lb OR 9sr)))]: %NAME%{%RED%Warning: WILL increase level requirement over LLD%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 !SHOP !EQUIPPED (8ls OR 9wn OR bsh OR buc OR chn OR clb OR dgr OR dir OR flc OR hax OR hla OR jav OR lea OR lst OR mac OR qui OR sbr OR scl OR scm OR scp OR spc OR ssd OR sst OR stu OR tax OR tkf OR wnd OR xuc OR ywn OR aqv OR cqv OR (ILVL>25 AND (axf OR bar OR brs OR ces OR fld OR ktr OR lax OR ltp OR lxb OR ne1 OR ne2 OR ne3 OR ne4 OR ne5 OR plt OR rng OR sbw OR spl OR spr OR wrb OR xcl OR xea OR xhn OR xla OR xld OR xlt OR xng OR xpl OR xrs OR xtp OR xtu OR xui)) OR (ILVL>40 AND (8lb OR 9sr OR am5 OR ama OR bhm OR ci1 OR fhl OR gts OR hlm OR kit OR lbw OR lsd OR tow OR xh9 OR xhl OR xit OR xlm OR xow OR xts)))]: %NAME%{%RED%(Upgrade before SLAM For +1 Max Socket Chance)%CL%%NAME%}%CONTINUE%
+ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360=0 !SHOP !EQUIPPED UPLVL>30 LVLREQ<31 (8ls OR 9wn OR bsh OR buc OR chn OR clb OR dgr OR dir OR flc OR hax OR hla OR jav OR lea OR lst OR mac OR qui OR sbr OR scl OR scm OR scp OR spc OR ssd OR sst OR stu OR tax OR tkf OR wnd OR xuc OR ywn OR aqv OR cqv OR (ILVL>25 AND (axf OR bar OR brs OR ces OR fld OR ktr OR lax OR ltp OR lxb OR ne1 OR ne2 OR ne3 OR ne4 OR ne5 OR plt OR rng OR sbw OR spl OR spr OR wrb OR xcl OR xea OR xhn OR xla OR xld OR xlt OR xng OR xpl OR xrs OR xtp OR xtu OR xui)) OR (ILVL>40 AND (8lb OR 9sr OR am5 OR ama OR bhm OR ci1 OR fhl OR gts OR hlm OR kit OR lbw OR lsd OR tow OR xh9 OR xhl OR xit OR xlm OR xow OR xts)))]: %NAME%{%RED%Warning: WILL increase level requirement over LLD%CL%%NAME%}%CONTINUE%
 ItemDisplay[STAT486=0 !NMAG !MAG ID STAT360>0 !SHOP !EQUIPPED SOCK=0 (wnd OR 9wn OR ywn OR dgr OR dir OR tkf OR tax OR jav OR sst OR lst OR 8ls OR sbw OR lxb OR spr OR bar)]: %NAME%{%RED%(Upgrade before Puzzle Box For +1 Max Socket)%CL%%NAME%}%CONTINUE%
 ItemDisplay[STAT486=0 !NMAG !MAG ID SOCK=0 STAT360>0 !SHOP !EQUIPPED UPLVL>30 LVLREQ<31 (wnd OR 9wn OR ywn OR dgr OR dir OR tkf OR tax OR jav OR sst OR lst OR 8ls OR sbw OR lxb OR spr OR bar)]: %NAME%{%RED%Warning: WILL increase level requirement over LLD%CL%%NAME%}%CONTINUE%
 ItemDisplay[(WEAPON) (MAG OR RARE) FCR>0 FILTLVL<3]: %NAME%{%ORANGE%> > > %FCR% FCR < < <%CL%%NAME%}%CONTINUE%
