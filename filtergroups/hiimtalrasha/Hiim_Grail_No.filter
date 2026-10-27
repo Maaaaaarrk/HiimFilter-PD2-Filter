@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 27th%CL%Season 14 - build 106%CL%HiimFilter - TalRasha - NoGrail -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 27th%CL%Season 14 - build 107%CL%HiimFilter - TalRasha - NoGrail -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -3326,12 +3326,12 @@ ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL>25 
 ItemDisplay[FILTLVL<3 NMAG !INF !RW SOCK=0 (ELT OR FILTLVL<2 OR DIFF<2) ILVL<41 ILVL>25 (am1 OR am2 OR am6 OR am7 OR amb OR amc OR lbw OR sbb OR lbb OR swb OR lwb OR 8lb OR 8s8 OR 8l8 OR 8sw OR 8lw OR 6lb OR 6s7 OR 6l7 OR 6sw OR 6lw)]: %NAME%{%TAN%Larzuk for 4 sockets%CL%%NAME%}%CONTINUE%
 ItemDisplay[(HELM OR CIRC OR BAR OR DRU) NMAG !RW SOCK=3 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%3os Helm Base%CL%%NAME%}
 ItemDisplay[CHEST NMAG !RW SOCK=3 FILTLVL<3]: %NAME% %LEVELING_TAG%{%RED%3os Chest Base%CL%%NAME%}
-ItemDisplay[PHIL777_LOOK (CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %NAME%{%NAME%}
-ItemDisplay[PHIL777_LOOK (CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %NAME%{%NAME%}
-ItemDisplay[PHIL777_LOOK SHIELD NMAG FILTLVL<3 SOCK=3]: %NAME%{%NAME%}
-ItemDisplay[(CHEST OR HELM) NMAG DIFF<1 FILTLVL<3 SOCK>1]: %RARE_PLUS%{%NAME%}
-ItemDisplay[(CHEST OR HELM) NMAG DIFF<2 FILTLVL<3 SOCK>2]: %RARE_PLUS%{%NAME%}
-ItemDisplay[SHIELD NMAG FILTLVL<3 SOCK=3]: %RARE_PLUS%{%NAME%}
+ItemDisplay[PHIL777_LOOK (CHEST OR HELM) NMAG !RW DIFF<1 FILTLVL<3 SOCK>1]: %NAME%{%NAME%}
+ItemDisplay[PHIL777_LOOK (CHEST OR HELM) NMAG !RW DIFF<2 FILTLVL<3 SOCK>2]: %NAME%{%NAME%}
+ItemDisplay[PHIL777_LOOK SHIELD NMAG !RW FILTLVL<3 SOCK=3]: %NAME%{%NAME%}
+ItemDisplay[(CHEST OR HELM) NMAG !RW DIFF<1 FILTLVL<3 SOCK>1]: %RARE_PLUS%{%NAME%}
+ItemDisplay[(CHEST OR HELM) NMAG !RW DIFF<2 FILTLVL<3 SOCK>2]: %RARE_PLUS%{%NAME%}
+ItemDisplay[SHIELD NMAG !RW FILTLVL<3 SOCK=3]: %RARE_PLUS%{%NAME%}
 ItemDisplay[WEAPON ELT MAG CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON EXC MAG DIFF<2 FILTLVL<2]: %NAME%{%NAME%}
 ItemDisplay[WEAPON ETH CLVL<80 FILTLVL<2]: %NAME%{%NAME%}
