@@ -3,22 +3,20 @@
 // Hiim (and Phil777) segments add these inline; the Kassahi bucket's aliases already
 // carry their own icon and sound, so its copy of each alias is empty (or its own frame).
 // Keep the alias names identical in 02-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
-// Numbered 02 so it loads before the 03 style aliases: the game expands aliases in file
-// order, so DISP_* values (%WSS_SHARD%, %TOKEN_PARTS%, ...) must be defined above them.
+// Alias values never use another alias. Where a style's label part is one of its own
+// aliases, the shared rule picks it with a flag (SITE_FX, RAINBOWS_LOOK) instead.
 //-----------------------------------------------------------------------------------
 // Values for the Kassahi bucket (Regular / Meme / Mystery, normal + hyper).
 
 // SITE_FX: condition flag for the few rules that only exist in one style (wss / cwss stack tag).
 Alias[SITE_FX]: FALSE
+// RAINBOWS_LOOK: condition flag for rules that use the Rainbows label parts below.
+Alias[RAINBOWS_LOOK]: FALSE
 
-// cwss frame
-Alias[DISP_CWSS]: %WSS_SHARD%
-// iwss frame
-Alias[DISP_IWSS]: %WSS_SHARD%
 // lmal decoration
 Alias[DISP_LMAL]: %NAME%
 // toa
-Alias[DISP_TOA]: %TOKEN_PARTS%
+Alias[DISP_TOA]: %NAME%
 // uber boss mats
 Alias[FX_BOSS_MAT]:
 // essences
@@ -150,9 +148,9 @@ Alias[QST_TR2]: %MAP-51%%GOLD%Scroll of Resistance %RED%•{%GOLD%Right Click to
 
 // Per-style label parts and rune ranges used by shared rules. Rainbows values: 02-alias-site-fx[ONLY=Rainbows].
 Alias[DISP_WSS]: %NAME%
-Alias[DISP_PUZZLEBOX]: %GEN_GG_ITEM%
+Alias[DISP_PUZZLEBOX]: %NAME%
 Alias[DISP_KEY]: %NAME%
-Alias[DISP_RKEY]: %RARE_GG_ALT%
+Alias[DISP_RKEY]: %NAME%
 Alias[MARK_ORANGE]: %ORANGE%
 Alias[MARK_PURPLE]: %PURPLE%
 Alias[DISP_RVL_NAME]: big%WHITE%Rejuv
@@ -161,12 +159,12 @@ Alias[DISP_RVL_MAX]: GATORADE
 Alias[DISP_RVS_NAME]: %WHITE%rejuv
 Alias[DISP_RVS_LOW]: %NAME%%PURPLE%35%
 Alias[DISP_RVS_MAX]: %PURPLE%powerade
-Alias[DISP_UNID_RARE_HIGH]: %RARE_HIGH_ITEM%
+Alias[DISP_UNID_RARE_HIGH]: %NAME%
 Alias[DISP_UNID_JEWELRY]: %NAME%
-Alias[DISP_UNID_RING_HIGH]: %RARE_ITEM%
+Alias[DISP_UNID_RING_HIGH]: %NAME%
 Alias[DISP_UNID_MAG_TOP]: %NAME%
-Alias[DISP_UNID_JEWEL_TOP]: %RARE_GOOD_ITEM%
-Alias[DISP_UNID_MAG_CHARM]: %MAG_ITEM%
+Alias[DISP_UNID_JEWEL_TOP]: %NAME%
+Alias[DISP_UNID_MAG_CHARM]: %NAME%
 Alias[DISP_UNID_SET_JEWELRY]: %NAME%
 Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
 Alias[RUNE_NUMBER_LEVELS]: FILTLVL<3

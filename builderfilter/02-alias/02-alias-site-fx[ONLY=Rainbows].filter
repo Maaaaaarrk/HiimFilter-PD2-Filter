@@ -4,22 +4,20 @@
 // Hiim (and Phil777) segments add these inline; the Kassahi bucket's aliases already
 // carry their own icon and sound, so its copy of each alias is empty (or its own frame).
 // Keep the alias names identical in 02-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
-// Numbered 02 so it loads before the 03 style aliases: the game expands aliases in file
-// order, so DISP_* values (%WSS_SHARD%, %TOKEN_PARTS%, ...) must be defined above them.
+// Alias values never use another alias. Where a style's label part is one of its own
+// aliases, the shared rule picks it with a flag (SITE_FX, RAINBOWS_LOOK) instead.
 //-----------------------------------------------------------------------------------
 // Values for Hiim styles and Phil777.
 
 // SITE_FX: condition flag for the few rules that only exist in one style (wss / cwss stack tag).
 Alias[SITE_FX]: TRUE
+// RAINBOWS_LOOK: condition flag for rules that use the Rainbows label parts below.
+Alias[RAINBOWS_LOOK]: TRUE
 
-// cwss frame
-Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
-// iwss frame
-Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
 // lmal decoration
 Alias[DISP_LMAL]: %MAP-4A%%NAME%
-Alias[DISP_TOA]: %MAP-A9%%TOKEN_PARTS%
 // toa
+Alias[DISP_TOA]: %MAP-A9%%RED%X%GREEN%><%BLUE%x%ORANGE% %NAME% %BLUE%x%GREEN%><%RED%X
 // uber boss mats
 Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
 // essences
@@ -130,8 +128,8 @@ Alias[QST_TR2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resist
 
 
 // Per-style label parts and rune ranges used by shared rules. Rainbows values: 02-alias-site-fx[ONLY=Rainbows].
-Alias[DISP_WSS]: %WSS_SHARD%
-Alias[DISP_PUZZLEBOX]: %WSS_SHARD%
+Alias[DISP_WSS]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
+Alias[DISP_PUZZLEBOX]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
 Alias[DISP_KEY]: Key
 Alias[DISP_RKEY]: %RED%X%YELLOW%x%GREEN%X%BLUE%x%BLUE%X%GREEN%x%YELLOW%X%RED%x %NAME% %RED%x%YELLOW%X%GREEN%x%BLUE%X%BLUE%x%GREEN%X%YELLOW%x%RED%X
 Alias[MARK_ORANGE]: %YELLOW%
@@ -145,11 +143,11 @@ Alias[DISP_RVS_MAX]: %NAME%
 Alias[DISP_UNID_RARE_HIGH]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O
 Alias[DISP_UNID_JEWELRY]: %RED%O %NAME% %RED%O
 Alias[DISP_UNID_RING_HIGH]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O
-Alias[DISP_UNID_MAG_TOP]: %MAG_DBL_AFFIX_ITEM%
-Alias[DISP_UNID_JEWEL_TOP]: %MAP-9B%%DOT-6A%%WSS_SHARD%
+Alias[DISP_UNID_MAG_TOP]: %BORDER-6A%%DOT-94%%YELLOW%OO %NAME% %YELLOW%OO
+Alias[DISP_UNID_JEWEL_TOP]: %MAP-9B%%DOT-6A%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
 Alias[DISP_UNID_MAG_CHARM]: %MAP-6A%%DOT-94%%YELLOW%O %NAME% %YELLOW%O
-Alias[DISP_UNID_SET_JEWELRY]: %SET_TIER3_ITEM%
-Alias[DISP_UNID_SET_ETH_WEAPON]: %SET_TIER2_ITEM%
+Alias[DISP_UNID_SET_JEWELRY]: %MAP-7D%%GREEN%O O O %NAME% %GREEN%O O O
+Alias[DISP_UNID_SET_ETH_WEAPON]: %DOT-7D%%GREEN%O O %NAME% %GREEN%O O
 Alias[RUNE_NUMBER_LEVELS]: FILTLVL<0
 Alias[RUNE_NUMBER_TOWN_LEVELS]: FILTLVL>2
 Alias[LOW_RUNE_RANGE]: RUNE<20
