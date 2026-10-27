@@ -4,7 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Working With the User
 
+- **Keep PR descriptions minimal.** A one-line summary is enough; don't write long PR bodies or keep rewriting them as the branch grows. The diff and commit messages are the record.
 - **Never end a reply with a question in prose.** Whenever you are waiting on the user — a decision, a choice between options, a confirmation, or any open question — ask it with the `AskUserQuestion` tool instead of writing the question in the response text.
+
+## Nothing identifiable in shared output
+
+Nothing that identifies a real person goes into a doc, artifact, PDF, report, Discord post, PR or site content: no
+real names, email addresses, account or user ids, Discord handles, and no links to a person's own clips or messages
+(say "a video is available on request" instead). No local paths, session links or machine details either. Credit
+hiimpd2.com (or HiimMark). Doc bylines get no author mention chip, since it shows the account's real name. Make a
+PDF from your own HTML with its metadata set to hiimpd2.com rather than exporting a Claude doc, and check the file's
+text and metadata for names before sending it.
 
 ## Project Overview
 
@@ -74,7 +84,7 @@ Color codes, icons, and tooltip blocks are embedded inline. Economy values (rune
 
 Two sources keep economy values current:
 
-- **`scripts/update-pd2trader-runes.mjs`** — Node script that pulls median prices from the PD2 Trader API and rewrites the rune / uber-material aliases in `builderfilter/02-alias/04-alias-economy-values[ALL].filter`. Run on a schedule by `.github/workflows/update-pd2trader-rune-values.yml`. Mat values use tiered rounding (`roundMatValue`): nearest 0.01 below 0.25 HR, nearest 0.05 at 0.25 HR and up.
+- **`scripts/update-pd2trader-runes.mjs`** — Node script that pulls median prices from the PD2 Trader API and rewrites the rune / uber-material aliases in `builderfilter/02-alias/04-alias-economy-values[ALL].filter`. Run on a schedule by `.github/workflows/update-pd2trader-rune-values.yml`, which opens a `bot/update-rune-values` PR (it does not run on other PRs, so hand-set values such as season-reset rune prices aren't overwritten before merge). Mat values use tiered rounding (`roundMatValue`): nearest 0.01 below 0.25 HR, nearest 0.05 at 0.25 HR and up.
 - **Set / unique star tiers** — the source of truth is `builderfilter/data/unique-set-tiers.json`: one entry per unique / set item with `code`, `name`, `base`, `current` and `floor` tiers, an optional `eth` block (`current`/`floor` for ETH copies), and `lld` / `locked` flags. `builderfilter/tier_aliases.py` generates `02-alias/05-unid-unique-set-stars[ALL].filter` from it on every build (a base shows the best tier of any entry on it). Uniques get separate non-ETH (`<tier>_STAR_UNIQUE`, rules use `!ETH`) and ETH (`<tier>_STAR_ETH_UNIQUE`, rules use `ETH`) lists per tier, so any non-ETH / ETH combination works; "ETH copy rated lower" is `ETH 4_STAR_UNIQUE !4_STAR_ETH_UNIQUE` — **edit the JSON, never the alias file**. `scripts/suggest-unique-tiers.mjs` / `suggest-set-tiers.mjs` compare PD2 market listings against it and write suggestions to `temp/` (locked bases skipped, downgrades clamped to floors). `scripts/apply-tier-changes.mjs` writes them back to the JSON: upgrades always, downgrades only with `--downgrades=true` and never below an entry's floor (`scripts/lib/tier-model.mjs` is the shared model). Run every 3 days by `.github/workflows/update-set-unique-tiers.yml`, which opens a `bot/update-set-unique-tiers` PR; set the repo variable `TIER_AUTO_DOWNGRADES` to `true` to include downgrades.
 - **`src/Pd2Scraper.java`** — Selenium + JSoup scraper that pulls economy data from pd2.tools and replaces `*_Value` placeholders. Build with `mvn -f mvn.xml` if running locally.
 
@@ -106,12 +116,16 @@ Exit code is non-zero if any errors are found, which blocks the CI commit step.
 3. Fix any errors reported by `validate_filters.py` before opening a PR
 4. Open a PR to `main` when ready
 
+## hiimpd2.com Filters Page: Unid Rares
+
+The Unidentified rares card on https://hiimpd2.com/filters is a hand-made copy of the unidentified rare rules in `builderfilter/06-unidfiltering/12-Unid_MagRare[ALL].filter`, as they apply to the main `Hiim` filter: the last filter level each kind of unid rare still shows on (level 4 and up; levels 1-2 show every unid rare and level 3 the same as level 4), with its CLVL / ILVL / ALVL (affix level) conditions. It does not update itself. When a change here moves a rare group to another level, adds or removes a group, or changes those conditions, also update `src/features/filters/rares.ts` in the `Maaaaaarrk/Hiim-PD2` site repo (check the levels with the label checker, `builderreadme/filterrender/engine.py`). The unique and set tiers on that page are read live from `builderfilter/data/unique-set-tiers.json` and need no site change.
+
 ## Key Files
 
 - `.github/workflows/build-filters.yml` — full build pipeline
 - `version.txt` — auto-incremented build number
 - `builderfilter/` — all source filter segments
-- `builderfilter/filters.json` — filter definitions, beta flag, and `beta_exclude` (filterdirs that skip beta builds, e.g. `sancofexile`)
+- `builderfilter/filters.json` — filter definitions, beta flag, `beta_exclude` (filterdirs that skip beta builds) and `paused_filterdirs` (filterdirs `build.py` and the README generator skip entirely, definitions, segments and the published `filtergroups/<dir>/` files kept — never delete a paused group's outputs; remove a filterdir from the list and rebuild to re-enable it)
 - `builderfilter/build.py` — local/CI build script (resolves tags, concatenates segments; regenerates the star-tier aliases)
 - `builderfilter/data/unique-set-tiers.json` — unique / set star tiers (current + floor per item); `builderfilter/tier_aliases.py` turns it into the tier aliases
 - `validate_filters.py` — filter linter/QA (required to pass)
