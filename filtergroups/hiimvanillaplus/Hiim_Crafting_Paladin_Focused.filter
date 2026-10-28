@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 28th%CL%Season 14 - build 113%CL%HiimFilter - Vanilla - Paladin - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 28th%CL%Season 14 - build 114%CL%HiimFilter - Vanilla - Paladin - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -1654,6 +1654,10 @@ ItemDisplay[STAT206=52]: %NAME% PDR%CONTINUE%{%NAME%}
 ItemDisplay[STAT206=19]: %NAME% DS%CONTINUE%{%NAME%}
 ItemDisplay[STAT206=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
 ItemDisplay[STAT206>0]: %NAME% [D]%CONTINUE%{%NAME%}
+ItemDisplay[(RARE OR CRAFT) BELT ID !STAT360=72 !STAT206=72 STAT40>0]: %NAME% %RED%%STAT40%MAX%CONTINUE%{%NAME%}
+ItemDisplay[(RARE OR CRAFT) BELT ID !STAT360=72 !STAT206=72 STAT44>0]: %NAME% %BLUE%%STAT44%MAX%CONTINUE%{%NAME%}
+ItemDisplay[(RARE OR CRAFT) BELT ID !STAT360=72 !STAT206=72 STAT42>0]: %NAME% %YELLOW%%STAT42%MAX%CONTINUE%{%NAME%}
+ItemDisplay[(RARE OR CRAFT) BELT ID !STAT360=72 !STAT206=72 STAT46>0]: %NAME% %GREEN%%STAT46%MAX%CONTINUE%{%NAME%}
 ItemDisplay[(RARE OR CRAFT) FOOLS]: %NAME% %PURPLE%FOOLS%CONTINUE%
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=662]: %NAME% %ORANGE%[amp]%CONTINUE%%DOT-0B%
 ItemDisplay[(MAG OR CRAFT OR RARE) WEAPON SUFFIX=898]: %NAME% %ORANGE%[Amp]%CONTINUE%%DOT-0B%
