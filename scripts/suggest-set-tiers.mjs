@@ -247,6 +247,14 @@ function sellersAtOrAbove(listingsDesc, threshold) {
 function clearsCutoff(listingsDesc, threshold) {
   return sellersAtOrAbove(listingsDesc, threshold) >= sellersNeededForTier(listingsDesc);
 }
+// A downgrade needs strong evidence: more than 50 sellers in all and not one of them
+// listing the item at or above its current tier's cutoff.
+const MIN_SELLERS_FOR_DOWNGRADE = 51;
+function downgradeAllowed(listingsDesc, currentTier) {
+  const c = CUTOFFS_HR.find((x) => x.tier === currentTier);
+  if (!c || !Array.isArray(listingsDesc)) return false;
+  return sellerCount(listingsDesc) >= MIN_SELLERS_FOR_DOWNGRADE && sellersAtOrAbove(listingsDesc, c.cutoffHR) === 0;
+}
 function suggestTierFromListings(listingsDesc) {
   if (!Array.isArray(listingsDesc) || sellerCount(listingsDesc) < MIN_SELLERS_FOR_DATA) return null;
   for (const c of CUTOFFS_HR) {
@@ -384,7 +392,8 @@ async function main() {
       rawSug &&
       row.currentTier &&
       rawSug !== row.currentTier &&
-      !moveClearsMultiplier(row.maxNameListings, row.currentTier, rawSug, changeMultiplier)
+      (!moveClearsMultiplier(row.maxNameListings, row.currentTier, rawSug, changeMultiplier) ||
+        (tierIdx(rawSug) > tierIdx(row.currentTier) && !downgradeAllowed(row.maxNameListings, row.currentTier)))
     ) {
       row.suggestedTier = row.currentTier;
     } else {
