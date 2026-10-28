@@ -22,7 +22,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import {
-  loadTiers, uniqueBaseTiers, uniqueAliasesFor, stars, baseFloor, baseLocked, ethFloored,
+  loadTiers, uniqueBaseTiers, uniqueAliasesFor, stars, baseFloor, baseLocked, ethFloored, listingsByOwnBase,
   UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE,
 } from './lib/tier-model.mjs';
 
@@ -395,21 +395,24 @@ async function main() {
   const jobs = [];
   for (const base of baseCodes) {
     for (const isEth of [false, true]) {
-      jobs.push(async () => {
-        const listings = await fetchListingsForBase(base, isEth);
-        const agg = aggregateListings(listings);
-        return { base, isEth, ...agg };
-      });
+      jobs.push(async () => ({ base, isEth, listings: await fetchListingsForBase(base, isEth) }));
     }
   }
 
   console.error(`  ${jobs.length} fetches (eth + non-eth per base) at ${maxConcurrent} concurrent`);
-  const fetchResults = await fetchAllConcurrent(jobs, maxConcurrent, (done, total) => {
+  const fetched = await fetchAllConcurrent(jobs, maxConcurrent, (done, total) => {
     if (done % 20 === 0 || done === total) {
       process.stderr.write(`\r  progress: ${done}/${total}`);
     }
   });
   process.stderr.write('\n');
+
+  const fetchResults = [];
+  for (const isEth of [false, true]) {
+    const { byBase, moved, unknown } = listingsByOwnBase(bases, fetched.filter((f) => f.isEth === isEth));
+    console.error(`  ${isEth ? 'eth' : 'non-eth'}: ${moved} listings moved to their item's own base, ${unknown} with unknown names dropped`);
+    for (const [base, listings] of byBase) fetchResults.push({ base, isEth, ...aggregateListings(listings) });
+  }
 
   const itemRows = [];
   for (const r of fetchResults) {

@@ -132,3 +132,35 @@ export function uniqueAliasesFor(n, e) {
 
 const norm = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 export const sameName = (a, b) => norm(a) === norm(b);
+
+// Upgraded items keep their name but are listed under the upgraded base's code (a Vampire
+// Gaze upgraded from Grim Helm "xh9" to Bone Visage "uh9" lists as "uh9"), so listings are
+// regrouped by item name onto the base the name belongs to. fetched: [{ base, listings }]
+// (one group per variant); returns base code -> listings. A listing whose name is not an
+// entry of any base is dropped, and one whose name belongs to several bases stays where
+// it was listed when that is one of them.
+export function listingsByOwnBase(bases, fetched) {
+  const ownersByName = new Map();
+  for (const [code, b] of bases) {
+    for (const e of b.entries) {
+      if (!ownersByName.has(e.name)) ownersByName.set(e.name, new Set());
+      ownersByName.get(e.name).add(code);
+    }
+  }
+  const out = new Map([...bases.keys()].map((code) => [code, []]));
+  let moved = 0;
+  let unknown = 0;
+  for (const { base, listings } of fetched) {
+    for (const l of listings) {
+      const owners = ownersByName.get(l?.item?.name);
+      const owner = owners?.has(base) ? base : owners?.size === 1 ? [...owners][0] : null;
+      if (!owner) {
+        unknown++;
+        continue;
+      }
+      if (owner !== base) moved++;
+      out.get(owner).push(l);
+    }
+  }
+  return { byBase: out, moved, unknown };
+}

@@ -21,7 +21,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
-import { loadTiers, setBaseTiers, baseFloor, baseLocked, SET_SCALE, SET_ALIAS, TIERS_FILE } from './lib/tier-model.mjs';
+import { loadTiers, setBaseTiers, baseFloor, baseLocked, listingsByOwnBase, SET_SCALE, SET_ALIAS, TIERS_FILE } from './lib/tier-model.mjs';
 
 const REPORT_FILE = 'temp/set-tier-report.txt';
 const DIFF_FILE = 'temp/set-tier-diff.json';
@@ -329,19 +329,19 @@ async function main() {
   const baseCodes = [...bases.keys()].sort();
   console.error(`  ${baseCodes.length} set base codes from ${TIERS_FILE}`);
 
-  const jobs = baseCodes.map((base) => async () => {
-    const listings = await fetchListingsForBase(base);
-    const agg = aggregateListings(listings);
-    return { base, ...agg };
-  });
+  const jobs = baseCodes.map((base) => async () => ({ base, listings: await fetchListingsForBase(base) }));
 
   console.error(`  ${jobs.length} fetches at ${maxConcurrent} concurrent`);
-  const fetchResults = await fetchAllConcurrent(jobs, maxConcurrent, (done, total) => {
+  const fetched = await fetchAllConcurrent(jobs, maxConcurrent, (done, total) => {
     if (done % 20 === 0 || done === total) {
       process.stderr.write(`\r  progress: ${done}/${total}`);
     }
   });
   process.stderr.write('\n');
+
+  const { byBase, moved, unknown } = listingsByOwnBase(bases, fetched);
+  console.error(`  ${moved} listings moved to their item's own base, ${unknown} with unknown names dropped`);
+  const fetchResults = [...byBase].map(([base, listings]) => ({ base, ...aggregateListings(listings) }));
 
   const itemRows = [];
   for (const r of fetchResults) {
