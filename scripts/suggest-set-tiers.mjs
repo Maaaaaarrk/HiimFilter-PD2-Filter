@@ -43,13 +43,14 @@ const minSamples = Number(args['min-samples']) || 5;
 const windowHours = Number(args['window-hours']) || 168;
 const throttleMs = Number(args['throttle-ms']) || 200;
 // Manual tier cutoffs in HR (top-down, first match wins), the same as the uniques'. Override via CLI:
-//   --cutoff-4=7 --cutoff-3=4 --cutoff-2=1 --cutoff-1=0.25 --cutoff-0=0.10
+//   --cutoff-4=5 --cutoff-3=3 --cutoff-2=1 --cutoff-1=0.35 --cutoff-0=0.15
+// (Early-ladder values; the late-ladder ones are 7 / 4 / 1 / 0.25 / 0.10.)
 const CUTOFFS_HR = [
-  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 7) },
-  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 4) },
+  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 5) },
+  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 3) },
   { tier: '2_STAR_SET', cutoffHR: Number(args['cutoff-2'] ?? 1) },
-  { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.25) },
-  { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.10) },
+  { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.35) },
+  { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.15) },
 ];
 
 // Floors and locks come from builderfilter/data/unique-set-tiers.json (they replace the
