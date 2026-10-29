@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 29th%CL%Season 14 - build 121%CL%HiimFilter - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 29th%CL%Season 14 - build 122%CL%HiimFilter - Mystery -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -409,6 +409,33 @@ Alias[SOCK_CHEST_3]: (rng OR xng OR xcl OR xhn OR brs OR xrs OR xpl OR xlt OR xl
 Alias[SOCK_CHEST_4]: (uui OR uea OR ula OR utu OR ung OR ucl OR uhn OR urs OR upl OR ult OR uld OR uth OR utp OR uul OR uar OR gth OR ful OR aar OR xth OR xul OR xar)
 Alias[OTHER_CLASS_CRAFT_CAP]: FALSE
 ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL1 !ID GROUND !IN_TOWN]: Pelt%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL2 !ID GROUND !IN_TOWN]: Barb Hat%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL3 !ID GROUND !IN_TOWN]: Pala%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL4 !ID GROUND !IN_TOWN]: Nec Head%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL5 !ID GROUND !IN_TOWN]: Claw%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL6 !ID GROUND !IN_TOWN]: Sorc Orb%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP1 !ID GROUND !IN_TOWN]: Axe%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP2 !ID GROUND !IN_TOWN]: Mace%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP3 !ID GROUND !IN_TOWN]: Sword%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP4 !ID GROUND !IN_TOWN]: Dagger%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP5 !ID GROUND !IN_TOWN]: Throwing%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP6 !ID GROUND !IN_TOWN]: Javelin%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP7 !ID GROUND !IN_TOWN]: Spear%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP8 !ID GROUND !IN_TOWN]: Polearm%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP9 !ID GROUND !IN_TOWN]: Bow%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP10 !ID GROUND !IN_TOWN]: Crossbow%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP11 !ID GROUND !IN_TOWN]: Stave%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP12 !ID GROUND !IN_TOWN]: Wand%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP13 !ID GROUND !IN_TOWN]: Scepter%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL7 !ID GROUND !IN_TOWN]: Zon %NAME%%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ1 !EQ7 !CLASS !ID GROUND !IN_TOWN]: Helm%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ2 !ID GROUND !IN_TOWN]: Chest%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ3 !CL3 !ID GROUND !IN_TOWN]: Shield%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ4 !ID GROUND !IN_TOWN]: Glove%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ5 !ID GROUND !IN_TOWN]: Boot%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ6 !ID GROUND !IN_TOWN]: Belt%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ7 !ID GROUND !IN_TOWN]: Circlet%CONTINUE%
 ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
 ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
 ItemDisplay[!UNI !SET jew]: %CONTINUE%Jewel
@@ -420,6 +447,8 @@ ItemDisplay[aqv3 (MAG OR RARE OR UNI) !ID]: Elt Arrow%CONTINUE%
 ItemDisplay[cqv (MAG OR RARE OR UNI) !ID]: Bolt%CONTINUE%
 ItemDisplay[cqv2 (MAG OR RARE OR UNI) !ID]: Exc Bolt%CONTINUE%
 ItemDisplay[cqv3 (MAG OR RARE OR UNI) !ID]: Elt Bolt%CONTINUE%
+ItemDisplay[MAG EQ7 !ID GROUND !IN_TOWN]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[RARE EQ7 !ID GROUND !IN_TOWN]: %YELLOW%%NAME%%CONTINUE%
 ItemDisplay[!RW SUP]: %WHITE%Sup %NAME%%CONTINUE%
 ItemDisplay[MAG]: %BLUE%%NAME%%CONTINUE%
 ItemDisplay[RARE]: %YELLOW%%NAME%%CONTINUE%
