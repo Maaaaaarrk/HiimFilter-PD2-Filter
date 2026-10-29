@@ -13,10 +13,17 @@ Alias[SITE_FX]: TRUE
 // RAINBOWS_LOOK: condition flag for rules that use the Rainbows label parts below.
 Alias[RAINBOWS_LOOK]: FALSE
 
+// cwss frame
+Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
+// iwss frame
+Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
 // lmal decoration
 Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
 // toa
 Alias[DISP_TOA]: %MAP-A9%%RED%o %PURPLE% %ORANGE%%NAME%  %ORANGE%< <
+// unid unique rings / amulets (20-Unid_UniquesSet_Tiers): every style except the Kassahi bucket uses
+// its own GG unique frame; the Kassahi bucket's value is in 02-alias-site-fx[ONLY=KassahiStd]
+Alias[DISP_UNI_GG_JEWELRY]: %FX_UNID_GG%%UNI_GG_ITEM%
 // uber boss mats
 Alias[FX_BOSS_MAT]: %MAP-0A%%SOUNDID-4721%
 // essences
@@ -145,6 +152,8 @@ Alias[DISP_UNID_RING_HIGH]: %NAME%
 Alias[DISP_UNID_MAG_TOP]: %NAME%
 Alias[DISP_UNID_JEWEL_TOP]: %NAME%
 Alias[DISP_UNID_MAG_CHARM]: %NAME%
+// unid magic charm (90+) label: CHARM_UNID (Phil777 frame, plain name elsewhere)
+Alias[DISP_UNID_CHARM_TOP]: %CHARM_UNID%
 Alias[DISP_UNID_SET_JEWELRY]: %NAME%
 Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
 Alias[RUNE_NUMBER_LEVELS]: FILTLVL<3

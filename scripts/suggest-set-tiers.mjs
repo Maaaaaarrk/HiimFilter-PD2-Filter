@@ -21,7 +21,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
-import { loadTiers, setBaseTiers, baseFloor, baseLocked, SET_SCALE, SET_ALIAS, TIERS_FILE } from './lib/tier-model.mjs';
+import { loadTiers, setBaseTiers, baseFloor, baseLocked, listingsByOwnBase, SET_SCALE, SET_ALIAS, TIERS_FILE } from './lib/tier-model.mjs';
 
 const REPORT_FILE = 'temp/set-tier-report.txt';
 const DIFF_FILE = 'temp/set-tier-diff.json';
@@ -43,14 +43,14 @@ const minSamples = Number(args['min-samples']) || 5;
 const windowHours = Number(args['window-hours']) || 168;
 const throttleMs = Number(args['throttle-ms']) || 200;
 // Manual tier cutoffs in HR (top-down, first match wins), the same as the uniques'. Override via CLI:
-//   --cutoff-4=4 --cutoff-3=2 --cutoff-2=1 --cutoff-1=0.5 --cutoff-0=0.25
-// (Before the Season 14 shift: 7 / 4 / 1 / 0.25 / 0.10.)
+//   --cutoff-4=5 --cutoff-3=3 --cutoff-2=1 --cutoff-1=0.35 --cutoff-0=0.15
+// (Early-ladder values; the late-ladder ones are 7 / 4 / 1 / 0.25 / 0.10.)
 const CUTOFFS_HR = [
-  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 4) },
-  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 2) },
+  { tier: '4_STAR_SET', cutoffHR: Number(args['cutoff-4'] ?? 5) },
+  { tier: '3_STAR_SET', cutoffHR: Number(args['cutoff-3'] ?? 3) },
   { tier: '2_STAR_SET', cutoffHR: Number(args['cutoff-2'] ?? 1) },
-  { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.5) },
-  { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.25) },
+  { tier: '1_STAR_SET', cutoffHR: Number(args['cutoff-1'] ?? 0.35) },
+  { tier: '0_STAR_SET', cutoffHR: Number(args['cutoff-0'] ?? 0.15) },
 ];
 
 // Floors and locks come from builderfilter/data/unique-set-tiers.json (they replace the
@@ -130,17 +130,19 @@ function aggregateListings(listings) {
     const hr = priceToHR(l);
     if (!name || !Number.isFinite(hr)) continue;
     if (!byName.has(name)) byName.set(name, []);
-    byName.get(name).push(hr);
+    byName.get(name).push({ hr, seller: l?.user_id });
   }
   const medians = [];
-  for (const [name, prices] of byName) {
-    if (prices.length < minSamples) continue;
+  for (const [name, entries] of byName) {
+    if (entries.length < minSamples) continue;
+    const listingsDesc = [...entries].sort((a, b) => b.hr - a.hr);
+    const prices = listingsDesc.map((e) => e.hr);
     const sortedDesc = [...prices].sort((a, b) => b - a);
     const topCount = Math.max(minSamples, Math.ceil(sortedDesc.length * topPercentile));
     const top = sortedDesc.slice(0, topCount);
     const sortedAsc = [...top].sort((a, b) => a - b);
     const median = sortedAsc[Math.floor(sortedAsc.length / 2)];
-    medians.push({ name, median, count: prices.length, topCount, sortedDesc });
+    medians.push({ name, median, count: prices.length, topCount, sortedDesc, listingsDesc });
   }
   medians.sort((a, b) => b.median - a.median);
   const top = medians[0];
@@ -151,19 +153,10 @@ function aggregateListings(listings) {
     maxNameTopCount: top?.topCount,
     maxNameCount: top?.count,
     maxNamePrices: top?.sortedDesc,
+    maxNameListings: top?.listingsDesc,
     totalListings: listings.length,
     distinctNames: byName.size,
   };
-}
-
-function countAtOrAbove(sortedDescPrices, threshold) {
-  if (!Array.isArray(sortedDescPrices) || !Number.isFinite(threshold)) return 0;
-  let n = 0;
-  for (const p of sortedDescPrices) {
-    if (p >= threshold) n++;
-    else break;
-  }
-  return n;
 }
 
 function avgAtOrAbove(sortedDescPrices, threshold) {
@@ -226,11 +219,46 @@ function tierStatsFromRows(itemRows) {
   return tierStats;
 }
 
-const MIN_LISTINGS_FOR_TIER = 5;
-function suggestTierFromPrices(sortedDescPrices) {
-  if (!Array.isArray(sortedDescPrices) || sortedDescPrices.length === 0) return null;
+// Walks down the cutoffs top-first; returns the first tier that enough separate sellers
+// list at or above. A tier needs 5% of the item's sellers, at least 5 and at most 15, so a
+// few high listings on a popular item (perfect or corrupted rolls) don't promote it, and one
+// seller with several copies counts once. An item with fewer than 10 sellers in all has too
+// little market data, so it gets no suggestion and keeps its tier.
+const MIN_SELLERS_FOR_DATA = 10;
+const MIN_SELLERS_FOR_TIER = 5;
+const MAX_SELLERS_FOR_TIER = 15;
+const SHARE_OF_SELLERS_FOR_TIER = 0.05;
+function sellerCount(listingsDesc) {
+  return new Set(listingsDesc.map((l, i) => l.seller ?? `listing-${i}`)).size;
+}
+function sellersNeededForTier(listingsDesc) {
+  const share = Math.ceil(sellerCount(listingsDesc) * SHARE_OF_SELLERS_FOR_TIER);
+  return Math.min(MAX_SELLERS_FOR_TIER, Math.max(MIN_SELLERS_FOR_TIER, share));
+}
+function sellersAtOrAbove(listingsDesc, threshold) {
+  if (!Array.isArray(listingsDesc) || !Number.isFinite(threshold)) return 0;
+  const sellers = new Set();
+  for (const { hr, seller } of listingsDesc) {
+    if (hr < threshold) break;
+    sellers.add(seller ?? `listing-${sellers.size}`);
+  }
+  return sellers.size;
+}
+function clearsCutoff(listingsDesc, threshold) {
+  return sellersAtOrAbove(listingsDesc, threshold) >= sellersNeededForTier(listingsDesc);
+}
+// A downgrade needs strong evidence: more than 50 sellers in all and not one of them
+// listing the item at or above its current tier's cutoff.
+const MIN_SELLERS_FOR_DOWNGRADE = 51;
+function downgradeAllowed(listingsDesc, currentTier) {
+  const c = CUTOFFS_HR.find((x) => x.tier === currentTier);
+  if (!c || !Array.isArray(listingsDesc)) return false;
+  return sellerCount(listingsDesc) >= MIN_SELLERS_FOR_DOWNGRADE && sellersAtOrAbove(listingsDesc, c.cutoffHR) === 0;
+}
+function suggestTierFromListings(listingsDesc) {
+  if (!Array.isArray(listingsDesc) || sellerCount(listingsDesc) < MIN_SELLERS_FOR_DATA) return null;
   for (const c of CUTOFFS_HR) {
-    if (countAtOrAbove(sortedDescPrices, c.cutoffHR) >= MIN_LISTINGS_FOR_TIER) return c.tier;
+    if (clearsCutoff(listingsDesc, c.cutoffHR)) return c.tier;
   }
   return null;
 }
@@ -240,19 +268,19 @@ function tierIdx(tier) {
   return i < 0 ? VALUE_TIERS.length : i;
 }
 
-function moveClearsMultiplier(sortedDescPrices, currentTier, suggestedTier, multiplier) {
+function moveClearsMultiplier(listingsDesc, currentTier, suggestedTier, multiplier) {
   if (!(multiplier > 1)) return true;
   const curIdx = tierIdx(currentTier);
   const sugIdx = tierIdx(suggestedTier);
   if (sugIdx < curIdx) {
     const c = CUTOFFS_HR.find((x) => x.tier === suggestedTier);
     if (!c) return true;
-    return countAtOrAbove(sortedDescPrices, c.cutoffHR * multiplier) >= MIN_LISTINGS_FOR_TIER;
+    return clearsCutoff(listingsDesc, c.cutoffHR * multiplier);
   }
   if (sugIdx > curIdx) {
     const c = CUTOFFS_HR.find((x) => x.tier === currentTier);
     if (!c) return true;
-    return countAtOrAbove(sortedDescPrices, c.cutoffHR / multiplier) < MIN_LISTINGS_FOR_TIER;
+    return !clearsCutoff(listingsDesc, c.cutoffHR / multiplier);
   }
   return true;
 }
@@ -309,19 +337,19 @@ async function main() {
   const baseCodes = [...bases.keys()].sort();
   console.error(`  ${baseCodes.length} set base codes from ${TIERS_FILE}`);
 
-  const jobs = baseCodes.map((base) => async () => {
-    const listings = await fetchListingsForBase(base);
-    const agg = aggregateListings(listings);
-    return { base, ...agg };
-  });
+  const jobs = baseCodes.map((base) => async () => ({ base, listings: await fetchListingsForBase(base) }));
 
   console.error(`  ${jobs.length} fetches at ${maxConcurrent} concurrent`);
-  const fetchResults = await fetchAllConcurrent(jobs, maxConcurrent, (done, total) => {
+  const fetched = await fetchAllConcurrent(jobs, maxConcurrent, (done, total) => {
     if (done % 20 === 0 || done === total) {
       process.stderr.write(`\r  progress: ${done}/${total}`);
     }
   });
   process.stderr.write('\n');
+
+  const { byBase, moved, unknown } = listingsByOwnBase(bases, fetched);
+  console.error(`  ${moved} listings moved to their item's own base, ${unknown} with unknown names dropped`);
+  const fetchResults = [...byBase].map(([base, listings]) => ({ base, ...aggregateListings(listings) }));
 
   const itemRows = [];
   for (const r of fetchResults) {
@@ -337,6 +365,7 @@ async function main() {
       maxNameTopCount: r.maxNameTopCount,
       maxNameCount: r.maxNameCount,
       maxNamePrices: r.maxNamePrices,
+      maxNameListings: r.maxNameListings,
       medians: r.medians,
       totalListings: r.totalListings,
       distinctNames: r.distinctNames,
@@ -358,12 +387,13 @@ async function main() {
   }
 
   for (const row of itemRows) {
-    const rawSug = suggestTierFromPrices(row.maxNamePrices);
+    const rawSug = suggestTierFromListings(row.maxNameListings);
     if (
       rawSug &&
       row.currentTier &&
       rawSug !== row.currentTier &&
-      !moveClearsMultiplier(row.maxNamePrices, row.currentTier, rawSug, changeMultiplier)
+      (!moveClearsMultiplier(row.maxNameListings, row.currentTier, rawSug, changeMultiplier) ||
+        (tierIdx(rawSug) > tierIdx(row.currentTier) && !downgradeAllowed(row.maxNameListings, row.currentTier)))
     ) {
       row.suggestedTier = row.currentTier;
     } else {
@@ -424,7 +454,7 @@ async function main() {
     .filter((r) => r.suggestedTier !== r.currentTier)
     .map((r) => {
       const cutoff = relevantCutoffForMove(r.currentTier, r.suggestedTier);
-      const cutoffCount = cutoff ? countAtOrAbove(r.maxNamePrices, cutoff.cutoffHR) : 0;
+      const cutoffCount = cutoff ? sellersAtOrAbove(r.maxNameListings, cutoff.cutoffHR) : 0;
       const delta = tierIdx(r.currentTier) - tierIdx(r.suggestedTier);
       const isUpgrade = delta > 0;
       const sugCutoffHR = CUTOFFS_HR.find((c) => c.tier === r.suggestedTier)?.cutoffHR;
@@ -477,8 +507,8 @@ async function main() {
   movesLines.push('est top   = average price of selected high-end listings:');
   movesLines.push('  - upgrades:   average of listings that clear the suggested tier cutoff.');
   movesLines.push('  - downgrades: average of the top 5 listings (peak being demoted away from).');
-  movesLines.push('qualify(n)= count of listings that clear the named tier:');
-  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (must be ≥5 for the move).');
+  movesLines.push('qualify(n)= separate sellers listing at or above the named tier cutoff:');
+  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (needs 5% of sellers, at least 5 and at most 15).');
   movesLines.push('  - downgrades: ≥(tier just above the demotion target).');
   movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);

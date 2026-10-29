@@ -13,10 +13,19 @@ Alias[SITE_FX]: FALSE
 // RAINBOWS_LOOK: condition flag for rules that use the Rainbows label parts below.
 Alias[RAINBOWS_LOOK]: FALSE
 
+// cwss frame
+Alias[DISP_CWSS]: %WSS_SHARD%
+// iwss frame
+Alias[DISP_IWSS]: %WSS_SHARD%
 // lmal decoration
 Alias[DISP_LMAL]: %NAME%
 // toa
-Alias[DISP_TOA]: %NAME%
+Alias[DISP_TOA]: %TOKEN_PARTS%
+// unid unique rings / amulets (20-Unid_UniquesSet_Tiers): Kassahi bucket uses UNI_GG_JEWELRY from
+// 03-alias-kassahi-normal / -hyper; every other style's value is in 02-alias-site-fx[ALL-EXCEPT=KassahiStd+Rainbows]
+Alias[DISP_UNI_GG_JEWELRY]: %UNI_GG_JEWELRY%
+// unid magic charm (90+) label: CHARM_UNID; Rainbows has its own
+Alias[DISP_UNID_CHARM_TOP]: %CHARM_UNID%
 // uber boss mats
 Alias[FX_BOSS_MAT]:
 // essences

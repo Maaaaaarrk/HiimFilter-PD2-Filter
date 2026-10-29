@@ -2,8 +2,9 @@
 // GEMS
 //-----------------------------------------------------------------------------------
 
-// Flawless & Perfect
-ItemDisplay[GEM>3 FILTLVL<11]: %NAME%{%NAME%}
+// Flawless through level 6, Perfect through level 10
+ItemDisplay[GEM=4 FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[GEM>4 FILTLVL<11]: %NAME%{%NAME%}
 
 // Hide/show gems otherwise
 ItemDisplay[GEM>0 IN_TOWN]: %NAME%{%NAME%}
