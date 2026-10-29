@@ -18,7 +18,12 @@ const windowHours = Number(process.env.PD2TRADER_WINDOW_HOURS) || 24;
 const decreaseWindowHours = Number(process.env.PD2TRADER_DECREASE_WINDOW_HOURS) || 72;
 const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
 
+// Low runes (Mal, Ist, Gul) only have the stack aliases (_STACK_HR / _STACK_WSS) and use the
+// mats' finer rounding, since a 0.05 HR step is a large share of their value.
 const runes = [
+  { code: 'r23', name: 'Mal',  alias: 'MAL',  round: roundMatValue, stackOnly: true },
+  { code: 'r24', name: 'Ist',  alias: 'IST',  round: roundMatValue, stackOnly: true },
+  { code: 'r25', name: 'Gul',  alias: 'GUL',  round: roundMatValue, stackOnly: true },
   { code: 'r27', name: 'Ohm',  alias: 'OHM' },
   { code: 'r28', name: 'Lo',   alias: 'LO',   cap: 1 },   // manual cap: market-driven but never above 1 HR
   { code: 'r29', name: 'Sur',  alias: 'SUR',  floor: 1.5 },
@@ -139,6 +144,15 @@ function getCurrentAliasNumber(text, aliasName) {
   return Number.isFinite(v) ? v : undefined;
 }
 
+// A rune's current HR value: its _RUNE_VALUE alias, or the per-rune HR inside _STACK_HR
+// ("(QTY*0.1)") for the low runes that only have stack aliases.
+function currentRuneValue(text, rune) {
+  const direct = getCurrentAliasNumber(text, `${rune.alias}_RUNE_VALUE`);
+  if (direct !== undefined) return direct;
+  const m = text.match(new RegExp(`^Alias\\[${rune.alias}_STACK_HR\\]:\\s*\\(QTY\\*([0-9.]+)\\)`, 'm'));
+  return m ? Number(m[1]) : undefined;
+}
+
 function computeHrValue(price, floor, cap, round) {
   let hrValue = round(valueFromPrice(price));
   if (!Number.isFinite(hrValue) || hrValue <= 0) return undefined;
@@ -151,11 +165,11 @@ function computeHrValue(price, floor, cap, round) {
 // decrease window when the primary would lower the current alias. Quiet (no logging) — used
 // to derive Cham's dynamic floor before the main loop recomputes and logs the same value.
 function resolveRuneValue(rune, pricesPrimary, pricesDecrease, text) {
-  let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
+  let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
   if (hrValue === undefined) return undefined;
-  const current = getCurrentAliasNumber(text, `${rune.alias}_RUNE_VALUE`);
+  const current = currentRuneValue(text, rune);
   if (Number.isFinite(current) && hrValue < current) {
-    const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
+    const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
     if (altValue !== undefined) hrValue = altValue;
   }
   return hrValue;
@@ -200,7 +214,7 @@ async function main() {
   }
 
   for (const rune of runes) {
-    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
+    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
 
     if (hrValue === undefined) {
       console.log(`${rune.name} (${rune.code}): no usable price data, skipping`);
@@ -208,9 +222,9 @@ async function main() {
     }
 
     const currentAlias = `${rune.alias}_RUNE_VALUE`;
-    const current = getCurrentAliasNumber(text, currentAlias);
+    const current = currentRuneValue(text, rune);
     if (Number.isFinite(current) && hrValue < current) {
-      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, roundToFiveHundredths);
+      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
       if (altValue !== undefined) {
         console.log(`${rune.name} (${rune.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
         hrValue = altValue;
@@ -221,8 +235,10 @@ async function main() {
     const hrStr = formatHr(hrValue);
     const wssStr = String(wssValue);
 
-    text = replaceAlias(text, currentAlias, hrStr);
-    text = replaceAlias(text, `${rune.alias}_WSS_VALUE`, wssStr);
+    if (!rune.stackOnly) {
+      text = replaceAlias(text, currentAlias, hrStr);
+      text = replaceAlias(text, `${rune.alias}_WSS_VALUE`, wssStr);
+    }
     text = replaceAlias(text, `${rune.alias}_STACK_HR`, `(QTY*${hrStr})`);
     text = replaceAlias(text, `${rune.alias}_STACK_WSS`, `(QTY*${wssStr})`);
     updates.push(`${rune.name}=${hrStr}HR/${wssStr}WSS`);
