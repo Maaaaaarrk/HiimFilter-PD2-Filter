@@ -150,10 +150,12 @@ ItemDisplay[RARE FILTLVL<7 (ILVL>84) !ID (7cr OR 9cr OR crs OR 7gl OR 9gl OR glv
 
 // 4os Natural Shield
 ItemDisplay[!ID !DIN SHIELD RARE FILTLVL<9 MAXSOCKETS>3 ILVL>84]: %TIER-2%%RARE_PLUS%
-// 3os / 2os Shield (non-paladin; necro heads have their own rule): socketed 3os through
-// level 8, bases that can be 3os through level 7, bases that can only be 2os through level 5
-ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<9 SOCK=3 ILVL>84]: %TIER-2%%RARE_PLUS%
-ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<8 MAXSOCKETS>2 ILVL>84]: %TIER-2%%NAME%
+// 3os / 2os Shield (non-paladin; necro heads have their own rule): 3os bases through
+// level 8; bases whose elite version can be 3os through level 7 (Buckler, Small Shield,
+// Defender, Round Shield, Heater and Luna can't: elite Heater / Luna max at 2os); the
+// rest that can be 2os through level 5
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<9 MAXSOCKETS>2 ILVL>84]: %TIER-2%%RARE_PLUS%
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<8 !(buc OR sml OR xuc OR xml OR uuc OR uml) ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<6 MAXSOCKETS>1 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID DIN RARE FILTLVL<8 MAXSOCKETS>3 ILVL>84]: %TIER-2%%NAME%
 
