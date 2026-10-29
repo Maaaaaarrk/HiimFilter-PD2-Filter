@@ -5,14 +5,12 @@
 // carry their own icon and sound, so its copy of each alias is empty (or its own frame).
 // Keep the alias names identical in 02-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
 // Alias values never use another alias. Where a style's label part is one of its own
-// aliases, the shared rule picks it with a flag (SITE_FX, RAINBOWS_LOOK) instead.
+// aliases, the shared rule picks it with a flag (SITE_FX) instead.
 //-----------------------------------------------------------------------------------
 // Values for Hiim styles and Phil777.
 
 // SITE_FX: condition flag for the few rules that only exist in one style (wss / cwss stack tag).
 Alias[SITE_FX]: TRUE
-// RAINBOWS_LOOK: condition flag for rules that use the Rainbows label parts below.
-Alias[RAINBOWS_LOOK]: TRUE
 
 // cwss frame
 Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
@@ -135,9 +133,7 @@ Alias[QST_TR2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resist
 
 // Per-style label parts and rune ranges used by shared rules. Rainbows values: 02-alias-site-fx[ONLY=Rainbows].
 Alias[DISP_WSS]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
-Alias[DISP_PUZZLEBOX]: %RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
 Alias[DISP_KEY]: Key
-Alias[DISP_RKEY]: %RED%X%YELLOW%x%GREEN%X%BLUE%x%BLUE%X%GREEN%x%YELLOW%X%RED%x %NAME% %RED%x%YELLOW%X%GREEN%x%BLUE%X%BLUE%x%GREEN%X%YELLOW%x%RED%X
 Alias[MARK_ORANGE]: %YELLOW%
 Alias[MARK_PURPLE]: %BLUE%
 Alias[DISP_RVL_NAME]: Rejuv
@@ -146,12 +142,8 @@ Alias[DISP_RVL_MAX]: Rejuv
 Alias[DISP_RVS_NAME]: %PURPLE%35%
 Alias[DISP_RVS_LOW]: %NAME%
 Alias[DISP_RVS_MAX]: %NAME%
-Alias[DISP_UNID_RARE_HIGH]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O
 Alias[DISP_UNID_JEWELRY]: %RED%O %NAME% %RED%O
-Alias[DISP_UNID_RING_HIGH]: %MAP-0B%%DOT-6A%%RED%O %NAME% %RED%O
 Alias[DISP_UNID_MAG_TOP]: %BORDER-6A%%DOT-94%%YELLOW%OO %NAME% %YELLOW%OO
-Alias[DISP_UNID_JEWEL_TOP]: %MAP-9B%%DOT-6A%%RED%O %GREEN%O %BLUE%O %NAME% %BLUE%O %GREEN%O %RED%O
-Alias[DISP_UNID_MAG_CHARM]: %MAP-6A%%DOT-94%%YELLOW%O %NAME% %YELLOW%O
 Alias[DISP_UNID_CHARM_TOP]: %BORDER-6A%%DOT-94%%YELLOW%OO %NAME% %YELLOW%OO
 Alias[DISP_UNID_SET_JEWELRY]: %MAP-7D%%GREEN%O O O %NAME% %GREEN%O O O
 Alias[DISP_UNID_SET_ETH_WEAPON]: %DOT-7D%%GREEN%O O %NAME% %GREEN%O O

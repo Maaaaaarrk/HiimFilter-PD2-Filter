@@ -4,14 +4,12 @@
 // carry their own icon and sound, so its copy of each alias is empty (or its own frame).
 // Keep the alias names identical in 02-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
 // Alias values never use another alias. Where a style's label part is one of its own
-// aliases, the shared rule picks it with a flag (SITE_FX, RAINBOWS_LOOK) instead.
+// aliases, the shared rule picks it with a flag (SITE_FX) instead.
 //-----------------------------------------------------------------------------------
 // Values for the Kassahi bucket (Regular / Meme / Mystery, normal + hyper).
 
 // SITE_FX: condition flag for the few rules that only exist in one style (wss / cwss stack tag).
 Alias[SITE_FX]: FALSE
-// RAINBOWS_LOOK: condition flag for rules that use the Rainbows label parts below.
-Alias[RAINBOWS_LOOK]: FALSE
 
 // cwss frame
 Alias[DISP_CWSS]: %WSS_SHARD%
@@ -157,9 +155,7 @@ Alias[QST_TR2]: %MAP-51%%GOLD%Scroll of Resistance %RED%•{%GOLD%Right Click to
 
 // Per-style label parts and rune ranges used by shared rules. Rainbows values: 02-alias-site-fx[ONLY=Rainbows].
 Alias[DISP_WSS]: %NAME%
-Alias[DISP_PUZZLEBOX]: %NAME%
 Alias[DISP_KEY]: %NAME%
-Alias[DISP_RKEY]: %NAME%
 Alias[MARK_ORANGE]: %ORANGE%
 Alias[MARK_PURPLE]: %PURPLE%
 Alias[DISP_RVL_NAME]: big%WHITE%Rejuv
@@ -168,12 +164,8 @@ Alias[DISP_RVL_MAX]: GATORADE
 Alias[DISP_RVS_NAME]: %WHITE%rejuv
 Alias[DISP_RVS_LOW]: %NAME%%PURPLE%35%
 Alias[DISP_RVS_MAX]: %PURPLE%powerade
-Alias[DISP_UNID_RARE_HIGH]: %NAME%
 Alias[DISP_UNID_JEWELRY]: %NAME%
-Alias[DISP_UNID_RING_HIGH]: %NAME%
 Alias[DISP_UNID_MAG_TOP]: %NAME%
-Alias[DISP_UNID_JEWEL_TOP]: %NAME%
-Alias[DISP_UNID_MAG_CHARM]: %NAME%
 Alias[DISP_UNID_SET_JEWELRY]: %NAME%
 Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
 Alias[RUNE_NUMBER_LEVELS]: FILTLVL<3

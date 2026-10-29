@@ -57,7 +57,6 @@ Alias[SLAMMED_TAG]: [C]
 Alias[DESECRATED_TAG]: %GOLD%[D]
 Alias[VENDOR_GOLD_TAG]: %GREEN%$$$
 Alias[SITE_FX]: TRUE
-Alias[RAINBOWS_LOOK]: FALSE
 Alias[DISP_CWSS]: %MAP-0A%%SOUNDID-4715%%GEN_TOP_RARE%
 Alias[DISP_IWSS]: %MAP-4A%%SOUNDID-4715%%GEN_ALT%
 Alias[DISP_LMAL]: %MAP-4A%%ORANGE%* %NAME% %ORANGE% *
@@ -146,9 +145,7 @@ Alias[QST_HFH]: X   X   %NAME%   X   X%MAP-58%%SOUNDID-4721%{%TAN%Hit Hellforge 
 Alias[QST_ICE]: %GOLD%Malahs Potion%MAP-58%%SOUNDID-4721%{%TAN%Act 5: Frozen River%CL%Touch Anya in%CL%}
 Alias[QST_TR2]: %GOLD%Scroll of Resistance%MAP-58%%SOUNDID-4721%{%TAN%All Resistances +10%CL%Right click for a permanent%CL%}
 Alias[DISP_WSS]: %NAME%
-Alias[DISP_PUZZLEBOX]: %NAME%
 Alias[DISP_KEY]: %NAME%
-Alias[DISP_RKEY]: %NAME%
 Alias[MARK_ORANGE]: %ORANGE%
 Alias[MARK_PURPLE]: %PURPLE%
 Alias[DISP_RVL_NAME]: big%WHITE%Rejuv
@@ -157,12 +154,8 @@ Alias[DISP_RVL_MAX]: GATORADE
 Alias[DISP_RVS_NAME]: %WHITE%rejuv
 Alias[DISP_RVS_LOW]: %NAME%%PURPLE%35%
 Alias[DISP_RVS_MAX]: %PURPLE%powerade
-Alias[DISP_UNID_RARE_HIGH]: %NAME%
 Alias[DISP_UNID_JEWELRY]: %NAME%
-Alias[DISP_UNID_RING_HIGH]: %NAME%
 Alias[DISP_UNID_MAG_TOP]: %NAME%
-Alias[DISP_UNID_JEWEL_TOP]: %NAME%
-Alias[DISP_UNID_MAG_CHARM]: %NAME%
 Alias[DISP_UNID_CHARM_TOP]: %CHARM_UNID%
 Alias[DISP_UNID_SET_JEWELRY]: %NAME%
 Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
@@ -584,8 +577,7 @@ ItemDisplay[cwss]: %DISP_CWSS%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %TA
 ItemDisplay[jewf]: %MAG_DBL_AFFIX_ITEM%%FX_JEWF%{50 jewelfrags - .1%CL%50 pgems - (too variable)%CL%50 Map Runes - .25}
 ItemDisplay[lbox QTY>1 QTY<7]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[lbox QTY>6]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEBOX_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[!RAINBOWS_LOOK lbox]: %FX_PD2_GG%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
-ItemDisplay[RAINBOWS_LOOK lbox]: %FX_PD2_GG%%DISP_PUZZLEBOX%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
+ItemDisplay[lbox]: %FX_PD2_GG%%GEN_GG_ITEM%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEBOX_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[lpp QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEPIECE_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%LARZUK_PUZZLEPIECE_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[lpp]: %FX_PD2_RARE%%GEN_RARE%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LARZUK_PUZZLEPIECE_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%WHITE%Two-Handed Weapon = 4 max%CL%One-Handed Weapon = 2 max%CL%Helmet, Chest, Shield = 2 max%CL%%TAN%Note%WHITE%: Use it to %TAN%Socket %WHITE%an Item}
 ItemDisplay[imrn QTY>1 QTY<5]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%DEMONIC_CUBE_STACK_HR%)%CL%%NAME%}%CONTINUE%
@@ -765,8 +757,7 @@ ItemDisplay[(key OR rkey) MAPID<132]:%NAME%{%BLUE%maxroll.gg/d2/resources/map-re
 ItemDisplay[key ASSASSIN]:{%NAME%}
 ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%DISP_KEY%{%NAME%}
 ItemDisplay[key]:{%NAME%}
-ItemDisplay[!RAINBOWS_LOOK rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}
-ItemDisplay[RAINBOWS_LOOK rkey]: %DISP_RKEY%%FX_RKEY%{%NAME%}
+ItemDisplay[rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}
 ItemDisplay[(dcbl OR dcho OR dcso)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%-%CL%%ORANGE%Black Soulstone %WHITE%%BLACK_SOULSTONE_VALUE% hr - drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%%PRIME_EVIL_SOUL_VALUE% hr - drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%ORANGE%Pure Demonic Essence %WHITE%%PURE_DEMONIC_ESSENCE_VALUE% hr - drops from Map bosses%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
 ItemDisplay[(rtmo OR rtmv OR cm2f)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Tainted Wss (Anni Corruption)%CL%%GRAY%-%CL%%ORANGE%Hellfire Torch(Ashes)%WHITE% %HELLFIRE_ASHES_VALUE% hr%CL%%ORANGE%Splinter of the Void %WHITE%%SPLINTER_OF_THE_VOID_VALUE% hr - drops in Mendeln map event%CL%%ORANGE%Trang-Oul's Jawbone %WHITE%%TRANG_OUL_JAWBONE_VALUE% hr - drops from undead%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%PURPLE%Overcap 25% T0 / 33% T2 Res%CL%%GREEN%Psn 85% T0 / 90% T2 | PLR 100% T0 / 150% T2%CL%%BLUE%Cold 85% T0 / 90% T2 %RED%Fire 85% T0 / T2%CL%%WHITE%Minimum Res:%CL%%GOLD%Voidstone - Rathma boss fight}
 ItemDisplay[(lucb OR lucc OR lucd)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Desecrate Item (Corrupted Amulets only)%CL%%GRAY%-%CL%%ORANGE%Flesh of Malic %WHITE%%FLESH_OF_MALIC_VALUE% hr - drops from any demon%CL%%ORANGE%Talisman of Transgression %WHITE%%TALISMAN_OF_TRANSGRESSION_VALUE% hr - drops in corrupted zone%CL%%ORANGE%Demonic Insignia %WHITE%%DEMONIC_INSIGNIA_VALUE% hr - drops in Act 5 red portal LOD zones%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%YELLOW%Light 90%%CL%%GRAY%PDR 50%%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Shadow of Hatred - Lucion boss fight}
@@ -1205,19 +1196,15 @@ ItemDisplay[MAG rin !ID FILTLVL<3]: %MAG_ITEM%
 ItemDisplay[MAG amu !ID MAPID=83 FILTLVL<7]: %NAME%%TIER-2%
 ItemDisplay[MAG amu !ID (MAPID=181 OR MAPID=182)]: %NAME%%TIER-2%
 ItemDisplay[PHIL777_LOOK RARE (amu OR rin) !ID FILTLVL<3]: %RARE_ITEM%
-ItemDisplay[!RAINBOWS_LOOK RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %RARE_HIGH_ITEM%
-ItemDisplay[RAINBOWS_LOOK RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %DISP_UNID_RARE_HIGH%
+ItemDisplay[RARE amu !ID ALVL>89 FILTLVL<9 FILTLVL>2]: %RARE_HIGH_ITEM%
 ItemDisplay[RARE amu !ID FILTLVL<5]: %DISP_UNID_JEWELRY%
-ItemDisplay[!RAINBOWS_LOOK RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM%
-ItemDisplay[RAINBOWS_LOOK RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %DISP_UNID_RING_HIGH%
+ItemDisplay[RARE rin !ID (FILTLVL<5 OR ILVL>84) FILTLVL<7 FILTLVL>2]: %RARE_ITEM%
 ItemDisplay[RARE rin !ID FILTLVL<8]: %DISP_UNID_JEWELRY%
 ItemDisplay[MAG jew !ID FILTLVL<7 ILVL>84]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG jew !ID FILTLVL<11 ILVL>84]: %DISP_UNID_MAG_TOP%
 ItemDisplay[MAG jew !ID FILTLVL<7]: %MAG_ITEM%
-ItemDisplay[!RAINBOWS_LOOK RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM%
-ItemDisplay[RAINBOWS_LOOK RARE jew !ID ILVL>84]: %SOUNDID-4715%%DISP_UNID_JEWEL_TOP%
-ItemDisplay[!RAINBOWS_LOOK RARE jew !ID]: %RARE_HIGH_ITEM%
-ItemDisplay[RAINBOWS_LOOK RARE jew !ID]: %DISP_UNID_RARE_HIGH%
+ItemDisplay[RARE jew !ID ILVL>84]: %SOUNDID-4715%%RARE_GOOD_ITEM%
+ItemDisplay[RARE jew !ID]: %RARE_HIGH_ITEM%
 ItemDisplay[EQ7 RARE !ID]: %FX_UNID_RARE_SUPER%%RARE_SUPER%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID ILVL>84 FILTLVL<8]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[(ci2 OR ci3) MAG !ETH !ID FILTLVL<7]: %MAG_ITEM%
@@ -1230,8 +1217,7 @@ ItemDisplay[MAG cm3 ILVL<61 ILVL>49 !ID (FILTLVL<9 OR !SITE_FX)]: %CHARM_MID_LVL
 ItemDisplay[!SITE_FX MAG cm3 ILVL>89 !ID FILTLVL>7]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm3 ILVL>89 !ID FILTLVL>7]: %DISP_UNID_CHARM_TOP%
 ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<8]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
-ItemDisplay[!RAINBOWS_LOOK MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
-ItemDisplay[RAINBOWS_LOOK MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%DISP_UNID_MAG_CHARM%
+ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[!SITE_FX MAG cm3 !ID FILTLVL<7]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %CHARM_UNID%
 ItemDisplay[SITE_FX MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
