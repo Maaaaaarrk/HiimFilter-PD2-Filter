@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 29th%CL%Season 14 - build 125%CL%Kassahi - Mystery - Phil777 - Druid - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 29th%CL%Season 14 - build 129%CL%Kassahi - Mystery - Phil777 - Druid - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[cm3 UNI !ID FILTLVL>10]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%Unidentified Gheeds Fortune %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -2578,7 +2578,8 @@ ItemDisplay[crfv]: %NAME%%CONTINUE%{Amulet [15-25]% CurseDurReduct [3-6]%ML +[20
 ItemDisplay[crfu]: %NAME%%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radius%CL%Ring +[5-10] Vit [10-20]% MF +[1-3]L.Radius%CL%Belt +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Gloves +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Boots +[25-50]% EDef [15-25]% MF +[1-3]L.Radius%CL%Helm +[25-50]% EDef [20-30]% MF +[1-3]L.Radius%CL%Chest +[30-50]% EDef [20-30]% MF +[30-50]% Gold%CL%Shield [10-20]% Block [20-30]% MF +[30-50]% Gold%CL%Weapon +1 Skill [20-30]% MF +[1-3]L.Radius%CL%%YELLOW%Bountiful Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[crfp]: %NAME%%CONTINUE%{Amulet +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %FX_INFUSION%%NAME%{%NAME%}
-ItemDisplay[GEM>3 FILTLVL<11]: %NAME%{%NAME%}
+ItemDisplay[GEM=4 FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[GEM>4 FILTLVL<11]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 IN_TOWN]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 GROUND]:
 ItemDisplay[RUNE>25 RUNE<29 QTY=1 !IN_TOWN]: %MYSTERY_COLOR%Lil Mystery%CONTINUE%
@@ -2809,7 +2810,7 @@ ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<7]: %QUIVER_RARE_AMA_TIGHT%
 ItemDisplay[QUIVER NMAG SOCK<2]:
 ItemDisplay[QUIVER MAG !ID FILTLVL<7]:%NAME%
 ItemDisplay[QUIVER MAG !ID]:
-ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%NAME%
+ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%RARE_PLUS%
 ItemDisplay[MAG amu !ID FILTLVL<5]: %MAG_ITEM%
 ItemDisplay[MAG rin !ID FILTLVL<3]: %MAG_ITEM%
 ItemDisplay[MAG amu !ID MAPID=83 FILTLVL<7]: %NAME%%TIER-2%
@@ -2877,22 +2878,25 @@ ItemDisplay[!ID (btl OR 9tw OR 7tw) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID ETH SIN RARE FILTLVL<7 ILVL>84]: %RARE_ITEM%
 ItemDisplay[RARE FILTLVL<7 (ILVL>84) !ID (7cr OR 9cr OR crs OR 7gl OR 9gl OR glv OR 7p7 OR 9p9 OR pik OR 7gm OR 9gm OR gma OR 7wa OR 9wa OR wax OR 7m7 OR 9m9 OR mau OR 7gd OR 9gd OR gsd OR 7fb OR 9fb OR flb OR 7gi OR 9gi OR gix OR 7wh OR 9wh OR whm OR 7pi OR 9pi OR pil OR 7s7 OR 9s9 OR ssp OR 7ts OR 9ts OR tsp OR axf OR 9xf OR 7xf OR am5 OR ama OR amf OR gax OR 9ga OR 7ga OR spr OR 9sr OR 7sr)]: %NAME%
 ItemDisplay[!ID !DIN SHIELD RARE FILTLVL<9 MAXSOCKETS>3 ILVL>84]: %TIER-2%%RARE_PLUS%
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<9 MAXSOCKETS>2 ILVL>84]: %TIER-2%%RARE_PLUS%
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<8 !(buc OR sml OR xuc OR xml OR uuc OR uml) ILVL>84]: %TIER-2%%NAME%
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<6 MAXSOCKETS>1 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID DIN RARE FILTLVL<8 MAXSOCKETS>3 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID CHEST RARE FILTLVL<11 MAXSOCKETS>3 ALVL>84]: %TIER-8%%RARE_PLUS%
 ItemDisplay[!ID CHEST RARE FILTLVL<11 MAXSOCKETS>3 ILVL>86]: %TIER-8%%RARE_PLUS%
-ItemDisplay[!ID CHEST RARE FILTLVL<6 MAXSOCKETS>2 ALVL>84]: %TIER-6%%NAME%
+ItemDisplay[!ID CHEST RARE FILTLVL<9 MAXSOCKETS>2 ALVL>84]: %TIER-6%%RARE_PLUS%
 ItemDisplay[!ID CHEST RARE FILTLVL<6 MAXSOCKETS>2 ILVL>86]: %TIER-6%%NAME%
 ItemDisplay[!ID STAFF RARE FILTLVL<5 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID BAR RARE FILTLVL<7 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID DIN MAXSOCKETS>3 RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
-ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%NAME%
+ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%RARE_PLUS%
 ItemDisplay[!ID RARE WAND FILTLVL<8 MAXSOCKETS>1 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID MAG NEC FILTLVL<5 ILVL>84]: %TIER-6%%NAME%
-ItemDisplay[!ID RARE SOR MAXSOCKETS>2 FILTLVL<9 ILVL>84]: %TIER-6%%NAME%
+ItemDisplay[!ID RARE SOR MAXSOCKETS>2 FILTLVL<9 ILVL>84]: %TIER-6%%RARE_PLUS%
 ItemDisplay[!ID RARE SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[GLOVES RARE (ILVL>84) !ID !ETH FILTLVL<7]: %TIER-6%%NAME%
-ItemDisplay[BOOTS RARE (ILVL>84) !ID !ETH FILTLVL<9]: %TIER-6%%NAME%
+ItemDisplay[BOOTS RARE (ILVL>84) !ID !ETH FILTLVL<9]: %TIER-6%%RARE_PLUS%
 ItemDisplay[BELT RARE (ILVL>84) !ID !ETH FILTLVL<8]: %TIER-6%%NAME%
 ItemDisplay[RARE !WEAPON (ILVL>84) !ID FILTLVL<3]: %NAME%
 ItemDisplay[RARE ARMOR ETH !ID FILTLVL<5]: %TIER-4%%NAME%
