@@ -1,0 +1,59 @@
+//-----------------------------------------------------------------------------------
+// Base item names
+//-----------------------------------------------------------------------------------
+
+ItemDisplay[!UNI !SET !RW (WEAPON OR ARMOR OR QUIVER)]: %BASENAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE) CL1 !ID GROUND !IN_TOWN]: Pelt%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL2 !ID GROUND !IN_TOWN]: Barb Hat%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL3 !ID GROUND !IN_TOWN]: Pala%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL4 !ID GROUND !IN_TOWN]: Nec Head%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL5 !ID GROUND !IN_TOWN]: Claw%CONTINUE%
+ItemDisplay[(MAG OR RARE) CL6 !ID GROUND !IN_TOWN]: Sorc Orb%CONTINUE%
+
+ItemDisplay[(MAG OR RARE) WP1 !ID GROUND !IN_TOWN]: Axe%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP2 !ID GROUND !IN_TOWN]: Mace%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP3 !ID GROUND !IN_TOWN]: Sword%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP4 !ID GROUND !IN_TOWN]: Dagger%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP5 !ID GROUND !IN_TOWN]: Throwing%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP6 !ID GROUND !IN_TOWN]: Javelin%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP7 !ID GROUND !IN_TOWN]: Spear%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP8 !ID GROUND !IN_TOWN]: Polearm%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP9 !ID GROUND !IN_TOWN]: Bow%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP10 !ID GROUND !IN_TOWN]: Crossbow%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP11 !ID GROUND !IN_TOWN]: Stave%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP12 !ID GROUND !IN_TOWN]: Wand%CONTINUE%
+ItemDisplay[(MAG OR RARE) WP13 !ID GROUND !IN_TOWN]: Scepter%CONTINUE%
+
+ItemDisplay[(MAG OR RARE) CL7 !ID GROUND !IN_TOWN]: Zon %NAME%%CONTINUE%
+
+ItemDisplay[(MAG OR RARE) EQ1 !EQ7 !CLASS !ID GROUND !IN_TOWN]: Helm%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ2 !ID GROUND !IN_TOWN]: Chest%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ3 !CL3 !ID GROUND !IN_TOWN]: Shield%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ4 !ID GROUND !IN_TOWN]: Glove%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ5 !ID GROUND !IN_TOWN]: Boot%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ6 !ID GROUND !IN_TOWN]: Belt%CONTINUE%
+ItemDisplay[(MAG OR RARE) EQ7 !ID GROUND !IN_TOWN]: Circlet%CONTINUE%
+
+// Jewelry
+ItemDisplay[!UNI !SET rin]: %CONTINUE%Ring
+ItemDisplay[!UNI !SET amu]: %CONTINUE%Amulet
+ItemDisplay[!UNI !SET jew]: %CONTINUE%Jewel
+
+// Select item name blanking
+ItemDisplay[(MAG OR RARE) NEC !ID GROUND FILTLVL>4 !(MAPID=83)]: %CONTINUE%Nec Head
+ItemDisplay[(MAG OR RARE) SOR !ID GROUND FILTLVL>4 !(MAPID=83)]: %CONTINUE%Sorc Orb
+
+// Quivers
+ItemDisplay[aqv (MAG OR RARE OR UNI) !ID]: Arrow%CONTINUE%
+ItemDisplay[aqv2 (MAG OR RARE OR UNI) !ID]: Exc Arrow%CONTINUE%
+ItemDisplay[aqv3 (MAG OR RARE OR UNI) !ID]: Elt Arrow%CONTINUE%
+ItemDisplay[cqv (MAG OR RARE OR UNI) !ID]: Bolt%CONTINUE%
+ItemDisplay[cqv2 (MAG OR RARE OR UNI) !ID]: Exc Bolt%CONTINUE%
+ItemDisplay[cqv3 (MAG OR RARE OR UNI) !ID]: Elt Bolt%CONTINUE%
+
+// Restore color
+ItemDisplay[MAG EQ7 !ID GROUND !IN_TOWN]: %BLUE%%NAME%%CONTINUE%
+ItemDisplay[RARE EQ7 !ID GROUND !IN_TOWN]: %YELLOW%%NAME%%CONTINUE%
+
+//-----------------------------------------------------------------------------------
