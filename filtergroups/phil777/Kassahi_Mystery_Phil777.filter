@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 29th%CL%Season 14 - build 122%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 29th%CL%Season 14 - build 123%CL%Kassahi - Mystery - Phil777 -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[cm3 UNI !ID FILTLVL>10]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%Unidentified Gheeds Fortune %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -1890,7 +1890,7 @@ ItemDisplay[SET !ID]: %GREEN%%NAME%%CONTINUE%
 ItemDisplay[UNI !ID]: %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH UNI !ID]: %GRAY%eth %GOLD%%NAME%%CONTINUE%
 ItemDisplay[ETH SET !ID]: %GRAY%eth %GREEN%%NAME%%CONTINUE%
-ItemDisplay[UNI !ID !ALLDISCOVERED !jew]: %GRAIL_TAG% %GOLD%%NAME%%CONTINUE%
+ItemDisplay[UNI !ID !ALLDISCOVERED !jew !(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58)]: %GRAIL_TAG% %GOLD%%NAME%%CONTINUE%
 ItemDisplay[SET !ID !ALLDISCOVERED]: %GRAIL_TAG% %GREEN%%NAME%%CONTINUE%
 ItemDisplay[GRAIL_OWNED_CALLOUT UNI !ID ALLDISCOVERED !ALLOWNED !jew]: %GRAIL_OWNED_TAG% %GOLD%%NAME%%CONTINUE%
 ItemDisplay[GRAIL_OWNED_CALLOUT SET !ID ALLDISCOVERED !ALLOWNED]: %GRAIL_OWNED_TAG% %GREEN%%NAME%%CONTINUE%
@@ -2496,6 +2496,7 @@ ItemDisplay[crfu]: %NAME%%CONTINUE%{Amulet +[10-20] Vit [20-30]% MF +[1-3]L.Radi
 ItemDisplay[crfp]: %NAME%%CONTINUE%{Amulet +[5-10]% AllRes +[100-150]DefVMissle +[4-8] All Stat%CL%Ring +[3-5] AllRes +[50-100]DefVMissle Half Freeze%CL%Belt +[5-10]% IAS [5-50]% EDef Half Freeze%CL%Gloves +[5-10]% IAS [10-20]% AR [25-50]% EDef%CL%Boots 10% MS +[100-150]DefVMissle Half Freeze%CL%Helm +[5-10]% IAS [25-50]% EDef Half Freeze%CL%Chest +[5-10]% AllRes +[25-50]% EDef [10-20]% Block%CL%Shield +[5-10]% AllRes [10-20]% Block Half Freeze%CL%Weapon [20-40]% EDmg +20% IAS +[50-100] AR%CL%%WHITE%Brilliant Craft Infusion %WHITE%+ %BLUE%Item %WHITE%= %ORANGE%Craft}
 ItemDisplay[(crfb OR crfc OR crfs OR crfh OR crfv OR crfu OR crfp)]: %FX_INFUSION%%NAME%{%NAME%}
 ItemDisplay[GEM=4 FILTLVL<8]: %NAME%{%NAME%}
+ItemDisplay[(skl OR skls) FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[GEM>4 FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[(skz OR skzs) FILTLVL<11]: %NAME%{%NAME%}
 ItemDisplay[GEM>0 IN_TOWN]: %NAME%{%NAME%}
@@ -2701,10 +2702,10 @@ ItemDisplay[mss]: %QST_MSS%
 ItemDisplay[hfh]: %QST_HFH%
 ItemDisplay[ice]: %QST_ICE%
 ItemDisplay[tr2]: %QST_TR2%
-ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
-ItemDisplay[UNI !ID uh9 MAPID=137]: %PURPLE%Mystery%CONTINUE%
-ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
-ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %PURPLE%Mystery%CONTINUE%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN]: %RED%Mystery%CONTINUE%
+ItemDisplay[UNI !ID uh9 MAPID=137]: %RED%Mystery%CONTINUE%
+ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %RED%Mystery%CONTINUE%
+ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %RED%Mystery%CONTINUE%
 ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[DRUID (MAG OR RARE) !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %TIER-2%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[DRUID CL1 FILTLVL<2 MAG !ID]: %TIER-2%%MAG_DBL_AFFIX_ITEM%%CONTINUE%
