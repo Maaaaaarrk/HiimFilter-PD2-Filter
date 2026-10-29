@@ -12,7 +12,7 @@ ItemDisplay[SITE_FX wss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[wss QTY>1]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%WSS_ITEM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[wss]: %CONTINUE%%TIER-8%%FX_WSS%%NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %WSS_ITEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %WSS_ITEM_HR_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%TAN%Unsock Item: 50% Mod, 25% Brick, 25% Sockets%CL%Sock Item: 75% Mod, 25% Brick%CL%Maps: 70% Mod, 30% CNC%CL%%ORANGE%Cube w/ item to corrupt}
 ItemDisplay[wss (FILTLVL<9 OR !SITE_FX)]: %WSS_SHARD%{%NAME%}
-ItemDisplay[wss]: %NAME%{%NAME%}
+ItemDisplay[wss]: %DISP_WSS%{%NAME%}
 ItemDisplay[SITE_FX cwss QTY>1]: %NAME% %QTY_TAG%%CONTINUE%
 ItemDisplay[cwss QTY>1 QTY<8]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[cwss QTY>7]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
@@ -203,6 +203,6 @@ ItemDisplay[(key OR rkey) MAPID<132]:%NAME%{%BLUE%maxroll.gg/d2/resources/map-re
 
 // Keys Final Display
 ItemDisplay[key ASSASSIN]:{%NAME%}
-ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%NAME%{%NAME%}
+ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%DISP_KEY%{%NAME%}
 ItemDisplay[key]:{%NAME%}
 ItemDisplay[rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}

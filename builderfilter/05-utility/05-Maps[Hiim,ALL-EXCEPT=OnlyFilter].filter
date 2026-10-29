@@ -14,7 +14,7 @@ ItemDisplay[(irra OR urma OR rrra) QTY=1]: %GOLD%O O %NAME% O O{%NAME%}
 ItemDisplay[irra]: %MAP-4A%%NAME%//Infused Zakarum Orb {%WHITE%Cube with: %WHITE%Normal Map -> %WHITE%to make a %YELLOW%Rare Map}
 ItemDisplay[urma]: %MAP-4A%%NAME%//{%WHITE%Cube with: %BLUE%Magic Map -> %WHITE%to make a %YELLOW%Rare Map} //Infused Angelic Orb
 ItemDisplay[rrra]: %MAP-4A%%NAME%//{%WHITE%Cube with: %YELLOW%Rare Map -> %WHITE%to make a new %YELLOW%Rare Map} //Infused Horadric Orb
-ItemDisplay[upmp]: %NAME% %ORANGE%*//{%WHITE%3 x Map + %GOLD%Orb%CL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
+ItemDisplay[upmp]: %NAME% %MARK_ORANGE_STAR%//{%WHITE%3 x Map + %GOLD%Orb%CL%%TAN%Note%WHITE%: Upgrade Map Tier}%CONTINUE%
 ItemDisplay[scrb]: %MAP-4A%%BOSS_MAT%%CONTINUE%{%NAME%}
 ItemDisplay[std]: %DOT-9D%%GEN_TOP_RARE%{%NAME%}
 
@@ -26,12 +26,12 @@ ItemDisplay[MAPTIER=1 NMAG]: %GREEN%* [T1] %CONTINUE%
 ItemDisplay[MAPTIER=1 !NMAG]: %GREEN%[T1] %CONTINUE%
 ItemDisplay[MAPTIER=2 NMAG]: %YELLOW%* [T2] %CONTINUE%
 ItemDisplay[MAPTIER=2 !NMAG]: %YELLOW%[T2] %CONTINUE%
-ItemDisplay[MAPTIER=3 NMAG]: %ORANGE%* [T3] %CONTINUE%
+ItemDisplay[MAPTIER=3 NMAG]: %MARK_ORANGE_STAR% [T3] %CONTINUE%
 ItemDisplay[MAPTIER=3 !NMAG]: %ORANGE%[T3] %CONTINUE%
 ItemDisplay[MAPTIER=4]: %RED%[T4] %CONTINUE%
 ItemDisplay[(MAPTIER=5) !ID]: %GOLD%* * * * [U] %CONTINUE%
 ItemDisplay[(MAPTIER=5) ID]: %GOLD%* [U] %CONTINUE%
-ItemDisplay[(t61 OR t62)]: %PURPLE%* [PvP] %CONTINUE%
+ItemDisplay[(t61 OR t62)]: %MARK_PURPLE_STAR% [PvP] %CONTINUE%
 
 // Map Color Fixing
 ItemDisplay[(MAPTIER=1 OR MAPTIER=2 OR MAPTIER=3 OR MAPTIER=4 OR MAPTIER=5 OR t61 OR t62) NMAG]: %NAME%%WHITE%%CONTINUE%{%NAME%}
@@ -165,11 +165,11 @@ ItemDisplay[(MAPTIER>0 OR t61 OR t62) QTY>1]: %NAME%%TAN% QTY %QTY% %CONTINUE%{%
 // Map End Wrapper by Tier
 ItemDisplay[MAPTIER=1 NMAG]: %MAP-62%%TIER-8%%NAME% %GREEN%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=2 NMAG]: %MAP-62%%TIER-8%%NAME% %YELLOW%*{%NAME%}%CONTINUE%
-ItemDisplay[MAPTIER=3 NMAG]: %MAP-62%%TIER-8%%NAME% %ORANGE%*{%NAME%}%CONTINUE%
+ItemDisplay[MAPTIER=3 NMAG]: %MAP-62%%TIER-8%%NAME% %MARK_ORANGE_STAR%{%NAME%}%CONTINUE%
 //ItemDisplay[MAPTIER=4]: %MAP-62%%TIER-8%%NAME% %RED%*{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=5 !ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%* * * *{%NAME%}%CONTINUE%
 ItemDisplay[MAPTIER=5 ID]: %MAP-62%%SOUNDID-4715%%NAME% %GOLD%*{%NAME%}%CONTINUE%
-ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %PURPLE%*{%NAME%}%CONTINUE%
+ItemDisplay[(t61 OR t62)]: %MAP-62%%TIER-4%%NAME% %MARK_PURPLE_STAR%{%NAME%}%CONTINUE%
 
 ItemDisplay[MAPTIER>0]:  %CL%%NAME%{%NAME%}%CONTINUE%
 //Warnings 

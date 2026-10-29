@@ -3,8 +3,8 @@
 // Hiim (and Phil777) segments add these inline; the Kassahi bucket's aliases already
 // carry their own icon and sound, so its copy of each alias is empty (or its own frame).
 // Keep the alias names identical in 02-alias-site-fx[ALL-EXCEPT=KassahiStd] and [ONLY=KassahiStd].
-// Numbered 02 so it loads before the 03 style aliases: the game expands aliases in file
-// order, so DISP_* values (%WSS_SHARD%, %TOKEN_PARTS%, ...) must be defined above them.
+// Alias values never use another alias. Where a style's label part is one of its own
+// aliases, the shared rule picks it with a flag (SITE_FX) instead.
 //-----------------------------------------------------------------------------------
 // Values for the Kassahi bucket (Regular / Meme / Mystery, normal + hyper).
 
@@ -20,8 +20,10 @@ Alias[DISP_LMAL]: %NAME%
 // toa
 Alias[DISP_TOA]: %TOKEN_PARTS%
 // unid unique rings / amulets (20-Unid_UniquesSet_Tiers): Kassahi bucket uses UNI_GG_JEWELRY from
-// 03-alias-kassahi-normal / -hyper; every other style's value is in 02-alias-site-fx[ALL-EXCEPT=KassahiStd]
+// 03-alias-kassahi-normal / -hyper; every other style's value is in 02-alias-site-fx[ALL-EXCEPT=KassahiStd+Rainbows]
 Alias[DISP_UNI_GG_JEWELRY]: %UNI_GG_JEWELRY%
+// unid magic charm (90+) label: CHARM_UNID; Rainbows has its own
+Alias[DISP_UNID_CHARM_TOP]: %CHARM_UNID%
 // uber boss mats
 Alias[FX_BOSS_MAT]:
 // essences
@@ -149,3 +151,28 @@ Alias[QST_MSS]: %GOLD%Mephisto's Soulstone %RED%•{%TAN%Doomed to Black Abyss%N
 Alias[QST_HFH]: %MAP-51%%GOLD%Hellforge Hammer %RED%•{%TAN%Forger of Shadowfang%NL%Legend of The Burning Hells}
 Alias[QST_ICE]: %MAP-51%%GOLD%Malah's Potion %RED%•{%TAN%What is Man But a Mass of Thawing Clay•}
 Alias[QST_TR2]: %MAP-51%%GOLD%Scroll of Resistance %RED%•{%GOLD%Right Click to Read%NL%%GRAY%(Grants +10 to All Resistances Permanently)%NL%%NL%%TAN%Where There is Power, There is Resistance.}
+
+
+// Per-style label parts and rune ranges used by shared rules. Rainbows values: 02-alias-site-fx[ONLY=Rainbows].
+Alias[DISP_WSS]: %NAME%
+Alias[DISP_KEY]: %NAME%
+Alias[MARK_ORANGE_STAR3]: %ORANGE%* * *
+Alias[MARK_ORANGE_STAR]: %ORANGE%*
+Alias[MARK_ORANGE_ARROWS]: %ORANGE%< < <
+Alias[MARK_PURPLE_STAR3_TIGHT]: %PURPLE%***
+Alias[MARK_PURPLE_STAR3]: %PURPLE%* * *
+Alias[MARK_PURPLE_STAR]: %PURPLE%*
+Alias[MARK_PURPLE_O]: %PURPLE%O
+Alias[DISP_RVL_NAME]: big%WHITE%Rejuv
+Alias[DISP_RVL_LOW]: %PURPLE%* %NAME% %PURPLE%*
+Alias[DISP_RVL_MAX]: GATORADE
+Alias[DISP_RVS_NAME]: %WHITE%rejuv
+Alias[DISP_RVS_LOW]: %NAME%%PURPLE%35%
+Alias[DISP_RVS_MAX]: %PURPLE%powerade
+Alias[DISP_UNID_JEWELRY]: %NAME%
+Alias[DISP_UNID_MAG_TOP]: %NAME%
+Alias[DISP_UNID_SET_JEWELRY]: %NAME%
+Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
+Alias[RUNE_NUMBER_LEVELS]: FILTLVL<3
+Alias[RUNE_NUMBER_TOWN_LEVELS]: FILTLVL<12
+Alias[LOW_RUNE_RANGE]: RUNE<21
