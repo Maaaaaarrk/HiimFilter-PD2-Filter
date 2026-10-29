@@ -37,7 +37,7 @@ ItemDisplay[QUIVER RARE !ID AMAZON FILTLVL<7]: %QUIVER_RARE_AMA_TIGHT%
 ItemDisplay[QUIVER NMAG SOCK<2]:
 ItemDisplay[QUIVER MAG !ID FILTLVL<7]:%NAME%
 ItemDisplay[QUIVER MAG !ID]:
-ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%NAME%
+ItemDisplay[QUIVER RARE !ID FILTLVL<9]:%RARE_PLUS%
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
@@ -150,13 +150,16 @@ ItemDisplay[RARE FILTLVL<7 (ILVL>84) !ID (7cr OR 9cr OR crs OR 7gl OR 9gl OR glv
 
 // 4os Natural Shield
 ItemDisplay[!ID !DIN SHIELD RARE FILTLVL<9 MAXSOCKETS>3 ILVL>84]: %TIER-2%%RARE_PLUS%
+// 3os / 2os Natural Shield (non-paladin; necro heads have their own rule)
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<7 MAXSOCKETS>2 ILVL>84]: %TIER-2%%NAME%
+ItemDisplay[!ID !DIN !NEC SHIELD RARE FILTLVL<5 MAXSOCKETS>1 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID DIN RARE FILTLVL<8 MAXSOCKETS>3 ILVL>84]: %TIER-2%%NAME%
 
 // 4os Natural Chest
 ItemDisplay[!ID CHEST RARE FILTLVL<11 MAXSOCKETS>3 ALVL>84]: %TIER-8%%RARE_PLUS%
 ItemDisplay[!ID CHEST RARE FILTLVL<11 MAXSOCKETS>3 ILVL>86]: %TIER-8%%RARE_PLUS%
 // 3os Natural Chest
-ItemDisplay[!ID CHEST RARE FILTLVL<9 MAXSOCKETS>2 ALVL>84]: %TIER-6%%NAME%
+ItemDisplay[!ID CHEST RARE FILTLVL<9 MAXSOCKETS>2 ALVL>84]: %TIER-6%%RARE_PLUS%
 ItemDisplay[!ID CHEST RARE FILTLVL<6 MAXSOCKETS>2 ILVL>86]: %TIER-6%%NAME%
 
 // All staffs lower
@@ -168,15 +171,15 @@ ItemDisplay[!ID BAR RARE FILTLVL<7 ILVL>84]: %TIER-2%%NAME%
 // Class specific rares show for all
 ItemDisplay[!ID DIN MAXSOCKETS>3 RARE FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //all pala shield
 ItemDisplay[!ID RARE DRU FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //dudu helms
-ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%NAME% //nec heads
+ItemDisplay[!ID RARE NEC FILTLVL<9 ILVL>84]: %TIER-6%%RARE_PLUS% //nec heads
 ItemDisplay[!ID RARE WAND FILTLVL<8 MAXSOCKETS>1 ILVL>84]: %TIER-6%%NAME% //wands
 ItemDisplay[!ID MAG NEC FILTLVL<5 ILVL>84]: %TIER-6%%NAME% //nec heads
-ItemDisplay[!ID RARE SOR MAXSOCKETS>2 FILTLVL<9 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
+ItemDisplay[!ID RARE SOR MAXSOCKETS>2 FILTLVL<9 ILVL>84]: %TIER-6%%RARE_PLUS% //Sorc Orbs
 ItemDisplay[!ID RARE SOR FILTLVL<7 ILVL>84]: %TIER-6%%NAME% //Sorc Orbs
 
 // High Ilvl Non-weap Rares
 ItemDisplay[GLOVES RARE (ILVL>84) !ID !ETH FILTLVL<7]: %TIER-6%%NAME%
-ItemDisplay[BOOTS RARE (ILVL>84) !ID !ETH FILTLVL<9]: %TIER-6%%NAME%
+ItemDisplay[BOOTS RARE (ILVL>84) !ID !ETH FILTLVL<9]: %TIER-6%%RARE_PLUS%
 ItemDisplay[BELT RARE (ILVL>84) !ID !ETH FILTLVL<8]: %TIER-6%%NAME%
 
 ItemDisplay[RARE !WEAPON (ILVL>84) !ID FILTLVL<3]: %NAME%
