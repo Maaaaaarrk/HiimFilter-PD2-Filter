@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 145%CL%Kassahi - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 147%CL%Kassahi - Mystery -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -173,6 +173,7 @@ Alias[DISP_UNID_SET_ETH_WEAPON]: %NAME%
 Alias[RUNE_NUMBER_LEVELS]: FILTLVL<3
 Alias[RUNE_NUMBER_TOWN_LEVELS]: FILTLVL<12
 Alias[LOW_RUNE_RANGE]: RUNE<21
+Alias[GHEEDS_TOOLTIP_LINE]: +69 to Niko Niko Nii Skills
 Alias[GEN_ITEM]: %NAME%
 Alias[GEN_ALT]: %NAME%
 Alias[TOKEN_PARTS]: %SOUNDID-4715%%PX-9B%%DOT-62%%PURPLE%«%BLACK%·%RED%»  %NAME%  %RED%«%BLACK%·%PURPLE%»
@@ -3490,7 +3491,7 @@ ItemDisplay[SET ID STASH ne9]: %NAME%{%NL%%GRAY%3:%GREEN%-25psn, %GRAY%4:%GREEN%
 ItemDisplay[SET ID STASH utc STAT153>0]: %NAME%{%NL%%GRAY%3:%GREEN%40cres%CL%%NAME%}%CONTINUE%
 ItemDisplay[SET ID STASH xmg FCR>19]: %NAME%{%NL%%GRAY%4:%GREEN%20mtr%CL%%NAME%}%CONTINUE%
 ItemDisplay[SET ID !STASH]: %NAME%{%RED%Set bonuses Shows in Stash%NL%%NAME%}
-ItemDisplay[UNI cm3]: %NAME%{%NAME%+69 to Niko Niko Nii Skills}%CONTINUE%
+ItemDisplay[UNI cm3]: %NAME%{%NAME%%GHEEDS_TOOLTIP_LINE%}%CONTINUE%
 ItemDisplay[UNI ID STAT270>0]: %DOT-0A%%MAP-9B%%BORDER-1F%%ORANGE%Anniversary %NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[STAT477=4]: %DOT-0A%%MAP-9B%%BORDER-1F%%ORANGE%Black%CL%%WHITE%>> %PURPLE%>> %WHITE%>> %PURPLE%Mirrored %WHITE%<< %PURPLE%<< %WHITE%<<%CL%%NAME%{%NAME%%CL%}
 ItemDisplay[STAT477=21]: %DOT-0A%%MAP-9B%%BORDER-1F%%ORANGE%White%CL%%WHITE%>> %PURPLE%>> %WHITE%>> %PURPLE%Mirrored %WHITE%<< %PURPLE%<< %WHITE%<<%CL%%NAME%{%NAME%%CL%}
@@ -5837,6 +5838,9 @@ ItemDisplay[(7fb OR 7wa OR 7gd) ETH !INF (SOCK=0 OR SOCK=4 OR SOCK=5) NMAG EDAM>
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH !RW (SOCK=0 OR SOCK=6) !INF NMAG !RW EDAM>0 (EDAM>9 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) ETH !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>17 FILTLVL<8]: %NAME%{%NAME%}
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>19 FILTLVL<9]: %NAME%{%NAME%}
+ItemDisplay[6lb !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>0 (EDAM>9 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[6lb !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>17 FILTLVL<8]: %NAME%{%NAME%}
+ItemDisplay[6lb !RW (SOCK=0 OR SOCK=6) !INF NMAG EDAM>19 FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[7xf !RW SK263>2 SK252>2 ETH !INF SOCK=3 NMAG]: %RW_BASE_GG%GG [Chaos]{%NAME%%CL%%PURPLE%GG Chaos base}
 ItemDisplay[7xf !RW SK263>2 SK252>2 ETH !INF SOCK=0 NMAG]: %RW_BASE_GG%GG [Chaos]{%NAME%%CL%%PURPLE%Larzuk for 3 sockets for GG Chaos base}
 ItemDisplay[7xf !RW (SK263>2 OR SK252>2) ETH !INF SOCK=3 NMAG]: %RW_BASE_GG%[Chaos]{%NAME%%CL%%PURPLE%Chaos base}
