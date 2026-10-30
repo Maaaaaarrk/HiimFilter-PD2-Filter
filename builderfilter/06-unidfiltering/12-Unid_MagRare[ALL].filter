@@ -91,6 +91,9 @@ ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<8]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[!SITE_FX MAG cm3 !ID FILTLVL<7]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %CHARM_UNID%
+// small and large: the Kassahi bucket tags item level 90+ ones like grand charms
+ItemDisplay[!SITE_FX MAG (cm1 OR cm2) !ID ILVL>89 FILTLVL<11]: %TIER-6%%CHARM_GC_TAG%%CONTINUE%
+ItemDisplay[!SITE_FX MAG (cm1 OR cm2) ILVL>90 !ID]: %CHARM_HIGH_LVL%%CONTINUE%
 // small
 ItemDisplay[SITE_FX MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
 ItemDisplay[!SITE_FX MAG cm1 ILVL>89 !ID FILTLVL>7]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
