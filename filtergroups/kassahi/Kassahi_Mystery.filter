@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 138%CL%Kassahi - Mystery -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 139%CL%Kassahi - Mystery -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -48,9 +48,9 @@ ItemDisplay[GOLD<500 ((FILTLVL=1 CLVL>79) OR FILTLVL>1) !MAPID=83]:
 ItemDisplay[GOLD<1000 ((FILTLVL=2 CLVL>79) OR FILTLVL>2) !MAPID=83]:
 ItemDisplay[GOLD<5000 ((FILTLVL~3-4 CLVL>79) OR FILTLVL>4) !MAPID=83]:
 ItemDisplay[GOLD<7500 FILTLVL~5-6 CLVL>79 !MAPID=83]:
-ItemDisplay[GOLD<10000 FILTLVL~7-8 CLVL>79 !MAPID=83]:
-ItemDisplay[GOLD<25000 FILTLVL~9-10 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD<10000 FILTLVL~7-10 CLVL>79 !MAPID=83]:
 ItemDisplay[GOLD<999999 FILTLVL>10 CLVL>79 !MAPID=83]:
+ItemDisplay[GOLD>4999]: $f(ROUND(GOLD/1000))k G
 Alias[SITE_FX]: FALSE
 Alias[DISP_CWSS]: %WSS_SHARD%
 Alias[DISP_IWSS]: %WSS_SHARD%
@@ -86,6 +86,7 @@ Alias[DESECRATED_TAG]: %GOLD%*
 Alias[VENDOR_GOLD_TAG]: %ORANGE%• %WHITE%$
 Alias[RUNE_LOW_RANGE]: (RUNE<20)
 Alias[MYSTERY_COLOR]: %RED%
+Alias[MYSTERY_UNI_LABEL]: %RED%Mystery
 Alias[MYSTERY_TOP_NAME]: GG Mystery
 Alias[MYSTERY_QTY]: (QTY=1)
 Alias[REJUV_SMALL_LABEL]: %PURPLE%° %WHITE%35% %PURPLE%°
@@ -1898,10 +1899,10 @@ ItemDisplay[mss]: %QST_MSS%
 ItemDisplay[hfh]: %QST_HFH%
 ItemDisplay[ice]: %QST_ICE%
 ItemDisplay[tr2]: %QST_TR2%
-ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN]: %RED%Mystery%CONTINUE%
-ItemDisplay[UNI !ID uh9 MAPID=137]: %RED%Mystery%CONTINUE%
-ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %RED%Mystery%CONTINUE%
-ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %RED%Mystery%CONTINUE%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
+ItemDisplay[UNI !ID uh9 MAPID=137]: %MYSTERY_UNI_LABEL%%CONTINUE%
+ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
+ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
 ItemDisplay[MAG jew !ID FILTLVL<11 ILVL>84]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[DRUID (MAG OR RARE) !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %TIER-2%%MAG_DBL_AFFIX_ITEM%
