@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 137%CL%Kassahi - Mystery - Phil777 - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 138%CL%Kassahi - Mystery - Phil777 - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[cm3 UNI !ID FILTLVL>10]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%Unidentified Gheeds Fortune %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -173,6 +173,7 @@ Alias[RUNE_LOW_RANGE]: (RUNE<21)
 Alias[RUNE_LOW_STRICT]: %NAME%
 Alias[RUNE_TOP_HIGH]: %NAME%
 Alias[MYSTERY_COLOR]: %PURPLE%
+Alias[MYSTERY_UNI_LABEL]: %PURPLE%MYSTERY
 Alias[MYSTERY_TOP_NAME]: Big Mystery
 Alias[MYSTERY_QTY]: TRUE
 Alias[REJUV_SMALL_LABEL]: %PURPLE%° %WHITE%35%
@@ -2777,10 +2778,10 @@ ItemDisplay[mss]: %QST_MSS%
 ItemDisplay[hfh]: %QST_HFH%
 ItemDisplay[ice]: %QST_ICE%
 ItemDisplay[tr2]: %QST_TR2%
-ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN]: %RED%Mystery%CONTINUE%
-ItemDisplay[UNI !ID uh9 MAPID=137]: %RED%Mystery%CONTINUE%
-ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %RED%Mystery%CONTINUE%
-ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %RED%Mystery%CONTINUE%
+ItemDisplay[UNI !ID (ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
+ItemDisplay[UNI !ID uh9 MAPID=137]: %MYSTERY_UNI_LABEL%%CONTINUE%
+ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
+ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
 ItemDisplay[PALADIN RARE !ID (DIN OR scp OR 9sc OR 7sc OR gsc OR 9qs OR 7qs OR wsp OR 9ws OR 7ws) FILTLVL<3]: %MAG_DBL_AFFIX_ITEM%
 ItemDisplay[DRUID (MAG OR RARE) !ID (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) FILTLVL<3]: %TIER-2%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[DRUID CL1 FILTLVL<2 MAG !ID]: %TIER-2%%MAG_DBL_AFFIX_ITEM%%CONTINUE%
