@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 144%CL%HiimFilter - Hyper - NoGrail -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated October 30th%CL%Season 14 - build 145%CL%HiimFilter - Hyper - NoGrail -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -1762,6 +1762,8 @@ ItemDisplay[MAG cm3 !ID ILVL>89 FILTLVL<8]: %TIER-8%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm3 !ID ILVL>49 FILTLVL<8]: %TIER-6%%MAG_ITEM%
 ItemDisplay[!SITE_FX MAG cm3 !ID FILTLVL<7]: %TIER-6%%MAG_ITEM%
 ItemDisplay[MAG cm3 !ID FILTLVL<7]: %CHARM_UNID%
+ItemDisplay[!SITE_FX MAG (cm1 OR cm2) !ID ILVL>89 FILTLVL<11]: %TIER-6%%CHARM_GC_TAG%%CONTINUE%
+ItemDisplay[!SITE_FX MAG (cm1 OR cm2) ILVL>90 !ID]: %CHARM_HIGH_LVL%%CONTINUE%
 ItemDisplay[SITE_FX MAG cm1 !ID FILTLVL>6]: %CHARM_SC_TAG%%CONTINUE%
 ItemDisplay[!SITE_FX MAG cm1 ILVL>89 !ID FILTLVL>7]: %TIER-6%%MAG_DBL_AFFIX_ITEM%
 ItemDisplay[MAG cm1 ILVL>89 !ID FILTLVL>7]: %DISP_UNID_CHARM_TOP%
