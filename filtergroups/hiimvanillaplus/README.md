@@ -1,5 +1,5 @@
 # hiimvanillaplus
-## Last updated October 31st Season 14 - build 151
+## Last updated October 31st Season 14 - build 152
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -179,7 +179,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Athena's Wrath (Battle Scythe) — ETH
 - Bannerlord's Call (War Bolts)
 - Brimstone Rain (Shillelagh)
-- Darkforce Spawn (Bloodlord Skull)
+- Darkforce Spawn (Bloodlord Skull) — ETH
 - Demon Machine (Chu-Ko-Nu)
 - Denmother (Sun Spirit)
 - Doombringer (Champion Sword) — non-ETH
@@ -242,7 +242,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Bartuc's Cut-Throat (Greater Talons)
 - Blackhand Key (Grave Wand)
 - Blade of Ali Baba (Tulwar)
-- Blood Raven's Charge (Matriarchal Bow)
+- Blood Raven's Charge (Matriarchal Bow) — ETH
 - Bloodtree Stump (War Club) — ETH
 - Boneflame (Succubus Skull)
 - Boneshade (Lich Wand)
@@ -250,6 +250,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Cerebus' Bite (Blood Spirit)
 - Crow Caw (Tigulated Mail)
 - Cyclopean Roar (Jawbone Visor)
+- Darkforce Spawn (Bloodlord Skull) — non-ETH
 - Death Cleaver (Berserker Axe) — non-ETH
 - Death's Fathom (Dimensional Shard)
 - Demonhorn's Edge (Destroyer Helm)
@@ -258,7 +259,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Embersworn (Demon Heart)
 - Eschuta's Temper (Eldritch Orb)
 - Flamebellow (Balrog Blade)
-- Gargoyle's Bite (Winged Harpoon)
+- Gargoyle's Bite (Winged Harpoon) — ETH
 - Ghoulhide (Heavy Bracers)
 - Goldwrap (Heavy Belt)
 - Gravepalm (Sharkskin Gloves)
@@ -303,6 +304,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Tombsong (Sharp Arrows)
 - Treads of Cthon (Chain Boots)
 - Venom Grip (Demonhide Gloves)
+- Venom Ward (Breast Plate) — non-ETH
 - Warshrike (Winged Knife)
 - Widowmaker (Ward Bow)
 - Wildspeaker (Lion Helm)
@@ -312,6 +314,8 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 - Biggin's Bonnet (Cap)
 - Black Hades (Chaos Armor)
+- Blackbog's Sharp (Cinquedeas) — non-ETH
+- Blackoak Shield (Luna) — non-ETH
 - Bloodfist (Heavy Gloves)
 - Chance Guards (Chain Gloves)
 - Chromatic Ire (Cedar Staff)
@@ -328,35 +332,40 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Homunculus (Hierophant Trophy)
 - Humongous (Giant Axe)
 - Nethercrux (Ghost Wand)
+- Odium (Colossus Sword) — non-ETH
 - Ondal's Wisdom (Elder Staff)
 - Purgatory (Archon Plate) — non-ETH
+- Radament's Sphere (Ancient Shield) — non-ETH
 - Ribcracker (Quarterstaff) — non-ETH
 - Rockstopper (Sallet)
 - Rune Master (Ettin Axe)
 - Shatterblade (Mithril Point)
 - Snowclash (Battle Belt) — ETH
 - Spirit Shroud (Ghost Armor) — ETH
-- Swordguard (Executioner Sword)
+- Swordguard (Executioner Sword) — ETH
 - The Gavel of Pain (Martel de Fer) — non-ETH
 - The Spirit Shroud (Ghost Armor) — ETH
 - Thundergod's Vigor (War Belt) — ETH
 - Titan's Revenge (Ceremonial Javelin) — non-ETH
 - Toothrow (Sharktooth Armor)
 - Ursa's Nightmare (Dream Spirit)
-- Venom Ward (Breast Plate)
+- Venom Ward (Breast Plate) — ETH
 - Viperfork (Mancatcher)
 - Witchwild String (Short Siege Bow)
 - Wizardspike (Bone Knife)
 
 ### Level 5 — adds 0-star uniques
 
-- Blackbog's Sharp (Cinquedeas)
+- Blackbog's Sharp (Cinquedeas) — ETH
+- Blood Raven's Charge (Matriarchal Bow) — non-ETH
 - Bloodtree Stump (War Club) — non-ETH
 - Endlesshail (Double Bow)
+- Gargoyle's Bite (Winged Harpoon) — non-ETH
 - Gorefoot (Heavy Boots)
 - Lacerator (Winged Axe) — non-ETH
-- Odium (Colossus Sword)
-- Radament's Sphere (Ancient Shield)
+- Odium (Colossus Sword) — ETH
+- Radament's Sphere (Ancient Shield) — ETH
+- Swordguard (Executioner Sword) — non-ETH
 - The Jade Tan Do (Kris)
 - Wizendraw (Long Battle Bow)
 - Wolfhowl (Fury Visor)
@@ -364,7 +373,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 ### Level 4 — adds NO-star uniques
 
 - Baezil's Vortex (Knout)
-- Blackoak Shield (Luna)
+- Blackoak Shield (Luna) — ETH
 - Cloudcrack (Gothic Sword)
 - Djinn Slayer (Ataghan)
 - Gull (Dagger)
