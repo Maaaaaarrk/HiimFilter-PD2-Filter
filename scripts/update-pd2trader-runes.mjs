@@ -18,9 +18,12 @@ const windowHours = Number(process.env.PD2TRADER_WINDOW_HOURS) || 24;
 const decreaseWindowHours = Number(process.env.PD2TRADER_DECREASE_WINDOW_HOURS) || 72;
 const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
 
-// Low runes (Mal, Ist, Gul) use the mats' finer rounding, since a 0.05 HR step is a large
+// Low runes (Lem through Gul) use the mats' finer rounding, since a 0.05 HR step is a large
 // share of their value.
 const runes = [
+  { code: 'r20', name: 'Lem',  alias: 'LEM',  round: roundMatValue },
+  { code: 'r21', name: 'Pul',  alias: 'PUL',  round: roundMatValue },
+  { code: 'r22', name: 'Um',   alias: 'UM',   round: roundMatValue },
   { code: 'r23', name: 'Mal',  alias: 'MAL',  round: roundMatValue },
   { code: 'r24', name: 'Ist',  alias: 'IST',  round: roundMatValue },
   { code: 'r25', name: 'Gul',  alias: 'GUL',  round: roundMatValue },
