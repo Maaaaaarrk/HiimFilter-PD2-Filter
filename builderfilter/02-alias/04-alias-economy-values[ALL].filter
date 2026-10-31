@@ -2,7 +2,7 @@
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated Oct 29 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated Oct 31 2026
 
 // Valuable crafting runes — TIR(3), NEF(4), ETH(5), TAL(7), RAL(8), ORT(9), AMN(11), SOL(12), HEL(15), IO(16), LUM(17), KO(18), FAL(19)
 Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18 OR RUNE=19)
@@ -15,47 +15,47 @@ Alias[OHM_RUNE_VALUE]: 0.95
 Alias[LO_RUNE_VALUE]: 1
 Alias[SUR_RUNE_VALUE]: 1.5
 Alias[BER_RUNE_VALUE]: 3
-Alias[JAH_RUNE_VALUE]: 1.6
+Alias[JAH_RUNE_VALUE]: 1.75
 Alias[CHAM_RUNE_VALUE]: 1.75
-Alias[ZOD_RUNE_VALUE]: 3.4
+Alias[ZOD_RUNE_VALUE]: 3.5
 
 // WSS equivalent values for runes (HR value * 100)
 Alias[OHM_WSS_VALUE]: 95
 Alias[LO_WSS_VALUE]: 100
 Alias[SUR_WSS_VALUE]: 150
 Alias[BER_WSS_VALUE]: 300
-Alias[JAH_WSS_VALUE]: 160
+Alias[JAH_WSS_VALUE]: 175
 Alias[CHAM_WSS_VALUE]: 175
-Alias[ZOD_WSS_VALUE]: 340
+Alias[ZOD_WSS_VALUE]: 350
 
 // Low runes (Lem-Vex): Mal, Ist and Gul are updated from PD2 Trader, the rest are hand-set.
 Alias[LEM_RUNE_VALUE]: 0.01
 Alias[PUL_RUNE_VALUE]: 0.03
 Alias[UM_RUNE_VALUE]: 0.05
-Alias[MAL_RUNE_VALUE]: 0.15
-Alias[IST_RUNE_VALUE]: 0.24
-Alias[GUL_RUNE_VALUE]: 0.25
+Alias[MAL_RUNE_VALUE]: 0.16
+Alias[IST_RUNE_VALUE]: 0.3
+Alias[GUL_RUNE_VALUE]: 0.3
 Alias[VEX_RUNE_VALUE]: 0.5
 Alias[LEM_WSS_VALUE]: 1
 Alias[PUL_WSS_VALUE]: 3
 Alias[UM_WSS_VALUE]: 5
-Alias[MAL_WSS_VALUE]: 15
-Alias[IST_WSS_VALUE]: 24
-Alias[GUL_WSS_VALUE]: 25
+Alias[MAL_WSS_VALUE]: 16
+Alias[IST_WSS_VALUE]: 30
+Alias[GUL_WSS_VALUE]: 30
 Alias[VEX_WSS_VALUE]: 50
 Alias[LEM_STACK_HR]: (QTY*0.01)
 Alias[PUL_STACK_HR]: (QTY*0.03)
 Alias[UM_STACK_HR]: (QTY*0.05)
-Alias[MAL_STACK_HR]: (QTY*0.15)
-Alias[IST_STACK_HR]: (QTY*0.24)
-Alias[GUL_STACK_HR]: (QTY*0.25)
+Alias[MAL_STACK_HR]: (QTY*0.16)
+Alias[IST_STACK_HR]: (QTY*0.3)
+Alias[GUL_STACK_HR]: (QTY*0.3)
 Alias[VEX_STACK_HR]: (QTY*0.5)
 Alias[LEM_STACK_WSS]: (QTY*1)
 Alias[PUL_STACK_WSS]: (QTY*3)
 Alias[UM_STACK_WSS]: (QTY*5)
-Alias[MAL_STACK_WSS]: (QTY*15)
-Alias[IST_STACK_WSS]: (QTY*24)
-Alias[GUL_STACK_WSS]: (QTY*25)
+Alias[MAL_STACK_WSS]: (QTY*16)
+Alias[IST_STACK_WSS]: (QTY*30)
+Alias[GUL_STACK_WSS]: (QTY*30)
 Alias[VEX_STACK_WSS]: (QTY*50)
 
 // Stack HR formulas for runes (QTY * HR value each)
@@ -63,18 +63,18 @@ Alias[OHM_STACK_HR]: (QTY*0.95)
 Alias[LO_STACK_HR]: (QTY*1)
 Alias[SUR_STACK_HR]: (QTY*1.5)
 Alias[BER_STACK_HR]: (QTY*3)
-Alias[JAH_STACK_HR]: (QTY*1.6)
+Alias[JAH_STACK_HR]: (QTY*1.75)
 Alias[CHAM_STACK_HR]: (QTY*1.75)
-Alias[ZOD_STACK_HR]: (QTY*3.4)
+Alias[ZOD_STACK_HR]: (QTY*3.5)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
 Alias[OHM_STACK_WSS]: (QTY*95)
 Alias[LO_STACK_WSS]: (QTY*100)
 Alias[SUR_STACK_WSS]: (QTY*150)
 Alias[BER_STACK_WSS]: (QTY*300)
-Alias[JAH_STACK_WSS]: (QTY*160)
+Alias[JAH_STACK_WSS]: (QTY*175)
 Alias[CHAM_STACK_WSS]: (QTY*175)
-Alias[ZOD_STACK_WSS]: (QTY*340)
+Alias[ZOD_STACK_WSS]: (QTY*350)
 
 //-----------------------------------------------------------------------------------
 // PD2 Item estimated values
@@ -84,54 +84,54 @@ Alias[WSS_ITEM_HR_VALUE]: 0.01
 Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
 Alias[LARZUK_PUZZLEBOX_VALUE]: 0.5
 Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.1
-Alias[DEMONIC_CUBE_VALUE]: 0.25
-Alias[CATALYST_SHARD_VALUE]: 0.15
+Alias[DEMONIC_CUBE_VALUE]: 0.4
+Alias[CATALYST_SHARD_VALUE]: 0.2
 
 // WSS equivalent values for PD2 items (HR value * 100)
 Alias[WSS_ITEM_WSS_VALUE]: 1
 Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
 Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 50
 Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 10
-Alias[DEMONIC_CUBE_WSS_VALUE]: 25
-Alias[CATALYST_SHARD_WSS_VALUE]: 15
+Alias[DEMONIC_CUBE_WSS_VALUE]: 40
+Alias[CATALYST_SHARD_WSS_VALUE]: 20
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
 Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
 Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.5)
 Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.1)
-Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.25)
-Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.15)
+Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.4)
+Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.2)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
 Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
 Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*50)
 Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*10)
-Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*25)
-Alias[CATALYST_SHARD_STACK_WSS]: (QTY*15)
+Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*40)
+Alias[CATALYST_SHARD_STACK_WSS]: (QTY*20)
 
 //-----------------------------------------------------------------------------------
 // Boss Mat estimated values
 //-----------------------------------------------------------------------------------
 
 // DClone mats
-Alias[BLACK_SOULSTONE_VALUE]: 0.3
+Alias[BLACK_SOULSTONE_VALUE]: 0.25
 Alias[PRIME_EVIL_SOUL_VALUE]: 0.35
-Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.2
+Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.15
 
 // Rathma mats
-Alias[HELLFIRE_ASHES_VALUE]: 0.5
+Alias[HELLFIRE_ASHES_VALUE]: 0.65
 Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.1
 Alias[TRANG_OUL_JAWBONE_VALUE]: 0.03
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.03
+Alias[FLESH_OF_MALIC_VALUE]: 0.05
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
-Alias[DEMONIC_INSIGNIA_VALUE]: 0.2
+Alias[DEMONIC_INSIGNIA_VALUE]: 0.25
 
 // Token of Absolution essences
-Alias[FESTERING_ESS_VALUE]: 0.11
+Alias[FESTERING_ESS_VALUE]: 0.2
 Alias[BURNING_ESS_VALUE]: 0.04
-Alias[CHARGED_ESS_VALUE]: 0.09
-Alias[TWISTED_ESS_VALUE]: 0.03
+Alias[CHARGED_ESS_VALUE]: 0.1
+Alias[TWISTED_ESS_VALUE]: 0.04
