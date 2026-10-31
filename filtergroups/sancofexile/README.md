@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated October 31st Season 14 - build 154
+## Last updated October 31st Season 14 - build 155
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -144,7 +144,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Skyfall (Vortex Orb)
 - Skywarden (Vortex Shield)
 - Soul Drainer (Vambraces)
-- Spectral Plate (Great Hauberk)
 - Spirit Keeper (Earth Spirit)
 - Spirit Ward (Ward) — non-ETH
 - Steel Carapace (Shadow Plate)
@@ -206,6 +205,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Silkweave (Mesh Boots)
 - Skin of the Vipermagi (Serpentskin Armor)
 - Snowclash (Battle Belt) — non-ETH
+- Spectral Plate (Great Hauberk)
 - Spirit Ward (Ward) — ETH
 - Stalker's Cull (Runic Talons)
 - Steel Pillar (War Pike) — ETH
