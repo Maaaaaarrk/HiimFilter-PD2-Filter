@@ -21,7 +21,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
-import { loadTiers, setBaseTiers, baseFloor, baseLocked, listingsByOwnBase, SET_SCALE, SET_ALIAS, TIERS_FILE } from './lib/tier-model.mjs';
+import { loadTiers, setBaseTiers, baseFloor, baseLocked, listingsByOwnBase, SET_SCALE, SET_ALIAS, TIERS_FILE, cleanMedianHR, cleanMedianTier, MIN_LISTINGS_FOR_DOWNGRADE } from './lib/tier-model.mjs';
 
 const REPORT_FILE = 'temp/set-tier-report.txt';
 const DIFF_FILE = 'temp/set-tier-diff.json';
@@ -130,7 +130,7 @@ function aggregateListings(listings) {
     const hr = priceToHR(l);
     if (!name || !Number.isFinite(hr)) continue;
     if (!byName.has(name)) byName.set(name, []);
-    byName.get(name).push({ hr, seller: l?.user_id });
+    byName.get(name).push({ hr, seller: l?.user_id, corrupted: Boolean(l?.item?.corrupted) });
   }
   const medians = [];
   for (const [name, entries] of byName) {
@@ -220,20 +220,23 @@ function tierStatsFromRows(itemRows) {
 }
 
 // Walks down the cutoffs top-first; returns the first tier that enough separate sellers
-// list at or above. A tier needs 5% of the item's sellers, at least 5 and at most 15, so a
+// list at or above. A tier needs 5% of the item's sellers, at least 5 and at most 15 (at most
+// 10 for 3★, and a flat 5 for 4★, so a handful of top-priced sellers is enough for 4★), so a
 // few high listings on a popular item (perfect or corrupted rolls) don't promote it, and one
 // seller with several copies counts once. An item with fewer than 10 sellers in all has too
 // little market data, so it gets no suggestion and keeps its tier.
 const MIN_SELLERS_FOR_DATA = 10;
 const MIN_SELLERS_FOR_TIER = 5;
 const MAX_SELLERS_FOR_TIER = 15;
+const MAX_SELLERS_BY_STARS = { 4: 5, 3: 10 };
 const SHARE_OF_SELLERS_FOR_TIER = 0.05;
 function sellerCount(listingsDesc) {
   return new Set(listingsDesc.map((l, i) => l.seller ?? `listing-${i}`)).size;
 }
-function sellersNeededForTier(listingsDesc) {
+function sellersNeededForTier(listingsDesc, tier) {
   const share = Math.ceil(sellerCount(listingsDesc) * SHARE_OF_SELLERS_FOR_TIER);
-  return Math.min(MAX_SELLERS_FOR_TIER, Math.max(MIN_SELLERS_FOR_TIER, share));
+  const max = MAX_SELLERS_BY_STARS[tier?.[0]] ?? MAX_SELLERS_FOR_TIER;
+  return Math.min(max, Math.max(MIN_SELLERS_FOR_TIER, share));
 }
 function sellersAtOrAbove(listingsDesc, threshold) {
   if (!Array.isArray(listingsDesc) || !Number.isFinite(threshold)) return 0;
@@ -244,21 +247,13 @@ function sellersAtOrAbove(listingsDesc, threshold) {
   }
   return sellers.size;
 }
-function clearsCutoff(listingsDesc, threshold) {
-  return sellersAtOrAbove(listingsDesc, threshold) >= sellersNeededForTier(listingsDesc);
-}
-// A downgrade needs strong evidence: more than 50 sellers in all and not one of them
-// listing the item at or above its current tier's cutoff.
-const MIN_SELLERS_FOR_DOWNGRADE = 51;
-function downgradeAllowed(listingsDesc, currentTier) {
-  const c = CUTOFFS_HR.find((x) => x.tier === currentTier);
-  if (!c || !Array.isArray(listingsDesc)) return false;
-  return sellerCount(listingsDesc) >= MIN_SELLERS_FOR_DOWNGRADE && sellersAtOrAbove(listingsDesc, c.cutoffHR) === 0;
+function clearsCutoff(listingsDesc, threshold, tier) {
+  return sellersAtOrAbove(listingsDesc, threshold) >= sellersNeededForTier(listingsDesc, tier);
 }
 function suggestTierFromListings(listingsDesc) {
   if (!Array.isArray(listingsDesc) || sellerCount(listingsDesc) < MIN_SELLERS_FOR_DATA) return null;
   for (const c of CUTOFFS_HR) {
-    if (clearsCutoff(listingsDesc, c.cutoffHR)) return c.tier;
+    if (clearsCutoff(listingsDesc, c.cutoffHR, c.tier)) return c.tier;
   }
   return null;
 }
@@ -275,12 +270,12 @@ function moveClearsMultiplier(listingsDesc, currentTier, suggestedTier, multipli
   if (sugIdx < curIdx) {
     const c = CUTOFFS_HR.find((x) => x.tier === suggestedTier);
     if (!c) return true;
-    return clearsCutoff(listingsDesc, c.cutoffHR * multiplier);
+    return clearsCutoff(listingsDesc, c.cutoffHR * multiplier, c.tier);
   }
   if (sugIdx > curIdx) {
     const c = CUTOFFS_HR.find((x) => x.tier === currentTier);
     if (!c) return true;
-    return !clearsCutoff(listingsDesc, c.cutoffHR / multiplier);
+    return !clearsCutoff(listingsDesc, c.cutoffHR / multiplier, c.tier);
   }
   return true;
 }
@@ -387,13 +382,20 @@ async function main() {
   }
 
   for (const row of itemRows) {
-    const rawSug = suggestTierFromListings(row.maxNameListings);
+    // The item's value is the higher of the high-value tier (enough sellers at a tier's
+    // cutoff) and the non-corrupted median tier; floors are applied to the moves below.
+    const highValue = suggestTierFromListings(row.maxNameListings);
+    const clean = cleanMedianTier(row.maxNameListings);
+    row.cleanMedianHR = cleanMedianHR(row.maxNameListings);
+    const cleanAlias = clean ? SET_ALIAS[clean] : null;
+    const rawSug = [highValue, cleanAlias].filter(Boolean).sort((a, b) => tierIdx(a) - tierIdx(b))[0] ?? null;
+    const isDowngrade = rawSug && row.currentTier && tierIdx(rawSug) > tierIdx(row.currentTier);
     if (
       rawSug &&
       row.currentTier &&
       rawSug !== row.currentTier &&
       (!moveClearsMultiplier(row.maxNameListings, row.currentTier, rawSug, changeMultiplier) ||
-        (tierIdx(rawSug) > tierIdx(row.currentTier) && !downgradeAllowed(row.maxNameListings, row.currentTier)))
+        (isDowngrade && row.maxNameListings.length < MIN_LISTINGS_FOR_DOWNGRADE))
     ) {
       row.suggestedTier = row.currentTier;
     } else {
@@ -468,6 +470,7 @@ async function main() {
         suggestedTier: r.suggestedTier,
         delta,
         maxMedianHR: r.maxMedian,
+        cleanMedianHR: r.cleanMedianHR ?? null,
         estTopValHR,
         topName: r.maxName,
         flooredFrom: r.flooredFrom ?? null,
@@ -508,7 +511,7 @@ async function main() {
   movesLines.push('  - upgrades:   average of listings that clear the suggested tier cutoff.');
   movesLines.push('  - downgrades: average of the top 5 listings (peak being demoted away from).');
   movesLines.push('qualify(n)= separate sellers listing at or above the named tier cutoff:');
-  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (needs 5% of sellers, at least 5 and at most 15).');
+  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (needs 5% of sellers, at least 5 and at most 15; 10 for 3★, 5 for 4★).');
   movesLines.push('  - downgrades: ≥(tier just above the demotion target).');
   movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);

@@ -185,10 +185,10 @@ async function main() {
     ? 'Downgrades are **on**: entries are lowered to the market tier but never below their `floor` in `builderfilter/data/unique-set-tiers.json`; `locked` entries are never changed.'
     : `Downgrades are **off** (${ignoredDowngrades} suggested downgrade(s) not applied). Set the repo variable \`TIER_AUTO_DOWNGRADES\` to \`true\` to apply them (floors still hold).`);
   const table = (rows) => {
-    md.push('| Type | Base | Top item | Variant | Base tier | Est. value | Qualifying listings | JSON change |');
-    md.push('|---|---|---|---|---|---|---|---|');
+    md.push('| Type | Base | Top item | Variant | Base tier | Est. value | Non-corrupted median | Qualifying listings | JSON change |');
+    md.push('|---|---|---|---|---|---|---|---|---|');
     for (const a of rows) {
-      md.push(`| ${a.kind === 'unique' ? 'Unique' : 'Set'} | \`${a.m.base}\` | ${a.m.topName ?? ''} | ${a.m.variant ?? 'both'} | ${fmtTiers(a.before)} → ${fmtTiers(a.after)} | ${fmtHR(a.m.maxMedianHR)} | ${a.m.cutoffCount ?? '?'} | ${a.changed.join('; ')} |`);
+      md.push(`| ${a.kind === 'unique' ? 'Unique' : 'Set'} | \`${a.m.base}\` | ${a.m.topName ?? ''} | ${a.m.variant ?? 'both'} | ${fmtTiers(a.before)} → ${fmtTiers(a.after)} | ${fmtHR(a.m.maxMedianHR)} | ${a.m.cleanMedianHR == null ? '–' : fmtHR(a.m.cleanMedianHR)} | ${a.m.cutoffCount ?? '?'} | ${a.changed.join('; ')} |`);
     }
   };
   md.push('', `### Upgrades (${ups.length})`);

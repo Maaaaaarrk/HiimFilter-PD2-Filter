@@ -51,6 +51,26 @@ export const stars = (aliasOrTier) => {
   return t === 'no-star' ? 'no' : `${t}★`;
 };
 
+// ---- market rules shared by the suggest scripts --------------------------------------
+
+// Non-corrupted median bars: an item whose non-corrupted copies have a median listing at or
+// above a bar is worth at least that tier, whatever its high-end (often corrupted) listings
+// say. Below 1★ there is no bar. Needs MIN_CLEAN_LISTINGS non-corrupted listings.
+export const CLEAN_MEDIAN_BARS_HR = [['4', 0.5], ['3', 0.25], ['2', 0.15], ['1', 0.1]];
+export const MIN_CLEAN_LISTINGS = 10;
+// A tier only goes down when the item has at least this many listings.
+export const MIN_LISTINGS_FOR_DOWNGRADE = 20;
+
+export function cleanMedianHR(listings) {
+  const prices = (listings ?? []).filter((l) => !l.corrupted).map((l) => l.hr).sort((a, b) => a - b);
+  return prices.length >= MIN_CLEAN_LISTINGS ? prices[Math.floor(prices.length / 2)] : undefined;
+}
+export function cleanMedianTier(listings) {
+  const median = cleanMedianHR(listings);
+  if (median === undefined) return null;
+  return CLEAN_MEDIAN_BARS_HR.find(([, bar]) => median >= bar)?.[0] ?? null;
+}
+
 // ---- JSON I/O ----------------------------------------------------------------------
 
 export async function loadTiers(path = TIERS_FILE) {
