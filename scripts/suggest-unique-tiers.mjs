@@ -23,7 +23,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import {
   loadTiers, uniqueBaseTiers, uniqueAliasesFor, stars, baseFloor, baseLocked, ethFloored, listingsByOwnBase,
-  UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE, cleanMedianHR, cleanMedianTier, MIN_LISTINGS_FOR_DOWNGRADE } from './lib/tier-model.mjs';
+  UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE, cleanMedianHR, cleanMedianTier, cleanMedianBacksTier, MIN_LISTINGS_FOR_DOWNGRADE } from './lib/tier-model.mjs';
 
 const REPORT_FILE = 'temp/unique-tier-report.txt';
 const DIFF_FILE = 'temp/unique-tier-diff.json';
@@ -309,7 +309,7 @@ function clearsCutoff(listingsDesc, threshold, tier) {
 function suggestTierFromListings(listingsDesc) {
   if (!Array.isArray(listingsDesc) || sellerCount(listingsDesc) < MIN_SELLERS_FOR_DATA) return null;
   for (const c of CUTOFFS_HR) {
-    if (clearsCutoff(listingsDesc, c.cutoffHR, c.tier)) return c.tier;
+    if (clearsCutoff(listingsDesc, c.cutoffHR, c.tier) && cleanMedianBacksTier(listingsDesc, c.tier[0])) return c.tier;
   }
   return null;
 }
