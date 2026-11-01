@@ -220,20 +220,23 @@ function tierStatsFromRows(itemRows) {
 }
 
 // Walks down the cutoffs top-first; returns the first tier that enough separate sellers
-// list at or above. A tier needs 5% of the item's sellers, at least 5 and at most 15, so a
+// list at or above. A tier needs 5% of the item's sellers, at least 5 and at most 15 (at most
+// 10 for 3★, and a flat 5 for 4★, so a handful of top-priced sellers is enough for 4★), so a
 // few high listings on a popular item (perfect or corrupted rolls) don't promote it, and one
 // seller with several copies counts once. An item with fewer than 10 sellers in all has too
 // little market data, so it gets no suggestion and keeps its tier.
 const MIN_SELLERS_FOR_DATA = 10;
 const MIN_SELLERS_FOR_TIER = 5;
 const MAX_SELLERS_FOR_TIER = 15;
+const MAX_SELLERS_BY_STARS = { 4: 5, 3: 10 };
 const SHARE_OF_SELLERS_FOR_TIER = 0.05;
 function sellerCount(listingsDesc) {
   return new Set(listingsDesc.map((l, i) => l.seller ?? `listing-${i}`)).size;
 }
-function sellersNeededForTier(listingsDesc) {
+function sellersNeededForTier(listingsDesc, tier) {
   const share = Math.ceil(sellerCount(listingsDesc) * SHARE_OF_SELLERS_FOR_TIER);
-  return Math.min(MAX_SELLERS_FOR_TIER, Math.max(MIN_SELLERS_FOR_TIER, share));
+  const max = MAX_SELLERS_BY_STARS[tier?.[0]] ?? MAX_SELLERS_FOR_TIER;
+  return Math.min(max, Math.max(MIN_SELLERS_FOR_TIER, share));
 }
 function sellersAtOrAbove(listingsDesc, threshold) {
   if (!Array.isArray(listingsDesc) || !Number.isFinite(threshold)) return 0;
@@ -244,13 +247,13 @@ function sellersAtOrAbove(listingsDesc, threshold) {
   }
   return sellers.size;
 }
-function clearsCutoff(listingsDesc, threshold) {
-  return sellersAtOrAbove(listingsDesc, threshold) >= sellersNeededForTier(listingsDesc);
+function clearsCutoff(listingsDesc, threshold, tier) {
+  return sellersAtOrAbove(listingsDesc, threshold) >= sellersNeededForTier(listingsDesc, tier);
 }
 function suggestTierFromListings(listingsDesc) {
   if (!Array.isArray(listingsDesc) || sellerCount(listingsDesc) < MIN_SELLERS_FOR_DATA) return null;
   for (const c of CUTOFFS_HR) {
-    if (clearsCutoff(listingsDesc, c.cutoffHR)) return c.tier;
+    if (clearsCutoff(listingsDesc, c.cutoffHR, c.tier)) return c.tier;
   }
   return null;
 }
@@ -267,12 +270,12 @@ function moveClearsMultiplier(listingsDesc, currentTier, suggestedTier, multipli
   if (sugIdx < curIdx) {
     const c = CUTOFFS_HR.find((x) => x.tier === suggestedTier);
     if (!c) return true;
-    return clearsCutoff(listingsDesc, c.cutoffHR * multiplier);
+    return clearsCutoff(listingsDesc, c.cutoffHR * multiplier, c.tier);
   }
   if (sugIdx > curIdx) {
     const c = CUTOFFS_HR.find((x) => x.tier === currentTier);
     if (!c) return true;
-    return !clearsCutoff(listingsDesc, c.cutoffHR / multiplier);
+    return !clearsCutoff(listingsDesc, c.cutoffHR / multiplier, c.tier);
   }
   return true;
 }
@@ -508,7 +511,7 @@ async function main() {
   movesLines.push('  - upgrades:   average of listings that clear the suggested tier cutoff.');
   movesLines.push('  - downgrades: average of the top 5 listings (peak being demoted away from).');
   movesLines.push('qualify(n)= separate sellers listing at or above the named tier cutoff:');
-  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (needs 5% of sellers, at least 5 and at most 15).');
+  movesLines.push('  - upgrades:   ≥(suggested tier) — validates the promotion (needs 5% of sellers, at least 5 and at most 15; 10 for 3★, 5 for 4★).');
   movesLines.push('  - downgrades: ≥(tier just above the demotion target).');
   movesLines.push('');
   movesLines.push(`Total: ${upgrades.length} upgrade(s), ${downgrades.length} downgrade(s)`);
