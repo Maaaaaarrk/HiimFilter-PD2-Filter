@@ -70,6 +70,15 @@ export function cleanMedianTier(listings) {
   if (median === undefined) return null;
   return CLEAN_MEDIAN_BARS_HR.find(([, bar]) => median >= bar)?.[0] ?? null;
 }
+// The high-value rule only gives a tier when the non-corrupted median reaches the bar of the
+// tier below it (3★'s bar for 4★, 2★'s for 3★, 1★'s for 2★), so a few corrupted or perfect
+// asks can't lift a cheap item. Waived without MIN_CLEAN_LISTINGS non-corrupted listings.
+export function cleanMedianBacksTier(listings, stars) {
+  const median = cleanMedianHR(listings);
+  if (median === undefined) return true;
+  const below = CLEAN_MEDIAN_BARS_HR.find(([t]) => t === String(Number(stars) - 1));
+  return !below || median >= below[1];
+}
 
 // ---- JSON I/O ----------------------------------------------------------------------
 
