@@ -124,7 +124,7 @@ VALUE_CONDITIONS = {
 }
 
 MAX_FILTER_LEVELS = 12   # Levels 1–12; 0 is always "Show All Items"
-MAX_STAT_ID = 504
+MAX_STAT_ID = 510   # highest ID in Season 14 ItemStatCost.txt
 
 # Compiled patterns
 _HEX2         = r'[0-9A-Fa-f]{2}'
@@ -134,7 +134,7 @@ _RE_TABSK     = re.compile(r'^TABSK(\d+)$')       # tab skill bonuses
 _RE_CLSK      = re.compile(r'^CLSK(\d+)$')        # class skill bonuses
 _RE_SK        = re.compile(r'^SK(\d+)$')           # skill level conditions
 _RE_MULTI     = re.compile(                        # PD2 compound multi-stat conditions
-    r'^MULTI\d+,\d+([<>=~]\d+)?(\+MULTI\d+,\d+([<>=~]\d+)?)*(\+STAT\d+(=[0-9]+)?)?$'
+    r'^MULTI\d+,\d+([<>=~]\d+)?(\+MULTI\d+,\d+([<>=~]\d+)?)*(\+STAT\d+([<>=]\d+|~\d+-\d+)?)?$'
 )
 _RE_TIER      = re.compile(r'^TIER-(\d+)$')
 _RE_MAP       = re.compile(r'^MAP-(' + _HEX2 + r')$')
@@ -335,11 +335,13 @@ def _check_game_alias_expansion(fname, raw_lines, alias_line_map, alias_values, 
                 "file order): " + _alias_order_hint(cond, output, alias_line_map, alias_values)))
 
 
-def _strip_inline_formulas(text: str) -> str:
+def _strip_inline_formulas(text: str, placeholder: str = '0') -> str:
     """Replace $f(...) inline formula expressions with a neutral placeholder.
 
     Handles nested parentheses so that $f(min(a,b)+max(c,d)) is fully matched.
-    In output strings the engine replaces these with %ISLAND_X% tokens at runtime.
+    In output strings the engine replaces these with %ISLAND_X% tokens at runtime; in
+    conditions pass placeholder='ISLAND_F' so a compared formula ($f(...)~90-100) stays a
+    valid condition name.
     """
     result = []
     i = 0
@@ -356,7 +358,7 @@ def _strip_inline_formulas(text: str) -> str:
                 j += 1
             if depth == 0:
                 # Replace entire $f(...) with an inert placeholder
-                result.append('0')
+                result.append(placeholder)
                 i = j
             else:
                 # Unclosed $f( — leave as-is, will likely trigger other errors
@@ -471,7 +473,7 @@ def validate_condition_token(token: str, filename, lineno, issues, defined_alias
 
     # Match value conditions: NAME[+NAME...] OP VALUE
     vm = re.match(
-        r'^([A-Z][A-Z0-9]*(?:\+[A-Z][A-Z0-9]*)*)'   # possibly additive names
+        r'^([A-Z][A-Z0-9_]*(?:\+[A-Z][A-Z0-9_]*)*)'   # possibly additive names
         r'([<>=~])'                                    # operator
         r'(.+)$',
         token
@@ -540,7 +542,7 @@ def validate_condition_token(token: str, filename, lineno, issues, defined_alias
 def parse_conditions(cond_str: str, filename, lineno, issues, defined_aliases):
     """Parse and validate the full condition string of an ItemDisplay rule."""
     # --- Strip $f() inline formulas (replaced at runtime with ISLAND_X keys) ---
-    cond_str = _strip_inline_formulas(cond_str)
+    cond_str = _strip_inline_formulas(cond_str, 'ISLAND_F')
 
     # --- Check balanced parentheses ---
     depth = 0
