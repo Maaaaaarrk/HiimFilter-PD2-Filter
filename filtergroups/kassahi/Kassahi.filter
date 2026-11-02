@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 2nd%CL%Season 14 - build 165%CL%Kassahi -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 2nd%CL%Season 14 - build 166%CL%Kassahi -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -95,18 +95,18 @@ Alias[LBL_TSC_1]: %DARK_GREEN%· %BLUE%tp
 Alias[LBL_TBK_1]: %RED%Low qty %NAME%
 Alias[LBL_IBK_1]: %RED%· %WHITE%id Tome
 Alias[LBL_TBK_2]: %BLUE%· %WHITE%tp Tome
-Alias[LBL_HP1_1]: %RED%° %WHITE%h1 %RED%°
-Alias[LBL_HP2_1]: %RED%° %WHITE%h2 %RED%°
-Alias[LBL_HP3_1]: %RED%° %WHITE%h3 %RED%°
-Alias[LBL_HP4_1]: %RED%° %WHITE%h4 %RED%°
-Alias[LBL_HP5_1]: %RED%° %WHITE%h5 %RED%°
+Alias[LBL_HP1_1]: %RED%° %WHITE%1 %RED%°
+Alias[LBL_HP2_1]: %RED%° %WHITE%2 %RED%°
+Alias[LBL_HP3_1]: %RED%° %WHITE%3 %RED%°
+Alias[LBL_HP4_1]: %RED%° %WHITE%4 %RED%°
+Alias[LBL_HP5_1]: %RED%° %WHITE%5 %RED%°
 Alias[LBL_HP5_2]: %RED%° %WHITE%h %RED%°
 Alias[LBL_HP5_3]: %RED%° %WHITE%h %RED%°
-Alias[LBL_MP1_1]: %BLUE%° %WHITE%m1 %BLUE%°
-Alias[LBL_MP2_1]: %BLUE%° %WHITE%m2 %BLUE%°
-Alias[LBL_MP3_1]: %BLUE%° %WHITE%m3 %BLUE%°
-Alias[LBL_MP4_1]: %BLUE%° %WHITE%m4 %BLUE%°
-Alias[LBL_MP5_1]: %BLUE%° %WHITE%m5 %BLUE%°
+Alias[LBL_MP1_1]: %BLUE%° %WHITE%1 %BLUE%°
+Alias[LBL_MP2_1]: %BLUE%° %WHITE%2 %BLUE%°
+Alias[LBL_MP3_1]: %BLUE%° %WHITE%3 %BLUE%°
+Alias[LBL_MP4_1]: %BLUE%° %WHITE%4 %BLUE%°
+Alias[LBL_MP5_1]: %BLUE%° %WHITE%5 %BLUE%°
 Alias[LBL_MP5_2]: %BLUE%° %WHITE%m %BLUE%°
 Alias[LBL_MP5_3]: %BLUE%° %WHITE%m %BLUE%°
 Alias[LBL_VPS_1]: %SAGE%· %WHITE%s %SAGE%·{%GRAY%(Time Stack)%NL%%WHITE%For 30s%NL%%TAN%Infinite Stamina:}
@@ -153,6 +153,7 @@ Alias[QST_ICE]: %MAP-51%%GOLD%Malah's Potion %RED%•{%TAN%What is Man But a Mas
 Alias[QST_TR2]: %MAP-51%%GOLD%Scroll of Resistance %RED%•{%GOLD%Right Click to Read%NL%%GRAY%(Grants +10 to All Resistances Permanently)%NL%%NL%%TAN%Where There is Power, There is Resistance.}
 Alias[DISP_WSS]: %NAME%
 Alias[DISP_KEY]: %NAME%
+Alias[MARK_KEY]: %GOLD%· %WHITE%
 Alias[MARK_ORANGE_STAR3]: %ORANGE%* * *
 Alias[MARK_ORANGE_STAR]: %ORANGE%*
 Alias[MARK_ORANGE_ARROWS]: %ORANGE%< < <
@@ -1217,7 +1218,8 @@ ItemDisplay[UNI !ID ((!ETH 4_STAR_UNIQUE) OR (ETH 4_STAR_ETH_UNIQUE) OR amu OR r
 ItemDisplay[UNI]: %GOLD%%NAME%%CONTINUE%
 ItemDisplay[(ARMOR OR WEAPON) NMAG !ETH SOCK=0]: %WHITE%%NAME%%CONTINUE%
 ItemDisplay[(ARMOR OR WEAPON) NMAG (SOCK>0 OR ETH)]: %GRAY%%NAME%%CONTINUE%
-ItemDisplay[ID !MAPTIER>0 !NMAG !UNI !SET !(STAT477=4 OR STAT477=21)]: %DARK_GREEN%·%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[RARE QUIVER ID FILTLVL<7 !MAPTIER>0 !(STAT477=4 OR STAT477=21)]: %YELLOW%·%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[ID !MAPTIER>0 !NMAG !UNI !SET !(STAT477=4 OR STAT477=21) !(RARE QUIVER FILTLVL<7)]: %DARK_GREEN%·%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[INF ID !rin !amu]: %GRAY%Shit %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[ETH !(STAT477=4 OR STAT477=21)]: %WHITE%Eth %NAME%{%NAME%}%CONTINUE%
 ItemDisplay[NORM (WEAPON OR ARMOR OR QUIVER) !(STAT477=4 OR STAT477=21)]: %NAME%%DARK_GREEN%¹{%NAME%}%CONTINUE%
@@ -1476,7 +1478,7 @@ ItemDisplay[(key OR rkey) MAPID=191]: %NAME%{%BLACK%-%CL%%BLUE%HiimPD2.com%CL%%W
 ItemDisplay[(key OR rkey) MAPID=193]: %NAME%{%BLACK%-%CL%%BLUE%HiimPD2.com%CL%%WHITE%Map Pathing Guides Visit:%CL%%BLACK%-%CL%%CL%%WHITE%Map path is a loop%CL%%BLACK%-%CL%%GOLD%Halls of Torture%CL%%NAME%}%CONTINUE%
 ItemDisplay[(key OR rkey) MAPID<132]:%NAME%{%BLUE%maxroll.gg/d2/resources/map-reading%CL%%WHITE%To learn what Character left/straight/right means visit:%CL%%NAME%}%CONTINUE%
 ItemDisplay[key ASSASSIN]:{%NAME%}
-ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %GOLD%+%WHITE%%DISP_KEY%{%NAME%}
+ItemDisplay[key (FILTLVL<2 OR CLVL<25)]: %MARK_KEY%%DISP_KEY%{%NAME%}
 ItemDisplay[key]:{%NAME%}
 ItemDisplay[rkey]: %RARE_GG_ALT%%FX_RKEY%{%NAME%}
 ItemDisplay[(dcbl OR dcho OR dcso)]: %FX_BOSS_MAT%%BOSS_MAT%{%NAME%%CL%%BLUE%Reward: Annihilus%CL%%GRAY%-%CL%%ORANGE%Black Soulstone %WHITE%%BLACK_SOULSTONE_VALUE% hr - drops from Uber Tristram bosses%CL%%ORANGE%Prime Evil Soul %WHITE%%PRIME_EVIL_SOUL_VALUE% hr - drops from Mephisto/Diablo/Baal in Hell difficulty%CL%%ORANGE%Pure Demonic Essence %WHITE%%PURE_DEMONIC_ESSENCE_VALUE% hr - drops from Map bosses%CL%%GRAY%Materials:%CL%%GRAY%-%CL%%RED%Fire 90% | Absorb any T0 / 12% T2%CL%%GRAY%PDR 25% T0 / 50% T2%CL%%WHITE%Recommended Resistance:%CL%%GOLD%Vision of Terror - Diablo-Clone boss fight}
@@ -1999,7 +2001,7 @@ ItemDisplay[!ID (ssd OR 9ss OR 7ss) RARE FILTLVL<8 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID (flc OR 9fc OR 7fc) RARE FILTLVL<8 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID (crs OR 9cr OR 7cr) RARE FILTLVL<8 ILVL>84]: %TIER-2%%NAME%
 ItemDisplay[!ID (pik OR 9p9 OR 7p7) RARE FILTLVL<8 ILVL>84]: %TIER-2%%NAME%
-ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<9 ILVL>84]: %TIER-6%%NAME%
+ItemDisplay[!ID (am2 OR am7 OR amc) RARE FILTLVL<9 ILVL>84]: %TIER-6%%RARE_HIGH_ITEM%
 ItemDisplay[!ID (am1 OR am6 OR amb) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[!ID (am5 OR ama OR amf) RARE FILTLVL<8 ILVL>84]: %TIER-6%%NAME%
 ItemDisplay[(lwb OR 6lw OR 8lw) RARE (ILVL>84) !ID FILTLVL<9]: %TIER-6%%RARE_HIGH_ITEM%
