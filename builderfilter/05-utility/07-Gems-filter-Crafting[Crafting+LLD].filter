@@ -2,8 +2,9 @@
 // GEMS
 //-----------------------------------------------------------------------------------
 
-// Flawless through level 6, Perfect through level 10
+// Flawless through level 6 (skulls through 8), Perfect through level 10
 ItemDisplay[GEM=4 FILTLVL<7]: %NAME%{%NAME%}
+ItemDisplay[(skl OR skls) FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[GEM>4 FILTLVL<11]: %NAME%{%NAME%}
 
 // Hide/show gems otherwise
