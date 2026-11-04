@@ -1,5 +1,5 @@
 # Hiim Styles Side by Side
-## Last updated November 3rd Season 14 - build 170
+## Last updated November 4th Season 14 - build 171
 
 The comparisons open on FilterForge's Compare page, which shows the same drops as each filter displays them in game. Change any column's filter or level there, or add more filters, and share the link.
 
