@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 6th%CL%Season 14 - build 190%CL%HiimFilter - TalRasha - LLD -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 6th%CL%Season 14 - build 191%CL%HiimFilter - TalRasha - LLD -}%CONTINUE%
 ItemDisplay[mp5 MAPID=83]:
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -2364,20 +2364,96 @@ ItemDisplay[(ARMOR OR WEAPON) NMAG SOCK>0]: %GRAY%%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[SOCK>0 !RW]: %NAME% %GRAY%[%SOCKETS%]%CONTINUE%{%NAME%}
 ItemDisplay[STAT360>0]: %NAME%%RED%%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=48 ETH]: %NAME% Indes%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=44]: %NAME% FRW%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=45]: %NAME% CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=48 !ETH]: %NAME% Rep EDef%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=2]: %NAME% ED%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=3]: %NAME% AR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=4]: %NAME% LAH%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=5]: %NAME% Demon%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=6]: %NAME% -Req%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=7]: %NAME% MF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=8]: %NAME% LAEK%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=9]: %NAME% MAEK%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=10]: %NAME% Mana%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=12]: %NAME% -FireRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=13]: %NAME% -LightRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=14]: %NAME% -ColdRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=15]: %NAME% -PsnRes%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=16]: %NAME% FCR%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=42]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=17]: %NAME% LL ED%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=18]: %NAME% AR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=19]: %NAME% DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=20]: %NAME% IAS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=21]: %NAME% CB%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=22]: %NAME% IAS ED%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=23]: %NAME% IAS CB%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=24]: %NAME% ITD ED%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=26]: %NAME% AR ED%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=27]: %NAME% +Sk%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=28]: %NAME% FCR Fire%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=29]: %NAME% FCR Cold%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=30]: %NAME% FCR Light%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=31]: %NAME% FCR Poison%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=27]: %NAME% +Sk%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=32]: %NAME% Sockets%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=33]: %NAME% EDef%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=34]: %NAME% RepLife%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=35]: %NAME% FHR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=36]: %NAME% FireRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=37]: %NAME% ColdRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=38]: %NAME% LightRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=39]: %NAME% PsnRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=40]: %NAME% ManaRegen%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=41]: %NAME% Thorns%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=42]: %NAME% FCR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=43]: %NAME% Life%%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=44]: %NAME% FRW%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=45]: %NAME% CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=46]: %NAME% DR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=47]: %NAME% MDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=49]: %NAME% Curse%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=50]: %NAME% +Sk%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=51]: %NAME% AllRes%CONTINUE%{%NAME%}
 ItemDisplay[STAT360=52]: %NAME% PDR%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=19]: %NAME% DS%CONTINUE%{%NAME%}
-ItemDisplay[STAT360=25]: %NAME% ED-DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=53]: %NAME% MaxFire%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=54]: %NAME% MaxCold%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=55]: %NAME% MaxLight%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=56]: %NAME% MaxPsn%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=57]: %NAME% LL%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=58]: %NAME% ML%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=59]: %NAME% AR LR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=60]: %NAME% GF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=61]: %NAME% Life%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=62]: %NAME% CurseEff%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=63]: %NAME% Pierce%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=64]: %NAME% FBR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=65]: %NAME% AllStats%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=66]: %NAME% -Def%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=67]: %NAME% Block%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=68]: %NAME% Str%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=69]: %NAME% Dex%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=70]: %NAME% Vit%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=71]: %NAME% Ene%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=72]: %NAME% MaxAllRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=73]: %NAME% Block FBR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=74]: %NAME% MinDmg%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=75]: %NAME% MaxDmg%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=76]: %NAME% ITD%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=77]: %NAME% Undead%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=78]: %NAME% Map DS%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=79]: %NAME% Map CBF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=80]: %NAME% Map -Speed%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=81]: %NAME% Map -PDR%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=82]: %NAME% Map Speed%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=83]: %NAME% Map MF GF%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=84]: %NAME% Map Density%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=85]: %NAME% Map +1 Lvl%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=86]: %NAME% Map Rarity%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=87]: %NAME% Map -MaxRes%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=88]: %NAME% Map Jewelry%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=89]: %NAME% XP%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=90]: %NAME% Vit Ene%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=91]: %NAME% -Def Hit%CONTINUE%{%NAME%}
+ItemDisplay[STAT360=92]: %NAME% HFD%CONTINUE%{%NAME%}
 ItemDisplay[STAT360>0]: %NAME% %SLAMMED_TAG%%CONTINUE%{%NAME%}
 ItemDisplay[STAT206>0]: %NAME%%GOLD%%CONTINUE%{%NAME%}
 ItemDisplay[STAT206=45]: %NAME% CBF%CONTINUE%{%NAME%}
