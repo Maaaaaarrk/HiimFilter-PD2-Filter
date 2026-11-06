@@ -22,11 +22,11 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 import { loadTiers, setBaseTiers, baseFloor, baseLocked, listingsByOwnBase, SET_SCALE, SET_ALIAS, TIERS_FILE, cleanMedianHR, cleanMedianTier, cleanMedianBacksTier, MIN_LISTINGS_FOR_DOWNGRADE } from './lib/tier-model.mjs';
+import { fetchListings, dedupeIdenticalRolls } from './lib/market.mjs';
 
 const REPORT_FILE = 'temp/set-tier-report.txt';
 const DIFF_FILE = 'temp/set-tier-diff.json';
 const MOVES_FILE = 'temp/set-tier-moves.txt';
-const MARKET_URL = 'https://api.projectdiablo2.com/market/listing';
 
 const VALUE_TIERS = [
   '4_STAR_SET',
@@ -63,7 +63,6 @@ const excludeCorrupted = args['exclude-corrupted'] === 'true';
 // must hit M × cutoff(new tier), and demotions must fail to clear cutoff(current) / M.
 // Default 1.0 = no hysteresis. Pass --change-multiplier=2 to require 2x clearance.
 const changeMultiplier = Number(args['change-multiplier']) || 1.0;
-const pageSize = 200;
 const maxPagesPerBase = 5;
 const maxConcurrent = 4;
 
@@ -77,31 +76,16 @@ function parseArgs(argv) {
 }
 
 async function fetchListingsForBase(baseCode) {
-  const updatedAfter = new Date(Date.now() - windowHours * 3600 * 1000).toISOString();
-  const all = [];
-  for (let page = 0; page < maxPagesPerBase; page++) {
-    const baseParams = {
-      type: 'item',
-      $limit: String(pageSize),
-      $skip: String(page * pageSize),
-      accepted_offer_id: 'null',
-      'updated_at[$gte]': updatedAfter,
-      is_hardcore: String(isHardcore),
-      is_ladder: String(isLadder),
-      'item.base_code': baseCode,
-      'item.quality.name': 'Set',
-    };
-    if (excludeCorrupted) baseParams['item.corrupted'] = 'false';
-    const params = new URLSearchParams(baseParams);
-    const res = await fetch(`${MARKET_URL}?${params}`);
-    if (!res.ok) throw new Error(`market API ${res.status} for ${baseCode}`);
-    const payload = await res.json();
-    const rows = Array.isArray(payload?.data) ? payload.data : [];
-    all.push(...rows);
-    if (rows.length < pageSize) break;
-    await sleep(throttleMs);
-  }
-  return all;
+  const filters = {
+    type: 'item',
+    is_hardcore: String(isHardcore),
+    is_ladder: String(isLadder),
+    'item.base_code': baseCode,
+    'item.quality.name': 'Set',
+  };
+  if (excludeCorrupted) filters['item.corrupted'] = 'false';
+  const listings = await fetchListings(filters, { hours: windowHours, maxPages: maxPagesPerBase, throttleMs });
+  return dedupeIdenticalRolls(listings, priceToHR);
 }
 
 function priceToHR(listing) {
@@ -301,9 +285,6 @@ async function fetchAllConcurrent(jobs, concurrency, onProgress) {
   return results;
 }
 
-function sleep(ms) {
-  return new Promise((r) => setTimeout(r, ms));
-}
 
 function fmtHR(v) {
   if (!Number.isFinite(v)) return '       ?';

@@ -24,11 +24,11 @@ import { dirname } from 'node:path';
 import {
   loadTiers, uniqueBaseTiers, uniqueAliasesFor, stars, baseFloor, baseLocked, ethFloored, listingsByOwnBase,
   UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE, cleanMedianHR, cleanMedianTier, cleanMedianBacksTier, MIN_LISTINGS_FOR_DOWNGRADE } from './lib/tier-model.mjs';
+import { fetchListings, dedupeIdenticalRolls } from './lib/market.mjs';
 
 const REPORT_FILE = 'temp/unique-tier-report.txt';
 const DIFF_FILE = 'temp/unique-tier-diff.json';
 const MOVES_FILE = 'temp/unique-tier-moves.txt';
-const MARKET_URL = 'https://api.projectdiablo2.com/market/listing';
 
 // Tiers in *display priority* order: highest to lowest.
 // We only calibrate against the simple value tiers (NO_STAR..4_STAR_UNIQUE).
@@ -91,7 +91,6 @@ const excludeCorrupted = args['exclude-corrupted'] === 'true';
 // Default 1.0 = no hysteresis (current behavior). Pass --change-multiplier=2 to
 // require 2x clearance, leaving borderline items in their current tier.
 const changeMultiplier = Number(args['change-multiplier']) || 1.0;
-const pageSize = 200;
 const maxPagesPerBase = 5;
 const maxConcurrent = 4;
 
@@ -105,34 +104,17 @@ function parseArgs(argv) {
 }
 
 async function fetchListingsForBase(baseCode, isEth) {
-  const updatedAfter = new Date(Date.now() - windowHours * 3600 * 1000).toISOString();
-  const all = [];
-  for (let page = 0; page < maxPagesPerBase; page++) {
-    const baseParams = {
-      type: 'item',
-      $limit: String(pageSize),
-      $skip: String(page * pageSize),
-      accepted_offer_id: 'null',
-      'updated_at[$gte]': updatedAfter,
-      is_hardcore: String(isHardcore),
-      is_ladder: String(isLadder),
-      'item.base_code': baseCode,
-      'item.quality.name': 'Unique',
-      'item.is_ethereal': String(isEth),
-    };
-    if (excludeCorrupted) baseParams['item.corrupted'] = 'false';
-    const params = new URLSearchParams(baseParams);
-    const res = await fetch(`${MARKET_URL}?${params}`);
-    if (!res.ok) {
-      throw new Error(`market API ${res.status} for ${baseCode} eth=${isEth}`);
-    }
-    const payload = await res.json();
-    const rows = Array.isArray(payload?.data) ? payload.data : [];
-    all.push(...rows);
-    if (rows.length < pageSize) break;
-    await sleep(throttleMs);
-  }
-  return all;
+  const filters = {
+    type: 'item',
+    is_hardcore: String(isHardcore),
+    is_ladder: String(isLadder),
+    'item.base_code': baseCode,
+    'item.quality.name': 'Unique',
+    'item.is_ethereal': String(isEth),
+  };
+  if (excludeCorrupted) filters['item.corrupted'] = 'false';
+  const listings = await fetchListings(filters, { hours: windowHours, maxPages: maxPagesPerBase, throttleMs });
+  return dedupeIdenticalRolls(listings, priceToHR);
 }
 
 function priceToHR(listing) {
@@ -361,9 +343,6 @@ async function fetchAllConcurrent(jobs, concurrency, onProgress) {
   return results;
 }
 
-function sleep(ms) {
-  return new Promise((r) => setTimeout(r, ms));
-}
 
 function fmtHR(v) {
   // Always returns exactly 8 chars (right-aligned number + " HR" or " WS")

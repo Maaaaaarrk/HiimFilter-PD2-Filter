@@ -1,22 +1,21 @@
 // Updates rune and uber-material economy aliases in
-// builderfilter/02-alias/04-alias-economy-values[ALL].filter using median prices from the
-// PD2 Trader API. Ported with permission from Roofoo's filter
-// (https://github.com/RoofooEvazan/Roofoo-s-PD2-Loot-Filter). Primary window is 24h, but
-// when a scraped value would lower the current alias the longer 3-day window is used
-// instead to smooth short-term dips. Filename kept for CI compatibility — also updates
+// builderfilter/02-alias/04-alias-economy-values[ALL].filter from live listings on the
+// official Project Diablo 2 market. Each seller counts once (their lowest asking price) and
+// the value is the median across sellers. The primary window is 3 days; when it would lower
+// the current alias, the 7-day window is used instead to smooth short-term dips. Also updates
 // DClone / Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS,
 // Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
 
 import { readFile, writeFile } from 'node:fs/promises';
+import { fetchListings, currencyPriceHR, dedupeBySeller, median } from './lib/market.mjs';
 
-const API_URL = 'https://pd2trader.com/item-prices/average/batch';
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
 
-const isLadder = process.env.PD2TRADER_LADDER !== 'false';
-const isHardcore = process.env.PD2TRADER_HARDCORE === 'true';
-const windowHours = Number(process.env.PD2TRADER_WINDOW_HOURS) || 24;
-const decreaseWindowHours = Number(process.env.PD2TRADER_DECREASE_WINDOW_HOURS) || 72;
-const minSampleCount = Number(process.env.PD2TRADER_MIN_SAMPLES) || 5;
+const isLadder = process.env.MARKET_LADDER !== 'false';
+const isHardcore = process.env.MARKET_HARDCORE === 'true';
+const windowHours = Number(process.env.MARKET_WINDOW_HOURS) || 72;
+const decreaseWindowHours = Number(process.env.MARKET_DECREASE_WINDOW_HOURS) || 168;
+const minSampleCount = Number(process.env.MARKET_MIN_SELLERS) || 5;
 
 // Low runes (Lem through Gul) use the mats' finer rounding, since a 0.05 HR step is a large
 // share of their value.
@@ -68,26 +67,9 @@ const ubermats = [
   { code: 'imrn', name: 'Demonic Cube',              alias: 'DEMONIC_CUBE',              set: 'full' },
 ];
 
-function normalizePriceValue(value) {
-  if (typeof value === 'number') return value;
-  if (typeof value !== 'string') return undefined;
-  const normalized = value.trim().toLowerCase();
-  const wssMatch = normalized.match(/^(\d+(?:\.\d+)?)\s*wss$/);
-  if (wssMatch) return Number(wssMatch[1]) * 0.01;
-  const hrMatch = normalized.match(/^(\d+(?:\.\d+)?)\s*hr$/);
-  if (hrMatch) return Number(hrMatch[1]);
-  const numericValue = Number(normalized);
-  return Number.isFinite(numericValue) ? numericValue : undefined;
-}
-
 function valueFromPrice(price) {
-  if (!price) return undefined;
-  if ((price.sampleCount ?? 0) < minSampleCount) return undefined;
-  for (const key of ['medianPrice', 'averagePrice', 'movingAverage7Days']) {
-    const v = normalizePriceValue(price[key]);
-    if (Number.isFinite(v) && v > 0) return v;
-  }
-  return undefined;
+  if (!price || price.sellers < minSampleCount) return undefined;
+  return price.value;
 }
 
 function roundToFiveHundredths(value) {
@@ -112,31 +94,44 @@ function formatHr(value) {
   return value.toFixed(2).replace(/\.?0+$/, '');
 }
 
-async function fetchPrices(hours) {
-  const body = {
-    baseCodes: [...runes.map((r) => r.code), ...ubermats.map((m) => m.code)],
-    isLadder,
-    isHardcore,
-    hours,
-  };
-
-  const response = await fetch(API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-
-  if (!response.ok) {
-    throw new Error(`PD2 Trader API returned ${response.status} ${response.statusText}`);
+function currentRuneValues(text) {
+  const values = {};
+  for (const match of text.matchAll(/^Alias\[([A-Z]+)_RUNE_VALUE\]:\s*([\d.]+)\s*$/gm)) {
+    values[match[1]] = Number(match[2]);
   }
+  return values;
+}
 
-  const payload = await response.json();
+function referenceValue(text, item) {
+  const alias = runes.includes(item) ? `${item.alias}_RUNE_VALUE` : `${item.alias}${item.valueSuffix ?? '_VALUE'}`;
+  return getCurrentAliasNumber(text, alias);
+}
 
-  if (!payload || !Array.isArray(payload.data)) {
-    throw new Error('PD2 Trader API response did not include a data array');
+function priceSummary(listings, referenceHR, runeHR) {
+  const priced = listings
+    .map((l) => ({ seller: l.user_id, hr: currencyPriceHR(l, { referenceHR, runeHR }) }))
+    .filter((e) => e.seller && Number.isFinite(e.hr) && e.hr > 0);
+  const perSeller = dedupeBySeller(priced, (e) => e.hr);
+  return { value: median(perSeller.map((e) => e.hr)), sellers: perSeller.length, listings: listings.length };
+}
+
+// One fetch per item over the longer window; the primary window is the recent slice of it.
+async function fetchPrices(text) {
+  const runeHR = currentRuneValues(text);
+  const cutoff = Date.now() - windowHours * 3600 * 1000;
+  const primary = new Map();
+  const decrease = new Map();
+  for (const item of [...runes, ...ubermats]) {
+    const listings = await fetchListings(
+      { is_ladder: String(isLadder), is_hardcore: String(isHardcore), 'item.base_code': item.code },
+      { hours: decreaseWindowHours },
+    );
+    const referenceHR = referenceValue(text, item);
+    const recent = listings.filter((l) => Date.parse(l.updated_at) >= cutoff);
+    primary.set(item.code, priceSummary(recent, referenceHR, runeHR));
+    decrease.set(item.code, priceSummary(listings, referenceHR, runeHR));
   }
-
-  return new Map(payload.data.map((p) => [p.baseCode, p]));
+  return [primary, decrease];
 }
 
 function getCurrentAliasNumber(text, aliasName) {
@@ -192,11 +187,8 @@ function timestampLine() {
 }
 
 async function main() {
-  const [pricesPrimary, pricesDecrease] = await Promise.all([
-    fetchPrices(windowHours),
-    fetchPrices(decreaseWindowHours),
-  ]);
   const original = await readFile(ALIAS_FILE, 'utf8');
+  const [pricesPrimary, pricesDecrease] = await fetchPrices(original);
   let text = original;
   const updates = [];
 
