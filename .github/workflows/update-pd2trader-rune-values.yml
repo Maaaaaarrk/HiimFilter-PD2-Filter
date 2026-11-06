@@ -1,4 +1,4 @@
-name: Update PD2 Trader Economy Values
+name: Update Market Economy Values
 
 on:
   schedule:
@@ -32,11 +32,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Update economy values from PD2 Trader
-        run: node scripts/update-pd2trader-runes.mjs
+      - name: Update economy values from the PD2 market
+        run: node scripts/update-economy-values.mjs
         env:
-          PD2TRADER_LADDER: 'true'
-          PD2TRADER_HARDCORE: 'false'
+          MARKET_LADDER: 'true'
+          MARKET_HARDCORE: 'false'
 
       - name: Check if alias file changed
         id: check
@@ -87,7 +87,7 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Update PD2 Trader economy values (version ${{ env.VERSION }})"
+          git commit -m "Update market economy values (version ${{ env.VERSION }})"
 
           git push --force origin "HEAD:$BOT_BRANCH"
           existing_pr=$(gh pr list --head "$BOT_BRANCH" --base main --state open --json number -q '.[0].number')
@@ -95,8 +95,8 @@ jobs:
             gh pr create \
               --base main \
               --head "$BOT_BRANCH" \
-              --title "Update PD2 Trader economy values (version ${{ env.VERSION }})" \
-              --body "Automated economy refresh from PD2 Trader (runes + uber mats + PD2 items). Version bumped to ${{ env.VERSION }}."
+              --title "Update market economy values (version ${{ env.VERSION }})" \
+              --body "Automated economy refresh from the official PD2 market (runes + uber mats + PD2 items). Version bumped to ${{ env.VERSION }}."
           else
             echo "Existing PR #$existing_pr was updated by force-push."
           fi
