@@ -11,8 +11,8 @@
 // is used inline below for variant-specific dot decoration. It is NOT wrapped in
 // another alias body — PD2 only resolves aliases one level deep at ItemDisplay
 // substitution time, so nesting %MAIN_DOT% inside another Alias[] body causes
-// the engine to emit the literal token. HORADRIC_SCARAB and BLAME_ONION (which
-// don't reference MAIN_DOT) remain in `02-alias/04-alias-kassahi-displays`.
+// the engine to emit the literal token. BLAME_ONION (which
+// doesn't reference MAIN_DOT) remains in `02-alias/04-alias-kassahi-displays`.
 //-----------------------------------------------------------------------------------
 
 
@@ -21,9 +21,12 @@ ItemDisplay[toa]: %MAP-0A%%SOUNDID-4715%%TOKEN_PARTS%{%GOLD%Wherever You Are is 
 
 // Worldstone Shards — wss rule moved to common 05-utility/02-wss-display[ALL]
 // so Hiim filters route through %WSS_SHARD% too. iwss/cwss stay Kassahi-only
-// because Hiim handles those differently in 03-PD2_items[ALL].
+// because Hiim handles those differently in 03-PD2_items[ALL]. cwss ends here with
+// the BOSS_ENTRY frame and a copy of the value tooltips from 03-PD2_items[ALL].
 ItemDisplay[iwss]: %WSS_SHARD%{%NAME%}%CONTINUE%
-ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%WSS_SHARD%{%NAME%}%CONTINUE%
+ItemDisplay[cwss QTY>1 QTY<8]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[cwss QTY>7]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%TAINTED_WORLDSTONE_SHARD_STACK_HR%)%CL%%NAME%}%CONTINUE%
+ItemDisplay[cwss]: %MAP-0A%%SOUNDID-4715%%BOSS_ENTRY%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %TAINTED_WORLDSTONE_SHARD_VALUE%%CL%%CURRENCY_TIMESTAMP%%CL%%RED%Corrupts %TAN%your Annihilus}
 
 // Ears
 ItemDisplay[(ivea OR ivez OR iveb OR ived OR iven OR ivep OR ives)]: %MAP-4A%%PD2_MATS%{%NAME%}
@@ -38,8 +41,7 @@ ItemDisplay[lpp]: %MAP-0A%%SOUNDID-4715%%PD2_MATS%{%GRAY%(Gray/White/Magic/Rare/
 ItemDisplay[UNI cm2]: %NAME%%CONTINUE%{%WHITE%Make Hellfire Ashes%NL%%TAN%Cube: %WHITE%Torch, Key, to}
 
 // Horadrim Scarabs
-ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%HORADRIC_SCARAB%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
-ItemDisplay[scrb]: %PD2_MATS%{%NAME%}%CONTINUE%
+ItemDisplay[scrb]: %PX-60%%MAP-0A%%SOUNDID-4715%%NAME%{%GRAY%(These Are Intended For Groups)%NL%%NAME%}%CONTINUE%
 
 //-----------------------------------------------------------------------------------
 // Kassahi: hide Arcane / Angelic / Destruction orbs at every filter level.
