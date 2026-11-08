@@ -74,6 +74,9 @@ ItemDisplay[(wsp OR 9ws OR 7ws) SK119>2 NMAG !INF (SOCK=0 OR SOCK=5) !RW FILTLVL
 ItemDisplay[7ws ETH !INF NMAG !RW (SOCK=0 OR SOCK=5) FILTLVL<9]: %NAME%{%NAME%}
 ItemDisplay[7ws !INF NMAG !RW (SOCK=0 OR SOCK=5) EDAM>5 FILTLVL<9]: %NAME%{%NAME%}
 
+// 5 socket scythes (Scythe / Battle Scythe / Thresher) through level 4
+ItemDisplay[(scy OR 9s8 OR 7s8) NMAG !RW SOCK=5 FILTLVL<5]: %NAME%{%NAME%}
+
 // Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(SPEAR OR POLEARM) ELT ETH !INF SOCK=0 NMAG !RW EDAM>0 (EDAM>9 OR FILTLVL<5) FILTLVL<7]: %NAME%{%NAME%}
 ItemDisplay[(SPEAR OR POLEARM) ELT ETH !INF SOCK=0 NMAG !RW EDAM>17 FILTLVL<8]: %NAME%{%NAME%}
