@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 8th%CL%Season 14 - build 199%CL%Kassahi - Mystery - Phil777 - Sorc - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 8th%CL%Season 14 - build 200%CL%Kassahi - Mystery - Phil777 - Sorc - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[cm3 UNI !ID FILTLVL>10]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%Unidentified Gheeds Fortune %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -2183,7 +2183,7 @@ ItemDisplay[jew (STR+DEX>15)]: Fat%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew (STR+DEX>9)]: %LIGHT_GRAY%%NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI !SET STAT86>0]: %RED%%STAT86% LAEK %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI !SET STAT138>0]: %BLUE%%STAT138% MAEK %NAME%%CONTINUE%{%NAME%}
-ItemDisplay[jew !UNI !SET RES>0]: %PURPLE%%RES%% ALL Res %NAME%%CONTINUE%{%NAME%}
+ItemDisplay[jew !UNI !SET RES>0]: %PURPLE%%RES%% All Res %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI STAT80>0]: %BLUE%%STAT80%%MF %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI STAT79>0]: %GOLD%%STAT79%%GF %NAME%%CONTINUE%{%NAME%}
 ItemDisplay[jew !UNI STAT329>0]: %RED%%STAT329%% Fire %NAME%%CONTINUE%{%NAME%}
@@ -2351,7 +2351,7 @@ ItemDisplay[(cm1 OR cm2 OR cm3) !UNI MANA>0]: %BLUE%%STAT9% Mana %NAME%%CONTINUE
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI LIFE>0]: %RED%+%STAT7% Life %NAME%%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI AR>0]: %GRAY%+%STAT19% AR %NAME%%CONTINUE%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI MAXDMG>0]: %TAN%+%STAT24% Max Dmg %NAME%%CONTINUE%%DOT-93%%TIER-4%
-ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES>0]: %PURPLE%ALL Res %RES%% %NAME%%CONTINUE%%DOT-93%
+ItemDisplay[(cm1 OR cm2 OR cm3) !UNI RES>0]: %PURPLE%All Res %RES%% %NAME%%CONTINUE%%DOT-93%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI CRES>0 !(RES>0)]: %BLUE%%STAT43%%Cold RES %NAME%%CONTINUE%%DOT-93%%TIER-4%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI FRES>0 !(RES>0)]: %RED%%STAT39%%Fire RES %NAME%%CONTINUE%%DOT-93%%TIER-4%
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI LRES>0 !(RES>0)]: %YELLOW%%STAT41%%Light RES %NAME%%CONTINUE%%DOT-93%%TIER-4%
@@ -2765,7 +2765,7 @@ ItemDisplay[SOCK_WEAP_4_6 2H NMAG SOCK=0 ILVL>40]: %NAME%{%NAME%%TEAL%q:%WHITE%6
 ItemDisplay[wst NMAG SOCK=0 ILVL<26]: %NAME%{%NAME%%TEAL%q:%WHITE%5, %RED%c:%WHITE%1-5%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[wst NMAG SOCK=0 ILVL>25]: %NAME%{%NAME%%TEAL%q:%WHITE%6, %RED%c:%WHITE%1-6%GOLD%/%RED%b}%CONTINUE%
 ItemDisplay[UNI cm3]: %NAME%{%NAME%%GHEEDS_TOOLTIP_LINE%}%CONTINUE%
-ItemDisplay[SET ID !STASH]: %NAME%{%RED%Set bonuses Shows in Stash%NL%%NAME%}
+ItemDisplay[SET ID !STASH]: %NAME%{%RED%Set bonuses Shows in Stash%NL%%NAME%}%CONTINUE%
 ItemDisplay[UNI ID STAT270>0]: %DOT-0A%%MAP-9B%%BORDER-1F%%ORANGE%Anniversary %NAME%{%NAME%%CL%}%CONTINUE%
 ItemDisplay[STAT477=4]: %DOT-0A%%MAP-9B%%BORDER-1F%%ORANGE%Black%CL%%WHITE%>> %PURPLE%>> %WHITE%>> %PURPLE%Mirrored %WHITE%<< %PURPLE%<< %WHITE%<<%CL%%NAME%{%NAME%%CL%}
 ItemDisplay[STAT477=21]: %DOT-0A%%MAP-9B%%BORDER-1F%%ORANGE%White%CL%%WHITE%>> %PURPLE%>> %WHITE%>> %PURPLE%Mirrored %WHITE%<< %PURPLE%<< %WHITE%<<%CL%%NAME%{%NAME%%CL%}
@@ -3720,7 +3720,7 @@ ItemDisplay[(RARE OR CRAFT) (9pi OR 9s9 OR 9gl OR 9ts OR ama) ED>139 STAT360=0 E
 ItemDisplay[(RARE OR CRAFT) (9pi OR 9s9 OR 9gl OR 9ts OR ama) ((ED>179) OR (ED>139 ((IAS>19) OR (MAXDMG>19)))) STAT360>0 ETH LVLREQ<31]: %DOT-9F%%TEAL%usable lld%CL%%NAME%{%NAME%}
 ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>199 STAT360>0 ((IAS>19) OR (MAXDMG>19))) OR (ED>199 STAT360>0 IAS<20 SOCK>2) OR (ED>229 STAT360>0 IAS<20 SOCK<3) OR (STAT360>0 TABSK0>2 ((IAS>19 SOCK>2) OR (IAS>39 SOCK=0)))) LVLREQ<31]: %DOT-9F%%TEAL%usable lld%CL%%NAME%{%NAME%}
 ItemDisplay[(RARE OR CRAFT) (8lw OR 8rx OR am6 OR 8sw) ((ED>169 STAT360=0) OR (STAT360=0 TABSK0>2 IAS>19) OR (STAT360=0 TABSK0>3 IAS<20)) LVLREQ<31]: %DOT-9F%%TEAL%corruptible lld%CL%%NAME%{%NAME%}
-ItemDisplay[(WEAPON !UNI (EDAM>149 OR SUFFIX=662 OR SUFFIX=898) LVLREQ<31) OR (WEAPON !UNI (SUFFIX=907 OR SUFFIX=908 OR SUFFIX=910 OR SUFFIX=911) LVLREQ<31) OR (UNI ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0) OR (SET ID (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0) OR (SET ID amu (STAT360=0 AND STAT89=3)) OR (SET ID rin (STAT360=0 AND STAT74=6))]: %TEAL%lld%CL%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(WEAPON !UNI (EDAM>149 OR SUFFIX=662 OR SUFFIX=898) LVLREQ<31) OR (WEAPON !UNI (SUFFIX=907 OR SUFFIX=908 OR SUFFIX=910 OR SUFFIX=911) LVLREQ<31) OR (UNI ID (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR mau OR gma OR wst OR flb OR gsd OR tbt OR zlb OR dr2 OR tgl OR fld OR am5) STAT360=0) OR (!PHIL777_STYLE SET ID (bwn OR vbt OR lbt OR lbl OR lgl) STAT360=0) OR (!PHIL777_STYLE SET ID amu (STAT360=0 AND STAT89=3)) OR (!PHIL777_STYLE SET ID rin (STAT360=0 AND STAT74=6))]: %TEAL%lld%CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[QUIVER ID (RARE OR CRAFT) LVLREQ<31 (FCR>0 OR IAS>0 OR TABSK0>0)]: %TEAL%quiver lld%CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[BELT ID (RARE OR CRAFT) LVLREQ<31 (FCR>0 OR FHR>16 OR LIFE>69)]: %TEAL%belt lld%CL%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(CHEST ID (RARE OR CRAFT) LVLREQ<31 STAT36>7 LIFE>49 (EDAM>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR SOCK=3)) OR ((aar OR xar OR ful OR xul OR gth OR xth) ID (RARE OR CRAFT) LVLREQ<31 ETH EDEF>0 (STAT36>7 OR EDAM>0 OR CLSK0>0 OR CLSK1>0 OR CLSK2>0 OR CLSK3>0 OR CLSK4>0 OR CLSK5>0 OR CLSK6>0 OR FCR>0 OR SOCK=3 OR REPAIR>0))]: %TEAL%armor lld%CL%%NAME%{%NAME%}%CONTINUE%
