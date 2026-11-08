@@ -10,10 +10,6 @@
 //      itself.
 //
 // Items with their own non-«·» style (imrn, scou, crf*, MAG charms) bypass entirely.
-//
-// Note: the shared HORADRIC_SCARAB alias prepends %GOLD%<space> before %NAME%, but
-// it only colours the leading space — the %ORANGE% from this file's rename applies
-// to the actual name text, so scrb still renders with ORANGE inside the PD2_MATS frame.
 //-----------------------------------------------------------------------------------
 
 // --- Group A: rename-only (wrap happens in folder 05) ---------------------------
@@ -39,13 +35,15 @@ ItemDisplay[iwss]: %RED%Catalyst%CONTINUE%
 // Larzuk's Puzzle Piece — ORANGE literal  (wrapped by GEN_RARE in 03-PD2_items)
 ItemDisplay[lpp]: %ORANGE%Puzzle Piece%CONTINUE%
 
-// Horadrim Scarab — ORANGE  (wrapped by PD2_MATS in 02-Kassahi_pd2items)
+// Horadrim Scarab — ORANGE  (wrapped by BOSS_ENTRY in 05-Maps-2-tiers)
 ItemDisplay[scrb]: %ORANGE%Horadrim Scarab%CONTINUE%
+
+// Standard of Heroes — ORANGE  (wrapped by BOSS_ENTRY in 05-Maps-2-tiers)
+ItemDisplay[std]: %ORANGE%Standard of Heroes%CONTINUE%
 
 // --- Group B: rename + apply PD2_MATS wrap here ---------------------------------
 
 ItemDisplay[jewf]: %ORANGE%Jewel Fragments%CONTINUE%
-ItemDisplay[std]: %ORANGE%Standard of Heroes%CONTINUE%
 ItemDisplay[imra]: %GOLD%Zakarum%CONTINUE%
 ItemDisplay[irra]: %GOLD%Infused Zakarum%CONTINUE%
 ItemDisplay[rera]: %GOLD%Horadrim%CONTINUE%
@@ -61,7 +59,7 @@ ItemDisplay[lbox]: %PURPLE%Puzzle Box%CONTINUE%
 // stack count is lost). Fires only on stacks of 2+.
 ItemDisplay[(iwss OR lpp OR scrb OR jewf OR std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort) QTY>1]: %NAME% %QTY_TAG%{%NAME%}%CONTINUE%
 
-ItemDisplay[(std OR imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
+ItemDisplay[(imra OR irra OR rera OR rrra OR upma OR urma OR upmp OR fort OR irma)]: %PD2_MATS%{%NAME%}%CONTINUE%
 
 
 // --- Items that bypass the «·» frame (different style) ---------------------------
