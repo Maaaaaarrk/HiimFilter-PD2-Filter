@@ -165,6 +165,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Veil of Steel (Spired Helm)
 - Verdungo's Hearty Cord (Mithril Coil) — ETH
 - War Traveler (Battle Boots)
+- Warshrike (Winged Knife) — ETH
 - Waterwalk (Sharkskin Boots) — ETH
 - Windforce (Hydra Bow)
 - Zerae's Resolve (Matriarchal Pike) — ETH
@@ -227,6 +228,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Verdungo's Hearty Cord (Mithril Coil) — non-ETH
 - Warlord's Trust (Military Axe) — ETH
 - Warriv's Warder (Heater) — ETH
+- Warshrike (Winged Knife) — non-ETH
 - Waterwalk (Sharkskin Boots) — non-ETH
 - Wraithskin (Diamond Mail)
 
@@ -322,7 +324,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Valkyrie Wing (Winged Helm) — non-ETH
 - Venom Grip (Demonhide Gloves) — ETH
 - Warriv's Warder (Heater) — non-ETH
-- Warshrike (Winged Knife)
 - Whispering Mirage (War Fist)
 - Widowmaker (Ward Bow) — ETH
 - Wildspeaker (Lion Helm)
