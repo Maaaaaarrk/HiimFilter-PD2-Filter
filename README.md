@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated November 8th Season 14 - build 204
+## Last updated November 9th Season 14 - build 205
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -168,6 +168,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Veil of Steel (Spired Helm)
 - Verdungo's Hearty Cord (Mithril Coil) — ETH
 - War Traveler (Battle Boots)
+- Warshrike (Winged Knife) — ETH
 - Waterwalk (Sharkskin Boots) — ETH
 - Windforce (Hydra Bow)
 - Zerae's Resolve (Matriarchal Pike) — ETH
@@ -230,6 +231,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Verdungo's Hearty Cord (Mithril Coil) — non-ETH
 - Warlord's Trust (Military Axe) — ETH
 - Warriv's Warder (Heater) — ETH
+- Warshrike (Winged Knife) — non-ETH
 - Waterwalk (Sharkskin Boots) — non-ETH
 - Wraithskin (Diamond Mail)
 
@@ -325,7 +327,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Valkyrie Wing (Winged Helm) — non-ETH
 - Venom Grip (Demonhide Gloves) — ETH
 - Warriv's Warder (Heater) — non-ETH
-- Warshrike (Winged Knife)
 - Whispering Mirage (War Fist)
 - Widowmaker (Ward Bow) — ETH
 - Wildspeaker (Lion Helm)
