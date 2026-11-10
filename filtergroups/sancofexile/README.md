@@ -1,5 +1,5 @@
 # sancofexile
-## Last updated November 10th Season 14 - build 220
+## Last updated November 10th Season 14 - build 221
 
 ## Filters
 * Standard: Sancofexile's all-in-one balanced filter. The standard recommendation for most players. [Sancofexile.filter]
@@ -87,7 +87,7 @@ Cube will state current filter version & chosen filter level information.
 
 * **10: 3 Minute Mapper** — Everything from level 9, plus:
   * 3-star unidentified uniques and sets hidden (only 4-star shown)
-  * Crafting, class and LLD filters: low runes (below Pul) hidden outside town
+  * Crafting, class and LLD filters: low runes (El–Lum) hidden outside town
 
 * **11: No Items Out of Town** — Extreme clutter removal. Almost nothing shows outside of town.
   * Only desecrated items, slammed items, and runeword bases visible outside town - in case of miss click

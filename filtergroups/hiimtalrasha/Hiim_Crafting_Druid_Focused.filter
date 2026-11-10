@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 10th%CL%Season 14 - build 220%CL%HiimFilter - TalRasha - Druid - Crafting -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 10th%CL%Season 14 - build 221%CL%HiimFilter - TalRasha - Druid - Crafting -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -1671,7 +1671,7 @@ ItemDisplay[RUNE=31 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%JAH
 ItemDisplay[RUNE=32 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%: $f(%CHAM_STACK_WSS%)%CL%%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=32 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=33 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%ZOD_STACK_HR%)%CL%%NAME%}%CONTINUE%
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL>8 !IN_TOWN]:{%NAME%}
+ItemDisplay[RUNE<18 RUNE>0 FILTLVL>8 !IN_TOWN]:{%NAME%}
 ItemDisplay[RUNE<21 RUNE>0 !IN_TOWN]: %NAME%{%NAME%}
 ItemDisplay[(r01 OR r01s)]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEl + %GRAY%key %WHITE%= Eld}
 ItemDisplay[(r02 OR r02s)]: %NAME%{%NAME%%TAN%Note%WHITE%: 3xEld + %GRAY%key %WHITE%= Tir}
