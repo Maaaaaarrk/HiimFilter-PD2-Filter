@@ -159,8 +159,10 @@ def get_version_string():
     return line.replace("%CL%", " ")
 
 
-def get_filter_levels():
-    with open(FILTER_LEVELS_TPL, encoding="utf-8") as f:
+def get_filter_levels(group=None):
+    group_tpl = os.path.join(SCRIPT_DIR, f"filter_levels_{group}.md") if group else None
+    path = group_tpl if group_tpl and os.path.exists(group_tpl) else FILTER_LEVELS_TPL
+    with open(path, encoding="utf-8") as f:
         return f.read().rstrip() + "\n"
 
 
@@ -230,7 +232,7 @@ def main():
             sub = os.path.join(FILTERGROUPS_DIR, group)
             if os.path.isdir(sub) and group not in paused:
                 preview = preview_section(group, "../HIIM_STYLES.md") if group in PREVIEWS else ""
-                write_bucket_readme(sub, version_str, filter_levels, uniques_by_level, preview)
+                write_bucket_readme(sub, version_str, get_filter_levels(group), uniques_by_level, preview)
         write_styles_page(version_str)
 
 
