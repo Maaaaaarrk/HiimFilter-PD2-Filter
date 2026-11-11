@@ -1,14 +1,14 @@
 // Updates rune and uber-material economy aliases in
 // builderfilter/02-alias/04-alias-economy-values[ALL].filter from live listings on the
-// official Project Diablo 2 market. Each seller counts once (their lowest asking price),
-// outliers are dropped (withoutOutliers), the value is the median of the rest and their min
-// and max become the item's *_MARKET_RANGE alias. The primary window is 3 days; when it would
-// lower the current alias, the 7-day window is used instead to smooth short-term dips. Also
-// updates DClone / Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS,
-// Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
+// official Project Diablo 2 market. The listings are asks: each seller counts once (their
+// lowest asking price), outliers are dropped (withoutOutliers), the value is the 25th
+// percentile of the rest and their min and max become the item's *_MARKET_RANGE alias. The
+// primary window is 3 days; when it would lower the current alias, the 7-day window is used
+// instead to smooth short-term dips. Also updates DClone / Rathma / Lucion boss mats and PD2
+// utility items (WSS, Tainted WSS, Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
 
 import { readFile, writeFile } from 'node:fs/promises';
-import { fetchListings, currencyPriceHR, dedupeBySeller, median, withoutOutliers } from './lib/market.mjs';
+import { fetchListings, currencyPriceHR, dedupeBySeller, percentile, withoutOutliers } from './lib/market.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
 
@@ -17,6 +17,9 @@ const isHardcore = process.env.MARKET_HARDCORE === 'true';
 const windowHours = Number(process.env.MARKET_WINDOW_HOURS) || 72;
 const decreaseWindowHours = Number(process.env.MARKET_DECREASE_WINDOW_HOURS) || 168;
 const minSampleCount = Number(process.env.MARKET_MIN_SELLERS) || 5;
+// Open listings are asks, which sit above where trades close, so the value is the price the
+// cheapest quarter of sellers ask (25th percentile), not the middle ask.
+const ASK_PERCENTILE = Number(process.env.MARKET_ASK_PERCENTILE) || 0.25;
 
 // Low runes (Lem through Gul) use the mats' finer rounding, since a 0.05 HR step is a large
 // share of their value.
@@ -115,7 +118,7 @@ function priceSummary(listings, referenceHR, runeHR) {
   const perSeller = dedupeBySeller(priced, (e) => e.hr);
   const kept = withoutOutliers(perSeller.map((e) => e.hr));
   return {
-    value: median(kept),
+    value: percentile(kept, ASK_PERCENTILE),
     min: Math.min(...kept),
     max: Math.max(...kept),
     sellers: perSeller.length,
