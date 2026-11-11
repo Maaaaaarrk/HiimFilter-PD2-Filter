@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 11th%CL%Season 14 - build 223%CL%Kassahi - Phil777 -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 11th%CL%Season 14 - build 224%CL%Kassahi - Phil777 -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[cm3 UNI !ID FILTLVL>10]: %PURPLE%«%BLACK%·%GREEN%» %BLACK%O %GOLD%Unidentified Gheeds Fortune %BLACK%O %GREEN%«%BLACK%·%PURPLE%»
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
@@ -365,6 +365,24 @@ Alias[FESTERING_ESS_VALUE]: 0.25
 Alias[BURNING_ESS_VALUE]: 0.07
 Alias[CHARGED_ESS_VALUE]: 0.2
 Alias[TWISTED_ESS_VALUE]: 0.12
+Alias[LEM_MARKET_RANGE]: 0.06 - 0.07 HR
+Alias[PUL_MARKET_RANGE]: 0.05 - 0.07 HR
+Alias[UM_MARKET_RANGE]: 0.1 - 0.15 HR
+Alias[MAL_MARKET_RANGE]: 0.1 - 0.15 HR
+Alias[IST_MARKET_RANGE]: 0.23 - 0.3 HR
+Alias[GUL_MARKET_RANGE]: 0.2 - 0.35 HR
+Alias[OHM_MARKET_RANGE]: 0.95 - 1.1 HR
+Alias[LO_MARKET_RANGE]: 1.1 - 1.25 HR
+Alias[SUR_MARKET_RANGE]: 1.5 - 2 HR
+Alias[BER_MARKET_RANGE]: 3.25 - 3.5 HR
+Alias[JAH_MARKET_RANGE]: 1.9 - 2.5 HR
+Alias[CHAM_MARKET_RANGE]: 2 - 2.5 HR
+Alias[ZOD_MARKET_RANGE]: 4.25 - 5 HR
+Alias[TAINTED_WORLDSTONE_SHARD_MARKET_RANGE]: 1.25 - 1.5 HR
+Alias[CATALYST_SHARD_MARKET_RANGE]: not enough listings
+Alias[LARZUK_PUZZLEBOX_MARKET_RANGE]: 0.45 - 0.5 HR
+Alias[LARZUK_PUZZLEPIECE_MARKET_RANGE]: 0.1 - 0.1 HR
+Alias[DEMONIC_CUBE_MARKET_RANGE]: 0.75 - 1 HR
 Alias[BLAME_ONION]: %PX-60%%DOT-21%%MAP-0A%%SOUNDID-4714%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e     %GOLD%%NAME%%PURPLE%     O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
 Alias[4_STAR_UNIQUE]: (6lw OR 6ws OR 7bl OR 7cr OR 7gw OR 7wh OR 7ws OR 8ws OR aqv3 OR ci3 OR drd OR dre OR obe OR obf OR pa9 OR pab OR pac OR uar OR uh9 OR uhc OR uhg OR uhm OR ulc OR umg OR urn OR usk OR uul OR uvg OR xh9 OR xhb OR xtb OR xtg)
 Alias[3_STAR_UNIQUE]: (6bs OR 7bk OR 7gi OR 7pa OR 7wc OR 8mx OR 8rx OR amf OR ci2 OR ned OR paf OR tbt OR tgl OR uap OR ulm OR umb OR umc OR ung OR upl OR urs OR utg OR uts OR uui OR xhn OR xlt OR xmb OR xvb OR zhb OR zlb OR ztb)
@@ -1231,6 +1249,11 @@ ItemDisplay[UNI (stu OR gth OR aar OR xui OR vgl OR xap OR kit OR wax OR cbw OR 
 ItemDisplay[SET (vbt OR vgl OR lgl OR lbl OR lbt) STAT360=0 !ID]: %NAME% %TEAL%[LLD]%CONTINUE%
 ItemDisplay[UNI (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GOLD%%NAME% %RED%%SLAMMED_TAG% *%CONTINUE%
 ItemDisplay[SET (ARMOR OR WEAPON OR rin OR amu OR QUIVER) !ID (MAPID=181 OR MAPID=182)]: %RED%* %GREEN%%NAME% %RED%%SLAMMED_TAG% *%CONTINUE%
+ItemDisplay[cwss]: %NAME%{%TAN%Market Range%WHITE%: %TAINTED_WORLDSTONE_SHARD_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[iwss]: %NAME%{%TAN%Market Range%WHITE%: %CATALYST_SHARD_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[lbox]: %NAME%{%TAN%Market Range%WHITE%: %LARZUK_PUZZLEBOX_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[lpp]: %NAME%{%TAN%Market Range%WHITE%: %LARZUK_PUZZLEPIECE_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[imrn]: %NAME%{%TAN%Market Range%WHITE%: %DEMONIC_CUBE_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[GEM=1 CLVL<24]: %WHITE%Chip-%SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=2 CLVL<24]: %WHITE%Fla-%SAGE%%GEMTYPE%%CONTINUE%
 ItemDisplay[GEM=3 CLVL<24]: %SAGE%%GEMTYPE%%CONTINUE%
@@ -1733,6 +1756,19 @@ ItemDisplay[!PHIL777_STYLE (r17 OR r17s)]: %NAME%{%YELLOW%Bountiful %WHITE%Ring:
 ItemDisplay[!PHIL777_STYLE (r18 OR r18s)]: %NAME%{%WHITE%Brilliant Boots: O%NL%%YELLOW%Bountiful %WHITE%Amulet: %YELLOW%O%NL%%WHITE%Crafting Recipes: %ORANGE%Ko, %GOLD%O, %BLUE%Magic%GOLD%/%YELLOW%Rare%NL%%NAME%}%CONTINUE%
 ItemDisplay[PHIL777_STYLE RUNE<21 RUNE>0 FILTLVL<10]: %NAME%{%NAME%}
 ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=20]: %NAME%{%TAN%Market Range%WHITE%: %LEM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=21]: %NAME%{%TAN%Market Range%WHITE%: %PUL_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=22]: %NAME%{%TAN%Market Range%WHITE%: %UM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=23]: %NAME%{%TAN%Market Range%WHITE%: %MAL_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=24]: %NAME%{%TAN%Market Range%WHITE%: %IST_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=25]: %NAME%{%TAN%Market Range%WHITE%: %GUL_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=27]: %NAME%{%TAN%Market Range%WHITE%: %OHM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=28]: %NAME%{%TAN%Market Range%WHITE%: %LO_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=29]: %NAME%{%TAN%Market Range%WHITE%: %SUR_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=30]: %NAME%{%TAN%Market Range%WHITE%: %BER_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=31]: %NAME%{%TAN%Market Range%WHITE%: %JAH_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=32]: %NAME%{%TAN%Market Range%WHITE%: %CHAM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=33]: %NAME%{%TAN%Market Range%WHITE%: %ZOD_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LEM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %PUL_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %PUL_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=22]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %UM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %UM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%

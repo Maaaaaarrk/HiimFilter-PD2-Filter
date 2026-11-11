@@ -1,13 +1,14 @@
 // Updates rune and uber-material economy aliases in
 // builderfilter/02-alias/04-alias-economy-values[ALL].filter from live listings on the
-// official Project Diablo 2 market. Each seller counts once (their lowest asking price) and
-// the value is the median across sellers. The primary window is 3 days; when it would lower
-// the current alias, the 7-day window is used instead to smooth short-term dips. Also updates
-// DClone / Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS,
+// official Project Diablo 2 market. Each seller counts once (their lowest asking price),
+// outliers are dropped (withoutOutliers), the value is the median of the rest and their min
+// and max become the item's *_MARKET_RANGE alias. The primary window is 3 days; when it would
+// lower the current alias, the 7-day window is used instead to smooth short-term dips. Also
+// updates DClone / Rathma / Lucion boss mats and PD2 utility items (WSS, Tainted WSS,
 // Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
 
 import { readFile, writeFile } from 'node:fs/promises';
-import { fetchListings, currencyPriceHR, dedupeBySeller, median } from './lib/market.mjs';
+import { fetchListings, currencyPriceHR, dedupeBySeller, median, withoutOutliers } from './lib/market.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
 
@@ -59,7 +60,7 @@ const ubermats = [
   { code: 'ceh',  name: 'Charged Essence',           alias: 'CHARGED_ESS',               set: 'single' },
   { code: 'tes',  name: 'Twisted Essence',           alias: 'TWISTED_ESS',               set: 'single' },
   // PD2 utility items (full alias set: VALUE / WSS_VALUE / STACK_HR / STACK_WSS)
-  { code: 'wss',  name: 'Worldstone Shard',          alias: 'WSS_ITEM',                  set: 'full', valueSuffix: '_HR_VALUE' },
+  { code: 'wss',  name: 'Worldstone Shard',          alias: 'WSS_ITEM',                  set: 'full', valueSuffix: '_HR_VALUE', range: false },
   { code: 'cwss', name: 'Tainted Worldstone Shard',  alias: 'TAINTED_WORLDSTONE_SHARD',  set: 'full' },
   { code: 'iwss', name: 'Catalyst Shard',            alias: 'CATALYST_SHARD',            set: 'full' },
   { code: 'lbox', name: 'Larzuk Puzzlebox',          alias: 'LARZUK_PUZZLEBOX',          set: 'full' },
@@ -112,7 +113,15 @@ function priceSummary(listings, referenceHR, runeHR) {
     .map((l) => ({ seller: l.user_id, hr: currencyPriceHR(l, { referenceHR, runeHR }) }))
     .filter((e) => e.seller && Number.isFinite(e.hr) && e.hr > 0);
   const perSeller = dedupeBySeller(priced, (e) => e.hr);
-  return { value: median(perSeller.map((e) => e.hr)), sellers: perSeller.length, listings: listings.length };
+  const kept = withoutOutliers(perSeller.map((e) => e.hr));
+  return {
+    value: median(kept),
+    min: Math.min(...kept),
+    max: Math.max(...kept),
+    sellers: perSeller.length,
+    outliers: perSeller.length - kept.length,
+    listings: listings.length,
+  };
 }
 
 // One fetch per item over the longer window; the primary window is the recent slice of it.
@@ -146,23 +155,37 @@ function currentRuneValue(text, rune) {
   return getCurrentAliasNumber(text, `${rune.alias}_RUNE_VALUE`);
 }
 
-function computeHrValue(price, floor, cap, round) {
+function computeHrValue(price, floor, cap, round, finish = (v) => v) {
   let hrValue = round(valueFromPrice(price));
   if (!Number.isFinite(hrValue) || hrValue <= 0) return undefined;
   if (floor !== undefined && hrValue < floor) hrValue = floor;   // manual minimum
   if (cap !== undefined && hrValue > cap) hrValue = cap;         // manual maximum
-  return hrValue;
+  return finish(hrValue);
+}
+
+// Runes worth more than 2 HR always round down to the nearest 0.25 HR.
+function floorHighRune(value) {
+  return value > 2 ? Math.floor(value * 4 + 1e-9) / 4 : value;
+}
+
+function runeRound(rune) {
+  return rune.round ?? roundToFiveHundredths;
+}
+
+function marketRange(price, round, finish = (v) => v) {
+  if (!price || price.sellers < minSampleCount || !Number.isFinite(price.min)) return undefined;
+  return `${formatHr(finish(round(price.min)))} - ${formatHr(finish(round(price.max)))} HR`;
 }
 
 // Final HR value a rune will be written at: primary window, falling back to the longer
 // decrease window when the primary would lower the current alias. Quiet (no logging) — used
 // to derive Cham's dynamic floor before the main loop recomputes and logs the same value.
 function resolveRuneValue(rune, pricesPrimary, pricesDecrease, text) {
-  let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
+  let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, runeRound(rune), floorHighRune);
   if (hrValue === undefined) return undefined;
   const current = currentRuneValue(text, rune);
   if (Number.isFinite(current) && hrValue < current) {
-    const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
+    const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, runeRound(rune), floorHighRune);
     if (altValue !== undefined) hrValue = altValue;
   }
   return hrValue;
@@ -204,7 +227,7 @@ async function main() {
   }
 
   for (const rune of runes) {
-    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
+    let hrValue = computeHrValue(pricesPrimary.get(rune.code), rune.floor, rune.cap, runeRound(rune), floorHighRune);
 
     if (hrValue === undefined) {
       console.log(`${rune.name} (${rune.code}): no usable price data, skipping`);
@@ -213,13 +236,17 @@ async function main() {
 
     const currentAlias = `${rune.alias}_RUNE_VALUE`;
     const current = currentRuneValue(text, rune);
+    let used = pricesPrimary.get(rune.code);
     if (Number.isFinite(current) && hrValue < current) {
-      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, rune.round ?? roundToFiveHundredths);
+      const altValue = computeHrValue(pricesDecrease.get(rune.code), rune.floor, rune.cap, runeRound(rune), floorHighRune);
       if (altValue !== undefined) {
         console.log(`${rune.name} (${rune.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
         hrValue = altValue;
+        used = pricesDecrease.get(rune.code);
       }
     }
+    const range = marketRange(used, runeRound(rune), floorHighRune);
+    if (range) text = replaceAlias(text, `${rune.alias}_MARKET_RANGE`, range);
 
     const wssValue = Math.round(hrValue * 100);
     const hrStr = formatHr(hrValue);
@@ -243,12 +270,18 @@ async function main() {
     const valueSuffix = mat.valueSuffix ?? '_VALUE';
     const valueAlias = `${mat.alias}${valueSuffix}`;
     const current = getCurrentAliasNumber(text, valueAlias);
+    let used = pricesPrimary.get(mat.code);
     if (Number.isFinite(current) && hrValue < current) {
       const altValue = computeHrValue(pricesDecrease.get(mat.code), mat.floor, mat.cap, roundMatValue);
       if (altValue !== undefined) {
         console.log(`${mat.name} (${mat.code}): ${windowHours}h ${hrValue}HR below current ${current}HR, using ${decreaseWindowHours}h window ${altValue}HR`);
         hrValue = altValue;
+        used = pricesDecrease.get(mat.code);
       }
+    }
+    if (mat.set === 'full' && mat.range !== false) {
+      const range = marketRange(used, roundMatValue);
+      if (range) text = replaceAlias(text, `${mat.alias}_MARKET_RANGE`, range);
     }
 
     const wssValue = Math.round(hrValue * 100);

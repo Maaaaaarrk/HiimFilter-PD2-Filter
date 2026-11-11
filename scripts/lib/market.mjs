@@ -72,6 +72,23 @@ function keepCheapest(rows, keyOf, priceOf) {
   return [...best.values(), ...unpriced];
 }
 
+// Tukey's fences: drops prices below Q1 - 1.5 IQR or above Q3 + 1.5 IQR. Currency prices
+// cluster on round numbers, so the IQR is held to at least 10% of the median; otherwise a
+// tight cluster (most Ohms at exactly 1 HR) would throw out ordinary neighbours like 0.95.
+export function withoutOutliers(values) {
+  if (values.length < 4) return [...values];
+  const sorted = [...values].sort((a, b) => a - b);
+  const quartile = (q) => {
+    const pos = (sorted.length - 1) * q;
+    const low = Math.floor(pos);
+    return sorted[low] + (sorted[Math.ceil(pos)] - sorted[low]) * (pos - low);
+  };
+  const q1 = quartile(0.25);
+  const q3 = quartile(0.75);
+  const spread = Math.max(q3 - q1, 0.1 * median(sorted));
+  return sorted.filter((v) => v >= q1 - 1.5 * spread && v <= q3 + 1.5 * spread);
+}
+
 export function median(values) {
   if (!values.length) return undefined;
   const sorted = [...values].sort((a, b) => a - b);
