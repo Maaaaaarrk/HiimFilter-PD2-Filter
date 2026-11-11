@@ -89,6 +89,13 @@ export function withoutOutliers(values) {
   return sorted.filter((v) => v >= q1 - 1.5 * spread && v <= q3 + 1.5 * spread);
 }
 
+// Nearest-rank percentile of a list of prices (p between 0 and 1).
+export function percentile(values, p) {
+  if (!values.length) return undefined;
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted[Math.min(sorted.length - 1, Math.max(0, Math.ceil(p * sorted.length) - 1))];
+}
+
 export function median(values) {
   if (!values.length) return undefined;
   const sorted = [...values].sort((a, b) => a - b);
