@@ -2,7 +2,7 @@
 // Economy estimated values — update these when economy shifts
 //-----------------------------------------------------------------------------------
 
-Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated Nov 11 2026
+Alias[CURRENCY_TIMESTAMP]: %WHITE%HR Values Last updated Nov 12 2026
 
 // Valuable crafting runes — TIR(3), NEF(4), ETH(5), TAL(7), RAL(8), ORT(9), AMN(11), SOL(12), HEL(15), IO(16), LUM(17), KO(18), FAL(19)
 Alias[CRAFTING_RUNES_SET]: (RUNE=3 OR RUNE=4 OR RUNE=5 OR RUNE=7 OR RUNE=8 OR RUNE=9 OR RUNE=11 OR RUNE=12 OR RUNE=15 OR RUNE=16 OR RUNE=17 OR RUNE=18)
@@ -16,7 +16,7 @@ Alias[LO_RUNE_VALUE]: 1
 Alias[SUR_RUNE_VALUE]: 1.65
 Alias[BER_RUNE_VALUE]: 3.25
 Alias[JAH_RUNE_VALUE]: 2
-Alias[CHAM_RUNE_VALUE]: 2
+Alias[CHAM_RUNE_VALUE]: 2.25
 Alias[ZOD_RUNE_VALUE]: 4.25
 
 // WSS equivalent values for runes (HR value * 100)
@@ -25,7 +25,7 @@ Alias[LO_WSS_VALUE]: 100
 Alias[SUR_WSS_VALUE]: 165
 Alias[BER_WSS_VALUE]: 325
 Alias[JAH_WSS_VALUE]: 200
-Alias[CHAM_WSS_VALUE]: 200
+Alias[CHAM_WSS_VALUE]: 225
 Alias[ZOD_WSS_VALUE]: 425
 
 // Low runes (Lem-Vex): Lem through Gul are updated from PD2 Trader, Vex is hand-set.
@@ -64,7 +64,7 @@ Alias[LO_STACK_HR]: (QTY*1)
 Alias[SUR_STACK_HR]: (QTY*1.65)
 Alias[BER_STACK_HR]: (QTY*3.25)
 Alias[JAH_STACK_HR]: (QTY*2)
-Alias[CHAM_STACK_HR]: (QTY*2)
+Alias[CHAM_STACK_HR]: (QTY*2.25)
 Alias[ZOD_STACK_HR]: (QTY*4.25)
 
 // Stack WSS formulas for runes (QTY * WSS value each)
@@ -73,7 +73,7 @@ Alias[LO_STACK_WSS]: (QTY*100)
 Alias[SUR_STACK_WSS]: (QTY*165)
 Alias[BER_STACK_WSS]: (QTY*325)
 Alias[JAH_STACK_WSS]: (QTY*200)
-Alias[CHAM_STACK_WSS]: (QTY*200)
+Alias[CHAM_STACK_WSS]: (QTY*225)
 Alias[ZOD_STACK_WSS]: (QTY*425)
 
 //-----------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ Alias[WSS_ITEM_HR_VALUE]: 0.01
 Alias[TAINTED_WORLDSTONE_SHARD_VALUE]: 1.25
 Alias[LARZUK_PUZZLEBOX_VALUE]: 0.5
 Alias[LARZUK_PUZZLEPIECE_VALUE]: 0.1
-Alias[DEMONIC_CUBE_VALUE]: 0.6
+Alias[DEMONIC_CUBE_VALUE]: 1
 Alias[CATALYST_SHARD_VALUE]: 0.3
 
 // WSS equivalent values for PD2 items (HR value * 100)
@@ -92,7 +92,7 @@ Alias[WSS_ITEM_WSS_VALUE]: 1
 Alias[TAINTED_WORLDSTONE_SHARD_WSS_VALUE]: 125
 Alias[LARZUK_PUZZLEBOX_WSS_VALUE]: 50
 Alias[LARZUK_PUZZLEPIECE_WSS_VALUE]: 10
-Alias[DEMONIC_CUBE_WSS_VALUE]: 60
+Alias[DEMONIC_CUBE_WSS_VALUE]: 100
 Alias[CATALYST_SHARD_WSS_VALUE]: 30
 
 // Stack HR formulas for PD2 items (QTY * HR value each)
@@ -100,7 +100,7 @@ Alias[WSS_ITEM_STACK_HR]: (QTY*0.01)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_HR]: (QTY*1.25)
 Alias[LARZUK_PUZZLEBOX_STACK_HR]: (QTY*0.5)
 Alias[LARZUK_PUZZLEPIECE_STACK_HR]: (QTY*0.1)
-Alias[DEMONIC_CUBE_STACK_HR]: (QTY*0.6)
+Alias[DEMONIC_CUBE_STACK_HR]: (QTY*1)
 Alias[CATALYST_SHARD_STACK_HR]: (QTY*0.3)
 
 // Stack WSS formulas for PD2 items (QTY * WSS value each)
@@ -108,7 +108,7 @@ Alias[WSS_ITEM_STACK_WSS]: (QTY*1)
 Alias[TAINTED_WORLDSTONE_SHARD_STACK_WSS]: (QTY*125)
 Alias[LARZUK_PUZZLEBOX_STACK_WSS]: (QTY*50)
 Alias[LARZUK_PUZZLEPIECE_STACK_WSS]: (QTY*10)
-Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*60)
+Alias[DEMONIC_CUBE_STACK_WSS]: (QTY*100)
 Alias[CATALYST_SHARD_STACK_WSS]: (QTY*30)
 
 //-----------------------------------------------------------------------------------
@@ -116,17 +116,17 @@ Alias[CATALYST_SHARD_STACK_WSS]: (QTY*30)
 //-----------------------------------------------------------------------------------
 
 // DClone mats
-Alias[BLACK_SOULSTONE_VALUE]: 0.23
+Alias[BLACK_SOULSTONE_VALUE]: 0.2
 Alias[PRIME_EVIL_SOUL_VALUE]: 0.4
 Alias[PURE_DEMONIC_ESSENCE_VALUE]: 0.08
 
 // Rathma mats
 Alias[HELLFIRE_ASHES_VALUE]: 0.5
 Alias[SPLINTER_OF_THE_VOID_VALUE]: 0.08
-Alias[TRANG_OUL_JAWBONE_VALUE]: 0.1
+Alias[TRANG_OUL_JAWBONE_VALUE]: 0.08
 
 // Lucion mats
-Alias[FLESH_OF_MALIC_VALUE]: 0.07
+Alias[FLESH_OF_MALIC_VALUE]: 0.05
 Alias[TALISMAN_OF_TRANSGRESSION_VALUE]: 0.03
 Alias[DEMONIC_INSIGNIA_VALUE]: 0.4
 
@@ -134,24 +134,24 @@ Alias[DEMONIC_INSIGNIA_VALUE]: 0.4
 Alias[FESTERING_ESS_VALUE]: 0.25
 Alias[BURNING_ESS_VALUE]: 0.07
 Alias[CHARGED_ESS_VALUE]: 0.2
-Alias[TWISTED_ESS_VALUE]: 0.1
+Alias[TWISTED_ESS_VALUE]: 0.09
 
 // Market range (min - max after outliers are dropped), shown above the estimated values.
 Alias[LEM_MARKET_RANGE]: 0.06 - 0.07 HR
 Alias[PUL_MARKET_RANGE]: 0.05 - 0.07 HR
-Alias[UM_MARKET_RANGE]: 0.1 - 0.15 HR
+Alias[UM_MARKET_RANGE]: 0.11 - 0.15 HR
 Alias[MAL_MARKET_RANGE]: 0.1 - 0.15 HR
-Alias[IST_MARKET_RANGE]: 0.23 - 0.3 HR
-Alias[GUL_MARKET_RANGE]: 0.2 - 0.35 HR
+Alias[IST_MARKET_RANGE]: 0.22 - 0.3 HR
+Alias[GUL_MARKET_RANGE]: 0.25 - 0.3 HR
 Alias[OHM_MARKET_RANGE]: 0.95 - 1.1 HR
-Alias[LO_MARKET_RANGE]: 1.1 - 1.25 HR
+Alias[LO_MARKET_RANGE]: 1 - 1.25 HR
 Alias[SUR_MARKET_RANGE]: 1.5 - 2 HR
-Alias[BER_MARKET_RANGE]: 3 - 4 HR
-Alias[JAH_MARKET_RANGE]: 1.9 - 2.5 HR
-Alias[CHAM_MARKET_RANGE]: 1.95 - 2.5 HR
-Alias[ZOD_MARKET_RANGE]: 4.25 - 5 HR
-Alias[TAINTED_WORLDSTONE_SHARD_MARKET_RANGE]: 1.2 - 1.5 HR
+Alias[BER_MARKET_RANGE]: 3.25 - 3.75 HR
+Alias[JAH_MARKET_RANGE]: 1.75 - 2.5 HR
+Alias[CHAM_MARKET_RANGE]: 2 - 2.5 HR
+Alias[ZOD_MARKET_RANGE]: 4 - 5 HR
+Alias[TAINTED_WORLDSTONE_SHARD_MARKET_RANGE]: 1.15 - 1.5 HR
 Alias[CATALYST_SHARD_MARKET_RANGE]: not enough listings
 Alias[LARZUK_PUZZLEBOX_MARKET_RANGE]: 0.45 - 0.5 HR
 Alias[LARZUK_PUZZLEPIECE_MARKET_RANGE]: 0.1 - 0.1 HR
-Alias[DEMONIC_CUBE_MARKET_RANGE]: 0.5 - 1 HR
+Alias[DEMONIC_CUBE_MARKET_RANGE]: 1 - 1 HR
