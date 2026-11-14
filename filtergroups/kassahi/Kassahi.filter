@@ -9,7 +9,7 @@ ItemDisplayFilterName[]: ÿc8Extremely Strict+
 ItemDisplayFilterName[]: ÿc1High roller
 ItemDisplayFilterName[]: ÿc13 Min Mapper
 ItemDisplayFilterName[]: ÿc1No Items Out of Town
-ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 14th%CL%Season 14 - build 232%CL%Kassahi -}%CONTINUE%
+ItemDisplay[box]: %NAME%{Send Feedback via PD2 Discord #lootfilter%CL%Last updated November 14th%CL%Season 14 - build 233%CL%Kassahi -}%CONTINUE%
 Alias[IN_TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 ItemDisplay[box FILTLVL=0]: %NAME%{%NAME% OFF}%CONTINUE%
 ItemDisplay[box FILTLVL=1]: %NAME%{%NAME% Campaign (1)}%CONTINUE%
@@ -272,6 +272,7 @@ Alias[WSS_SHARD]: %SOUNDID-4715%%PX-9B%%DOT-0A%%PURPLE%•%RED%•%CORAL%•  %N
 Alias[BLAME_ONION]: %SOUNDID-4715%%PX-97%%DOT-6D%%MAP-62%%BORDER-0D%%RED%...%ORANGE%B%YELLOW%l%GREEN%a%BLUE%m%PURPLE%e  %NAME%  %PURPLE%O%BLUE%n%GREEN%i%YELLOW%o%ORANGE%n%RED%...
 Alias[MAIN_DOT]: •
 Alias[PD2_MATS]: %SOUNDID-4715%%PX-9B%%DOT-62%%PURPLE%«%BLACK%·%RED%»  %NAME%  %RED%«%BLACK%·%PURPLE%»
+Alias[SIGIL_MATS]: %SOUNDID-4715%%PX-9B%%DOT-0A%%PURPLE%«%BLACK%·%RED%»  %NAME%  %RED%«%BLACK%·%PURPLE%»
 Alias[UNICHARM]: %SOUNDID-4714%%PX-9B%%DOT-0D%%PURPLE%•%ORANGE%•  %NAME%  %ORANGE%•%PURPLE%•
 Alias[UNID_GG]: %SOUNDID-4719%%PX-20%%DOT-0D%%MAP-21%%BORDER-0A%%PURPLE%•%RED%•%ORANGE%•%YELLOW%•     %WHITE%• %NAME% %WHITE%•     %YELLOW%•%ORANGE%•%RED%•%PURPLE%•
 Alias[UNID_T3]: %SOUNDID-4714%%PX-0D%%DOT-21%%MAP-0A%%PURPLE%•%RED%•%ORANGE%•     %NAME%     %ORANGE%•%RED%•%PURPLE%•
@@ -1527,7 +1528,7 @@ ItemDisplay[(rtma OR dcma OR luca)]: %FX_BOSS_MAT%%BOSS_ENTRY%{%NAME%}
 ItemDisplay[ubaa]: %NAME%{Found in T1 Maps}%CONTINUE%
 ItemDisplay[ubab]: %NAME%{Found in T2 Maps}%CONTINUE%
 ItemDisplay[ubac]: %NAME%{Found in T3 Maps}%CONTINUE%
-ItemDisplay[(ubaa OR ubab OR ubac)]: %FX_UBA_PARTS%%PD2_MATS%{%NAME%}
+ItemDisplay[(ubaa OR ubab OR ubac)]: %FX_UBA_PARTS%%SIGIL_MATS%{%NAME%}
 ItemDisplay[uba]: %FX_UBA%%BOSS_ENTRY%{%NAME%}
 ItemDisplay[tes OR ceh OR bet OR fed]: %FX_ESSENCE%%TOKEN_PARTS%{%NAME%%DARK_GREEN%Festering %TAN%Essence %WHITE%%FESTERING_ESS_VALUE% hr - from: %DARK_GREEN%Baal%CL%%RED%Burning %TAN%Essence %WHITE%%BURNING_ESS_VALUE% hr - from: %RED%Diablo%CL%%YELLOW%Charged %TAN%Essence %WHITE%%CHARGED_ESS_VALUE% hr - from: %YELLOW%Mephisto%CL%%BLUE%Twisted %TAN%Essence %WHITE%%TWISTED_ESS_VALUE% hr - from: %BLUE%Andariel %WHITE%or %BLUE%Duriel}
 ItemDisplay[toa]: %DISP_TOA%{%NAME%}
