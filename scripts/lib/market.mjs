@@ -3,21 +3,23 @@
 // turning free-text currency prices ("300 wss", "2 vex", "3.5") into HR.
 
 export const MARKET_URL = 'https://api.projectdiablo2.com/market/listing';
+export const ARCHIVE_URL = 'https://api.projectdiablo2.com/market/listingArchive';
 
 const PAGE_SIZE = 200;
 
-export async function fetchListings(filters, { hours, maxPages = 10, throttleMs = 200 } = {}) {
+export async function fetchListings(filters, { hours, maxPages = 10, throttleMs = 200, url = MARKET_URL, token, openOnly = true } = {}) {
   const updatedAfter = new Date(Date.now() - hours * 3600 * 1000).toISOString();
   const all = [];
   for (let page = 0; page < maxPages; page++) {
     const params = new URLSearchParams({
       $limit: String(PAGE_SIZE),
       $skip: String(page * PAGE_SIZE),
-      accepted_offer_id: 'null',
       'updated_at[$gte]': updatedAfter,
+      ...(openOnly ? { accepted_offer_id: 'null' } : {}),
       ...filters,
     });
-    const res = await fetch(`${MARKET_URL}?${params}`);
+    const headers = token ? { authorization: `Bearer ${token}`, accept: 'application/json' } : undefined;
+    const res = await fetch(`${url}?${params}`, { headers });
     if (!res.ok) throw new Error(`market API ${res.status} for ${JSON.stringify(filters)}`);
     const payload = await res.json();
     const rows = Array.isArray(payload?.data) ? payload.data : [];

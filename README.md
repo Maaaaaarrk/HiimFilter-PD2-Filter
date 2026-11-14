@@ -1,7 +1,7 @@
 # Project Diablo 2 (PD2) Hiim Loot Filters
 * by *Maaaark
 * by *Hiimdave
-## Last updated November 13th Season 14 - build 229
+## Last updated November 14th Season 14 - build 230
 ## [Hiim PD2 Resources](https://maaaaaarrk.github.io/Hiim-PD2-Resources/)
 ## Put all feedback in the PD2 Discord #lootfilter channel
 ## [Compare the Hiim styles side by side](filtergroups/HIIM_STYLES.md)
@@ -96,7 +96,7 @@ Cube will state current filter version & chosen filter level information.
 
 * **10: 3 Minute Mapper** — Everything from level 9, plus:
   * 3-star unidentified uniques and sets hidden (only 4-star shown)
-  * Crafting, class and LLD filters: low runes (below Pul) hidden outside town
+  * Crafting, class and LLD filters: low runes (El–Lum) hidden outside town
 
 * **11: No Items Out of Town** — Extreme clutter removal. Almost nothing shows outside of town.
   * Only desecrated items, slammed items, and runeword bases visible outside town - in case of miss click
