@@ -4,6 +4,20 @@
 
 // Estimated HR value notes
 ItemDisplay[RUNE>19]: %NAME%{%CURRENCY_TIMESTAMP%%CL%%NAME%}%CONTINUE%
+// Market Range (min - max HR on the PD2 market, outliers dropped) above the estimated values
+ItemDisplay[RUNE=20]: %NAME%{%TAN%Market Range%WHITE%: %LEM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=21]: %NAME%{%TAN%Market Range%WHITE%: %PUL_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=22]: %NAME%{%TAN%Market Range%WHITE%: %UM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=23]: %NAME%{%TAN%Market Range%WHITE%: %MAL_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=24]: %NAME%{%TAN%Market Range%WHITE%: %IST_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=25]: %NAME%{%TAN%Market Range%WHITE%: %GUL_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=27]: %NAME%{%TAN%Market Range%WHITE%: %OHM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=28]: %NAME%{%TAN%Market Range%WHITE%: %LO_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=29]: %NAME%{%TAN%Market Range%WHITE%: %SUR_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=30]: %NAME%{%TAN%Market Range%WHITE%: %BER_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=31]: %NAME%{%TAN%Market Range%WHITE%: %JAH_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=32]: %NAME%{%TAN%Market Range%WHITE%: %CHAM_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
+ItemDisplay[RUNE=33]: %NAME%{%TAN%Market Range%WHITE%: %ZOD_MARKET_RANGE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=20]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %LEM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %LEM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=21]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %PUL_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %PUL_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=22]: %NAME%{%PURPLE%WSS %TAN%Estimated Value Each%WHITE%: %UM_WSS_VALUE%%CL%%TAN%HR Estimated Value Each%WHITE%: %UM_RUNE_VALUE%%CL%%NAME%}%CONTINUE%
@@ -50,7 +64,7 @@ ItemDisplay[RUNE=32 QTY=2]: %NAME%{%PURPLE%WSS %TAN%Estimated Stack Value%WHITE%
 ItemDisplay[RUNE=32 QTY>2]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%CHAM_STACK_HR%)%CL%%NAME%}%CONTINUE%
 ItemDisplay[RUNE=33 QTY>1]: %NAME%{%TAN%HR Estimated Stack Value%WHITE%: $f(%ZOD_STACK_HR%)%CL%%NAME%}%CONTINUE%
 // High roller
-ItemDisplay[RUNE<21 RUNE>0 FILTLVL>8 !IN_TOWN]:{%NAME%}
+ItemDisplay[RUNE<18 RUNE>0 FILTLVL>8 !IN_TOWN]:{%NAME%}
 ItemDisplay[RUNE<21 RUNE>0 !IN_TOWN]: %NAME%{%NAME%}
 
 // Tooltip notes & show runes

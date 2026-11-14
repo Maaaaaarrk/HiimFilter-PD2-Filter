@@ -3,21 +3,23 @@
 // turning free-text currency prices ("300 wss", "2 vex", "3.5") into HR.
 
 export const MARKET_URL = 'https://api.projectdiablo2.com/market/listing';
+export const ARCHIVE_URL = 'https://api.projectdiablo2.com/market/listingArchive';
 
 const PAGE_SIZE = 200;
 
-export async function fetchListings(filters, { hours, maxPages = 10, throttleMs = 200 } = {}) {
+export async function fetchListings(filters, { hours, maxPages = 10, throttleMs = 200, url = MARKET_URL, token, openOnly = true } = {}) {
   const updatedAfter = new Date(Date.now() - hours * 3600 * 1000).toISOString();
   const all = [];
   for (let page = 0; page < maxPages; page++) {
     const params = new URLSearchParams({
       $limit: String(PAGE_SIZE),
       $skip: String(page * PAGE_SIZE),
-      accepted_offer_id: 'null',
       'updated_at[$gte]': updatedAfter,
+      ...(openOnly ? { accepted_offer_id: 'null' } : {}),
       ...filters,
     });
-    const res = await fetch(`${MARKET_URL}?${params}`);
+    const headers = token ? { authorization: `Bearer ${token}`, accept: 'application/json' } : undefined;
+    const res = await fetch(`${url}?${params}`, { headers });
     if (!res.ok) throw new Error(`market API ${res.status} for ${JSON.stringify(filters)}`);
     const payload = await res.json();
     const rows = Array.isArray(payload?.data) ? payload.data : [];
@@ -70,6 +72,30 @@ function keepCheapest(rows, keyOf, priceOf) {
     if (Number.isFinite(price) && (!Number.isFinite(keptPrice) || price < keptPrice)) best.set(key, row);
   }
   return [...best.values(), ...unpriced];
+}
+
+// Tukey's fences: drops prices below Q1 - 1.5 IQR or above Q3 + 1.5 IQR. Currency prices
+// cluster on round numbers, so the IQR is held to at least 10% of the median; otherwise a
+// tight cluster (most Ohms at exactly 1 HR) would throw out ordinary neighbours like 0.95.
+export function withoutOutliers(values) {
+  if (values.length < 4) return [...values];
+  const sorted = [...values].sort((a, b) => a - b);
+  const quartile = (q) => {
+    const pos = (sorted.length - 1) * q;
+    const low = Math.floor(pos);
+    return sorted[low] + (sorted[Math.ceil(pos)] - sorted[low]) * (pos - low);
+  };
+  const q1 = quartile(0.25);
+  const q3 = quartile(0.75);
+  const spread = Math.max(q3 - q1, 0.1 * median(sorted));
+  return sorted.filter((v) => v >= q1 - 1.5 * spread && v <= q3 + 1.5 * spread);
+}
+
+// Nearest-rank percentile of a list of prices (p between 0 and 1).
+export function percentile(values, p) {
+  if (!values.length) return undefined;
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted[Math.min(sorted.length - 1, Math.max(0, Math.ceil(p * sorted.length) - 1))];
 }
 
 export function median(values) {
