@@ -189,3 +189,22 @@ export function currencyPriceHR(listing, { referenceHR, runeHR }) {
   const distance = (hr) => Math.abs(Math.log(hr / referenceHR));
   return candidates.reduce((best, hr) => (distance(hr) < distance(best) ? hr : best));
 }
+
+// Accepted offers are often bare rune lists ("sur vex", "2VEX - 1LO", "lo, ohm, 125 wss"):
+// every part is added up, a rune without a count counts once, and text after "for" is dropped.
+const RUNE_PATTERN = Object.keys(RUNE_WORDS).join('|');
+function offerText(text) {
+  return String(text ?? '')
+    .toLowerCase()
+    .split(/\bfor\b/)[0]
+    .replace(/\band\b|[+,&]|\s-\s/g, ' ')
+    .replace(new RegExp(`(^|[^\\d\\s]\\s*|\\s)(?<!\\d\\s*x?\\s*)\\b(${RUNE_PATTERN})\\b`, 'g'), '$1 1 $2')
+    .replace(/(\d)\s*x\s*/g, '$1 ');
+}
+
+// HR per unit a sold listing went for: the accepted offer (sell_hr_price when PD2 filled it
+// in, else the free-text sell_price), not the asking price.
+export function salePriceHR(listing, context) {
+  if (listing?.sell_hr_price > 0) return listing.sell_hr_price;
+  return currencyPriceHR({ ...listing, price: offerText(listing?.sell_price) }, context);
+}

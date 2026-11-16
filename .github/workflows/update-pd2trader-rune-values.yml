@@ -37,6 +37,7 @@ jobs:
         env:
           MARKET_LADDER: 'true'
           MARKET_HARDCORE: 'false'
+          PD2_MARKET_ACCESS_TOKEN: ${{ secrets.PD2_MARKET_ACCESS_TOKEN }}
 
       - name: Check if alias file changed
         id: check

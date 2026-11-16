@@ -6,9 +6,16 @@
 // primary window is 3 days; when it would lower the current alias, the 7-day window is used
 // instead to smooth short-term dips. Also updates DClone / Rathma / Lucion boss mats and PD2
 // utility items (WSS, Tainted WSS, Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
+//
+// With PD2_MARKET_ACCESS_TOKEN set (a token from the hiimpd2.com admin grant, renewed by hand),
+// sales from the market archive drive the value instead: an item with at least
+// MARKET_MIN_SALES sellers' sales in the last 14 days is valued at their median accepted offer
+// (a longer window lags falling prices). Without a token, or once it has expired, every item is priced from asks.
 
 import { readFile, writeFile } from 'node:fs/promises';
-import { fetchListings, currencyPriceHR, dedupeBySeller, percentile, withoutOutliers } from './lib/market.mjs';
+import {
+  ARCHIVE_URL, fetchListings, currencyPriceHR, dedupeBySeller, median, percentile, salePriceHR, withoutOutliers,
+} from './lib/market.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
 
@@ -20,6 +27,9 @@ const minSampleCount = Number(process.env.MARKET_MIN_SELLERS) || 5;
 // Open listings are asks, which sit above where trades close, so the value is the price the
 // cheapest quarter of sellers ask (25th percentile), not the middle ask.
 const ASK_PERCENTILE = Number(process.env.MARKET_ASK_PERCENTILE) || 0.25;
+const archiveToken = process.env.PD2_MARKET_ACCESS_TOKEN?.trim();
+const minSales = Number(process.env.MARKET_MIN_SALES) || 5;
+const salesWindowHours = Number(process.env.MARKET_SALES_WINDOW_HOURS) || 14 * 24;
 
 // Low runes (Lem through Gul) use the mats' finer rounding, since a 0.05 HR step is a large
 // share of their value.
@@ -111,14 +121,16 @@ function referenceValue(text, item) {
   return getCurrentAliasNumber(text, alias);
 }
 
-function priceSummary(listings, referenceHR, runeHR) {
+const askValue = (prices) => percentile(prices, ASK_PERCENTILE);
+
+function priceSummary(listings, referenceHR, runeHR, { priceOf = currencyPriceHR, statOf = askValue } = {}) {
   const priced = listings
-    .map((l) => ({ seller: l.user_id, hr: currencyPriceHR(l, { referenceHR, runeHR }) }))
+    .map((l) => ({ seller: l.user_id, hr: priceOf(l, { referenceHR, runeHR }) }))
     .filter((e) => e.seller && Number.isFinite(e.hr) && e.hr > 0);
   const perSeller = dedupeBySeller(priced, (e) => e.hr);
   const kept = withoutOutliers(perSeller.map((e) => e.hr));
   return {
-    value: percentile(kept, ASK_PERCENTILE),
+    value: statOf(kept),
     min: Math.min(...kept),
     max: Math.max(...kept),
     sellers: perSeller.length,
@@ -127,21 +139,52 @@ function priceSummary(listings, referenceHR, runeHR) {
   };
 }
 
+// Median accepted offer, one sale per seller, when enough sellers sold.
+function salesSummary(sales, referenceHR, runeHR) {
+  const summary = priceSummary(sales, referenceHR, runeHR, { priceOf: salePriceHR, statOf: median });
+  return summary.sellers >= minSales ? summary : undefined;
+}
+
+async function fetchSales(filters) {
+  if (!archiveToken || !fetchSales.enabled) return [];
+  try {
+    return await fetchListings(
+      { ...filters, 'accepted_offer_id[$ne]': 'null' },
+      { hours: salesWindowHours, url: ARCHIVE_URL, token: archiveToken, openOnly: false },
+    );
+  } catch (error) {
+    if (!/ (401|403) /.test(error.message)) throw error;
+    console.warn(`Market archive refused the token (${error.message}); pricing from asks only. Renew PD2_MARKET_ACCESS_TOKEN.`);
+    fetchSales.enabled = false;
+    return [];
+  }
+}
+fetchSales.enabled = true;
+
 // One fetch per item over the longer window; the primary window is the recent slice of it.
+// An item with enough sales takes its sales median as the value and has no decrease window;
+// its Market Range still comes from the asks.
 async function fetchPrices(text) {
   const runeHR = currentRuneValues(text);
   const cutoff = Date.now() - windowHours * 3600 * 1000;
   const primary = new Map();
   const decrease = new Map();
+  if (!archiveToken) console.log('No PD2_MARKET_ACCESS_TOKEN: pricing from asks only.');
   for (const item of [...runes, ...ubermats]) {
-    const listings = await fetchListings(
-      { is_ladder: String(isLadder), is_hardcore: String(isHardcore), 'item.base_code': item.code },
-      { hours: decreaseWindowHours },
-    );
+    const filters = { is_ladder: String(isLadder), is_hardcore: String(isHardcore), 'item.base_code': item.code };
+    const listings = await fetchListings(filters, { hours: decreaseWindowHours });
     const referenceHR = referenceValue(text, item);
     const recent = listings.filter((l) => Date.parse(l.updated_at) >= cutoff);
-    primary.set(item.code, priceSummary(recent, referenceHR, runeHR));
-    decrease.set(item.code, priceSummary(listings, referenceHR, runeHR));
+    const asks = priceSummary(recent, referenceHR, runeHR);
+    const asksLong = priceSummary(listings, referenceHR, runeHR);
+    const sales = salesSummary(await fetchSales(filters), referenceHR, runeHR);
+    if (sales) {
+      console.log(`${item.name} (${item.code}): ${sales.sellers} sellers' sales, median ${formatHr(sales.value)}HR (asks ${formatHr(asks.value)}HR)`);
+      primary.set(item.code, { ...asks, value: sales.value, sellers: Math.max(asks.sellers, sales.sellers) });
+    } else {
+      primary.set(item.code, asks);
+      decrease.set(item.code, asksLong);
+    }
   }
   return [primary, decrease];
 }
