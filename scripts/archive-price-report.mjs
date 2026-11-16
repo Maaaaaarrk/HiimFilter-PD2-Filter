@@ -32,9 +32,28 @@ function aliasValue(text, name) {
   return match ? Number(match[1]) : undefined;
 }
 
-function prices(listings, referenceHR, runeHR) {
+// A sold listing's price is the accepted offer (sell_hr_price when PD2 filled it in, else the
+// free-text sell_price), not the asking price.
+// Offers are often bare rune lists ("sur vex", "2VEX - 1LO", "lo, ohm, 125 wss"): every part is
+// added up, and a rune without a count counts once.
+const RUNES = 'el|eld|tir|nef|eth|ith|tal|ral|ort|thul|amn|sol|shael|dol|hel|io|lum|ko|fal|lem|pul|um|mal|ist|gul|vex|ohm|lo|sur|ber|jah|cham|zod';
+function offerText(text) {
+  return String(text ?? '')
+    .toLowerCase()
+    .split(/\bfor\b/)[0]
+    .replace(/\band\b|[+,&]|\s-\s/g, ' ')
+    .replace(new RegExp(`(^|[^\\d\\s]\\s*|\\s)(?<!\\d\\s*x?\\s*)\\b(${RUNES})\\b`, 'g'), '$1 1 $2')
+    .replace(/(\d)\s*x\s*/g, '$1 ');
+}
+
+function soldPriceHR(listing, context) {
+  if (listing.sell_hr_price > 0) return listing.sell_hr_price;
+  return currencyPriceHR({ ...listing, price: offerText(listing.sell_price) }, context);
+}
+
+function prices(listings, referenceHR, runeHR, priceOf = currencyPriceHR) {
   const priced = listings
-    .map((l) => ({ seller: l.user_id, hr: currencyPriceHR(l, { referenceHR, runeHR }) }))
+    .map((l) => ({ seller: l.user_id, hr: priceOf(l, { referenceHR, runeHR }) }))
     .filter((e) => e.seller && e.hr > 0);
   return withoutOutliers(dedupeBySeller(priced, (e) => e.hr).map((e) => e.hr));
 }
@@ -54,8 +73,8 @@ async function main() {
   const lines = [
     `Window ${hours}h, ${ladder.is_ladder === 'true' ? 'ladder' : 'non-ladder'} ${ladder.is_hardcore === 'true' ? 'hardcore' : 'softcore'}. One price per seller, outliers dropped. Columns: sellers | 25th percentile | median (HR).`,
     '',
-    '| Item | Filter value | Open asks | Archive sold | Archive not sold |',
-    '|---|---|---|---|---|',
+    '| Item | Filter value | Open asks: sellers | p25 | median | Sold (accepted offer): sellers | p25 | median | Archived unsold asks: sellers | p25 | median |',
+    '|---|---|---|---|---|---|---|---|---|---|---|',
   ];
   for (const [code, name, alias] of ITEMS) {
     const filters = { ...ladder, 'item.base_code': code };
@@ -64,7 +83,7 @@ async function main() {
     const archive = await fetchListings(filters, { hours, url: ARCHIVE_URL, token, openOnly: false });
     const sold = archive.filter((l) => l.accepted_offer_id);
     const unsold = archive.filter((l) => !l.accepted_offer_id);
-    const row = `| ${name} | ${fmt(referenceHR)} | ${stats(prices(open, referenceHR, runeHR))} | ${stats(prices(sold, referenceHR, runeHR))} | ${stats(prices(unsold, referenceHR, runeHR))} |`;
+    const row = `| ${name} | ${fmt(referenceHR)} | ${stats(prices(open, referenceHR, runeHR))} | ${stats(prices(sold, referenceHR, runeHR, soldPriceHR))} (${sold.length} sales) | ${stats(prices(unsold, referenceHR, runeHR))} |`;
     lines.push(row);
     console.log(row);
   }
