@@ -230,3 +230,64 @@ export function archiveSales(archive, otherListings = []) {
 export function soldPriceHR(listing, context) {
   return listing?.accepted_offer_id ? salePriceHR(listing, context) : currencyPriceHR(listing, context);
 }
+
+// Each sale weighs 1/2 for every halfLifeHours of age, so the last day or two drive the value.
+export function recencyWeight(at, halfLifeHours, now = Date.now()) {
+  const ageHours = Math.max(0, (now - Date.parse(at)) / 3600000);
+  return 0.5 ** (ageHours / halfLifeHours);
+}
+
+// The price where the cumulative weight of the cheaper sales reaches half the total.
+export function weightedMedian(entries) {
+  const sorted = [...entries].sort((a, b) => a.hr - b.hr);
+  const total = sorted.reduce((sum, e) => sum + e.weight, 0);
+  if (!(total > 0)) return undefined;
+  let running = 0;
+  for (const entry of sorted) {
+    running += entry.weight;
+    if (running >= total / 2) return entry.hr;
+  }
+  return sorted.at(-1).hr;
+}
+
+// Sale time of an archived listing: when its offer was accepted or the seller closed it.
+export function soldAt(listing) {
+  return listing.deleted_at ?? listing.updated_at;
+}
+
+export const ECONOMY_ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
+
+// Current HR value of every rune alias (LEM: 0.07, ...), for reading offers paid in runes.
+export function runeValuesFrom(aliasText) {
+  const values = {};
+  for (const match of aliasText.matchAll(/^Alias\[([A-Z]+)_RUNE_VALUE\]:\s*([\d.]+)\s*$/gm)) {
+    values[match[1]] = Number(match[2]);
+  }
+  return values;
+}
+
+// Archive reads need PD2_MARKET_ACCESS_TOKEN; once PD2 refuses it (expired), every later
+// read returns nothing and the caller prices from open listings alone.
+let archiveRefused = false;
+export async function fetchArchive(filters, { hours, token = process.env.PD2_MARKET_ACCESS_TOKEN?.trim(), maxPages = 20, throttleMs } = {}) {
+  if (!token || archiveRefused) return [];
+  try {
+    return await fetchListings(filters, { hours, url: ARCHIVE_URL, token, openOnly: false, maxPages, throttleMs });
+  } catch (error) {
+    if (!/ (401|403) /.test(error.message)) throw error;
+    console.warn(`Market archive refused the token (${error.message}); using open listings only. Renew PD2_MARKET_ACCESS_TOKEN.`);
+    archiveRefused = true;
+    return [];
+  }
+}
+
+// Archived listings that sold (archiveSales), shaped like open listings for the tier
+// scripts: an accepted offer's HR replaces the ask (dropped when the offer can't be read),
+// a listing the seller closed keeps its ask.
+export function soldAsListings(archive, openListings, runeHR) {
+  const { offers, closed } = archiveSales(archive, openListings);
+  const priced = offers
+    .map((l) => ({ ...l, hr_price: salePriceHR(l, { runeHR }) }))
+    .filter((l) => Number.isFinite(l.hr_price) && l.hr_price > 0);
+  return [...priced, ...closed];
+}

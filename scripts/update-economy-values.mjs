@@ -10,12 +10,12 @@
 // With PD2_MARKET_ACCESS_TOKEN set (a token from the hiimpd2.com admin grant, renewed by hand),
 // sales from the market archive drive the value instead (archiveSales: accepted offers at the
 // offer price, listings the seller closed without relisting at the ask). An item with at
-// least MARKET_MIN_SALES sellers' sales in the last 14 days is valued at their median (a
-// longer window lags falling prices). Without a token, or once it has expired, every item is priced from asks.
+// least MARKET_MIN_SALES sellers' sales in the last 7 days is valued at their median, each
+// sale weighted by recency (half weight every 2 days). Without a token, or once it has expired, every item is priced from asks.
 
 import { readFile, writeFile } from 'node:fs/promises';
 import {
-  ARCHIVE_URL, archiveSales, fetchListings, currencyPriceHR, dedupeBySeller, median, percentile, soldPriceHR, withoutOutliers,
+  archiveSales, fetchArchive, fetchListings, currencyPriceHR, dedupeBySeller, percentile, recencyWeight, soldAt, soldPriceHR, weightedMedian, withoutOutliers,
 } from './lib/market.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
@@ -30,7 +30,8 @@ const minSampleCount = Number(process.env.MARKET_MIN_SELLERS) || 5;
 const ASK_PERCENTILE = Number(process.env.MARKET_ASK_PERCENTILE) || 0.25;
 const archiveToken = process.env.PD2_MARKET_ACCESS_TOKEN?.trim();
 const minSales = Number(process.env.MARKET_MIN_SALES) || 5;
-const salesWindowHours = Number(process.env.MARKET_SALES_WINDOW_HOURS) || 14 * 24;
+const salesWindowHours = Number(process.env.MARKET_SALES_WINDOW_HOURS) || 7 * 24;
+const salesHalfLifeHours = Number(process.env.MARKET_SALES_HALF_LIFE_HOURS) || 48;
 
 // Low runes (Lem through Gul) use the mats' finer rounding, since a 0.05 HR step is a large
 // share of their value.
@@ -122,16 +123,14 @@ function referenceValue(text, item) {
   return getCurrentAliasNumber(text, alias);
 }
 
-const askValue = (prices) => percentile(prices, ASK_PERCENTILE);
-
-function priceSummary(listings, referenceHR, runeHR, { priceOf = currencyPriceHR, statOf = askValue } = {}) {
+function priceSummary(listings, referenceHR, runeHR) {
   const priced = listings
-    .map((l) => ({ seller: l.user_id, hr: priceOf(l, { referenceHR, runeHR }) }))
+    .map((l) => ({ seller: l.user_id, hr: currencyPriceHR(l, { referenceHR, runeHR }) }))
     .filter((e) => e.seller && Number.isFinite(e.hr) && e.hr > 0);
   const perSeller = dedupeBySeller(priced, (e) => e.hr);
   const kept = withoutOutliers(perSeller.map((e) => e.hr));
   return {
-    value: statOf(kept),
+    value: percentile(kept, ASK_PERCENTILE),
     min: Math.min(...kept),
     max: Math.max(...kept),
     sellers: perSeller.length,
@@ -140,25 +139,27 @@ function priceSummary(listings, referenceHR, runeHR, { priceOf = currencyPriceHR
   };
 }
 
-// Median sale price, one sale per seller, when enough sellers sold.
+// Recency-weighted median sale price (a sale's weight halves every salesHalfLifeHours), each
+// seller counting once at their latest sale, outliers dropped, when enough sellers sold.
 function salesSummary(archive, openListings, referenceHR, runeHR) {
   const { offers, closed } = archiveSales(archive, openListings);
-  const summary = priceSummary([...offers, ...closed], referenceHR, runeHR, { priceOf: soldPriceHR, statOf: median });
-  return summary.sellers >= minSales ? summary : undefined;
+  const latestBySeller = new Map();
+  for (const listing of [...offers, ...closed]) {
+    const hr = soldPriceHR(listing, { referenceHR, runeHR });
+    if (!listing.user_id || !Number.isFinite(hr) || hr <= 0) continue;
+    const sale = { hr, at: soldAt(listing) };
+    const kept = latestBySeller.get(listing.user_id);
+    if (!kept || Date.parse(sale.at) > Date.parse(kept.at)) latestBySeller.set(listing.user_id, sale);
+  }
+  const sales = [...latestBySeller.values()];
+  if (sales.length < minSales) return undefined;
+  const kept = new Set(withoutOutliers(sales.map((sale) => sale.hr)));
+  const weighted = sales
+    .filter((sale) => kept.has(sale.hr))
+    .map((sale) => ({ hr: sale.hr, weight: recencyWeight(sale.at, salesHalfLifeHours) }));
+  return { value: weightedMedian(weighted), sellers: sales.length };
 }
 
-async function fetchArchive(filters) {
-  if (!archiveToken || !fetchArchive.enabled) return [];
-  try {
-    return await fetchListings(filters, { hours: salesWindowHours, url: ARCHIVE_URL, token: archiveToken, openOnly: false, maxPages: 20 });
-  } catch (error) {
-    if (!/ (401|403) /.test(error.message)) throw error;
-    console.warn(`Market archive refused the token (${error.message}); pricing from asks only. Renew PD2_MARKET_ACCESS_TOKEN.`);
-    fetchArchive.enabled = false;
-    return [];
-  }
-}
-fetchArchive.enabled = true;
 
 // One fetch per item over the longer window; the primary window is the recent slice of it.
 // An item with enough sales takes its sales median as the value and has no decrease window;
@@ -176,7 +177,7 @@ async function fetchPrices(text) {
     const recent = listings.filter((l) => Date.parse(l.updated_at) >= cutoff);
     const asks = priceSummary(recent, referenceHR, runeHR);
     const asksLong = priceSummary(listings, referenceHR, runeHR);
-    const sales = item.sales === false ? undefined : salesSummary(await fetchArchive(filters), listings, referenceHR, runeHR);
+    const sales = item.sales === false ? undefined : salesSummary(await fetchArchive(filters, { hours: salesWindowHours }), listings, referenceHR, runeHR);
     if (sales) {
       console.log(`${item.name} (${item.code}): ${sales.sellers} sellers' sales, median ${formatHr(sales.value)}HR (asks ${formatHr(asks.value)}HR)`);
       primary.set(item.code, { ...asks, value: sales.value, sellers: Math.max(asks.sellers, sales.sellers) });

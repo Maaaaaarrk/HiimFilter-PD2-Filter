@@ -41,9 +41,13 @@ jobs:
 
       - name: Suggest unique tiers (PD2 market)
         run: node scripts/suggest-unique-tiers.mjs --ladder=true --hardcore=false
+        env:
+          PD2_MARKET_ACCESS_TOKEN: ${{ secrets.PD2_MARKET_ACCESS_TOKEN }}
 
       - name: Suggest set tiers (PD2 market)
         run: node scripts/suggest-set-tiers.mjs --ladder=true --hardcore=false
+        env:
+          PD2_MARKET_ACCESS_TOKEN: ${{ secrets.PD2_MARKET_ACCESS_TOKEN }}
 
       - name: Apply tier changes (downgrades only if TIER_AUTO_DOWNGRADES is 'true')
         run: node scripts/apply-tier-changes.mjs ${{ vars.TIER_AUTO_DOWNGRADES == 'true' && '--downgrades=true' || '' }}
