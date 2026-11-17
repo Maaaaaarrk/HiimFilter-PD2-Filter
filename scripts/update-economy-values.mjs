@@ -8,13 +8,14 @@
 // utility items (WSS, Tainted WSS, Puzzlebox/Piece, Demonic Cube, Catalyst Shard).
 //
 // With PD2_MARKET_ACCESS_TOKEN set (a token from the hiimpd2.com admin grant, renewed by hand),
-// sales from the market archive drive the value instead: an item with at least
-// MARKET_MIN_SALES sellers' sales in the last 14 days is valued at their median accepted offer
-// (a longer window lags falling prices). Without a token, or once it has expired, every item is priced from asks.
+// sales from the market archive drive the value instead (archiveSales: accepted offers at the
+// offer price, listings the seller closed without relisting at the ask). An item with at
+// least MARKET_MIN_SALES sellers' sales in the last 14 days is valued at their median (a
+// longer window lags falling prices). Without a token, or once it has expired, every item is priced from asks.
 
 import { readFile, writeFile } from 'node:fs/promises';
 import {
-  ARCHIVE_URL, fetchListings, currencyPriceHR, dedupeBySeller, median, percentile, salePriceHR, withoutOutliers,
+  ARCHIVE_URL, archiveSales, fetchListings, currencyPriceHR, dedupeBySeller, median, percentile, soldPriceHR, withoutOutliers,
 } from './lib/market.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
@@ -73,7 +74,7 @@ const ubermats = [
   { code: 'ceh',  name: 'Charged Essence',           alias: 'CHARGED_ESS',               set: 'single' },
   { code: 'tes',  name: 'Twisted Essence',           alias: 'TWISTED_ESS',               set: 'single' },
   // PD2 utility items (full alias set: VALUE / WSS_VALUE / STACK_HR / STACK_WSS)
-  { code: 'wss',  name: 'Worldstone Shard',          alias: 'WSS_ITEM',                  set: 'full', valueSuffix: '_HR_VALUE', range: false },
+  { code: 'wss',  name: 'Worldstone Shard',          alias: 'WSS_ITEM',                  set: 'full', valueSuffix: '_HR_VALUE', range: false, sales: false },
   { code: 'cwss', name: 'Tainted Worldstone Shard',  alias: 'TAINTED_WORLDSTONE_SHARD',  set: 'full' },
   { code: 'iwss', name: 'Catalyst Shard',            alias: 'CATALYST_SHARD',            set: 'full' },
   { code: 'lbox', name: 'Larzuk Puzzlebox',          alias: 'LARZUK_PUZZLEBOX',          set: 'full' },
@@ -139,27 +140,25 @@ function priceSummary(listings, referenceHR, runeHR, { priceOf = currencyPriceHR
   };
 }
 
-// Median accepted offer, one sale per seller, when enough sellers sold.
-function salesSummary(sales, referenceHR, runeHR) {
-  const summary = priceSummary(sales, referenceHR, runeHR, { priceOf: salePriceHR, statOf: median });
+// Median sale price, one sale per seller, when enough sellers sold.
+function salesSummary(archive, openListings, referenceHR, runeHR) {
+  const { offers, closed } = archiveSales(archive, openListings);
+  const summary = priceSummary([...offers, ...closed], referenceHR, runeHR, { priceOf: soldPriceHR, statOf: median });
   return summary.sellers >= minSales ? summary : undefined;
 }
 
-async function fetchSales(filters) {
-  if (!archiveToken || !fetchSales.enabled) return [];
+async function fetchArchive(filters) {
+  if (!archiveToken || !fetchArchive.enabled) return [];
   try {
-    return await fetchListings(
-      { ...filters, 'accepted_offer_id[$ne]': 'null' },
-      { hours: salesWindowHours, url: ARCHIVE_URL, token: archiveToken, openOnly: false },
-    );
+    return await fetchListings(filters, { hours: salesWindowHours, url: ARCHIVE_URL, token: archiveToken, openOnly: false, maxPages: 20 });
   } catch (error) {
     if (!/ (401|403) /.test(error.message)) throw error;
     console.warn(`Market archive refused the token (${error.message}); pricing from asks only. Renew PD2_MARKET_ACCESS_TOKEN.`);
-    fetchSales.enabled = false;
+    fetchArchive.enabled = false;
     return [];
   }
 }
-fetchSales.enabled = true;
+fetchArchive.enabled = true;
 
 // One fetch per item over the longer window; the primary window is the recent slice of it.
 // An item with enough sales takes its sales median as the value and has no decrease window;
@@ -177,7 +176,7 @@ async function fetchPrices(text) {
     const recent = listings.filter((l) => Date.parse(l.updated_at) >= cutoff);
     const asks = priceSummary(recent, referenceHR, runeHR);
     const asksLong = priceSummary(listings, referenceHR, runeHR);
-    const sales = salesSummary(await fetchSales(filters), referenceHR, runeHR);
+    const sales = item.sales === false ? undefined : salesSummary(await fetchArchive(filters), listings, referenceHR, runeHR);
     if (sales) {
       console.log(`${item.name} (${item.code}): ${sales.sellers} sellers' sales, median ${formatHr(sales.value)}HR (asks ${formatHr(asks.value)}HR)`);
       primary.set(item.code, { ...asks, value: sales.value, sellers: Math.max(asks.sellers, sales.sellers) });

@@ -208,3 +208,25 @@ export function salePriceHR(listing, context) {
   if (listing?.sell_hr_price > 0) return listing.sell_hr_price;
   return currencyPriceHR({ ...listing, price: offerText(listing?.sell_price) }, context);
 }
+
+// Most trades close off-site: the seller deletes the listing without accepting an offer. Such
+// a listing counts as sold at its asking price, unless the same seller put up another
+// listing of the item within RELIST_HOURS of deleting it (a relist, not a sale). Listings
+// that expired without being deleted never count.
+const RELIST_HOURS = 6;
+
+export function archiveSales(archive, otherListings = []) {
+  const everything = [...archive, ...otherListings];
+  const relisted = (listing) => everything.some((other) => other.user_id === listing.user_id
+    && other._id !== listing._id
+    && Math.abs(Date.parse(other.created_at) - Date.parse(listing.deleted_at)) < RELIST_HOURS * 3600 * 1000);
+  return {
+    offers: archive.filter((l) => l.accepted_offer_id),
+    closed: archive.filter((l) => !l.accepted_offer_id && l.deleted_at && !relisted(l)),
+  };
+}
+
+// HR per unit for an archived sale: the accepted offer when there was one, else the ask.
+export function soldPriceHR(listing, context) {
+  return listing?.accepted_offer_id ? salePriceHR(listing, context) : currencyPriceHR(listing, context);
+}
