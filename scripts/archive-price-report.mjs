@@ -3,12 +3,13 @@
 // archive access" card on hiimpd2.com/admin and run
 //   PD2_MARKET_ACCESS_TOKEN=<token> node scripts/archive-price-report.mjs
 // It changes nothing; it prints, per item, the current filter value, the open asks the bot
-// prices from, and the archived listings split into sold (accepted offer) and expired, and
-// writes the same table to temp/archive-price-report.md.
+// prices from, and the archived listings split into accepted offers, listings the seller
+// closed (counted as sold at the ask, see archiveSales) and the rest, and writes the same
+// table to temp/archive-price-report.md.
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import {
-  ARCHIVE_URL, currencyPriceHR, dedupeBySeller, fetchListings, median, percentile, withoutOutliers,
+  ARCHIVE_URL, archiveSales, currencyPriceHR, dedupeBySeller, fetchListings, median, percentile, salePriceHR, soldPriceHR, withoutOutliers,
 } from './lib/market.mjs';
 
 const ALIAS_FILE = 'builderfilter/02-alias/04-alias-economy-values[ALL].filter';
@@ -32,9 +33,9 @@ function aliasValue(text, name) {
   return match ? Number(match[1]) : undefined;
 }
 
-function prices(listings, referenceHR, runeHR) {
+function prices(listings, referenceHR, runeHR, priceOf = currencyPriceHR) {
   const priced = listings
-    .map((l) => ({ seller: l.user_id, hr: currencyPriceHR(l, { referenceHR, runeHR }) }))
+    .map((l) => ({ seller: l.user_id, hr: priceOf(l, { referenceHR, runeHR }) }))
     .filter((e) => e.seller && e.hr > 0);
   return withoutOutliers(dedupeBySeller(priced, (e) => e.hr).map((e) => e.hr));
 }
@@ -54,19 +55,22 @@ async function main() {
   const lines = [
     `Window ${hours}h, ${ladder.is_ladder === 'true' ? 'ladder' : 'non-ladder'} ${ladder.is_hardcore === 'true' ? 'hardcore' : 'softcore'}. One price per seller, outliers dropped. Columns: sellers | 25th percentile | median (HR).`,
     '',
-    '| Item | Filter value | Open asks | Archive sold | Archive not sold |',
-    '|---|---|---|---|---|',
+    '| Item | Filter | Open asks: sellers | p25 | median | Accepted offers: sellers | p25 | median | Closed by seller, at ask: sellers | p25 | median | All sales (bot value = median): sellers | p25 | median |',
+    `|${'---|'.repeat(14)}`,
   ];
   for (const [code, name, alias] of ITEMS) {
     const filters = { ...ladder, 'item.base_code': code };
     const referenceHR = aliasValue(text, alias);
     const open = await fetchListings(filters, { hours });
-    const archive = await fetchListings(filters, { hours, url: ARCHIVE_URL, token, openOnly: false });
-    const sold = archive.filter((l) => l.accepted_offer_id);
-    const unsold = archive.filter((l) => !l.accepted_offer_id);
-    const row = `| ${name} | ${fmt(referenceHR)} | ${stats(prices(open, referenceHR, runeHR))} | ${stats(prices(sold, referenceHR, runeHR))} | ${stats(prices(unsold, referenceHR, runeHR))} |`;
-    lines.push(row);
-    console.log(row);
+    const archive = await fetchListings(filters, { hours, url: ARCHIVE_URL, token, openOnly: false, maxPages: 20 });
+    const { offers, closed } = archiveSales(archive, open);
+    const row = [
+      name, fmt(referenceHR), stats(prices(open, referenceHR, runeHR)),
+      stats(prices(offers, referenceHR, runeHR, salePriceHR)), stats(prices(closed, referenceHR, runeHR)),
+      stats(prices([...offers, ...closed], referenceHR, runeHR, soldPriceHR)),
+    ].join(' | ');
+    lines.push(`| ${row} |`);
+    console.log(`| ${row} |`);
   }
   await mkdir('temp', { recursive: true });
   await writeFile(OUT_FILE, `${lines.join('\n')}\n`, 'utf8');
