@@ -24,7 +24,9 @@ import { dirname } from 'node:path';
 import {
   loadTiers, uniqueBaseTiers, uniqueAliasesFor, stars, baseFloor, baseLocked, ethFloored, listingsByOwnBase,
   UNIQUE_SCALE, UNIQUE_ALIAS, TIERS_FILE, cleanMedianHR, cleanMedianTier, cleanMedianBacksTier, MIN_LISTINGS_FOR_DOWNGRADE } from './lib/tier-model.mjs';
-import { fetchListings, dedupeIdenticalRolls } from './lib/market.mjs';
+import {
+  ECONOMY_ALIAS_FILE, fetchArchive, fetchListings, dedupeIdenticalRolls, runeValuesFrom, soldAsListings,
+} from './lib/market.mjs';
 
 const REPORT_FILE = 'temp/unique-tier-report.txt';
 const DIFF_FILE = 'temp/unique-tier-diff.json';
@@ -43,6 +45,10 @@ const VALUE_TIERS = [
 ];
 
 const args = parseArgs(process.argv.slice(2));
+// With PD2_MARKET_ACCESS_TOKEN set, items sold in the last 7 days (market archive: accepted
+// offers at the offer price, listings the seller closed at their ask) join the open listings.
+const soldWindowHours = Number(args['sold-window-hours']) || 168;
+const runeHR = runeValuesFrom(await readFile(ECONOMY_ALIAS_FILE, 'utf8'));
 const isLadder = args.ladder !== 'false';
 const isHardcore = args.hardcore === 'true';
 const minSamples = Number(args['min-samples']) || 5;
@@ -113,8 +119,9 @@ async function fetchListingsForBase(baseCode, isEth) {
     'item.is_ethereal': String(isEth),
   };
   if (excludeCorrupted) filters['item.corrupted'] = 'false';
-  const listings = await fetchListings(filters, { hours: windowHours, maxPages: maxPagesPerBase, throttleMs });
-  return dedupeIdenticalRolls(listings, priceToHR);
+  const open = await fetchListings(filters, { hours: windowHours, maxPages: maxPagesPerBase, throttleMs });
+  const archive = await fetchArchive(filters, { hours: soldWindowHours, throttleMs });
+  return dedupeIdenticalRolls([...open, ...soldAsListings(archive, open, runeHR)], priceToHR);
 }
 
 function priceToHR(listing) {
