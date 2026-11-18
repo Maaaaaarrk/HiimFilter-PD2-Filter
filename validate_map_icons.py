@@ -250,6 +250,7 @@ def main():
     parser.add_argument("--samples", type=int, default=12, help="sample items per marker rule")
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--examples", type=int, default=5, help="marker rules listed per hiding rule")
+    parser.add_argument("--json", help="also write every pair to this JSON file")
     args = parser.parse_args()
     if args.files:
         files = args.files
@@ -260,6 +261,7 @@ def main():
         files = [os.path.join(ROOT, "Hiim.filter")] + [sorted(glob.glob(os.path.join(g, "*.filter")), key=len)[0]
                                                         for g in groups if glob.glob(os.path.join(g, "*.filter"))]
     total = 0
+    report = []
     for path in files:
         rules, found = check(path, args.samples, args.seed)
         name = os.path.relpath(path, ROOT)
@@ -278,6 +280,14 @@ def main():
             if len(entries) > args.examples:
                 print(f"    ... and {len(entries) - args.examples} more marker rule(s)")
         total += len(found)
+        for (hide_line, marker_line), entry in sorted(found.items()):
+            report.append({"filter": name, "hide_line": hide_line, "hide": entry["hide"]["cond"],
+                           "marker_line": marker_line, "marker": entry["marker"]["cond"],
+                           "kinds": sorted(set(MARKER.findall(entry["marker"]["label"]))),
+                           "levels": sorted(entry["levels"]), "item": entry["item"]})
+    if args.json:
+        with open(args.json, "w", encoding="utf-8") as f:
+            json.dump(report, f, indent=1)
     print(f"Total: {total} hidden-but-marked pair(s) in {len(files)} filter(s)")
     sys.exit(1 if total else 0)
 
