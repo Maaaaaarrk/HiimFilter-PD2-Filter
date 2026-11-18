@@ -2,10 +2,9 @@
 
 The game reads a filter twice. The display pass stops at the first matching rule without
 %CONTINUE%; when that rule shows no text (": " or ": {%NAME%}") the item is hidden. The map
-pass walks the same chain but does not stop at a hiding rule: a hiding rule drops the
-markers collected so far, and the minimap markers (%MAP-..%, %DOT-..%, %PX-..%) of the later
-%CONTINUE% rules and of the first later matching rule that shows text are drawn, so an item
-hidden by one rule can still be marked by a later one.
+pass walks the same chain but skips hiding rules: the minimap markers (%MAP-..%, %DOT-..%,
+%PX-..%) of every %CONTINUE% rule it passes, before or after the hiding rule, and of the first
+matching rule that shows text are drawn, so a hidden item can still be marked.
 
 For every marker rule this builds sample items that match it (one branch of each OR, on a
 real base whose keywords fit), runs both passes at every filter level, and reports each
@@ -81,14 +80,13 @@ class Rules:
         return not engine._trim(engine._resolve_conditionals(text))
 
     def marker_rule(self, item, level):
-        """The map pass: the display chain past hiding rules, which drop earlier markers."""
+        """The map pass: the display chain with hiding rules skipped; the last marker it applies."""
         ctx = engine.Context(item, level)
         drawn = None
         for rule in self.rules:
             if not ctx.eval(rule["node"]):
                 continue
             if self.is_hiding(rule, ctx, item):
-                drawn = None
                 continue
             if rule["marker"]:
                 drawn = rule
