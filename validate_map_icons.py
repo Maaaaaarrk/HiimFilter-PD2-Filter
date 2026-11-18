@@ -2,8 +2,9 @@
 
 The game reads a filter twice. The display pass stops at the first matching rule without
 %CONTINUE%; when that rule shows no text (": " or ": {%NAME%}") the item is hidden. The map
-pass reads only the rules that draw a minimap marker (%MAP-..%, %DOT-..%, %PX-..%) and draws
-the marker of a matching rule even when the display pass hid the item.
+pass walks the same chain but skips hiding rules: it keeps the minimap markers (%MAP-..%,
+%DOT-..%, %PX-..%) of the %CONTINUE% rules it passes and of the first matching rule that
+shows text, so an item hidden by one rule can still be marked by a later one.
 
 For every marker rule this builds sample items that match it (one branch of each OR, on a
 real base whose keywords fit), runs both passes at every filter level, and reports each
@@ -65,9 +66,24 @@ class Rules:
             return None if engine._trim(engine._resolve_conditionals(text)) else rule
         return None
 
+    def is_hiding(self, rule, ctx, item):
+        if rule["cont"] or "%NAME%" in rule["label"]:
+            return False
+        text, _ = engine._render_label(rule["label"], [[("x", (0, 0, 0))]], ctx, item)
+        return not engine._trim(engine._resolve_conditionals(text))
+
     def marker_rule(self, item, level):
+        """The map pass: the display chain with hiding rules skipped; the last marker it applies."""
         ctx = engine.Context(item, level)
-        return next((r for r in self.markers if ctx.eval(r["node"])), None)
+        drawn = None
+        for rule in self.rules:
+            if not ctx.eval(rule["node"]) or self.is_hiding(rule, ctx, item):
+                continue
+            if rule["marker"]:
+                drawn = rule
+            if not rule["cont"]:
+                break
+        return drawn
 
 
 def literals(node, want, rng):
@@ -194,6 +210,8 @@ def check(path, samples, seed):
                     if not hidden_by:
                         continue
                     drawn = rules.marker_rule(sample, level)
+                    if not drawn:
+                        continue
                     key = (hidden_by["line"], drawn["line"])
                     entry = found.setdefault(key, {"hide": hidden_by, "marker": drawn, "levels": set(), "item": sample})
                     entry["levels"].add(level)
