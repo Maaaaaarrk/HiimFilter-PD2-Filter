@@ -2,14 +2,17 @@
 
 The game reads a filter twice. The display pass stops at the first matching rule without
 %CONTINUE%; when that rule shows no text (": " or ": {%NAME%}") the item is hidden. The map
-pass walks the same chain but skips hiding rules: it keeps the minimap markers (%MAP-..%,
-%DOT-..%, %PX-..%) of the %CONTINUE% rules it passes and of the first matching rule that
-shows text, so an item hidden by one rule can still be marked by a later one.
+pass walks the same chain but does not stop at a hiding rule: a hiding rule drops the
+markers collected so far, and the minimap markers (%MAP-..%, %DOT-..%, %PX-..%) of the later
+%CONTINUE% rules and of the first later matching rule that shows text are drawn, so an item
+hidden by one rule can still be marked by a later one.
 
 For every marker rule this builds sample items that match it (one branch of each OR, on a
 real base whose keywords fit), runs both passes at every filter level, and reports each
 pair of hiding rule and marker rule that meet on a hidden item. Items are modelled with the
-label checker (builderreadme/filterrender), so stats a rule doesn't name are 0.
+label checker (builderreadme/filterrender), so stats a rule doesn't name are 0. Unidentified
+items have no readable stats (the client doesn't get their affixes), and white items only
+carry staffmods on class items and caster bases.
 
     python validate_map_icons.py                 # the main filter of every group
     python validate_map_icons.py Hiim.filter     # given files
@@ -35,6 +38,11 @@ TYPE_FLAGS = {"WEAPON", "ARMOR", "HELM", "CIRC", "CHEST", "SHIELD", "GLOVES", "B
               "MACE", "CLUB", "TMACE", "HAMMER", "SCEPTER", "SWORD", "DAGGER", "THROWING", "JAV",
               "SPEAR", "POLEARM", "BOW", "XBOW", "STAFF", "WAND", "SOR", "SIN", "BAR", "DRU", "DIN",
               "NEC", "QUIVER", "1H", "2H"} | TIERS
+INTRINSIC_FIELDS = {"FILTLVL", "CLVL", "DIFF", "MAPID", "AREALVL", "ILVL", "ALVL", "LVLREQ", "SOCK",
+                    "SOCKETS", "QTY", "PRICE", "DEF", "CHARSTAT0", "CHARSTAT2", "CHARSTAT12", "WP4",
+                    "WP11", "WP12", "WP13"}
+STAFFMOD_BASES = {"BAR", "DRU", "DIN", "NEC", "SOR", "SIN", "STAFF", "WAND", "SCEPTER", "BOW", "JAV", "SPEAR"}
+STAFFMOD = re.compile(r"(SK|TABSK|CLSK)\d+$")
 ONE_KIND_FIELDS = {"RUNE", "GEM", "GEMTYPE", "GEMLEVEL", "MAPTIER", "MAPID_ITEM", "GOLD"}
 CONTEXTS = [{}, {"CLVL": 10, "DIFF": 0, "ILVL": 8, "ALVL": 8, "LVLREQ": 5, "MAPID": 2}]
 BASES = json.load(open(os.path.join(ROOT, "builderreadme", "filterrender", "bases.json"), encoding="utf-8"))
@@ -73,11 +81,14 @@ class Rules:
         return not engine._trim(engine._resolve_conditionals(text))
 
     def marker_rule(self, item, level):
-        """The map pass: the display chain with hiding rules skipped; the last marker it applies."""
+        """The map pass: the display chain past hiding rules, which drop earlier markers."""
         ctx = engine.Context(item, level)
         drawn = None
         for rule in self.rules:
-            if not ctx.eval(rule["node"]) or self.is_hiding(rule, ctx, item):
+            if not ctx.eval(rule["node"]):
+                continue
+            if self.is_hiding(rule, ctx, item):
+                drawn = None
                 continue
             if rule["marker"]:
                 drawn = rule
@@ -180,13 +191,25 @@ def build_item(lits, rng):
         return None
     if len(quality) != 1 and any(q in flags_in for q in QUALITIES):
         return None
-    flags = (base_flags | (flags_in - set(QUALITIES))) | {rng.choice(quality)}
+    chosen = rng.choice(quality)
+    flags = (base_flags | (flags_in - set(QUALITIES))) | {chosen}
+    if chosen == "NMAG":
+        if "ID" in flags_out:
+            return None
+        flags.add("ID")
     values = {}
     for field, (lo, hi) in num.items():
         if lo <= 0 <= hi:
             values[field] = 0 if lo == -10**6 and hi == 10**6 else max(lo, 0)
         else:
             values[field] = lo if lo > -10**6 else hi
+    for field, value in values.items():
+        if not value or field in INTRINSIC_FIELDS:
+            continue
+        if "ID" not in flags:
+            return None
+        if chosen == "NMAG" and STAFFMOD.match(field) and not base_flags & STAFFMOD_BASES:
+            return None
     return {"code": code, "name": BASES.get(code, {}).get("name", code), "flags": sorted(flags), "num": values}
 
 
