@@ -1,5 +1,5 @@
 # phil777
-## Last updated November 23rd Season 14 - build 260
+## Last updated November 23rd Season 14 - build 261
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -14,7 +14,6 @@
 * Class — Necromancer: Class filter tuned for Necromancer with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Necromancer_Focused.filter]
 * Class — Paladin: Class filter tuned for Paladin with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Paladin_Focused.filter]
 * Class — Sorceress: Class filter tuned for Sorceress with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Sorceress_Focused.filter]
-* Grail — Mystery: Mystery combined with Grail — Friendly: Uniques and Set items always show on filter levels 1–8, undiscovered grail items drop as a 4-star GRAIL callout without their name, and items in the grail but not owned get a white GRAIL tag. [Kassahi_Grail_Mystery_Phil777.filter]
 * Mystery — Class — Amazon: Mystery class filter tuned for Amazon with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Amazon_Focused.filter]
 * Mystery — Class — Assassin: Mystery class filter tuned for Assassin with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Assassin_Focused.filter]
 * Mystery — Class — Barbarian: Mystery class filter tuned for Barbarian with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Barbarian_Focused.filter]
@@ -22,6 +21,7 @@
 * Mystery — Class — Necromancer: Mystery class filter tuned for Necromancer with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Necromancer_Focused.filter]
 * Mystery — Class — Paladin: Mystery class filter tuned for Paladin with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Paladin_Focused.filter]
 * Mystery — Class — Sorceress: Mystery class filter tuned for Sorceress with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Sorceress_Focused.filter]
+* Mystery — Grail: Mystery combined with Grail — Friendly: Uniques and Set items always show on filter levels 1–8, undiscovered grail items drop as a 4-star GRAIL callout without their name, and items in the grail but not owned get a white GRAIL tag. [Kassahi_Mystery_Phil777_Grail.filter]
 
 ## Filter Preview — Kassahi & Philanthropy777
 **[See Kassahi & Philanthropy777 at every filter level on FilterForge](https://maaaaaarrk.github.io/FilterForge/compare.html?only=philanthropy777@2,philanthropy777@4,philanthropy777@6,philanthropy777@7,philanthropy777@8,philanthropy777@10)** — the same drops as the filter shows them in game, one column per filter level (2, 4, 6, 7, 8, 10). Compare all Hiim styles side by side: [Hiim styles](../HIIM_STYLES.md)
