@@ -1,5 +1,5 @@
 # hiimtalrasha
-## Last updated November 20th Season 14 - build 257
+## Last updated November 23rd Season 14 - build 258
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -14,6 +14,7 @@
 * Crafting: Same as the standard filter, but good crafting bases are not limited in higher filter levels. [Hiim_Crafting.filter]
 * Grail — Disabled: All-in-one filter with a TalRasha color theme, without the Grail callout. [Hiim_Grail_No.filter]
 * Grail — Friendly: All-in-one filter that always shows Uniques and Set items on filter levels 1–8. [Hiim_Grail.filter]
+* Grail — Mystery: All-in-one filter that combines Grail — Friendly and Mystery: Uniques and Set items always show on filter levels 1–8, undiscovered grail items drop as a 4-star GRAIL callout without their name, and Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Grail_Mystery.filter]
 * LLD: Shows LLD-relevant items at higher filter levels. Includes LLD jewel point evaluation and LLD tags on valuable Set/Unique items. [Hiim_LLD_Focused.filter]
 * Mystery: All-in-one filter where Runes Pul (21)+ and GG uniques are renamed to hide their identity. [Hiim_Mystery.filter]
 
