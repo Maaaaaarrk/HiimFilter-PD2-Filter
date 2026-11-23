@@ -10,3 +10,5 @@ ItemDisplay[UNI !ID uh9 MAPID=137]: %MYSTERY_UNI_LABEL%%CONTINUE%
 // non-ETH and ETH copies are tiered separately (e.g. Shako is 4-star only when not ETH) — issue #83
 ItemDisplay[UNI !ID !ETH 4_STAR_UNIQUE !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
 ItemDisplay[UNI !ID ETH 4_STAR_ETH_UNIQUE !IN_TOWN]: %MYSTERY_UNI_LABEL%%CONTINUE%
+// In the grail but not owned (Phil777 Grail - Mystery only): the Mystery label replaces the white GRAIL tag, so re-add it
+ItemDisplay[GRAIL_OWNED_CALLOUT UNI !ID ALLDISCOVERED !ALLOWNED (((ram OR rar OR rbe OR 7qr OR uhn OR uth OR utc OR utb OR 7bs OR 7cr2) !IN_TOWN) OR (uh9 MAPID=137) OR (!ETH 4_STAR_UNIQUE !IN_TOWN) OR (ETH 4_STAR_ETH_UNIQUE !IN_TOWN))]: %GRAIL_OWNED_TAG% %NAME%%CONTINUE%

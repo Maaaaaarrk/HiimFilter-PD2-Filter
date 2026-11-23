@@ -1,5 +1,5 @@
 # phil777
-## Last updated November 23rd Season 14 - build 259
+## Last updated November 23rd Season 14 - build 260
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -14,6 +14,7 @@
 * Class — Necromancer: Class filter tuned for Necromancer with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Necromancer_Focused.filter]
 * Class — Paladin: Class filter tuned for Paladin with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Paladin_Focused.filter]
 * Class — Sorceress: Class filter tuned for Sorceress with the philanthropy777 visual theme. [Kassahi_Phil777_Crafting_Sorceress_Focused.filter]
+* Grail — Mystery: Mystery combined with Grail — Friendly: Uniques and Set items always show on filter levels 1–8, undiscovered grail items drop as a 4-star GRAIL callout without their name, and items in the grail but not owned get a white GRAIL tag. [Kassahi_Grail_Mystery_Phil777.filter]
 * Mystery — Class — Amazon: Mystery class filter tuned for Amazon with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Amazon_Focused.filter]
 * Mystery — Class — Assassin: Mystery class filter tuned for Assassin with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Assassin_Focused.filter]
 * Mystery — Class — Barbarian: Mystery class filter tuned for Barbarian with the philanthropy777 visual theme. [Kassahi_Mystery_Phil777_Crafting_Barbarian_Focused.filter]
