@@ -1,0 +1,12 @@
+//-----------------------------------------------------------------------------------
+// GRAIL - MYSTERY
+//-----------------------------------------------------------------------------------
+// Grail - Mystery filters only (tagged Grail and Mystery, or KassahiMystery for Phil777): an unidentified unique / set
+// item not yet in the grail (!ALLDISCOVERED) drops as a 4-star callout whose name is just
+// GRAIL (gold for uniques, green for sets), so it stays a mystery until picked up. In-grail
+// but not owned items keep the Grail filters' white GRAIL tag (07b-alias-grail-owned).
+ItemDisplay[UNI !ID !ALLDISCOVERED !jew !(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58)]: %GOLD%GRAIL%CONTINUE%
+ItemDisplay[UNI !ID !ALLDISCOVERED !jew !(t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58)]: %FX_UNID_GG%%UNI_GG_ITEM%
+ItemDisplay[SET !ID !ALLDISCOVERED]: %GREEN%GRAIL%CONTINUE%
+ItemDisplay[SET !ID !ALLDISCOVERED]: %FX_UNID_GG%%SET_GG_ITEM%
+//-----------------------------------------------------------------------------------
