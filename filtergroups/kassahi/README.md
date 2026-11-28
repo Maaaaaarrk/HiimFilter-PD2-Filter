@@ -1,5 +1,5 @@
 # kassahi
-## Last updated November 26th Season 14 - build 269
+## Last updated November 28th Season 14 - build 270
 ## [Compare the Hiim styles side by side](../HIIM_STYLES.md)
 
 ## Filters
@@ -99,6 +99,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Crown of Ages (Corona)
 - Death Cleaver (Berserker Axe) — ETH
 - Death's Web (Unearthed Wand)
+- Demon Machine (Chu-Ko-Nu) — non-ETH
 - Doom's Finger (Razor Arrows)
 - Doombringer (Champion Sword) — ETH
 - Dracul's Grasp (Vampirebone Gloves)
@@ -108,7 +109,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Giant Skull (Bone Visage) — non-ETH
 - Gore Rider (War Boots)
 - Griffon's Eye (Diadem)
-- Guardian Angel (Templar Coat) — non-ETH
 - Halaberd's Reign (Conqueror Crown) — non-ETH
 - Herald of Zakarum (Gilded Shield)
 - Lacerator (Winged Axe) — ETH
@@ -118,7 +118,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Mang Song's Lesson (Archon Staff)
 - Nightwing's Veil (Spired Helm)
 - Occultist (Crusader Gauntlets) — ETH
-- Ormus' Robes (Dusk Shroud) — non-ETH
 - Plague Bearer (Rune Sword) — ETH
 - Purgatory (Archon Plate) — ETH
 - Ravenlore (Sky Spirit) — non-ETH
@@ -129,8 +128,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Silks of the Victor (Ancient Armor) — ETH
 - Skull Collector (Rune Staff)
 - Skyfall (Vortex Orb)
-- Skywarden (Vortex Shield)
-- Snowclash (Battle Belt) — non-ETH
+- Skywarden (Vortex Shield) — ETH
 - Soul Drainer (Vambraces)
 - Spirit Keeper (Earth Spirit)
 - Spirit Ward (Ward) — non-ETH
@@ -153,32 +151,33 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - War Traveler (Battle Boots)
 - Warshrike (Winged Knife) — ETH
 - Waterwalk (Sharkskin Boots) — ETH
+- Widowmaker (Ward Bow) — non-ETH
 - Windforce (Hydra Bow)
 - Zerae's Resolve (Matriarchal Pike) — ETH
 
 ### Level 9-8 — adds 3-star uniques
 
-- Abyssal Ward (War Bolts)
+- Abyssal Ward (War Bolts) — ETH
 - Arkaine's Valor (Balrog Skin) — non-ETH
 - Athena's Wrath (Battle Scythe) — ETH
 - Azurewrath (Phase Blade) — non-ETH
-- Bannerlord's Call (War Bolts)
+- Bannerlord's Call (War Bolts) — ETH
 - Brimstone Rain (Shillelagh)
 - Darkforce Spawn (Bloodlord Skull) — ETH
-- Death's Fathom (Dimensional Shard) — non-ETH
-- Demon Machine (Chu-Ko-Nu)
+- Demon Machine (Chu-Ko-Nu) — ETH
 - Denmother (Sun Spirit) — ETH
-- Doombringer (Champion Sword) — non-ETH
-- Executioner's Justice (Glorious Axe) — non-ETH
+- Dragonscale (Zakarum Shield) — non-ETH
 - Fenris (Alpha Helm) — ETH
 - Firelizard's Talons (Feral Claws) — ETH
-- Frozen Sorrow (War Bolts)
+- Frozen Sorrow (War Bolts) — ETH
 - Gerke's Sanctuary (Pavise) — ETH
 - Ghostflame (Legend Spike) — ETH
 - Giant Skull (Bone Visage) — ETH
 - Goblin Toe (Light Plated Boots)
+- Guardian Angel (Templar Coat) — non-ETH
 - Halaberd's Reign (Conqueror Crown) — ETH
 - Harlequin Crest (Shako) — non-ETH
+- Horizon's Tornado (Scourge) — non-ETH
 - Infernostride (Demonhide Boots) — ETH
 - Jalal's Mane (Totemic Mask)
 - Kira's Guardian (Tiara) — non-ETH
@@ -191,23 +190,28 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Medusa's Gaze (Aegis) — ETH
 - Nosferatu's Coil (Vampirefang Belt) — ETH
 - Occultist (Crusader Gauntlets) — non-ETH
+- Ormus' Robes (Dusk Shroud) — non-ETH
 - Pus Spitter (Siege Crossbow)
+- Raekor's Virtue (Guardian Crown) — non-ETH
 - Razortail (Sharkskin Belt) — ETH
 - Sacred Totem (Hellspawn Skull) — ETH
 - Shaftstop (Mesh Armor)
 - Silkweave (Mesh Boots) — ETH
 - Skin of the Vipermagi (Serpentskin Armor) — ETH
+- Skywarden (Vortex Shield) — non-ETH
+- Snowclash (Battle Belt) — non-ETH
 - Spectral Plate (Great Hauberk) — non-ETH
 - Spirit Ward (Ward) — ETH
 - Stalker's Cull (Runic Talons) — ETH
 - Steel Shade (Armet) — non-ETH
 - Steelrend (Ogre Gauntlets) — ETH
+- Stormlash (Scourge) — non-ETH
 - Stormspire (Giant Thresher) — non-ETH
 - String of Ears (Demonhide Sash)
 - The Gavel of Pain (Martel de Fer) — ETH
+- Thundergod's Vigor (War Belt) — non-ETH
 - Thunderstroke (Matriarchal Javelin) — non-ETH
 - Tomb Reaver (Cryptic Axe)
-- Toothrow (Sharktooth Armor) — non-ETH
 - Twilight's Reflection (Hyperion) — ETH
 - Valkyrie Wing (Winged Helm)
 - Verdungo's Hearty Cord (Mithril Coil) — non-ETH
@@ -216,7 +220,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Warshrike (Winged Knife) — non-ETH
 - Waterwalk (Sharkskin Boots) — non-ETH
 - Whispering Mirage (War Fist) — ETH
-- Widowmaker (Ward Bow) — non-ETH
 - Wraithskin (Diamond Mail)
 
 ### Level 7 — adds 2-star uniques
@@ -224,12 +227,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Anvilguard Strap (Heavy Bolts)
 - Arkaine's Valor (Balrog Skin) — ETH
 - Arm of King Leoric (Tomb Wand) — ETH
-- Arreat's Face (Slayer Guard)
+- Arreat's Face (Slayer Guard) — ETH
 - Athena's Wrath (Battle Scythe) — non-ETH
 - Atma's Wail (Embossed Plate)
 - Bartuc's Cut-Throat (Greater Talons) — ETH
 - Black Hades (Chaos Armor) — non-ETH
 - Blackhand Key (Grave Wand)
+- Blackoak Shield (Luna) — non-ETH
 - Blade of Ali Baba (Tulwar)
 - Blood Raven's Charge (Matriarchal Bow) — ETH
 - Bloodtree Stump (War Club) — ETH
@@ -239,20 +243,20 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Cerebus' Bite (Blood Spirit) — ETH
 - Chance Guards (Chain Gloves) — non-ETH
 - Crow Caw (Tigulated Mail) — ETH
-- Crown of Thieves (Grand Crown) — non-ETH
 - Cyclopean Roar (Jawbone Visor)
 - Darkforce Spawn (Bloodlord Skull) — non-ETH
-- Death Cleaver (Berserker Axe) — non-ETH
-- Death's Fathom (Dimensional Shard) — ETH
-- Demonhorn's Edge (Destroyer Helm)
-- Dragonscale (Zakarum Shield)
+- Death's Fathom (Dimensional Shard)
+- Demonhorn's Edge (Destroyer Helm) — ETH
+- Doombringer (Champion Sword) — non-ETH
+- Dragonscale (Zakarum Shield) — ETH
 - Earth Shifter (Thunder Maul) — non-ETH
-- Ebonbane (Grand Matron Bow) — ETH
+- Ebonbane (Grand Matron Bow)
 - Embersworn (Demon Heart) — ETH
 - Eschuta's Temper (Eldritch Orb)
+- Executioner's Justice (Glorious Axe) — non-ETH
 - Flamebellow (Balrog Blade) — ETH
-- Gargoyle's Bite (Winged Harpoon)
-- Ghoulhide (Heavy Bracers) — ETH
+- Gargoyle's Bite (Winged Harpoon) — ETH
+- Ghoulhide (Heavy Bracers)
 - Goldwrap (Heavy Belt) — ETH
 - Gravepalm (Sharkskin Gloves)
 - Grim's Burning Dead (Grim Scythe)
@@ -261,7 +265,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Heart Carver (Rondel)
 - Heavenly Garb (Light Plate) — ETH
 - Hellmouth (War Gauntlets)
-- Horizon's Tornado (Scourge)
+- Horizon's Tornado (Scourge) — ETH
 - Infernostride (Demonhide Boots) — non-ETH
 - Kira's Guardian (Tiara) — ETH
 - Leviathan (Kraken Shell) — ETH
@@ -272,7 +276,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Peasant Crown (War Hat) — ETH
 - Plague Bearer (Rune Sword) — non-ETH
 - Que-Hegan's Wisdom (Mage Plate) — ETH
-- Raekor's Virtue (Guardian Crown)
+- Raekor's Virtue (Guardian Crown) — ETH
 - Ravenlore (Sky Spirit) — ETH
 - Sacred Totem (Hellspawn Skull) — non-ETH
 - Sage's Defiance (Giant Conch) — ETH
@@ -280,8 +284,9 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Shadow Dancer (Myrmidon Greaves)
 - Shatterhead (Heavy Bolts)
 - Silks of the Victor (Ancient Armor) — non-ETH
+- Silkweave (Mesh Boots) — non-ETH
 - Skin of the Vipermagi (Serpentskin Armor) — non-ETH
-- Skullder's Ire (Russet Armor) — ETH
+- Skullder's Ire (Russet Armor)
 - Spectral Plate (Great Hauberk) — ETH
 - Spike Thorn (Blade Barrier)
 - Stalker's Cull (Runic Talons) — non-ETH
@@ -289,7 +294,7 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Steel Shade (Armet) — ETH
 - Steelclash (Kite Shield)
 - Stoneraven (Matriarchal Spear) — non-ETH
-- Stormlash (Scourge)
+- Stormlash (Scourge) — ETH
 - Stormshield (Monarch)
 - Suicide Branch (Burnt Wand)
 - Swiftwind Needle (Sharp Arrows) — ETH
@@ -298,12 +303,13 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - The Oculus (Swirling Crystal) — ETH
 - The Patriarch (Great Sword)
 - The Reaper's Toll (Thresher) — non-ETH
-- Thundergod's Vigor (War Belt) — non-ETH
 - Titan's Grip (Bramble Mitts) — ETH
 - Titan's Revenge (Ceremonial Javelin) — ETH
 - Tombsong (Sharp Arrows) — ETH
 - Treads of Cthon (Chain Boots)
+- Ursa's Nightmare (Dream Spirit) — non-ETH
 - Venom Grip (Demonhide Gloves) — ETH
+- Venom Ward (Breast Plate) — non-ETH
 - Warriv's Warder (Heater) — non-ETH
 - Whispering Mirage (War Fist) — non-ETH
 - Widowmaker (Ward Bow) — ETH
@@ -312,14 +318,16 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 
 ### Level 6 — adds 1-star uniques
 
+- Abyssal Ward (War Bolts) — non-ETH
 - Arioc's Needle (Hyperion Spear) — non-ETH
 - Arm of King Leoric (Tomb Wand) — non-ETH
+- Arreat's Face (Slayer Guard) — non-ETH
+- Bannerlord's Call (War Bolts) — non-ETH
 - Bartuc's Cut-Throat (Greater Talons) — non-ETH
 - Biggin's Bonnet (Cap)
 - Black Hades (Chaos Armor) — ETH
-- Blackoak Shield (Luna) — non-ETH
 - Blood Raven's Charge (Matriarchal Bow) — non-ETH
-- Bloodfist (Heavy Gloves)
+- Bloodfist (Heavy Gloves) — ETH
 - Bloodtree Stump (War Club) — non-ETH
 - Boneflame (Succubus Skull) — non-ETH
 - Buriza-Do Kyanon (Ballista) — non-ETH
@@ -328,11 +336,12 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Chromatic Ire (Cedar Staff) — ETH
 - Corpsemourn (Ornate Plate) — ETH
 - Crow Caw (Tigulated Mail) — non-ETH
-- Crown of Thieves (Grand Crown) — ETH
+- Crown of Thieves (Grand Crown)
+- Death Cleaver (Berserker Axe) — non-ETH
+- Demonhorn's Edge (Destroyer Helm) — non-ETH
 - Denmother (Sun Spirit) — non-ETH
 - Duskdeep (Full Helm)
 - Eaglehorn (Crusader Bow)
-- Ebonbane (Grand Matron Bow) — non-ETH
 - Embersworn (Demon Heart) — non-ETH
 - Executioner's Justice (Glorious Axe) — ETH
 - Fenris (Alpha Helm) — non-ETH
@@ -340,8 +349,9 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Flamebellow (Balrog Blade) — non-ETH
 - Frostburn (Gauntlets)
 - Frostwind (Cryptic Sword)
+- Frozen Sorrow (War Bolts) — non-ETH
+- Gargoyle's Bite (Winged Harpoon) — non-ETH
 - Gerke's Sanctuary (Pavise) — non-ETH
-- Ghoulhide (Heavy Bracers) — non-ETH
 - Gimmershred (Flying Axe) — non-ETH
 - Goldwrap (Heavy Belt) — non-ETH
 - Guardian Angel (Templar Coat) — ETH
@@ -358,30 +368,26 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Odium (Colossus Sword) — non-ETH
 - Ondal's Wisdom (Elder Staff)
 - Peasant Crown (War Hat) — non-ETH
-- Purgatory (Archon Plate) — non-ETH
 - Que-Hegan's Wisdom (Mage Plate) — non-ETH
 - Ribcracker (Quarterstaff) — non-ETH
 - Rockstopper (Sallet)
 - Rune Master (Ettin Axe)
 - Sage's Defiance (Giant Conch) — non-ETH
 - Shatterblade (Mithril Point) — ETH
-- Silkweave (Mesh Boots) — non-ETH
-- Skullder's Ire (Russet Armor) — non-ETH
 - Snowclash (Battle Belt) — ETH
-- Spirit Shroud (Ghost Armor) — ETH
-- Swiftwind Needle (Sharp Arrows) — non-ETH
+- Spirit Shroud (Ghost Armor)
 - Swordguard (Executioner Sword) — ETH
-- The Spirit Shroud (Ghost Armor) — ETH
+- The Gavel of Pain (Martel de Fer) — non-ETH
+- The Spirit Shroud (Ghost Armor)
 - Thundergod's Vigor (War Belt) — ETH
 - Titan's Grip (Bramble Mitts) — non-ETH
-- Titan's Revenge (Ceremonial Javelin) — non-ETH
-- Tombsong (Sharp Arrows) — non-ETH
-- Toothrow (Sharktooth Armor) — ETH
+- Toothrow (Sharktooth Armor)
 - Twilight's Reflection (Hyperion) — non-ETH
-- Ursa's Nightmare (Dream Spirit)
+- Ursa's Nightmare (Dream Spirit) — ETH
 - Venom Grip (Demonhide Gloves) — non-ETH
-- Venom Ward (Breast Plate)
+- Venom Ward (Breast Plate) — ETH
 - Viperfork (Mancatcher) — ETH
+- Windhammer (Ogre Maul) — ETH
 - Witchwild String (Short Siege Bow) — ETH
 - Wizardspike (Bone Knife) — ETH
 - Wolfhowl (Fury Visor) — non-ETH
@@ -389,18 +395,21 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 ### Level 5 — adds 0-star uniques
 
 - Blackbog's Sharp (Cinquedeas)
+- Bloodfist (Heavy Gloves) — non-ETH
+- Chromatic Ire (Cedar Staff) — non-ETH
 - Corpsemourn (Ornate Plate) — non-ETH
 - Endlesshail (Double Bow)
 - Giant Maimer (Colossus Voulge) — ETH
 - Gorefoot (Heavy Boots)
+- Nethercrux (Ghost Wand) — non-ETH
 - Odium (Colossus Sword) — ETH
+- Purgatory (Archon Plate) — non-ETH
 - Radament's Sphere (Ancient Shield)
 - Swordguard (Executioner Sword) — non-ETH
-- The Gavel of Pain (Martel de Fer) — non-ETH
 - The Jade Tan Do (Kris) — ETH
 - The Oculus (Swirling Crystal) — non-ETH
+- Titan's Revenge (Ceremonial Javelin) — non-ETH
 - Viperfork (Mancatcher) — non-ETH
-- Windhammer (Ogre Maul) — ETH
 - Witchwild String (Short Siege Bow) — non-ETH
 - Wizardspike (Bone Knife) — non-ETH
 - Wizendraw (Long Battle Bow)
@@ -411,7 +420,6 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Arachnid Mesh (Spiderweb Sash) — ETH
 - Baezil's Vortex (Knout)
 - Blackoak Shield (Luna) — ETH
-- Chromatic Ire (Cedar Staff) — non-ETH
 - Cloudcrack (Gothic Sword)
 - Djinn Slayer (Ataghan)
 - Giant Maimer (Colossus Voulge) — non-ETH
@@ -421,13 +429,12 @@ Cumulative list of unidentified uniques visible at each filter level. Higher (st
 - Kuko Shakaku (Cedar Bow)
 - Lacerator (Winged Axe) — non-ETH
 - Magewrath (Rune Bow)
-- Nethercrux (Ghost Wand) — non-ETH
 - Shatterblade (Mithril Point) — non-ETH
-- Spirit Shroud (Ghost Armor) — non-ETH
+- Swiftwind Needle (Sharp Arrows) — non-ETH
 - The Hand of Broc (Leather Gloves)
 - The Impaler (War Spear)
 - The Jade Tan Do (Kris) — non-ETH
-- The Spirit Shroud (Ghost Armor) — non-ETH
+- Tombsong (Sharp Arrows) — non-ETH
 - Warlord's Trust (Military Axe) — non-ETH
 - Windhammer (Ogre Maul) — non-ETH
 
